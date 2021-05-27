@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Автоматическая штукатурка стен">
+		<meta name="author" content="Доценко Артем Александрович">
+		<link rel="icon" href="favicon.ico">
+		<title>Автоматическая штукатурка стен</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap');
+			html {
+			  font-size: 10px;
+			}
+			body {
+			  color: #1a1820;
+			  font-family: 'Raleway', sans-serif;
+			  font-weight: 400;
+			}
+			a:hover {
+			  text-decoration: none;
+			}
+			button,
+			input,
+			a,
+			textarea {
+			  outline: none;
+			}
+			h2 {
+			  font-size: 3.6rem;
+			  font-family: 'Raleway', sans-serif;
+			  font-weight: 700;
+			}
+			h3 {
+			  font-size: 1.8rem;
+			  font-family: 'Raleway', sans-serif;
+			  font-weight: 700;
+			}
+			h4 {
+			  font-size: 1.6rem;
+			  font-family: 'Raleway', sans-serif;
+			  font-weight: 700;
+			}
+			.button {
+			  padding: 1rem 3rem;
+			  border-radius: 8px;
+			  font-size: 1.2rem;
+			  background-color: #fcb303;
+			  color: #ffffff;
+			  text-transform: uppercase;
+			  border: none;
+			  transition: all .2s;
+			}
+			.button:hover {
+			  cursor: pointer;
+			  background-color: #e3a103;
+			}
+			.button:focus {
+			  outline: none;
+			}
+			ul {
+			  padding: 0;
+			}
+			.form {
+			  padding: 4rem 5rem;
+			  text-align: center;
+			  background-color: rgba(255, 255, 255, 0.7);
+			  box-shadow: 6px 10px 18px 0px rgba(0, 0, 0, 0.11);
+			}
+			.form-input,
+			.form-textarea {
+			  font-size: 1.6rem;
+			  display: block;
+			  margin: 1.5rem 0;
+			  width: 100%;
+			  padding: 1.5rem;
+			  border: 1px solid #dddddd;
+			  border-radius: 5px;
+			}
+			.form .label-wrap {
+			  margin-bottom: -2rem;
+			  padding: .5rem;
+			  height: 2rem;
+			  width: 100%;
+			  position: relative;
+			  font-size: 1.3rem;
+			}
+			.form .label-wrap label {
+			  height: 100%;
+			  position: absolute;
+			  transform: translateX(-50%);
+			  left: 50%;
+			  z-index: 5;
+			}
+			.form .label-wrap .label-bg {
+			  width: 100%;
+			  height: 50%;
+			  position: absolute;
+			  left: 0;
+			  bottom: 0;
+			  background-color: #ffffff;
+			}
+			.form .label-wrap .label-bg-wrap {
+			  display: inline-block;
+			  padding: 0 .5rem;
+			  height: 100%;
+			  position: absolute;
+			  bottom: -5px;
+			  transform: translateX(-50%);
+			  z-index: 4;
+			  color: transparent;
+			}
+			.form-button {
+			  display: block;
+			  width: 100%;
+			  height: 5.5rem;
+			  font-size: 1.6rem;
+			}
+			.form-button :focus {
+			  outline: none;
+			}
+			.form small {
+			  display: block;
+			  margin-top: 1.5rem;
+			  font-size: 1.2rem;
+			}
+			section {
+			  padding: 5rem 0;
+			}
+			.main {
+			  background: #ffffff url(img/main-bg.webp) center no-repeat;
+			  background-size: cover;
+			}
+			.main-logo {
+			  width: 100%;
+			}
+			.main-content {
+			  margin-top: 6rem;
+			}
+			.main-content h1 {
+			  margin-bottom: 5rem;
+			  font-family: 'Raleway', sans-serif;
+			  font-weight: 700;
+			  font-size: 4rem;
+			  line-height: 1.45;
+			  text-transform: uppercase;
+			}
+			.main-subtitle {
+			  margin-bottom: 4rem;
+			  font-size: 2.4rem;
+			}
+			.main span {
+			  display: inline-block;
+			  padding: 3rem 5rem;
+			  font-size: 1.8rem;
+			  background-color: #46b814;
+			  color: #ffffff;
+			  text-align: center;
+			}
+			.main span strong {
+			  font-size: 3rem;
+			  font-family: 'Raleway', sans-serif;
+			  font-weight: 700;
+			}
+			.main-trigger {
+			  display: block;
+			  margin-top: 3rem;
+			  font-size: 2.2rem;
+			  text-transform: uppercase;
+			  font-family: 'Raleway', sans-serif;
+			  font-weight: 700;
+			}
+			.main .form-header {
+			  margin-bottom: 4rem;
+			}
+			.main .form-header strong {
+			  font-size: 1.9rem;
+			}
+			.phone-block {
+			  text-align: right;
+			}
+			.phone-link {
+			  display: inline-block;
+			  font-family: 'Raleway', sans-serif;
+			  font-weight: 700;
+			  font-size: 2rem;
+			  height: 7rem;
+			  line-height: 7rem;
+			  color: #1a1820;
+			}
+			.phone-link:hover {
+			  color: #615a77;
+			}
+			.wrap {
+			  display: table;
+			  width: 100%;
+			  height: 7rem;
+			}
+			.wrap-block {
+			  display: table-cell;
+			  vertical-align: middle;
+			  text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<section class="main">
+			<div class="container">
+				<div class="header">
+					<div class="row">
+						<div class="col-lg-4 col-md-5 col-sm-12">
+							<div class="logo">
+								<picture>
+								    <source type="image/webp" srcset="img/logo-yellow.webp">
+								    <source type="image/png" srcset="img/logo-yellow.png">
+								    <img src="img/logo-yellow.png" class="main-logo" alt="Master Good">
+								</picture>
+							</div>
+						</div>
+						<div class="col-xl-2 offset-xl-3 col-lg-3 offset-lg-1 col-md-3 offset-md-0 col-sm-12">
+							<div class="phone-block">
+								<a href="tel:+78901234567" class="phone-link">+7 890 123 45 67</a>
+							</div>
+						</div>
+						<div class="col-xl-3 col-lg-4 offset-lg-0 col-md-4 col-sm-12">
+							<div class="wrap">
+								<div class="wrap-block">
+									<button class="button header-btn popup-btn">Получить консультацию</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main-content">
+					<div class="row">
+						<div class="col-lg-7 col-md-12">
+							<div class="main-title wow fadeInLeft" data-wow-delay=".5s">
+								<h1>автоматизированная <br>штукатурка стен</h1>
+								<p class="main-subtitle">Идеально ровные стены <br>в кратчайшие сроки</p>
+								<span>Стоимость работ <br>от <strong>300</strong> руб/м<sup>2</sup></span>
+								<strong class="main-trigger">Оплата по факту!</strong>
+							</div>
+						</div>
+						<div class="col-lg-5 offset-lg-0 col-md-8 offset-md-2">
+							<div class="form wow fadeInRight" data-wow-delay=".5s">
+								<h3 class="form-header">Для расчета точной стоимости <br>закажите <strong>выезд замерщика</strong></h3>
+								<form action="phpmailer/main_form_mail.php" method="POST">
+									<div class="label-wrap">
+										<label for="user_name1">Ваше имя</label>	
+										<div class="label-bg-wrap">
+											Ваше имя
+											<div class="label-bg"></div>
+										</div>	
+									</div>								
+									<input class="form-input" required type="text" id="user_name1" name="user_name">
+									<div class="label-wrap">
+										<label for="user_phone1">Номер телефона</label>
+										<div class="label-bg-wrap">
+											Номер телефона
+											<div class="label-bg"></div>
+										</div>
+									</div>
+									<input class="form-input phone-input" required type="text" id="user_phone1" name="user_phone">
+									<button class="button form-button" type="submit">оставьте заявку</button>
+									<small>Подарок в день обращения</small>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="features">
+			<div class="container">
+				<h2 class="features-header text-center">
+					Преимущества работы с нами
+				</h2>
+				<div class="features-slider">
+					<div class="features-block wow bounceInDown" data-wow-offset="260" data-wow-delay="0s">
+						<div class="features-img">
+							<picture>
+								<source srcset="img/features/coin.png" type="image/svg+xml">
+								<img src="img/features/coin.svg" alt="Платите по факту">
+							</picture>
+						</div>
+						<h3>Платите по факту</h3>
+						<p>Вы оплачиваете выполненные работы только после их выполнения. Никаких скрытых доплат и промежуточных платежей.</p>
+					</div>
+					<div class="features-block wow bounceInDown" data-wow-offset="260" data-wow-delay=".1s">
+						<div class="features-img">
+							<picture>
+								<source srcset="img/features/folder.png" type="image/svg+xml">
+								<img src="img/features/folder.svg" alt="Заключаем договор">
+							</picture>
+						</div>
+						<h3>Заключаем договор</h3>
+						<p>Перед началом работ заключаем договор на юридическое лицо. <br>Вы можете быть уверены, что все обязательства будут выполнены.</p>
+					</div>
+					<div class="features-block wow bounceInDown" data-wow-offset="260" data-wow-delay=".2s">
+						<div class="features-img">
+							<picture>
+								<source srcset="img/features/clock.png" type="image/svg+xml">
+								<img src="img/features/clock.svg" alt="Точно в срок">
+							</picture>
+						</div>
+						<h3>Точно в срок</h3>
+						<p>Работаем строго по установленным срокам, которые прописаны в договоре. <br>Если не успеваем, Вы платите меньше.</p>
+					</div>
+					<div class="features-block wow bounceInDown" data-wow-offset="260" data-wow-delay=".3s">
+						<div class="features-img">
+							<picture>
+								<source srcset="img/features/moneybox.png" type="image/svg+xml">
+								<img src="img/features/moneybox.svg" alt="Экономите на материалах">
+							</picture>
+						</div>
+						<h3>Экономите на материалах</h3>
+						<p>Мы являемся структурным подразделением компании поставщика <br>строительных смесей <a href="https://www.gicema.ru/" target="_blank" class="materials-link">gicema.ru</a> и даем Вам самые выгодные цены.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="price">
+			<div class="container">
+						<div class="price-header text-center">
+							<h2>Цены</h2>
+							<p>Выберите вариант, который подходит Вам:</p>
+						</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="price-box wow fadeInUp" data-wow-offset="260" data-wow-delay="0s">
+							<h4>Штукатурка вашим материалом</h4>
+							<div class="img-wrap popup-btn">
+								<img src="img/preloader.jpg"
+									 class="b-lazy" 
+									 data-src="img/prices/1.jpg"
+									 alt="Штукатурка вашим материалом"/>
+							</div>
+							<span class="price-tag">от 300 руб/м<sup>2</sup></span>
+							<ul class="price-list">
+								<li>Проведение работ</li>
+								<li>Уборка</li>
+							</ul>
+							<button class="button popup-btn">заказать</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="price-box wow fadeInUp" data-wow-offset="260" data-wow-delay=".1s">
+							<h4>Штукатурка под шпатлевку</h4>
+							<div class="img-wrap popup-btn">
+								<img src="img/preloader.jpg"
+									 class="b-lazy" 
+									 data-src="img/prices/2.jpg"
+									 alt="Штукатурка под шпатлевку"/>
+							</div>
+							<span class="price-tag">от 530 руб/м<sup>2</sup></span>
+							<ul class="price-list">
+								<li>Завоз материала и его подъем</li>
+								<li>Проведение работ</li>
+								<li>Уборка</li>
+								<li>Гарантия 2 года</li>
+							</ul>
+							<button class="button popup-btn">заказать</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="price-box wow fadeInUp" data-wow-offset="260" data-wow-delay=".2s">
+							<h4>Штукатурка под обои</h4>
+							<div class="img-wrap popup-btn">
+								<img src="img/preloader.jpg"
+									 class="b-lazy" 
+									 data-src="img/prices/3.jpg"
+									 alt="Штукатурка под обои"/>
+							</div>
+							<span class="price-tag">от 560 руб/м<sup>2</sup></span>
+							<ul class="price-list">
+								<li>Завоз материала и его подъем</li>
+								<li>Проведение работ</li>
+								<li>Уборка</li>
+								<li>Гарантия 2 года</li>
+								<li>Можно сразу купить обои</li>
+							</ul>
+							<button class="button popup-btn">заказать</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 offset-lg-4">
+						<div class="price-button">
+							<button class="button price-header-btn" data-toggle="collapse" data-target="#calculator">рассчитать точную стоимость</button>
+						</div>
+					</div>
+				</div>
+				<!-- КАЛЬКУЛЯТОР ШТУКАТУРКИ -->
+								<div class="collapse" id="calculator">
+									<div class="calculator">
+										<div class="row">
+											<div class="col-lg-8 offset-lg-2">
+												<div id="calc">
+													<div class="form-group">
+														<label for="page-size">Выберите подходящий Вам вариант работ</label>
+														<select id="page-size" class="form-control">
+															<option selected>Выберите вариант работ</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<label for="qty">Укажите площадь оштукатуривания в м<sup>2</sup></label>
+														<input type="number" class="form-control" name="num" step="0.1" min="1" value="1" id="qty">
+													</div>
+													<div class="final-price">
+														<div>Стоимость работ составит:</div>
+														<div class="sum">0 руб.</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+<!-- КАЛЬКУЛЯТОР ШТУКАТУРКИ --><!-- КАЛЬКУЛЯТОР ШТУКАТУРКИ -->
+			</div>
+		</section>
+
+		<section class="testimonies b-lazy" data-src="img/testimonies/testimonies-bg.webp">
+			<div class="container">
+				<div class="testimonies-header text-center">
+					<h2>Отзывы</h2>
+				</div>
+				<div class="testimonies-slider wow fadeIn" data-wow-offset="260" data-wow-duration="2.5s">
+					<div class="testimonies-slider_item">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="fotorama" data-width="100%"  data-allowfullscreen="native" data-loop="true" data-nav="thumbs" data-fit="cover">
+									<a href="img/testimonies/1.jpg"><img src="img/testimonies/thumb/1thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/1thumb.jpg" alt=""></a>
+									<a href="img/testimonies/2.jpg"><img src="img/testimonies/thumb/2thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/2thumb.jpg" alt=""></a>
+									<a href="img/testimonies/3.jpg"><img src="img/testimonies/thumb/3thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/3thumb.jpg" alt=""></a>
+									<a href="img/testimonies/4.jpg"><img src="img/testimonies/thumb/4thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/4thumb.jpg" alt=""></a>
+									<a href="img/testimonies/5.jpg"><img src="img/testimonies/thumb/5thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/5thumb.jpg" alt=""></a>
+									<a href="img/testimonies/6.jpg"><img src="img/testimonies/thumb/6thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/6thumb.jpg" alt=""></a>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<p>Объект: <strong>г.Екатеринбург, ул. 8 марта д.8</strong></p>
+								<p>Площадь: <strong>122 м<sup>2</sup></strong></p>
+								<p>Выполнен за: <strong>8 дней</strong></p>
+								<p>Стоимость: <strong>550 рублей за квадратный метр</strong></p>
+								<p>Особенности: <strong>перепады неровности стен достигали до 6 см</strong></p>
+								<!-- Bootstrap МЕДИАОБЪЕКТ -->
+								<div class="media">
+									<picture>
+									    <source type="image/webp" srcset="img/testimonies/tony-ferg.webp">
+									    <source type="image/jpg" srcset="img/testimonies/tony-ferg.jpg">
+									    <img src="img/preloader.jpg"
+									 		 class="b-lazy" 
+									 		 data-src="img/testimonies/tony-ferg.jpg" class="mr-3" alt=" Антон Ферганюк">
+									</picture>
+								  <div class="media-body">
+								  	<span>Заказчик</span>
+								    <h5 class="mt-0">Антон Ферганюк</h5>
+								  </div>
+								</div>
+								<div class="testimonies-text">
+									<div class="triangle-box">
+										<div class="triangle"></div>
+									</div>
+									Заказывал у компании штукатурку стен и стяжку пола. В квартире площадью 122 м<sup>2</sup> работы были завершены за 6 дней. 5 дней - на штукатурку, 1 день - на стяжку. Сделано быстро, качественно. Я всем доволен.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="testimonies-slider_item">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="fotorama" data-width="100%"  data-allowfullscreen="native" data-loop="true" data-nav="thumbs" data-fit="cover">
+									<a href="img/testimonies/1.jpg"><img src="img/testimonies/thumb/1thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/1thumb.jpg" alt=""></a>
+									<a href="img/testimonies/2.jpg"><img src="img/testimonies/thumb/2thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/2thumb.jpg" alt=""></a>
+									<a href="img/testimonies/3.jpg"><img src="img/testimonies/thumb/3thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/3thumb.jpg" alt=""></a>
+									<a href="img/testimonies/4.jpg"><img src="img/testimonies/thumb/4thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/4thumb.jpg" alt=""></a>
+									<a href="img/testimonies/5.jpg"><img src="img/testimonies/thumb/5thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/5thumb.jpg" alt=""></a>
+									<a href="img/testimonies/6.jpg"><img src="img/testimonies/thumb/6thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/6thumb.jpg" alt=""></a>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<p>Объект: <strong>г. Екатеринбург, пр-т Космонавтов д. 99</strong></p>
+								<p>Площадь: <strong>142 м<sup>2</sup></strong></p>
+								<p>Выполнен за: <strong>5 дней</strong></p>
+								<p>Стоимость: <strong>560 рублей за квадратный метр</strong></p>
+								<p>Особенности: <strong>перепады неровности стен достигали до 6 см</strong></p>
+								<div class="media">
+									<picture>
+									    <source type="image/webp" srcset="img/testimonies/evgenia.webp">
+									    <source type="image/jpg" srcset="img/testimonies/evgenia.jpg">
+									    <img src="img/preloader.jpg"
+									 		 class="b-lazy" 
+									 		 data-src="img/testimonies/evgenia.jpg" class="mr-3" alt="Евгения Русакова">
+									</picture>
+								  <div class="media-body">
+								  	<span>Заказчик</span>
+								    <h5 class="mt-0">Евгения Русакова</h5>
+								  </div>
+								</div>
+								<div class="testimonies-text">
+									<div class="triangle-box">
+										<div class="triangle"></div>
+									</div>
+									Очень признательна компании PLASTERER MASTER за качественно и вовремя сделанную работу. Договор заключала с компанией в марте, работы начали в июне. Цена была зафиксирована, не изменилась. Cпасибо вам большое за ваше понимание и качество работ!!! Рекомедую!!!
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="testimonies-slider_item">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="fotorama" data-width="100%"  data-allowfullscreen="native" data-loop="true" data-nav="thumbs" data-fit="cover">
+									<a href="img/testimonies/1.jpg"><img src="img/testimonies/thumb/1thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/1thumb.jpg" alt=""></a>
+									<a href="img/testimonies/2.jpg"><img src="img/testimonies/thumb/2thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/2thumb.jpg" alt=""></a>
+									<a href="img/testimonies/3.jpg"><img src="img/testimonies/thumb/3thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/3thumb.jpg" alt=""></a>
+									<a href="img/testimonies/4.jpg"><img src="img/testimonies/thumb/4thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/4thumb.jpg" alt=""></a>
+									<a href="img/testimonies/5.jpg"><img src="img/testimonies/thumb/5thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/5thumb.jpg" alt=""></a>
+									<a href="img/testimonies/6.jpg"><img src="img/testimonies/thumb/6thumb.jpg"
+									 class="b-lazy" 
+									 data-src="img/testimonies/thumb/6thumb.jpg" alt=""></a>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<p>Объект: <strong>г.Екатеринбург, ул. Бебеля д.111</strong></p>
+								<p>Площадь: <strong>517 м<sup>2</sup></strong></p>
+								<p>Выполнен за: <strong>12 дней</strong></p>
+								<p>Стоимость: <strong>350 рублей за квадратный метр</strong></p>
+								<p>Особенности: <strong>перепады неровности стен достигали до 4 см</strong></p>
+								<div class="media">
+									<picture>
+									    <source type="image/webp" srcset="img/testimonies/roman.webp">
+									    <source type="image/jpg" srcset="img/testimonies/roman.jpg">
+									    <img src="img/preloader.jpg"
+									 		 class="b-lazy" 
+									 		 data-src="img/testimonies/roman.jpg" class="mr-3" alt="Роман Медведев">
+									</picture>
+								  <div class="media-body">
+								  	<span>Заказчик</span>
+								    <h5 class="mt-0">Роман Медведев</h5>
+								  </div>
+								</div>
+								<div class="testimonies-text">
+									<div class="triangle-box">
+										<div class="triangle"></div>
+									</div>
+									Я доволен работой компании. Стены гладкие, откосы ровные - к работе нет претензий вообще. Сроки, аккуратность, вежливость, грамотность в работе - всё на высшем уровне! Такую компанию не стыдно рекомендовать знакомым.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="testimonies-vk">
+					<h3>ЕЩЕ БОЛЬШЕ ОТЗЫВОВ В НАШЕЙ ГРУППЕ ВКОНТАКТЕ</h3>
+					<a href="https://vk.com/" target="_blank"><img src="img/footer/vk.png" alt="Мы в контакте" title="Мы в контакте"></a>
+				</div>
+				<div class="row">
+					<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+						<div class="feedback-form">
+							<div class="form">
+								<h3>Хотите также? Оставьте Ваши контактные данные</h3>
+								<form action="phpmailer/main_form_mail.php" method="POST">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="label-wrap">
+												<label for="user_name2">Ваше имя</label>
+												<div class="label-bg-wrap">Ваше имя
+													<div class="label-bg"></div>
+												</div>
+											</div>
+											<input class="form-input" required type="text" id="user_name2" name="user_name">
+										</div>
+										<div class="col-md-6">
+											<div class="label-wrap">
+												<label for="user_phone2">Номер телефона</label>
+												<div class="label-bg-wrap">Номер телефона
+													<div class="label-bg"></div>
+												</div>
+											</div>
+											<input class="form-input phone-input" required type="text" id="user_phone2" name="user_phone">
+										</div>
+									</div>
+									<button class="button form-button feedback-form-btn" type="submit">оставьте заявку</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hand b-lazy" data-src="img/testimonies/shpatel.webp"></div>
+		</section>
+
+
+		<section class="scheme b-lazy" data-src="img/scheme/scheme-bg.webp">
+			<div class="container">
+				<div class="scheme-header">
+					<div class="row">
+						<div class="col-10 offset-1">
+							<h2>Схема работы</h2>
+							<p>Работа над Вашим объектом будет включать в себя следующие этапы:</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-10 offset-1 col-md-6  offset-md-0 col-lg-3">
+						<div class="scheme-item wow fadeInUp" data-wow-offset="250" data-wow-delay="0s">
+							<picture>
+							    <source type="image/webp" srcset="img/scheme/books.webp">
+							    <source type="image/png" srcset="img/scheme/books.png">
+							    <img src="img/preloader.jpg"
+									 class="b-lazy" 
+									 data-src="img/scheme/books.png" alt="Заявка">
+							</picture>
+							<h3>Заявка</h3>
+							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большого текстов буквоград жизни языком.</p>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-1">
+						<div class="scheme-item wow fadeInUp" data-wow-offset="250" data-wow-delay=".1s">
+							<picture>
+							    <source type="image/webp" srcset="img/scheme/car.webp">
+							    <source type="image/png" srcset="img/scheme/car.png">
+							    <img src="img/preloader.jpg"
+									 class="b-lazy" 
+									 data-src="img/scheme/car.png" alt="Выезд специалиста">
+							</picture>
+							<h3>Выезд специалиста</h3>
+							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большого текстов буквоград жизни языком.</p>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-1">
+						<div class="scheme-item wow fadeInUp" data-wow-offset="250" data-wow-delay=".2s">
+							<picture>
+							    <source type="image/webp" srcset="img/scheme/folder.webp">
+							    <source type="image/png" srcset="img/scheme/folder.png">
+							    <img src="img/preloader.jpg"
+									 class="b-lazy" 
+									 data-src="img/scheme/folder.png" alt="Составление договора">
+							</picture>
+							<h3>Составление договора</h3>
+							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большого текстов буквоград жизни языком.</p>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3">
+						<div class="scheme-item wow fadeInUp" data-wow-offset="250" data-wow-delay="0.3s">
+							<picture>
+							    <source type="image/webp" srcset="img/scheme/toolbox.webp">
+							    <source type="image/png" srcset="img/scheme/toolbox.png">
+							    <img src="img/preloader.jpg"
+									 class="b-lazy" 
+									 data-src="img/scheme/toolbox.png" alt="Начало работ">
+							</picture>
+							<h3>Начало работ</h3>
+							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большого текстов буквоград жизни языком.</p>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-1">
+						<div class="scheme-item wow fadeInUp" data-wow-offset="250" data-wow-delay=".4s">
+							<picture>
+							    <source type="image/webp" srcset="img/scheme/calc.webp">
+							    <source type="image/png" srcset="img/scheme/calc.png">
+							    <img src="img/preloader.jpg"
+									 class="b-lazy" 
+									 data-src="img/scheme/calc.png" alt="Завершение работ">
+							</picture>
+							<h3>Завершение работ</h3>
+							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большого текстов буквоград жизни языком.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="all-inclusive">
+			<div class="container wow fadeIn" data-wow-offset="260" data-wow-duration="2.5s">
+				<div class="all-inclusive-header">
+					<div class="row">
+						<div class="col-10 offset-1">
+							<h2>Все на 100% включено</h2>
+							<p>При выполнении работ с нашим маериалом в стоимость входит:</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-0">
+						<div class="all-inclusive-block">
+							<div class="media align-items-start">
+							  <div class="align-self-start mr-3">
+							  	<span class="circle-border">
+							  		<span class="circle">1</span>
+							  	</span>
+							  </div>
+							  <div class="media-body">
+							    <h4>Материал:</h4>
+							    <p>штукатурка, грунтовка или бетоноконтакт, маяки, сетка на стыки</p>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-0">
+						<div class="all-inclusive-block">
+							<div class="media align-items-start">
+							  <div class="align-self-start mr-3">
+							  	<span class="circle-border">
+							  		<span class="circle">2</span>
+							  	</span>
+							  </div>
+							  <div class="media-body">
+							    <h4>Доставка оборудования и материала на объект</h4>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-0">
+						<div class="all-inclusive-block">
+							<div class="media align-items-start">
+							  <div class="align-self-start mr-3">
+							  	<span class="circle-border">
+							  		<span class="circle">3</span>
+							  	</span>
+							  </div>
+							  <div class="media-body">
+							    <h4>Подготовка поверхности</h4>
+							    <p>(очистка, грунтование)</p>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-0">
+						<div class="all-inclusive-block">
+							<div class="media align-items-start">
+							  <div class="align-self-start mr-3">
+							  	<span class="circle-border">
+							  		<span class="circle">4</span>
+							  	</span>
+							  </div>
+							  <div class="media-body">
+							    <h4>Установка маяков</h4>
+							    <p></p>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-0">
+						<div class="all-inclusive-block">
+							<div class="media align-items-start">
+							  <div class="align-self-start mr-3">
+							  	<span class="circle-border">
+							  		<span class="circle">5</span>
+							  	</span>
+							  </div>
+							  <div class="media-body">
+							    <h4>Оштукатуривание поверхности</h4>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-0">
+						<div class="all-inclusive-block">
+							<div class="media align-items-start">
+							  <div class="align-self-start mr-3">
+							  	<span class="circle-border">
+							  		<span class="circle">6</span>
+							  	</span>
+							  </div>
+							  <div class="media-body">
+							    <h4>Удаление маяков</h4>
+							    <p></p>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-0">
+						<div class="all-inclusive-block">
+							<div class="media align-items-start">
+							  <div class="align-self-start mr-3">
+							  	<span class="circle-border">
+							  		<span class="circle">7</span>
+							  	</span>
+							  </div>
+							  <div class="media-body">
+							    <h4>Глянцевание</h4>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-6 offset-md-0 col-lg-3 offset-lg-0">
+						<div class="all-inclusive-block">
+							<div class="media align-items-start">
+							  <div class="align-self-start mr-3">
+							  	<span class="circle-border">
+							  		<span class="circle">8</span>
+							  	</span>
+							  </div>
+							  <div class="media-body">
+							    <h4>Уборка и вывоз мусора</h4>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+		<section class="doubts">
+			<div class="container">
+				<div class="doubts-header">
+					<h2>Мы развеем все опасения</h2>
+				</div>
+				<div class="row">
+					<div class="col-10 offset-1 col-md-5 offset-md-0">
+						<div class="doubts-list doubts-list-bad wow fadeInLeft" data-wow-offset="260">
+							<h3>Какие могут быть проблемы:</h3>
+							<ul>
+								<li>Стены и углы будут неровными</li>
+								<li>Ремонт затянется надолгие месяцы</li>
+								<li>Сложности с доставкой и разгрузкой материалов</li>
+								<li>Останется мусор и пыль после работ</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-10 offset-1 col-md-5 offset-md-2">
+						<div class="doubts-list doubts-list-good wow fadeInRight" data-wow-offset="260">
+							<h3>Наше решение:</h3>
+							<ul>
+								<li>Высокая квалификация специалистов + минимум 5 летний опыт работы = идеально ровные поверхности</li>
+								<li>Соблюдаем сроки, которые прописаны в договоре. На квартиру площадью 135 м<sup>2</sup> уходит от 3 до 5 дней</li>
+								<li>Доставка материала и подъем бесплатно</li>
+								<li>Убираем и вывозим мусор после работ</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="doubts-bg b-lazy" data-src="img/doubts/girl.webp"></div>
+			</div>	
+		</section>
+
+
+		<section class="materials b-lazy" data-src="img/materials/materials-bg.webp">
+			<div class="container wow fadeIn" data-wow-offset="260" data-wow-duration="2.5s">
+				<div class="materials-header">
+					<h2>Материалы</h2>
+					<p>Мы работаем только качественными, проверенными временем материалами, следующих производителей:</p>
+				</div>
+				<div class="materials-slider">
+					<div class="materials-item">
+						<picture>
+						    <source type="image/webp" srcset="img/materials/volma_aqua.webp">
+						    <source type="image/png" srcset="img/materials/volma_aqua.png">
+						    <img src="img/preloader.jpg"
+								 class="b-lazy" 
+								 data-src="img/materials/volma_aqua.png" alt="Volma Aqua"/>
+						</picture>
+						<h3>Volma</h3>
+						<p>Штукатурка Волма Акваслой-МН цементная, 25 кг <strong>178</strong> руб/меш</p>
+						<button class="materials-popup-btn" id="volmaAqua-btn">Характеристики</button>
+					</div>
+					<div class="materials-item">
+						<picture>
+						    <source type="image/webp" srcset="img/materials/knauf.webp">
+						    <source type="image/png" srcset="img/materials/knauf.png">
+						    <img src="img/preloader.jpg"
+								 class="b-lazy" 
+								 data-src="img/materials/knauf.png" alt="Knauf"/>
+						</picture>
+						<h3>Knauf</h3>
+						<p>Штукатурка Кнауф МП 75, 30 кг <strong>315</strong> руб/меш</p>
+						<button class="materials-popup-btn" id="knauf-btn">Характеристики</button>
+					</div>
+					<div class="materials-item">
+						<picture>
+						    <source type="image/webp" srcset="img/materials/volma.webp">
+						    <source type="image/png" srcset="img/materials/volma.png">
+						    <img src="img/preloader_car.html"
+								 class="b-lazy" 
+								 data-src="img/materials/volma.png" alt="Volma"/>
+						</picture>
+						<h3>Volma</h3>
+						<p>Штукатурка Волма Гипс-Актив, 30 кг <strong>260</strong> руб/меш</p>
+						<button class="materials-popup-btn" id="volma-btn">Характеристики</button>
+					</div>
+					<div class="materials-item">
+						<picture>
+						    <source type="image/webp" srcset="img/materials/forman.webp">
+						    <source type="image/png" srcset="img/materials/forman.png">
+						    <img src="img/preloader.jpg"
+								 class="b-lazy" 
+								 data-src="img/materials/forman.png" alt="Forman"/>
+						</picture>
+						<h3>Forman</h3>
+						<p>Штукатурка Форман №12 гипсовая, 30 кг <strong>231</strong> руб/меш</p>
+						<button class="materials-popup-btn" id="forman-btn">Характеристики</button>
+					</div>
+				</div>
+				<p>Вы можете приобрести материалы по оптовым ценам на сайте <a href="https://www.gicema.ru/" target="_blank" class="materials-link">gicema.ru</a> или по телефону <strong><a href="tel:+78901234567" class="materials-link">+7 890 123 45 67</a></strong></p>
+			</div>
+		</section>
+
+
+		<section class="tour b-lazy" data-src="img/tour/tour-bg.webp">
+			<div class="tour-bg">
+				<div class="container">
+					<div class="main-content">
+						<div class="row">
+							<div class="col-lg-5 offset-lg-0 col-md-12 offset-md-0 col-10 offset-1">
+								<div class="main-title wow fadeInLeft" data-wow-offset="260">
+									<h2>Посмотрите как мы работаем</h2>
+									<p class="main-subtitle tour-subtitle">Хотите удостовериться в профессионализме наших сотрудников?</p>
+									<p class="main-subtitle tour-subtitle">Вы можете сделать это, приехав на один из наших объектов и, понаблюдав за ходом работ. Увидите материалы, оборудование и качество исполнения.</p>
+								</div>
+							</div>
+							<div class="col-lg-5 offset-lg-2 col-md-8 offset-md-2">
+								<div class="form wow fadeInRight" data-wow-offset="260">
+									<h3 class="form-header">Оставьте контактные данные для связи</h3>
+									<form action="phpmailer/tour_form_mail.php" method="POST">
+										<div class="label-wrap">
+											<label for="user_name3">Ваше имя</label>
+											<div class="label-bg-wrap">
+												Ваше имя
+												<div class="label-bg"></div>
+											</div>
+										</div>
+										<input class="form-input" required type="text" id="user_name3" name="user_name">
+										<div class="label-wrap">
+											<label for="user_phone3">Номер телефона</label>
+											<div class="label-bg-wrap">
+												Номер телефона
+												<div class="label-bg"></div>
+											</div>
+										</div>
+										<input class="form-input phone-input" required type="text" id="user_phone3" name="user_phone">
+										<button class="button form-button" type="submit">Записаться на просмотр</button>
+										<small>Подберем ближайший к Вам объект</small>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="optional-service">
+			<div class="container">
+				<div class="optional-service-header text-center">
+					<div class="row">
+						<div class="col-10 offset-1">
+							<h2>Дополнительные услуги</h2>
+							<p>Помимо штукатурных работ вы можете заказать у нас следующие услуги</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 offset-md-0 col-10 offset-1">
+						<div class="optional-service-item wow zoomIn" data-wow-offset="260">
+							<div class="img-wrap Electricalwork-btn">
+								<picture>
+								    <source type="image/webp" srcset="img/optional-service/1.webp">
+								    <source type="image/jpg" srcset="img/optional-service/1.jpg">
+								    <img src="img/preloader.jpg"
+									 	 class="b-lazy" 
+									 	 data-src="img/optional-service/1.jpg" alt="Монтаж электропроводки"/>
+								</picture>
+							</div>
+							<p>Электромонтажные работы</p>
+							<button class="button Electricalwork-btn">цены</button>
+						</div>
+					</div>
+					<div class="col-md-4 offset-md-0 col-10 offset-1">
+						<div class="optional-service-item wow zoomIn" data-wow-offset="260" data-wow-delay=".2s">
+							<div class="img-wrap Plumbingwork-btn">
+								<picture>
+								    <source type="image/webp" srcset="img/optional-service/2.webp">
+								    <source type="image/jpg" srcset="img/optional-service/2.jpg">
+								    <img src="img/preloader.jpg"
+									 	 class="b-lazy" 
+									 	 data-src="img/optional-service/2.jpg" alt="Сантехнические работы"/>
+								</picture>
+							</div>
+							<p>Сантехнические работы</p>
+							<button class="button Plumbingwork-btn">цены</button>
+						</div>
+					</div>
+					<div class="col-md-4 offset-md-0 col-10 offset-1">
+						<div class="optional-service-item wow zoomIn" data-wow-offset="260" data-wow-delay=".4s">
+							<div class="img-wrap Screed-btn">
+								<picture>
+								    <source type="image/webp" srcset="img/optional-service/3.webp">
+								    <source type="image/jpg" srcset="img/optional-service/3.jpg">
+								    <img src="img/preloader.jpg"
+									 	 class="b-lazy" 
+									 	 data-src="img/optional-service/3.jpg" alt="Стяжка пола"/>
+								</picture>
+							</div>
+							<p>Стяжка пола</p>
+							<button class="button Screed-btn">цены</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="contacts b-lazy" data-src="img/materials/materials-bg.webp">
+			<div class="contacts-bg b-lazy" data-src="img/contacts/contacts-bg.webp">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 offset-lg-0 col-10 offset-1 wow slideInLeft contacts-wrap" data-wow-offset="260">
+							<h2>Контакты</h2>
+							<address>
+								<p>Адрес офиса:<br>Екатеринбург, улица Малышева, 51, офис 77</p>
+							</address>
+							<iframe 
+							src="img/preloader_car.html" 
+							class="b-lazy map-box"
+							data-src="map/map.html"></iframe>
+							<address>
+								<p>Номер телефона:<br><strong>+7 890 123 45 67</strong></p>
+								<p>E-mail:<br><a class="contacts-link" href="mailto:plasterermaster@gmail.com">plasterermaster@gmail.com</a></p>
+								<p>Реквизиты:<br>ИНН 35453453 ОГРН 34234234</p>
+							</address>
+						</div>
+						<div class="col-xl-4 offset-xl-2 col-lg-5 offset-lg-1 col-md-8 offset-md-2">
+							<div class="form wow slideInRight" data-wow-offset="260">
+								<h3 class="form-header">Оставьте контактные данные для связи</h3>
+								<form action="phpmailer/popup_form_mail.php" method="POST" required>
+									<div class="label-wrap">
+										<label for="user_name4">Ваше имя</label>
+										<div class="label-bg-wrap">
+											Ваше имя
+											<div class="label-bg"></div>
+										</div>
+									</div>
+									<input class="form-input" required type="text" id="user_name4" name="user_name">
+									<div class="label-wrap">
+										<label for="user_phone4">Номер телефона</label>
+										<div class="label-bg-wrap">
+											Номер телефона
+											<div class="label-bg"></div>
+										</div>
+									</div>
+									<input class="form-input phone-input" required type="text" id="user_phone4" name="user_phone">
+									<div class="label-wrap">
+										<label for="user_mail4">Email</label>
+										<div class="label-bg-wrap">
+											Email
+											<div class="label-bg"></div>
+										</div>
+									</div>
+									<input class="form-input" required type="email" id="user_mail4" name="user_mail">
+									<div class="label-wrap">
+										<label for="user_message4">Сообщение</label>
+										<div class="label-bg-wrap">
+											Сообщение
+											<div class="label-bg"></div>
+										</div>
+									</div>
+									<textarea class="form-textarea" rows="5" id="user_message4" name="user_message"></textarea>
+									<button class="button form-button" type="submit">оставьте заявку</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<footer>
+			<div class="container footer-container">
+				<div class="row">
+					<div class="col-md-4 offset-md-0 col-sm-10 offset-sm-1 col-10 offset-1">
+						<div class="logo">
+							<picture>
+							    <source type="image/webp" srcset="img/logo-yellow.webp">
+							    <source type="image/png" srcset="img/logo-yellow.png">
+							    <img src="img/preloader.jpg"
+									 class="b-lazy footer-logo" 
+									 data-src="img/logo-yellow.png" alt="Master Good">
+							</picture>
+						</div>
+					</div>
+					<div class="col-md-4 offset-md-0 col-sm-5 offset-sm-1 col-10 offset-1 text-center">
+						<address>
+							<div><strong>+7 890 123 45 67</strong></div>
+							<div><a class="contacts-link" href="mailto:plasterermaster@gmail.com">plasterermaster@gmail.com</a></div>
+							<div>Пн - Пт: с 9.00 до 18.00</div>
+						</address>
+					</div>
+					<div class="col-md-4 offset-md-0 col-sm-5 offset-sm-0 col-10 offset-1 social-wrap">
+						<div class="social">
+							<p>Присоединяйся к нам:</p>
+							<div>
+								<a href="https://ok.ru/" target="_blank"><img src="img/footer/ok.png" alt="Мы в одноклассниках" title="Мы в одноклассниках"></a>
+								<a href="https://vk.com/" target="_blank"><img src="img/footer/vk.png" alt="Мы в контакте" title="Мы в контакте"></a>
+								<a href="https://www.instagram.com/" target="_blank"><img src="img/footer/insta.png" alt="Мы в инстаграм" title="Мы в инстаграм"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="container">
+					Copyright © Plasterer masteR, 2018-2019 All rights reserved |
+					Разработка сайта: <a href="mailto:doclko31@gmail.com"><img src="img/DotsenkoRuWEBSTATION_transp.png" alt="Логотип разработчика"></a>
+				</div>
+			</div>
+		</footer>
+		<div class="popup">
+			<div class="popup-dialog">
+				<div class="popup-content">
+					<h3 class="popup-heading">Вас заинтересовало наше предложение?</h3>
+					<p>Оставьте свои контактные днные<br>для связи.</p>
+					<div class="popup-form">
+						<form action="phpmailer/popup_form_mail.php" method="POST" class="form">
+							<div class="label-wrap">
+								<label for="user_name5">Ваше имя</label>
+								<div class="label-bg-wrap">
+									Ваше имя
+									<div class="label-bg"></div>
+								</div>
+							</div>
+							<input class="form-input" required type="text" id="user_name5" name="user_name">
+							<div class="label-wrap">
+								<label for="user_phone5">Номер телефона</label>
+								<div class="label-bg-wrap">
+									Номер телефона
+									<div class="label-bg"></div>
+								</div>
+							</div>
+							<input class="form-input phone-input" required type="text" id="user_phone5" name="user_phone">
+							<div class="label-wrap">
+								<label for="user_message5">Сообщение</label>
+								<div class="label-bg-wrap">
+									Сообщение
+									<div class="label-bg"></div>
+								</div>
+							</div>
+							<textarea class="form-input" id="user_message5" name="user_message" rows="4"></textarea>
+							<button class="button form-button" type="submit">оставьте заявку</button>
+						</form>
+					</div>
+					<div class="popup-close-wrap">
+						<button class="popup-close"></button>
+					</div>
+					<div class="close_bottom_wrap">
+						<button class="popup-close popup-close_bottom"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="popupVolmaAqua popup-materials">
+			<div class="popup-materials_wrap">
+				<div class="popup-close-wrap">
+					<button class="popup-close"></button>
+				</div>
+				<div class="popup-materials-header">
+					<h3 class="popup-header">Штукатурка Волма Акваслой-МН, 25кг</h3>
+				</div>
+				<div class="popup-materials-content">
+					<div class="popup-materials-content-inside">
+						<div class="popup-materials-content-description">
+							<h4>Описание</h4>
+							<p>Штукатурка цементная для профессионального машинного нанесения.</p>
+							<p>Большинство отделочников знают, насколько сложно бывает работать в «сырых» помещения, используя при этом обычную штукатурку. Специальная для этой цели была создана Волма Акваслой — влагоустойчивая смесь в состав которой входят:</p>
+							<ul>
+								<li>портландцемент;</li>
+								<li>легкие наполнители;</li>
+								<li>полимерные и минеральные добавки.</li>
+							</ul>
+							<p>Применяется данная штукатурка достаточно обширно, начиная от ремонта в домах, саунах и заканчивая подготовкой поверхностей под укладку декоративной плитки.</p>
+							<p>Волма Акваслой может наноситься на бетонные основания, поверхности, отштукатуренные составами на основе цемента и песка, а также на кирпичные кладки из силиката или керамики, и подходит под нанесение декоративных штукатурок.</p>
+							<h4>Технические характеристики</h4>
+							<table>
+								<tr>
+									<td>Основа</td>
+									<td>Цемент</td>
+								</tr>
+								<tr>
+									<td>Цвет</td>
+									<td>Серый</td>
+								</tr>
+								<tr>
+									<td>Температура основания</td>
+									<td>+5°С до +30°С</td>
+								</tr>
+								<tr>
+									<td>Расход воды на штукатурной станции</td>
+									<td>400 - 600 л/час</td>
+								</tr>
+								<tr>
+									<td>Сохранение подвижности смеси</td>
+									<td>40 - 60 мин.</td>
+								</tr>
+								<tr>
+									<td>Рекомендованная толщина слоя при заделки выбоин и раковин</td>
+									<td>До 30 мм</td>
+								</tr>
+								<tr>
+									<td>Рекомендованная толщина слоя для оштукатуривания</td>
+									<td>От 10 мм до 15 мм</td>
+								</tr>
+								<tr>
+									<td>Расход материала при слое 10 мм</td>
+									<td>11,5 кг/м2</td>
+								</tr>
+								<tr>
+									<td>Площадь обрабатываемой поверхности с мешка, при слое 10 мм</td>
+									<td>2,1 м2</td>
+								</tr>
+								<tr>
+									<td>Прочность при изгибе, не менее</td>
+									<td>1 МПа</td>
+								</tr>
+								<tr>
+									<td>Прочность при сжатии, не менее</td>
+									<td>1,5 МПа</td>
+								</tr>
+								<tr>
+									<td>Прочность сцепления при отрыве (адгезия), не менее</td>
+									<td>0,25 Мпа</td>
+								</tr>
+								<tr>
+									<td>Время достижения марочной прочности</td>
+									<td>28 суток</td>
+								</tr>
+								<tr>
+									<td>Гарантийный срок хранения</td>
+									<td>12 месяцев</td>
+								</tr>
+								<tr>
+									<td>Упаковка</td>
+									<td>25 кг</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="close_bottom_wrap">
+					<button class="popup-close popup-close_bottom"></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="popupKnauf popup-materials">
+			<div class="popup-materials_wrap">
+				<div class="popup-close-wrap">
+					<button class="popup-close"></button>
+				</div>
+				<div class="popup-materials-header">
+					<h3 class="popup-header">Штукатурка Кнауф МП 75, 30 кг</h3>
+				</div>
+				<div class="popup-materials-content">
+					<div class="popup-materials-content-inside">
+						<div class="popup-materials-content-description">
+							<h4>Описание</h4>
+							<p>Высокоадгезионная, универсальная сухая штукатурная смесь на основе гипса с полимерными добавками для высококачественного оштукатуривания стен и потолков внутри помещений машинным способом с помощью штукатурных станций.</p>
+							<p>Кнауф МП 75 отличается трещиностойкостью и высокой адгезией даже при толстом слое. Ее пластичная структура позволяет выполнить нужную работу значительно быстрее, при этом нанося идеально ровный слой штукатурки на стену. Также возможен ручной способ нанесения.</p>
+							<p>С помощью штукатурки отделываются любые твёрдые основания, будь то кирпич, цемент или бетон. При этом смесь отличается превосходной плотностью – 1 тонна на квадратный метр. Простой в работе материал отлично подойдёт для отделки стен под последующее нанесение краски или укладку плитки. Пригодится и при мелком ремонте – устранении неровностей, трещин и щелей на стенах и потолках.</p>
+							<p>Преимущества:</p>
+							<ul>
+								<li>благодаря высокой подвижности и хорошей адгезии машинное нанесение раствора в четыре раза быстрее ручного;</li>
+								<li>гладкая готовая поверхность не требует дополнительной обработки;</li>
+								<li>расход вдвое меньше в сравнении с привычным цементно-песчаным раствором;</li>
+								<li>затворённая штукатурка не расслаивается даже при отделке оснований с высокой пористостью;</li>
+								<li>с экологической точки зрения материал абсолютно чист и безопасен.</li>
+							</ul>
+							<h4>Технические характеристики</h4>
+							<table>
+								<tr>
+									<td>Основа</td>
+									<td>Гипс</td>
+								</tr>
+								<tr>
+									<td>Цвет</td>
+									<td>Серый</td>
+								</tr>
+								<tr>
+									<td>Температура основания</td>
+									<td>+5°С до +30°С</td>
+								</tr>
+								<tr>
+									<td>Расход воды на 1 кг сухой смеси</td>
+									<td>0,55 - 0,6 л/кг</td>
+								</tr>
+								<tr>
+									<td>Время работы, не менее</td>
+									<td>90 мин.</td>
+								</tr>
+								<tr>
+									<td>Рекомендованная толщина слоя</td>
+									<td>От 8 мм до 50 мм</td>
+								</tr>
+								<tr>
+									<td>Расход материала при слое 10 мм</td>
+									<td>10 кг/м2</td>
+								</tr>
+								<tr>
+									<td>Площадь обрабатываемой поверхности с мешка, при слое 10 мм</td>
+									<td>3 м2</td>
+								</tr>
+								<tr>
+									<td>Время полного высыхания</td>
+									<td>7 суток</td>
+								</tr>
+								<tr>
+									<td>Предел прочности при изгибе, не менее</td>
+									<td>1,0 МПа</td>
+								</tr>
+								<tr>
+									<td>Предел прочности при сжатии, не менее</td>
+									<td>2,5 МПа</td>
+								</tr>
+								<tr>
+									<td>Время достижения марочной прочности</td>
+									<td>7 суток</td>
+								</tr>
+								<tr>
+									<td>Гарантийный срок хранения</td>
+									<td>6 месяцев</td>
+								</tr>
+								<tr>
+									<td>Упаковка</td>
+									<td>30 кг</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="close_bottom_wrap">
+					<button class="popup-close popup-close_bottom"></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="popupVolma popup-materials">
+			<div class="popup-materials_wrap">
+				<div class="popup-close-wrap">
+					<button class="popup-close"></button>
+				</div>
+				<div class="popup-materials-header">
+					<h3 class="popup-header">Штукатурка Волма Гипс-Актив, 30 кг</h3>
+				</div>
+				<div class="popup-materials-content">
+					<div class="popup-materials-content-inside">
+						<div class="popup-materials-content-description">
+							<h4>Описание</h4>
+							<p>Волма Гипс Актив – порошковая штукатурная смесь с уникальными свойствами, создана на основе гипса и других элементов для профессионального машинного нанесения. Различные дополнительные наполнители позволяют увеличить адгезию к обрабатываемым материалам, повысить способность к удерживанию воды и гарантировать достаточное время работы. Cлужит для проведения штукатурных работ внутри здания, наносится в один слой на стены и потолок штукатурными агрегатами. Используется также для получения идеальных глянцевых поверхностей без лишнего шпаклевания с дальнейшей окраской, оклейкой обоями или отделки другими декоративными покрытиями. Штукатурка Волма Гипс Актив наносится практически на все существующие основания. Для более качественного оштукатуривания поверхности предварительно лучше покрыть грунтом.</p>
+							<p>Штукатурка идеально подойдет для:</p>
+							<ul>
+								<li>кирпича (керамический, силикатный, пустотелый и т.д.);</li> 
+								<li>бетона (монолит, плиты и другие элементы конструкций из бетона и железобетона);</li>
+								<li>цементных блоков, гипсовых, бетона из полистирола;</li>
+								<li>гипсокартонных и гипсоволокнистых листов;</li>
+								<li>старой цементной, известковой и гипсовой штукатурки;</li> 
+								<li>газобетона, ячеистого бетона, пенобетона.</li>
+							</ul>
+							<h4>Технические характеристики</h4>
+							<table>
+								<tr>
+									<td>Основа</td>
+									<td>Гипс</td>
+								</tr>
+								<tr>
+									<td>Цвет</td>
+									<td>Серый</td>
+								</tr>
+								<tr>
+									<td>Температура основания</td>
+									<td>+5°С до +30°С</td>
+								</tr>
+								<tr>
+									<td>Расход воды на 1 кг сухой смеси</td>
+									<td>0,5 - 0,6 л/кг</td>
+								</tr>
+								<tr>
+									<td>Время работы, не менее</td>
+									<td>120 мин.</td>
+								</tr>
+								<tr>
+									<td>Рекомендованная толщина слоя</td>
+									<td>От 5 мм до 60 мм</td>
+								</tr>
+								<tr>
+									<td>Расход материала при слое 10 мм</td>
+									<td>8 - 10 кг/м2</td>
+								</tr>
+								<tr>
+									<td>Площадь обрабатываемой поверхности с мешка, при слое 10 мм</td>
+									<td>3,5 м2</td>
+								</tr>
+								<tr>
+									<td>Время полного высыхания</td>
+									<td>5 - 7 суток</td>
+								</tr>
+								<tr>
+									<td>Предел прочности при изгибе, не менее</td>
+									<td>1,5 МПа</td>
+								</tr>
+								<tr>
+									<td>Предел прочности при сжатии, не менее</td>
+									<td>3,5 МПа</td>
+								</tr>
+								<tr>
+									<td>Гарантийный срок хранения</td>
+									<td>12 месяцев</td>
+								</tr>
+								<tr>
+									<td>Упаковка</td>
+									<td>30 кг</td>
+								</tr>
+								<tr>
+									<td>Способ нанесения штукатурки</td>
+									<td>Машинный</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="close_bottom_wrap">
+					<button class="popup-close popup-close_bottom"></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="popupForman popup-materials">
+			<div class="popup-materials_wrap">
+				<div class="popup-close-wrap">
+					<button class="popup-close"></button>
+				</div>
+				<div class="popup-materials-header">
+					<h3 class="popup-header">Штукатурка Форман №12 гипсовая, 30 кг</h3>
+				</div>
+				<div class="popup-materials-content">
+					<div class="popup-materials-content-inside">
+						<div class="popup-materials-content-description">
+							<h4>Описание</h4>
+							<p>Гипсовая штукатурка машинного нанесения белого цвета. Не требует дополнительного шпатлевания. Подходит для всех видов машинных станций. Работая с этой штукатурной смесью, Вы не только выравниваете поверхность, но и готовите её для последующей финишной отделки.  Использование Форман 12 ликвидирует возможность образования трещин на отделываемой поверхности.</p>
+							
+							<p>При работе с этой штукатуркой вы можете наносить слои толщиной до 10 сантиметров, не боясь негативных последствий (отслаивание, появление трещин). Форман 12 отличается высокой пластичностью, что позволяет при машинном способе нанесения, оштукатуривать площадь до 50 м2 за стандартную восьмичасовую смену.</p>
+							
+							<p>После выравнивания поверхностей Форман 12 не требуется дополнительного шпатлевания. Высокий уровень паропроницаемости способствует созданию в комнате благоприятной атмосферы. Поверхность, оштукатуренная Форман 12, отлично глянцуется и не нуждается в дополнительной обработке. Эта штукатурная смесь отличается низким коэффициентом теплопроводности и звукопроницаемости, что делает весьма привлекательной для отделки спален и детских комнат.</p>
+							
+							<p>Гипсовая штукатурная смесь Форман 12 удовлетворяет самые высокие требования пожарной безопасности. Лабораторные испытания подтвердили, что эта штукатурка не содержит токсичных веществ. Применение этой штукатурной смеси в комбинации с грунтовочными растворами позволяет создавать идеально ровные поверхности без использования дополнительных армирующих сеток.</p>
+							
+							<p>Преимущества штукатурки:</p>
+							<ul>
+								<li>Совместима с любыми станциями машинного нанесения</li>
+								<li>Отлично глянцуется и не требует дополнительного шпатлевания</li>
+								<li>Имеет высокие показатели прочности сцепления с основанием</li>
+							</ul>
+							<h4>Технические характеристики</h4>
+							<table>
+								<tr>
+									<td>Основа</td>
+									<td>Гипс</td>
+								</tr>
+								<tr>
+									<td>Цвет</td>
+									<td>Белый</td>
+								</tr>
+								<tr>
+									<td>Температура основания</td>
+									<td>+5°С до +30°С</td>
+								</tr>
+								<tr>
+									<td>Расход воды на 1 кг сухой смеси</td>
+									<td>0,48 - 0,58 л/кг</td>
+								</tr>
+								<tr>
+									<td>Время работы, не менее</td>
+									<td>70 мин.</td>
+								</tr>
+								<tr>
+									<td>Рекомендованная толщина слоя</td>
+									<td>От 5 мм до 30 мм</td>
+								</tr>
+								<tr>
+									<td>Расход материала при слое 10 мм</td>
+									<td>9,5 кг/м2</td>
+								</tr>
+								<tr>
+									<td>Площадь обрабатываемой поверхности с мешка, при слое 10 мм</td>
+									<td>3,2 м2</td>
+								</tr>
+								<tr>
+									<td>Время полного высыхания</td>
+									<td>3 - 7 суток</td>
+								</tr>
+								<tr>
+									<td>Водоудерживающая способность, не менее</td>
+									<td>98%</td>
+								</tr>
+								<tr>
+									<td>Прочность сцепления при отрыве (адгезия), не менее</td>
+									<td>0,4 Мпа</td>
+								</tr>
+								<tr>
+									<td>Предел прочности при изгибе, не менее</td>
+									<td>2,0 Мпа</td>
+								</tr>
+								<tr>
+									<td>Предел прочности при сжатии, не менее</td>
+									<td>5,0 Мпа</td>
+								</tr>
+								<tr>
+									<td>Время достижения марочной прочности</td>
+									<td>7 суток</td>
+								</tr>
+								<tr>
+									<td>Гарантийный срок хранения</td>
+									<td>12 месяцев</td>
+								</tr>
+								<tr>
+									<td>Упаковка</td>
+									<td>30 кг</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="close_bottom_wrap">
+					<button class="popup-close popup-close_bottom"></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="popupElectricalwork popup-materials">
+			<div class="popup-materials_wrap">
+				<div class="popup-close-wrap">
+					<button class="popup-close"></button>
+				</div>
+				<div class="popup-materials-header">
+					<h3 class="popup-header">Расценки на электромонтажные работы</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Наименование</th>
+								<th>Стоимость</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="popup-materials-content works-content">
+					<div class="popup-materials-content-inside">
+						<div class="popup-materials-content-description">
+							<table>
+								<tbody>
+									<tr>
+										<td class="table-heading">Электросчетчики</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Установка электросчетчика однофазного (220в)</td>
+										<td>1000 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Замена электросчетчика однофазного (220в) с опломбировкой</td>
+										<td>1200 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Замена электросчетчика трехфазного (380в) с опломбировкой</td>
+										<td>1900 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка электросчетчика трехфазного (380в) с опломбировкой</td>
+										<td>1900 руб/шт</td>
+									</tr>
+									<tr>
+										<td class="table-heading">Установка, подключение, ремонт люстр, светильников, бра</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Установка люстры на крюке</td>
+										<td>500 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка люстры на кронштейне</td>
+										<td>600 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Сборка люстры на 1 лампу</td>
+										<td>100 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Сборка люстры от 2-х до 3-х ламп</td>
+										<td>200 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Сборка люстры от 5 до 10 ламп </td>
+										<td>400 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Сборка люстры от 12 до 20 ламп </td>
+										<td>700 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Ремонт люстры со снятием и монтажом (замена патронов и проводов) на 3 патрона </td>
+										<td>1600 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Монтаж точечного светильника со врезкой в ГКЛ или ПВХ</td>
+										<td>350 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Монтаж настенных светильников и бра</td>
+										<td>450 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Замена ламп освещения</td>
+										<td>50 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Монтаж (Поклейка) светодиодной ленты</td>
+										<td>120 руб/м</td>
+									</tr>
+									<tr>
+										<td>Спайка свето диодной ленты</td>
+										<td>500 руб/м</td>
+									</tr>
+									<tr>
+										<td  class="table-heading">Монтаж проводов</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Прокладка провода телевизионного, телефонного или витая пара (открыто без сверления или скрыто в плинтусе)</td>
+										<td>70 руб/м</td>
+									</tr>
+									<tr>
+										<td>Прокладка провода открыто или в штробе, по стене (до 3 на 6мм кв. или 5 на 4)</td>
+										<td>100 руб/м</td>
+									</tr>
+									<tr>
+										<td>Прокладка провода открыто или в штробе, по стене (от 3 на 10мм кв. или 5 на 6)</td>
+										<td>от 130 руб/м</td>
+									</tr>
+									<tr>
+										<td>Прокладка кабеля в гофро трубе (диаметр до 25)</td>
+										<td>160 руб/м</td>
+									</tr>
+									<tr>
+										<td>Прокладка кабеля в гофро трубе (диаметр 32)</td>
+										<td>200 руб/м</td>
+									</tr>
+									<tr>
+										<td>Прокладка кабеля в ПВХ трубе</td>
+										<td>60 руб/м</td>
+									</tr>
+									<tr>
+										<td>Монтаж ПВХ трубы</td>
+										<td>120 руб/м</td>
+									</tr>
+									<tr>
+										<td>Монтаж кабель канала (до 40на40)</td>
+										<td>120 руб/м</td>
+									</tr>
+									<tr>
+										<td>Прокладка провода в кабель канале</td>
+										<td>80 руб/м</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="close_bottom_wrap">
+					<button class="popup-close popup-close_bottom"></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="popupPlumbingwork popup-materials">
+			<div class="popup-materials_wrap">
+				<div class="popup-close-wrap">
+					<button class="popup-close"></button>
+				</div>
+				<div class="popup-materials-header">
+					<h3 class="popup-header">Расценки на сантехнические работы</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Наименование</th>
+								<th>Стоимость</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="popup-materials-content works-content">
+					<div class="popup-materials-content-inside">
+						<div class="popup-materials-content-description">
+							<table>
+								<tbody>
+									<tr>
+										<td class="table-heading">Установка смесителя</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Установка смесителя (типа "елочка" или однорычажного)</td>
+										<td>450 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка смесителя для биде</td>
+										<td>400 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка смесителя с душевой лейкой</td>
+										<td>990 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка настенного смесителя с терморегулятором</td>
+										<td>1090 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка бесконтактного смесителя (электронного)</td>
+										<td>1390 </td>
+									</tr>
+									<tr>
+										<td>Установка вентиля терморегулирующего</td>
+										<td>250 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка крана, перекрывающего воду</td>
+										<td>310 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка крана водозаборного</td>
+										<td>310 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка шарового крана (под мойку/унитаз)</td>
+										<td>190 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка шарового крана углового</td>
+										<td>550 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка шарового крана (стояк)</td>
+										<td>500 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка кран-буксы</td>
+										<td>190 руб/шт</td>
+									</tr>
+									<tr>
+										<td class="table-heading">Ремонт смесителя</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Устранение течи смесителя</td>
+										<td>390 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Замена гибкой подводки</td>
+										<td>290 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Замена картриджа</td>
+										<td>290 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Замена кран-буксы</td>
+										<td>290 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Замена прокладки в смесителе</td>
+										<td>290 руб/шт</td>
+									</tr>
+									<tr>
+										<td  class="table-heading">Установка унитаза</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Установка унитаза с бачком</td>
+										<td>990 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка подвесного унитаза</td>
+										<td>1390 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка биде</td>
+										<td>990 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка писсуара</td>
+										<td>1190 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка бачка унитаза</td>
+										<td>780 руб/шт</td>
+									</tr>
+									<tr>
+										<td  class="table-heading">Установка инсталляции</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Установка инсталляции унитаза</td>
+										<td>1390 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка инсталляции раковины</td>
+										<td>1390 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка инсталляции биде</td>
+										<td>1490 руб/шт</td>
+									</tr>
+									<tr>
+										<td>Установка инсталляции писсуара</td>
+										<td>1490 руб/шт</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="close_bottom_wrap">
+					<button class="popup-close popup-close_bottom"></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="popupScreed popup-materials">
+			<div class="popup-materials_wrap">
+				<div class="popup-close-wrap">
+					<button class="popup-close"></button>
+				</div>
+				<div class="popup-materials-header">
+					<h3 class="popup-header">Расценки на стяжку пола</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Наименование</th>
+								<th>Стоимость</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="popup-materials-content works-content">
+					<div class="popup-materials-content-inside">
+						<div class="popup-materials-content-description">
+							<table>
+								<tbody>
+									<tr>
+										<td class="table-heading">Устройство стяжки пола</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Частичное выравнивание и заделка трещин</td>
+										<td>150 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Частичная шпаклевка пола</td>
+										<td>200 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Устройство бетонной стяжки пола (до 5 см)</td>
+										<td>350 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Устройство бетонной стяжки пола (до 10 см)</td>
+										<td>450 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Самовыравнивающаяся стяжка</td>
+										<td>250 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Монтаж маяков под цементно-песчаную стяжку</td>
+										<td>80 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Монтаж сухой стяжки пола Кнауф</td>
+										<td>350 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Армирование стяжки сеткой</td>
+										<td>100 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Устройство песчаной подушки под стяжку пола</td>
+										<td>350 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Засыпка керамзитом	</td>
+										<td>50 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Грунтовка пола</td>
+										<td>40 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Заливка наливного пола (тонкослойного)</td>
+										<td>250 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Заливка наливных полимерных полов</td>
+										<td>350 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td class="table-heading">Устройство теплого пола</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Монтаж электрического теплого пола (кабельного)</td>
+										<td>600 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Монтаж водяного теплого пола</td>
+										<td>700 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td class="table-heading">Устройство гидроизоляции</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Монтаж рулонной гидроизоляции пола</td>
+										<td>150 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Нанесение жидкой гидроизоляции</td>
+										<td>договорная</td>
+									</tr>
+									<tr>
+										<td class="table-heading">Демонтажные работы. Полы</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Демонтаж бетонного плинтуса</td>
+										<td>250 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Сбивка бетонного порога</td>
+										<td>300 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Демонтаж старой стяжки пола</td>
+										<td>250 руб/м<sup>2</sup></td>
+									</tr>
+									<tr>
+										<td>Демонтаж старой стяжки пола (от 5 см)</td>
+										<td>350 руб/м<sup>2</sup></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="close_bottom_wrap">
+					<button class="popup-close popup-close_bottom"></button>
+				</div>
+			</div>
+		</div>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="slick/slick-theme.css">
+		<link rel="stylesheet" href="slick/slick.css">
+		<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/ie_style.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+		<script async src="js/all.js"></script>		
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	</body>
+</html>

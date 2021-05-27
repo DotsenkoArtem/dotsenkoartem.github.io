@@ -1,0 +1,256 @@
+/* FONTS SETTINGS */
+
+
+// ПОДКЛЮЧЕНИЕ КАСТОМНЫХ ШРИФТОВ
+// @font-face {
+// 	font-family: 'Gilroy';
+// 	src: local('Gilroy Thin'), local('Gilroy-Thin'),
+// 		url('../fonts/Gilroy-Thin.eot?#iefix') format('embedded-opentype'),
+// 		url('../fonts/Gilroy-Thin.woff2') format('woff2'),
+// 		url('../fonts/Gilroy-Thin.woff') format('woff'),
+// 		url('../fonts/Gilroy-Thin.ttf') format('truetype');
+// 	font-weight: 100;
+// 	font-style: normal;
+// 	font-display: swap;
+// }
+
+// @font-face {
+//     font-family: 'Gilroy';
+//     src: local('Gilroy UltraLight'), local('Gilroy-UltraLight'),
+//         url('../fonts/Gilroy-UltraLight.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/Gilroy-UltraLight.woff2') format('woff2'),
+//         url('../fonts/Gilroy-UltraLight.woff') format('woff'),
+//         url('../fonts/Gilroy-UltraLight.ttf') format('truetype');
+//     font-weight: 200;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// @font-face {
+//     font-family: 'Gilroy';
+//     src: local('Gilroy Light'), local('Gilroy-Light'),
+//         url('../fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/Gilroy-Light.woff2') format('woff2'),
+//         url('../fonts/Gilroy-Light.woff') format('woff'),
+//         url('../fonts/Gilroy-Light.ttf') format('truetype');
+//     font-weight: 300;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Gilroy';
+//     src: local('Gilroy Regular'), local('Gilroy-Regular'),
+//         url('../fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/Gilroy-Regular.woff2') format('woff2'),
+//         url('../fonts/Gilroy-Regular.woff') format('woff'),
+//         url('../fonts/Gilroy-Regular.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// @font-face {
+//     font-family: 'Gilroy';
+//     src: local('Gilroy Medium'), local('Gilroy-Medium'),
+//         url('../fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/Gilroy-Medium.woff2') format('woff2'),
+//         url('../fonts/Gilroy-Medium.woff') format('woff'),
+//         url('../fonts/Gilroy-Medium.ttf') format('truetype');
+//     font-weight: 500;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// @font-face {
+//     font-family: 'Gilroy';
+//     src: local('Gilroy Bold'), local('Gilroy-Bold'),
+//         url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+//         url('../fonts/Gilroy-Bold.woff2') format('woff2'),
+//         url('../fonts/Gilroy-Bold.woff') format('woff'),
+//         url('../fonts/Gilroy-Bold.ttf') format('truetype');
+//     font-weight: bold;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+/* COLORS */
+
+// @primary-color: #1B22AF;
+// @secondary-color: rgba(27, 34, 175, 0.57);
+
+
+/* BASIC SETTINGS */
+
+html{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	// font-family: 'Gilroy', 'Montserrat', sans-serif;
+	// font-weight: 400;
+	// font-size: 10px;
+}
+*,
+*:before,
+*:after{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
+	-webkit-tap-highlight-color: transparent;
+}
+ body{
+ 	// background-color: @main-bg;
+ }
+ h1,
+ h2,
+ h3,
+ h4,
+ p{
+ 	// cursor: default;
+ }
+ h1{
+ 	// font-family: 'FuturaNewHeavy-Reg', sans-serif;
+ 	// font-size: 4.7rem;
+ 	// line-height: 5rem;
+ }
+ h2{
+ 	// font-size: 3.5rem;
+ 	// line-height: 3.5rem;
+ 	// text-align: center;
+ 	// .bold();
+ }
+ h3{
+ 	// font-size: 2.2rem;
+ 	// line-height: 2.4rem;
+ 	// .bold();
+ }
+ h4{
+ 	// font-size: 1.8rem;
+ 	// line-height: 2.2rem;
+ }
+ address{
+ 	font-style: normal;
+ }
+a{
+	text-decoration: none;
+	outline: none;
+}
+ul, ol{
+	// padding: 0;
+	list-style: none;
+}
+button,
+input{
+	border: none;
+	outline: none;
+	border-radius: 0;
+}
+input{
+	// box-shadow: none;
+}
+input:not(input[type="checkbox"]),
+select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+}
+input::-webkit-input-placeholder{color: rgba(17, 17, 17, .46);}
+input::-moz-placeholder{color: rgba(17, 17, 17, .46);}
+/*для SUPER-браузера это свойство указывать после основного цвета инпута - и тогда будет нам счастье*/
+// input:-ms-input-placeholder{color: rgba(17, 17, 17, .46);}
+input:-moz-placeholder{color: rgba(17, 17, 17, .46);}
+input::-ms-clear {
+   display: none;
+}
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+	display: none;
+}
+select::-ms-expand {
+    display: none;
+  }
+.btn{
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	// width: 100%;
+	// max-width: 28rem;
+	// height: 7rem;
+	// font-family: 'Gilroy', sans-serif;
+	// font-size: 2.4rem;
+	// font-weight: 400;
+	// border-radius: 1rem;
+	// cursor: pointer;
+	// transition: .3s;
+	&_prim{
+		// color: @main-white;
+		// background: @prim-color;
+		&:hover{
+			// background: saturate(@prim-color, 40%);
+		}
+	}
+	&_sec{
+		// background: @btn-sec-bg;
+		&:hover{
+			// background: darken(@btn-sec-bg, 10%);
+		}
+	}
+}
+.container{
+	margin: 0 auto;
+	padding: 0 1.5rem;
+	max-width: 132rem;
+}
+.desk-block{
+	display: block;
+}
+.scroll-hidden{
+  /*для скрытия полосы прокрутки*/
+  padding-right: 17px;
+  overflow: hidden;
+}
+.padding-right{
+	padding-right: 17px;
+}
+.wrapper{
+	overflow: hidden;
+}
+
+/*========== RESPONSIVE  ==========*/
+@media (max-width: 1399.98px){
+	.container{
+		max-width: 114rem;
+	}
+}
+@media (max-width: 1199.98px){
+	.container{
+		max-width: 96rem;
+	}
+}
+@media (max-width: 991.98px){
+	.container{
+		max-width: 72rem;
+	}
+}
+@media (max-width: 767.98px){
+	.container{
+		max-width: 54rem;
+	}
+}
+@media (max-width: 575.98px){
+	.container{
+		max-width: none;
+	}
+}
+@media (max-width: 479.98px){
+
+}
+@media (max-width: 320px){
+
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+
+}

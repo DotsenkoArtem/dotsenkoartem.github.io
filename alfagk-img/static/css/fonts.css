@@ -1,0 +1,30 @@
+/*
+Чтобы убрать "предзагрузку" шрифтов требуется убрать данные ссылки:
+<link rel="preload" as="font" href="/static/fonts/BebasNeueBold.ttf" type="font/ttf"/>
+со всех html-файлов 
+*/
+
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700');
+
+@font-face {
+  font-family: "Bebas Neue";
+  src:  url('../fonts/BebasNeueBold.ttf') format('truetype'),
+        url('../fonts/BebasNeueBold.woff') format('woff'),
+        url("../fonts/BebasNeueBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+
+  /*font-display: swap;*/
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src:  url('../fonts/BebasNeueRegular.ttf') format('truetype'),
+        url('../fonts/BebasNeueRegular.woff') format('woff'),
+        url("../fonts/BebasNeueRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  /*font-display: swap;*/
+}

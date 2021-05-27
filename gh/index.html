@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="fitness">
+	<meta name="author" content="Доценко Артем Александрович">
+	<!-- <link rel="icon" href="favicon.ico"> -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/jquery-clockpicker.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/ie_style.css">
+	<title>Fitness</title>
+	
+</head>
+<body>
+	<header>
+		<div class="logo">Fitne<span class="orange">ss</span></div>
+		<nav class="menu" id="menu">
+			<a class="menu__item" href="#">home</a>
+			<a class="menu__item" href="#">about us</a>
+			<a class="menu__item" href="#">page</a>
+			<a class="menu__item" href="#">blog</a>
+			<a class="menu__item" href="#">contacts</a>
+			<a class="menu__item" href="#">log in</a>
+			<a class="menu__item" href="#">sing up</a>
+			<a class="menu__item" href="#">choose plan</a>
+			<div class="menu-toggle__wrap">
+				<a class="menu-toggle" onclick="myFunction()">
+					<span class="menu-toggle__item"></span>
+					<span class="menu-toggle__item"></span>
+					<span class="menu-toggle__item"></span>
+				</a>
+			</div>
+		</nav>
+	</header>
+	<section class="main">
+		<div class="main__mask"></div>
+		<div class="container main__container">
+			<h1 class="white-text">make your body<br><span class="orange">beautiful</span></h1>
+			<p class="main__text">Make fitness a part of your life</p>
+			<button class="button main__btn modal-trigger">get in touch</button>
+		</div>
+		<div class="order-wrap">
+			<div class="container order">
+				<div class="order__item order__item_left"></div>
+				<div class="order__item order__item_right">
+					<p class="order__text">free 7 days</p>
+					<h2 class="order__heading">online booking</h2>
+					<form class="order__form" action="phpmailer/online_booking.php" method="POST">
+						<div class="fieldset-wrap">
+							<div class="fieldset">
+								<div class="input-wrap">
+									<select class="order__form__input" name="clients" required>
+										<option value="">1 person</option>
+										<option>2 people</option>
+										<option>3 people</option>
+										<option>4 people</option>
+										<option>5 people</option>
+										<option selected>6 people</option>
+									</select>
+									<i class="fas fa-users"></i>
+								</div>
+								<div class="input-wrap">
+									<select class="order__form__input" name="trainer" required>
+										<option hidden value="">choose your trainer</option>
+										<option>Fedor Emelianenko</option>
+										<option>Khabib Nurmagomedov</option>
+										<option>Dwayne Johnson</option>
+										<option>Alexander Usyk</option>
+										<option>Scarlett Johansson</option>
+										<option>Olga Buzova</option>
+									</select>
+									<i class="fas fa-dumbbell"></i>
+								</div>
+							</div>
+
+							<div class="fieldset">
+								<div class="input-wrap">
+									<input type="text" class="order__form__input" name="dates" placeholder="Date" readonly required>
+									<i class="far fa-calendar-alt"></i>
+								</div>
+								<div class="input-wrap">
+									<input type="text" class="order__form__input" name="user_phone" placeholder="Phone" required>
+									<i class="fas fa-phone"></i>
+								</div>
+							</div>
+
+							<div class="fieldset">
+								<div class="input-wrap">
+									<input type="text" class="order__form__input clockpicker" name="user_time" placeholder="Time" readonly required>
+									<i class="far fa-clock"></i>
+								</div>
+								<div class="input-wrap">
+									<input type="email" class="order__form__input" name="user_email" placeholder="Email" required>
+									<i class="far fa-envelope"></i>
+								</div>
+							</div>
+
+						</div>
+						<input type="submit" class="button" value="get in touch">
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="about">
+		<div class="container about__container">
+			<div class="about__content">
+				<h2>welcome to <span class="orange">fitness</span></h2>
+				<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita porro ipsa, nulla alias ab minus consequatur repellendus deserunt iste! Dolorum vero a incidunt. Possimus, illo.</p>
+				<p class="text grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita porro ipsa, nulla alias ab minus consequatur repellendus deserunt iste! Dolorum vero a incidunt. Possimus, illo.</p>
+				<button class="button about__btn modal-trigger">get in touch</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="programms">
+		<div class="container programms__container">
+			<h2>welcome to <span class="orange">fitness</span></h2>
+			<p class="text grey-text programms__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed d</p>
+			<div class="programms__box">
+				<div class="programm basic-crossfit">
+					<picture>
+						<source srcset="img/programms/basic-crossfit.webp" type="image/svg+xml">
+						<source srcset="img/programms/basic-crossfit.jpg">
+						<img src="img/programms/basic-crossfit.jpg" alt="Basic Crossfit">
+					</picture>
+					<h3 class="programm__heading">Basic Crossfit</h3>
+					<p class="text programm__text">Our staff includes amazing professionals that have an eye for crossfit.
+					</p>
+					<button class="button programm__btn modal-trigger">get in touch</button>
+				</div>
+				<div class="programm fitness-studio">
+					<picture>
+						<source srcset="img/programms/fitness-studio.webp" type="image/svg+xml">
+						<source srcset="img/programms/fitness-studio.jpg">
+						<img src="img/programms/fitness-studio.jpg" alt="Fitness Studio">
+					</picture>
+					<h3 class="programm__heading">Fitness Studio</h3>
+					<p class="text programm__text">Work out in fitness groups or with a personal certified trainer in our gym center.</p>
+					<button class="button programm__btn modal-trigger">get in touch</button>
+				</div>
+				<div class="programm yoga-classes">
+					<picture>
+						<source srcset="img/programms/yoga-classes.webp" type="image/svg+xml">
+						<source srcset="img/programms/yoga-classes.jpg">
+						<img src="img/programms/yoga-classes.jpg" alt="Yoga Classes">
+					</picture>
+					<h3 class="programm__heading">Yoga Classes</h3>
+					<p class="text programm__text">What do you think about yoga? If you have a passion for this activity, we’ve got a special program.</p>
+					<button class="button programm__btn modal-trigger">get in touch</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="personal-trainer">
+		<div class="container">
+			<p class="text white-text">we trained with</p>
+			<h2 class="white-text">personal trainer</h2>
+			<button class="button modal-trigger">get in touch</button>
+		</div>
+		<!-- <div class="mask"></div> -->
+	</section>
+
+	<section class="expert-trainers">
+		<div class="container expert-trainers__container">
+			<h2>expert<span class="orange"> trainers</span></h2>
+			<p class="text grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed d</p>
+			<div class="expert-trainers__box">
+				<div class="expert-trainers__item">
+					<picture>
+						<source srcset="img/expert-trainers/sara_miller.webp" type="image/svg+xml">
+						<source srcset="img/expert-trainers/sara_miller.png">
+						<img src="img/expert-trainers/sara_miller.png" alt="Sarra Miller">
+					</picture>
+					<div class="expert-trainers-descr">
+						<h3 class="expert-trainers__heading">Sarra Miller</h3>
+						<p class="orange trainer-specialisation">spinning trainer</p>
+						<p class="text expert-trainers__text">Our staff includes amazing professionals that have an eye for crossfit.</p>
+					</div>
+				</div>
+				<div class="expert-trainers__item">
+					<picture>
+						<source srcset="img/expert-trainers/john_doe.webp" type="image/svg+xml">
+						<source srcset="img/expert-trainers/john_doe.png">
+						<img src="img/expert-trainers/john_doe.png" alt="John Doe">
+					</picture>
+					<div class="expert-trainers-descr">
+						<h3 class="expert-trainers__heading">John Doe</h3>
+						<p class="orange trainer-specialisation">bootcamp trainer</p>
+						<p class="text expert-trainers__text">Our staff includes amazing professionals that have an eye for crossfit.</p>
+					</div>
+				</div>
+				<div class="expert-trainers__item">
+					<picture>
+						<source srcset="img/expert-trainers/Alexander_Usyk.webp" type="image/svg+xml">
+						<source srcset="img/expert-trainers/Alexander_Usyk.png">
+						<img src="img/expert-trainers/Alexander_Usyk.png" alt="Alexander Usyk">
+					</picture>
+					<div class="expert-trainers-descr">
+						<h3 class="expert-trainers__heading">Alexander Usyk</h3>
+						<p class="orange trainer-specialisation">spinning trainer</p>
+						<p class="text expert-trainers__text">Our staff includes amazing professionals that have an eye for crossfit.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="promotions">
+		<div class="promotions__item tru-for-free">
+			<p class="promotions__text white">tru for free</p>
+			<p class="promotions__heading">free 5 days pass</p>
+			<button class="button modal-trigger">get in touch</button>
+		</div>
+		<div class="promotions__item call-us">
+			<p class="promotions__text white">call us and tru</p>
+			<p class="promotions__heading">957 457 45 45</p>
+			<button class="button modal-trigger">get in touch</button>
+		</div>
+	</section>
+	<footer>
+		<div class="container footer-container">
+			<div class="footer__item footer-follow">
+				<div class="logo">Fitne<span class="orange">ss</span></div>
+				<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<div class="follow-links">
+					<span>Follow Us:</span>
+					<a href="https://facebook.com/" class="follow-link facebook" target="_blank"></a>
+					<a href="https://twitter.com/" class="follow-link twitter" target="_blank"></a>
+					<a href="https://www.instagram.com/" class="follow-link instagram" target="_blank"></a>
+					<a href="https://www.pinterest.ru/" class="follow-link pinterest" target="_blank"></a>
+					<a href="https://plus.google.com/" class="follow-link google_plus" target="_blank"></a>
+					<a href="https://www.youtube.com/" class="follow-link youtube" target="_blank"></a>
+					<a href="https://dribbble.com/" class="follow-link dribbble" target="_blank"></a>
+					<a href="https://www.tumblr.com/" class="follow-link tumblr" target="_blank"></a>
+				</div>
+				<div class="footer-form-">
+					<form action="phpmailer/online_booking.php" class="footer-form" method="POST">
+						<input type="email" placeholder="Your email..." class="footer-form__input" required>
+						<button class="button footer-form__btn">subscibe</button>
+					</form>
+				</div>
+			</div>
+			<div class="footer__item footer-blogs">
+				<h4 class="footer__item-heading">blogs</h4>
+				<div class="blog-preview preview1">
+					<a href="#" class="blog-preview-link preview-link1"></a>
+					<p class="blog-descr">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+				</div>
+				<div class="blog-preview preview2">
+					<a href="#" class="blog-preview-link preview-link2"></a>
+					<p class="blog-descr">Consectetur adipiscing elit, sed do eiusmod tempor</p>
+				</div>
+				<div class="blog-preview preview3">
+					<a href="#" class="blog-preview-link preview-link3"></a>
+					<p class="blog-descr">sed do eiusmod tempor incididunt ut labore</p>
+				</div>
+			</div>
+			<div class="footer__item footer-instagramm">
+				<h4 class="footer__item-heading">instagram</h4>
+				<div class="inst-fotos">
+					<img src="img/footer/instagramm/1_insta.jpg" alt="">
+					<img src="img/footer/instagramm/2_insta.jpg" alt="">
+					<img src="img/footer/instagramm/3_insta.jpg" alt="">
+					<img src="img/footer/instagramm/4_insta.jpg" alt="">
+					<img src="img/footer/instagramm/5_insta.jpg" alt="">
+					<img src="img/footer/instagramm/6_insta.jpg" alt="">
+					<img src="img/footer/instagramm/7_insta.jpg" alt="">
+					<img src="img/footer/instagramm/8_insta.jpg" alt="">
+					<img src="img/footer/instagramm/9_insta.jpg" alt="">
+				</div>
+				<a href="https://www.instagram.com/" class="view-more" target="_blank">View more photos</a>
+			</div>
+		</div>
+		<div class="container">
+			<div class="copyright orange">© Fitness, 2018</div>
+		</div>
+	</footer>
+	<!-- ======================================MODALS======================================= -->
+	<div class="modal">
+
+		<div class="modal__content">
+			<div class="modal__header">
+				<h5 class="modal__heading">get in touch</h5>
+				<button class="modal-close__btn modal-close" form="modal__form" type="reset">
+					<span class="modal-close__item"></span>
+					<span class="modal-close__item"></span>
+				</button>
+			</div>
+			<div class="modal__body">
+				<form class="order__form modal__form" action="phpmailer/online_booking.php" method="POST" id="modal__form">
+					<div class="fieldset-wrap">
+						<div class="fieldset">
+							<div class="input-wrap">
+								<input type="text" class="order__form__input" name="user_name" placeholder="Name" required>
+								<i class="fas fa-user modal__input__icon"></i>
+							</div>
+							<div class="input-wrap">
+								<input type="text" class="order__form__input" name="user_phone" placeholder="Phone" required>
+								<i class="fas fa-phone modal__input__icon"></i>
+							</div>
+							<div class="input-wrap textarea-wrap">
+								<textarea class="order__form__input" name="user_message" placeholder="Message" rows="5"></textarea>
+								<i class="fas fa-comment-dots modal__input__icon"></i>
+							</div>
+						</div>
+					</div>
+					<div class="button-wrap">
+						<input type="submit" class="button modal__form__button" value="submit">
+					</div>
+				</form>
+			</div>
+			<!-- <div class="modal__footer"></div> -->
+		</div>
+
+		<div class="modal__overlay modal-close"></div>
+	</div>
+
+
+	<!-- ===================================MODALS========================================== -->
+	<script src="https://kit.fontawesome.com/db80421d04.js" crossorigin="anonymous" async></script>
+	<script src="js/menu.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<script>
+		$(function() {
+
+		  $('input[name="dates"]').daterangepicker({
+		  	  singleDatePicker: true,
+		      autoUpdateInput: false,
+		      locale: {
+		          cancelLabel: 'Clear'
+		      }
+		  });
+
+		  $('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
+		      $(this).val(picker.startDate.format('DD/MM/YYYY'));
+		  });
+
+		  $('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
+		      $(this).val('');
+		  });
+
+		});
+	</script>
+	<!-- INPUTMASK INPUTMASK INPUTMASK INPUTMASK INPUTMASK  -->
+	<script src="js/jquery.inputmask.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		  $('input[name="user_phone"]').inputmask({"mask": "(999) 999-99-99"}); //specifying options
+		});
+	</script>
+	<!-- INPUTMASK INPUTMASK INPUTMASK INPUTMASK INPUTMASK  -->
+	<!-- CLOCKPICKER CLOCKPICKER CLOCKPICKER CLOCKPICKER CLOCKPICKER  -->
+	<script src="js/jquery-clockpicker.min.js"></script>
+	<script>
+		$('.clockpicker').clockpicker();
+	</script>
+	<!-- CLOCKPICKER CLOCKPICKER CLOCKPICKER CLOCKPICKER CLOCKPICKER  -->
+</body>
+</html>

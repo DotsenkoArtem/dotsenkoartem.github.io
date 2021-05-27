@@ -1,0 +1,56 @@
+/* Это less-file ветки ORIGINAL */
+html{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Arial', sans-serif;
+}
+*, *::before, *::after{
+    margin: 0;
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+input{
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+.container{
+    margin: 0 auto;
+    padding: 1.5rem;
+    max-width: 960px;
+}
+@btn-font-size: 1rem;
+.btn{
+    &-box{
+        // padding: 0;
+        -webkit-box-shadow: 0 0 1px #000;
+                box-shadow: 0 0 1px #000;
+    }
+    &-block{
+        margin: 2rem 0;
+    }
+    display: inline-block;
+    padding: 0 1.5em;
+    height: 7rem;
+    height: 3.5em;
+    line-height: 3em;
+    background: rgba(0, 0, 255, .4);
+    border-radius: 1rem;
+    border: solid .25em rgba(0, 0, 255, 1);
+    cursor: pointer;
+    font-size: 2rem;
+    overflow: hidden;
+    &_stretch{
+        width: 100%;
+        text-align: center;
+    }
+    &_lg{
+        width: 100%;
+        max-width: 35rem;
+    }
+    &_md{
+        width: 100%;
+        max-width: 20rem;
+    }
+}
