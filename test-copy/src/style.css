@@ -20,7 +20,8 @@ section{
 	background-color: rgba(50, 50, 95, .3);
 }
 
-#player{
-	width: 350px;
+.video-wrapper{
+	position: relative;
+	width: 100%;
 	height: 350px;
 }
