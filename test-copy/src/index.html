@@ -41,9 +41,9 @@
 	</section>
 	
 	
-		<section>
+		<section class="plyr-section">
 		<h2>ALL FORMATS VIDEO PLYR</h2>
-		<video id="ROMAN" controls width="400" height="300">
+		<video id="player" playsinline controls>
 			<source src="video/litr.mp4" type="video/mp4"><!-- MP4 для Safari, IE9, iPhone, iPad, Android, и Windows Phone 7 -->
 			<source src="video/litr.webm" type="video/webm"><!-- WebM/VP8 для Firefox4, Opera, и Chrome -->
 			<source src="video/litr.ogv" type="video/ogg"><!-- Ogg/Vorbis для старых версий браузеров Firefox и Opera -->
@@ -52,13 +52,11 @@
 
 
 	<link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
-	<!-- <script src="./polyfill.js"></script> -->
+
 	<script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
-	<!-- <script src="https://cdn.plyr.io/3.6.2/plyr.polyfilled.js"></script> -->
-	<script src="./polyfill.js"></script>
+	<!-- <script src="./polyfill.js"></script> -->
 	<script>
-	//   const playerRoman = new Plyr('#ROMAN');
-	  var playerRoman = new Plyr('#ROMAN');
+	  var player = new Plyr('#player');
 	</script>
 	
 </body>
