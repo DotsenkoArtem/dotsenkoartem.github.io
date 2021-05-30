@@ -50,4 +50,7 @@ section{
 	bottom: 0 !important;
 	left: 0 !important; */
 }
+.plyr.position-relanive #player{
+	width: 100%;
+}
 /* - - - - - - - - - - - - - - - - - - - - -  */
