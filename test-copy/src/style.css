@@ -22,11 +22,11 @@ section{
 
 
 /* Это для нормального отображения в Safari-10 */
-.video-wrapper{
+#player{
 	position: relative;
 	width: 100%;
 }
-.video-wrapper::after{
+#player::after{
 	position: absolute;
 	top: 0;
 	left: 0;
