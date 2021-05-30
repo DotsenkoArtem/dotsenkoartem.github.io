@@ -22,11 +22,13 @@ section{
 
 
 /* Это для нормального отображения в Safari-10 */
-#player{
+.wrap-video{
 	position: relative;
 	width: 100%;
+	padding-top: 56.25%;
+	background: rgba(126, 38, 38, 0.479);
 }
-#player::after{
+/* #player::after{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -37,5 +39,5 @@ section{
 	width: 100%;
 	padding-top: 56.25%;
 	background: rgba(126, 38, 38, 0.479);
-}
+} */
 /* - - - - - - - - - - - - - - - - - - - - -  */
