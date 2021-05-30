@@ -19,3 +19,38 @@ section{
 	padding: 2rem;
 	background-color: rgba(50, 50, 95, .3);
 }
+
+
+/* Это для нормального отображения в Safari-10 */
+.wrap-video{
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%;
+	background: rgba(126, 38, 38, 0.479);
+}
+.plyr{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - -  */
+/* Для растягивания видео на весь экран, так как width:100% не позволяет его растянуть больше исходного размера (в моем случае 1280px); */
+#player{
+	width: auto;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+/* Для работы полноэкранного режима в Safari-10 iPad */
+.position-relanive{
+	position: fixed !important;
+	/* top: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important; */
+}
+.plyr.position-relanive #player{
+	width: 100%;
+}
+/* - - - - - - - - - - - - - - - - - - - - -  */
