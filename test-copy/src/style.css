@@ -36,6 +36,10 @@ section{
 	bottom: 0; */
 }
 .position-relanive{
-	position: relative;
+	position: fixed;
+	top: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
 }
 /* - - - - - - - - - - - - - - - - - - - - -  */
