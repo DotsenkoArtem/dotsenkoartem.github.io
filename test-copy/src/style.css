@@ -20,8 +20,6 @@ section{
 	background-color: rgba(50, 50, 95, .3);
 }
 
-.plyr-section{
-	width: 100%;
-	/* height: 350px; */
-	height: 100%;
+#player{
+	height: 350px;
 }
