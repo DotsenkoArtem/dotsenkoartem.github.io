@@ -31,10 +31,18 @@ section{
 .plyr{
 	position: absolute;
 	top: 0;
-	/* left: 0;
+	left: 0;
 	right: 0;
-	bottom: 0; */
+	bottom: 0;
 }
+/* - - - - - - - - - - - - - - - - - - - - - - - -  */
+/* Для растягивания видео на весь экран, так как width:100% не позволяет его растянуть больше исходного размера (в моем случае 1280px); */
+#player{
+	width: auto;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+/* Для работы полноэкранного режима в Safari-10 iPad */
 .position-relanive{
 	position: fixed !important;
 	top: 0 !important;
