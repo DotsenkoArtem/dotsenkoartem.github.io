@@ -38,16 +38,13 @@
     font-display: swap;
 }
 
-/* COLORS */
+// COLORS
 @primary-color: rgba(128, 49, 167, 1);
 @oferta-color: #b1b2b3;
-
 @main-text: #ffffff;
-
 @main-bg: #000b1e;
 @nav-mob-bg: rgba(128, 49, 167, 1);
 @nav-overl-bg: rgba(128, 49, 167, .4);
-
 @social-color-hover:#e21a89;
 
 /* BASIC SETTINGS */
@@ -167,11 +164,8 @@ button{
 .padding-right{
 	padding-right: 17px;
 }
-.wrapper{
-	// overflow: hidden;
-}
 
-// HEADER
+/* HEADER */
 .header{
 	padding-top: 6rem;
 	padding-bottom: 6.4rem;
@@ -252,7 +246,6 @@ button{
 			}
 		}
 	}
-
 }
 .contacts{
 	display: -webkit-box;
@@ -297,7 +290,7 @@ button{
 	}
 }
 
-// COURSE
+/* COURSE */
 .course{
 	&__header,
 	&__body{
@@ -438,7 +431,6 @@ button{
 		}
 	}
 }
-
 .prim-digit{
 	display: block;
 	font-size: 4.2rem;
@@ -447,7 +439,7 @@ button{
 	line-height: 1;
 }
 
-// FAVOUR
+/* FAVOUR */
 .favour{
 	padding-top: 4rem;
 	&__content{
@@ -480,24 +472,6 @@ button{
 		text-align: center;
 		.accent{
 			display: block;
-		}
-	}
-}
-.basic-test,
-.react-course{
-	.favour{
-		&__text{
-			font-size: 2rem;
-			line-height: 1.6;
-		}
-	}
-}
-.react-course{
-	.favour{
-		&__content{
-			&.row{
-				margin-left: -2rem;
-			}
 		}
 	}
 }
@@ -536,7 +510,7 @@ button{
 	}
 }
 
-// TEACHER
+/* TEACHER */
 .teacher{
 	padding-top: 5.5rem;
 	&__header,
@@ -638,56 +612,6 @@ button{
 		}
 	}
 }
-.basic-test{
-	.teacher{
-		padding-top: 7rem;
-		&__title{
-			h2{
-				margin-bottom: 3rem;
-			}
-			p{
-				&:before{
-					display: none;
-				}
-			}
-		}
-		&__img{
-			height: 17rem;
-		}
-		&__caption{
-			max-width: 40rem;
-		}
-	}
-}
-.react-course{
-	.teacher{
-		padding-top: 7.5rem;
-		&__col{
-			p{
-				&:before{
-					display: none;
-				}
-				&:not(:last-child){
-					margin-bottom: 3.5rem;
-				}
-				&.mob{
-					display: none;
-				}
-			}
-		}
-		&__title{
-			h2{
-				margin-bottom: 4rem;
-			}
-		}
-		&__header{
-			.teacher__media{
-				margin-bottom: 1.8rem;
-			}
-		}
-	}
-}
-
 .html-course{
 	.teacher{
 		padding-top: 6rem;
@@ -723,7 +647,7 @@ button{
 	}
 }
 
-// PROGR
+/* PROGR */
 .progr{
 	padding-top: 6.5rem;
 	&__header{
@@ -776,30 +700,6 @@ button{
 		margin-bottom: 10px;
 	}
 }
-.basic-test{
-	.progr{
-		&__body{
-			-webkit-box-pack: start;
-			    -ms-flex-pack: start;
-			        justify-content: flex-start;
-		}
-		&__item{
-			margin-bottom: 0;
-			&_first{
-				width: 29.5rem;
-			}
-			&_sec{
-				width: 39.5rem;
-			}
-			&_third{
-				width: auto;
-			}
-		}
-		&__digit{
-			margin-bottom: 2.5rem;
-		}
-	}
-}
 .prim-list{
 	li{
 		position: relative;
@@ -816,7 +716,6 @@ button{
 		}
 	}
 }
-
 .html-course{
 	.progr{
 		padding-top: 6rem;
@@ -866,7 +765,6 @@ button{
 		}
 	}
 }
-
 .prim-list{
 	&_num{
 		li{
@@ -883,7 +781,7 @@ button{
 		}
 	}
 }
-
+/* COST */
 .cost {
 	padding-top: 4rem;
 	&__title{
@@ -914,9 +812,6 @@ button{
 		text-shadow: 0 0 6.5rem rgba(128, 49, 167, 0.7), 0 0 1rem rgba(128, 49, 167, 0.2);
 	  }
   }
-
-
-  
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	.cost{
 		&__content {
@@ -936,7 +831,6 @@ button{
 		}
 	}
 }
-
 .html-course{
 	.cost{
 		.container{
@@ -967,8 +861,7 @@ button{
 	}
 }
 
-
-// RESULT
+/* RESULT */
 .result{
 	padding-top: 6rem;
 	&__header,
@@ -1038,25 +931,8 @@ button{
 			-webkit-transition: color .25s;
 			-o-transition: color .25s;
 			transition: color .25s;
-			// &:after{
-			// 	display: block;
-			// 	position: absolute;
-			// 	bottom: 0rem;
-			// 	left: 0;
-			// 	content: '';
-			// 	width: 100%;
-			// 	height: 0.2rem;
-			// 	background: @primary-color;
-			// 	opacity: 0;
-			// 	-webkit-transition: opacity .3s;
-			// 	-o-transition: opacity .3s;
-			// 	transition: opacity .3s;
-			// }
 			&:hover{
 				color: @primary-color;
-				// &:after{
-				// 	opacity: 1;
-				// }
 			}
 		}
 	}
@@ -1067,34 +943,8 @@ button{
 		-webkit-transition: color .25s;
 		-o-transition: color .25s;
 		transition: color .25s;
-		// &::after{
-		// 	display: block;
-		// 	position: absolute;
-		// 	bottom: 0rem;
-		// 	left: 0;
-		// 	content: '';
-		// 	width: 100%;
-		// 	height: 0.2rem;
-		// 	background: #8031a7;
-		// 	opacity: 0;
-		// 	-webkit-transition: opacity .3s;
-		// 	-o-transition: opacity .3s;
-		// 	transition: opacity .3s;
-		// }
 		&:hover{
 			color: @primary-color;
-			// &::after{
-			// 	opacity: 1;
-			// }
-		}
-	}
-}
-.react-course{
-	.result{
-		&__col{
-			.prim-list{
-				max-width: 53rem;
-			}
 		}
 	}
 }
@@ -1123,7 +973,7 @@ main{
 	overflow: hidden;
 }
 
-// FOOTER
+/* FOOTER */
 .footer{
 	padding-top: 7.5rem;
 	&__container{
@@ -1152,17 +1002,6 @@ main{
 		}
 	}
 }
-.basic-test,
-.react-course{
-	.footer{
-		&__bg{
-			img{
-				top: -15rem;
-			}
-		}
-	}
-}
-
 
 /*========== RESPONSIVE  ==========*/
 
@@ -1283,86 +1122,6 @@ main{
 			}
 		}
 	}
-	.basic-test{
-		.progr{
-			&__item{
-				&_first,
-				&_sec,
-				&_third{
-					width: 50%;
-				}
-			}
-		}
-		.favour{
-			&__text{
-				font-size: 1.8rem;
-			}
-		}.teacher__header{
-			.teacher__media{
-				margin-bottom: 12.2rem;
-			}
-		}
-		.footer__bg img{
-			top: -12.5rem;
-		}
-	}
-	.react-course{
-		.course{
-			&__reg{
-				margin-top: 0;
-			}
-		}
-		.progr{
-			&__item{
-				margin-top: 1.5rem;
-				padding-left: 0;
-				.col{
-					&_first,
-					&_sec,
-					&_third{
-						-webkit-box-flex: 1;
-						    -ms-flex: auto;
-						        flex: auto;
-					}
-					&_first,
-					&_sec{
-						margin-right: 3.5rem;
-					}
-				}
-			}
-		}
-		.favour{
-			&__item{
-				width: 33%;
-			}
-			&__text{
-				font-size: 1.8rem;
-				.accent{
-					display: inline;
-				}
-			}
-		}
-		.teacher{
-			padding-top: 7rem;
-			&__title{
-				h2{
-					margin-bottom: 2rem;
-				}
-			}
-			&__header{
-				.teacher{
-					&__media{
-						margin-bottom: 5.2rem;
-					}
-				}
-			}
-		}
-		.footer__bg img{
-			top: -12.5rem;
-		}
-	}
-
-
 	.html-course{
 		.course{
 			&__title{
@@ -1878,38 +1637,6 @@ main{
 			}
 		}
 	}
-	.basic-test{
-		.course{
-			.article{
-				max-width: none;
-				&_sec{
-					margin-bottom: 3.5rem;
-				}
-			}
-		}
-		.progr{
-			&__item{
-				width: calc(~'50% - 3rem');
-			}
-		}
-		.favour{
-			&__item{
-				&_sec{
-					img{
-						left: 59%;
-					}
-				}
-			}
-		}
-		.teacher{
-			padding-top: 5.5rem;
-			&__header{
-				.teacher__media{
-					margin-bottom: 0;
-				}
-			}
-		}
-	}
 	.prim-list{
 		margin-left: 1.8rem;
 		&_num{
@@ -1919,115 +1646,6 @@ main{
 			 		left: -1.2em;
 			 	}
 			 }
-		}
-	}
-	
-	.react-course{
-		.course{
-			.row{
-				-webkit-box-orient: vertical;
-				-webkit-box-direction: normal;
-				    -ms-flex-direction: column;
-				        flex-direction: column;
-				margin: 0;
-			}
-			.col{
-				margin: 0;
-				width: auto;
-				&:nth-child(2){
-					margin-top: 0;
-				}
-			}
-			.article{
-				margin-bottom: 3.5rem;
-				max-width: none;
-			}
-			&__title{
-				margin-bottom: 3.5rem;
-			}
-			&__data{
-				&-wrap{
-					display: block;
-				}
-			}
-		}
-		.progr{
-			&__header{
-				margin-bottom: 3.5rem;
-			}
-			&__item{
-				margin-top: 2.5rem;
-				margin-bottom: 0;
-				width: auto;
-				-webkit-box-orient: vertical;
-				-webkit-box-direction: normal;
-				    -ms-flex-direction: column;
-				        flex-direction: column;
-				.col{
-					&_first,
-					&_sec,
-					&_third{
-						width: auto;
-					}
-				}
-			}
-		}
-		.favour{
-			&__content{
-				&.row{
-					margin-left: 0;
-				}
-			}
-			&__title{
-				margin-bottom: 2.5rem;
-			}
-			&__item{
-				width: auto;
-				&_sec{
-					img{
-						max-width: 21rem;
-					}
-				}
-			}
-			&__text{
-				max-width: 40rem;
-			}
-		}
-		.teacher{
-			&__title{
-				h2{
-					margin-bottom: 3.5rem;
-				}
-			}
-			&__col{
-				width: auto;
-				&.teacher__title p{
-					margin-bottom: 0;
-				}
-				p{
-
-					&.desc{
-						display: none;
-					}
-					&.mob{
-						display: block;
-					}
-					&:not(:last-child){
-						margin-bottom: 2.5rem;
-					}
-				}
-			}
-			&__header{
-				.teacher__media{
-					margin-top: -2.5rem;
-					margin-bottom: 0;
-				}
-			}
-		}
-		.result{
-			&__title{
-				margin-bottom: 3.5rem;
-			}
 		}
 	}
 	.html-course{
@@ -2136,9 +1754,6 @@ main{
 					}
 				}
 			}
-			// .prim-list{
-			// 	max-width: none;
-			// }
 		}
 		.progr{
 			&__header{
@@ -2146,12 +1761,6 @@ main{
 			}
 			&__item{
 				width: calc(~'100% / 3 - 3rem');
-				// &:nth-child(4n + 2){
-				// 	margin-right: unset;
-				// }
-				// &:nth-child(4n + 3){
-				// 	margin-left: unset;
-				// }
 			}
 		}
 		.cost{
@@ -2204,30 +1813,6 @@ main{
 				&__social{
 					margin-left: 1rem;
 				}
-			}
-		}
-	}
-	.basic-test{
-		.teacher{
-			&__title{
-				h2{
-					margin-bottom: 4.5rem;
-				}
-			}
-		}
-	}
-	.react-course{
-		.prim-list{
-			margin-left: 1.5rem;
-			&_num{
-				margin-left: 2.2rem;
-			}
-		}
-		.favour{
-			&__img{
-				-webkit-box-flex: 0;
-				    -ms-flex: none;
-				        flex: none;
 			}
 		}
 	}
@@ -2349,73 +1934,6 @@ main{
 			margin-top: 8rem;
 		}
 	}
-	.basic-test{
-		.favour{
-			&__item{
-				&_sec{
-					img{
-						left: 50%;
-					}
-				}
-			}
-		}
-		.progr{
-			&__body{
-				margin-left: -1.5rem;	
-				margin-right: -1.5rem;
-			}
-		}
-		.teacher{
-			&__title{
-				p{
-					margin-left: 0;
-				}
-			}
-		}
-		.result{
-			&__more{
-				.more-info{
-					margin-left: 0;
-					-ms-flex-preferred-size: 100%;
-					    flex-basis: 100%;
-					display: -webkit-box;
-					display: -ms-flexbox;
-					display: flex;
-					-webkit-box-orient: vertical;
-					-webkit-box-direction: normal;
-					    -ms-flex-direction: column;
-					        flex-direction: column;
-					-webkit-box-align: start;
-					    -ms-flex-align: start;
-					        align-items: flex-start;
-				}
-			}
-		}
-	}
-	.react-course{
-		.course{
-			&__reg{
-				margin-top: 3.5rem;
-				.btn{
-					margin-left: auto;
-					margin-right: auto;
-				}
-			}
-		}
-		.progr{
-			&__item{
-				margin-left: auto;
-				margin-right: auto;
-				width: auto;
-			}
-		}
-		.result{
-			&__col{
-				margin-left: 0;
-				margin-right: 0;
-			}
-		}
-	}
 	.html-course{
 		.teacher{
 			&__title{
@@ -2534,63 +2052,16 @@ main{
 			margin-top: 1.5rem;
 		}
 	}
-	.basic-test{
-		.progr{
-			&__item{
-				width: 100%;
-			}
-		}
-		.result{
-			&__body{
-				.result__col{
-					width: auto;
-				}
-			}
-		}
-		.favour{
-			&__img{
-				img{
-					left: 35%;
-				}
-			}
-		}
-	}
-	.react-course{
-		.favour{
-			&__img{
-				margin-right: 2rem;
-				width: 7rem;
-			}
-			&__item{
-				&_sec{
-					img{
-						max-width: 15rem;
-					}
-				}
-			}
-		}
-		.teacher{
-			padding-top: 5.5rem;
-			&__header{
-				.teacher__media{
-					margin-top: 0;
-				}
-			}
-			&__title{
-				p{
-					margin-left: 0;
-				}
-			}
-			&__caption{
-				padding-bottom: 2.5rem;
-			}
-		}
-	}
 	.html-course{
 		h1{
 			text-align: left;
 		}
 		.favour{
+			&__title{
+				h2{
+					text-align: center;
+				}
+			}
 			&__content{
 				.col{
 					margin-right: 1.5rem;
@@ -2611,6 +2082,9 @@ main{
 		}
 		.teacher{
 			&__title{
+				h2{
+					text-align: center;
+				}
 				p{
 					text-align: justify;
 				}
@@ -2627,35 +2101,65 @@ main{
 			}
 		}
 		.progr{
+			&__title{
+				h2{
+					text-align: center;
+				}
+			}
 			&__descr{
 				-webkit-box-orient: vertical;
 				-webkit-box-direction: normal;
 				    -ms-flex-direction: column;
 				        flex-direction: column;
-				-webkit-box-align: start;
-				    -ms-flex-align: start;
-				        align-items: flex-start;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;
 				.btn{
 					margin-right: 0;
 					margin-bottom: 2rem;
-					-ms-flex-item-align: center;
-					    align-self: center;
+					// -ms-flex-item-align: center;
+					//     align-self: center;
 				}
 			}
 			&__item{
 				margin-left: 0;
 				width: 100%;
+				text-align: center;
 				&:nth-child(4n + 3){
 					margin-left: 0;
 				}
 			}
+			&__digit{
+				img{
+					left: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					    -ms-transform: translate(-50%, -50%);
+					        transform: translate(-50%, -50%);
+				}
+			}
 		}
 		.cost{
+			text-align: center;
 			&__item{
 				margin-right: 0;
 			}
+			&__price{
+				&_transp{
+					img{
+						left: 50%;
+						-webkit-transform: translate(-50%, -50%);
+						    -ms-transform: translate(-50%, -50%);
+						        transform: translate(-50%, -50%);
+					}
+				}
+			}
 		}
 		.result{
+			&__title{
+				h2{
+					text-align: center;
+				}
+			}
 			&__col{
 				width: auto;
 			}
@@ -2671,12 +2175,4 @@ main{
 	html{
 		font-size: 8.5px;
 	}
-}
-
-@media (max-width: 320px){
-
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
-
 }
