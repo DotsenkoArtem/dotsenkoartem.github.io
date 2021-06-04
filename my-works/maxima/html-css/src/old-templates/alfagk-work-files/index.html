@@ -1,0 +1,497 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <body class="main-page">
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="cols-12 col-md-auto header__logo">
+                    <img src="{% static 'img/logo.svg' %}" alt="Альфа фасадное строительство" width="150" height="41">
+                </div>
+                <div class="cols-12 col-md-auto header__menu">
+                    <a href="#" class="menu-burger burger-btn"><span></span></a>
+                </div>
+
+                <div style="display: none" class="cols-12 col-md-auto header__menu">
+                    <div class="menu-burger menu-burger_buildings"><span class="burger-btn"></span><span
+                            class="burger-text">Меню</span></div>
+                </div>
+                <div class="cols-12 col-md show-special-wrap"><p class="show-special"><span class="red-text-underline">СПЕЦИАЛЬНЫЕ</span>
+                    ПРЕДЛОЖЕНИЯ</p></div>
+                <div class="cols-12 col-md-auto header__info">
+                    <a href="tel:+78122449889">8 812 244 98 89</a>
+                    <p>
+                        СРО-180-20012010 / №2166 / <br>
+                        ISO 9001:2015 ISO 14001:2015 <br>
+                        OHSAS 18001:2007
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="section section--welcome">
+            <div class="container">
+                <h1><span>15 лет</span> строим фасады</h1>
+                <div class="row">
+                    <div class="col-12 col-lg-6 d-none d-md-block">
+                        <h2><span>Наши</span>преимущества</h2>
+                        <ul class="benefits-list">
+                            <li class="benefits-list__item">150 сданных под ключ объекта</li>
+                            <li class="benefits-list__item">230000 м2 облицовано фасадов</li>
+                            <li class="benefits-list__item">15 лет успешной работы на рынке</li>
+                            <li class="benefits-list__item">собственный проектный отдел</li>
+                            <li class="benefits-list__item">опыт в реализации сложных объектов</li>
+                            <li class="benefits-list__item">собственные бригады</li>
+                            <li class="benefits-list__item">собственный парк техники</li>
+                            <li class="benefits-list__item">Собственное производство</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-6 map-info">
+                        <h2>Обратная связь</h2>
+                        <a href="#" class="btn btn-red">Отправить запрос</a>
+                    </div>
+                </div>
+                <div class="card-img card-img--xs"><img src="{% static 'img/building4.jpg' %}" alt="building_preview3"/>
+                </div>
+                <div class="card-img card-img--sm"><img src="{% static 'img/building1.jpg' %}" alt="building_preview2"/>
+                </div>
+                <div class="card-img card-img--lg"><img src="{% static 'img/building5.jpg' %}" alt="building_preview1"/>
+                </div>
+                <div class="section--welcome__map">
+                </div>
+                <div class="card-img--header card-img card-img--lg"></div>
+            </div>
+        </section>
+        <section class="section section--info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg-6 company-gallery">
+                        <div class="section--info__left">
+                            <h2><span>2020-2021</span>Объекты в работе</h2>
+                            <div class="cards-wrap">
+                                <div class="cards">
+                                    {% for nr in noready|slice:":4" %}
+                                        <div class="cards__item">
+                                            <a
+                                                href="/buildings/{{ nr.slug }}/"
+                                                title="{{ nr.name }}"
+                                            >
+                                                <div class="inner covered-thumb">
+                                                    <img src="/media/{{ nr.image }}" alt="{{ nr.name }}">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <a href="/buildings/?at_work=Y" class="cards-more">Ещё...</a>
+                            </div>
+                            <h2><span>Галерея</span>Готовых объектов</h2>
+                            <div class="cards-wrap">
+                                <div class="cards">
+                                    {% for r in ready|slice:":10" %}
+                                        <div class="cards__item">
+                                            <a
+                                                href="/buildings/{{ r.slug }}/"
+                                                title="{{ r.name }}"
+                                            >
+                                                <div class="inner covered-thumb">
+                                                    <img src="/media/{{ r.image }}" alt="{{ r.name }}">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <a href="/buildings/?ready=Y" class="cards-more">Ещё...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-6 company-info">
+                        <div class="section--info__right">
+                            <h2>Компания</h2>
+                            <p class="info-mg">{{ about }} <a href="/about.html">Подробнее...</a></p>
+                            <h2><span>Мы</span> предлагаем</h2>
+                            <h3>Навесные фасады</h3>
+                            <ul class="ul-red-stripe">
+                                {% for s in sections|slice:"0:16" %}
+                                    <li><a href="/buildings/category/{{ s.slug }}/">{{ s }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            <h3>Элементы фасада</h3>
+                            <ul class="ul-red-stripe">
+                                {% for s in sections|slice:"16:19" %}
+                                    <li><a href="/buildings/category/{{ s.slug }}/">{{ s }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            <h3>Интерьеры</h3>
+                            <ul class="ul-red-stripe">
+                                {% for s in sections|slice:"19:21" %}
+                                    <li><a href="/buildings/category/{{ s.slug }}/">{{ s }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            <h3>Производство</h3>
+                            <ul class="ul-red-stripe">
+                                {% for o in we_offer %}
+                                    {% if o.section_id == 11 %}
+                                        <li><a href="/{{ o.slug }}.html">{{ o.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <h3>Архитектурные решения</h3>
+                            <ul class="ul-red-stripe">
+                                {% for o in we_offer %}
+                                    {% if o.section_id == 12 %}
+                                        <li><a href="/{{ o.slug }}.html">{{ o.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <h3>Поставка материалов</h3>
+                            <ul class="ul-red-stripe">
+                                {% for o in we_offer %}
+                                    {% if o.section_id == 13 %}
+                                        <li><a href="/{{ o.slug }}.html">{{ o.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section--special">
+            <div class="container">
+                <h2 class="flat text-center"><span>специальные</span> предложения</h2>
+                <div class="row">
+                    {% for s in special|slice:":2" %}
+                        <div class="col-6 card-wrap">
+                            <div class="card-text">
+                                <div class="card-text__img covered-thumb">
+                                    <img src="/media/{{ s.image }}" alt="{{ s.name }}">
+                                </div>
+                                <div class="card-text__title">{{ s.name }}</div>
+                                <div class="card-text__text">
+                                    {{ s.description }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section class="section section--useful">
+            <div class="container">
+                <h2 class="flat text-center"><span>полезная</span> информация</h2>
+                <div class="slider">
+                    <div class="row card-text-wrap ">
+                        {% for f in feed|slice:"0:2" %}
+                            <div class="cols-12 col-lg-6">
+                                <a href="/{{ f.slug }}.html" class="card-text">
+                                    <div class="card-text__img covered-thumb">
+                                        <img src="/media/{{ f.image }}" alt="{{ f.name }}">
+                                    </div>
+                                    <div class="card-text__title">{{ f.name }}</div>
+                                    <div class="card-text__text">{{ f.description }}</div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="row card-text-wrap ">
+                        {% for f in feed|slice:"2:4" %}
+                            <div class="cols-12 col-lg-6">
+                                <a href="/{{ f.slug }}.html" class="card-text">
+                                    <div class="card-text__img covered-thumb">
+                                        <img src="/media/{{ f.image }}" alt="{{ f.name }}">
+                                    </div>
+                                    <div class="card-text__title">{{ f.name }}</div>
+                                    <div class="card-text__text">{{ f.description }}</div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button id="load-more-cards" class="btn">Показать больше</button>
+            </div>
+        </section>
+        <section class="section section--info">
+            <div class="container">
+                <div class="row">
+                    <div class="cols-12 col-lg-6">
+                        <div class="section--info__left">
+                            <h2 class="partners-title"><span>Наши</span> заказчики</h2>
+                            <div class="cards-wrap cards-wrap-partners slider-partners">
+
+                                <div class="cards">
+                                    {% for c in clients|slice:":6" %}
+                                        <div class="cards__item">
+                                            <div class="inner covered-thumb">
+                                                <img src="/media/{{ c.image }}" alt="{{ c.name }}">
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="cards">
+                                    {% for c in clients|slice:"6:12" %}
+                                        <div class="cards__item">
+                                            <div class="inner covered-thumb">
+                                                <img src="/media/{{ c.image }}" alt="{{ c.name }}">
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="cards">
+                                    {% for c in clients|slice:"12:" %}
+                                        <div class="cards__item">
+                                            <div class="inner covered-thumb">
+                                                <img src="/media/{{ c.image }}" alt="{{ c.name }}">
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cols-12 col-lg-6 site-map">
+                        <div class="section--info__right">
+                            <h2><span>Карта</span> сайта</h2>
+                            <h3>О нас</h3>
+                            <ul class="ul-red-stripe">
+                                {% for m in sitemap %}
+                                    {% if m.section_id == 1 %}
+                                        <li><a href="/{{ m.slug }}.html">{{ m.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <h3>ДЕЯТЕЛЬНОСТЬ</h3>
+                            <ul class="ul-red-stripe">
+                                {% for m in sitemap %}
+                                    {% if m.section_id == 2 %}
+                                        <li><a href="/{{ m.slug }}.html">{{ m.name }}</a>
+                                            <p>{{ m.description }}</p></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <h3>Объекты</h3>
+                            <ul class="ul-red-stripe">
+                                <li><a href="/buildings/">Все объекты</a></li>
+                                <li><a href="/buildings/?ready=Y">Выполненные объекты</a></li>
+                                <li><a href="/buildings/?at_work=Y">Объекты в работе</a></li>
+                            </ul>
+                            <h3>Поставка материалов</h3>
+                            <ul class="ul-red-stripe">
+                                {% for m in sitemap %}
+                                    {% if m.section_id == 4 %}
+                                        <li><a href="/{{ m.slug }}.html">{{ m.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <h3>Производство</h3>
+                            <ul class="ul-red-stripe">
+                                {% for m in sitemap %}
+                                    {% if m.section_id == 5 %}
+                                        <li><a href="/{{ m.slug }}.html">{{ m.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <h3>FAQ</h3>
+                            <ul class="ul-red-stripe">
+                                {% for m in sitemap %}
+                                    {% if m.section_id == 37 %}
+                                        <li><a href="/{{ m.slug }}.html">{{ m.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <h3>Цены</h3>
+                            <ul class="ul-red-stripe">
+                                {% for m in sitemap %}
+                                    {% if m.section_id == 6 %}
+                                        <li><a href="/{{ m.slug }}.html"><span
+                                                class="red-price">{{ m.name|slice:":15" }}</span>{{ m.name|slice:"15:" }}
+                                        </a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <h3>Обратная связь</h3>
+                            <ul class="ul-red-stripe">
+                                {% for m in sitemap %}
+                                    {% if m.section_id == 7 %}
+                                        <li><a href="/{{ m.slug }}.html">{{ m.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer footer--map">
+        <div class="container">
+            <div class="row">
+                <div class="cols-12 col-lg-6 copy-text">
+                    <img src="{% static 'img/map-dot.png' %}" alt="map-dot" class="map-dot">
+                    <p>©️ 2021 Фасадная компания №1. Проектирование и монтаж навесных вентилируемых фасадов под ключ.
+                        Собственное производство в Санкт-Петербурге. | Не является публичной офертой |. Все права
+                        защищены. fasad78.ru</p>
+                </div>
+                <div class="cols-12 col-lg-6 map-info">
+                    <h2><span>"ГК АЛЬФА"</span> Санкт-Петербург</h2>
+                    <ul class="ul-red-stripe ul-red-stripe--right">
+                        <li>195427, ул. Якорная 11</li>
+                        <li>Тел: <a href="tel:+78122449889">+7 (812) 244-98-89</a></li>
+                        <li>E-mail: <a href="mailto:info@fasad78.ru">info@fasad78.ru</a></li>
+                    </ul>
+                    <ul>
+                        <li>Режим работы: ПН-ПТ с 10.00 до 18.00</li>
+                        <li>Выходной: суббота и воскресенье</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row row-bottom">
+                <div class="cols-12 col-md-6 text-center">2021 ГК <span class="red-text">А</span>льфа Все права защищены
+                </div>
+                <div class="cols-12 col-md-6 text-center"><a href="tel:+78122449889">8 812 244 98 89</a> <span
+                        class="red-text">•</span> <a href="mailto:info@fasad78.ru">info@fasad78.ru</a></div>
+            </div>
+        </div>
+    </footer>
+    </body>
+    <!-- Б Л О К    М Е Н Ю -->
+    <div class="top-nav-wrap">
+        <div class="container top-nav__container">
+            <div class="top-nav__header">
+                <a href="#">
+                    <div class="top-nav__logo">
+                        <img src="{% static 'img/top-nav-logo.svg' %}" alt="Логотип">
+                    </div>
+                </a>
+                <div class="top-menu-close">
+                    <div class="top-menu-close__item"></div>
+                    <div class="top-menu-close__item"></div>
+                </div>
+            </div>
+
+            <nav class="top-nav">
+                <div class="top-nav__item">
+                    <p>О нас</p>
+                    <ul class="top-nav__list">
+                        <li class="top-nav__point"><a href="/about.html">О группе компаний Альфа</a></li>
+                        <li class="top-nav__point"><a href="/preimushestva.html">Преимущества</a></li>
+                        <li class="top-nav__point"><a href="/standarty-kachestva.html">Стандарты качества</a></li>
+                        <li class="top-nav__point"><a href="/zakazchiki.html">Заказчики</a></li>
+                        <li class="top-nav__point"><a href="/sotrudnichestvo.html">Сотрудничество</a></li>
+                        <li class="top-nav__point"><a href="/karera-v-kompanii.html">Карьера в компании</a></li>
+                    </ul>
+                </div>
+
+                <div class="top-nav__item">
+                    <p>Объекты</p>
+                    <ul class="top-nav__list">
+                        <li class="top-nav__point"><a href="/buildings/">Все объекты</a></li>
+                        <li class="top-nav__point"><a href="/buildings/?ready=Y">Выполненные объекты</a></li>
+                        <li class="top-nav__point"><a href="/buildings/?at_work=Y">Объекты в работе</a></li>
+                    </ul>
+                </div>
+
+                <div class="top-nav__item break-after faq">
+                    <p>FAQ</p>
+                    <ul class="top-nav__list">
+                        <li class="top-nav__point"><a href="/poleznaya-informaciya.html">Полезная информация</a></li>
+                    </ul>
+                </div>
+
+                <div class="top-nav__item top-nav__item_work decs break-after">
+                    <p>Деятельность</p>
+                    <ul class="top-nav__list">
+                        <li class="top-nav__point"><a href="/proektirovanie-fasadov.html">Проектирование фасадов</a>
+                        </li>
+                        <li class="top-nav__point"><a href="/vhodnye-gruppy.html">Входные группы</a></li>
+                        <li class="top-nav__point"><a href="/navesnye-ventiliruemye-fasady.html">Навесные вентилируемые
+                            фасады</a></li>
+                        <li class="top-nav__point"><a href="/shtukaturnye-fasady.html">Штукатурные фасады</a></li>
+                        <li class="top-nav__point"><a href="/stekloalyuminievye-konstrukcii.html">Стеклоалюминиевые
+                            конструкции</a></li>
+                        <li class="top-nav__point"><a href="/kozyrki.html">Козырьки</a></li>
+                        <li class="top-nav__point"><a href="/kolonny.html">Колонны</a></li>
+                        <li class="top-nav__point"><a href="/uteplenie-parkingov.html">Утепление паркингов</a></li>
+                        <li class="top-nav__point"><a href="/liftovye-portaly.html">Лифтовые порталы</a></li>
+                        <li class="top-nav__point"><a href="/promyshlennyj-alpinizm.html">Промышленный альпинизм</a>
+                        </li>
+                        <li class="top-nav__point"><a href="/ekspluataciya-fasadov.html">Эксплуатация фасадов</a></li>
+                        <li class="top-nav__point"><a href="/ispytaniya.html">Испытания</a></li>
+                        <li class="top-nav__point"><a href="/bystrovozvodimye-konstrukcii.html">Быстровозводимые
+                            конструкции</a></li>
+                        <li class="top-nav__point"><a href="/dopolnitelnye-raboty.html">Дополнительные работы</a></li>
+                    </ul>
+                </div>
+
+                <div class="top-nav__item top-nav__item_delivery">
+                    <p>Поставка материалов</p>
+                    <ul class="top-nav__list">
+                        <li class="top-nav__point"><a href="/komplektaciya-obektov.html">Комплектация объектов</a></li>
+                        <li class="top-nav__point"><a href="/karta-postavok.html">Карта поставок</a></li>
+                        <li class="top-nav__point"><a href="/sertifikaty.html">Сертификаты</a></li>
+                    </ul>
+                </div>
+
+                <div class="top-nav__item top-nav__item_production">
+                    <p>Производство</p>
+                    <ul class="top-nav__list">
+                        <li class="top-nav__point"><a href="/izgotovlenie-podsistemy-dlya-nvf.html">Изготовление
+                            подсистемы для НВФ</a></li>
+                        <li class="top-nav__point"><a href="/proizvodstvo-fasadnyh-kasset.html">Производство фасадных
+                            кассет</a></li>
+                        <li class="top-nav__point"><a href="/izgotovlenie-podsistemy-dlya-nvf.html">Изготовление
+                            фасонных элементов</a></li>
+                        <li class="top-nav__point"><a href="/okraska-metalla-v-ral.html">Окраска металла в RAL</a></li>
+                    </ul>
+                </div>
+
+                <div class="top-nav__item top-nav__item_work tablet break-before">
+                    <p>Деятельность</p>
+                    <ul class="top-nav__list">
+                        <li class="top-nav__point"><a href="/proektirovanie-fasadov.html">Проектирование фасадов</a>
+                        </li>
+                        <li class="top-nav__point"><a href="/vhodnye-gruppy.html">Входные группы</a></li>
+                        <li class="top-nav__point"><a href="/navesnye-ventiliruemye-fasady.html">Навесные вентилируемые
+                            фасады</a></li>
+                        <li class="top-nav__point"><a href="/shtukaturnye-fasady.html">Штукатурные фасады</a></li>
+                        <li class="top-nav__point"><a href="/stekloalyuminievye-konstrukcii.html">Стеклоалюминиевые
+                            конструкции</a></li>
+                        <li class="top-nav__point"><a href="/kozyrki.html">Козырьки</a></li>
+                        <li class="top-nav__point"><a href="/kolonny.html">Колонны</a></li>
+                        <li class="top-nav__point"><a href="/uteplenie-parkingov.html">Утепление паркингов</a></li>
+                        <li class="top-nav__point"><a href="/liftovye-portaly.html">Лифтовые порталы</a></li>
+                        <li class="top-nav__point"><a href="/promyshlennyj-alpinizm.html">Промышленный альпинизм</a>
+                        </li>
+                        <li class="top-nav__point"><a href="/ekspluataciya-fasadov.html">Эксплуатация фасадов</a></li>
+                        <li class="top-nav__point"><a href="/ispytaniya.html">Испытания</a></li>
+                        <li class="top-nav__point"><a href="/bystrovozvodimye-konstrukcii.html">Быстровозводимые
+                            конструкции</a></li>
+                        <li class="top-nav__point"><a href="/dopolnitelnye-raboty.html">Дополнительные работы</a></li>
+                    </ul>
+                </div>
+
+                <div class="top-nav__item top-nav__item_prices">
+                    <p>Цены</p>
+                    <ul class="top-nav__list">
+                        <li class="top-nav__point"><a href="/prajs-list-2021-fasady-pod-klyuch.html">Прайс-лист</a></li>
+                    </ul>
+                </div>
+
+                <div class="top-nav__item top-nav__item_feedback">
+                    <p>Обратная связь</p>
+                    <ul class="top-nav__list">
+                        <li class="top-nav__point"><a href="/otpravit-zapros.html">Отправить запрос</a></li>
+                        <li class="top-nav__point"><a href="/kontaktnaya-informaciya.html">Контактная информация</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+    <div class="top-nav-overl"></div>
+    <!--E N D     Б Л О К    М Е Н Ю -->
+{% endblock %}
