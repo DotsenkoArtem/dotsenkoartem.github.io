@@ -918,7 +918,7 @@ main {
 }
 .modal__content {
   margin: auto;
-  padding: 57px 33px 66px 33px;
+  padding: 7rem 5rem;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
@@ -929,23 +929,58 @@ main {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 588px;
-  height: 496px;
-  background: -o-linear-gradient(bottom left, #7d14af, #ae4fddd9);
-  background: -webkit-gradient(linear, left bottom, right top, from(#7d14af), to(#ae4fddd9));
-  background: linear-gradient(to top right, #7d14af, #ae4fddd9);
-  background-color: #8132a7;
-  color: #fff;
-  -webkit-box-shadow: 0 0 20px 20px #4cd7f726;
-  box-shadow: 0 0 20px 20px #4cd7f726;
   position: relative;
   z-index: 1110;
-  border-radius: 3.3rem;
-  background-color: #fff;
+  width: 588px;
+  height: 496px;
+  background: -o-linear-gradient(bottom left, #8031a7, #b352e3);
+  background: -webkit-gradient(linear, left bottom, right top, from(#8031a7), to(#b352e3));
+  background: linear-gradient(to top right, #8031a7, #b352e3);
   font-size: 2rem;
   line-height: 1.2;
+  color: #fff;
+  border-radius: 3rem;
+  -webkit-box-shadow: 0 0 10px 5px rgba(128, 49, 167, 0.15), 0 0 65px 2px rgba(128, 49, 167, 0.72);
+  box-shadow: 0 0 10px 5px rgba(128, 49, 167, 0.15), 0 0 65px 2px rgba(128, 49, 167, 0.72);
   opacity: 0;
   overflow: hidden;
+}
+.modal .program-section {
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.modal .program-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.65;
+  text-align: right;
+  -ms-flex-preferred-size: 28%;
+  flex-basis: 28%;
+}
+.modal .program-section ul {
+  margin: 0 0 0 28px;
+  list-style: none;
+  -ms-flex-preferred-size: 75%;
+  flex-basis: 75%;
+}
+.modal .program-section li {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  line-height: 1.65;
+}
+.modal .program-section li:last-of-type {
+  margin-bottom: 0;
+}
+.modal-body-table ul {
+  text-align: left;
+  list-style: none;
+  -ms-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
+}
+.modal-page {
+  min-height: 496px;
 }
 .modal__overlay {
   display: block;
@@ -955,7 +990,7 @@ main {
   top: 0;
   left: 0;
   z-index: 1009;
-  background-color: #000000aa;
+  background-color: rgba(0, 0, 0, 0.4);
   opacity: 0;
   visibility: hidden;
 }
@@ -985,7 +1020,7 @@ main {
 }
 .scroll-hidden {
   /*для скрытия полосы прокрутки*/
-  padding-right: 5px;
+  padding-right: 0.7rem;
   overflow: hidden;
 }
 .scroll {
@@ -999,19 +1034,18 @@ main {
   top: 40px;
   bottom: 40px;
   right: 0;
-  width: 15px;
+  width: 0.7rem;
   background-color: transparent;
   z-index: 999;
   overflow: hidden;
 }
 .scroll-thumb {
-  height: 142px;
   -webkit-box-shadow: inset 0 0 6px rgb(0 0 0%);
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 0;
-  height: 100px;
-  width: 10px;
+  height: 14.2rem;
+  width: 0.7rem;
   cursor: pointer;
   border-radius: 15px;
   -webkit-transition: -webkit-transform 0.6s ease;
@@ -1019,44 +1053,6 @@ main {
   -o-transition: transform 0.6s ease;
   transition: transform 0.6s ease;
   transition: transform 0.6s ease, -webkit-transform 0.6s ease;
-}
-.modal .program-section {
-  margin-bottom: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.modal .program-section h3 {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.65;
-  text-align: right;
-  -ms-flex-preferred-size: 28%;
-  flex-basis: 28%;
-}
-.modal .program-section ul {
-  margin: 0 0 0 28px;
-  list-style: none;
-  -ms-flex-preferred-size: 75%;
-  flex-basis: 75%;
-}
-.modal-body-table ul {
-  text-align: left;
-  list-style: none;
-  -ms-scroll-snap-type: y mandatory;
-  scroll-snap-type: y mandatory;
-}
-.modal-page {
-  min-height: 496px;
-}
-.modal .program-section li {
-  margin-bottom: 1rem;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 1.65;
-}
-.modal .program-section li:last-of-type {
-  margin-bottom: 0;
 }
 @-webkit-keyframes scaleIn {
   from {
@@ -1943,6 +1939,14 @@ main {
   .html-course .teacher__title p {
     margin-left: 0;
   }
+  .modal__content {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+  .modal .program-section h3,
+  .modal .program-section li {
+    font-size: 1.4rem;
+  }
 }
 @media (max-width: 479.98px) {
   h1 {
@@ -2127,8 +2131,28 @@ main {
     margin-right: 0;
   }
 }
+@media (max-width: 413.98px) {
+  .modal__content {
+    padding: 4rem 2.5rem;
+  }
+  .modal .program-section h3 {
+    -ms-flex-preferred-size: 6rem;
+    flex-basis: 6rem;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+  }
+  .modal .program-section ul {
+    margin-left: 2rem;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+  }
+}
 @media (max-width: 359.98px) {
   html {
     font-size: 8.5px;
+  }
+  .modal__content {
+    height: 47rem;
   }
 }
