@@ -1,0 +1,12 @@
+{
+    "compile-hero.generate-minified-css": true,
+    "compile-hero.javascript-output-directory": "../../dist/js",
+    "compile-hero.jade-output-toggle": false,
+    "compile-hero.less-output-directory": "../../dist/css",
+    "compile-hero.pug-output-toggle": false,
+    "compile-hero.sass-output-toggle": false,
+    "compile-hero.scss-output-toggle": false,
+    "compile-hero.stylus-output-toggle": false,
+    "compile-hero.typescript-output-toggle": false,
+    "compile-hero.typescriptx-output-toggle": false
+}
