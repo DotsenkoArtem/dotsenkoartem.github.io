@@ -973,6 +973,10 @@ main {
 .modal .program-section li:last-of-type {
   margin-bottom: 0;
 }
+.modal-body-table {
+        display: flex;
+        flex-direction: column;
+}
 .modal-body-table ul {
   text-align: left;
   list-style: none;
