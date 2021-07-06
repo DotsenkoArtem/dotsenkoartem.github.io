@@ -143,6 +143,9 @@ button {
 .desk-block {
   display: block;
 }
+.nowrap {
+  white-space: nowrap;
+}
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1638,6 +1641,9 @@ main {
   }
   .course .article-test__img {
     margin-right: 2rem;
+  }
+  .course .article__content_first p {
+    max-width: none;
   }
   .course__footer {
     -webkit-box-orient: vertical;

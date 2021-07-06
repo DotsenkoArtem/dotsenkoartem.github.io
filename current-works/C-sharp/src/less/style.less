@@ -192,6 +192,10 @@ button {
 	display: block;
 }
 
+.nowrap {
+	white-space: nowrap;
+}
+
 .row {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2155,6 +2159,13 @@ main {
 
 				&__img {
 					margin-right: 2rem;
+				}
+			}
+			&__content{
+				&_first {
+					p{
+						max-width: none;
+					}
 				}
 			}
 		}
