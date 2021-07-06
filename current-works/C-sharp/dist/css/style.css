@@ -752,6 +752,7 @@ button {
   background: -o-linear-gradient(45deg, #712b93, #d38bf7);
   background: linear-gradient(45deg, #712b93, #d38bf7);
   -webkit-background-clip: text;
+  background-clip: text;
   text-shadow: 0 0 6.5rem rgba(128, 49, 167, 0.7), 0 0 1rem rgba(128, 49, 167, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -1089,6 +1090,7 @@ main {
 }
 .scroll-thumb {
   -webkit-box-shadow: inset 0 0 6px rgb(0 0 0%);
+  box-shadow: inset 0 0 6px rgb(0 0 0%);
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   left: 0;

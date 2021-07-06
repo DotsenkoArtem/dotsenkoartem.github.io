@@ -1,8 +1,8 @@
 // MOBILE MENU SETTINGS
 
 var menuToggle = document.querySelector('.menu-toggle'),
-    navMob = document.querySelector('.nav-mob'),
-    navMobOverl = document.querySelector('.nav-mob-overl');
+  navMob = document.querySelector('.nav-mob'),
+  navMobOverl = document.querySelector('.nav-mob-overl');
 menuToggle.addEventListener('click', function () {
   menuToggle.classList.toggle('open');
   navMob.classList.toggle('open');
@@ -20,33 +20,33 @@ function menuClose() {
 //- - - - - - - - - - - - - - - - - - - - 
 
 // MODAL HANDLING
-const 	modalOverlay = document.querySelector(".modal__overlay"),
-closeButtons = document.querySelectorAll(".modal__close"),
-openButton   = document.querySelector(".modal-trigger");
+const modalOverlay = document.querySelector(".modal__overlay"),
+  closeButtons = document.querySelectorAll(".modal__close"),
+  openButton = document.querySelector(".modal-trigger");
 
 
-openButton.addEventListener("click", function() {
-openModalById('#modal');
+openButton.addEventListener("click", function () {
+  openModalById('#modal');
 });
 
-for(let i = 0; i < closeButtons.length; i++){
-closeButtons[i].addEventListener('click', function() {
-closeModal('#modal');
-})
+for (let i = 0; i < closeButtons.length; i++) {
+  closeButtons[i].addEventListener('click', function () {
+    closeModal('#modal');
+  })
 }
 
 function openModalById(modalId) {
-let modal = document.querySelector(modalId);
-modal.classList.remove('closed');
-modal.classList.add('open');
-document.documentElement.classList.add('scroll-hidden');
+  let modal = document.querySelector(modalId);
+  modal.classList.remove('closed');
+  modal.classList.add('open');
+  document.documentElement.classList.add('scroll-hidden');
 }
 
 function closeModal(modalId) {
-let modal = document.querySelector(modalId);
-modal.classList.remove('open');
-modal.classList.add('closed');
-document.documentElement.classList.remove('scroll-hidden');
+  let modal = document.querySelector(modalId);
+  modal.classList.remove('open');
+  modal.classList.add('closed');
+  document.documentElement.classList.remove('scroll-hidden');
 }
 //- - - - - - - - - - - - - - - - - - - - 
 
@@ -67,9 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollSegment = Math.floor(scrollRange / sectionsCount);
 
   const scrollSegments = Object.keys(sections).map((index) => {
-  return (
-    index * scrollSegment
-  )
+    return (
+      index * scrollSegment
+    )
   })
 
   let activeIndex = 0;
@@ -83,62 +83,62 @@ document.addEventListener('DOMContentLoaded', () => {
   // swipe(wrapper);
 
   function handleWheel(e) {
-  e.preventDefault();
-  if (e.deltaY > 0 && activeIndex !== sectionsCount) {
-    ++activeIndex;
-    scrollSections('down');
-    moveThumb('down');
-  }
-  if (e.deltaY < 0 && activeIndex > 0) {
-    --activeIndex;
-    scrollSections('up');
-    moveThumb('up');
-  }
+    e.preventDefault();
+    if (e.deltaY > 0 && activeIndex !== sectionsCount) {
+      ++activeIndex;
+      scrollSections('down');
+      moveThumb('down');
+    }
+    if (e.deltaY < 0 && activeIndex > 0) {
+      --activeIndex;
+      scrollSections('up');
+      moveThumb('up');
+    }
   }
 
   function scrollSections(dir) {
-  if (dir === 'down') {
-    offsetHeightSection += sections[activeIndex].offsetHeight;
-  } else if (dir === 'up') {
-    offsetHeightSection -= sections[activeIndex].offsetHeight;
-  }
-  wrapper.style.transform = `translateY(-${offsetHeightSection}px)`;
+    if (dir === 'down') {
+      offsetHeightSection += sections[activeIndex].offsetHeight;
+    } else if (dir === 'up') {
+      offsetHeightSection -= sections[activeIndex].offsetHeight;
+    }
+    wrapper.style.transform = `translateY(-${offsetHeightSection}px)`;
   }
 
   function moveThumb(dir) {
-  if (activeIndex === 0 && dir === 'up') {
-    thumbTranslate = 0
-  } else if (dir === 'down') {
-    thumbTranslate += scrollRange / (sectionsCount);
-  } else if (dir === 'up' && activeIndex !== 0) {
-    thumbTranslate -= scrollRange / (sectionsCount);
-  }
-  thumb.style.transform = `translateY(+${thumbTranslate}px)`;
-  }
-
-  scroll.addEventListener('mousedown', function(start) {
-  start.preventDefault();
-
-  function onMove(end) {
-    var delta = end.pageY - start.pageY;
-    var posScroll = delta;
-    if ((posScroll - prevPosScroll) >= 24 && posScroll > prevPosScroll && activeIndex !== sectionsCount) {
-    ++activeIndex;
-    scrollSections('down');
-    moveThumb('down');
-    prevPosScroll = posScroll
-    return
-    } else if ((prevPosScroll - posScroll) >= 36 && posScroll <= prevPosScroll && activeIndex !== 0) {
-    --activeIndex;
-    scrollSections('up');
-    moveThumb('up');
-    prevPosScroll = posScroll
+    if (activeIndex === 0 && dir === 'up') {
+      thumbTranslate = 0
+    } else if (dir === 'down') {
+      thumbTranslate += scrollRange / (sectionsCount);
+    } else if (dir === 'up' && activeIndex !== 0) {
+      thumbTranslate -= scrollRange / (sectionsCount);
     }
-  };
-  document.addEventListener('mousemove', onMove);
-  document.addEventListener('mouseup', function() {
-    document.removeEventListener('mousemove', onMove);
-  });
+    thumb.style.transform = `translateY(+${thumbTranslate}px)`;
+  }
+
+  scroll.addEventListener('mousedown', function (start) {
+    start.preventDefault();
+
+    function onMove(end) {
+      var delta = end.pageY - start.pageY;
+      var posScroll = delta;
+      if ((posScroll - prevPosScroll) >= 24 && posScroll > prevPosScroll && activeIndex !== sectionsCount) {
+        ++activeIndex;
+        scrollSections('down');
+        moveThumb('down');
+        prevPosScroll = posScroll
+        return
+      } else if ((prevPosScroll - posScroll) >= 36 && posScroll <= prevPosScroll && activeIndex !== 0) {
+        --activeIndex;
+        scrollSections('up');
+        moveThumb('up');
+        prevPosScroll = posScroll
+      }
+    };
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', function () {
+      document.removeEventListener('mousemove', onMove);
+    });
   });
 
   document.addEventListener('touchstart', handleTouchStart, false);
@@ -148,13 +148,13 @@ document.addEventListener('DOMContentLoaded', () => {
   var yDown = null;
 
   function getTouches(evt) {
-    return evt.touches ||             // browser API
+    return evt.touches || // browser API
       evt.originalEvent.touches; // jQuery
   }
 
   function handleTouchStart(evt) {
     const firstTouch = getTouches(evt)[0];
-      if (popup.classList.contains('open')) {
+    if (popup.classList.contains('open')) {
       xDown = firstTouch.clientX;
       yDown = firstTouch.clientY;
     }
@@ -173,7 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
       var xDiff = xDown - xUp;
       var yDiff = yDown - yUp;
 
-      if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+      if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        /*most significant*/
         if (xDiff > 0) {
           /* left swipe */
         } else {
