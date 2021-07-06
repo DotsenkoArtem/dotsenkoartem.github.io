@@ -1642,9 +1642,6 @@ main {
   .course .article-test__img {
     margin-right: 2rem;
   }
-  .course .article__content_first p {
-    max-width: none;
-  }
   .course__footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1835,6 +1832,9 @@ main {
   .c-course .course .article__content p {
     margin-bottom: 2rem;
     text-align: justify;
+  }
+  .c-course .course .article__content_first p {
+    max-width: none;
   }
   .c-course .course .article__content .accent {
     display: inline;
