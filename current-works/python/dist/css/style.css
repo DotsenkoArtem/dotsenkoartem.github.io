@@ -135,6 +135,9 @@ button {
   padding: 0 3.5rem;
   height: 7.5rem;
 }
+.bold {
+  font-weight: 700;
+}
 .container {
   margin: 0 auto;
   padding: 0 1.5rem;
