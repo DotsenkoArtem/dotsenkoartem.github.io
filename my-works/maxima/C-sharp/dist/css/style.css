@@ -2082,6 +2082,10 @@ main {
     margin-left: 0;
     margin-right: 0;
   }
+  .c-course .result__col {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .c-course .cost__item {
     white-space: normal;
   }

@@ -398,33 +398,36 @@ button {
   display: -ms-flexbox;
   display: flex;
 }
-.c-course .course__header {
+.python .course__header {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.c-course .course__title,
-.c-course .course__reg {
+.python .course__title,
+.python .course__reg {
   width: auto;
 }
-.c-course .course__reg {
-  margin-left: 3rem;
+.python .course__reg {
+  margin-left: 5rem;
 }
-.c-course .course__data {
+.python .course__data {
   margin-left: 0;
   margin-right: 0;
 }
-.c-course .course__data_first {
-  margin-right: 2rem;
+.python .course__data_first {
+  margin-right: 5rem;
 }
-.c-course .course__data-row {
+.python .course__data-row {
   margin-right: -1.5rem;
 }
-.c-course .course .article__content .accent {
+.python .course .article__content .accent {
   display: block;
 }
-.c-course .course .article__content_first p {
+.python .course .article__content_first p {
+  max-width: 49rem;
+}
+.python .course .article_required p {
   max-width: 53rem;
 }
 .prim-digit {
@@ -467,23 +470,29 @@ button {
 .favour__text .accent {
   display: block;
 }
-.c-course .favour {
+.python .favour {
   padding-top: 2.5rem;
 }
-.c-course .favour__content.row {
+.python .favour__content.row {
   margin-left: auto;
+  margin-top: -0.5rem;
   margin-right: auto;
-  max-width: 106rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
-.c-course .favour__content .col {
+.python .favour__content .col {
   margin: 0 1.5rem;
+}
+.python .favour__item {
   width: 100%;
 }
-.c-course .favour__item {
-  width: 100%;
-}
-.c-course .favour__item_first .favour__text {
+.python .favour__item_first .favour__text {
   max-width: 44rem;
+}
+.python .favour__text {
+  font-size: 2rem;
+  line-height: 1.6;
 }
 /* TEACHER */
 .teacher {
@@ -581,31 +590,37 @@ button {
 .teacher__list_anton {
   max-width: 52.5rem;
 }
-.c-course .teacher {
-  padding-top: 6rem;
+.python .teacher {
+  padding-top: 7rem;
 }
-.c-course .teacher__col {
+.python .teacher__col {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
-.c-course .teacher__title h2 {
+.python .teacher__title h2 {
   margin-bottom: 4rem;
 }
-.c-course .teacher__title p {
-  max-width: 51rem;
+.python .teacher__title p {
+  max-width: 52.5rem;
 }
-.c-course .teacher__title p::before {
+.python .teacher__title p::before {
   display: none;
 }
-.c-course .teacher__header {
+.python .teacher__header {
   margin-left: -1.5rem;
   margin-right: -1.5rem;
 }
-.c-course .teacher__header .teacher__media {
+.python .teacher__header .teacher__media {
   margin-top: -0.5rem;
 }
-.c-course .teacher__caption .accent {
+.python .teacher__caption {
+  padding-top: 6rem;
+}
+.python .teacher__caption .accent {
   display: block;
+}
+.python .teacher__img {
+  margin-right: 3rem;
 }
 /* PROGR */
 .progr {
@@ -674,22 +689,22 @@ button {
   background: #8031a7;
   border-radius: 50%;
 }
-.c-course .progr {
+.python .progr {
   padding-top: 5.5rem;
 }
-.c-course .progr__header {
+.python .progr__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.c-course .progr__title,
-.c-course .progr__descr {
+.python .progr__title,
+.python .progr__descr {
   width: 50%;
 }
-.c-course .progr__title h2 {
+.python .progr__title h2 {
   max-width: 55rem;
 }
-.c-course .progr__descr {
+.python .progr__descr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -697,32 +712,47 @@ button {
   -ms-flex-align: center;
   align-items: center;
 }
-.c-course .progr__descr .btn {
+.python .progr__descr .btn {
   margin-left: 1.5rem;
   margin-right: 3rem;
   -webkit-box-flex: 0;
   -ms-flex: none;
   flex: none;
 }
-.c-course .progr__descr > span {
+.python .progr__descr > span {
   line-height: 1.5;
 }
-.c-course .progr__descr .accent {
+.python .progr__descr .accent {
   display: block;
 }
-.c-course .progr__body {
+.python .progr__body {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: start;
 }
-.c-course .progr__item {
+.python .progr__item {
   margin-bottom: 0.5rem;
-  width: 25%;
+  width: auto;
 }
-.c-course .progr__item .accent {
+.python .progr__item:not(:nth-child(4n)) {
+  margin-right: 13rem;
+}
+.python .progr__item:nth-child(4n + 1) {
+  width: 24rem;
+}
+.python .progr__item:nth-child(4n + 2) {
+  width: 24rem;
+}
+.python .progr__item:nth-child(4n + 3) {
+  width: 10rem;
+}
+.python .progr__item:nth-child(4n) {
+  width: 18rem;
+}
+.python .progr__item .accent {
   display: block;
 }
-.c-course .progr__digit {
+.python .progr__digit {
   margin-bottom: 2.5rem;
 }
 .prim-list_num li:before {
@@ -778,23 +808,26 @@ button {
     background: none;
   }
 }
-.c-course .cost__content {
+.python .cost__content {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.c-course .cost__item {
+.python .cost__title {
+  margin-bottom: 2.5rem;
+}
+.python .cost__item {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
   white-space: nowrap;
 }
-.c-course .cost__price_transp {
+.python .cost__price_transp {
   position: relative;
   width: 100%;
   height: 7.7rem;
 }
-.c-course .cost__price_transp img {
+.python .cost__price_transp img {
   position: absolute;
   top: 60%;
   left: -6.5rem;
@@ -885,24 +918,30 @@ button {
 .result__quetion:hover {
   color: #8031a7;
 }
-.c-course .result__header,
-.c-course .result__body {
+.python .result__header,
+.python .result__body {
   margin-left: -1.5rem;
   margin-right: -1.5rem;
 }
-.c-course .result__body .prim-list,
-.c-course .result__body .result__quetion {
-  max-width: 53rem;
+.python .result__body {
+  margin-top: 3.5rem;
 }
-.c-course .result__col {
+.python .result__body .prim-list,
+.python .result__body .result__quetion {
+  max-width: none;
+}
+.python .result__col {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
-.c-course .result .more-info {
+.python .result__col_sec {
+  margin-right: -0.5rem;
+}
+.python .result .more-info {
   margin-left: 0;
   margin-right: 0;
 }
-.c-course .result__more .btn {
+.python .result__more .btn {
   margin-left: 3rem;
   margin-right: 3rem;
 }
@@ -939,6 +978,9 @@ main {
   right: 0;
   display: block;
   width: 100%;
+}
+.python .footer__bg img {
+  top: -16rem;
 }
 /* MODAL */
 .modal {
@@ -1112,11 +1154,14 @@ main {
   transition: transform 0.6s ease;
   transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
-.c-course .modal .program-section h3 {
-  -ms-flex-preferred-size: 22%;
-  flex-basis: 19%;
+.python .modal .program-section h3 {
+  -ms-flex-preferred-size: 44%;
+  flex-basis: 44%;
 }
-.c-course .modal .program-section_practice {
+.python .modal .program-section li {
+  margin-bottom: 1.3rem;
+}
+.python .modal .program-section_practice {
   margin-top: 6rem;
 }
 @-webkit-keyframes scaleIn {
@@ -1315,55 +1360,67 @@ main {
   .result__title h2 span {
     display: inline;
   }
-  .c-course .course__title {
+  .python .course__title {
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
   }
-  .c-course .course__reg {
+  .python .course__reg {
     margin-top: 0;
     margin-left: auto;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
   }
-  .c-course .course__data-row {
+  .python .course__data-row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
-  .c-course .teacher__header .teacher__title h2,
-  .c-course .teacher__header .teacher__media {
+  .python .favour__content .col {
+    margin: 0;
+  }
+  .python .teacher__header .teacher__title h2,
+  .python .teacher__header .teacher__media {
     margin-bottom: 4rem;
     height: 26.5rem;
     overflow: hidden;
   }
-  .c-course .teacher__header .teacher__media {
+  .python .teacher__header .teacher__media {
     margin-top: 0;
   }
-  .c-course .progr__header {
+  .python .teacher__img {
+    margin-right: 2.5rem;
+  }
+  .python .progr__header {
     display: block;
   }
-  .c-course .progr__title,
-  .c-course .progr__descr {
+  .python .progr__title,
+  .python .progr__descr {
     width: auto;
   }
-  .c-course .progr__title {
+  .python .progr__title {
     margin-bottom: 4rem;
   }
-  .c-course .progr__title h2 {
+  .python .progr__title h2 {
     max-width: none;
   }
-  .c-course .progr__descr .btn {
+  .python .progr__item:not(:nth-child(4n)) {
+    margin-right: 5rem;
+  }
+  .python .progr__descr .btn {
     margin-left: 0;
   }
-  .c-course .cost .container {
+  .python .cost .container {
     display: block;
   }
-  .c-course .cost__content {
+  .python .cost__content {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+  }
+  .python .footer__bg img {
+    top: -12rem;
   }
 }
 @media (max-width: 991.98px) {
@@ -1681,7 +1738,6 @@ main {
   .progr__item {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    width: calc(50% - 3rem);
   }
   .favour__content {
     -webkit-box-orient: vertical;
@@ -1806,58 +1862,61 @@ main {
   .prim-list_num li .num {
     left: -1.2em;
   }
-  .c-course .course__header {
+  .python .course__header {
     display: block;
   }
-  .c-course .course__header h1 {
+  .python .course__header h1 {
     margin-bottom: 4rem;
   }
-  .c-course .course__header h1 span {
+  .python .course__header h1 span {
     display: inline;
   }
-  .c-course .course__reg {
+  .python .course__reg {
     margin-left: 0;
   }
-  .c-course .course__body .row {
+  .python .course__body .row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
-  .c-course .course__body .row .col {
+  .python .course__body .row .col {
     margin-left: 0;
     margin-right: 0;
     width: auto;
   }
-  .c-course .course .article {
+  .python .course .article {
     margin-bottom: 0;
   }
-  .c-course .course .article__content p {
+  .python .course .article_required p {
+    max-width: none;
+  }
+  .python .course .article__content p {
     margin-bottom: 2rem;
     text-align: justify;
   }
-  .c-course .course .article__content_first p {
+  .python .course .article__content_first p {
     max-width: none;
   }
-  .c-course .course .article__content .accent {
+  .python .course .article__content .accent {
     display: inline;
   }
-  .c-course .course__footer .col {
+  .python .course__footer .col {
     width: auto;
   }
-  .c-course .course__data {
+  .python .course__data {
     display: block;
   }
-  .c-course .course__data_last {
+  .python .course__data_last {
     margin-top: 0;
   }
-  .c-course .course__data:not(.course__data_last) {
+  .python .course__data:not(.course__data_last) {
     margin-bottom: 2rem;
   }
-  .c-course .course__data span {
+  .python .course__data span {
     width: auto;
   }
-  .c-course .favour__content.row {
+  .python .favour__content.row {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
     -webkit-box-orient: horizontal;
@@ -1868,17 +1927,17 @@ main {
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
-  .c-course .favour__content .col {
+  .python .favour__content .col {
     width: auto;
   }
-  .c-course .favour__item {
+  .python .favour__item {
     margin-top: 2rem;
     display: block;
   }
-  .c-course .favour__item_first .favour__text {
+  .python .favour__item_first .favour__text {
     max-width: none;
   }
-  .c-course .favour__img {
+  .python .favour__img {
     margin-left: auto;
     margin-right: auto;
     -webkit-box-flex: 0;
@@ -1886,35 +1945,44 @@ main {
     flex: none;
     width: 6rem;
   }
-  .c-course .favour__text {
+  .python .favour__text {
     margin-top: 0;
   }
-  .c-course .favour__text p {
+  .python .favour__text p {
     text-align: center;
   }
-  .c-course .teacher__col {
+  .python .teacher__col {
     width: auto;
   }
-  .c-course .teacher__header .teacher__title h2,
-  .c-course .teacher__header .teacher__media {
+  .python .teacher__header .teacher__title h2,
+  .python .teacher__header .teacher__media {
     height: auto;
   }
-  .c-course .teacher__header .teacher__media {
+  .python .teacher__header .teacher__media {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  .c-course .teacher__title p {
+  .python .teacher__title p {
     max-width: none;
     text-align: justify;
   }
-  .c-course .progr__header {
+  .python .progr__header {
     margin-bottom: 4rem;
   }
-  .c-course .progr__item {
-    width: calc(100% / 3 - 3rem);
+  .python .progr__item:not(:nth-child(4n)) {
+    margin-right: 0;
   }
-  .c-course .cost__content {
+  .python .progr__item:nth-child(4n),
+  .python .progr__item:nth-child(4n + 1),
+  .python .progr__item:nth-child(4n + 2),
+  .python .progr__item:nth-child(4n + 3) {
+    width: calc(100% / 2 - 3rem);
+  }
+  .python .cost__content {
     display: block;
+  }
+  .python .result__quetion {
+    margin-left: 1.8rem;
   }
 }
 @media (max-width: 767.98px) {
@@ -1945,30 +2013,27 @@ main {
   .footer__contacts .contacts__social {
     margin-left: 1rem;
   }
-  .c-course .favour__content.row {
+  .python .favour__content.row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
-  .c-course .favour__item {
+  .python .favour__item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .c-course .favour__img {
+  .python .favour__img {
     margin-left: 0;
     margin-right: 2rem;
-    width: 11rem;
+    width: 13rem;
     height: 11rem;
   }
-  .c-course .favour__text p {
+  .python .favour__text p {
     text-align: left;
   }
-  .c-course .progr__item {
-    width: calc(100% / 2 - 3rem);
-  }
-  .c-course .modal__content {
+  .python .modal__content {
     padding: 4rem;
   }
 }
@@ -2063,32 +2128,48 @@ main {
   .footer__bg {
     margin-top: 8rem;
   }
-  .c-course .course__data {
+  .python .course__data {
     text-align: left;
   }
-  .c-course .favour__img {
+  .python .favour__img {
     margin-left: -1rem;
   }
-  .c-course .teacher__header {
+  .python .teacher__header {
     margin-left: 0;
     margin-right: 0;
   }
-  .c-course .teacher__title p {
+  .python .teacher__title p {
     margin-left: 0;
   }
-  .c-course .teacher__col {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .c-course .result__header,
-  .c-course .result__body {
+  .python .teacher__col {
     margin-left: 0;
     margin-right: 0;
   }
-  .c-course .cost__item {
+  .python .result__header,
+  .python .result__body {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .python .result__col {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .python .result__more {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .python .result__more .btn_prim {
+    margin-top: 2.5rem;
+  }
+  .python .cost__item {
     white-space: normal;
   }
-  .c-course .prim-list {
+  .python .prim-list {
     margin-left: 1.5rem;
   }
   .modal__content {
@@ -2193,41 +2274,45 @@ main {
   .footer__contacts {
     margin-top: 1.5rem;
   }
-  .c-course h1 {
+  .python h1 {
     text-align: left;
   }
-  .c-course .favour {
+  .python .favour {
     padding-top: 4.5rem;
   }
-  .c-course .favour__title h2 {
+  .python .favour__title h2 {
     text-align: center;
   }
-  .c-course .favour__img {
+  .python .favour__img {
     margin-left: -2rem;
   }
-  .c-course .teacher {
+  .python .favour .favour__text {
+    font-size: 1.8rem;
+  }
+  .python .teacher {
     padding-top: 4.5rem;
   }
-  .c-course .teacher__title h2 {
+  .python .teacher__title h2 {
     text-align: center;
   }
-  .c-course .teacher__title p {
+  .python .teacher__title p {
     text-align: justify;
   }
-  .c-course .teacher__img {
+  .python .teacher__img {
     margin-left: auto;
     margin-right: auto;
   }
-  .c-course .teacher__caption {
+  .python .teacher__caption {
+    padding-top: 0.5rem;
     text-align: center;
   }
-  .c-course .teacher__caption .accent {
+  .python .teacher__caption .accent {
     display: inline;
   }
-  .c-course .progr__title h2 {
+  .python .progr__title h2 {
     text-align: center;
   }
-  .c-course .progr__descr {
+  .python .progr__descr {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -2236,52 +2321,61 @@ main {
     -ms-flex-align: center;
     align-items: center;
   }
-  .c-course .progr__descr .btn {
+  .python .progr__descr .btn {
     margin-right: 0;
     margin-bottom: 2rem;
   }
-  .c-course .progr__descr .accent {
+  .python .progr__descr .accent {
     display: inline;
   }
-  .c-course .progr__item {
+  .python .progr__item {
     margin-left: 0;
     width: 100%;
     text-align: center;
   }
-  .c-course .progr__item:nth-child(4n + 3) {
+  .python .progr__item:nth-child(4n + 3) {
     margin-left: 0;
   }
-  .c-course .progr__digit img {
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-  .c-course .cost {
-    text-align: center;
-  }
-  .c-course .cost__item {
+  .python .progr__item:not(:nth-child(4n)) {
     margin-right: 0;
   }
-  .c-course .cost__price_transp img {
+  .python .progr__item:nth-child(4n),
+  .python .progr__item:nth-child(4n + 1),
+  .python .progr__item:nth-child(4n + 2),
+  .python .progr__item:nth-child(4n + 3) {
+    width: 100%;
+  }
+  .python .progr__digit img {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-  .c-course .result__title h2 {
+  .python .cost {
     text-align: center;
   }
-  .c-course .result__col {
+  .python .cost__item {
+    margin-right: 0;
+  }
+  .python .cost__price_transp img {
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .python .result__title h2 {
+    text-align: center;
+  }
+  .python .result__col {
     margin-left: 0;
     margin-right: 0;
     width: auto;
   }
-  .c-course .result__body {
+  .python .result__body {
     margin-left: 0;
     margin-right: 0;
   }
-  .c-course .result__more .btn_prim {
+  .python .result__more .btn_prim {
     margin-top: 2.5rem;
   }
 }
@@ -2301,7 +2395,14 @@ main {
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-  .c-course .modal__content {
+  .python .favour__content.row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .python .favour__img {
+    margin-right: -2rem;
+  }
+  .python .modal__content {
     padding: 2rem;
   }
 }
