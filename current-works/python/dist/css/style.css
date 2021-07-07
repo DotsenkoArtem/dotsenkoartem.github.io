@@ -2378,6 +2378,13 @@ main {
   .python .result__more .btn_prim {
     margin-top: 2.5rem;
   }
+  .python .modal__content {
+    padding: 4rem 2rem;
+  }
+  .python .modal .program-section h3 {
+    -ms-flex-preferred-size: 33%;
+    flex-basis: 33%;
+  }
 }
 @media (max-width: 413.98px) {
   .modal__content {
@@ -2404,6 +2411,9 @@ main {
   }
   .python .modal__content {
     padding: 2rem;
+  }
+  .python .total-hour span {
+    display: block;
   }
 }
 @media (max-width: 359.98px) {
