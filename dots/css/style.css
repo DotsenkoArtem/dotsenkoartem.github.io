@@ -156,11 +156,12 @@ select::-ms-expand {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  margin-left: 3px;
 }
 .dots__item {
   display: block;
   position: relative;
-  margin-right: 1px;
+  margin-right: 3px;
   width: 1.2rem;
   height: 1.2rem;
   font-size: 4rem;
