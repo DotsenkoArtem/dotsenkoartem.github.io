@@ -147,7 +147,7 @@ select::-ms-expand {
 }
 .logo__name {
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 300;
 }
 .dots {
   display: -webkit-box;
@@ -168,6 +168,7 @@ select::-ms-expand {
   border-radius: 50%;
   background: #335eea;
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
   cursor: pointer;
 }
@@ -177,7 +178,8 @@ select::-ms-expand {
   left: 50%;
   bottom: 0;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
   line-height: 3rem;
 }
 .dots__item.stopJump {
@@ -207,6 +209,7 @@ select::-ms-expand {
   position: relative;
   color: #506690;
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 .top-menu__item a:after {
@@ -219,6 +222,7 @@ select::-ms-expand {
   content: '';
   background: #506690;
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 .top-menu-toglle-wrap {
@@ -300,11 +304,13 @@ select::-ms-expand {
     bottom: 0;
     z-index: 999;
     -webkit-transition: all .3s;
+    -o-transition: all .3s;
     transition: all .3s;
     width: 50%;
     background: #ffffff;
     -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+            -ms-transform: translateX(100%);
+        transform: translateX(100%);
     overflow: hidden;
   }
   .top-nav nav {
@@ -328,6 +334,7 @@ select::-ms-expand {
             justify-content: flex-start;
     -webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
+    -o-transition: transform .3s;
     transition: transform .3s;
     transition: transform .3s, -webkit-transform .3s;
     overflow: auto;
@@ -344,7 +351,8 @@ select::-ms-expand {
   }
   .top-nav .top-menu.hidden {
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
     overflow: visible;
   }
   .top-nav-overl {
@@ -356,6 +364,7 @@ select::-ms-expand {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
   }
   .top-nav-overl.open {
@@ -363,7 +372,8 @@ select::-ms-expand {
   }
   .top-nav.open {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+            -ms-transform: translateX(0%);
+        transform: translateX(0%);
   }
   .top-menu-toggle {
     position: relative;
@@ -371,6 +381,7 @@ select::-ms-expand {
     width: 27px;
     height: 17px;
     -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
   }
   .top-menu-toggle-wrap {
@@ -386,6 +397,7 @@ select::-ms-expand {
     background-color: #335eea;
     border-radius: 2px;
     -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
   }
   .top-menu-toggle__item:first-child {
@@ -403,7 +415,8 @@ select::-ms-expand {
   .top-menu-toggle.open .top-menu-toggle__item:first-child {
     top: 7px;
     -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
   }
   .top-menu-toggle.open .top-menu-toggle__item:nth-child(2) {
     opacity: 0;
@@ -411,7 +424,8 @@ select::-ms-expand {
   .top-menu-toggle.open .top-menu-toggle__item:last-child {
     top: 7px;
     -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
   }
 }
 @media (max-width: 767.98px) {
