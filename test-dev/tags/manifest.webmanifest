@@ -1,15 +1,10 @@
 {
     "name": "Web Manifest",
+    "short name": "W-M",
 
 
 
-    // "icons": [
-    //     {
-    //     "src": "icon/books.png",
-    //     "sizes": "144x144",
-    //     "type": "image/png"
-    //     }
-    // ],
+ 
 
 
     "display": "fullscreen",
