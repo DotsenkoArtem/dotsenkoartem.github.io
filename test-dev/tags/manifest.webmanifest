@@ -3,6 +3,7 @@
     "short_name": "W-M",
 
     "icons": [
+        // наверное лучше png - если здесь начнется поддержка Apple
         {
         "src": "icon/icon.svg",
         "sizes": "512x512",
