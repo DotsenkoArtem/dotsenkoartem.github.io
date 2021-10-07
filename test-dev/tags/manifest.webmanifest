@@ -5,11 +5,11 @@
 
     "icons": [
         {
-        "src": "./icon/books.png",
+        "src": "icon/books.png",
         "sizes": "144x144"
         }
     ],
-
+s
 
     "display": "fullscreen",
     "orientation": "landscape",
