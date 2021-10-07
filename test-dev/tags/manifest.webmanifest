@@ -2,6 +2,13 @@
     "name": "Web Manifest",
     "short_name": "W-M",
 
+    "icons": [
+        {
+        "src": "icon/icon.svg",
+        "sizes": "512x512",
+        "type": "image/svg+xml"
+        }
+    ],
 
 
  
