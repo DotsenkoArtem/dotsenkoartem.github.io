@@ -1,0 +1,10 @@
+<picture>
+	<source srcset="img/features/coin.png" type="image/svg+xml">
+	<img src="img/features/coin.svg" alt="Платите по факту">
+</picture>
+
+<picture>
+	<source srcset="smaller.jpg" media="(max-width: 576px)">
+	<source srcset="default.jpg">
+	<img srcset="./img/discount-bg.svg" alt="">
+</picture>
