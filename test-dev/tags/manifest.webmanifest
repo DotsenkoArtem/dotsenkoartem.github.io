@@ -13,7 +13,7 @@
 
     "display": "fullscreen",
     "orientation": "landscape",
-    "theme_color": "tomato",
+    "theme_color": "#00ff00",
     "background_color": "#0f0",
     "scope": "/",
     "start_url": "/manifest.html"
