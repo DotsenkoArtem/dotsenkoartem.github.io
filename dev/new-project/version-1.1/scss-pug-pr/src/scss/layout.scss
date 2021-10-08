@@ -1,0 +1,29 @@
+@use 'partials/variables' as v;
+@use 'partials/mixins' as m;
+
+// Здесь будут основные стили проекта
+
+/*  =====================================================================
+TOC:
+I. Reset
+II. Default Styles
+   1. Basic
+   2. Typography
+   3. Links
+   4. Images
+   5. Buttons
+   6. Forms
+III. Grid
+IV. Others
+   1. Clearing
+   2. Misc
+
+=====================================================================  */
+
+/* I. Reset
+--------------------------------------------------------------------- */
+
+
+body{
+	background: rgb(243, 81, 81) !important;
+}
