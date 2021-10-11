@@ -10,27 +10,28 @@
     <!-- 
     Рекомендации по формату и размеру фавиконки от Яндекс.Вебмастер
     -------------------------------------------------
-    
     Размер: 120 × 120, 32 × 32 или 16 × 16 пикселей.
     Формат: SVG (рекомендуемый), ICO, GIF, JPEG, PNG, BMP. Анимация не поддерживается.
     Размер 120 × 120 пикселей или формат SVG позволяют отображать логотип сайта четче и заметнее на сервисах Яндекса.
 
 
-
-
-
+    От HTML-academy
+    -------------------------------------------------
     Есть ещё сносный онлайновый генератор иконок https://realfavicongenerator.net/favicon_compatibility#.YV6wctVBzIU , но я бы не доверил ему генерировать графику — будет мыльно. А вот код позаимствовать можно.
     -->
 
 
-    <!-- - SVG иконка для вкладок, размер "любой" -->
+        <!-- - SVG иконка для вкладок, размер "любой" -->
     <link rel="icon" href="icon/favicon.svg" sizes="any" type="image/svg+xml">
-    <!-- Если нет SVG, использую .png 16x16 или 32x32 - для ретины -->
+
+        <!-- Если нет SVG, использую .png 16x16 и 32x32 - для ретины -->
     <!-- <link rel="icon" href="icon/favicon-16x16.png" sizes="16x16" type="image/png"> -->
     <!-- <link rel="icon" href="icon/favicon-32x32.png" sizes="32x32" type="image/png"> -->
+
     <!-- Touch иконка работает на iPad4,
-        не работает формат .png для Apple 180x180 -->
-    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon-180x180.png" type="image/png">
+        не работает формат .svg, подойдет формат .png для Apple 180x180 -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon-180x180.png" type="image/png"> -->
+    <link rel="apple-touch-icon" sizes="any" href="./icon/favicon.svg" type="image/png">
 
     <!-- Manifest пока в основном для touch иконок для Android - минимум 192x192-->
     <link rel="manifest" href="manifest.webmanifest">
