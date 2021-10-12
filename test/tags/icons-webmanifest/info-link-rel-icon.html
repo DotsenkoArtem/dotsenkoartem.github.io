@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F A V I С O N S</title>
+
+
+    <!-- 
+        I N O F R M A T I O N
+    Рекомендации по формату и размеру фавиконки от Яндекс.Вебмастер
+    -------------------------------------------------
+    Размер: 120 × 120, 32 × 32 или 16 × 16 пикселей.
+    Формат: SVG (рекомендуемый), ICO, GIF, JPEG, PNG, BMP. Анимация не поддерживается.
+    Размер 120 × 120 пикселей или формат SVG позволяют отображать логотип сайта четче и заметнее на сервисах Яндекса.
+
+
+    От HTML-academy
+    -------------------------------------------------
+    Есть ещё сносный онлайновый генератор иконок https://realfavicongenerator.net/favicon_compatibility#.YV6wctVBzIU , но я бы не доверил ему генерировать графику — будет мыльно. А вот код позаимствовать можно.
+    -->
+
+
+    <!-- ПРИМЕР ПОДКЛЮЧЕНИЯ ИКОНОК
+    -------------------------------------------------
+        Необходимые иконки
+    --------------
+    1.   icon.svg                           или         icon.png 16x16 + icon.png 32x32
+    2.   apple-touch-icon-180x180.png (ОБЗАТЕЛЬНО С БЕЛЫМ ФОНОМ)
+    3.   touch-icon-192x192.png 
+    ------------------------------------------------- -->
+
+        <!-- - SVG иконка для вкладок, размер "любой" -->
+    <link rel="icon" href="img/icons/favicon.svg" sizes="any" type="image/svg+xml">
+
+        <!-- Если нет SVG, использую .png 16x16 и 32x32 - для ретины -->
+    <!-- <link rel="icon" href="img/icons/favicon-16x16.png" sizes="16x16" type="image/png"> -->
+    <!-- <link rel="icon" href="img/icons/favicon-32x32.png" sizes="32x32" type="image/png"> -->
+
+        <!-- Touch иконка работает на iPad4, не работает формат .svg, подойдет формат .png для Apple 180x180 -->
+        <!-- iPad4 не ПОНИМАЕТ ЧЕРНО-БЕЛОЕ PNG - ОЧЕНЬ СТРАННО
+        Я ПОНЯЛ - ПОТОМУ ЧТО ОН ПРОЗРАЧНЫЙ ФОН ЗАКРАШИВАЕТ ЧЕРНЫМ - В ИТОГЕ ВСЯ ИКОНКА Ч Е Р Н А Я -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon-2-180x180.png" type="image/png">
+
+    <!-- Manifest пока в основном для touch иконок для Android - минимум 192x192-->
+    <link rel="manifest" href="manifest.webmanifest">
+    <style>
+        *,*:before, *:after{box-sizing: border-box;}
+        body{
+            font-family: sans-serif;
+            background: rgb(193, 193, 226);
+            color: #111;
+        }
+        code{
+            padding: 10px 15px;
+            display: block;
+            background: rgb(76, 92, 95);
+            color: #fff;
+            
+        }
+        .yellow-comments{
+            color: #ffff00;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ПОДКЛЮЧЕНИЕ ИКОНОК НА САЙТЕ</h1>
+    
+    <ol>
+        <li>
+            <p>Подключить иконку для вкладок браузера в формате svg</p>
+            <code>&lt;link rel="icon" href="img/icons/favicon.svg" sizes="any" type="image/svg+xml"&gt;</code>
+            <p>или в формате png размерром 16x16 и 32x32 - для ретины</p>
+            <code>
+                <span>&lt;link rel="icon" href="img/icons/favicon-16x16.png" sizes="16x16" type="image/png"&gt;</span>
+                <br>
+                <span>&lt;link rel="icon" href="img/icons/favicon-32x32.png" sizes="32x32" type="image/png"&gt;</span>
+            </code>
+        </li>
+        <li>
+            <p>Подключить иконку apple-touch-icon</p>
+            <code>
+                <span>&lt;link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon-2-180x180.png" type="image/png"&gt;</span>
+            </code>
+        </li>
+        <li>
+            <p>Подключить файл manifest.webmanifest или manifest.json</p>
+            <code>
+                <span>&lt;link rel="manifest" href="manifest.webmanifest"&gt;</span>
+            </code>
+            <p>затем в файле manifest.webmanifest подключить тач-иконки для Андроид и все остальное:</p>
+            <code>
+                <pre>
+{
+    <span class="yellow-comments">//представляет имя веб-приложения, как оно обычно отображается пользователю</span>
+    "name": "New Project by Dots",
+
+    <span class="yellow-comments">//короткое имя веб-приложения - определяет название, показываемое пользователю</span>
+    "short_name": "NPD",
+
+    "icons": [
+
+    <span class="yellow-comments">//массив объектов изображений, которые могут использованы как иконки приложения в различных контекстах</span>
+        {
+        "src": "img/icons/touch-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+        }
+    ],
+
+    <span class="yellow-comments">//предпочитаемый разработчиком режим отображения для веб-сайта</span>
+    <span class="yellow-comments">//варьируется от "browser" (когда отображается полное окно браузера) до "fullscreen" (когда приложение полноэкранно).</span>
+    "display": "fullscreen",
+
+    <span class="yellow-comments">//ориентация экрана: any, natural, landscape, landscape-primary, landscape-secondary, portrait, portrait-primary, portrait-secondary</span>
+    "orientation": "landscape",
+
+    <span class="yellow-comments">//цвет темы - в шапке приложения</span>
+    "theme_color": "#00ff00",
+
+    <span class="yellow-comments">//цвет фона - определяет ожидаемый цвет фона для веб-приложения</span>
+    "background_color": "aqua",
+
+    <span class="yellow-comments">//область навигации контекста веб-приложения. Обычно ограничивается тем, какая веб-страница может быть просмотрена, пока манифест загружается. Если пользователь выходит за пределы области, приложение возвращается к нормальному виду веб-страницы.</span>
+    "scope": "./",
+
+    <span class="yellow-comments">//начальный URL-адрес веб-приложения — предпочтительный URL-адрес, который должен быть загружен при запуске пользователем веб-приложения (например, когда пользователь нажимает на значок веб-приложения в меню приложений или на домашнем экране).</span>
+    "start_url": "index.html"
+}
+                </pre>
+            </code>
+        </li>
+    </ol>
+
+
+    <a href="https://html.spec.whatwg.org/multipage/links.html#rel-icon">Ссылка на спецификацию HTML</a>
+
+    
+</body>
+</html>
