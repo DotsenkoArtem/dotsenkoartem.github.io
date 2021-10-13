@@ -1,5 +1,7 @@
 @charset "UTF-8";
 /* COLORS */
+/* Grid Variables
+------------------------------ */
 /*  =====================================================================
 TOC:
 I. Reset
@@ -129,12 +131,6 @@ body {
 h1, h2, h3, h4, h5, h6,
 p {
   cursor: default;
-}
-
-.container {
-  margin: 0 auto;
-  padding: 0 1.2rem;
-  max-width: 132rem;
 }
 
 .scroll-hidden {

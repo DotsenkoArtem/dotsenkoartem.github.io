@@ -1,3 +1,42 @@
+/* 
+При подключени к проекту стили контейнеров включить в default.scss и media-queries.scss
+*/
+
+
+@use 'partials/variables' as v;
+@use 'partials/mixins' as m;
+
+// $gutter: 1.2rem;
+
+.container{
+	&,
+	&_xl,
+	&_lg,
+	&_md,
+	&_sm{
+		margin: 0 auto;
+		padding: 0 v.$gutter;
+	}
+}
+
+.container{
+	max-width: 132rem;
+	&_xl{
+		max-width: 114rem;
+	}
+	&_lg{
+		max-width: 96rem;
+	}
+	&_md{
+		max-width: 72rem;
+	}
+	&_sm{
+		max-width: 54rem;
+	}
+}
+
+
+
 /*========== RESPONSIVE  ==========*/
 
 @media (max-width: 1399.98px){

@@ -98,12 +98,6 @@ h3{
 	background: rgba(0, 0, 250, 1);
 }
 
-.container{
-	margin: 0 auto;
-	padding: 0 v.$gutter;
-	max-width: 132rem;
-}
-
 .row{
 	margin: 0 (- v.$gutter);
 	display: -webkit-box;

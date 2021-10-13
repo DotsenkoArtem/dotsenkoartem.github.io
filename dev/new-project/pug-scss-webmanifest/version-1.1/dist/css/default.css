@@ -133,10 +133,25 @@ p {
   cursor: default;
 }
 
-.container {
+.container, .container_xl, .container_lg, .container_md, .container_sm {
   margin: 0 auto;
   padding: 0 1.2rem;
+}
+
+.container {
   max-width: 132rem;
+}
+.container_xl {
+  max-width: 114rem;
+}
+.container_lg {
+  max-width: 96rem;
+}
+.container_md {
+  max-width: 72rem;
+}
+.container_sm {
+  max-width: 54rem;
 }
 
 .scroll-hidden {

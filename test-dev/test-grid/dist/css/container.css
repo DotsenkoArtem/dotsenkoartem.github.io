@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* COLORS */
+/* Grid Variables
+------------------------------ */
+/* 
+При подключени к проекту стили контейнеров включить в default.scss и media-queries.scss
+*/
+.container, .container_xl, .container_lg, .container_md, .container_sm {
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+.container {
+  max-width: 132rem;
+}
+.container_xl {
+  max-width: 114rem;
+}
+.container_lg {
+  max-width: 96rem;
+}
+.container_md {
+  max-width: 72rem;
+}
+.container_sm {
+  max-width: 54rem;
+}
+
+/*========== RESPONSIVE  ==========*/
+@media (max-width: 1399.98px) {
+  .container {
+    max-width: 114rem;
+  }
+}
+@media (max-width: 1199.98px) {
+  .container, .container_xl {
+    max-width: 96rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .container, .container_xl, .container_lg {
+    max-width: 72rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .container, .container_xl, .container_lg, .container_md {
+    max-width: 54rem;
+  }
+}
