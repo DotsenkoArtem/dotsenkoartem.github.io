@@ -40,11 +40,8 @@
         opacity: 0;
         overflow: auto;
     }
-    &__header,
-    &__footer{
-        min-height: 2.5rem;
-    }
     &__header{
+        padding-right: 2.5rem;
         padding-bottom: 1rem;
         position: relative;
         border-bottom: solid 1px #c9c4cd;
@@ -61,6 +58,7 @@
         overflow: auto;
     }
     &__footer{
+        padding-top: 1rem;
         border-top: solid 1px #c9c4cd;
     }
     &__close{
@@ -68,8 +66,8 @@
         width: 2.5rem;
         height: 2.5rem;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -.5rem;
+        right: -.5rem;
         border: none;
         background: none;
     }

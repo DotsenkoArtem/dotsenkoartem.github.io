@@ -39,10 +39,8 @@
   opacity: 0;
   overflow: auto;
 }
-.modal__header, .modal__footer {
-  min-height: 2.5rem;
-}
 .modal__header {
+  padding-right: 2.5rem;
   padding-bottom: 1rem;
   position: relative;
   border-bottom: solid 1px #c9c4cd;
@@ -59,6 +57,7 @@
   overflow: auto;
 }
 .modal__footer {
+  padding-top: 1rem;
   border-top: solid 1px #c9c4cd;
 }
 .modal__close {
@@ -66,8 +65,8 @@
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -0.5rem;
+  right: -0.5rem;
   border: none;
   background: none;
 }
@@ -105,7 +104,7 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: #000000aa;
+  background-color: rgba(0, 0, 0, 0.667);
   opacity: 0;
   visibility: hidden;
 }
