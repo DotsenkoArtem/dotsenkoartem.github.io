@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    
+    <!--Basic Page Needs 
+    ==============================================-->
+    <meta charset="UTF-8">
+    <title>Форма регистрации</title>
+    <meta name="description" content="Форма регистрации">
+    <meta name="author" content="Artem Dotsenko">
+    <meta name="robots" content="index, nofollow">
+    
+    <!--Fonts preload
+    ==================================================-->
+    <!-- Raleway-Regular
+    ------------------------------------------------- -->
+    <link rel="preload" as="font" href="fonts/Raleway-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+    <!-- Raleway-Italic
+    ------------------------------------------------- -->
+    <link rel="preload" as="font" href="fonts/Raleway-Italic.woff2" type="font/woff2" crossorigin="anonymous">
+    <!--Fonts preload end-->
+    
+    
+    <!--Mobile Specific Metas 
+    ==================================================-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!--CSS
+    ==================================================-->
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+    
+    <!-- Favicons
+    ================================================== -->
+    <link rel="icon" href="img/icons/favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon-180x180.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <div id="wrapper">
+      <mian>
+         
+        <div class="login-title">
+          <h1>Форма регистрации </h1>
+        </div>
+        
+        <div class="container row">
+          <div class="sidebar">
+             
+            <ul>
+              <li>Input расположен после label</li>
+              <li>Кастомный чекбокс</li>
+              <li>Функционал скрытия пароля</li>
+              <li>
+                <s>Валидация</s>
+              </li>
+              <li>Состояние фокуса</li>
+              <li>Состояние ошибки</li>
+              <!-- <li>advantage</li> -->
+              <!-- <li>advantage</li> --> 
+            </ul>
+            
+          </div>
+          <div class="content">
+            <div class="content__inner"> </div>
+            
+            <!-- Form -->
+            <form class="form" id="login-form" action="#" name="loginForm" method="POST">
+              
+              <!-- email-group -->
+              <div class="form__group form__group_control">
+                <input class="form__control" id="userName" type="email" required name="userName">
+                <label class="form__label form__label_control" for="userName">Введите email</label>
+              </div>
+              
+              <!-- password-group  -->
+              <div class="form__group form__group_control form__group_pass form__group_pass-confirm">
+                <input class="form__control" id="userPass" type="password" required name="userPass">
+                <label class="form__label form__label_control" for="userPass">Введите пароль</label>
+                <div class="show-pass"></div>
+              </div>
+              
+              <!-- password-confirm-group  -->
+              <div class="form__group form__group_control form__group_pass form__group_pass-confirm form__group_pass-confirm">
+                <input class="form__control" id="userPassReplay" type="password" required name="userPassReplay">
+                <label class="form__label form__label_control" for="userPassReplay">Повторите пароль</label>
+                <div class="show-pass"></div>
+              </div>
+              
+              <!-- checkbox-group  -->
+              <div class="fieldset fieldset_check fieldset_row">
+                <div class="form__group form__group_check">
+                  <input class="form__check" id="userCheck" type="checkbox" name="userCheck">
+                  <label class="form__label form__label_check" for="userCheck"></label>
+                </div>
+              </div>
+              
+              <!-- submit -->
+              <div class="form__submit-wrap">
+                <input class="btn btn_prim form__submit" type="submit" value="Регистрация">
+              </div>
+              
+            </form><!-- End Form -->
+            <input type="text" placeholder="Введите что-нибудь" style="padding: 1em;"><a href="#">ссылкаВнекуда </a>
+          </div>
+        </div>
+      </mian>
+    </div>
+    <script src="js/sign-up-form.dev.js"></script>
+  </body>
+</html>
