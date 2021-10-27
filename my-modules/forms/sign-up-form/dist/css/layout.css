@@ -265,11 +265,12 @@ ol {
   -o-transition: 0.25s;
   transition: 0.25s;
 }
-.form__check {
+
+.checkbox {
   position: absolute;
   display: none;
 }
-.form__check:checked + label::before {
+.checkbox:checked + label::before {
   border-color: rgba(196, 196, 196, 0.5);
   background-color: rgba(196, 196, 196, 0.5);
   background-image: url("../img/check-icon.svg");
@@ -292,26 +293,26 @@ ol {
 }
 
 /* стили при наведении курсора на checkbox */
-/* .form-check__input:not(:disabled):not(:checked)+.form-check__label:hover::before{
+/* .checkbox:not(:disabled):not(:checked)+label:hover::before{
 	border-color: #b3d7ff;
 } */
 /* стили для активного состояния чекбокса (при нажатии на него) */
-/* .form-check__input:not(:disabled):active+label::before{
-	background-color: #b3d7ff;
+/*  .checkbox:not(:disabled):active+label::before{
+	background-color: #0077ff;
 	border-color: #b3d7ff;
 } */
 /* стили для чекбокса, находящегося в фокусе */
-/* .form-check__input:focus+label::before{
+/* .checkbox:focus+label::before{
 	-webkit-box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
 	box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+   border-color: #ff0000;
 } */
 /* стили для чекбокса, находящегося в фокусе НО НЕ CHECKED */
-/* .form-check__input:focus:not(:checked)+label::before{
-	border-color: #80bdff;
-}
- */
+/* .checkbox:focus:not(:checked)+label::before{
+	border-color: #000000;
+} */
 /* стили для чекбокса, находящегося в состоянии disabled */
-/* .form-check__input:disabled+label::before {
+/* .checkbox:disabled+label::before {
   background-color: #e9ecef;
 } */
 /* RADIO - BUTTON - STYLES */
