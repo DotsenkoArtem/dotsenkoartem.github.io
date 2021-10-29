@@ -1,0 +1,77 @@
+@use '_partials/variables' as v;
+
+.radio-btn{
+    &__input{
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        // &:checked + .radio-btn__label::before{
+        //    border-color: v.$radio-btn-border-color;
+        //    background-color: v.$radio-btn-bg;
+        //    background-image: url("../img/check-icon.svg");
+        // }
+    }
+    &__label{
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:before{
+            -webkit-box-sizing: content-box;
+                    box-sizing: content-box;
+            content:'';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            -webkit-box-flex: 0;
+            -ms-flex-positive: 0;
+            flex-grow: 0;
+            border: 1px solid #adb5bd;
+            border-radius: 50%;
+            margin-right: 0.5em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+            -webkit-transition: .25s;
+            -o-transition: .25s;
+            transition: .25s;
+        }
+    }
+}
+
+/* стили при наведении курсора на radio-btn */
+.radio-btn__input:not(:disabled):not(:checked)+.radio-btn__label:hover::before{
+	border-color: v.$radio-btn-hover-border-color;
+}
+/* стили для активной радиокнопки (при нажатии на неё) */
+.radio-btn__input:not(:disabled):active+.radio-btn__label::before {
+  background-color: v.$radio-btn-active-bg;
+  border-color: v.$radio-btn-active-border-color;
+}
+/* стили для радиокнопки, находящейся в фокусе */
+.radio-btn__input:focus+.radio-btn__label::before {
+  -webkit-box-shadow: 0 0 0 0.1rem v.$radio-btn-focus-shadow-color;
+          box-shadow: 0 0 0 0.1rem v.$radio-btn-focus-shadow-color;
+}
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.radio-btn__input:focus:not(:checked)+.radio-btn__label::before {
+  border-color: v.$radio-btn-focus-border-color;
+}
+/* стили для радиокнопки, находящейся в состоянии checked */
+.radio-btn__input:checked+.radio-btn__label::before {
+  border-color: v.$radio-btn-checked-border-color;
+  background-color: v.$radio-btn-checked-bg;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8' %3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.radio-btn__input:disabled+.radio-btn__label::before {
+  background-color: v.$radio-btn-disabled-bg;
+}
