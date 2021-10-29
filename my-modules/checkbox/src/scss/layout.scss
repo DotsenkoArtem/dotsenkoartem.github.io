@@ -1,0 +1,22 @@
+@use '_partials/variables' as v;
+@use '_partials/mixins' as m;
+
+/* Common styles
+-------------------------*/
+
+body {
+   font-size: 1.6rem;
+   line-height: 1.36;
+   background: v.$main-bg;
+}
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 1.177;
+  text-align: center;
+}
+
+ul,
+ol {
+  list-style-type: disc;
+}
