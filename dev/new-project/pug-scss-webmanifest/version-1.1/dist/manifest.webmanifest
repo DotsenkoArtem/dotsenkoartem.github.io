@@ -3,7 +3,6 @@
     "short_name": "NPD",
 
     "icons": [
-        // наверное лучше png (тогда 192x192 и менее) - если здесь начнется поддержка Apple
         {
         "src": "img/icons/favicon.svg",
         "sizes": "512x512",
@@ -15,12 +14,8 @@
         "type": "image/png"
         }
     ],
-
- 
-
-
-    "display": "fullscreen",
-    "orientation": "landscape",
+    "display": "standalone",
+    "orientation": "any",
     "theme_color": "#00ff00",
     "background_color": "aqua",
     "scope": "./",

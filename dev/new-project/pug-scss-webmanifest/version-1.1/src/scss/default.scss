@@ -1,5 +1,5 @@
-@use 'partials/variables' as v;
-@use 'partials/mixins' as m;
+@use '_partials/variables' as v;
+@use '_partials/mixins' as m;
 
 /*  =====================================================================
 TOC:
@@ -11,10 +11,7 @@ II. Default Styles
    4. Images
    5. Buttons
    6. Forms
-III. Grid
-IV. Others
-   1. Clearing
-   2. Misc
+III. Others
 
 =====================================================================  */
 
@@ -26,11 +23,10 @@ IV. Others
 *:after{
 	margin: 0;
 	padding: 0;
-	-webkit-box-sizing: inherit;
-	        box-sizing: inherit;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
 }
-
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -73,7 +69,6 @@ pre {
  
 blockquote, q { quotes: &#8220 &#8220; }
  
-
 blockquote,
 q{
 	&:before,
@@ -81,24 +76,6 @@ q{
 		content: '';
 		content: none;
 	}
-}
-
-ins {
-	background-color: #ff9;
-	color: #000;
-	text-decoration: none;
-}
- 
-mark {
-	background-color: #A7F4F6;
-	color: #555;
-}
- 
-del { text-decoration: line-through; }
- 
-abbr[title], dfn[title] {
-	border-bottom: 1px dotted;
-	cursor: help;
 }
 
 ul, ol{
@@ -109,34 +86,28 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* ------------------------------------------------------------------ */
 
 
 /* II. Default styles
 --------------------------------------------------------------------- */
 
-/* ---------- 1. Basic */
+/* 1. Basic
+-------------------------*/
 
 html{
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
-	font-family: 'Raleway', sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 400;
-	// line-height: 1.2;
+	line-height: 1.2;
 	font-size: 10px;
 }
 
-body{
-	background-color: v.$main-bg;
-	// проверка подключения миксина
-	@include m.textShadow();
-}
 
 h1, h2, h3, h4, h5, h6,
 p{
 	cursor: default;
 }
 
+// Use .container if grid.css is not connected
 .container{
 	&,
 	&_xl,
@@ -173,36 +144,28 @@ p{
 .wrapper{
 	overflow: hidden;
 }
-/* ------------------------- */
 
- /* ---------- 2. Typography */
- address{
+/* 2. Typography
+-------------------------*/
+address{
 	font-style: normal;
 }
 h1, h2, h3, h4, h5, h6{
-	font-family: 'Raleway-Regular', sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 100;
 	line-height: 1.3;
 }
 
 h1{
 	font-size: 2.5rem;
 }
-h2{
-	// font-size: 3.5rem;
-}
-h3{
-	// font-size: 2.2rem;
-}
-h4{
-	// font-size: 1.8rem;
-}
-/* ------------------------- */
 
- /* ---------- 3. Links */
+/* 3. Links
+-------------------------*/
 
 a, a:visited {
    text-decoration: none;
-//    outline: none;
+   outline: none;
 //    color: #11ABB0;
 
    -webkit-transition: color .3s ease-in-out;
@@ -212,44 +175,35 @@ a, a:visited {
 a{
 	&:hover,
 	&:focus{
-		color: #313131;
+		color: #3df804;
+	}
+	&:active{
+		color: darken(#ff0505, 15%);
 	}
 }
 
-// p{
-// 	a,
-// 	a:visited{
-// 		line-height: inherit;
-// 	}
-// }
 
- /* ------------------------- */
-
- /* ---------- 4. Images */
+ /* 4. Images
+ -------------------------*/
 
  img {
 	max-width: 100%;
 	height: auto;
  }
- /* ------------------------- */
 
- /* ---------- 5. Buttons */
+ /* 5. Buttons
+ -------------------------*/
 
  button,
- .btn,
- .btn:visited,
  input[type="submit"],
  input[type="reset"],
- input[type="button"]{
+ input[type="button"],
+ .btn,
+ .btn:visited{
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	// letter-spacing: 0;
-	// color: #fff;
-	// padding: 12px 24px;
-	// margin-bottom: 18px;
 	cursor: pointer;
-	// height: auto;
 	-webkit-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
@@ -259,29 +213,29 @@ a{
 	        user-select: none;
  }
 
- button,
- .btn,
- .btn:visited,
- input[type="submit"],
- input[type="reset"],
- input[type="button"]{
-	 &:hover{
-		// background: #3d4145;
-		// color: #fff;
-	 }
- }
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.btn,
+.btn:visited{
+	&:hover{
+	background: #3d4145;
+	color: #fff;
+	}
+}
 
- button,
- .btn,
- .btn:visited,
- input[type="submit"],
- input[type="reset"],
- input[type="button"]{
-	 &:active{
-		// background: #3d4145;
-		// color: #fff;
-	 }
- }
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.btn,
+.btn:visited{
+	&:active{
+	background: #3d4145;
+	color: #fff;
+	}
+}
 
 //  .btn styles from prev version
 .btn{
@@ -345,27 +299,9 @@ a{
 		        transform: translateY(5px);
 	}
 }
- /* ------------------------- */
 
- /* ---------- 6. Forms */
-
- input[type="text"],
- input[type="password"],
- input[type="email"],
- textarea,
- select{
-	display: block;
-	padding: 18px 15px;
-	margin: 0 0 24px 0;
-	border: 0;
-	min-width: 260px;
-	max-width: 100%;
-	font-size: 15px;
-	line-height: 24px;
-	color: #647373;
-	background: #D3D9D9;
-	border-radius: 3px;
- }
+/* 6. Forms 
+-------------------------*/
 
 input:not(input[type="checkbox"]),
 select{
@@ -375,11 +311,10 @@ select{
 	outline: none;
 }
 
-input::-webkit-input-placeholder{color: rgba(17, 17, 17, .46);}
-input::-moz-placeholder{color: rgba(17, 17, 17, .46);}
-// для SUPER-браузера это свойство указывать после основного цвета инпута - и тогда будет нам счастье
-// input:-ms-input-placeholder{color: rgba(17, 17, 17, .46);}
-input:-moz-placeholder{color: rgba(17, 17, 17, .46);}
+
+input:-ms-input-placeholder{color: rgba(115, 255, 0, 0.938);}
+input::-webkit-input-placeholder{color: rgba(255, 0, 0, 0.95);}
+input::-moz-placeholder{color: rgba(8, 94, 255, 0.918);}
 
 input::-ms-clear {
    display: none;
@@ -394,26 +329,8 @@ input[type=search]::-webkit-search-results-decoration {
 
 select::-ms-expand {
     display: none;
-  }
-  
- /* ------------------------- */
- /* ------------------------------------------------------------------ */
+}
 
- /* III. Grid
+
+/* IV. Others
 --------------------------------------------------------------------- */
-
-
-/* ------------------------------------------------------------------ */
-
- /* IV. Others
---------------------------------------------------------------------- */
-/* ---------- 1. Clearing */
-
-
-/* ------------------------- */
-
-/* ---------- 2. Misc */
-
-
-/* ------------------------- */
-/* ------------------------------------------------------------------ */

@@ -12,10 +12,7 @@ II. Default Styles
    4. Images
    5. Buttons
    6. Forms
-III. Grid
-IV. Others
-   1. Clearing
-   2. Misc
+III. Others
 
 =====================================================================  */
 /* I. Reset
@@ -25,8 +22,8 @@ IV. Others
 *:after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -82,26 +79,6 @@ q:after {
   content: none;
 }
 
-ins {
-  background-color: #ff9;
-  color: #000;
-  text-decoration: none;
-}
-
-mark {
-  background-color: #A7F4F6;
-  color: #555;
-}
-
-del {
-  text-decoration: line-through;
-}
-
-abbr[title], dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help;
-}
-
 ul, ol {
   list-style: none;
 }
@@ -111,21 +88,15 @@ table {
   border-spacing: 0;
 }
 
-/* ------------------------------------------------------------------ */
 /* II. Default styles
 --------------------------------------------------------------------- */
-/* ---------- 1. Basic */
+/* 1. Basic
+-------------------------*/
 html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
+  line-height: 1.2;
   font-size: 10px;
-}
-
-body {
-  background-color: #8cfaeb;
-  text-shadow: 15px 15px 5px rgba(0, 0, 0, 0.575);
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -164,14 +135,15 @@ p {
   overflow: hidden;
 }
 
-/* ------------------------- */
-/* ---------- 2. Typography */
+/* 2. Typography
+-------------------------*/
 address {
   font-style: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway-Regular", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
   line-height: 1.3;
 }
 
@@ -179,34 +151,38 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* ------------------------- */
-/* ---------- 3. Links */
+/* 3. Links
+-------------------------*/
 a, a:visited {
   text-decoration: none;
+  outline: none;
   -webkit-transition: color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
 
 a:hover, a:focus {
-  color: #313131;
+  color: #3df804;
+}
+a:active {
+  color: #b80000;
 }
 
-/* ------------------------- */
-/* ---------- 4. Images */
+/* 4. Images
+-------------------------*/
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* ------------------------- */
-/* ---------- 5. Buttons */
+/* 5. Buttons
+-------------------------*/
 button,
-.btn,
-.btn:visited,
 input[type=submit],
 input[type=reset],
-input[type=button] {
+input[type=button],
+.btn,
+.btn:visited {
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -218,6 +194,26 @@ input[type=button] {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover,
+.btn:hover,
+.btn:visited:hover {
+  background: #3d4145;
+  color: #fff;
+}
+
+button:active,
+input[type=submit]:active,
+input[type=reset]:active,
+input[type=button]:active,
+.btn:active,
+.btn:visited:active {
+  background: #3d4145;
+  color: #fff;
 }
 
 .btn {
@@ -277,26 +273,8 @@ input[type=button] {
   transform: translateY(5px);
 }
 
-/* ------------------------- */
-/* ---------- 6. Forms */
-input[type=text],
-input[type=password],
-input[type=email],
-textarea,
-select {
-  display: block;
-  padding: 18px 15px;
-  margin: 0 0 24px 0;
-  border: 0;
-  min-width: 260px;
-  max-width: 100%;
-  font-size: 15px;
-  line-height: 24px;
-  color: #647373;
-  background: #D3D9D9;
-  border-radius: 3px;
-}
-
+/* 6. Forms 
+-------------------------*/
 input:not(input[type=checkbox]),
 select {
   -webkit-appearance: none;
@@ -305,16 +283,16 @@ select {
   outline: none;
 }
 
+input:-ms-input-placeholder {
+  color: rgba(115, 255, 0, 0.938);
+}
+
 input::-webkit-input-placeholder {
-  color: rgba(17, 17, 17, 0.46);
+  color: rgba(255, 0, 0, 0.95);
 }
 
 input::-moz-placeholder {
-  color: rgba(17, 17, 17, 0.46);
-}
-
-input:-moz-placeholder {
-  color: rgba(17, 17, 17, 0.46);
+  color: rgba(8, 94, 255, 0.918);
 }
 
 input::-ms-clear {
@@ -332,15 +310,5 @@ select::-ms-expand {
   display: none;
 }
 
-/* ------------------------- */
-/* ------------------------------------------------------------------ */
-/* III. Grid
---------------------------------------------------------------------- */
-/* ------------------------------------------------------------------ */
 /* IV. Others
 --------------------------------------------------------------------- */
-/* ---------- 1. Clearing */
-/* ------------------------- */
-/* ---------- 2. Misc */
-/* ------------------------- */
-/* ------------------------------------------------------------------ */
