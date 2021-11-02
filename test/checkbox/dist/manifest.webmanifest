@@ -1,0 +1,24 @@
+{
+    "name": "New Project by Dots",
+    "description": "Custom Chekbox",
+    "short_name": "NPD",
+
+    "icons": [
+        {
+        "src": "img/icons/favicon.svg",
+        "sizes": "512x512",
+        "type": "image/svg+xml"
+        },
+        {
+        "src": "img/icons/touch-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+        }
+    ],
+    "display": "standalone",
+    "orientation": "any",
+    "theme_color": "rgba(152, 189, 245, 0.176)",
+    "background_color": "rgba(152, 189, 245, 0.176)",
+    "scope": "./",
+    "start_url": "index.html"
+  }
