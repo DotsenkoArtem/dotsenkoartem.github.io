@@ -39,7 +39,8 @@ pre{
 	display: flex;
   &-wrap{
     margin: 50px auto;
-    width: 600px;
+    width: 100%;
+    max-width: 60rem;
     border-radius: 10px;
     border: 1px solid #888;
     -webkit-box-shadow: 0 0 30px rgba(0,0,0,.2);
@@ -152,8 +153,8 @@ pre{
   border-radius: .5rem;
   -webkit-box-shadow: 0 0 .5rem rgba(34, 34, 34, 0.911);
           box-shadow: 0 0 .5rem rgba(34, 34, 34, 0.911);
-  -webkit-animation: fadeOut .5s ease-in 2s forwards;
-          animation: fadeOut .5s ease-in 2s forwards;
+  -webkit-animation: fadeOut .5s ease-in 1s forwards;
+          animation: fadeOut .5s ease-in 1s forwards;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;

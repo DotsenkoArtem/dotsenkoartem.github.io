@@ -46,6 +46,7 @@ const copyBtns = document.getElementsByClassName('code-copy-btn');
 for(let i = 0; i < copyBtns.length; i++){
 	let copyBtn = copyBtns[i];
 	copyBtn.addEventListener('click', (e)=>{
+		// Координаты клика по кнопке
 		let iToolTipX = e.clientX;
 		let iToolTipY = e.clientY;
 		copyToClipboard(copyBtn, iToolTipX, iToolTipY);
@@ -76,13 +77,27 @@ function copyToClipboard(copyBtn, iToolTipX, iToolTipY) {
 		iToolTip = document.createElement('div');
 		iToolTip.className = 'info-iToolTip';
 		iToolTip.innerText = 'Copied';
-		iToolTip.style.top = `${iToolTipY - 40}px`;
-		iToolTip.style.left = `${iToolTipX + 35}px`;
 		document.body.appendChild(iToolTip);
+
+
+	
+		// Отступ подсказки от клика
+		let iToolTipoOffsetLeft = 35;
+		// Проверка на полное отображение подсказки в окне браузера
+		// Если не выходит за рамки окна, то позиционирую на "iToolTipoOffsetLeft" px правее клика
+		if(document.documentElement.clientWidth >= (iToolTipX + iToolTipoOffsetLeft + iToolTip.offsetWidth)){
+			iToolTip.style.left = `${iToolTipX + iToolTipoOffsetLeft}px`;
+		} else{
+			// Если выходит за границы окна, то приклеиваю к правой границе окна + 15px
+			iToolTip.style.left = 'auto';
+			iToolTip.style.right = `15px`;
+		}
+
+		iToolTip.style.top = `${iToolTipY - 40}px`;
 
 		// Удаление подсказки
 		setTimeout(() => {
 			document.body.removeChild(iToolTip);
-		}, 2500);
+		}, 1500);
 	}
 }

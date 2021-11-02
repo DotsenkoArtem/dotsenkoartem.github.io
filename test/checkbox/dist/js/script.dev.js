@@ -45,6 +45,7 @@ var copyBtns = document.getElementsByClassName('code-copy-btn');
 var _loop2 = function _loop2(_i) {
   var copyBtn = copyBtns[_i];
   copyBtn.addEventListener('click', function (e) {
+    // Координаты клика по кнопке
     var iToolTipX = e.clientX;
     var iToolTipY = e.clientY;
     copyToClipboard(copyBtn, iToolTipX, iToolTipY);
@@ -75,12 +76,23 @@ function copyToClipboard(copyBtn, iToolTipX, iToolTipY) {
     iToolTip = document.createElement('div');
     iToolTip.className = 'info-iToolTip';
     iToolTip.innerText = 'Copied';
-    iToolTip.style.top = "".concat(iToolTipY - 40, "px");
-    iToolTip.style.left = "".concat(iToolTipX + 35, "px");
-    document.body.appendChild(iToolTip); // Удаление подсказки
+    document.body.appendChild(iToolTip); // Отступ подсказки от клика
+
+    var iToolTipoOffsetLeft = 35; // Проверка на полное отображение подсказки в окне браузера
+    // Если не выходит за рамки окна, то позиционирую на "iToolTipoOffsetLeft" px правее клика
+
+    if (document.documentElement.clientWidth >= iToolTipX + iToolTipoOffsetLeft + iToolTip.offsetWidth) {
+      iToolTip.style.left = "".concat(iToolTipX + iToolTipoOffsetLeft, "px");
+    } else {
+      // Если выходит за границы окна, то приклеиваю к правой границе окна + 15px
+      iToolTip.style.left = 'auto';
+      iToolTip.style.right = "15px";
+    }
+
+    iToolTip.style.top = "".concat(iToolTipY - 40, "px"); // Удаление подсказки
 
     setTimeout(function () {
       document.body.removeChild(iToolTip);
-    }, 2500);
+    }, 1500);
   }
 }
