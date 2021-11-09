@@ -51,9 +51,9 @@ html(lang="en")
         .container
             .tabs
                 ul.tabs__menu 
-                    li.tab-title.active(data-target="tab-pane1") HTML
-                    li.tab-title(data-target="tab-pane2") CSS
-                    li.tab-title(data-target="tab-pane3") JS
+                    li.tab__caption.active(data-target="tab-pane1") HTML
+                    li.tab__caption(data-target="tab-pane2") CSS
+                    li.tab__caption(data-target="tab-pane3") JS
                 
 
                 .tabs__content
@@ -63,7 +63,7 @@ html(lang="en")
                     |
                     |<!-- Tab-pane 1
                     |------------------------------ -->
-                    #tab-pane1.tab-pane.active 
+                    #tab-pane1.tab__pane.active 
                         .code-copy-btn-wrap
                             div.code-copy-btn(data-target="item-to-copy1")
                         |
@@ -132,7 +132,7 @@ html(lang="en")
                     |   
                     |<!-- Tab-pane 2
                     |------------------------------ -->
-                    #tab-pane2.tab-pane
+                    #tab-pane2.tab__pane
                         .code-copy-btn-wrap
                             div.code-copy-btn(data-target="item-to-copy2")
                         |
@@ -203,7 +203,7 @@ html(lang="en")
                     |
                     |<!-- Tab-pane 3
                     |------------------------------ -->
-                    #tab-pane3.tab-pane
+                    #tab-pane3.tab__pane
                         .code-copy-btn-wrap
                             div.code-copy-btn(data-target="item-to-copy3")
                         |

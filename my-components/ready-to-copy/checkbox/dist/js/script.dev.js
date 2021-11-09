@@ -6,11 +6,11 @@ var tabsBoxes = document.querySelectorAll('.tabs');
 
 var _loop = function _loop(i) {
   // Получение массива всех заголовков вкладок
-  var tabTitles = tabsBoxes[i].querySelectorAll('.tab-title'); // Получение .tabs__content (родитель для элемнтов с контентом вкладок)
+  var tabTitles = tabsBoxes[i].querySelectorAll('.tab__caption'); // Получение .tabs__content (родитель для элемнтов с контентом вкладок)
 
   var tabsContent = tabsBoxes[i].querySelector('.tabs__content'); // Получение всех элементов с контентом вкладок
 
-  var tabPanes = tabsContent.querySelectorAll('.tab-pane');
+  var tabPanes = tabsContent.querySelectorAll('.tab__pane');
 
   for (var _i2 = 0; _i2 < tabTitles.length; _i2++) {
     var tabTitle = tabTitles[_i2];

@@ -53,7 +53,7 @@ pre{
 }
 
 .tab{
-  &-title{
+  &__caption{
     padding: 1rem;
     width: calc(100% / 3);
     text-align: center;
@@ -76,7 +76,7 @@ pre{
       border-bottom-color: transparent;
     }
   }
-  &-pane{
+  &__pane{
     padding: 1rem;
     position: absolute;
     top: 0;

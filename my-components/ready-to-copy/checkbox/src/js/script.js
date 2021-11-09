@@ -7,13 +7,13 @@ const tabsBoxes = document.querySelectorAll('.tabs');
 for (let i = 0; i < tabsBoxes.length; i++) {
 
 	// Получение массива всех заголовков вкладок
-	let tabTitles = tabsBoxes[i].querySelectorAll('.tab-title');
+	let tabTitles = tabsBoxes[i].querySelectorAll('.tab__caption');
 	
 	// Получение .tabs__content (родитель для элемнтов с контентом вкладок)
 	let tabsContent = tabsBoxes[i].querySelector('.tabs__content');
 	
 	// Получение всех элементов с контентом вкладок
-	const tabPanes = tabsContent.querySelectorAll('.tab-pane');
+	const tabPanes = tabsContent.querySelectorAll('.tab__pane');
 	
 
 	for (let i = 0; i < tabTitles.length; i++) {

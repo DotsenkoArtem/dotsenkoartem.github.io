@@ -5,7 +5,7 @@
 body {
   font-size: 1.6rem;
   line-height: 1.36;
-  background: #98bdf52d;
+  background: rgba(152, 189, 245, 0.176);
 }
 
 button, button:hover {
@@ -47,7 +47,7 @@ pre {
   border-bottom-left-radius: 1rem;
 }
 
-.tab-title {
+.tab__caption {
   padding: 1rem;
   width: calc(100% / 3);
   text-align: center;
@@ -60,17 +60,17 @@ pre {
   -ms-user-select: none;
   user-select: none;
 }
-.tab-title:hover {
+.tab__caption:hover {
   background: #fafafa;
 }
-.tab-title:first-child {
+.tab__caption:first-child {
   border-left-color: transparent;
 }
-.tab-title.active {
+.tab__caption.active {
   background: #fff;
   border-bottom-color: transparent;
 }
-.tab-pane {
+.tab__pane {
   padding: 1rem;
   position: absolute;
   top: 0;
@@ -86,11 +86,11 @@ pre {
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-.tab-pane.active {
+.tab__pane.active {
   z-index: 5;
   opacity: 1;
 }
-.tab-pane code {
+.tab__pane code {
   display: block;
   height: 100%;
   overflow: auto;
