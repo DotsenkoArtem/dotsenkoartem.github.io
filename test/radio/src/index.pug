@@ -1,0 +1,54 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Radio Buttons
+        |
+        |
+        |<!--CSS
+        |==================================================-->
+        link(rel="stylesheet" href="css/default.css")
+        link(rel="stylesheet" href="css/layout.css")
+        link(rel="stylesheet" href="css/radio-btn.css")
+        //- link(rel="stylesheet" href="css/media-queries.css")
+        |
+        |
+        |<!-- Favicons
+        |================================================== -->
+
+        link(rel="icon" href="img/icons/favicon.svg" sizes="any" type="image/svg+xml")
+        link(rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon-180x180.png" type="image/png")
+        link(rel="manifest", href="manifest.json")
+    body 
+
+        |
+        |
+        h1 Custom Radio Buttons
+        |
+        |
+        .container
+            |
+            |
+            p Выберите язык программирования:
+            br
+            br
+            |<!-- - Разметка радио кнопок
+            |------------------------------ -->
+
+            .radio-btn
+                input#radio1.radio-btn__input(type="radio", name="radio")
+                label.radio-btn__label(for="radio1") PHP
+
+            .radio-btn
+                input#radio2.radio-btn__input(type="radio", name="radio")
+                label.radio-btn__label(for="radio2") Java Script
+
+            .radio-btn
+                input#radio3.radio-btn__input(type="radio", name="radio")
+                label.radio-btn__label(for="radio3") Python
+            
+            |
+            |<!-- ------------------------------ -->
+            |
