@@ -1,12 +1,16 @@
 @charset "UTF-8";
 /* COLORS */
 /* GREED */
+.radio-btn {
+  padding-left: 1.5em;
+}
 .radio-btn__input {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 .radio-btn__label {
+  position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -19,26 +23,35 @@
   user-select: none;
 }
 .radio-btn__label:before {
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
   content: "";
+  position: absolute;
+  left: -1.5em;
   display: inline-block;
   width: 1em;
   height: 1em;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
   border: 1px solid #adb5bd;
   border-radius: 50%;
-  margin-right: 0.5em;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% 50%;
-  -webkit-transition: 0.25s;
-  -o-transition: 0.25s;
-  transition: 0.25s;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.radio-btn__label:after {
+  content: "";
+  position: absolute;
+  left: -1.25em;
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transition: -webkit-transform cubic-bezier(1, 1.56, 0.55, 1.52) 0.2s;
+  transition: -webkit-transform cubic-bezier(1, 1.56, 0.55, 1.52) 0.2s;
+  -o-transition: transform cubic-bezier(1, 1.56, 0.55, 1.52) 0.2s;
+  transition: transform cubic-bezier(1, 1.56, 0.55, 1.52) 0.2s;
+  transition: transform cubic-bezier(1, 1.56, 0.55, 1.52) 0.2s, -webkit-transform cubic-bezier(1, 1.56, 0.55, 1.52) 0.2s;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
 }
 
 /* стили при наведении курсора на radio-btn */
@@ -67,7 +80,12 @@
 .radio-btn__input:checked + .radio-btn__label::before {
   border-color: #0b76ef;
   background-color: #0b76ef;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8' %3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.radio-btn__input:checked + .radio-btn__label::after {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }
 
 /* стили для радиокнопки, находящейся в состоянии disabled */

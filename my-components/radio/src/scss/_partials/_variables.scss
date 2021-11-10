@@ -9,6 +9,7 @@ $btn-sec-bg: #ff0;
 $gutter: 1.2rem;
 
 // radio-btn variables
+// radio-btn colors
 $radio-btn-border-color: rgba(196, 196, 196, 0.5);
 $radio-btn-hover-border-color: rgb(179, 215, 255);
 $radio-btn-active-border-color: rgb(179, 215, 255);
@@ -21,3 +22,8 @@ $radio-btn-active-bg: rgb(0, 119, 255);
 $radio-btn-disabled-bg: rgb(11, 3, 34);
 $radio-btn-checked-bg: rgb(11, 118, 239);
 $radio-btn-disabled-bg: rgb(239, 233, 233);
+// radio-btn sizes
+$radio-outer-width: 1em;
+$radio-inner-width: .5em;
+$radio-outer-left-position: $radio-outer-width + .5em;
+$radio-inner-left-position: $radio-outer-left-position - ($radio-outer-width - $radio-inner-width)/2;

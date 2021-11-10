@@ -1,17 +1,14 @@
 @use '_partials/variables' as v;
 
 .radio-btn{
+    padding-left: v.$radio-outer-left-position;
     &__input{
         position: absolute;
         z-index: -1;
         opacity: 0;
-        // &:checked + .radio-btn__label::before{
-        //    border-color: v.$radio-btn-border-color;
-        //    background-color: v.$radio-btn-bg;
-        //    background-image: url("../img/check-icon.svg");
-        // }
     }
     &__label{
+        position: relative;
         display: -webkit-inline-box;
         display: -ms-inline-flexbox;
         display: inline-flex;
@@ -23,26 +20,35 @@
         -ms-user-select: none;
         user-select: none;
         &:before{
-            -webkit-box-sizing: content-box;
-                    box-sizing: content-box;
             content:'';
+            position: absolute;
+            left: -(v.$radio-outer-left-position);
             display: inline-block;
-            width: 1em;
-            height: 1em;
-            -ms-flex-negative: 0;
-            flex-shrink: 0;
-            -webkit-box-flex: 0;
-            -ms-flex-positive: 0;
-            flex-grow: 0;
+            width: v.$radio-outer-width;
+            height: v.$radio-outer-width;
             border: 1px solid #adb5bd;
             border-radius: 50%;
-            margin-right: 0.5em;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: 50% 50%;
-            -webkit-transition: .25s;
-            -o-transition: .25s;
-            transition: .25s;
+            -webkit-transition: .2s;
+            -o-transition: .2s;
+            transition: .2s;
+        }
+        &:after{
+            content:'';
+            position: absolute;
+            left: -(v.$radio-inner-left-position);
+            display: inline-block;
+            width: v.$radio-inner-width;
+            height: v.$radio-inner-width;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            -webkit-transition: -webkit-transform cubic-bezier(1,1.56,.55,1.52) .2s;
+            transition: -webkit-transform cubic-bezier(1,1.56,.55,1.52) .2s;
+            -o-transition: transform cubic-bezier(1,1.56,.55,1.52) .2s;
+            transition: transform cubic-bezier(1,1.56,.55,1.52) .2s;
+            transition: transform cubic-bezier(1,1.56,.55,1.52) .2s, -webkit-transform cubic-bezier(1,1.56,.55,1.52) .2s;
+            -webkit-transform: scale(0);
+                -ms-transform: scale(0);
+                    transform: scale(0);
         }
     }
 }
@@ -69,7 +75,12 @@
 .radio-btn__input:checked+.radio-btn__label::before {
   border-color: v.$radio-btn-checked-border-color;
   background-color: v.$radio-btn-checked-bg;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8' %3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8' %3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+.radio-btn__input:checked+.radio-btn__label::after{
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 /* стили для радиокнопки, находящейся в состоянии disabled */
 .radio-btn__input:disabled+.radio-btn__label::before {
