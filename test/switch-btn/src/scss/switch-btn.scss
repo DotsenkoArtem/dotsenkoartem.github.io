@@ -1,0 +1,140 @@
+@use '_partials/variables' as v;
+
+.switch-btn{
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+    &__input{
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+        &:checked{
+            &+.switch-btn__label{
+                border-color: v.$switch-btn-checked-border-color;
+                // -webkit-box-shadow: 0 0 0 .1rem rgba(115, 115, 115, .3);
+                        // box-shadow: 0 0 0 .1rem rgba(115, 115, 115, .3);
+                &::after{
+                    background-color: v.$switch-btn-checked-flag-bg;
+                    -webkit-transform: translateX(v.$switch-btn-width - v.$switch-btn-height);
+                        -ms-transform: translateX(v.$switch-btn-width - v.$switch-btn-height);
+                            transform: translateX(v.$switch-btn-width - v.$switch-btn-height);
+                }
+            }
+        }
+    }
+    &__caption{
+        display: inline-block;
+    }
+    &__label{
+        display: inline-block;
+        position: relative;
+        margin-right: v.$switch-btn-offset-right;
+        width: v.$switch-btn-width;
+        height: v.$switch-btn-height;
+        border: solid v.$switch-btn-border-width v.$switch-btn-border-color;
+        border-radius: v.$switch-btn-height;
+        overflow: hidden;
+        cursor: pointer;
+        -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+        -webkit-transition: all ease-in .15s;
+        -o-transition: all ease-in .15s;
+        transition: all ease-in .15s;
+        // -webkit-box-shadow: 0 0 0 .1rem rgba(50, 50, 255, .3);
+                // box-shadow: 0 0 0 .1rem rgba(50, 50, 255, .3);
+        &::after{
+            content: '';
+            position: absolute;
+            z-index: 100;
+            left: 0px;
+            display: inline-block;
+            width: v.$switch-btn-height;
+            height: v.$switch-btn-height;
+            background-color: v.$switch-btn-flag-bg;
+            border-radius: 50%;
+            -webkit-transition: all ease-in .15s;
+            -o-transition: all ease-in .15s;
+            transition: all ease-in .15s;
+        }
+    }
+}
+
+// Switch Button styles in different states
+// ---------------------------------------------------
+
+/* стили при наведении курсора на включенную кнопку */
+.switch-btn__input:not(:disabled)+.switch-btn__label:hover{
+	border-color: v.$switch-btn-checked-hover-border-color;
+}
+.switch-btn__input:not(:disabled)+.switch-btn__label:hover::after{
+	background-color: v.$switch-btn-checked-hover-border-color;
+}
+
+/* стили при наведении курсора на выключенную кнопку */
+.switch-btn__input:not(:disabled):not(:checked)+.switch-btn__label:hover{
+    border-color: v.$switch-btn-hover-border-color;
+}
+.switch-btn__input:not(:disabled):not(:checked)+.switch-btn__label:hover::after{
+    background-color: v.$switch-btn-hover-border-color;
+}
+
+/* стили для активного состояния чекбокса (при нажатии на него) */
+//  .switch-btn__input:not(:disabled):active+.switch-btn__label{
+// 
+// }
+//  .switch-btn__input:not(:disabled):active+.switch-btn__label::after{
+// 
+// }
+
+ /* стили для чекбокса, находящегося в состоянии disabled */
+// .switch-btn__input:disabled+.switch-btn__label {
+//   
+// }
+// .switch-btn__input:disabled+.switch-btn__label::after {
+//   
+// }
+
+/* стили кнопки, находящейся в фокусе */
+/* не отображается, если  .switch-btn__input {display: none;} */
+.switch-btn__input:focus+.switch-btn__label{
+    border-color: v.$switch-btn-checked-border-color;
+	outline: solid .2rem lighten(v.$switch-btn-checked-border-color, 30%);
+}
+.switch-btn__input:focus+.switch-btn__label::after{
+    background-color: v.$switch-btn-checked-border-color;
+}
+
+/* стили кнопки, находящейся в фокусе НО НЕ CHECKED */
+/* не отображается, если  .switch-btn__input {display: none;} */
+.switch-btn__input:focus:not(:checked)+.switch-btn__label{
+    border-color: lighten(v.$switch-btn-border-color, 20%);
+	outline: solid .2rem lighten(v.$switch-btn-checked-border-color, 30%);
+}
+.switch-btn__input:focus:not(:checked)+.switch-btn__label::after{
+    background-color: lighten(v.$switch-btn-border-color, 20%);
+}
+
+/* стили кнопки, находящейся в фокусе, CHECKED, при наведении*/
+.switch-btn__input:focus:hover+.switch-btn__label{
+    // border-color: lighten(v.$switch-btn-checked-border-color, 10%);
+	outline: solid .2rem lighten(v.$switch-btn-checked-border-color, 20%);
+}
+// .switch-btn__input:focus:not(:checked):hover+.switch-btn__label::after{
+//     background-color: lighten(v.$switch-btn-checked-border-color, 10%);
+// }
+
+/* стили кнопки, находящейся в фокусе, НЕ CHECKED, при наведении*/
+.switch-btn__input:focus:not(:checked):hover+.switch-btn__label{
+    border-color: lighten(v.$switch-btn-border-color, 10%);
+	outline: solid .2rem lighten(v.$switch-btn-checked-border-color, 20%);
+}
+.switch-btn__input:focus:not(:checked):hover+.switch-btn__label::after{
+    background-color: lighten(v.$switch-btn-border-color, 10%);
+}

@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/* COLORS */
+/* GREED */
+.switch-btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.switch-btn__input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.switch-btn__input:checked + .switch-btn__label {
+  border-color: #3232ff;
+}
+.switch-btn__input:checked + .switch-btn__label::after {
+  background-color: #3232ff;
+  -webkit-transform: translateX(1.7em);
+  -ms-transform: translateX(1.7em);
+  transform: translateX(1.7em);
+}
+.switch-btn__caption {
+  display: inline-block;
+}
+.switch-btn__label {
+  display: inline-block;
+  position: relative;
+  margin-right: 0.3em;
+  width: 2.5em;
+  height: 0.8em;
+  border: solid 0.1rem #737373;
+  border-radius: 0.8em;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: all ease-in 0.15s;
+  -o-transition: all ease-in 0.15s;
+  transition: all ease-in 0.15s;
+}
+.switch-btn__label::after {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  left: 0px;
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  background-color: #737373;
+  border-radius: 50%;
+  -webkit-transition: all ease-in 0.15s;
+  -o-transition: all ease-in 0.15s;
+  transition: all ease-in 0.15s;
+}
+
+/* стили при наведении курсора на включенную кнопку */
+.switch-btn__input:not(:disabled) + .switch-btn__label:hover {
+  border-color: #0000b2;
+}
+
+.switch-btn__input:not(:disabled) + .switch-btn__label:hover::after {
+  background-color: #0000b2;
+}
+
+/* стили при наведении курсора на выключенную кнопку */
+.switch-btn__input:not(:disabled):not(:checked) + .switch-btn__label:hover {
+  border-color: #333333;
+}
+
+.switch-btn__input:not(:disabled):not(:checked) + .switch-btn__label:hover::after {
+  background-color: #333333;
+}
+
+/* стили для активного состояния чекбокса (при нажатии на него) */
+/* стили для чекбокса, находящегося в состоянии disabled */
+/* стили кнопки, находящейся в фокусе */
+/* не отображается, если  .switch-btn__input {display: none;} */
+.switch-btn__input:focus + .switch-btn__label {
+  border-color: #3232ff;
+  outline: solid 0.2rem #cbcbff;
+}
+
+.switch-btn__input:focus + .switch-btn__label::after {
+  background-color: #3232ff;
+}
+
+/* стили кнопки, находящейся в фокусе НО НЕ CHECKED */
+/* не отображается, если  .switch-btn__input {display: none;} */
+.switch-btn__input:focus:not(:checked) + .switch-btn__label {
+  border-color: #a6a6a6;
+  outline: solid 0.2rem #cbcbff;
+}
+
+.switch-btn__input:focus:not(:checked) + .switch-btn__label::after {
+  background-color: #a6a6a6;
+}
+
+/* стили кнопки, находящейся в фокусе, CHECKED, при наведении*/
+.switch-btn__input:focus:hover + .switch-btn__label {
+  outline: solid 0.2rem #9898ff;
+}
+
+/* стили кнопки, находящейся в фокусе, НЕ CHECKED, при наведении*/
+.switch-btn__input:focus:not(:checked):hover + .switch-btn__label {
+  border-color: #8d8d8d;
+  outline: solid 0.2rem #9898ff;
+}
+
+.switch-btn__input:focus:not(:checked):hover + .switch-btn__label::after {
+  background-color: #8d8d8d;
+}

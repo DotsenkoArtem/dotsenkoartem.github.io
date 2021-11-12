@@ -1,0 +1,69 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Switch Button
+        |
+        |
+        |<!--CSS
+        |==================================================-->
+        link(rel="stylesheet" href="css/default.css")
+        link(rel="stylesheet" href="css/layout.css")
+        link(rel="stylesheet" href="css/switch-btn.css")
+        //- link(rel="stylesheet" href="css/media-queries.css")
+        |
+        |
+        |<!-- Favicons
+        |================================================== -->
+
+        link(rel="icon" href="img/icons/favicon.svg" sizes="any" type="image/svg+xml")
+        link(rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon-180x180.png" type="image/png")
+        link(rel="manifest", href="manifest.webmanifest")
+    body 
+
+        |
+        |
+        h1 Switch Button
+        |
+        |
+        .container
+            |
+            |
+            div
+                |
+                |
+                |<!-- - Разметка Switch Button
+                |------------------------------ -->
+
+                .switch-btn
+                    input#switch-btn1.switch-btn__input(type="checkbox", checked)
+                    label.switch-btn__label(for="switch-btn1")
+                    |
+                    |
+                    span.switch-btn__caption switch-button switched on
+                
+                |
+                |<!-- ------------------------------ -->
+                |
+                |
+            div
+                |
+                |
+                |<!-- - Разметка Switch Button
+                |------------------------------ -->
+
+                .switch-btn
+                    input#switch-btn2.switch-btn__input(type="checkbox")
+                    label.switch-btn__label(for="switch-btn2")
+                    |
+                    |
+                    span.switch-btn__caption switch-button switched off
+                
+                |
+                |<!-- ------------------------------ -->
+                |
+
+        |
+        |
