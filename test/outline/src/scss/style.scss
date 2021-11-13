@@ -1,0 +1,40 @@
+*, *::before, *::after{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html{
+    font: normal 10px 'Raleway', sans-serif;
+}
+body{
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, .9);
+    background: rgba(0, 0, 0, .85);
+}
+.container{
+    margin: 0 auto;
+    padding: 6rem 0;
+    max-width: 80rem;
+}
+.elem{
+    width: 50rem;
+    height: 20rem;
+    padding: 2.5rem;
+    // border: solid 1px #fff;
+    border-radius: 20rem;
+}
+.outline {
+    outline: solid 5px #fff;
+}
+
+
+
+input.elem{
+    font-size: 2.5rem;
+    color: #fff;
+    background: transparent;
+    outline: none;
+}
+
+input.elem:focus{
+    outline: solid 5px #fff;
+}
