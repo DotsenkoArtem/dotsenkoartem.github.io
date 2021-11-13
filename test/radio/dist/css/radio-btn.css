@@ -26,6 +26,7 @@
   content: "";
   position: absolute;
   left: -1.5em;
+  top: 0.1em;
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -39,6 +40,7 @@
   content: "";
   position: absolute;
   left: -1.25em;
+  top: 0.35em;
   display: inline-block;
   width: 0.5em;
   height: 0.5em;

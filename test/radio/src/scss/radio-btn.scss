@@ -23,6 +23,7 @@
             content:'';
             position: absolute;
             left: -(v.$radio-outer-left-position);
+            top: v.$radio-outer-top-position;
             display: inline-block;
             width: v.$radio-outer-width;
             height: v.$radio-outer-width;
@@ -36,6 +37,7 @@
             content:'';
             position: absolute;
             left: -(v.$radio-inner-left-position);
+            top: v.$radio-inner-top-position;
             display: inline-block;
             width: v.$radio-inner-width;
             height: v.$radio-inner-width;
