@@ -26,4 +26,6 @@ $radio-btn-disabled-bg: rgb(239, 233, 233);
 $radio-outer-width: 1em;
 $radio-inner-width: .5em;
 $radio-outer-left-position: $radio-outer-width + .5em;
+$radio-outer-top-position: .1em;
 $radio-inner-left-position: $radio-outer-left-position - ($radio-outer-width - $radio-inner-width)/2;
+$radio-inner-top-position: ($radio-outer-width - $radio-inner-width)/2 + $radio-outer-top-position;
