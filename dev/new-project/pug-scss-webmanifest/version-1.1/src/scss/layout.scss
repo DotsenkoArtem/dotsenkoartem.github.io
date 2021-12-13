@@ -1,5 +1,5 @@
-@use 'partials/variables' as v;
-@use 'partials/mixins' as m;
+@use '_partials/variables' as v;
+@use '_partials/mixins' as m;
 
 // Здесь будут основные стили проекта
 
@@ -25,5 +25,5 @@ IV. Others
 
 
 body{
-	background: rgb(243, 81, 81) !important;
+	// background: rgb(243, 81, 81) !important;
 }

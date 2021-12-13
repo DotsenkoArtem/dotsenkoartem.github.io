@@ -27,7 +27,8 @@
 
 
 
-@use 'partials/variables' as v;
+@use '_partials/variables' as v;
+@use '_partials/mixins' as m;
 
 .row{
 	margin: 0 (- v.$gutter);
