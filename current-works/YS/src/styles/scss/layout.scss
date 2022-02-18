@@ -1,0 +1,52 @@
+@use '_partials/variables' as v;
+@use '_partials/mixins' as m;
+
+
+@import "../../../tmp/scss/sprite.scss";
+@import "fonts.scss";
+@import "default.scss";
+@import "grid.scss";
+
+
+// Здесь будут основные стили проекта
+
+/*  =====================================================================
+TOC:
+I. Reset
+II. Default Styles
+   1. Basic
+   2. Typography
+   3. Links
+   4. Images
+   5. Buttons
+   6. Forms
+III. Grid
+IV. Others
+   1. Clearing
+   2. Misc
+
+=====================================================================  */
+
+/* I. Reset
+--------------------------------------------------------------------- */
+
+
+// body{
+// }
+
+.icon{
+   margin: 10px auto;
+   max-width: 200px;
+   padding: 10px;
+   font-size: 16px;
+   display: flex;
+   justify-content: center;
+   border-radius: 8px;
+   border: solid 1px rgba(0, 0, 0, .6);
+   &__img{
+      display: inline-block;
+   }
+}
+
+@import "media-queries.scss";
+@import "gte-ie10-style.scss";
