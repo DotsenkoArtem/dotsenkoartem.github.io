@@ -21,16 +21,9 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'developm
 // ПРОСТО КОПИРОВАНИЕ ШРИФТОВ В ПАПКУ  СОХРАНЕНИЕМ СТРУКТУРЫ
 gulp.task('fonts', function() {
     return  gulp.src('src/assets/**/*.{ttf,woff,woff2}', {since: gulp.lastRun('fonts')})
-            .pipe(debug())
             .pipe(gulp.dest('public'));
 });
 
-// ПРОСТО КОПИРОВАНИЕ ИКОНОК:PNG В ПАПКУ  СОХРАНЕНИЕМ СТРУКТУРЫ
-// gulp.task('icons:png', function() {
-//     return  gulp.src('src/assets/img/icons/**/*.png', {since: gulp.lastRun('icons:png')})
-//             .pipe(debug())
-//             .pipe(gulp.dest('public/img/icons'));
-// });
 
 // ПРОСТО КОПИРОВАНИЕ ИКОНОК:SVG В ПАПКУ  СОХРАНЕНИЕМ СТРУКТУРЫ
 gulp.task('sprite:svg', function() {
@@ -38,7 +31,6 @@ gulp.task('sprite:svg', function() {
             .pipe(gulpIf(
                 
                 function(file) {
-                    console.log(file.extname);
                     return file;
                 },
                 
@@ -61,7 +53,6 @@ gulp.task('sprite:svg', function() {
                     }
                 })
             ))
-            .pipe(debug({title: 'sprite:svg'}))
             .pipe(gulpIf('*.scss', 
                     gulp.dest('tmp/scss'),
                     gulp.dest('public/css'))
@@ -79,11 +70,8 @@ gulp.task('img', function() {
                 function(file) {
                     return file.extname !== '.svg';
                 },
-                imagemin(),
-                debug({title: 'afterImageMin'})
+                imagemin()
             ))
-            
-            // .pipe(debug())
             .pipe(gulp.dest('public/img'));
 });
 

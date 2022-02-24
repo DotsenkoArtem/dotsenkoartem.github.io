@@ -1,13 +1,31 @@
-/* COLORS */
-$primary-color: #2980f1;
-$secondary-color: rgba(27, 34, 175, 0.57);
-$main-bg: rgb(77, 201, 83);
-$main-white: #fff;
-$btn-sec-bg: #ff0;
+// COLORS
+// ------------------------------
+$menu-item-color: #52596F;
+// $primary-color: #2980f1;
+// $secondary-color: rgba(27, 34, 175, 0.57);
+// $main-bg: rgb(77, 201, 83);
+// $main-white: #fff;
+$btn-primary-color: #fff;
+$btn-sec-bg: rgba(153, 212, 255, 0.3);
+$btn-sec-color: #46A7ED;
+$header-phone-color: #52596F;
+$header-mail-color: #9AA2BA;
+$top-menu-toggler-border: #C7CDE3;
 
-/* Grid Variables
------------------------------- */
-$gutter: 1.2rem;
+
+// Modal Variables
+// ------------------------------
+$bg-color: #45f200;
+$modal-trigger-bg: #fa7c30;
+$modal-content-bg: #fff;
+$modal-close-item-bg: #afa8b6;
+$modal-close-item-bg-hover: #161418;
+$modal-overlay-bg: rgba(0, 0, 0, 0.667);
+
+
+// Grid Variables
+// ------------------------------
+$gutter: 1.5rem;
 
 $column1: calc(100% / 12);
 $column2: calc(100% / 6);
