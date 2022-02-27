@@ -63,3 +63,192 @@ function closeModal(modal){
     modal.classList.remove('opened');
     modal.classList.add('closed');
 }
+
+// FORMS
+        // ПОЛУЧЕНИЕ ВСЕХ ФОРМ ДОКУМЕНТА
+let forms = document.forms;
+for(let i = 0; i < forms.length; i++){
+    let form = forms[i];
+    // let formGroupPass = document.querySelector('.form__group_pass');
+    // let showPass        = formGroupPass.querySelector('.show-pass');
+    // let passInput       = formGroupPass.querySelector('input[type="password"]');
+    let submitBtn		= form.querySelector('[type="submit"]');
+
+    // ДОБАВЛЕНИЕ-УДАЛЕНИЕ ФОКУСА НА ТЕКСТОВЫЕ ИНПУТЫ
+    for(let j = 0; j < form.elements.length; j++){
+        if(form.elements[j].classList.contains('form__control')){
+            let ElementInput = form.elements[j];
+
+            ElementInput.addEventListener('focus', addFocus);
+
+            ElementInput.addEventListener('input', function () {
+                if(ElementInput.value){
+                    ElementInput.parentElement.classList.remove('focused');
+                    ElementInput.parentElement.classList.add('valid');
+
+                    // if(ElementInput.classList.contains('form__pass')){
+                    // formGroupPass.classList.remove('error');
+                    // }
+                }else{
+                    ElementInput.parentElement.classList.remove('valid');
+                }
+            });
+
+            ElementInput.addEventListener('blur', removeFocus);
+        }
+    }
+
+    function addFocus() {
+        this.parentElement.classList.add('focused');
+    }
+    function removeFocus() {
+        this.parentElement.classList.remove('focused');
+    }
+    // ФУНКЦИОНАЛ "ПОКАЗАТЬ - СКРЫТЬ ПАРОЛЬ"
+    // showPass.addEventListener('click', function () {
+    //     if(passInput.type == 'password'){
+    //         passInput.type = 'text';
+    //         showPass.classList.add('shown');
+    //     } else{
+    //         passInput.type = 'password';
+    //         showPass.classList.remove('shown');
+    //     }
+    // })
+    // - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // ОБРАБОТКА ВАЛИДАЦИИ ФОРМЫ ПЕРЕД ОТПРАВКОЙ
+    // submitBtn.addEventListener('click', function (event) {
+    
+    //     // Получение input[required] для валидации браузером
+    //     const requiredInputs = form.querySelectorAll('[required]');
+    //     let count = 0;
+    //     for(let i = 0; i < requiredInputs.length; i++){
+    //         let requiredInput = requiredInputs[i];
+    //         requiredInput.validity.valid ? count++ : count;
+    //         // Отмена действия кнопки при условии валидации полей браузером
+    //         if(count == requiredInputs.length){
+    //             event.preventDefault();
+    //             checkPass();
+    //             if(!checkPass()){
+    //                 showError();
+    //             }else{
+    //                 alert('Демонстрация успеха. Форма не отправляется.');
+    //             }
+    //         }
+    //     }
+
+    // })
+    // function showError() {
+    //     setTimeout(function () {
+    //         formGroupPass.classList.remove('valid');
+    //         formGroupPass.classList.add('error');
+    //         alert('Демонстрация ошибки. Форма не отправляется.');
+    //     }, 1000);
+    // }
+
+    // function checkPass() {
+    //     return false;
+    // }
+    // - - - - - - - - - - - - - - - - - - - - - - - - - 
+}
+
+
+
+// ОТПРАВКА ФОРМЫ AJAX
+let modalContent        = document.querySelector('.modal-callback');
+const thanks            = document.createElement('div');
+      thanks.className  = 'thanks';
+      thanks.innerHTML  = '<h3><span>Спасибо</span>Мы перезвоним Вам в ближайшее время!</h3>';
+
+
+// ФУНКЦИИ УСТАНОВКИ, УДАЛЕНИЯ ЛОАДЕРА ФОРМЫ
+function setupLoader(formId){
+    let loader            = document.createElement('div'),
+        loaderContainer   = formId.querySelector('.loader-container');
+        loader.className  = 'submit-loader';
+        loaderContainer.appendChild(loader);
+  }
+  
+  function removeLoader(formId){
+    let loader            = formId.querySelector('.submit-loader');
+    loader.remove();
+  }
+  // ------------------------------------------------
+
+
+
+$('#modalCbForm').submit(function (ev) {
+    ev.preventDefault();
+    setupLoader(modalCbForm);
+    $.ajax({
+        type: 'POST',
+        url: '/mail.php',
+        data: $(this).serialize()
+    }).done(function () {
+        $(this).find('input').val('');
+        $('#modalCbForm').trigger('reset');
+        removeLoader(modalCbForm);
+
+        thanks.classList.add('active');
+        wrapper.appendChild(thanks);
+
+        modal.classList.remove('opened');
+
+        setTimeout(function(){
+            thanks.remove();
+            thanks.classList.remove('active');
+        }, 6500);
+
+
+
+
+        // modalContent.classList.remove('opened');
+    });
+    return false;
+})
+
+
+// ВОЗМОЖНО ПОРТЕБУЕТСЯ ДЛЯ ЛОАДЕРОВ В ПРОСТЫХ ФОРМАХ
+// const submitBtn = document.querySelector('[type="submit"]');
+
+// submitBtn.addEventListener('click', function(){
+//     let modal = document.querySelector('.modal.fade.in');
+//     modal.addEventListener('click', function (ev) {
+
+//         console.log(ev.target);
+
+        
+
+                                                // 		// СТОП РАСПРОСТРАНЕНИЕ - НЕ ПОКАЗЫВАТЬ MODAL-CONTENT
+                                                // 		thanks.addEventListener('click', function(ev){
+                                                // 			ev.stopPropagation();
+                                                // 		});
+
+//         if(ev.target  !== thanks){
+//             setTimeout(function() {
+//                 modalContent.classList.remove('disabled');
+//             }, 300);
+//         }
+
+
+
+//     })
+// })
+
+
+// let closeModal = document.querySelectorAll('button.close');
+// for(let i = 0; i < closeModal.length; i++){
+//     closeModal[i].addEventListener('click', function () {
+
+
+
+
+
+
+
+//         // setTimeout(function() {
+//         // 	modalContent.classList.remove('disabled');
+//         // }, 300);
+//     })
+// }
+
+		

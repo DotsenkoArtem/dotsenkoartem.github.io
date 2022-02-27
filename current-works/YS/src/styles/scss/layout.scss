@@ -124,11 +124,18 @@
  .sub-menu{
    position: absolute;
    min-width: 100%;
-   background-color: #dcdcff;
+   background-color: rgba(255, 255, 255, 0.671);
+   border-radius: 0px 0px .6rem .6rem;
+   box-shadow: 0px 25px 40px rgba(146, 171, 234, 0.3);
    white-space: nowrap;
    .top-menu{
       &__item{
          margin-right: 0;
+         padding: 0.4em .8em;
+         transition: background-color .3s;
+         &:hover{
+            background: darken(rgba(255, 255, 255, 0.671), 25%);
+         }
       }
    }
  }
@@ -187,7 +194,7 @@
    }
    &__content{
       position: relative;
-      z-index: 4;
+      z-index: 10;
       max-width: 85rem;
    }
    &__subheading{
@@ -262,7 +269,10 @@
       }
    }
    &__clouds{
-      z-index: 3;
+      width: 100vw;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 6;
       img{
          object-position: center bottom; 
       }
@@ -270,7 +280,7 @@
    &__man{
       right: 2rem;
       bottom: 0;
-      z-index: 2;
+      z-index: 3;
       img{
          max-width: 46.5rem;
       }
@@ -329,15 +339,15 @@
 -------------------------*/
 
 
-/* Moadal 
+/* Modals
 -------------------------*/
 // Попробовать убрать скрытое отображение модального окна !!!
 .modal {
-   padding: 2rem;
+   padding: 1.5rem;
    display: flex;
    align-items: center;
    width: 100vw;
-   height: 100vh;
+   height: 100%;
    position: fixed;
    left: 0;
    top: 0;
@@ -349,59 +359,66 @@
    visibility: hidden;
    &__content{
       margin: auto;
-      padding: 1rem;
+      padding: 6rem 4.5rem;
       display: flex;
       flex-direction: column;
-      max-width: 50rem;
-      max-height: 80%;
+      width: 42rem;
+      // max-height: 63.1rem;
       position: relative;
       z-index: 1001;
-      border-radius: .3rem;
+      border-radius: v.$modal-border-radius;
       background-color: v.$modal-content-bg;
       font-size: 1.6rem;
-      line-height: 1.2;
+      line-height: 1.4;
+      text-align: center;
       opacity: 0;
-      overflow: auto;
+      overflow: hidden;
    }
    &__header{
-      padding-right: 2.5rem;
-      padding-bottom: 1rem;
+      margin-bottom: 4rem;
       position: relative;
-      border-bottom: solid 1px #c9c4cd;
-      h4{
-         font-size: 1.6rem;
+      h3{
+         margin-bottom: 2rem;
+      }
+      p{
+         margin: 0 auto;
+         max-width: 30rem;
       }
    }
    &__body{
-      margin: 1rem 0;
       flex-grow: 1;
       text-align: justify;
-      overflow: auto;
+      overflow: visible;
    }
-   &__footer{
-      padding-top: 1rem;
-      border-top: solid 1px #c9c4cd;
-   }
+   // &__footer{
+   //    margin-top: 3rem;
+   //    font-size: 1.4rem;
+   //    p{
+   //       margin: 0 auto;
+   //       max-width: 30rem;
+   //    }
+   // }
    &__close{
       padding: 0;
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 1.4rem;
+      height: 1.4rem;
       position: absolute;
-      top: -.5rem;
-      right: -.5rem;
+      top: -4.5rem;
+      right: -2rem;
       border: none;
       background: none;
    }
    &-close{
       &__item{
          display: block;
-         width: 2.3rem;
-         height: 2px;
+         width: 1.98rem;
+         height: 3px;
          position: absolute;
          left: 0;
          top: 50%;
          border-radius: 2px;
          background-color: v.$modal-close-item-bg;
+         box-shadow: 0px 5px 10px rgba(126, 176, 240, 0.6);
          transition: background-color .3s;
          &:first-child{
             transform: rotate(45deg);
@@ -424,7 +441,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       z-index: 1000;
@@ -455,6 +472,64 @@
          }
       }
    }
+}
+
+.thanks{
+   h3{
+      font-weight: 500;
+      span{
+         font-weight: 700;
+		   font-size: 2.6rem;
+      }
+   }
+	padding: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+   width: 42rem;
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+	text-align: center;
+   border-radius: v.$modal-border-radius;
+   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+	background: v.$modal-content-bg;
+	opacity: 0;
+	z-index: -1;
+	visibility: hidden;
+	transition: opacity .5s;
+	span{
+		display: block;
+		margin-bottom: 2rem;
+	}
+	&.active{
+		z-index: 99999;
+		visibility: visible;
+		opacity: 1;
+		animation: fadeIn 1.5s ease forwards, fadeOut 1.5s ease forwards 5s;
+	}
+}
+
+.loader-container{
+   position: relative;
+   z-index: 50;
+   // overflow: hidden;
+}
+
+.submit-loader{
+   display: block;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 55;
+   background: rgba(0, 0, 0, .3) url('../img/loader.gif') center no-repeat;
+   background-size: contain;
+   border-radius: 10px;
 }
 
 /* 

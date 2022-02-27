@@ -6,7 +6,12 @@ $menu-item-color: #52596F;
 // $main-bg: rgb(77, 201, 83);
 // $main-white: #fff;
 $btn-primary-color: #fff;
+// $btn-primary-bg:;
+// $btn-primary-bg-hover:;
+
 $btn-sec-bg: rgba(153, 212, 255, 0.3);
+$btn-sec-bg-hover: rgba(153, 212, 255, 0.45);
+$btn-sec-bg-active: rgba(153, 212, 255, 0.6);
 $btn-sec-color: #46A7ED;
 $header-phone-color: #52596F;
 $header-mail-color: #9AA2BA;
@@ -18,10 +23,23 @@ $top-menu-toggler-border: #C7CDE3;
 $bg-color: #45f200;
 $modal-trigger-bg: #fa7c30;
 $modal-content-bg: #fff;
-$modal-close-item-bg: #afa8b6;
+$modal-close-item-bg: #7D859D;
 $modal-close-item-bg-hover: #161418;
-$modal-overlay-bg: rgba(0, 0, 0, 0.667);
+$modal-overlay-bg: rgba(42, 43, 49, 0.2);
+$modal-border-radius: 24px;
+$modal-border-radius-sm: 16px;
 
+// Form Variables
+// ------------------------------
+$form-control-radius: 1rem;
+$form-control-color: #2A2B31;
+$form-control-bg: #fff;
+$form-control-border: #E8EAF4;
+$form-control-border-hover: #DCDEEE;
+$form-control-border-focus: #46A7ED;
+$form-control-shadow: rgba(125, 133, 157, 0.1);
+$form-label-color: #7D859D;
+$form-label-padding-left: 5.8rem;
 
 // Grid Variables
 // ------------------------------

@@ -24,6 +24,12 @@ gulp.task('fonts', function() {
             .pipe(gulp.dest('public'));
 });
 
+// ПРОСТО КОПИРОВАНИЕ PHP В КОРЕНЬ
+gulp.task('php', function() {
+    return  gulp.src('src/**/*.php', {since: gulp.lastRun('php')})
+            .pipe(gulp.dest('public'));
+});
+
 
 // ПРОСТО КОПИРОВАНИЕ ИКОНОК:SVG В ПАПКУ  СОХРАНЕНИЕМ СТРУКТУРЫ
 gulp.task('sprite:svg', function() {
@@ -169,6 +175,7 @@ gulp.task('watch', function() {
     gulp.watch('src/js/**/*.*', gulp.series('js'));
     gulp.watch('src/styles/**/*.scss', gulp.series('styles'));
     gulp.watch('src/pug/**/*.*', gulp.series('pug'));
+    gulp.watch('src/**/*.php', gulp.series('php'));
 });
 
 gulp.task('serve', ()=> {
@@ -184,10 +191,7 @@ gulp.task('clean', function() {
 });
 
 // ПОСТРОЕНИЕ
-gulp.task('build', gulp.series('clean', gulp.parallel('assets', 'js', 'styles', 'pug')));
+gulp.task('build', gulp.series('clean', gulp.parallel('assets', 'js', 'styles', 'pug', 'php')));
 
 // РАЗРАБОТКА
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));
-
-
-// УБРАТЬ ДЕБАГИ
