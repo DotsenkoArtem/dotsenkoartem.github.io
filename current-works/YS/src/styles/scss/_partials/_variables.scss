@@ -41,6 +41,28 @@ $form-control-shadow: rgba(125, 133, 157, 0.1);
 $form-label-color: #7D859D;
 $form-label-padding-left: 5.8rem;
 
+// Form-setion Variables
+// ------------------------------
+$form-section-inner-bg: #ffffff;
+$form-section-inner-border-radius: 24px;
+
+// Swiper-slider Variables
+// ------------------------------
+$swiper-btn-bg: linear-gradient(180deg, #37AAFD 0%, #1C84E3 100%);
+$swiper-btn-hover-bg: linear-gradient(180deg, #54B7FF 0%, #2A93F4 100%);
+$swiper-btn-active-bg: #5BB8FF;
+
+
+// Stars-slider Variables
+// ------------------------------
+$stars-slide-width: 75rem;
+$stars-card-bg: #ffffff;
+$stars-card-rad: 2rem;
+$stars-card-inner-rad: 1.6rem;
+$stars-slider-btn-width: 5rem;
+
+
+
 // Grid Variables
 // ------------------------------
 $gutter: 1.5rem;

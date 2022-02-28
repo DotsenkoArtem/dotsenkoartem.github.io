@@ -35,7 +35,28 @@
 		}
 
 	}
+	.form{
+		&-section{
+			&__form{
+				justify-content: space-around;
+			}
+		}
+		&__group{
+			max-width: 305px;
+		}
+		&__submit{
+			width: 280px;
+		}
+	}
+
+	.prize{
+		&__sims{
+			bottom: 25rem;
+		}
+	}
 }
+
+
 
 // LG
 @media (max-width: 1199.98px){
@@ -88,6 +109,18 @@
 			}
 		}
 	}
+
+	.prize{
+		&__sims{
+			right: -20rem;
+		}
+	}
+
+	.questions{
+		&__img2{
+			top: -5rem;
+		}
+	}
 }
 
 // MD
@@ -97,6 +130,12 @@
 	}
 	h1{
 		line-height: 1.4;
+	}
+	h2{
+		font-size: 3.25rem;
+	}
+	h3{
+		font-size: 3rem;
 	}
 	.btn{
 		&_primary{
@@ -343,6 +382,121 @@
 		// 	}
 		// }
 	}
+
+	.form-section{
+		&__inner{
+			padding-left: 5rem;
+			padding-right: 5rem;
+		}
+		&__heading,
+		&__text{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 65rem;
+		}
+		&__subheading{
+			font-size: 3rem;
+		}
+		&__text{
+			font-size: 2.25rem;
+		}
+	}
+
+	.want-check {
+		&__phone{
+			max-width: 19.2rem;
+			right: -1rem;
+			bottom: -12rem;
+			z-index: 5;
+		}
+		&__modem {
+			max-width: 21.5rem;
+			left: 1rem;
+			top: -7rem;
+			z-index: 8;
+		}
+	}
+
+	.stars{
+		&__subheading{
+			font-size: 2.25rem;
+		}
+		&__slider{
+			position: relative;
+			margin: 0 auto;
+			max-width: 720px;
+		}
+		&-slider{
+			&__bg{
+				img{
+					object-position: 86% bottom;
+				}
+			}
+		}
+		&-slide{
+			// width: 90rem;
+			height: 45.5rem;
+			opacity: 1;
+			transition: none;
+		}
+		&-card{
+			margin-left: 4rem;
+			width: 51.25rem;
+			height: 31rem;
+			&__heading{
+				h4{
+					font-size: 2.5rem;
+				}
+				&__text{
+					font-size: 2rem;
+				}
+			}
+		}
+		.swiper-button{
+			&-prev{
+				left: 0;
+			}
+			&-next{
+				right: 0;
+			}
+		}
+	}
+
+	
+
+	.help{
+		&__text{
+			max-width: 60rem;
+		}
+	}
+
+	.prize{
+		&__heading{
+			max-width: 82rem;
+		}
+		&__text{
+			max-width: 62rem;
+		}
+		&__sims{
+			max-width: 28.5rem;
+			right: 0rem;
+			top: 33rem;
+		}
+	}
+
+	.questions {
+		&__img1{
+		left: 3rem;
+		bottom: -30rem;
+		top: auto;
+		}
+		&__img2{
+			top: 0;
+		}
+		&__text{
+			max-width: 57rem;
+		}
+	}
 }
 
 // SM
@@ -484,6 +638,90 @@
 			}
 		}
 	}
+
+	.form-section{
+		&-wrapper{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 44rem;
+		}
+		&__form{
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+		&__group{
+			padding-top: 1rem;
+			height: 10.8rem;
+			&.form__group{
+				&.focused,
+				&.valid{
+					.form__label_control{
+						transform: translateY(calc(-100% + 2rem)) scale(0.8);
+					}
+				}
+			}
+		}
+		&__submit{
+			width: 100%;
+			height: 10rem;
+		}
+		.form__control,
+		[type="submit"]{
+			width: 100%;
+		}
+		.form__control{
+			height: 9.8rem;
+		}
+	}
+
+	.want-check{
+		&__modem{
+			display: none;
+		}
+		&__phone{
+			max-width: 15rem;
+		}
+	}
+
+	.stars{
+		&__slider{
+			max-width: 540px;
+		}
+		&-slide{
+			&__img{
+				img{
+					height: 75%;
+				}
+			}
+		}
+		&-card{
+			max-width: 45rem;
+		}
+	}
+
+	.prize{
+		padding-top: 18.2rem;
+		&__sims{
+			top: -13rem;
+			left: calc(50%);
+			transform: translateX(-50%);
+			bottom: auto;
+		}
+	}
+
+	.questions{
+		padding-top: 18.2rem;
+		&__img1{
+			max-width: 34.5rem;
+			top: -33rem;
+			left: 5rem;
+			bottom: auto;
+		}
+		&__img2{
+			display: none;
+		}
+	}
 	
 	.modal{
 		&__content{
@@ -601,6 +839,93 @@
 			}
 		}
 	}
+
+	.stars{
+		&__subheading{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 43rem;
+		}
+		&__slider{
+			max-width: 440px;
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
+		&-slide{
+			height: auto;
+			&__img{
+				position: static;
+				max-width: 48rem;
+				height: 38rem;
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+		// &-slider{
+		// 	&__bg{
+		// 		display: none;
+		// 	}
+		// }
+		&-slide__img,
+		&-card{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&-card{
+			position: relative;
+			top: -6rem;
+			height: auto;
+			&__heading{
+				h4{
+					font-size: 2.8rem;
+				}
+			}
+			&__text,
+			&__btn{
+				font-size: 2rem;
+			}
+		}
+		.swiper-button{
+			&-prev,
+			&-next{
+				top: 30%;
+			}
+			&-prev{
+				left: 2.5rem;
+			}
+			&-next{
+				right: 2.5rem;
+			}
+		}
+	}
+
+	.layer-block{
+		box-shadow: none;
+		&::after{
+			display: none;
+		}
+	}
+
+	.quote{
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+		&::before{
+			bottom: 1rem;
+			right: 9rem;	
+		}
+		&::after{
+			top: 1rem;
+			left: 9rem;
+		}
+		&__text{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 49rem;
+		}
+	}
 }
 
 
@@ -711,6 +1036,32 @@
 			.btn_file{
 				margin-left: auto;
 			}
+		}
+	}
+
+	.want-check{
+		&__inner{
+			padding-left: 3rem;
+			padding-right: 3rem;
+		}
+		&__heading{
+			&,
+			h3{
+				display: inline;
+			}
+		}
+		&__subheading{
+			font-weight: 700;
+			&,
+			p{
+				display: inline;
+			}
+		}
+		&__text{
+			margin-top: 2rem;
+		}
+		&__phone{
+			bottom: -8rem;
 		}
 	}
 }

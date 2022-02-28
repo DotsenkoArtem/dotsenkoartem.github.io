@@ -24,6 +24,9 @@ html(lang="ru")
             |
             |
             main
+                <!-- Intro
+                |
+                |================================================== -->
                 section.section.intro
                     .container.intro__container
                         .intro__content 
@@ -76,14 +79,325 @@ html(lang="ru")
                         picture 
                             source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
                             img(src="img/bg-intro.png", alt=" ")
-                        
 
-                    //- .section__bg.section__bg_contain.intro__clouds 
-                    //- .section__bg.section__bg_contain.intro__man_mobile
-                    //-     picture 
-                    //-         source(srcset="img/x320/intro-man-176x309.png", media="(max-width: 575px)", type="image/png")
-                    //-         img(src="img/intro-man.png", alt="мужчина")
-                        //- img(src="img/intro-cloud.png", alt=" ")
+
+                <!-- Want-check 
+                |
+                |================================================== -->
+                section.section.form-section.want-check
+                    .container.form-section__container
+                        .form-section__inner.want-check__inner
+                            .form-section__heading.want-check__heading
+                                h3 Хотите проверить «Street» у себя?
+                                .form-section__subheading.want-check__subheading
+                                    p Берите на 7-и дневный тест-драйв!
+                            .form-section__text.want-check__text
+                                p Прямо сейчас оставьте заявку на консультацию – расскажем как и ответим на все ваши вопросы.
+
+                            .form-section-wrapper 
+                                form.form.form-section__form(action="mail.php", id="cbForm1" name="cbForm1" method="POST") 
+                                    //- name-group
+                                    .form__group.form__group_control.form-section__group
+                                        input.form__control(type="text", name="userName", id="userName1", required) 
+                                        label.form__label.form__label_control(for="userName1") 
+                                            |Ваше имя
+                                        i.svg-user.svg-user-dims.form-icon
+                                    //- email-group
+                                    .form__group.form__group_control.form-section__group
+                                        input.form__control(type="text", name="userPhone", id="userPhone1", required) 
+                                        label.form__label.form__label_control(for="userPhone1") 
+                                            |Ваш телефон
+                                        i.svg-phone.svg-phone-dims.form-icon
+                                        
+                                    //- submit
+                                    .form__submit-wrap.form-section__submit.loader-container
+                                        button.btn.btn_primary.btn_shiny.btn_full-width.form__submit(type="submit") Перезвоните мне
+                        
+                        .section__img.want-check__modem
+                            picture 
+                                source(srcset="img/x720/modem-720.png", media="(max-width: 991.98px)", type="image/png")
+                                img(src="img/modem.png", alt=" ")
+                        .section__img.want-check__phone
+                            picture 
+                                source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
+                                source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                img(src="img/phone.png", alt=" ")
+
+
+
+
+                <!-- Stars 
+                |
+                |================================================== -->
+                section.section.stars
+                    .container
+                        .stars__heading 
+                            h2 Нас выбирают звезды
+                        .stars__subheading
+                            p За 12 лет работы мы сделали счастливыми более 15 500 клиентов.
+                                br
+                                |Среди них было множество звезд, таких как:
+                    .stars__slider-wrapper
+                        //- <!-- Slider main container -->
+                        .stars__slider
+                            //- <!-- Additional required wrapper -->
+                            .swiper-wrapper
+                                //- <!-- Slides -->
+                                .swiper-slide.stars-slide 
+                                    .stars-slide__img 
+                                        img(src="img/zhuk.png", alt="Сергей Жуков") 
+                                    .stars-card 
+                                        .stars-card__inner
+                                            .stars-card__heading 
+                                                h4 Сергей Жуков
+                                            .stars-card__text 
+                                                p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
+                                            .stars-card__btn-wrapper 
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                    .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
+
+
+                                .swiper-slide.stars-slide 
+                                    .stars-slide__img 
+                                        img(src="img/marshal.png", alt="Александр Маршал") 
+                                    .stars-card 
+                                        .stars-card__inner
+                                            .stars-card__heading 
+                                                h4 Александр Маршал
+                                            .stars-card__text 
+                                                p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
+                                            .stars-card__btn-wrapper 
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                    .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
+
+
+                                .swiper-slide.stars-slide 
+                                    .stars-slide__img 
+                                        img(src="img/bezr.png", alt="Сергей Безруков") 
+                                    .stars-card 
+                                        .stars-card__inner
+                                            .stars-card__heading 
+                                                h4 Сергей Безруков
+                                            .stars-card__text 
+                                                p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
+                                            .stars-card__btn-wrapper 
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                    .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
+
+
+                                .swiper-slide.stars-slide 
+                                    .stars-slide__img 
+                                        img(src="img/buynov.png", alt="Александр Буйнов") 
+                                    .stars-card 
+                                        .stars-card__inner
+                                            .stars-card__heading 
+                                                h4 Александр Буйнов
+                                            .stars-card__text 
+                                                p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
+                                            .stars-card__btn-wrapper 
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                    .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
+
+
+                                .swiper-slide.stars-slide 
+                                    .stars-slide__img 
+                                        img(src="img/grish.png", alt="Нонна Гришаева") 
+                                    .stars-card 
+                                        .stars-card__inner
+                                            .stars-card__heading 
+                                                h4 Нонна Гришаева
+                                            .stars-card__text 
+                                                p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
+                                            .stars-card__btn-wrapper 
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                    .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
+
+
+                                .swiper-slide.stars-slide 
+                                    .stars-slide__img 
+                                        img(src="img/larin.png", alt="Камиль Ларин") 
+                                    .stars-card 
+                                        .stars-card__inner
+                                            .stars-card__heading 
+                                                h4 Камиль Ларин
+                                            .stars-card__text 
+                                                p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
+                                            .stars-card__btn-wrapper 
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                    .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
+
+
+
+                                
+                            //- <!-- If we need pagination -->
+                            //- .swiper-pagination
+
+                            //- <!-- If we need navigation buttons -->
+                            .swiper-button-prev
+                            .swiper-button-next
+
+                            //- <!-- If we need scrollbar -->
+                            //- .swiper-scrollbar
+                            
+
+
+
+
+
+
+
+
+                        .section__bg.section__bg_contain.stars-slider__bg
+                            picture 
+                                    //- source(srcset="img/x320/intro-man-176x309.png", media="(max-width: 575px)", type="image/png")
+                                    img(src="img/tower.png", alt=" ")
+
+
+                    .container.stars__quote-container.layer-block
+                        .quote
+                            .quote__text 
+                                p 
+                                    b 12 лет помогаем клиентам получить доступный интернет,
+                                    br
+                                    |даже там, где другие устройства не работают
+                    
+
+
+
+
+
+
+
+
+
+
+                <!-- Help 
+                |
+                |================================================== -->
+                section.section.form-section.help
+                    .container.form-section__container
+                        .form-section__inner 
+                            .form-section__heading 
+                                h3 Нужна помощь в подборе?
+                                .form-section__subheading
+                                    p Оставьте заявку и мы вам перезвоним!
+                            .form-section__text.help__text
+                                p Оставьте заявку на консультацию и подбор оборудования с нашим менеджером.
+
+                            .form-section-wrapper 
+                                form.form.form-section__form(action="mail.php", id="cbForm2" name="cbForm2" method="POST") 
+                                    //- name-group
+                                    .form__group.form__group_control.form-section__group
+                                        input.form__control(type="text", name="userName", id="userName2", required) 
+                                        label.form__label.form__label_control(for="userName2") 
+                                            |Ваше имя
+                                        i.svg-user.svg-user-dims.form-icon
+                                    //- email-group
+                                    .form__group.form__group_control.form-section__group
+                                        input.form__control(type="text", name="userPhone", id="userPhone2", required) 
+                                        label.form__label.form__label_control(for="userPhone2") 
+                                            |Ваш телефон
+                                        i.svg-phone.svg-phone-dims.form-icon
+                                        
+                                    //- submit
+                                    .form__submit-wrap.form-section__submit.loader-container
+                                        button.btn.btn_primary.btn_shiny.btn_full-width.form__submit(type="submit") Перезвоните мне
+
+
+
+
+
+                <!-- Prize 
+                |
+                |================================================== -->
+                section.section.form-section.prize
+                    .container.form-section__container
+                        .form-section__inner 
+                            .form-section__heading.prize__heading
+                                h3 Весь январь получите в подарок безлимитный тариф
+                                .form-section__subheading
+                                    p любого опереатора и доставку «Street» за наш счет!
+                            .form-section__text.prize__text
+                                p Оставьте заявку на консультацию и подбор оборудования с нашим менеджером.
+
+                            .form-section-wrapper 
+                                form.form.form-section__form(action="mail.php", id="cbForm3" name="cbForm3" method="POST") 
+                                    //- name-group
+                                    .form__group.form__group_control.form-section__group
+                                        input.form__control(type="text", name="userName", id="userName3", required) 
+                                        label.form__label.form__label_control(for="userName3") 
+                                            |Ваше имя
+                                        i.svg-user.svg-user-dims.form-icon
+                                    //- email-group
+                                    .form__group.form__group_control.form-section__group
+                                        input.form__control(type="text", name="userPhone", id="userPhone3", required) 
+                                        label.form__label.form__label_control(for="userPhone3") 
+                                            |Ваш телефон
+                                        i.svg-phone.svg-phone-dims.form-icon
+                                        
+                                    //- submit
+                                    .form__submit-wrap.form-section__submit.loader-container
+                                        button.btn.btn_primary.btn_shiny.btn_full-width.form__submit(type="submit") Оформить заказ
+                        
+                        .section__img.prize__sims
+                            picture 
+                                source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
+                                source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
+                                img(src="img/sims.png", alt=" ")
+
+
+
+
+
+                <!-- Questions 
+                |
+                |================================================== -->
+                section.section.form-section.questions
+                    .container.form-section__container
+                        .form-section__inner 
+                            .form-section__heading 
+                                h3 Остались вопросы?
+                            .form-section__text.questions__text
+                                p Оставьте заявку на консультацию, перезвоним в течении 5 минут и ответим на все ваши вопросы
+
+                            .form-section-wrapper 
+                                form.form.form-section__form(action="mail.php", id="cbForm4" name="cbForm4" method="POST") 
+                                    //- name-group
+                                    .form__group.form__group_control.form-section__group
+                                        input.form__control(type="text", name="userName", id="userName4", required) 
+                                        label.form__label.form__label_control(for="userName4") 
+                                            |Ваше имя
+                                        i.svg-user.svg-user-dims.form-icon
+                                    //- email-group
+                                    .form__group.form__group_control.form-section__group
+                                        input.form__control(type="text", name="userPhone", id="userPhone4", required) 
+                                        label.form__label.form__label_control(for="userPhone4") 
+                                            |Ваш телефон
+                                        i.svg-phone.svg-phone-dims.form-icon
+                                        
+                                    //- submit
+                                    .form__submit-wrap.form-section__submit.loader-container
+                                        button.btn.btn_primary.btn_shiny.btn_full-width.form__submit(type="submit") Нужна консультация
+                        
+                        .section__img.questions__img1
+                            picture 
+                                source(srcset="img/x720/quest-img-1-720.png", media="(max-width: 991.98px)", type="image/png")
+                                source(srcset="img/x720/quest-img-1-320.png", media="(max-width: 575.98px)", type="image/png")
+                                img(src="img/quest-img-1.png", alt=" ")
+                        .section__img.questions__img2
+                            picture 
+                                source(srcset="img/x720/quest-img-2-720.png", media="(max-width: 991.98px)", type="image/png")
+                                img(src="img/quest-img-2.png", alt=" ")
+
+
+
+
+                p(style="margin-top: 250px;") Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor officia laboriosam labore nobis at pariatur ullam est, nihil, omnis magnam itaque molestias dicta error aperiam velit possimus atque nam ducimus! Ullam sint ducimus ex, sequi qui nemo veritatis similique molestiae omnis ea quia cupiditate commodi odit porro consequatur debitis quo laudantium recusandae sit perferendis, quae temporibus necessitatibus laborum sapiente. Voluptas aliquam perspiciatis officiis deserunt vero expedita quas sed at velit aliquid sapiente maxime cum voluptatem dolorum impedit laudantium, mollitia fugit, iste voluptate itaque quasi! Similique aliquam et ab, quae maiores tempora, quod sapiente saepe consectetur ut odio ducimus nobis eaque asperiores. Ad vero commodi voluptatibus consectetur eum quos soluta, quam totam dolores qui, fugiat enim debitis mollitia ipsam rerum, praesentium aliquid voluptates. Accusantium vel quae veniam soluta debitis nemo tempore excepturi sint? Repudiandae rerum voluptate totam nihil assumenda, dolorem eos, iusto ducimus nisi culpa mollitia, labore corrupti laborum veritatis inventore molestiae! Deleniti officia iste labore voluptatibus nam corrupti omnis enim nostrum, similique numquam vel blanditiis tenetur odit, iure assumenda repudiandae? Fugit hic corporis blanditiis maiores beatae eos sunt vitae dolorem? Voluptatum libero dolores numquam consequuntur aperiam, id tempora veniam saepe, sapiente, iure culpa distinctio magni at ullam! In fuga, voluptas odit unde minus minima et tempore nisi. Doloremque facilis maiores ab hic doloribus nihil vel nobis provident voluptates velit magnam inventore nam deserunt dolorum delectus, architecto autem! Quae nobis, deserunt et a eveniet culpa adipisci blanditiis error sit ipsam commodi maiores. Fuga non fugiat dignissimos! Quae quod nesciunt accusantium voluptatibus? Reiciendis velit ullam expedita iste fugit illum vitae porro quidem ut! Fuga voluptatum, quasi quis unde eos voluptate numquam accusantium. Quam officia eius, consequuntur natus ad harum! Hic minus harum facilis ratione obcaecati. Impedit incidunt earum provident iusto dolore enim sit autem, eligendi, quo illo quisquam quibusdam sapiente placeat. Tenetur reprehenderit, velit consequatur corrupti dignissimos itaque dolores quisquam, aspernatur doloribus officia voluptatem eaque beatae? Eos tempore consequatur molestias. Consequuntur magnam quas natus porro ipsum amet, vitae illo praesentium dolore harum ad ipsa dicta, autem fugit rerum. Cumque dolorem nemo exercitationem sequi culpa quae itaque maiores. Culpa earum, sed, atque magni commodi incidunt dolorum, magnam hic dolores adipisci a maiores voluptatibus nulla sequi ratione? Nesciunt atque aut aliquam velit dicta nostrum, ullam maiores sint accusamus ea dolorem magnam obcaecati asperiores vero consequatur debitis accusantium voluptatem esse est iste? Facilis alias minus quos aliquid ducimus sunt saepe quae nisi suscipit voluptates beatae esse pariatur voluptatem error omnis, nihil iusto, vero et odit cum asperiores placeat rem officia quia. Iste porro aperiam voluptatibus commodi dolorem adipisci atque ab neque reiciendis soluta consequatur reprehenderit est fugit, fugiat deleniti perferendis voluptates ea veniam dolore excepturi aliquid? Harum at debitis ducimus temporibus nostrum? Quas ut optio magni maxime dicta totam, hic labore ab culpa dignissimos odio fugit magnam quasi delectus veniam nemo libero corporis non vitae? Repellat veritatis architecto quasi voluptas cum aspernatur vel, animi delectus rem provident consequatur dolores, soluta dicta mollitia nam? Eum repellat, officia incidunt suscipit quia quo dolor itaque molestias possimus labore?
+
+
+
+
+
 
 
             
@@ -146,4 +460,5 @@ html(lang="ru")
                 integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=",
                 crossorigin="anonymous") 
         script(src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js",                                     integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous")
+        script(src="swiper.min.js")
         script(src="js/script1.js")

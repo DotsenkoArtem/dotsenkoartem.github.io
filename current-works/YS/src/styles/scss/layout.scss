@@ -90,6 +90,12 @@
    &__item{
       font-size: 1.5rem;
       font-weight: 500;
+      &:hover{
+         &>a{
+            color: v.$btn-sec-color;
+            transition: color 0;
+         }
+      }
    }
    &-toggler{
       display: none;
@@ -124,7 +130,7 @@
  .sub-menu{
    position: absolute;
    min-width: 100%;
-   background-color: rgba(255, 255, 255, 0.671);
+   background: darken(rgba(255, 255, 255, 0.671), 7%);
    border-radius: 0px 0px .6rem .6rem;
    box-shadow: 0px 25px 40px rgba(146, 171, 234, 0.3);
    white-space: nowrap;
@@ -134,7 +140,7 @@
          padding: 0.4em .8em;
          transition: background-color .3s;
          &:hover{
-            background: darken(rgba(255, 255, 255, 0.671), 25%);
+            background-color: rgba(255, 255, 255, 0.671);
          }
       }
    }
@@ -291,8 +297,270 @@
 }
 
 
+
+/* Form-section 
+-------------------------*/
+.form-section{
+   padding-top: 0;
+   &__container{
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+   }
+   &__inner{
+      padding: 5rem 8rem;
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      border-radius: v.$form-section-inner-border-radius;
+      background: v.$form-section-inner-bg;
+      @include m.formSectionInnerShadow;
+      // overflow: hidden;
+      &::after{
+         display: block;
+         width: calc(100% - 10rem);
+         height: 3rem;
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         bottom: -3rem;
+         content: '';
+         background: rgba(255, 255, 255, 0.6);
+         @include m.formSectionInnerShadowAfter;
+         border-bottom-right-radius: v.$form-section-inner-border-radius;
+         border-bottom-left-radius: v.$form-section-inner-border-radius;
+         z-index: -1;
+      }
+   }
+   &__heading{
+      margin-bottom: 2rem;
+   }
+   &__subheading{
+      font-size: 2.6rem;
+   }
+   &__text{
+      font-size: 1.8rem;
+   }
+   &-wrapper{
+      margin-top: 4rem;
+   }
+   &__form{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+   &__group{
+      max-width: 33rem;
+      &.form__group.focused,
+      &.form__group.valid{
+         .form__label_control{
+            transform: translateY(calc(-100% + 1.3rem)) scale(0.8);
+         }
+      }
+      // .form__group.focused .form__label_control
+   }
+   &__submit{
+      margin-top: 0.8rem;
+      width: 32rem;
+   }
+}
+
+
 /* Want-check 
 -------------------------*/
+.want-check{
+   padding-bottom: 5rem;
+   &__modem{
+      max-width: 30.5rem;
+      left: -17rem;
+      bottom: -10rem;
+      z-index: 8;
+   }
+   &__phone{
+      max-width: 26.2rem;
+      right: -19rem;
+      bottom: -12rem;
+      z-index: 3;
+   }
+}
+
+
+/* Stars 
+-------------------------*/
+.stars{
+   text-align: center;
+   &__subheading{
+      font-size: 1.8rem;
+   }
+   &-slider {
+      &__bg{
+         img {
+            object-position: 67% bottom;
+         }
+      }
+   }
+   &__slider{
+      overflow: hidden;
+      &-wrapper{
+         margin-top: 8rem;
+         margin-bottom: 8rem;
+         position: relative;
+         
+      }
+      // width: 100%;
+      // height: 300px;
+   }
+   &-slide{
+      padding-top: 2rem;
+      width: v.$stars-slide-width;
+      height: 43rem;
+      position: relative;
+      z-index: 10;
+      transition: opacity .8s;
+      opacity: 0.25;
+      // overflow: hidden;
+      &.swiper-slide-active{
+         opacity: 1;
+         z-index: 15;
+      }
+      &__img {
+         height: 100%;
+         position: absolute;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         img{
+            display: block;
+            height: 100%;
+         }
+      }
+   }
+   &-card{
+      display: flex;
+      padding: 1rem;
+      width: 43.1rem;
+      height: 25.8rem;
+      background: v.$stars-card-bg;
+      box-shadow: 0px 40px 60px rgba(126, 176, 240, 0.2);
+      border-radius: v.$stars-card-rad;
+      &__inner{
+         padding: 3rem;
+         width: 100%;
+         height: 100%;
+         text-align: left;
+         border: 1px solid #EBF3FA;
+         box-sizing: border-box;
+         border-radius: v.$stars-card-inner-rad;
+         overflow: hidden;
+      }
+      &__heading {
+         h4 {
+            font-size: 2rem;
+            font-weight: 600;
+         }
+      }
+      &__text {
+         margin-top: 1.5rem;
+         margin-bottom: 1.5rem;
+         max-width: 34rem;
+         text-align: justify;
+      }
+      &__btn{
+         &-wrapper{
+            text-align: left;
+         }
+      }
+   }
+   &__quote-container{
+      max-width: 114rem;
+   }
+}
+// swiper-button-prev
+.swiper {
+   &-button {
+      &-prev,
+      &-next {
+         width: v.$stars-slider-btn-width;
+         height: v.$stars-slider-btn-width;
+         background: v.$swiper-btn-bg;
+         box-shadow: 0px 2px 0px -1px #1A6EBB, 0px 20px 20px -4px rgba(126, 176, 240, 0.5), inset 0px 4px 8px 4px rgba(255, 255, 255, 0.12);
+         border-radius: 50%;
+         &::after {
+            font-size: 1.6rem;
+            color: #fff;
+         }
+         &:hover {
+            background: v.$swiper-btn-hover-bg;
+         }
+         &:active {
+            background: v.$swiper-btn-active-bg;
+         }
+      }
+      &-prev {
+         // left: 49rem;
+         left: calc(50% - (v.$stars-slide-width / 2) - (v.$stars-slider-btn-width * 2));
+      }
+      &-next {
+         // right: 49rem;
+         right: calc(50% - (v.$stars-slide-width / 2) - (v.$stars-slider-btn-width * 2));
+      }
+   }
+}
+
+.layer-block {
+   padding: 0;
+   position: relative;
+   z-index: 5;
+   text-align: center;
+   border-radius: v.$form-section-inner-border-radius;
+   background: v.$form-section-inner-bg;
+   @include m.formSectionInnerShadow;
+   // overflow: hidden;
+   &::after{
+      display: block;
+      width: calc(100% - 6rem);
+      height: 2rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -2rem;
+      content: '';
+      background: rgba(255, 255, 255, 0.6);
+      @include m.formSectionInnerShadowAfter;
+      border-bottom-right-radius: v.$form-section-inner-border-radius;
+      border-bottom-left-radius: v.$form-section-inner-border-radius;
+      z-index: -1;
+   }
+}
+
+.quote {
+   padding: 6.3rem 14rem;
+   position: relative;
+   &::before,
+   &::after {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 20px;
+      background: url("sprite.svg") no-repeat;
+      background-position: 0 5.412371134%;
+   }
+   &::before {
+      transform: scale(-1);
+      bottom: 5rem;
+      right: 7rem;
+   }
+   &::after {
+     
+      top: 5rem;
+      left: 7rem;
+   }
+
+   &__text{
+      font-size: 3rem;
+   }
+}
 
 
 /* About 
@@ -307,9 +575,21 @@
 -------------------------*/
 
 
+
 /* Important 
 -------------------------*/
 
+
+/* Prize
+-------------------------*/
+.prize{
+   &__sims{
+      max-width: 41.8rem;
+      right: -16rem;
+      top: -9rem;
+      z-index: 6;
+   }
+}
 
 /* Buy
 -------------------------*/
@@ -329,6 +609,23 @@
 
 /* Questions 
 -------------------------*/
+.questions{
+   &__img1{
+      max-width: 63rem;
+      left: -35rem;
+      top: -18rem;
+      z-index: 3;
+      img{
+         max-width: 63rem;
+      }
+   }
+   &__img2{
+      max-width: 19.7rem;
+      right: 0;
+      top: 4rem;
+      z-index: 8;
+   }
+}
 
 
 /* Partnership 

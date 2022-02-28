@@ -5,8 +5,8 @@
 
 
     // формируем URL в переменной $queryUrl
-    // $queryUrl = 'https://ys-system.bitrix24.ru/rest/1/5enhqnfw9v20l4b2/crm.lead.add.json';
-    $queryUrl = 'https://dots.bitrix24.ru/rest/1/qgkldduuuewd1moo/crm.lead.add.json';
+    $queryUrl = 'https://ys-system.bitrix24.ru/rest/1/5enhqnfw9v20l4b2/crm.lead.add.json';
+    // $queryUrl = 'https://dots.bitrix24.ru/rest/1/qgkldduuuewd1moo/crm.lead.add.json';
     // формируем параметры для создания лида в переменной $queryData
     $queryData = http_build_query(array(
         'fields' => array(
