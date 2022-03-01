@@ -858,7 +858,94 @@
 
 /* Important 
 -------------------------*/
-
+.important{
+   margin-top: 10.6rem;
+   padding-bottom: 7rem;
+   &__container{
+      position: relative;
+   }
+   &-heading{
+      position: relative;
+      &__img {
+         left: 50%;
+         transform: translateX(-50%);
+         top: -7.5rem;
+         img{
+            max-width: 10.4rem;
+         }
+      }
+   }
+   &__content{
+      // position: relative;
+      .center{
+         &-img{
+            position: absolute;
+            
+            // z-index: 10;
+            transform: translate(-50%, -50%);
+            &__street{
+               top: calc(50% + 8.5rem);
+               left: calc(50% + 2rem);
+            }
+            img{
+               max-width: 52.7rem;
+            }
+            &__round{
+               top: 50%;
+               left: 50%;
+               border-radius: 50%;
+               &_lg{
+                  width: 53rem;
+                  height: 53rem;
+                  border: 1px solid rgba(154, 162, 186, 0.15);
+               }
+               &_md{
+                  width: 43rem;
+                  height: 43rem;
+                  border: 1px solid rgba(154, 162, 186, 0.3);
+               }
+               &_sm{
+                  width: 33rem;
+                  height: 33rem;
+                  border: 1px solid rgba(154, 162, 186, 0.45);
+               }
+            }
+         }
+      }
+   }
+   &__row{
+      display: flex;
+      &_space-between{
+         justify-content: space-between;
+      }
+      &_center{
+         justify-content: center;
+      }
+   }
+   &__item{
+      max-width: 36rem;
+      text-align: center;
+      font-size: 1.5rem;
+      color: #52596F;
+      &_last{
+         max-width: 40rem;
+      }
+      img{
+         width: 115.5rem;
+         height: 12.6rem;
+         object-fit: contain;
+      }
+      .item{
+         &__title{
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2A2B31;
+         }
+      }
+   }
+}
 
 /* Prize
 -------------------------*/
