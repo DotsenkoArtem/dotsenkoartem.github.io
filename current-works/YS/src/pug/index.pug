@@ -131,7 +131,7 @@ html(lang="ru")
                 |================================================== -->
                 section.section.stars
                     .container
-                        .stars__heading 
+                        .section__heading 
                             h2 Нас выбирают звезды
                         .stars__subheading
                             p За 12 лет работы мы сделали счастливыми более 15 500 клиентов.
@@ -265,10 +265,264 @@ html(lang="ru")
 
 
 
+                <!-- About
+                |
+                |================================================== -->
+                section.section.about
+                    .container.about__container
+                        .section__heading
+                            h2 О компании
+                        
+                        .about-grid-wrapper
+                            .about-grid
+                                .about-grid__item.about-card.open
+                                    .about-card__content 
+                                        .about-card__title 
+                                        .about-card__text В отличии от мастеров и компаний  однодневок, мы не пропадаем после того как получили деньги, и несем все гарантийные обязательства по договору! Наш офис отгрузок в Москве и Тех. поддержка работают 24\7, со дня создания компании и по текущий день.
+
+                                .about-grid__item.about-card-img 
+                                    img(src="img/about-img-1.jpg", alt=" ")
+
+                                .about-grid__item.about-card
+                                    .about-card__content 
+                                        .about-card__title 
+                                            div
+                                                span У нас
+                                                    br
+                                                    |более 15 500
+                                                br
+                                                |счастливых клиентов
+                                                br
+                                                |с 2009 г. 
+                                        .about-card__text 
+                                
+                                .about-grid__item.about-card-img 
+                                    img(src="img/about-img-2.jpg", alt=" ") 
+                                
+                                .about-grid__item.about-card-img 
+                                    img(src="img/about-img-3.jpg", alt=" ")
+                                
+                                .about-grid__item.about-card
+                                    .about-card__content 
+                                        .about-card__title 
+                                            div
+                                                span Производим
+                                                    br
+                                                    |устройства 
+                                                    br
+                                                    |«Street»
+                                                br
+                                                |в России 
+                                        .about-card__text 
+                                
+                                .about-grid__item.about-card
+                                    .about-card__content 
+                                        .about-card__title 
+                                            div
+                                                span Доставка
+                                                    br
+                                                    |в 26 стран
+                                                br
+                                                |по всему миру
+                                        .about-card__text 
+                                
+                                .about-grid__item.about-card
+                                    .about-card__content 
+                                        .about-card__title 
+                                            div
+                                                span СМИ
+                                                br
+                                                |регулярно
+                                                br
+                                                |упоминают нас
+                                        .about-card__text 
+                                
+                                .about-grid__item.about-card
+                                    .about-card__content 
+                                        .about-card__title 
+                                            div
+                                                span Мегафон, МТС,
+                                                    br 
+                                                    |Yota, Теle 2,
+                                                    br 
+                                                    |Билайн
+                                                br
+                                                |наши прямые
+                                                br
+                                                |партнеры 
+                                        .about-card__text 
+                                
+                                .about-grid__item.about-card-img 
+                                    img(src="img/about-img-4.jpg", alt=" ")
+                                
+                                .about-grid__item.about-card
+                                    .about-card__content 
+                                        .about-card__title 
+                                            div
+                                                span Отсутствие
+                                                    br
+                                                    |конкурентного
+                                                    br
+                                                    |решения
+                                                br
+                                                |в России
+                                                br
+                                                |и во всем мире
+                                        .about-card__text 
+                                
+                                .about-grid__item.about-card-img 
+                                    img(src="img/about-img-5.jpg", alt=" ")
+                            .about-grid-overlay
+
+
+                    .section__bg.section__bg_cover.about__bg
+                        picture 
+                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            img(src="img/bg-about.png", alt=" ")
+
+
+                    .section__img.about__box
+                        picture 
+                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
+                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                            img(src="img/box-2.png", alt=" ")
 
 
 
 
+
+
+
+                <!-- Goods
+                |
+                |================================================== -->
+                section.section.goods
+                    .container.goods__container
+                        .section__heading
+                            h2 3 решения
+                                span.section__subheading
+                                    |для получения интернета
+
+                        .good-wrapper
+                            .good 
+                                .good__content 
+                                    .good__img
+                                        picture 
+                                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
+                                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                            img(src="img/street-2.png", alt=" ")
+                                    .good__header 
+                                        span.good__name Street 2
+                                        |— самый «мобильный»
+                                        i.svg-laptop.svg-laptop-dims
+
+                                    .good__adv 
+                                        ul
+                                            li Получите интернет без подключения к сети 220v!
+                                            li Берите Street 2 с собой на дачу, в путешествия на автомобиле, в деревню к бабушке на каникулы, или работайте удаленно там, где вы находитесь! 
+                                            li Достаточно подключить его USB кабель к ноутбуку, компьютеру или Wi-Fi роутеру.
+
+                                    .good__prices 
+                                        .price.price_part
+                                            span.price-name В рассрочку:
+                                            div от
+                                                span.dig 1375
+                                                span.rub ₽
+                                                span / месяц
+                                        .price.price_total
+                                            span.price-name Цена:
+                                            div  
+                                                span.dig 15 990
+                                                span.rub ₽
+
+                                    .good__btns
+                                        .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal") Взять на тест-драйв
+                                        .btn.btn_outline.good-btn.good-btn_outline Технические характеристики
+                            
+                            
+                            
+                            
+                            .good 
+                                .good__content 
+                                    .good__img
+                                        picture 
+                                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
+                                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                            img(src="img/street-2-pro.png", alt=" ")
+                                    .good__header 
+                                        span.good__name Street 2 PRO
+                                        |— cамый «быстрый х2»
+                                        i.svg-fast.svg-fast-dims
+
+                                    .good__adv 
+                                        ul
+                                            li Принимает и увеличивает скорость интернет сигнала практически в 2-а раза
+                                            li Имеет встроенный wi-fi, работает со всеми сетевыми устройствами: видеокамеры, сигнализации, умный дом, компьютеры и тд.
+                                            li Включить сможет даже ребенок – просто вставьте в розетку!
+                                                br 
+                                                |Не требует монтажа и настройки мастером.
+
+                                    .good__prices 
+                                        .price.price_part
+                                            span.price-name В рассрочку:
+                                            div от
+                                                span.dig 2290
+                                                span.rub ₽
+                                                span / месяц
+                                        .price.price_total
+                                            span.price-name Цена:
+                                            div  
+                                                span.dig 26 990
+                                                span.rub ₽
+
+                                    .good__btns
+                                        .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal") Взять на тест-драйв
+                                        .btn.btn_outline.good-btn.good-btn_outline Технические характеристики
+                            
+                            
+                            
+                            
+                            .good 
+                                .good__content 
+                                    .good__img
+                                        picture 
+                                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
+                                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                            img(src="img/street-2-u.png", alt=" ")
+                                    .good__header 
+                                        span.good__name Street ULTRA PRO
+                                        |— самый «Мощный х4»
+                                        i.svg-flash.svg-flash-dims
+
+                                    .good__adv 
+                                        ul
+                                            li Принимает интернет-сигнал даже там, где не ловит ваш телефон! 
+                                            li Отлично подойдет для особо отдалённых регионов и мест со сложным природным ландшафтом.
+                                            li Большая площадь антенны принимает самый слабый или отраженный сигнал.
+                                            li Функционал как у предыдущей модели, только все мощнее!
+
+                                    .good__prices 
+                                        .price.price_part
+                                            span.price-name В рассрочку:
+                                            div от
+                                                span.dig 2450 
+                                                span.rub ₽
+                                                span / месяц
+                                        .price.price_total
+                                            span.price-name Цена:
+                                            div  
+                                                span.dig 28 990
+                                                span.rub ₽
+
+                                    .good__btns
+                                        .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal") Взять на тест-драйв
+                                        .btn.btn_outline.good-btn.good-btn_outline Технические характеристики
+
+                    .section__img.goods__box
+                        picture 
+                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
+                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                            img(src="img/box-1.png", alt=" ")
 
 
                 <!-- Help 
