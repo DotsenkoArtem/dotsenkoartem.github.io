@@ -205,6 +205,20 @@ h2{
 h3{
 	font-size: 2.6rem;
 }
+h3{
+	font-size: 2rem;
+}
+.text{
+	&_primary-blue{
+		color: v.$text-primary-blue;
+	}
+	&_semibold{
+		font-weight: 600;
+	}
+	&_bold{
+		font-weight: 700;
+	}
+}
 
 /* 3. Links
 -------------------------*/
@@ -214,15 +228,22 @@ a, a:visited {
    outline: none;
    color: v.$menu-item-color;
    transition: color .3s ease-in-out;
+   &.text-link{
+	color: v.$text-primary-blue;
+	text-decoration: underline;
+   }
 }
 a{
-	&:hover,
-	&:focus{
-		// color: #3df804;
+	&.text-link{
+		&:hover,
+		&:focus{
+			text-decoration: none;
+		}
+		&:active{
+			text-decoration: none;
+		}
 	}
-	&:active{
-		// color: darken(#ff0505, 15%);
-	}
+
 }
 
 

@@ -304,3 +304,58 @@ const starsSlider = new Swiper('.stars__slider', {
         }
     }
 });
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// STARS - SLIDER
+const reviewsSlider = new Swiper('.reviews__slider', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 1,
+    speed: 500,
+
+
+
+
+    spaceBetween: 20,
+     autoplay: {
+        delay: 5000,
+    },
+  
+    // If we need pagination
+    // pagination: {
+    //   el: '.swiper-pagination',
+    // },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+    // scrollbar: {
+    //   el: '.swiper-scrollbar',
+    // },
+    
+      // Responsive breakpoints
+    breakpoints: {
+        // when window width is >= 320px
+        // 320: {
+        //   slidesPerView: 1,
+        //   spaceBetween: 20
+        // },
+        // // when window width is >= 480px
+        // 480: {
+        //   slidesPerView: 3,
+        //   spaceBetween: 30
+        // },
+        // when window width is >= 992px
+        992: {
+            slidesPerView: "auto",
+            centeredSlides: true,
+            spaceBetween: 80,
+        }
+    }
+});

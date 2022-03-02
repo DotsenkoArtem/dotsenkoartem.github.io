@@ -484,6 +484,12 @@
 		}
 	}
 
+	.buy{
+		&__grid{
+			display: block;
+		 }
+	}
+
 	.questions {
 		&__img1{
 		left: 3rem;
