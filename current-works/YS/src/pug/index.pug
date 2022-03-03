@@ -268,9 +268,9 @@ html(lang="ru")
                 <!-- About
                 |
                 |================================================== -->
-                section.section.about
+                section.section.about#about
                     .container.about__container
-                        .section__heading
+                        .section__heading#about
                             h2 О компании
                         
                         .about-grid-wrapper
@@ -396,15 +396,15 @@ html(lang="ru")
                 <!-- Goods
                 |
                 |================================================== -->
-                section.section.goods
+                section.section.goods#goods
                     .container.goods__container
                         .section__heading
-                            h2 3 решения
+                            h2#goods 3 решения
                                 span.section__subheading
                                     |для получения интернета
 
                         .good-wrapper
-                            .good 
+                            .good#street-2 
                                 .good__content 
                                     .good__img
                                         picture 
@@ -442,7 +442,7 @@ html(lang="ru")
                             
                             
                             
-                            .good 
+                            .good#street-2-pro
                                 .good__content 
                                     .good__img
                                         picture 
@@ -482,7 +482,7 @@ html(lang="ru")
                             
                             
                             
-                            .good 
+                            .good#street-ultra-pro
                                 .good__content 
                                     .good__img
                                         picture 
@@ -714,7 +714,7 @@ html(lang="ru")
                 |================================================== -->
                 section.section.buy
                     .container.buy__container
-                        .section__heading.buy-heading
+                        .section__heading.buy-heading#buy
                             h2 Где купить
                                 span.section__subheading
                                     |наши устройства
@@ -788,7 +788,7 @@ html(lang="ru")
                 |================================================== -->
                 section.section.reviews
                     .container.reviews__container
-                        .section__heading.reviews-heading
+                        .section__heading.reviews-heading#reviews
                             h2 Только настоящие отзывы
                                 span.section__subheading
                                     |от реальных покупателей
@@ -836,6 +836,98 @@ html(lang="ru")
                                 span.section__subheading
                                     |на Street 2, Street 2 PRO и Street 2 Ultra
 
+                        
+                    .container.overviews__container
+                        .main-video-wrapper
+                            .main-video__img
+                                img(src="img/ov-main-vid.png", alt=" ")
+                                a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                    i.svg-ov-play-white.svg-ov-play-white-dims
+
+                        .section__img.overviews__yt
+                            picture 
+                                //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
+                                //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
+                                img(src="img/ov-img-4.png", alt=" ")
+                        .section__img.overviews__cam
+                            picture 
+                                //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
+                                //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
+                                img(src="img/ov-img-3.png", alt=" ")
+
+                    .container.overviews__container
+                        .video-grid
+                            .video__img
+                                    img(src="img/ov-vid-1.png", alt=" ")
+                                    a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                        i.svg-ov-play-white.svg-ov-play-white-dims
+                            .video__img
+                                    img(src="img/ov-vid-2.png", alt=" ")
+                                    a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                        i.svg-ov-play-white.svg-ov-play-white-dims
+                            .video__img
+                                    img(src="img/ov-vid-3.png", alt=" ")
+                                    a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                        i.svg-ov-play-white.svg-ov-play-white-dims
+                            .video__img
+                                    img(src="img/ov-vid-4.png", alt=" ")
+                                    a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                        i.svg-ov-play-white.svg-ov-play-white-dims
+                            .video__img
+                                    img(src="img/ov-vid-5.png", alt=" ")
+                                    a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                        i.svg-ov-play-white.svg-ov-play-white-dims
+                            .video__img
+                                    img(src="img/ov-vid-6.png", alt=" ")
+                                    a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                        i.svg-ov-play-white.svg-ov-play-white-dims
+
+                        .section__img.overviews__otv
+                            picture 
+                                //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
+                                //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
+                                img(src="img/ov-img-2.png", alt=" ")
+                        .section__img.overviews__img1
+                            picture 
+                                //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
+                                //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
+                                img(src="img/ov-img-1.png", alt=" ")
+
+
+                    .section__bg.section__bg_cover.overviews__bg
+                        picture 
+                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            img(src="img/bg-ov.png", alt=" ")
+
+
+
+                <!-- Social 
+                |
+                |================================================== -->
+                .social
+                    .container.social__container
+                        .social__content
+                            .social__heading
+                                |Подписывайтесь на нас
+                                span.section__subheading
+                                    |в Instagram и Youtube
+                            .social__links 
+                                a.yt(href="#") 
+                                    i.svg-soc-yt.svg-soc-yt-dims
+                                a.inst(href="#") 
+                                    i.svg-soc-inst.svg-soc-inst-dims
+                        .social__phones-wrapper
+                            .section__img.social__phones
+                                picture 
+                                    //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
+                                    //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
+                                    img(src="img/soc-img-1.png", alt=" ")
+
+
+                    .section__bg.section__bg_cover.social__bg
+                        picture 
+                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            img(src="img/bg-social.jpg", alt=" ")
 
 
 
@@ -844,6 +936,7 @@ html(lang="ru")
 
 
 
+                                        
 
 
                 <!-- Questions 
@@ -889,8 +982,78 @@ html(lang="ru")
 
 
 
-                p(style="margin-top: 250px;") Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor officia laboriosam labore nobis at pariatur ullam est, nihil, omnis magnam itaque molestias dicta error aperiam velit possimus atque nam ducimus! Ullam sint ducimus ex, sequi qui nemo veritatis similique molestiae omnis ea quia cupiditate commodi odit porro consequatur debitis quo laudantium recusandae sit perferendis, quae temporibus necessitatibus laborum sapiente. Voluptas aliquam perspiciatis officiis deserunt vero expedita quas sed at velit aliquid sapiente maxime cum voluptatem dolorum impedit laudantium, mollitia fugit, iste voluptate itaque quasi! Similique aliquam et ab, quae maiores tempora, quod sapiente saepe consectetur ut odio ducimus nobis eaque asperiores. Ad vero commodi voluptatibus consectetur eum quos soluta, quam totam dolores qui, fugiat enim debitis mollitia ipsam rerum, praesentium aliquid voluptates. Accusantium vel quae veniam soluta debitis nemo tempore excepturi sint? Repudiandae rerum voluptate totam nihil assumenda, dolorem eos, iusto ducimus nisi culpa mollitia, labore corrupti laborum veritatis inventore molestiae! Deleniti officia iste labore voluptatibus nam corrupti omnis enim nostrum, similique numquam vel blanditiis tenetur odit, iure assumenda repudiandae? Fugit hic corporis blanditiis maiores beatae eos sunt vitae dolorem? Voluptatum libero dolores numquam consequuntur aperiam, id tempora veniam saepe, sapiente, iure culpa distinctio magni at ullam! In fuga, voluptas odit unde minus minima et tempore nisi. Doloremque facilis maiores ab hic doloribus nihil vel nobis provident voluptates velit magnam inventore nam deserunt dolorum delectus, architecto autem! Quae nobis, deserunt et a eveniet culpa adipisci blanditiis error sit ipsam commodi maiores. Fuga non fugiat dignissimos! Quae quod nesciunt accusantium voluptatibus? Reiciendis velit ullam expedita iste fugit illum vitae porro quidem ut! Fuga voluptatum, quasi quis unde eos voluptate numquam accusantium. Quam officia eius, consequuntur natus ad harum! Hic minus harum facilis ratione obcaecati. Impedit incidunt earum provident iusto dolore enim sit autem, eligendi, quo illo quisquam quibusdam sapiente placeat. Tenetur reprehenderit, velit consequatur corrupti dignissimos itaque dolores quisquam, aspernatur doloribus officia voluptatem eaque beatae? Eos tempore consequatur molestias. Consequuntur magnam quas natus porro ipsum amet, vitae illo praesentium dolore harum ad ipsa dicta, autem fugit rerum. Cumque dolorem nemo exercitationem sequi culpa quae itaque maiores. Culpa earum, sed, atque magni commodi incidunt dolorum, magnam hic dolores adipisci a maiores voluptatibus nulla sequi ratione? Nesciunt atque aut aliquam velit dicta nostrum, ullam maiores sint accusamus ea dolorem magnam obcaecati asperiores vero consequatur debitis accusantium voluptatem esse est iste? Facilis alias minus quos aliquid ducimus sunt saepe quae nisi suscipit voluptates beatae esse pariatur voluptatem error omnis, nihil iusto, vero et odit cum asperiores placeat rem officia quia. Iste porro aperiam voluptatibus commodi dolorem adipisci atque ab neque reiciendis soluta consequatur reprehenderit est fugit, fugiat deleniti perferendis voluptates ea veniam dolore excepturi aliquid? Harum at debitis ducimus temporibus nostrum? Quas ut optio magni maxime dicta totam, hic labore ab culpa dignissimos odio fugit magnam quasi delectus veniam nemo libero corporis non vitae? Repellat veritatis architecto quasi voluptas cum aspernatur vel, animi delectus rem provident consequatur dolores, soluta dicta mollitia nam? Eum repellat, officia incidunt suscipit quia quo dolor itaque molestias possimus labore?
 
+
+
+
+
+                <!-- Partnership
+                |
+                |================================================== -->
+                section.section.partn
+                    .container.partn__container
+                        .section__heading.partn-heading
+                            h2 Мы открыты к партнерству!
+                                span.section__subheading
+                                    |Оставьте свои контакты и мы свяжемся с вами!
+
+                        .partn__content
+                            .partn__content_left
+
+                                .partn__card.partn__card_first
+                                    .partn-card__heading
+                                        p.text_primary-blue Блогерам
+                                    .partn-card__body
+                                        p Если вы являетесь блогером по тематике 
+                                            span.text_semibold электроника, строительство, дом, загородная жизнь, 
+                                            |то мы с удовольствием предоставим вам наши усилители на ваши честные обзоры.
+
+                                .partn__card 
+                                    .partn-card__heading
+                                        p.text_primary-blue Партнерам
+                                    .partn-card__body
+                                        p Прямо сейчас 
+                                            span.text_semibold мы ищем представителей в каждом городе России. 
+                                            |У нас большой маркетинговый план и нам нужно нам расширять наш рынок.
+                                        p У нас есть видение, мы понимаем что мы делаем!
+
+                                .partn__card.partn__card_lg
+                                    .partn-card__body
+                                        p Если вас заинтересовало наше предложение, 
+                                            br
+                                            span.text_semibold оставьте свои контакты и мы свяжемся с вами!
+
+                                        .btn.btn_primary.btn_shiny.partn-card__btn.modal-trigger(data-target="modal") Хочу стать партнером
+
+                                    
+
+
+
+                            .partn__content_right
+                                .partn__video 
+                                    div
+                                        .partn-video__offer 
+                                            |Посмотрите видео
+                                            br
+                                            |и узнайте подробнее!
+
+                                    div
+                                        i.svg-partn-line-round.svg-partn-line-round-dims
+                                    .partn-video__btn-wrapper
+                                        a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k").partn-video__btn 
+                                        img(src="img/part-play.png", alt="кнопка play")
+
+
+                    .section__bg.section__bg_cover.social__bg
+                        picture 
+                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            img(src="img/bg-part.jpg", alt=" ")
+
+
+
+
+
+               
 
 
 
@@ -901,11 +1064,11 @@ html(lang="ru")
                 
 
 
-        //- |
-        //- |
-        //- |<!-- footer
-        //- |================================================== -->
-        //- include _includes/_footer.pug
+        |
+        |
+        |<!-- footer
+        |================================================== -->
+        include _includes/_footer.pug
 
 
         //- |

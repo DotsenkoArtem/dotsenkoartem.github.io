@@ -251,6 +251,7 @@ a{
  -------------------------*/
 
  img {
+	
 	max-width: 100%;
 	height: auto;
  }
@@ -413,6 +414,36 @@ input[type="button"],
 			background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
 			animation: shiny 5s infinite linear;
 		}
+	}
+}
+
+.play-btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// position: relative;
+	border-radius: 50%;
+	background: linear-gradient(180deg, #37AAFD 0%, #1C84E3 100%);
+	box-shadow: 0px 3px 0px -1px #1A6EBB, 0px 20px 20px -4px rgba(126, 176, 240, 0.5), inset 0px 4px 8px 4px rgba(255, 255, 255, 0.12);
+	i{
+		margin-left: 0.3rem;
+		display: inline-block;
+	}
+	&:hover{
+		background: linear-gradient(180deg, #54B7FF 0%, #2A93F4 100%);
+		box-shadow: 0px 4px 0px -1px #1A6EBB, 0px 20px 20px -4px rgba(126, 176, 240, 0.5), inset 0px 4px 8px 4px rgba(255, 255, 255, 0.12);
+	}
+	&:active{
+		background: #5BB8FF;
+		box-shadow: 0px 4px 0px -1px #1A6EBB, 0px 20px 20px -4px rgba(126, 176, 240, 0.5), inset 0px 4px 8px 4px rgba(255, 255, 255, 0.12);
+	}
+	&_md{
+		width: 6rem;
+		height: 6rem;
+	}
+	&_lg{
+		width: 8rem;
+		height: 8rem;
 	}
 }
 
