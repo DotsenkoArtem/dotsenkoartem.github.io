@@ -156,10 +156,10 @@
 }
 
 .section{
-   padding: 12rem 0 2rem;
+   padding: 12rem 0 3rem;
    position: relative;
    &__heading{
-      margin-bottom: 6rem;
+      margin-bottom: 2rem;
       text-align: center;
       h2{
 
@@ -316,12 +316,13 @@
 .form-section{
    padding-top: 0;
    &__container{
-      padding-left: 0;
-      padding-right: 0;
+      // padding-left: 0;
+      // padding-right: 0;
       position: relative;
    }
    &__inner{
-      padding: 5rem 8rem;
+      padding-top: 1.5rem;
+      padding: 1.5rem 8rem  3rem 8rem;
       position: relative;
       z-index: 5;
       text-align: center;
@@ -347,6 +348,9 @@
    }
    &__heading{
       margin-bottom: 2rem;
+      h3{
+         font-size: 2.6rem;
+      }
    }
    &__subheading{
       font-size: 2.6rem;
@@ -355,7 +359,7 @@
       font-size: 1.8rem;
    }
    &-wrapper{
-      margin-top: 4rem;
+      margin-top: 2.5rem;
    }
    &__form{
       display: flex;
@@ -384,17 +388,21 @@
 .want-check{
    padding-bottom: 5rem;
    &__modem{
-      max-width: 30.5rem;
-      left: -17rem;
-      bottom: -10rem;
+      max-width: 33.5rem;
+      left: -18rem;
+      bottom: -11rem;
       z-index: 8;
    }
    &__phone{
-      max-width: 26.2rem;
-      right: -19rem;
-      bottom: -12rem;
+      max-width: 35rem;
+      right: -25rem;
+      bottom: -15rem;
       z-index: 3;
    }
+   &__inner{
+      padding-bottom: 2.5rem;
+   }
+
 }
 
 
@@ -415,8 +423,8 @@
    &__slider{
       overflow: hidden;
       &-wrapper{
-         margin-top: 8rem;
-         margin-bottom: 8rem;
+         margin-top: 7.5rem;
+         margin-bottom: 7.5rem;
          position: relative;
          
       }
@@ -551,22 +559,17 @@
 .quote {
    padding: 6.3rem 14rem;
    position: relative;
-   &::before,
-   &::after {
+   &_before,
+   &_after {
       display: block;
       position: absolute;
-      content: '';
-      width: 30px;
-      height: 20px;
-      background: url("sprite.svg") no-repeat;
-      background-position: 0 5.412371134%;
    }
-   &::before {
+   &_before {
       transform: scale(-1);
       bottom: 5rem;
       right: 7rem;
    }
-   &::after {
+   &_after {
      
       top: 5rem;
       left: 7rem;
@@ -583,8 +586,8 @@
 .about{
    padding-bottom: 10rem;
    &__container{
-      padding-left: 0;
-      padding-right: 0;
+      // padding-left: 0;
+      // padding-right: 0;
    }
    &-grid{
       padding: 2.2rem;
@@ -598,6 +601,7 @@
       border-radius: 24px;
       &-wrapper{
          position: relative;
+         margin-top: 6rem;
          padding: 2rem;
          background: rgba(255, 255, 255, 0.6);
          box-shadow: 0px 60px 120px rgba(146, 171, 234, 0.16);
@@ -624,7 +628,7 @@
       }
    }
    &-card{
-      padding: 2rem 2rem 4.3rem;
+      padding: 4.5rem 2rem 4.3rem 3.5rem;
       border: 1px solid #EBF3FA;
       // box-shadow: 0px 5px 16px rgba(146, 171, 234, 0.2);
       &-img{
@@ -689,6 +693,10 @@
 -------------------------*/
 .goods{
    position: relative;
+   padding-top: 4rem;
+   &__heading{
+      margin-bottom: 5.5rem;
+   }
    &__box{
       max-width: 62.4rem;
       right: 0rem;
@@ -734,9 +742,9 @@
       align-items: center;
       font-size: 3rem;
       font-weight: 400;
-      i{
-         margin-left: 1.5rem;
-      }
+      // i{
+      //    margin-left: 1.5rem;
+      // }
    }
    &__name{
       margin-left: 4rem;
@@ -774,6 +782,7 @@
          margin-right: 1rem;
          margin-bottom: 1rem;
          position: relative;
+         line-height: 1.4;
          &::before,
          &::after{
             display: block;
@@ -834,7 +843,7 @@
       }
    }
    &__btns{
-      margin-top: 4rem;
+      margin-top: 4.5rem;
       display: flex;
       align-items: center;
    }
@@ -862,7 +871,7 @@
 /* Important 
 -------------------------*/
 .important{
-   margin-top: 10.6rem;
+   margin-top: 10rem;
    padding-bottom: 7rem;
    &__container{
       position: relative;
@@ -872,7 +881,7 @@
       &__img {
          left: 50%;
          transform: translateX(-50%);
-         top: -7.5rem;
+         top: -9rem;
          img{
             max-width: 10.4rem;
          }
@@ -919,9 +928,11 @@
    &__row{
       display: flex;
       &_space-between{
+         margin-top: 3rem;
          justify-content: space-between;
       }
       &_center{
+         margin-top: -7rem;
          justify-content: center;
       }
    }
@@ -953,6 +964,7 @@
 /* Prize
 -------------------------*/
 .prize{
+   padding-top: 4rem;
    &__sims{
       max-width: 41.8rem;
       right: -16rem;
@@ -966,6 +978,10 @@
 .buy{
    &__container{
       position: relative;
+   }
+   &__heading{
+      margin-top: 1rem;
+      margin-bottom: 8rem;
    }
    &__content{
       position: relative;
@@ -988,7 +1004,7 @@
          grid-area: buy-text-2;
       }
       &:not(:last-child){
-         margin-bottom: 5rem;
+         margin-bottom: 2rem;
       }
       &__heading{
          margin-bottom: 1.8rem;
@@ -1005,6 +1021,7 @@
       }
    }
    &-img {
+      padding-bottom: 3rem;
       grid-area: buy-img;
       .img-grid{
          width: 100%;
@@ -1034,6 +1051,10 @@
 /* Reviews 
 -------------------------*/
 .reviews{
+   padding-top: 8rem;
+   &__heading{
+      margin-bottom: 6rem;
+   }
    &__slider{
       padding-bottom: 8rem;
       overflow: hidden;
@@ -1067,10 +1088,10 @@
          top: 57%;
       }
       &-prev{
-         left: calc(65% - 37.5rem - 10rem);
+         left: calc(62% - 37.5rem - 10rem);
       }
       &-next{
-         right: calc(65% - 37.5rem - 10rem);
+         right: calc(62% - 37.5rem - 10rem);
       }
    }
 }
@@ -1079,25 +1100,28 @@
 /* Overviews
 -------------------------*/
 .overviews{
-   padding-top: 2rem;
+   padding-top: 3.5rem;
    padding-bottom: 20rem;
    &__container{
       position: relative;
    }
+   &__video-container{
+      margin-top: 8rem;
+   }
    &__yt{
-      top: -12rem;
-      left: -23rem;
+      top: -13rem;
+      left: -27rem;
       max-width: 42.6rem;
    }
    &__cam{
-      top: 16rem;
-      right: -34rem;
+      top: 13rem;
+      right: -33rem;
       max-width: 46.3rem;
    }
    &__otv{
-      top: 36rem;
-      right: -32rem;
-      max-width: 45.4rem;
+      top: 39rem;
+      right: -35rem;
+      max-width: 48.4rem;
    }
    &__img1{
       top: 42rem;
@@ -1278,7 +1302,7 @@
       top: 50%;
       transform: translateY(-50%);
       img{
-         max-width: 55rem;
+         max-width: 59rem;
       }
    }
 }
@@ -1286,7 +1310,7 @@
 /* Questions 
 -------------------------*/
 .questions{
-   padding-top: 7rem;
+   padding-top: 14rem;
    position: relative;
    z-index: 2;
    overflow: visible;
@@ -1302,7 +1326,7 @@
    &__img2{
       max-width: 19.7rem;
       right: 0;
-      top: 4rem;
+      top: -4rem;
       z-index: 8;
    }
 }
@@ -1313,6 +1337,7 @@
 .partn{
    padding-bottom: 0rem;
    &__content{
+      margin-top: 5rem;
       display: flex;
       &_left{
          max-width: 56rem;
@@ -1325,10 +1350,13 @@
          }
       }
    }
+   &__heading{
+      margin-top: 1rem;
+   }
    &__card{
       position: relative;
       top: -2.5rem;
-      padding: 3.5rem 3.5rem 7.5rem 3.5rem;
+      padding: 3.5rem;
       border-radius: v.$modal-border-radius;
       background: #fff;
       box-shadow: 0px -20px 80px rgba(146, 171, 234, 0.15), 0px 30px 80px rgba(146, 171, 234, 0.15);
@@ -1351,7 +1379,7 @@
          font-weight: 600;
       }
       &__btn{
-         margin-top: 3rem;
+         margin-top: 1.5rem;
          width: 32rem;
          height: 7rem;
       }
@@ -1403,7 +1431,7 @@
 /* Footer 
 -------------------------*/
 .footer{
-   padding: 6rem 0;
+   padding: 13rem 0 6rem 0;
    color: v.$footer-color;
    background: #fff;
    overflow: hidden;
@@ -1413,7 +1441,7 @@
    &__grid{
       margin-bottom: 5rem;
       display: grid;
-      grid-template-columns: 10.1rem minmax(40rem, 117rem) 45rem;
+      grid-template-columns: 10.1rem minmax(40rem, 117rem) 35rem;
       column-gap: 6rem;
    }
    &-menu{
@@ -1434,7 +1462,7 @@
    }
    &-submenu{
       &__item{
-         margin-top: 2rem;
+         margin-top: 1rem;
          a{
             transition: none;
          }
@@ -1446,7 +1474,7 @@
    &-contacts{
       max-width: 43rem;
       &__item{
-         margin-top: 2rem;
+         margin-top: 1rem;
          display: block;
       }
       &__heading{
@@ -1464,6 +1492,7 @@
       }
       &__phone{
          position: relative;
+         line-height: 2.4rem;
          svg{
             position: absolute;
             display: inline-block;

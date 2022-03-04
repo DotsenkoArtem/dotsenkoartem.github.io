@@ -359,3 +359,25 @@ const reviewsSlider = new Swiper('.reviews__slider', {
         }
     }
 });
+
+/* Smoothy scrolling
+-------------------------*/
+$(function(){
+    $('a[href^="#"]').on('click', function(event) {
+      // отменяем стандартное действие
+      event.preventDefault();
+      
+      let sc = $(this).attr("href"),
+          dn = $(sc).offset().top;
+      /*
+      * sc - в переменную заносим информацию о том, к какому блоку надо перейти
+      * dn - определяем положение блока на странице
+      */
+      
+      $('html, body').animate({scrollTop: dn}, 1000, 'swing');
+      
+      /*
+      * 1000 скорость перехода в миллисекундах
+      */
+    });
+});
