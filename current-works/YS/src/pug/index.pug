@@ -1,7 +1,7 @@
 -
     var page = {
         pageUrl: 'index.html',
-        pageTitle: 'Главная - YS',
+        pageTitle: 'Усилители сигнала STREET - YS System',
         pageName: 'Главная',
     }
     
@@ -259,7 +259,7 @@ html(lang="ru")
                             i.svg-d-quotes.svg-d-quotes-dims.quote_after
                             .quote__text 
                                 p 
-                                    b 12 лет помогаем клиентам получить доступный интернет,
+                                    span.text_bold 12 лет помогаем клиентам получить доступный интернет,
                                     br
                                     |даже там, где другие устройства не работают
                     
@@ -375,17 +375,17 @@ html(lang="ru")
                                 .about-grid__item.about-card-img 
                                     img(src="img/about-img-5.jpg", alt=" ")
                             .about-grid-overlay
+                            
 
 
                     .section__bg.section__bg_cover.about__bg
                         picture 
-                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            source(srcset="img/x720/bg-about.png", media="(max-width: 991.98px)", type="image/png")
                             img(src="img/bg-about.png", alt=" ")
 
 
                     .section__img.about__box
                         picture 
-                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
                             //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
                             img(src="img/box-2.png", alt=" ")
 
@@ -408,11 +408,15 @@ html(lang="ru")
                         .good-wrapper
                             .good#street-2 
                                 .good__content 
-                                    .good__img
-                                        picture 
-                                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
-                                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
-                                            img(src="img/street-2.png", alt=" ")
+
+                                    .good__img-wrapper
+                                        .good__img-bg
+                                            img(src="img/x720/street-2-bg.png", alt="")
+                                        .good__img
+                                            picture 
+                                                source(srcset="img/x720/street-2.png", media="(max-width: 991.98px)", type="image/png")
+                                                //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                                img(src="img/street-2.png", alt=" ")
                                     .good__header 
                                         span.good__name Street 2
                                         |— самый «мобильный»
@@ -446,11 +450,14 @@ html(lang="ru")
                             
                             .good#street-2-pro
                                 .good__content 
-                                    .good__img
-                                        picture 
-                                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
-                                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
-                                            img(src="img/street-2-pro.png", alt=" ")
+                                    .good__img-wrapper
+                                        .good__img-bg
+                                            img(src="img/x720/street-2-pro-bg.png", alt="")
+                                        .good__img
+                                            picture 
+                                                source(srcset="img/x720/street-2-pro.png", media="(max-width: 991.98px)", type="image/png")
+                                                //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                                img(src="img/street-2-pro.png", alt=" ")
                                     .good__header 
                                         span.good__name Street 2 PRO
                                         |— cамый «быстрый х2»
@@ -486,11 +493,14 @@ html(lang="ru")
                             
                             .good#street-ultra-pro
                                 .good__content 
-                                    .good__img
-                                        picture 
-                                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
-                                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
-                                            img(src="img/street-2-u.png", alt=" ")
+                                    .good__img-wrapper
+                                        .good__img-bg
+                                            img(src="img/x720/street-2-u-bg.png", alt="")
+                                        .good__img
+                                            picture 
+                                                source(srcset="img/x720/street-2-u.png", media="(max-width: 991.98px)", type="image/png")
+                                                //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                                img(src="img/street-2-u.png", alt=" ")
                                     .good__header 
                                         span.good__name Street ULTRA PRO
                                         |— самый «Мощный х4»
@@ -522,7 +532,7 @@ html(lang="ru")
 
                     .section__img.goods__box
                         picture 
-                            //- source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
+                            //- source(srcset="img/x720/box-1.png", media="(max-width: 991.98px)", type="image/png")
                             //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
                             img(src="img/box-1.png", alt=" ")
 
@@ -623,7 +633,7 @@ html(lang="ru")
                                 .important__item 
                                     .img-wrapper
                                         img(src="img/imp-img-3.png", alt="Ноутбук")
-                                    .item__title УУдаленная работа
+                                    .item__title Удаленная работа
                                         br
                                         |стала возможной
                                     .item__descr Не привязывайте себя к работе
@@ -651,9 +661,22 @@ html(lang="ru")
                                 img(src="img/imp-street.png", alt="Усилитель Street-2 Pro")
 
 
-                    .section__bg.section__bg_cover.important__bg
+                    .section__img.important__tree.important__tree_r.d-none.d-block_md
                         picture 
-                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            source(srcset="img/x720/imp-tree-right.png", media="(max-width: 991.98px)", type="image/png")
+                            //- source(srcset="img/imp-tree-right.png", media="(max-width: 575.98px)", type="image/png")
+                            img(src="img/x720/imp-tree-right.png", alt=" ")
+
+                    .section__img.important__tree.important__tree_l.d-none.d-block_md
+                        picture 
+                            source(srcset="img/x720/imp-tree-left.png", media="(max-width: 991.98px)", type="image/png")
+                            //- source(srcset="img/imp-tree-left.png", media="(max-width: 575.98px)", type="image/png")
+                            img(src="img/x720/imp-tree-left.png", alt=" ")
+
+                    .section__bg.section__bg_cover.important__bg
+                        picture
+                            source(media="(max-width: 991.98px)", srcset="img/x720/bg-imp.png", type="image/png")
+                            //- img(src="img/x720/bg-imp.png", alt=" ")
                             img(src="img/bg-imp.png", alt=" ")
 
 
@@ -848,7 +871,7 @@ html(lang="ru")
 
                         .section__img.overviews__yt
                             picture 
-                                //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
+                                source(srcset="img/x720/ov-img-4.png", media="(max-width: 991.98px)", type="image/png")
                                 //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
                                 img(src="img/ov-img-4.png", alt=" ")
                         .section__img.overviews__cam
@@ -921,14 +944,14 @@ html(lang="ru")
                         .social__phones-wrapper
                             .section__img.social__phones
                                 picture 
-                                    //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
+                                    source(srcset="img/x720/soc-img-1.png", media="(max-width: 991.98px)", type="image/png")
                                     //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
                                     img(src="img/soc-img-1.png", alt=" ")
 
 
                     .section__bg.section__bg_cover.social__bg
                         picture 
-                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            source(srcset="img/x720/bg-social.jpg", media="(max-width: 991.98px)", type="image/png")
                             img(src="img/bg-social.jpg", alt=" ")
 
 
@@ -978,7 +1001,7 @@ html(lang="ru")
                                 img(src="img/quest-img-1.png", alt=" ")
                         .section__img.questions__img2
                             picture 
-                                source(srcset="img/x720/quest-img-2-720.png", media="(max-width: 991.98px)", type="image/png")
+                                source(srcset="img/x720/quest-img-2.png", media="(max-width: 991.98px)", type="image/png")
                                 img(src="img/quest-img-2.png", alt=" ")
 
 
@@ -1032,6 +1055,13 @@ html(lang="ru")
 
 
                             .partn__content_right
+                                .section__bg.partn-content__img
+                                    picture 
+                                        source(srcset="img/x720/bg-part.jpg", media="(max-width: 991.98px)", type="image/jpg")
+                                        img(src="img/x720/bg-part.jpg", alt=" ")
+
+
+
                                 .partn__video 
                                     div
                                         .partn-video__offer 
@@ -1045,10 +1075,17 @@ html(lang="ru")
                                         a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k").partn-video__btn 
                                         img(src="img/part-play.png", alt="кнопка play")
 
-
-                    .section__bg.section__bg_cover.social__bg
+                    
+                    .section__img.partn__box
                         picture 
-                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            source(srcset="img/x720/partn-box.png", media="(max-width: 991.98px)", type="image/png")
+                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                            img(src="img/partn-box.png", alt=" ")
+
+
+                    .section__bg.section__bg_cover.social__bg.partn__bg
+                        picture 
+                            source(srcset="img/x720/bg-part.jpg", media="(max-width: 991.98px)", type="image/jpg")
                             img(src="img/bg-part.jpg", alt=" ")
 
 

@@ -509,6 +509,7 @@
          box-shadow: 0px 2px 0px -1px #1A6EBB, 0px 20px 20px -4px rgba(126, 176, 240, 0.5), inset 0px 4px 8px 4px rgba(255, 255, 255, 0.12);
          border-radius: 50%;
          &::after {
+            margin-top: 0.3em;
             font-size: 1.6rem;
             color: #fff;
          }
@@ -522,10 +523,16 @@
       &-prev {
          // left: 49rem;
          left: calc(50% - (v.$stars-slide-width / 2) - (v.$stars-slider-btn-width * 2));
+         &::after{
+            margin-right: 0.1em;
+         }
       }
       &-next {
          // right: 49rem;
          right: calc(50% - (v.$stars-slide-width / 2) - (v.$stars-slider-btn-width * 2));
+         &::after{
+            margin-left: 0.1em;
+         }
       }
    }
 }
@@ -628,7 +635,7 @@
       }
    }
    &-card{
-      padding: 4.5rem 2rem 4.3rem 3.5rem;
+      padding: 3.5rem 2rem 4.3rem 3.5rem;
       border: 1px solid #EBF3FA;
       // box-shadow: 0px 5px 16px rgba(146, 171, 234, 0.2);
       &-img{
@@ -731,6 +738,9 @@
       img{
          width: 100%;
          max-width: 47.5rem;
+      }
+      &-bg{
+         display: none;
       }
    }
    &__content{
@@ -896,14 +906,14 @@
             // z-index: 10;
             transform: translate(-50%, -50%);
             &__street{
-               top: calc(50% + 8.5rem);
+               top: calc(45% + 8.5rem);
                left: calc(50% + 2rem);
             }
             img{
                max-width: 52.7rem;
             }
             &__round{
-               top: 50%;
+               top: 45%;
                left: 50%;
                border-radius: 50%;
                &_lg{
@@ -1400,8 +1410,8 @@
          &-wrapper{
             position: relative;
             margin-left: 9rem;
-            max-width: 11rem;
-            height: 7.4rem;
+            max-width: 110px;
+            height: 74px;
             // border: solid 1px #f0f;
 
             border-radius: 2rem;
@@ -1409,12 +1419,12 @@
             overflow: hidden;
             img{
                display: block;
-               width: 21rem;
+               width: 210px;
                max-width: none;
-               height: 17.4rem;
+               height: 174px;
                position: absolute;
-               top: -1.2rem;
-               left: -5.2rem;
+               top: -12px;
+               left: -52px;
                z-index: 1;
             }
             &:hover{
@@ -1438,10 +1448,14 @@
    &__container{
 
    }
+   &__logo{
+      width: 10.1rem;
+   }
    &__grid{
       margin-bottom: 5rem;
       display: grid;
-      grid-template-columns: 10.1rem minmax(40rem, 117rem) 35rem;
+      // grid-template-columns: 10.1rem minmax(40rem, 117rem) 35rem;
+      grid-template-columns: auto auto auto auto 37rem;
       column-gap: 6rem;
    }
    &-menu{
@@ -1472,7 +1486,8 @@
       }
    }
    &-contacts{
-      max-width: 43rem;
+      padding-left: 3rem;
+      // max-width: 43rem;
       &__item{
          margin-top: 1rem;
          display: block;

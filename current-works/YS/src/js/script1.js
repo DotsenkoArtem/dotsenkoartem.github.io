@@ -307,7 +307,7 @@ const starsSlider = new Swiper('.stars__slider', {
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-// STARS - SLIDER
+// STARS - REVIEWS
 const reviewsSlider = new Swiper('.reviews__slider', {
     // Optional parameters
     direction: 'horizontal',
@@ -352,7 +352,7 @@ const reviewsSlider = new Swiper('.reviews__slider', {
         //   spaceBetween: 30
         // },
         // when window width is >= 992px
-        992: {
+        576: {
             slidesPerView: "auto",
             centeredSlides: true,
             spaceBetween: 80,
