@@ -307,6 +307,9 @@ const starsSlider = new Swiper('.stars__slider', {
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
 // STARS - REVIEWS
 const reviewsSlider = new Swiper('.reviews__slider', {
     // Optional parameters
@@ -352,13 +355,152 @@ const reviewsSlider = new Swiper('.reviews__slider', {
         //   spaceBetween: 30
         // },
         // when window width is >= 992px
-        576: {
+        480: {
             slidesPerView: "auto",
             centeredSlides: true,
-            spaceBetween: 80,
+            spaceBetween: 40,
         }
     }
 });
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+// STARS - IMPORTANT
+var mySwiper = undefined;
+function initSwiper() {
+    var screenWidth = $(window).width();
+    if(screenWidth < 576 && mySwiper == undefined) {
+        mySwiper = new Swiper('.important__slider', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 1,
+            speed: 500,
+            // centeredSlides: true,
+
+
+        
+
+            spaceBetween: 20,
+            autoplay: {
+                delay: 5000,
+            },
+        
+            // If we need pagination
+            // pagination: {
+            //   el: '.swiper-pagination',
+            // },
+        
+            // Navigation arrows
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+        
+            // And if we need scrollbar
+            // scrollbar: {
+            //   el: '.swiper-scrollbar',
+            // },
+            
+            // Responsive breakpoints
+            breakpoints: {
+                // // when window width is >= 480px
+                480: {
+                    slidesPerView: "auto",
+                    centeredSlides: true,
+                    spaceBetween: 40,
+                    // freeMode: true
+                },
+                // when window width is >= 992px
+                // 576: {
+                //     enabled: false,
+                    
+                // }
+            }
+        });
+    } else if (screenWidth >= 576 && mySwiper != undefined) {
+        mySwiper.destroy();
+        mySwiper = undefined;
+        // jQuery('.swiper-wrapper').removeAttr('style');
+        // jQuery('.swiper-slide').removeAttr('style');
+
+        jQuery('.swiper-wrapper').removeAttr('style');  //или .important__slider ???
+        jQuery('.important-slide').removeAttr('style');
+    }
+}
+
+//Swiper plugin initialization
+initSwiper();
+
+//Swiper plugin initialization on window resize
+$(window).on('resize', function(){
+    initSwiper();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const importantSlider = new Swiper('.important__slider', {
+//     // Optional parameters
+//     direction: 'horizontal',
+//     loop: true,
+//     slidesPerView: 1,
+//     speed: 500,
+//     // centeredSlides: true,
+
+
+   
+
+//     spaceBetween: 20,
+//      autoplay: {
+//         delay: 5000,
+//     },
+  
+//     // If we need pagination
+//     // pagination: {
+//     //   el: '.swiper-pagination',
+//     // },
+  
+//     // Navigation arrows
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     },
+  
+//     // And if we need scrollbar
+//     // scrollbar: {
+//     //   el: '.swiper-scrollbar',
+//     // },
+    
+//       // Responsive breakpoints
+//     breakpoints: {
+//         // // when window width is >= 480px
+//         480: {
+//             slidesPerView: "auto",
+//             centeredSlides: true,
+//             spaceBetween: 40,
+//             // freeMode: true
+//         },
+//         // when window width is >= 992px
+//         576: {
+//             enabled: false,
+            
+//         }
+//     }
+// });
 
 /* Smoothy scrolling
 -------------------------*/

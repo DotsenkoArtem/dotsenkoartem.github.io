@@ -386,8 +386,12 @@ html(lang="ru")
 
                     .section__img.about__box
                         picture 
-                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                            source(srcset="img/x320/box-2.png", media="(max-width: 575.98px)", type="image/png")
                             img(src="img/box-2.png", alt=" ")
+
+
+                    .section__img.about__tree.d-none.d-block_xs
+                            img(src="img/x320/about-tree-left.png", alt=" ")
 
 
 
@@ -419,8 +423,11 @@ html(lang="ru")
                                                 img(src="img/street-2.png", alt=" ")
                                     .good__header 
                                         span.good__name Street 2
-                                        |— самый «мобильный»
-                                        i.svg-laptop.svg-laptop-dims
+                                        span.span-wrapper 
+                                            span.good__prop
+                                                span.good__prop-dash —
+                                                span.good__prop-text самый «мобильный»
+                                            i.svg-laptop.svg-laptop-dims
 
                                     .good__adv 
                                         ul
@@ -458,11 +465,15 @@ html(lang="ru")
                                                 source(srcset="img/x720/street-2-pro.png", media="(max-width: 991.98px)", type="image/png")
                                                 //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
                                                 img(src="img/street-2-pro.png", alt=" ")
+
                                     .good__header 
                                         span.good__name Street 2 PRO
-                                        |— cамый «быстрый х2»
-                                        i.svg-fast.svg-fast-dims
-
+                                        span.span-wrapper 
+                                            span.good__prop
+                                                span.good__prop-dash —
+                                                span.good__prop-text cамый «быстрый х2»
+                                            i.svg-fast.svg-fast-dims
+                                        
                                     .good__adv 
                                         ul
                                             li Принимает и увеличивает скорость интернет сигнала практически в 2-а раза
@@ -501,10 +512,16 @@ html(lang="ru")
                                                 source(srcset="img/x720/street-2-u.png", media="(max-width: 991.98px)", type="image/png")
                                                 //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
                                                 img(src="img/street-2-u.png", alt=" ")
+
+
+
                                     .good__header 
                                         span.good__name Street ULTRA PRO
-                                        |— самый «Мощный х4»
-                                        i.svg-flash.svg-flash-dims
+                                        span.span-wrapper 
+                                            span.good__prop
+                                                span.good__prop-dash —
+                                                span.good__prop-text самый «Мощный х4»
+                                            i.svg-flash.svg-flash-dims
 
                                     .good__adv 
                                         ul
@@ -587,9 +604,93 @@ html(lang="ru")
                                 img(src="img/warn.png", alt="Знак внимания")
 
                         .important__content 
+                            //- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+                            .important__slider-wrapper
+                                //- <!-- Slider main container -->
+                                .important__slider
+                                    //- <!-- Additional required wrapper -->
+                                    .swiper-wrapper.important__item-wrapper
+                                        //- <!-- Slides -->
+                                        .swiper-slide.important-slide.important-slide_left
+                                            .important__item
+                                                .img-wrapper
+                                                    img(src="img/imp-img-5.png", alt="Автомобиль скорой помощи")
+                                                .item__title Прежде всего, это
+                                                    br
+                                                    |автономное средство связи
+                                                .item__descr Всегда сможете вызвать скорую помощь, пожарных, полицию, даже если ваш телефон перестал принимать сигнал.
+                                        
+                                        .swiper-slide.important-slide.important-slide_right  
+                                            .important__item
+                                                .img-wrapper
+                                                    img(src="img/imp-img-2.png", alt="Женщина звонит по телефону")
+                                                .item__title Уезжая, оставайтесь
+                                                    br
+                                                    |на связи с близкими
+                                                .item__descr Подарите возможность бабушкам
+                                                    br
+                                                    |быть на видео-связи с внуками,
+                                                    br
+                                                    |себе с коллегами и не пропадайте
+                                                    br
+                                                    |из сети на долго! 
+
+                                        .swiper-slide.important-slide.important-slide_left 
+                                            .important__item  
+                                                .img-wrapper
+                                                    img(src="img/imp-img-1.png", alt="Камера видеонаблюдения")
+                                                .item__title Не нужно переживать за дом
+                                                    br
+                                                    |и дачу в ваше отсутствие
+                                                .item__descr Установите онлайн камеры
+                                                    br
+                                                    |и контролируйте в реальном времени
+                                                    br
+                                                    |безопасность своего участка.
 
 
-                            .important__row.important__row_space-between
+                                        .swiper-slide.important-slide.important-slide_right 
+                                            .important__item  
+                                                .img-wrapper
+                                                    img(src="img/imp-img-3.png", alt="Ноутбук")
+                                                .item__title Удаленная работа
+                                                    br
+                                                    |стала возможной
+                                                .item__descr Не привязывайте себя к работе
+                                                    br
+                                                    |или домашнему компьютеру, будьте на связь
+                                                    br
+                                                    |в любом месте, и даже там где не ловит телефон.
+
+
+                                        .swiper-slide.important-slide.important-slide_center 
+                                            .important__item.important__item_last
+                                                .img-wrapper
+                                                    img(src="img/imp-img-4.png", alt="Телевизор")
+                                                .item__title Кино и развлечения для всей семьи
+                                                .item__descr Ваши дети будут рады, что на даче есть онлайн игры
+                                                    br
+                                                    |и интернет, да и вы сами сможете отдохнуть от всего
+                                                    br
+                                                    |за просмотром хорошего фильма или youtube.
+
+
+
+                                    //- <!-- If we need navigation buttons -->
+                                    .swiper-button-prev
+                                    .swiper-button-next
+
+
+
+
+
+
+
+
+                            //- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+
+                            //- .important__row.important__row_space-between
 
                                 .important__item 
                                     .img-wrapper
@@ -614,7 +715,7 @@ html(lang="ru")
                                         |из сети на долго! 
 
 
-                            .important__row.important__row_space-between
+                            //- .important__row.important__row_space-between
 
                                 .important__item 
                                     .img-wrapper
@@ -643,7 +744,7 @@ html(lang="ru")
                                         |в любом месте, и даже там где не ловит телефон.
 
 
-                            .important__row.important__row_center
+                            //- .important__row.important__row_center
 
                                 .important__item.important__item_last
                                     .img-wrapper
@@ -912,7 +1013,7 @@ html(lang="ru")
                                 //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
                                 //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
                                 img(src="img/ov-img-2.png", alt=" ")
-                        .section__img.overviews__img1
+                        .section__img.overviews__img1.d-none_sm
                             picture 
                                 //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
                                 //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
@@ -938,9 +1039,11 @@ html(lang="ru")
                                     |в Instagram и Youtube
                             .social__links 
                                 a.yt(href="#") 
-                                    i.svg-soc-yt.svg-soc-yt-dims
+                                    i.svg-soc-yt-320.svg-soc-yt-320-dims.d-none.d-block_xs
+                                    i.svg-soc-yt.svg-soc-yt-dims.d-none_xs
                                 a.inst(href="#") 
-                                    i.svg-soc-inst.svg-soc-inst-dims
+                                    i.svg-soc-inst-320.svg-soc-inst-320-dims.d-none.d-block_xs
+                                    i.svg-soc-inst.svg-soc-inst-dims.d-none_xs
                         .social__phones-wrapper
                             .section__img.social__phones
                                 picture 
@@ -1069,7 +1172,7 @@ html(lang="ru")
                                             br
                                             |и узнайте подробнее!
 
-                                    div
+                                    .partn__video-round
                                         i.svg-partn-line-round.svg-partn-line-round-dims
                                     .partn-video__btn-wrapper
                                         a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k").partn-video__btn 

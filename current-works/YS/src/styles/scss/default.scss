@@ -384,6 +384,7 @@ input[type="button"],
 		}
 	}
 	&_outline{
+		color: v.$outline-btn-color;
 		background: none;
 		border: .1rem solid v.$outline-btn-color;
 		&:hover{
