@@ -321,7 +321,7 @@ const reviewsSlider = new Swiper('.reviews__slider', {
 
 
 
-    spaceBetween: 20,
+    spaceBetween: 40,
      autoplay: {
         delay: 5000,
     },

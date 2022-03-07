@@ -65,7 +65,7 @@
 			max-width: 305px;
 		}
 		&__submit{
-			width: 280px;
+			// width: 280px;
 		}
 	}
 
@@ -622,6 +622,10 @@
 		&__text{
 			font-size: 2.25rem;
 		}
+		&__submit{
+			max-width: 305px;
+    		width: 100%;
+		}
 	}
 
 	.quote{
@@ -1029,7 +1033,7 @@
 			padding-right: 0;
 		}
 		&__heading{
-			margin-bottom: 3.75;
+			// margin-bottom: 3.75;
 		}
 		&__content{
 			margin-top: 0;
@@ -2155,6 +2159,16 @@
 		}
 	}
 
+	.good{
+		&__header{
+			align-items: flex-start;
+		}
+	}
+
+	.buy-img .img-grid {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
 	.reviews{
 		&-slide{
 			&__img{
@@ -2164,10 +2178,22 @@
 		}
 	}
 
+	.overviews__yt {
+		top: -30rem;
+	}
+
 	.video{
 		// &-grid{
 		// 	grid-template-columns: 1fr;
 		// }
+	}
+
+	.partn-video__btn-wrapper{
+		margin-left: -1.5rem;
+	}
+
+	.partn__content {
+		padding-bottom: 105rem;
 	}
 }
 // XXS
@@ -2176,17 +2202,23 @@
 		&_primary{
 			padding-left: 1em;
 			padding-right: 1em;
-			height: 4em;
+			height: 10rem;
 		}
 		&_file{
-			width: 6.6em;
-			height: 6.6em;
+			font-size: 2.6rem;
+			width: 4em;
+			height: 4em;
 		}
 	}
 	.d{
 		&-block{
 			&_xxs{
 				display: block;
+			}
+		}
+		&-inline{
+			&_xxs{
+				display: inline;
 			}
 		}
 		&-none{
@@ -2257,6 +2289,8 @@
 	}
 
 	.want-check{
+		padding-top: 0;
+		padding-bottom: 3rem;
 		&__inner{
 			padding-left: 3rem;
 			padding-right: 3rem;
@@ -2280,6 +2314,235 @@
 		&__phone{
 			bottom: -8rem;
 		}
+	}
+
+	.stars{
+		&__slider{
+			&-wrapper{
+				margin-top: 1.5rem;
+				margin-bottom: 9rem;
+			}
+		}
+		&-card{
+			top: -5rem;
+			&__btn{
+				width: 100%;
+			}
+		}
+		.swiper-button{
+			&-prev,
+			&-next{
+				top: 25%;
+			}
+		}
+	}
+
+	.quote{
+		padding: 2.5rem 0rem;
+		&_before{
+			bottom: -2rem;
+			right: 2rem;
+		}
+		&_after{
+			top: -2rem;
+			left: 2rem;
+		}
+	}
+
+	.about{
+		&__tree{
+			top: -21rem;
+		}
+		&-grid{
+			grid-template-columns: 1fr;
+			&__item{
+				height: 51vw;
+			}
+		}
+	}
+
+	.goods{
+		&__heading{
+			margin-bottom: 29rem;
+		}
+	}
+
+	.good{
+		&__img{
+			&-bg{
+				display: none;
+			}
+			img{
+				width: auto;
+				max-width: 32rem;
+			}
+		}
+		&__adv{
+			margin-bottom: 5rem;
+		}
+		&__header{
+			margin-top: 18rem;
+			margin-left: -3rem;
+			margin-right: -3rem;
+		}
+		&__prop{
+			font-weight: 500;
+		}
+		&__name{
+			align-self: center;
+		}
+		&__prices{
+			flex-direction: column-reverse;
+			.price{
+				&-name{
+					// margin-bottom: 4.5rem;
+				}
+				&_total{
+					margin-bottom: 6rem;
+				}
+				&_part{
+					&>div{
+						margin-top: 5rem;
+					}
+				}
+			}
+		}
+		&__btns{
+			margin-top: 6.5rem;
+		}
+	}
+
+	.help{
+		padding-top: 3rem;
+	}
+
+	.form-section{
+		&__inner{
+			padding-left: 2rem;
+			padding-right: 2.5rem;
+		}
+	}
+
+	.important{
+		margin-top: 0;
+		padding-top: 12rem;
+		&-heading{
+			margin-bottom: 5rem;
+		}
+		&__tree{
+			&_l{
+				top: 25rem;
+				img{
+					max-width: 15rem;
+				}
+			}
+			&_r{
+				top: -18rem;
+				img{
+					max-width: 20rem;
+				}
+			}
+		}
+		.swiper-button{
+			&-prev,
+			&-next{
+				top: 18%;
+			}
+		}
+	}
+
+	.prize{
+		padding-top: 9rem;
+		&__sims{
+			top: -15rem;
+		}
+	}
+
+	.buy{
+		padding-bottom: 0;
+		&-text{
+			&__heading{
+				h4{
+					max-width: 37rem;
+				}
+			}
+		}
+		&__box{
+			max-width: 25rem;
+			right: 0;
+			bottom: 42rem;
+		}
+	}
+
+	.reviews{
+		padding-top: 9rem;
+		padding-bottom: 1rem;
+		&-slide{
+			&__img{
+				img{
+					width: 80%;
+				}
+			}
+		}
+		.swiper-button{
+			&-prev{
+				left: 2.5rem;
+			}
+			&-next{
+				right: 2.5rem;
+			}
+		}
+	}
+
+	.overviews{
+		padding-top: 0;
+		&__yt{
+			max-width: 19rem;
+			top: -33rem;
+			left: -1rem;
+		}
+	}
+
+	.questions {
+		padding-top: 25rem;
+	}
+
+	.partn{
+		&__heading{
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
+		&-video{
+			&__btn{
+				height: 6.8rem;
+				&-wrapper{
+					margin-left: 5rem;
+					width: 10rem;
+				}
+			}
+		}
+	}
+
+	.footer{
+		&-contacts{
+			&__item{
+				margin-top: 3rem;
+			}
+			&__location{
+				max-width: 33rem;
+			}
+		}
+		&-menu{
+			&__item{
+				margin-top: 1.5rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 359.99px){
+	.partn__content {
+		padding-bottom: 128rem;
 	}
 }
 

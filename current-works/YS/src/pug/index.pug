@@ -50,7 +50,7 @@ html(lang="ru")
 
                             .intro-btns 
                                 a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
-                                    button.btn.btn_primary.btn_shiny
+                                    .btn.btn_primary.btn_shiny
                                         i.svg-play-transp.svg-play-transp-dims
                                         span.btn__text Посмотреть видео 
                                         span.btn__text.d-none_sm об устройстве
@@ -270,7 +270,7 @@ html(lang="ru")
                 <!-- About
                 |
                 |================================================== -->
-                section.section.about#about
+                section.section.about
                     .container.about__container
                         .section__heading#about
                             h2 О компании
@@ -283,7 +283,9 @@ html(lang="ru")
                                         .about-card__text В отличии от мастеров и компаний  однодневок, мы не пропадаем после того как получили деньги, и несем все гарантийные обязательства по договору! Наш офис отгрузок в Москве и Тех. поддержка работают 24\7, со дня создания компании и по текущий день.
 
                                 .about-grid__item.about-card-img 
-                                    img(src="img/about-img-1.jpg", alt=" ")
+                                    picture 
+                                        source(srcset="img/x320/about-img-1.jpg", media="(max-width: 414.98px)", type="image/jpg")
+                                        img(src="img/about-img-1.jpg", alt=" ")
 
                                 .about-grid__item.about-card
                                     .about-card__content 
@@ -299,10 +301,14 @@ html(lang="ru")
                                         .about-card__text 
                                 
                                 .about-grid__item.about-card-img 
-                                    img(src="img/about-img-2.jpg", alt=" ") 
+                                    picture 
+                                        source(srcset="img/x320/about-img-2.jpg", media="(max-width: 414.98px)", type="image/jpg")
+                                        img(src="img/about-img-2.jpg", alt=" ")
                                 
                                 .about-grid__item.about-card-img 
-                                    img(src="img/about-img-3.jpg", alt=" ")
+                                    picture 
+                                        source(srcset="img/x320/about-img-3.jpg", media="(max-width: 414.98px)", type="image/jpg")
+                                        img(src="img/about-img-3.jpg", alt=" ")
                                 
                                 .about-grid__item.about-card
                                     .about-card__content 
@@ -355,7 +361,9 @@ html(lang="ru")
                                         .about-card__text 
                                 
                                 .about-grid__item.about-card-img 
-                                    img(src="img/about-img-4.jpg", alt=" ")
+                                    picture 
+                                        source(srcset="img/x320/about-img-4.jpg", media="(max-width: 414.98px)", type="image/jpg")
+                                        img(src="img/about-img-4.jpg", alt=" ")
                                 
                                 .about-grid__item.about-card
                                     .about-card__content 
@@ -373,7 +381,9 @@ html(lang="ru")
                                         .about-card__text 
                                 
                                 .about-grid__item.about-card-img 
-                                    img(src="img/about-img-5.jpg", alt=" ")
+                                    picture 
+                                        source(srcset="img/x320/about-img-5.jpg", media="(max-width: 414.98px)", type="image/jpg")
+                                        img(src="img/about-img-5.jpg", alt=" ")
                             .about-grid-overlay
                             
 
@@ -402,7 +412,7 @@ html(lang="ru")
                 <!-- Goods
                 |
                 |================================================== -->
-                section.section.goods#goods
+                section.section.goods
                     .container.goods__container
                         .section__heading.goods__heading
                             h2#goods 3 решения
@@ -418,8 +428,8 @@ html(lang="ru")
                                             img(src="img/x720/street-2-bg.png", alt="")
                                         .good__img
                                             picture 
-                                                source(srcset="img/x720/street-2.png", media="(max-width: 991.98px)", type="image/png")
-                                                //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                                source(srcset="img/x720/street-2.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                                                source(srcset="img/x320/street-2.png", media="(max-width: 414.98px)", type="image/png")
                                                 img(src="img/street-2.png", alt=" ")
                                     .good__header 
                                         span.good__name Street 2
@@ -462,8 +472,8 @@ html(lang="ru")
                                             img(src="img/x720/street-2-pro-bg.png", alt="")
                                         .good__img
                                             picture 
-                                                source(srcset="img/x720/street-2-pro.png", media="(max-width: 991.98px)", type="image/png")
-                                                //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                                source(srcset="img/x720/street-2-pro.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                                                source(srcset="img/x320/street-2-pro.png", media="(max-width: 414.98px)", type="image/png")
                                                 img(src="img/street-2-pro.png", alt=" ")
 
                                     .good__header 
@@ -509,8 +519,8 @@ html(lang="ru")
                                             img(src="img/x720/street-2-u-bg.png", alt="")
                                         .good__img
                                             picture 
-                                                source(srcset="img/x720/street-2-u.png", media="(max-width: 991.98px)", type="image/png")
-                                                //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
+                                                source(srcset="img/x720/street-2-u.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                                                source(srcset="img/x320/street-2-u.png", media="(max-width: 414.98px)", type="image/png")
                                                 img(src="img/street-2-u.png", alt=" ")
 
 
@@ -627,13 +637,11 @@ html(lang="ru")
                                                 .item__title Уезжая, оставайтесь
                                                     br
                                                     |на связи с близкими
-                                                .item__descr Подарите возможность бабушкам
-                                                    br
-                                                    |быть на видео-связи с внуками,
-                                                    br
-                                                    |себе с коллегами и не пропадайте
-                                                    br
-                                                    |из сети на долго! 
+                                                .item__descr 
+                                                    span.d-block.d-inline_xxs Подарите возможность бабушкам
+                                                    span.d-block.d-inline_xxs быть на видео-связи с внуками,
+                                                    span.d-block.d-inline_xxs себе с коллегами и не пропадайте
+                                                    span.d-block.d-inline_xxs из сети на долго! 
 
                                         .swiper-slide.important-slide.important-slide_left 
                                             .important__item  
@@ -642,11 +650,10 @@ html(lang="ru")
                                                 .item__title Не нужно переживать за дом
                                                     br
                                                     |и дачу в ваше отсутствие
-                                                .item__descr Установите онлайн камеры
-                                                    br
-                                                    |и контролируйте в реальном времени
-                                                    br
-                                                    |безопасность своего участка.
+                                                .item__descr 
+                                                    |Установите онлайн камеры
+                                                    span.d-block.d-inline_xxs и контролируйте в реальном времени
+                                                    span.d-block.d-inline_xxs безопасность своего участка.
 
 
                                         .swiper-slide.important-slide.important-slide_right 
@@ -657,10 +664,8 @@ html(lang="ru")
                                                     br
                                                     |стала возможной
                                                 .item__descr Не привязывайте себя к работе
-                                                    br
-                                                    |или домашнему компьютеру, будьте на связь
-                                                    br
-                                                    |в любом месте, и даже там где не ловит телефон.
+                                                    span.d-block.d-inline_xxs или домашнему компьютеру, будьте на связь
+                                                    span.d-block.d-inline_xxs в любом месте, и даже там где не ловит телефон.
 
 
                                         .swiper-slide.important-slide.important-slide_center 
@@ -669,10 +674,8 @@ html(lang="ru")
                                                     img(src="img/imp-img-4.png", alt="Телевизор")
                                                 .item__title Кино и развлечения для всей семьи
                                                 .item__descr Ваши дети будут рады, что на даче есть онлайн игры
-                                                    br
-                                                    |и интернет, да и вы сами сможете отдохнуть от всего
-                                                    br
-                                                    |за просмотром хорошего фильма или youtube.
+                                                    span.d-block.d-inline_xxs и интернет, да и вы сами сможете отдохнуть от всего
+                                                    span.d-block.d-inline_xxs за просмотром хорошего фильма или youtube.
 
 
 
@@ -687,74 +690,7 @@ html(lang="ru")
 
 
 
-                            //- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 
-
-                            //- .important__row.important__row_space-between
-
-                                .important__item 
-                                    .img-wrapper
-                                        img(src="img/imp-img-5.png", alt="Автомобиль скорой помощи")
-                                    .item__title Прежде всего, это
-                                        br
-                                        |автономное средство связи
-                                    .item__descr Всегда сможете вызвать скорую помощь, пожарных, полицию, даже если ваш телефон перестал принимать сигнал.
-                            
-                                .important__item 
-                                    .img-wrapper
-                                        img(src="img/imp-img-2.png", alt="Женщина звонит по телефону")
-                                    .item__title Уезжая, оставайтесь
-                                        br
-                                        |на связи с близкими
-                                    .item__descr Подарите возможность бабушкам
-                                        br
-                                        |быть на видео-связи с внуками,
-                                        br
-                                        |себе с коллегами и не пропадайте
-                                        br
-                                        |из сети на долго! 
-
-
-                            //- .important__row.important__row_space-between
-
-                                .important__item 
-                                    .img-wrapper
-                                        img(src="img/imp-img-1.png", alt="Камера видеонаблюдения")
-                                    .item__title Не нужно переживать за дом
-                                        br
-                                        |и дачу в ваше отсутствие
-                                    .item__descr Установите онлайн камеры
-                                        br
-                                        |и контролируйте в реальном времени
-                                        br
-                                        |безопасность своего участка.
-
-
-                            
-                                .important__item 
-                                    .img-wrapper
-                                        img(src="img/imp-img-3.png", alt="Ноутбук")
-                                    .item__title Удаленная работа
-                                        br
-                                        |стала возможной
-                                    .item__descr Не привязывайте себя к работе
-                                        br
-                                        |или домашнему компьютеру, будьте на связь
-                                        br
-                                        |в любом месте, и даже там где не ловит телефон.
-
-
-                            //- .important__row.important__row_center
-
-                                .important__item.important__item_last
-                                    .img-wrapper
-                                        img(src="img/imp-img-4.png", alt="Телевизор")
-                                    .item__title Кино и развлечения для всей семьи
-                                    .item__descr Ваши дети будут рады, что на даче есть онлайн игры
-                                        br
-                                        |и интернет, да и вы сами сможете отдохнуть от всего
-                                        br
-                                        |за просмотром хорошего фильма или youtube.
                             .center-img.center-img__round.center-img__round_lg
                             .center-img.center-img__round.center-img__round_md
                             .center-img.center-img__round.center-img__round_sm
@@ -764,14 +700,14 @@ html(lang="ru")
 
                     .section__img.important__tree.important__tree_r.d-none.d-block_md
                         picture 
-                            source(srcset="img/x720/imp-tree-right.png", media="(max-width: 991.98px)", type="image/png")
-                            //- source(srcset="img/imp-tree-right.png", media="(max-width: 575.98px)", type="image/png")
+                            source(srcset="img/x720/imp-tree-right.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                            source(srcset="img/x320/imp-tree-right.png", media="(max-width: 414.98px)", type="image/png")
                             img(src="img/x720/imp-tree-right.png", alt=" ")
 
                     .section__img.important__tree.important__tree_l.d-none.d-block_md
                         picture 
-                            source(srcset="img/x720/imp-tree-left.png", media="(max-width: 991.98px)", type="image/png")
-                            //- source(srcset="img/imp-tree-left.png", media="(max-width: 575.98px)", type="image/png")
+                            source(srcset="img/x720/imp-tree-left.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                            source(srcset="img/x320/imp-tree-left.png", media="(max-width: 414.98px)", type="image/png")
                             img(src="img/x720/imp-tree-left.png", alt=" ")
 
                     .section__bg.section__bg_cover.important__bg
@@ -899,7 +835,7 @@ html(lang="ru")
                         .section__img.buy__box
                             picture 
                                 //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
-                                //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
+                                source(srcset="img/x320/buy-box.png", media="(max-width: 414.98px)", type="image/png")
                                 img(src="img/buy-box.png", alt=" ")
 
                     .section__bg.section__bg_cover.buy__bg
@@ -1121,7 +1057,9 @@ html(lang="ru")
                 section.section.partn
                     .container.partn__container
                         .section__heading.partn__heading
-                            h2 Мы открыты к партнерству!
+                            h2 
+                                span.d-none_xxs Мы открыты к партнерству!
+                                span.d-none.d-block_xxs Хочешь работать с нами?
                                 span.section__subheading
                                     |Оставьте свои контакты и мы свяжемся с вами!
 
@@ -1248,7 +1186,7 @@ html(lang="ru")
                             
                         //- submit
                         .form__submit-wrap.loader-container
-                            input.btn.btn_primary.btn_full-width.form__submit(type="submit", value="Перезвоните мне")
+                            button.btn.btn_primary.btn_full-width.form__submit(type="submit") Перезвоните мне
 
                         .form__footer
                             p Нажимая кнопку, Вы соглашаетесь

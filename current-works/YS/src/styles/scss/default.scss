@@ -418,6 +418,12 @@ input[type="button"],
 	}
 }
 
+button{
+	&[type="submit"]{
+		display: inline-block;
+	}
+}
+
 .play-btn{
 	display: flex;
 	justify-content: center;
