@@ -1382,6 +1382,10 @@ select::-ms-expand {
   max-width: 34rem;
   text-align: justify;
 }
+.stars-card__btn {
+  -webkit-animation: radial-pulse 2.5s infinite;
+  animation: radial-pulse 2.5s infinite;
+}
 .stars-card__btn-wrapper {
   text-align: left;
 }
@@ -1389,6 +1393,35 @@ select::-ms-expand {
   max-width: 114rem;
 }
 
+@-webkit-keyframes radial-pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(40, 150, 240, 0.5);
+    box-shadow: 0 0 0 0px rgba(40, 150, 240, 0.5);
+  }
+  75% {
+    -webkit-box-shadow: 0 0 0 0px rgba(40, 150, 240, 0.5);
+    box-shadow: 0 0 0 0px rgba(40, 150, 240, 0.5);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px rgba(40, 150, 240, 0);
+    box-shadow: 0 0 0 20px rgba(40, 150, 240, 0);
+  }
+}
+
+@keyframes radial-pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(40, 150, 240, 0.5);
+    box-shadow: 0 0 0 0px rgba(40, 150, 240, 0.5);
+  }
+  75% {
+    -webkit-box-shadow: 0 0 0 0px rgba(40, 150, 240, 0.5);
+    box-shadow: 0 0 0 0px rgba(40, 150, 240, 0.5);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 20px rgba(40, 150, 240, 0);
+    box-shadow: 0 0 0 20px rgba(40, 150, 240, 0);
+  }
+}
 .swiper-button-prev, .swiper-button-next {
   width: 5rem;
   height: 5rem;
@@ -4772,15 +4805,55 @@ ANIMATIONS
   }
   .about-grid {
     grid-template-columns: 1fr;
+    grid-template-areas: "item-1" "item-3" "item-4" "item-6" "item-7" "item-10" "item-9" "item-11" "item-12" "item-8";
   }
   .about-grid__item {
     height: 51vw;
+  }
+  .about-grid__item-1 {
+    grid-area: item-1;
+  }
+  .about-grid__item-2 {
+    display: none;
+  }
+  .about-grid__item-3 {
+    grid-area: item-3;
+  }
+  .about-grid__item-4 {
+    grid-area: item-4;
+  }
+  .about-grid__item-5 {
+    display: none;
+  }
+  .about-grid__item-6 {
+    grid-area: item-6;
+  }
+  .about-grid__item-7 {
+    grid-area: item-7;
+  }
+  .about-grid__item-8 {
+    grid-area: item-8;
+  }
+  .about-grid__item-9 {
+    grid-area: item-9;
+  }
+  .about-grid__item-10 {
+    grid-area: item-10;
+  }
+  .about-grid__item-11 {
+    grid-area: item-11;
+  }
+  .about-grid__item-12 {
+    grid-area: item-12;
   }
 
   .goods__heading {
     margin-bottom: 29rem;
   }
 
+  .good:not(:last-child) {
+    margin-bottom: 26rem;
+  }
   .good__img-bg {
     display: none;
   }

@@ -277,17 +277,17 @@ html(lang="ru")
                         
                         .about-grid-wrapper
                             .about-grid
-                                .about-grid__item.about-card.open
+                                .about-grid__item.about-grid__item-1.about-card.open
                                     .about-card__content 
                                         .about-card__title 
                                         .about-card__text В отличии от мастеров и компаний  однодневок, мы не пропадаем после того как получили деньги, и несем все гарантийные обязательства по договору! Наш офис отгрузок в Москве и Тех. поддержка работают 24\7, со дня создания компании и по текущий день.
 
-                                .about-grid__item.about-card-img 
+                                .about-grid__item.about-grid__item-2.about-card-img 
                                     picture 
                                         source(srcset="img/x320/about-img-1.jpg", media="(max-width: 414.98px)", type="image/jpg")
                                         img(src="img/about-img-1.jpg", alt=" ")
 
-                                .about-grid__item.about-card
+                                .about-grid__item.about-grid__item-3.about-card
                                     .about-card__content 
                                         .about-card__title 
                                             div
@@ -300,17 +300,17 @@ html(lang="ru")
                                                 |с 2009 г. 
                                         .about-card__text 
                                 
-                                .about-grid__item.about-card-img 
+                                .about-grid__item.about-grid__item-4.about-card-img 
                                     picture 
                                         source(srcset="img/x320/about-img-2.jpg", media="(max-width: 414.98px)", type="image/jpg")
                                         img(src="img/about-img-2.jpg", alt=" ")
                                 
-                                .about-grid__item.about-card-img 
+                                .about-grid__item.about-grid__item-5.about-card-img 
                                     picture 
                                         source(srcset="img/x320/about-img-3.jpg", media="(max-width: 414.98px)", type="image/jpg")
                                         img(src="img/about-img-3.jpg", alt=" ")
                                 
-                                .about-grid__item.about-card
+                                .about-grid__item.about-grid__item-6.about-card
                                     .about-card__content 
                                         .about-card__title 
                                             div
@@ -323,7 +323,7 @@ html(lang="ru")
                                                 |в России 
                                         .about-card__text 
                                 
-                                .about-grid__item.about-card
+                                .about-grid__item.about-grid__item-7.about-card
                                     .about-card__content 
                                         .about-card__title 
                                             div
@@ -334,7 +334,7 @@ html(lang="ru")
                                                 |по всему миру
                                         .about-card__text 
                                 
-                                .about-grid__item.about-card
+                                .about-grid__item.about-grid__item-8.about-card
                                     .about-card__content 
                                         .about-card__title 
                                             div
@@ -345,7 +345,7 @@ html(lang="ru")
                                                 |упоминают нас
                                         .about-card__text 
                                 
-                                .about-grid__item.about-card
+                                .about-grid__item.about-grid__item-9.about-card
                                     .about-card__content 
                                         .about-card__title 
                                             div
@@ -360,12 +360,12 @@ html(lang="ru")
                                                 |партнеры 
                                         .about-card__text 
                                 
-                                .about-grid__item.about-card-img 
+                                .about-grid__item.about-grid__item-10.about-card-img 
                                     picture 
                                         source(srcset="img/x320/about-img-4.jpg", media="(max-width: 414.98px)", type="image/jpg")
                                         img(src="img/about-img-4.jpg", alt=" ")
                                 
-                                .about-grid__item.about-card
+                                .about-grid__item.about-grid__item-11.about-card
                                     .about-card__content 
                                         .about-card__title 
                                             div
@@ -380,7 +380,7 @@ html(lang="ru")
                                                 |и во всем мире
                                         .about-card__text 
                                 
-                                .about-grid__item.about-card-img 
+                                .about-grid__item.about-grid__item-12.about-card-img 
                                     picture 
                                         source(srcset="img/x320/about-img-5.jpg", media="(max-width: 414.98px)", type="image/jpg")
                                         img(src="img/about-img-5.jpg", alt=" ")
@@ -1196,9 +1196,15 @@ html(lang="ru")
             .modal__overlay.modal-close
 
 
-        script(src="https://code.jquery.com/jquery-3.6.0.js",
-                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=",
-                crossorigin="anonymous") 
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js",                                     integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous")
+        //- script(src="https://code.jquery.com/jquery-3.6.0.js",
+        //-         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=",
+        //-         crossorigin="anonymous")
+                
+        script(src="jQuery-3.6.0.js")
+
+        //- script( src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js",
+        //-         integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
+        //-         crossorigin="anonymous")
+        script(src="jquery.fancybox.min.js")
         script(src="swiper.min.js")
         script(src="js/script1.js")

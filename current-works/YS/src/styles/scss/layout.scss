@@ -489,6 +489,7 @@
          text-align: justify;
       }
       &__btn{
+         animation: radial-pulse 2.5s infinite;
          &-wrapper{
             text-align: left;
          }
@@ -498,6 +499,22 @@
       max-width: 114rem;
    }
 }
+
+@keyframes radial-pulse {
+   0% {
+         // transform: scale(1);
+         box-shadow: 0 0 0 0px rgba(40, 150, 240, .5);
+   }
+   75% {
+         // transform: scale(1.02);
+         box-shadow: 0 0 0 0px rgba(40, 150, 240, .5);
+   }
+  
+   100% {
+         // transform: scale(1);
+         box-shadow: 0 0 0 20px rgba(40, 150, 240, 0);
+   }
+ }
 // swiper-button-prev
 .swiper {
    &-button {
