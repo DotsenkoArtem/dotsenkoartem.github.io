@@ -1,4 +1,6 @@
-"use strict"; // MOBILE-MENU-SETTINGS
+"use strict";
+
+var start = Date.now(); // MOBILE-MENU-SETTINGS
 
 var menuToggler = document.querySelector('.top-menu-toggler'),
     //   topMenuClose	= document.querySelector('.top-menu-close'),
@@ -21,14 +23,37 @@ function menuClose() {
   header.classList.remove('white'); // 	document.body.classList.remove('scroll-hidden');
 
   menuOverl.classList.remove('open');
-} // MODAL-WINDOW-SETTINGS
-// Получение массива кнопок открытия
+} // LAZY-LOAD
+// document.addEventListener("DOMContentLoaded", ()=>{
 
+
+window.addEventListener("load", function () {
+  var lazyItems = document.querySelectorAll('.lazy');
+
+  var _loop = function _loop(i) {
+    var lazyItem = lazyItems[i];
+    var image = lazyItem.querySelector('[data-src]');
+    var tempImg = document.createElement('img');
+    tempImg.setAttribute('src', image.getAttribute('data-src'));
+
+    tempImg.onload = function () {
+      image.setAttribute('src', image.getAttribute('data-src')); // image.classList.add('loaded');
+
+      lazyItem.classList.remove('lazy');
+    };
+  };
+
+  for (var i = 0; i < lazyItems.length; i++) {
+    _loop(i);
+  }
+}); // = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+// MODAL-WINDOW-SETTINGS
+// Получение массива кнопок открытия
 
 var modalOpenBtns = document.querySelectorAll('.modal-trigger');
 
 if (modalOpenBtns) {
-  var _loop = function _loop(i) {
+  var _loop2 = function _loop2(i) {
     var modalOpenBtn = modalOpenBtns[i];
     modalOpenBtn.addEventListener('click', function () {
       openModal(modalOpenBtn);
@@ -36,7 +61,7 @@ if (modalOpenBtns) {
   };
 
   for (var i = 0; i < modalOpenBtns.length; i++) {
-    _loop(i);
+    _loop2(i);
   }
 } // Modal Functions
 
@@ -71,54 +96,9 @@ for (var _i2 = 0; _i2 < forms.length; _i2++) {
 
   var removeFocus = function removeFocus() {
     this.parentElement.classList.remove('focused');
-  }; // ФУНКЦИОНАЛ "ПОКАЗАТЬ - СКРЫТЬ ПАРОЛЬ"
-  // showPass.addEventListener('click', function () {
-  //     if(passInput.type == 'password'){
-  //         passInput.type = 'text';
-  //         showPass.classList.add('shown');
-  //     } else{
-  //         passInput.type = 'password';
-  //         showPass.classList.remove('shown');
-  //     }
-  // })
-  // - - - - - - - - - - - - - - - - - - - - - - - - - 
-  // ОБРАБОТКА ВАЛИДАЦИИ ФОРМЫ ПЕРЕД ОТПРАВКОЙ
-  // submitBtn.addEventListener('click', function (event) {
-  //     // Получение input[required] для валидации браузером
-  //     const requiredInputs = form.querySelectorAll('[required]');
-  //     let count = 0;
-  //     for(let i = 0; i < requiredInputs.length; i++){
-  //         let requiredInput = requiredInputs[i];
-  //         requiredInput.validity.valid ? count++ : count;
-  //         // Отмена действия кнопки при условии валидации полей браузером
-  //         if(count == requiredInputs.length){
-  //             event.preventDefault();
-  //             checkPass();
-  //             if(!checkPass()){
-  //                 showError();
-  //             }else{
-  //                 alert('Демонстрация успеха. Форма не отправляется.');
-  //             }
-  //         }
-  //     }
-  // })
-  // function showError() {
-  //     setTimeout(function () {
-  //         formGroupPass.classList.remove('valid');
-  //         formGroupPass.classList.add('error');
-  //         alert('Демонстрация ошибки. Форма не отправляется.');
-  //     }, 1000);
-  // }
-  // function checkPass() {
-  //     return false;
-  // }
-  // - - - - - - - - - - - - - - - - - - - - - - - - - 
+  };
 
-
-  var form = forms[_i2]; // let formGroupPass = document.querySelector('.form__group_pass');
-  // let showPass        = formGroupPass.querySelector('.show-pass');
-  // let passInput       = formGroupPass.querySelector('input[type="password"]');
-
+  var form = forms[_i2];
   var submitBtn = form.querySelector('[type="submit"]'); // ДОБАВЛЕНИЕ-УДАЛЕНИЕ ФОКУСА НА ТЕКСТОВЫЕ ИНПУТЫ
 
   for (var j = 0; j < form.elements.length; j++) {
@@ -129,9 +109,7 @@ for (var _i2 = 0; _i2 < forms.length; _i2++) {
         ElementInput.addEventListener('input', function () {
           if (ElementInput.value) {
             ElementInput.parentElement.classList.remove('focused');
-            ElementInput.parentElement.classList.add('valid'); // if(ElementInput.classList.contains('form__pass')){
-            // formGroupPass.classList.remove('error');
-            // }
+            ElementInput.parentElement.classList.add('valid');
           } else {
             ElementInput.parentElement.classList.remove('valid');
           }
@@ -178,7 +156,7 @@ $('#modalCbForm').submit(function (ev) {
     setTimeout(function () {
       thanks.remove();
       thanks.classList.remove('active');
-    }, 6500); // modalContent.classList.remove('opened');
+    }, 6500);
   });
   return false;
 }); // ВОЗМОЖНО ПОРТЕБУЕТСЯ ДЛЯ ЛОАДЕРОВ В ПРОСТЫХ ФОРМАХ
@@ -420,4 +398,7 @@ $(function () {
     * 1000 скорость перехода в миллисекундах
     */
   });
-});
+}); // window.onload = function(){
+//     let start2 = Date.now();
+//     console.log(`Событие "onload": ${Date.now() - start}`);
+// };

@@ -2,6 +2,14 @@ const gulp          = require('gulp');
 const debug         = require('gulp-debug');
 const del           = require('del');
 const imagemin      = require('gulp-imagemin');
+
+const imageminPngquant  = require('imagemin-pngquant');
+const imageminMozjpeg   = require('imagemin-mozjpeg');
+const webp              = require('gulp-webp');
+
+
+
+
 const uglify        = require('gulp-uglify');
 const through2      = require('through2').obj;
 const pug           = require('gulp-pug');
@@ -71,9 +79,21 @@ gulp.task('sprite:svg', function() {
                 );
 });
 
+// КОНВЕРТИРОВАНИЕ PNG --> WEBP
+gulp.task('webp', function() {
+    return  gulp.src(
+                    'src/assets/img/**/*.png',
+                    '!src/assets/img/icons/',
+                    '!src/assets/img/favicons/'
+                )
+            .pipe(webp())
+            .pipe(gulp.dest('public/img'));     
+});
 
-// КОПИРОВАНИЕ ИЗОБРАЖЕНИЙ (только дочерние файлы - без папок)
-gulp.task('img', function() {
+
+
+// КОПИРОВАНИЕ ИЗОБРАЖЕНИЙ (только дочерние файлы - без папок) и МИНИФИКАЦИЯ
+gulp.task('imgmin', function() {
     return  gulp.src([
             'src/assets/img/**/*.*',
             '!src/assets/img/icons/**/*.svg'
@@ -82,10 +102,17 @@ gulp.task('img', function() {
                 function(file) {
                     return file.extname !== '.svg';
                 },
-                imagemin()
+                imagemin([
+                    imageminPngquant(),
+                    imageminMozjpeg({quality: 70, progressive: true}),
+                ])
             ))
             .pipe(gulp.dest('public/img'));
 });
+
+// ИЗОБРАЖЕНИЯ: КОНВЕРТИРОВАНИЕ, МИНИИКАЦИЯ, КОПИРОВАНИЕ
+gulp.task('img', gulp.parallel('imgmin', 'webp'));
+
 
 // ОБЩАЯ ЗАДАЧА ДЛЯ СОДЕРЖИМОГО "ASSETS" (FONTS, IMG, ICONS)
 gulp.task('assets', gulp.parallel('fonts', 'sprite:svg', 'img'));

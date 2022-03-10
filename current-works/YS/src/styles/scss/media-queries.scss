@@ -1167,14 +1167,29 @@
 	}
 
 	.form{
+		// &__group{
+		// 	&.focused{
+		// 		.form__label_control{
+		// 			transform: translateY(calc(-100% + 1.6rem)) scale(0.8);
+		// 		}
+		// 	}
+		// }
 		&__group{
-			&.focused{
-				.form__label_control{
-					transform: translateY(calc(-100% + 1.6rem)) scale(0.8);
+			padding-top: 1rem;
+			height: 10.8rem;
+			&.form__group{
+				&.focused,
+				&.valid{
+					.form__label_control{
+						transform: translateY(calc(-100% + 2rem)) scale(0.8);
+					}
 				}
 			}
 		}
-		&__control,
+		&__control{
+			width: 40rem;
+			height: 9.8rem;
+		}
 		&__submit{
 			width: 40rem;
 			height: 10rem;
@@ -1285,18 +1300,18 @@
 			justify-content: space-between;
 			align-items: center;
 		}
-		&__group{
-			padding-top: 1rem;
-			height: 10.8rem;
-			&.form__group{
-				&.focused,
-				&.valid{
-					.form__label_control{
-						transform: translateY(calc(-100% + 2rem)) scale(0.8);
-					}
-				}
-			}
-		}
+		// &__group{
+		// 	padding-top: 1rem;
+		// 	height: 10.8rem;
+		// 	&.form__group{
+		// 		&.focused,
+		// 		&.valid{
+		// 			.form__label_control{
+		// 				transform: translateY(calc(-100% + 2rem)) scale(0.8);
+		// 			}
+		// 		}
+		// 	}
+		// }
 		&__submit{
 			width: 100%;
 			height: 10rem;
@@ -1305,9 +1320,9 @@
 		[type="submit"]{
 			width: 100%;
 		}
-		.form__control{
-			height: 9.8rem;
-		}
+		// .form__control{
+		// 	height: 9.8rem;
+		// }
 	}
 
 	.want-check{
@@ -2467,11 +2482,40 @@
 		padding-top: 3rem;
 	}
 
+
+
+	.form{
+		&__group{
+			padding-top: 1.2rem;
+			height: 11rem;
+			&.form__group{
+				&.focused,
+				&.valid{
+					.form__label_control{
+						transform: translateY(calc(-100% + 2.2rem)) scale(0.8);
+					}
+				}
+			}
+		}
+	}	
+
 	.form-section{
 		&__inner{
 			padding-left: 2rem;
 			padding-right: 2.5rem;
 		}
+		// &__group{
+		// 	padding-top: 1.2rem;
+		// 	height: 11rem;
+		// 	&.form__group{
+		// 		&.focused,
+		// 		&.valid{
+		// 			.form__label_control{
+		// 				transform: translateY(calc(-100% + 2.2rem)) scale(0.8);
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 
 	.important{

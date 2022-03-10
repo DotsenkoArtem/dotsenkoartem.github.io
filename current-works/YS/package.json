@@ -22,6 +22,9 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-pngquant": "^9.0.0",
     "stream-combiner2": "^1.1.1",
     "through2": "^4.0.2"
   },
@@ -36,6 +39,7 @@
     "@babel/preset-env": "^7.16.11",
     "gulp-babel": "^8.0.0",
     "gulp-sass": "^5.1.0",
+    "gulp-webp": "^4.0.1",
     "sass": "^1.49.8"
   }
 }

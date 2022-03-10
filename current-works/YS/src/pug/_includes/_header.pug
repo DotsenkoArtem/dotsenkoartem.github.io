@@ -3,7 +3,9 @@ header.header#header
     .container.header__container
         .logo-wrapper 
             .logo.header__logo#logo
-                img(src="img/logo.png", alt="Лого")
+                picture
+                    source(srcset="img/logo.webp", type="image/webp")
+                    img(src="img/logo.png", alt="Лого")
             .header__work Работаем с 2009 года
 
         .top-menu-wrapper

@@ -1,4 +1,8 @@
 "use strict"
+
+let start = Date.now();
+
+
 // MOBILE-MENU-SETTINGS
 const menuToggler  	= document.querySelector('.top-menu-toggler'),
 	//   topMenuClose	= document.querySelector('.top-menu-close'),
@@ -23,6 +27,35 @@ function menuClose(){
 // 	document.body.classList.remove('scroll-hidden');
 	menuOverl.classList.remove('open');
 }
+
+
+// LAZY-LOAD
+// document.addEventListener("DOMContentLoaded", ()=>{
+window.addEventListener("load", ()=>{
+	let lazyItems = document.querySelectorAll('.lazy');
+
+	for(let i = 0; i < lazyItems.length; i++){
+
+
+		let lazyItem = lazyItems[i];
+		let image = lazyItem.querySelector('[data-src]');
+		let tempImg = document.createElement('img');
+		tempImg.setAttribute('src', image.getAttribute('data-src'));
+
+		tempImg.onload = function(){
+			image.setAttribute('src', image.getAttribute('data-src'));
+			// image.classList.add('loaded');
+			lazyItem.classList.remove('lazy');
+
+
+
+
+
+		};
+	}
+});
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 
 
 
@@ -69,31 +102,23 @@ function closeModal(modal){
 let forms = document.forms;
 for(let i = 0; i < forms.length; i++){
     let form = forms[i];
-    // let formGroupPass = document.querySelector('.form__group_pass');
-    // let showPass        = formGroupPass.querySelector('.show-pass');
-    // let passInput       = formGroupPass.querySelector('input[type="password"]');
     let submitBtn		= form.querySelector('[type="submit"]');
 
     // ДОБАВЛЕНИЕ-УДАЛЕНИЕ ФОКУСА НА ТЕКСТОВЫЕ ИНПУТЫ
     for(let j = 0; j < form.elements.length; j++){
         if(form.elements[j].classList.contains('form__control')){
+
             let ElementInput = form.elements[j];
 
             ElementInput.addEventListener('focus', addFocus);
-
             ElementInput.addEventListener('input', function () {
                 if(ElementInput.value){
                     ElementInput.parentElement.classList.remove('focused');
                     ElementInput.parentElement.classList.add('valid');
-
-                    // if(ElementInput.classList.contains('form__pass')){
-                    // formGroupPass.classList.remove('error');
-                    // }
                 }else{
                     ElementInput.parentElement.classList.remove('valid');
                 }
             });
-
             ElementInput.addEventListener('blur', removeFocus);
         }
     }
@@ -104,51 +129,6 @@ for(let i = 0; i < forms.length; i++){
     function removeFocus() {
         this.parentElement.classList.remove('focused');
     }
-    // ФУНКЦИОНАЛ "ПОКАЗАТЬ - СКРЫТЬ ПАРОЛЬ"
-    // showPass.addEventListener('click', function () {
-    //     if(passInput.type == 'password'){
-    //         passInput.type = 'text';
-    //         showPass.classList.add('shown');
-    //     } else{
-    //         passInput.type = 'password';
-    //         showPass.classList.remove('shown');
-    //     }
-    // })
-    // - - - - - - - - - - - - - - - - - - - - - - - - - 
-    // ОБРАБОТКА ВАЛИДАЦИИ ФОРМЫ ПЕРЕД ОТПРАВКОЙ
-    // submitBtn.addEventListener('click', function (event) {
-    
-    //     // Получение input[required] для валидации браузером
-    //     const requiredInputs = form.querySelectorAll('[required]');
-    //     let count = 0;
-    //     for(let i = 0; i < requiredInputs.length; i++){
-    //         let requiredInput = requiredInputs[i];
-    //         requiredInput.validity.valid ? count++ : count;
-    //         // Отмена действия кнопки при условии валидации полей браузером
-    //         if(count == requiredInputs.length){
-    //             event.preventDefault();
-    //             checkPass();
-    //             if(!checkPass()){
-    //                 showError();
-    //             }else{
-    //                 alert('Демонстрация успеха. Форма не отправляется.');
-    //             }
-    //         }
-    //     }
-
-    // })
-    // function showError() {
-    //     setTimeout(function () {
-    //         formGroupPass.classList.remove('valid');
-    //         formGroupPass.classList.add('error');
-    //         alert('Демонстрация ошибки. Форма не отправляется.');
-    //     }, 1000);
-    // }
-
-    // function checkPass() {
-    //     return false;
-    // }
-    // - - - - - - - - - - - - - - - - - - - - - - - - - 
 }
 
 
@@ -190,18 +170,12 @@ $('#modalCbForm').submit(function (ev) {
 
         thanks.classList.add('active');
         wrapper.appendChild(thanks);
-
         modal.classList.remove('opened');
 
         setTimeout(function(){
             thanks.remove();
             thanks.classList.remove('active');
         }, 6500);
-
-
-
-
-        // modalContent.classList.remove('opened');
     });
     return false;
 })
@@ -523,3 +497,19 @@ $(function(){
       */
     });
 });
+
+
+
+
+
+
+
+
+// window.onload = function(){
+
+
+
+
+//     let start2 = Date.now();
+//     console.log(`Событие "onload": ${Date.now() - start}`);
+// };

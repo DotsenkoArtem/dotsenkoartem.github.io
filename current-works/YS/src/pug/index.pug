@@ -42,7 +42,9 @@ html(lang="ru")
                                     b.d-block_md Купите «Street 2 PRO»
                                     | и уже через 12 минут после включения, вы получите стабильный интернет с Wi-Fi раздачей в любом месте РФ и СНГ*
                                 .intro-power__img.intro-power__img_street
-                                    img(src="img/lte.png", alt="Street 2 PRO")
+                                    picture 
+                                        source(srcset="img/lte.webp", type="image/webp")
+                                        img(src="img/lte.png", alt="Street 2 PRO")
                                 .intro-power__img.intro-power__img_arrow
                                     img(src="img/arrow-round.svg", alt="arrow")
 
@@ -63,7 +65,9 @@ html(lang="ru")
 
                         .section__img.intro__man
                             picture 
+                                source(srcset="img/x720/intro-man-388x680.webp", media="(max-width: 991px)", type="image/webp")
                                 source(srcset="img/x720/intro-man-388x680.png", media="(max-width: 991px)", type="image/png")
+                                source(srcset="img/intro-man.webp", type="image/webp")
                                 img(src="img/intro-man.png", alt="мужчина")
 
                     
@@ -71,13 +75,19 @@ html(lang="ru")
                             .section__bg.section__bg_contain.intro__man_mobile
                                 picture 
                                     source(srcset="img/x320/intro-man-176x309.png", media="(max-width: 575px)", type="image/png")
+                                    source(srcset="img/x320/intro-man-176x309.webp", media="(max-width: 575px)", type="image/webp")
+                                    source(srcset="img/intro-man.webp", type="image/webp")
                                     img(src="img/intro-man.png", alt="мужчина")
-                            img(src="img/intro-cloud.png", alt=" ")
+                            picture 
+                                source(srcset="img/intro-cloud.webp", type="image/webp")
+                                img(src="img/intro-cloud.png", alt=" ")
     
 
                     .section__bg.section__bg_cover.intro__bg
                         picture 
                             source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
+                            source(srcset="img/bg-intro.webp", type="image/webp")
                             img(src="img/bg-intro.png", alt=" ")
 
 
@@ -113,15 +123,20 @@ html(lang="ru")
                                     .form__submit-wrap.form-section__submit.loader-container
                                         button.btn.btn_primary.btn_shiny.btn_full-width.form__submit(type="submit") Перезвоните мне
                         
-                        .section__img.want-check__modem
+                        .section__img.want-check__modem.lazy 
                             picture 
                                 source(srcset="img/x720/modem-720.png", media="(max-width: 991.98px)", type="image/png")
-                                img(src="img/modem.png", alt=" ")
-                        .section__img.want-check__phone
-                            picture 
+                                source(srcset="img/x720/modem-720.webp", media="(max-width: 991.98px)", type="image/webp")
+                                source(srcset="img/modem.webp", type="image/webp")
+                                img(data-src="img/modem.png", alt=" ")
+                        .section__img.want-check__phone.lazy
+                            picture
                                 source(srcset="img/x720/phone-720.png", media="(max-width: 991.98px)", type="image/png")
+                                source(srcset="img/x720/phone-720.webp", media="(max-width: 991.98px)", type="image/webp")
                                 source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
-                                img(src="img/phone.png", alt=" ")
+                                source(srcset="img/x320/phone-320.webp", media="(max-width: 767.98px)", type="image/webp")
+                                source(srcset="img/phone.webp", type="image/webp")
+                                img(data-src="img/phone.png", alt=" ")
 
 
 
@@ -144,8 +159,10 @@ html(lang="ru")
                             .swiper-wrapper
                                 //- <!-- Slides -->
                                 .swiper-slide.stars-slide 
-                                    .stars-slide__img 
-                                        img(src="img/zhuk.png", alt="Сергей Жуков") 
+                                    .stars-slide__img.lazy 
+                                        picture
+                                            source(srcset="img/zhuk.webp", type="image/webp")
+                                            img(data-src="img/zhuk.png", alt="Сергей Жуков") 
                                     .stars-card 
                                         .stars-card__inner
                                             .stars-card__heading 
@@ -158,8 +175,10 @@ html(lang="ru")
 
 
                                 .swiper-slide.stars-slide 
-                                    .stars-slide__img 
-                                        img(src="img/marshal.png", alt="Александр Маршал") 
+                                    .stars-slide__img.lazy
+                                        picture
+                                            source(srcset="img/marshal.webp", type="image/webp") 
+                                            img(data-src="img/marshal.png", alt="Александр Маршал") 
                                     .stars-card 
                                         .stars-card__inner
                                             .stars-card__heading 
@@ -172,8 +191,10 @@ html(lang="ru")
 
 
                                 .swiper-slide.stars-slide 
-                                    .stars-slide__img 
-                                        img(src="img/bezr.png", alt="Сергей Безруков") 
+                                    .stars-slide__img.lazy 
+                                        picture
+                                            source(srcset="img/bezr.webp", type="image/webp")
+                                            img(data-src="img/bezr.png", alt="Сергей Безруков") 
                                     .stars-card 
                                         .stars-card__inner
                                             .stars-card__heading 
@@ -186,8 +207,10 @@ html(lang="ru")
 
 
                                 .swiper-slide.stars-slide 
-                                    .stars-slide__img 
-                                        img(src="img/buynov.png", alt="Александр Буйнов") 
+                                    .stars-slide__img.lazy 
+                                        picture
+                                            source(srcset="img/buynov.webp", type="image/webp")
+                                            img(data-src="img/buynov.png", alt="Александр Буйнов") 
                                     .stars-card 
                                         .stars-card__inner
                                             .stars-card__heading 
@@ -200,8 +223,10 @@ html(lang="ru")
 
 
                                 .swiper-slide.stars-slide 
-                                    .stars-slide__img 
-                                        img(src="img/grish.png", alt="Нонна Гришаева") 
+                                    .stars-slide__img.lazy 
+                                        picture
+                                            source(srcset="img/grish.webp", type="image/webp")
+                                            img(data-src="img/grish.png", alt="Нонна Гришаева") 
                                     .stars-card 
                                         .stars-card__inner
                                             .stars-card__heading 
@@ -214,8 +239,10 @@ html(lang="ru")
 
 
                                 .swiper-slide.stars-slide 
-                                    .stars-slide__img 
-                                        img(src="img/larin.png", alt="Камиль Ларин") 
+                                    .stars-slide__img.lazy 
+                                        picture
+                                            source(srcset="img/larin.webp", type="image/webp")
+                                            img(data-src="img/larin.png", alt="Камиль Ларин") 
                                     .stars-card 
                                         .stars-card__inner
                                             .stars-card__heading 
@@ -247,10 +274,10 @@ html(lang="ru")
 
 
 
-                        .section__bg.section__bg_contain.stars-slider__bg
-                            picture 
-                                    //- source(srcset="img/x320/intro-man-176x309.png", media="(max-width: 575px)", type="image/png")
-                                    img(src="img/tower.png", alt=" ")
+                        .section__bg.section__bg_contain.stars-slider__bg.lazy
+                            picture
+                                source(srcset="img/tower.webp", type="image/webp")
+                                img(data-src="img/tower.png", alt=" ")
 
 
                     .container.stars__quote-container.layer-block
@@ -282,10 +309,10 @@ html(lang="ru")
                                         .about-card__title 
                                         .about-card__text В отличии от мастеров и компаний  однодневок, мы не пропадаем после того как получили деньги, и несем все гарантийные обязательства по договору! Наш офис отгрузок в Москве и Тех. поддержка работают 24\7, со дня создания компании и по текущий день.
 
-                                .about-grid__item.about-grid__item-2.about-card-img 
+                                .about-grid__item.about-grid__item-2.about-card-img.lazy 
                                     picture 
                                         source(srcset="img/x320/about-img-1.jpg", media="(max-width: 414.98px)", type="image/jpg")
-                                        img(src="img/about-img-1.jpg", alt=" ")
+                                        img(data-src="img/about-img-1.jpg", alt=" ")
 
                                 .about-grid__item.about-grid__item-3.about-card
                                     .about-card__content 
@@ -300,15 +327,15 @@ html(lang="ru")
                                                 |с 2009 г. 
                                         .about-card__text 
                                 
-                                .about-grid__item.about-grid__item-4.about-card-img 
+                                .about-grid__item.about-grid__item-4.about-card-img.lazy 
                                     picture 
                                         source(srcset="img/x320/about-img-2.jpg", media="(max-width: 414.98px)", type="image/jpg")
-                                        img(src="img/about-img-2.jpg", alt=" ")
+                                        img(data-src="img/about-img-2.jpg", alt=" ")
                                 
-                                .about-grid__item.about-grid__item-5.about-card-img 
+                                .about-grid__item.about-grid__item-5.about-card-img.lazy 
                                     picture 
                                         source(srcset="img/x320/about-img-3.jpg", media="(max-width: 414.98px)", type="image/jpg")
-                                        img(src="img/about-img-3.jpg", alt=" ")
+                                        img(data-src="img/about-img-3.jpg", alt=" ")
                                 
                                 .about-grid__item.about-grid__item-6.about-card
                                     .about-card__content 
@@ -360,10 +387,10 @@ html(lang="ru")
                                                 |партнеры 
                                         .about-card__text 
                                 
-                                .about-grid__item.about-grid__item-10.about-card-img 
+                                .about-grid__item.about-grid__item-10.about-card-img.lazy 
                                     picture 
                                         source(srcset="img/x320/about-img-4.jpg", media="(max-width: 414.98px)", type="image/jpg")
-                                        img(src="img/about-img-4.jpg", alt=" ")
+                                        img(data-src="img/about-img-4.jpg", alt=" ")
                                 
                                 .about-grid__item.about-grid__item-11.about-card
                                     .about-card__content 
@@ -380,28 +407,34 @@ html(lang="ru")
                                                 |и во всем мире
                                         .about-card__text 
                                 
-                                .about-grid__item.about-grid__item-12.about-card-img 
+                                .about-grid__item.about-grid__item-12.about-card-img.lazy 
                                     picture 
                                         source(srcset="img/x320/about-img-5.jpg", media="(max-width: 414.98px)", type="image/jpg")
-                                        img(src="img/about-img-5.jpg", alt=" ")
+                                        img(data-src="img/about-img-5.jpg", alt=" ")
                             .about-grid-overlay
                             
 
 
-                    .section__bg.section__bg_cover.about__bg
+                    .section__bg.section__bg_cover.about__bg.lazy
                         picture 
                             source(srcset="img/x720/bg-about.png", media="(max-width: 991.98px)", type="image/png")
-                            img(src="img/bg-about.png", alt=" ")
+                            source(srcset="img/x720/bg-about.webp", media="(max-width: 991.98px)", type="image/webp")
+                            source(srcset="img/bg-about.webp", type="image/webp")
+                            img(data-src="img/bg-about.png", alt=" ")
 
 
-                    .section__img.about__box
+                    .section__img.about__box.lazy
                         picture 
                             source(srcset="img/x320/box-2.png", media="(max-width: 575.98px)", type="image/png")
-                            img(src="img/box-2.png", alt=" ")
+                            source(srcset="img/x320/box-2.webp", media="(max-width: 575.98px)", type="image/webp")
+                            source(srcset="img/box-2.webp", type="image/webp")
+                            img(data-src="img/box-2.png", alt=" ")
 
 
-                    .section__img.about__tree.d-none.d-block_xs
-                            img(src="img/x320/about-tree-left.png", alt=" ")
+                    .section__img.about__tree.d-none.d-block_xs.lazy
+                        picture 
+                            source(srcset="img/x320/about-tree-left.webp", type="image/webp")
+                            img(data-src="img/x320/about-tree-left.png", alt=" ")
 
 
 
@@ -424,13 +457,18 @@ html(lang="ru")
                                 .good__content 
 
                                     .good__img-wrapper
-                                        .good__img-bg
-                                            img(src="img/x720/street-2-bg.png", alt="")
-                                        .good__img
+                                        .good__img-bg.lazy
+                                            picture 
+                                                source(srcset="img/x720/street-2-bg.webp", type="image/webp")
+                                                img(data-src="img/x720/street-2-bg.png", alt="")
+                                        .good__img.lazy
                                             picture 
                                                 source(srcset="img/x720/street-2.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                                                source(srcset="img/x720/street-2.webp", media="(max-width: 991.98px) and (min-width: 415px)", type="image/webp")
                                                 source(srcset="img/x320/street-2.png", media="(max-width: 414.98px)", type="image/png")
-                                                img(src="img/street-2.png", alt=" ")
+                                                source(srcset="img/x320/street-2.webp", media="(max-width: 414.98px)", type="image/webp")
+                                                source(srcset="img/street-2.webp", type="image/webp")
+                                                img(data-src="img/street-2.png", alt=" ")
                                     .good__header 
                                         span.good__name Street 2
                                         span.span-wrapper 
@@ -468,13 +506,18 @@ html(lang="ru")
                             .good#street-2-pro
                                 .good__content 
                                     .good__img-wrapper
-                                        .good__img-bg
-                                            img(src="img/x720/street-2-pro-bg.png", alt="")
-                                        .good__img
+                                        .good__img-bg.lazy
+                                            picture 
+                                                source(srcset="img/x720/street-2-pro-bg.webp", type="image/webp")
+                                                img(data-src="img/x720/street-2-pro-bg.png", alt="")
+                                        .good__img.lazy
                                             picture 
                                                 source(srcset="img/x720/street-2-pro.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                                                source(srcset="img/x720/street-2-pro.webp", media="(max-width: 991.98px) and (min-width: 415px)", type="image/webp")
                                                 source(srcset="img/x320/street-2-pro.png", media="(max-width: 414.98px)", type="image/png")
-                                                img(src="img/street-2-pro.png", alt=" ")
+                                                source(srcset="img/x320/street-2-pro.webp", media="(max-width: 414.98px)", type="image/webp")
+                                                source(srcset="img/street-2-pro.webp", type="image/webp")
+                                                img(data-src="img/street-2-pro.png", alt=" ")
 
                                     .good__header 
                                         span.good__name Street 2 PRO
@@ -515,13 +558,18 @@ html(lang="ru")
                             .good#street-ultra-pro
                                 .good__content 
                                     .good__img-wrapper
-                                        .good__img-bg
-                                            img(src="img/x720/street-2-u-bg.png", alt="")
-                                        .good__img
+                                        .good__img-bg.lazy
+                                            picture 
+                                                source(srcset="img/x720/street-2-u-bg.webp", type="image/webp")
+                                                img(data-src="img/x720/street-2-u-bg.png", alt="")
+                                        .good__img.lazy
                                             picture 
                                                 source(srcset="img/x720/street-2-u.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                                                source(srcset="img/x720/street-2-u.webp", media="(max-width: 991.98px) and (min-width: 415px)", type="image/webp")
                                                 source(srcset="img/x320/street-2-u.png", media="(max-width: 414.98px)", type="image/png")
-                                                img(src="img/street-2-u.png", alt=" ")
+                                                source(srcset="img/x320/street-2-u.webp", media="(max-width: 414.98px)", type="image/webp")
+                                                source(srcset="img/street-2-u.webp", type="image/webp")
+                                                img(data-src="img/street-2-u.png", alt=" ")
 
 
 
@@ -557,11 +605,10 @@ html(lang="ru")
                                         .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal") Взять на тест-драйв
                                         .btn.btn_outline.good-btn.good-btn_outline Технические характеристики
 
-                    .section__img.goods__box
+                    .section__img.goods__box.lazy
                         picture 
-                            //- source(srcset="img/x720/box-1.png", media="(max-width: 991.98px)", type="image/png")
-                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
-                            img(src="img/box-1.png", alt=" ")
+                            source(srcset="img/box-1.webp", type="image/webp")
+                            img(data-src="img/box-1.png", alt=" ")
 
 
                 <!-- Help 
@@ -610,8 +657,10 @@ html(lang="ru")
                             h2 Почему важно
                                 span.section__subheading
                                     |иметь наше устройство 
-                            .section__img.important-heading__img 
-                                img(src="img/warn.png", alt="Знак внимания")
+                            .section__img.important-heading__img.lazy 
+                                picture 
+                                    source(srcset="img/warn.webp", type="image/webp")
+                                    img(data-src="img/warn.png", alt="Знак внимания")
 
                         .important__content 
                             //- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -623,8 +672,10 @@ html(lang="ru")
                                         //- <!-- Slides -->
                                         .swiper-slide.important-slide.important-slide_left
                                             .important__item
-                                                .img-wrapper
-                                                    img(src="img/imp-img-5.png", alt="Автомобиль скорой помощи")
+                                                .img-wrapper.lazy
+                                                    picture 
+                                                        source(srcset="img/imp-img-5.webp", type="image/webp")
+                                                        img(data-src="img/imp-img-5.png", alt="Автомобиль скорой помощи")
                                                 .item__title Прежде всего, это
                                                     br
                                                     |автономное средство связи
@@ -632,8 +683,10 @@ html(lang="ru")
                                         
                                         .swiper-slide.important-slide.important-slide_right  
                                             .important__item
-                                                .img-wrapper
-                                                    img(src="img/imp-img-2.png", alt="Женщина звонит по телефону")
+                                                .img-wrapper.lazy
+                                                    picture 
+                                                        source(srcset="img/imp-img-2.webp", type="image/webp")
+                                                        img(data-src="img/imp-img-2.png", alt="Женщина звонит по телефону")
                                                 .item__title Уезжая, оставайтесь
                                                     br
                                                     |на связи с близкими
@@ -645,8 +698,10 @@ html(lang="ru")
 
                                         .swiper-slide.important-slide.important-slide_left 
                                             .important__item  
-                                                .img-wrapper
-                                                    img(src="img/imp-img-1.png", alt="Камера видеонаблюдения")
+                                                .img-wrapper.lazy
+                                                    picture 
+                                                        source(srcset="img/imp-img-1.webp", type="image/webp")
+                                                        img(data-src="img/imp-img-1.png", alt="Камера видеонаблюдения")
                                                 .item__title Не нужно переживать за дом
                                                     br
                                                     |и дачу в ваше отсутствие
@@ -658,8 +713,10 @@ html(lang="ru")
 
                                         .swiper-slide.important-slide.important-slide_right 
                                             .important__item  
-                                                .img-wrapper
-                                                    img(src="img/imp-img-3.png", alt="Ноутбук")
+                                                .img-wrapper.lazy
+                                                    picture 
+                                                        source(srcset="img/imp-img-3.webp", type="image/webp")
+                                                        img(data-src="img/imp-img-3.png", alt="Ноутбук")
                                                 .item__title Удаленная работа
                                                     br
                                                     |стала возможной
@@ -670,8 +727,10 @@ html(lang="ru")
 
                                         .swiper-slide.important-slide.important-slide_center 
                                             .important__item.important__item_last
-                                                .img-wrapper
-                                                    img(src="img/imp-img-4.png", alt="Телевизор")
+                                                .img-wrapper.lazy
+                                                    picture 
+                                                        source(srcset="img/imp-img-4.webp", type="image/webp")
+                                                        img(data-src="img/imp-img-4.png", alt="Телевизор")
                                                 .item__title Кино и развлечения для всей семьи
                                                 .item__descr Ваши дети будут рады, что на даче есть онлайн игры
                                                     span.d-block.d-inline_xxs и интернет, да и вы сами сможете отдохнуть от всего
@@ -694,27 +753,36 @@ html(lang="ru")
                             .center-img.center-img__round.center-img__round_lg
                             .center-img.center-img__round.center-img__round_md
                             .center-img.center-img__round.center-img__round_sm
-                            .center-img.center-img__street 
-                                img(src="img/imp-street.png", alt="Усилитель Street-2 Pro")
+                            .center-img.center-img__street.lazy 
+                                picture 
+                                    source(srcset="img/imp-street.webp", type="image/webp")
+                                    img(data-src="img/imp-street.png", alt="Усилитель Street-2 Pro")
 
 
-                    .section__img.important__tree.important__tree_r.d-none.d-block_md
+                    .section__img.important__tree.important__tree_r.d-none.d-block_md.lazy
                         picture 
                             source(srcset="img/x720/imp-tree-right.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                            source(srcset="img/x720/imp-tree-right.webp", media="(max-width: 991.98px) and (min-width: 415px)", type="image/webp")
                             source(srcset="img/x320/imp-tree-right.png", media="(max-width: 414.98px)", type="image/png")
-                            img(src="img/x720/imp-tree-right.png", alt=" ")
+                            source(srcset="img/x320/imp-tree-right.webp", media="(max-width: 414.98px)", type="image/webp")
+                            source(srcset="img/x720/imp-tree-right.png", type="image/webp")
+                            img(data-src="img/x720/imp-tree-right.png", alt=" ")
 
-                    .section__img.important__tree.important__tree_l.d-none.d-block_md
+                    .section__img.important__tree.important__tree_l.d-none.d-block_md.lazy
                         picture 
                             source(srcset="img/x720/imp-tree-left.png", media="(max-width: 991.98px) and (min-width: 415px)", type="image/png")
+                            source(srcset="img/x720/imp-tree-left.webp", media="(max-width: 991.98px) and (min-width: 415px)", type="image/webp")
                             source(srcset="img/x320/imp-tree-left.png", media="(max-width: 414.98px)", type="image/png")
-                            img(src="img/x720/imp-tree-left.png", alt=" ")
+                            source(srcset="img/x320/imp-tree-left.webp", media="(max-width: 414.98px)", type="image/webp")
+                            source(srcset="img/x720/imp-tree-left.webp", type="image/webp")
+                            img(data-src="img/x720/imp-tree-left.png", alt=" ")
 
-                    .section__bg.section__bg_cover.important__bg
+                    .section__bg.section__bg_cover.important__bg.lazy
                         picture
                             source(media="(max-width: 991.98px)", srcset="img/x720/bg-imp.png", type="image/png")
-                            //- img(src="img/x720/bg-imp.png", alt=" ")
-                            img(src="img/bg-imp.png", alt=" ")
+                            source(media="(max-width: 991.98px)", srcset="img/x720/bg-imp.webp", type="image/webp")
+                            source(srcset="img/bg-imp.webp", type="image/webp")
+                            img(data-src="img/bg-imp.png", alt=" ")
 
 
 
@@ -760,11 +828,14 @@ html(lang="ru")
                                     .form__submit-wrap.form-section__submit.loader-container
                                         button.btn.btn_primary.btn_shiny.btn_full-width.form__submit(type="submit") Оформить заказ
                         
-                        .section__img.prize__sims
+                        .section__img.prize__sims.lazy
                             picture 
                                 source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
+                                source(srcset="img/x720/sims-720.webp", media="(max-width: 991.98px)", type="image/webp")
                                 source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
-                                img(src="img/sims.png", alt=" ")
+                                source(srcset="img/x320/sims-320.webp", media="(max-width: 575.98px)", type="image/webp")
+                                source(srcset="img/sims.webp", type="image/webp")
+                                img(data-src="img/sims.png", alt=" ")
 
 
 
@@ -793,28 +864,50 @@ html(lang="ru")
 
                                 .buy-img 
                                     .img-grid 
-                                        .img-grid__item
-                                            img(src="img/wb.png", alt="wildberries")
-                                        .img-grid__item
-                                            img(src="img/cdek.png", alt="сдек")
-                                        .img-grid__item
-                                            img(src="img/chipidip.png", alt="chipidip")
-                                        .img-grid__item
-                                            img(src="img/mvideo.png", alt="mvideo")
-                                        .img-grid__item
-                                            img(src="img/ali.png", alt="ali")
-                                        .img-grid__item
-                                            img(src="img/yandex.png", alt="yandex")
-                                        .img-grid__item
-                                            img(src="img/ozon.png", alt="ozon")
-                                        .img-grid__item
-                                            img(src="img/pleer.png", alt="pleer")
-                                        .img-grid__item
-                                            img(src="img/sber.png", alt="sber")
-                                        .img-grid__item
-                                            img(src="img/vseins.png", alt="все инструменты")
-                                        .img-grid__item
-                                            img(src="img/kaspi.png", alt="kaspi")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/wb.webp", type="image/webp")
+                                                img(data-src="img/wb.png", alt="wildberries")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/cdek.webp", type="image/webp")
+                                                img(data-src="img/cdek.png", alt="сдек")
+                                        .img-grid__item.lazy
+                                             picture 
+                                                source(srcset="img/chipidip.webp", type="image/webp")
+                                                img(data-src="img/chipidip.png", alt="chipidip")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/mvideo.webp", type="image/webp")
+                                                img(data-src="img/mvideo.png", alt="mvideo")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/ali.webp", type="image/webp")
+                                                img(data-src="img/ali.png", alt="ali")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/yandex.webp", type="image/webp")
+                                                img(data-src="img/yandex.png", alt="yandex")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/ozon.webp", type="image/webp")
+                                                img(data-src="img/ozon.png", alt="ozon")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/pleer.webp", type="image/webp")
+                                                img(data-src="img/pleer.png", alt="pleer")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/sber.webp", type="image/webp")
+                                                img(data-src="img/sber.png", alt="sber")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/vseins.webp", type="image/webp")
+                                                img(data-src="img/vseins.png", alt="все инструменты")
+                                        .img-grid__item.lazy
+                                            picture 
+                                                source(srcset="img/kaspi.webp", type="image/webp")
+                                                img(data-src="img/kaspi.png", alt="kaspi")
 
 
                                 .buy-text.buy-text-2
@@ -832,16 +925,17 @@ html(lang="ru")
                                         p   Для получения точной стоимости пересылки пожалуйста 
                                             a.text-link(href="#") свяжитесь с нашими менеджерами. 
 
-                        .section__img.buy__box
+                        .section__img.buy__box.lazy
                             picture 
-                                //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
                                 source(srcset="img/x320/buy-box.png", media="(max-width: 414.98px)", type="image/png")
-                                img(src="img/buy-box.png", alt=" ")
+                                source(srcset="img/x320/buy-box.webp", media="(max-width: 414.98px)", type="image/webp")
+                                source(srcset="img/buy-box.webp", type="image/webp")
+                                img(data-src="img/buy-box.png", alt=" ")
 
-                    .section__bg.section__bg_cover.buy__bg
+                    .section__bg.section__bg_cover.buy__bg.lazy
                         picture 
-                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
-                            img(src="img/bg-buy.png", alt=" ")
+                            source(srcset="img/bg-buy.webp", type="image/webp")
+                            img(data-src="img/bg-buy.png", alt=" ")
 
 
 
@@ -863,23 +957,35 @@ html(lang="ru")
                             .swiper-wrapper
                                 //- <!-- Slides -->
                                 .swiper-slide.reviews-slide 
-                                    .reviews-slide__img 
-                                        img(src="img/rev-img-1.png", alt="отзыв")
+                                    .reviews-slide__img.lazy 
+                                        picture 
+                                            source(srcset="img/rev-img-1.webp", type="image/webp")
+                                            img(data-src="img/rev-img-1.png", alt="отзыв")
                                 .swiper-slide.reviews-slide 
-                                    .reviews-slide__img 
-                                        img(src="img/rev-img-2.png", alt="отзыв") 
+                                    .reviews-slide__img.lazy 
+                                        picture 
+                                            source(srcset="img/rev-img-2.webp", type="image/webp")
+                                            img(data-src="img/rev-img-2.png", alt="отзыв") 
                                 .swiper-slide.reviews-slide 
-                                    .reviews-slide__img 
-                                        img(src="img/rev-img-1.png", alt="отзыв")
+                                    .reviews-slide__img.lazy 
+                                        picture 
+                                            source(srcset="img/rev-img-1.webp", type="image/webp")
+                                            img(data-src="img/rev-img-1.png", alt="отзыв")
                                 .swiper-slide.reviews-slide 
-                                    .reviews-slide__img 
-                                        img(src="img/rev-img-2.png", alt="отзыв")
+                                    .reviews-slide__img.lazy 
+                                        picture 
+                                            source(srcset="img/rev-img-2.webp", type="image/webp")
+                                            img(data-src="img/rev-img-2.png", alt="отзыв") 
                                 .swiper-slide.reviews-slide 
-                                    .reviews-slide__img 
-                                        img(src="img/rev-img-1.png", alt="отзыв")
+                                    .reviews-slide__img.lazy 
+                                        picture 
+                                            source(srcset="img/rev-img-1.webp", type="image/webp")
+                                            img(data-src="img/rev-img-1.png", alt="отзыв")
                                 .swiper-slide.reviews-slide 
-                                    .reviews-slide__img 
-                                        img(src="img/rev-img-2.png", alt="отзыв")
+                                    .reviews-slide__img.lazy 
+                                        picture 
+                                            source(srcset="img/rev-img-2.webp", type="image/webp")
+                                            img(data-src="img/rev-img-2.png", alt="отзыв") 
   
 
                             .swiper-button-prev
@@ -901,65 +1007,77 @@ html(lang="ru")
                         
                     .container.overviews__container.overviews__video-container
                         .main-video-wrapper
-                            .main-video__img
-                                img(src="img/ov-main-vid.png", alt=" ")
+                            .main-video__img.lazy
+                                picture 
+                                    source(srcset="img/ov-main-vid.webp", type="image/webp")
+                                    img(data-src="img/ov-main-vid.png", alt=" ")
                                 a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
                                     i.svg-ov-play-white.svg-ov-play-white-dims
 
-                        .section__img.overviews__yt
+                        .section__img.overviews__yt.lazy
                             picture 
                                 source(srcset="img/x720/ov-img-4.png", media="(max-width: 991.98px)", type="image/png")
-                                //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
-                                img(src="img/ov-img-4.png", alt=" ")
-                        .section__img.overviews__cam
+                                source(srcset="img/x720/ov-img-4.webp", media="(max-width: 991.98px)", type="image/webp")
+                                source(srcset="img/ov-img-4.webp", type="image/webp")
+                                img(data-src="img/ov-img-4.png", alt=" ")
+                        .section__img.overviews__cam.lazy
                             picture 
-                                //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
-                                //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
-                                img(src="img/ov-img-3.png", alt=" ")
+                                source(srcset="img/ov-img-3.webp", type="image/webp")
+                                img(data-src="img/ov-img-3.png", alt=" ")
 
                     .container.overviews__container
                         .video-grid
-                            .video__img
-                                    img(src="img/ov-vid-1.png", alt=" ")
+                            .video__img.lazy
+                                picture 
+                                    source(srcset="img/ov-vid-1.webp", type="image/webp")
+                                    img(data-src="img/ov-vid-1.png", alt=" ")
                                     a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
-                            .video__img
-                                    img(src="img/ov-vid-2.png", alt=" ")
+                            .video__img.lazy
+                                picture 
+                                    source(srcset="img/ov-vid-2.webp", type="image/webp")
+                                    img(data-src="img/ov-vid-2.png", alt=" ")
                                     a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
-                            .video__img
-                                    img(src="img/ov-vid-3.png", alt=" ")
+                            .video__img.lazy
+                                picture 
+                                    source(srcset="img/ov-vid-3.webp", type="image/webp")
+                                    img(data-src="img/ov-vid-3.png", alt=" ")
                                     a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
-                            .video__img
-                                    img(src="img/ov-vid-4.png", alt=" ")
+                            .video__img.lazy
+                                picture 
+                                    source(srcset="img/ov-vid-4.webp", type="image/webp")
+                                    img(data-src="img/ov-vid-4.png", alt=" ")
                                     a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
-                            .video__img
-                                    img(src="img/ov-vid-5.png", alt=" ")
+                            .video__img.lazy
+                                picture 
+                                    source(srcset="img/ov-vid-5.webp", type="image/webp")
+                                    img(data-src="img/ov-vid-5.png", alt=" ")
                                     a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
-                            .video__img
-                                    img(src="img/ov-vid-6.png", alt=" ")
+                            .video__img.lazy
+                                picture 
+                                    source(srcset="img/ov-vid-6.webp", type="image/webp")
+                                    img(data-src="img/ov-vid-6.png", alt=" ")
                                     a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
 
-                        .section__img.overviews__otv
+                        .section__img.overviews__otv.lazy
                             picture 
-                                //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
-                                //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
-                                img(src="img/ov-img-2.png", alt=" ")
-                        .section__img.overviews__img1.d-none_sm
+                                source(srcset="img/ov-img-2.webp", type="image/webp")
+                                img(data-src="img/ov-img-2.png", alt=" ")
+                        .section__img.overviews__img1.d-none_sm.lazy
                             picture 
-                                //- source(srcset="img/x720/sims-720.png", media="(max-width: 991.98px)", type="image/png")
-                                //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
-                                img(src="img/ov-img-1.png", alt=" ")
+                                source(srcset="img/ov-img-1.webp", type="image/webp")
+                                img(data-src="img/ov-img-1.png", alt=" ")
 
 
-                    .section__bg.section__bg_cover.overviews__bg
+                    .section__bg.section__bg_cover.overviews__bg.lazy
                         picture 
-                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
-                            img(src="img/bg-ov.png", alt=" ")
+                            source(srcset="img/bg-ov.webp", type="image/webp")
+                            img(data-src="img/bg-ov.png", alt=" ")
 
 
 
@@ -981,17 +1099,18 @@ html(lang="ru")
                                     i.svg-soc-inst-320.svg-soc-inst-320-dims.d-none.d-block_xs
                                     i.svg-soc-inst.svg-soc-inst-dims.d-none_xs
                         .social__phones-wrapper
-                            .section__img.social__phones
+                            .section__img.social__phones.lazy
                                 picture 
                                     source(srcset="img/x720/soc-img-1.png", media="(max-width: 991.98px)", type="image/png")
-                                    //- source(srcset="img/x320/sims-320.png", media="(max-width: 575.98px)", type="image/png")
-                                    img(src="img/soc-img-1.png", alt=" ")
+                                    source(srcset="img/x720/soc-img-1.webp", media="(max-width: 991.98px)", type="image/webp")
+                                    source(srcset="img/soc-img-1.webp", type="image/webp")
+                                    img(data-src="img/soc-img-1.png", alt=" ")
 
 
-                    .section__bg.section__bg_cover.social__bg
+                    .section__bg.section__bg_cover.social__bg.lazy
                         picture 
                             source(srcset="img/x720/bg-social.jpg", media="(max-width: 991.98px)", type="image/png")
-                            img(src="img/bg-social.jpg", alt=" ")
+                            img(data-src="img/bg-social.jpg", alt=" ")
 
 
 
@@ -1033,15 +1152,20 @@ html(lang="ru")
                                     .form__submit-wrap.form-section__submit.loader-container
                                         button.btn.btn_primary.btn_shiny.btn_full-width.form__submit(type="submit") Нужна консультация
                         
-                        .section__img.questions__img1
+                        .section__img.questions__img1.lazy
                             picture 
                                 source(srcset="img/x720/quest-img-1-720.png", media="(max-width: 991.98px)", type="image/png")
-                                source(srcset="img/x720/quest-img-1-320.png", media="(max-width: 575.98px)", type="image/png")
-                                img(src="img/quest-img-1.png", alt=" ")
-                        .section__img.questions__img2
+                                source(srcset="img/x720/quest-img-1-720.webp", media="(max-width: 991.98px)", type="image/webp")
+                                source(srcset="img/x320/quest-img-1-320.png", media="(max-width: 575.98px)", type="image/png")
+                                source(srcset="img/x320/quest-img-1-320.webp", media="(max-width: 575.98px)", type="image/webp")
+                                source(srcset="img/quest-img-1.webp", type="image/webp")
+                                img(data-src="img/quest-img-1.png", alt=" ")
+                        .section__img.questions__img2.lazy
                             picture 
                                 source(srcset="img/x720/quest-img-2.png", media="(max-width: 991.98px)", type="image/png")
-                                img(src="img/quest-img-2.png", alt=" ")
+                                source(srcset="img/x720/quest-img-2.webp", media="(max-width: 991.98px)", type="image/webp")
+                                source(srcset="img/quest-img-2.webp", type="image/webp")
+                                img(data-src="img/quest-img-2.png", alt=" ")
 
 
 
@@ -1096,10 +1220,10 @@ html(lang="ru")
 
 
                             .partn__content_right
-                                .section__bg.partn-content__img
+                                .section__bg.partn-content__img.lazy
                                     picture 
                                         source(srcset="img/x720/bg-part.jpg", media="(max-width: 991.98px)", type="image/jpg")
-                                        img(src="img/x720/bg-part.jpg", alt=" ")
+                                        img(data-src="img/x720/bg-part.jpg", alt=" ")
 
 
 
@@ -1112,22 +1236,25 @@ html(lang="ru")
 
                                     .partn__video-round
                                         i.svg-partn-line-round.svg-partn-line-round-dims
-                                    .partn-video__btn-wrapper
+                                    .partn-video__btn-wrapper.lazy
                                         a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k").partn-video__btn 
-                                        img(src="img/part-play.png", alt="кнопка play")
+                                        picture 
+                                            source(srcset="img/part-play.webp", type="image/webp")
+                                            img(data-src="img/part-play.png", alt="кнопка play")
 
                     
-                    .section__img.partn__box
+                    .section__img.partn__box.lazy
                         picture 
                             source(srcset="img/x720/partn-box.png", media="(max-width: 991.98px)", type="image/png")
-                            //- source(srcset="img/x320/phone-320.png", media="(max-width: 767.98px)", type="image/png")
-                            img(src="img/partn-box.png", alt=" ")
+                            source(srcset="img/x720/partn-box.webp", media="(max-width: 991.98px)", type="image/webp")
+                            source(srcset="img/partn-box.webp", type="image/webp")
+                            img(data-src="img/partn-box.png", alt=" ")
 
 
-                    .section__bg.section__bg_cover.social__bg.partn__bg
+                    .section__bg.section__bg_cover.social__bg.partn__bg.lazy
                         picture 
                             source(srcset="img/x720/bg-part.jpg", media="(max-width: 991.98px)", type="image/jpg")
-                            img(src="img/bg-part.jpg", alt=" ")
+                            img(data-src="img/bg-part.jpg", alt=" ")
 
 
 
