@@ -86,8 +86,13 @@ gulp.task('webp', function() {
                     '!src/assets/img/icons/',
                     '!src/assets/img/favicons/'
                 )
-            .pipe(webp())
-            .pipe(gulp.dest('public/img'));     
+            .pipe(webp(
+                {
+                    // preset: 'photo',
+                    quality: 85,
+            }
+            ))
+            .pipe(gulp.dest('public/img')); 
 });
 
 
@@ -111,7 +116,7 @@ gulp.task('imgmin', function() {
 });
 
 // ИЗОБРАЖЕНИЯ: КОНВЕРТИРОВАНИЕ, МИНИИКАЦИЯ, КОПИРОВАНИЕ
-gulp.task('img', gulp.parallel('imgmin', 'webp'));
+gulp.task('img', gulp.series('imgmin', 'webp'));
 
 
 // ОБЩАЯ ЗАДАЧА ДЛЯ СОДЕРЖИМОГО "ASSETS" (FONTS, IMG, ICONS)

@@ -1,33 +1,7 @@
 "use strict";
 
-var start = Date.now(); // MOBILE-MENU-SETTINGS
-
-var menuToggler = document.querySelector('.top-menu-toggler'),
-    //   topMenuClose	= document.querySelector('.top-menu-close'),
-menu = document.querySelector('.header-nav'),
-    menuOverl = document.querySelector('.top-menu-overl');
-menuToggler.addEventListener('click', menuToggle);
-menuOverl.addEventListener('click', menuClose); // topMenuClose.addEventListener('click', menuClose);
-
-function menuToggle() {
-  menu.classList.toggle('open');
-  menuToggler.classList.toggle('open');
-  header.classList.toggle('white'); // document.body.classList.toggle('scroll-hidden');
-
-  menuOverl.classList.toggle('open');
-}
-
-function menuClose() {
-  menu.classList.remove('open');
-  menuToggler.classList.toggle('open');
-  header.classList.remove('white'); // 	document.body.classList.remove('scroll-hidden');
-
-  menuOverl.classList.remove('open');
-} // LAZY-LOAD
-// document.addEventListener("DOMContentLoaded", ()=>{
-
-
 window.addEventListener("load", function () {
+  // LAZY-LOAD
   var lazyItems = document.querySelectorAll('.lazy');
 
   var _loop = function _loop(i) {
@@ -37,158 +11,189 @@ window.addEventListener("load", function () {
     tempImg.setAttribute('src', image.getAttribute('data-src'));
 
     tempImg.onload = function () {
-      image.setAttribute('src', image.getAttribute('data-src')); // image.classList.add('loaded');
-
+      image.setAttribute('src', image.getAttribute('data-src'));
       lazyItem.classList.remove('lazy');
     };
   };
 
   for (var i = 0; i < lazyItems.length; i++) {
     _loop(i);
+  } // = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+  // MOBILE-MENU-SETTINGS
+
+
+  var menuToggler = document.querySelector('.top-menu-toggler'),
+      menu = document.querySelector('.header-nav'),
+      menuOverl = document.querySelector('.top-menu-overl');
+  menuToggler.addEventListener('click', menuToggle);
+  menuOverl.addEventListener('click', menuClose);
+
+  function menuToggle() {
+    menu.classList.toggle('open');
+    menuToggler.classList.toggle('open');
+    header.classList.toggle('white');
+    menuOverl.classList.toggle('open');
   }
-}); // = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-// MODAL-WINDOW-SETTINGS
-// Получение массива кнопок открытия
 
-var modalOpenBtns = document.querySelectorAll('.modal-trigger');
-
-if (modalOpenBtns) {
-  var _loop2 = function _loop2(i) {
-    var modalOpenBtn = modalOpenBtns[i];
-    modalOpenBtn.addEventListener('click', function () {
-      openModal(modalOpenBtn);
-    });
-  };
-
-  for (var i = 0; i < modalOpenBtns.length; i++) {
-    _loop2(i);
-  }
-} // Modal Functions
+  function menuClose() {
+    menu.classList.remove('open');
+    menuToggler.classList.toggle('open');
+    header.classList.remove('white');
+    menuOverl.classList.remove('open');
+  } // = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+  // MODAL-WINDOW-SETTINGS
 
 
-function openModal(modalOpenBtn) {
-  var modal = document.getElementById(modalOpenBtn.dataset.target);
-  modal.classList.remove('closed');
-  modal.classList.add('opened');
-  var modalCloseBtns = modal.getElementsByClassName('modal-close');
+  var modalOpenBtns = document.querySelectorAll('.modal-trigger');
 
-  for (var _i = 0; _i < modalCloseBtns.length; _i++) {
-    var modalCloseBtn = modalCloseBtns[_i];
-    modalCloseBtn.addEventListener('click', function () {
-      closeModal(modal);
-    });
-  }
-}
+  if (modalOpenBtns) {
+    var _loop2 = function _loop2(_i) {
+      var modalOpenBtn = modalOpenBtns[_i];
+      modalOpenBtn.addEventListener('click', function () {
+        openModal(modalOpenBtn);
+      });
+    };
 
-function closeModal(modal) {
-  modal.classList.remove('opened');
-  modal.classList.add('closed');
-} // FORMS
-// ПОЛУЧЕНИЕ ВСЕХ ФОРМ ДОКУМЕНТА
+    for (var _i = 0; _i < modalOpenBtns.length; _i++) {
+      _loop2(_i);
+    }
+  } // Modal Functions
 
 
-var forms = document.forms;
+  function openModal(modalOpenBtn) {
+    var modal = document.getElementById(modalOpenBtn.dataset.target);
+    var modalCloseBtns = modal.getElementsByClassName('modal-close');
+    modal.classList.remove('closed');
+    modal.classList.add('opened');
 
-for (var _i2 = 0; _i2 < forms.length; _i2++) {
-  var addFocus = function addFocus() {
-    this.parentElement.classList.add('focused');
-  };
-
-  var removeFocus = function removeFocus() {
-    this.parentElement.classList.remove('focused');
-  };
-
-  var form = forms[_i2];
-  var submitBtn = form.querySelector('[type="submit"]'); // ДОБАВЛЕНИЕ-УДАЛЕНИЕ ФОКУСА НА ТЕКСТОВЫЕ ИНПУТЫ
-
-  for (var j = 0; j < form.elements.length; j++) {
-    if (form.elements[j].classList.contains('form__control')) {
-      (function () {
-        var ElementInput = form.elements[j];
-        ElementInput.addEventListener('focus', addFocus);
-        ElementInput.addEventListener('input', function () {
-          if (ElementInput.value) {
-            ElementInput.parentElement.classList.remove('focused');
-            ElementInput.parentElement.classList.add('valid');
-          } else {
-            ElementInput.parentElement.classList.remove('valid');
-          }
-        });
-        ElementInput.addEventListener('blur', removeFocus);
-      })();
+    for (var _i2 = 0; _i2 < modalCloseBtns.length; _i2++) {
+      var modalCloseBtn = modalCloseBtns[_i2];
+      modalCloseBtn.addEventListener('click', function () {
+        closeModal(modal);
+      });
     }
   }
-} // ОТПРАВКА ФОРМЫ AJAX
 
-
-var modalContent = document.querySelector('.modal-callback');
-var thanks = document.createElement('div');
-thanks.className = 'thanks';
-thanks.innerHTML = '<h3><span>Спасибо</span>Мы перезвоним Вам в ближайшее время!</h3>'; // ФУНКЦИИ УСТАНОВКИ, УДАЛЕНИЯ ЛОАДЕРА ФОРМЫ
-
-function setupLoader(formId) {
-  var loader = document.createElement('div'),
-      loaderContainer = formId.querySelector('.loader-container');
-  loader.className = 'submit-loader';
-  loaderContainer.appendChild(loader);
-}
-
-function removeLoader(formId) {
-  var loader = formId.querySelector('.submit-loader');
-  loader.remove();
-} // ------------------------------------------------
-
-
-$('#modalCbForm').submit(function (ev) {
-  ev.preventDefault();
-  setupLoader(modalCbForm);
-  $.ajax({
-    type: 'POST',
-    url: '/mail.php',
-    data: $(this).serialize()
-  }).done(function () {
-    $(this).find('input').val('');
-    $('#modalCbForm').trigger('reset');
-    removeLoader(modalCbForm);
-    thanks.classList.add('active');
-    wrapper.appendChild(thanks);
+  function closeModal(modal) {
     modal.classList.remove('opened');
-    setTimeout(function () {
-      thanks.remove();
-      thanks.classList.remove('active');
-    }, 6500);
-  });
-  return false;
-}); // ВОЗМОЖНО ПОРТЕБУЕТСЯ ДЛЯ ЛОАДЕРОВ В ПРОСТЫХ ФОРМАХ
-// const submitBtn = document.querySelector('[type="submit"]');
-// submitBtn.addEventListener('click', function(){
-//     let modal = document.querySelector('.modal.fade.in');
-//     modal.addEventListener('click', function (ev) {
-//         console.log(ev.target);
-// 		// СТОП РАСПРОСТРАНЕНИЕ - НЕ ПОКАЗЫВАТЬ MODAL-CONTENT
-// 		thanks.addEventListener('click', function(ev){
-// 			ev.stopPropagation();
-// 		});
-//         if(ev.target  !== thanks){
-//             setTimeout(function() {
-//                 modalContent.classList.remove('disabled');
-//             }, 300);
-//         }
-//     })
-// })
-// let closeModal = document.querySelectorAll('button.close');
-// for(let i = 0; i < closeModal.length; i++){
-//     closeModal[i].addEventListener('click', function () {
-//         // setTimeout(function() {
-//         // 	modalContent.classList.remove('disabled');
-//         // }, 300);
-//     })
-// }
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-// STARS - SLIDER
+    modal.classList.add('closed');
+  } // = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+  // FORMS
+
+
+  var forms = document.forms;
+
+  for (var _i3 = 0; _i3 < forms.length; _i3++) {
+    var addFocus = function addFocus() {
+      this.parentElement.classList.add('focused');
+    };
+
+    var removeFocus = function removeFocus() {
+      this.parentElement.classList.remove('focused');
+    };
+
+    var form = forms[_i3];
+    var submitBtn = form.querySelector('[type="submit"]'); // ДОБАВЛЕНИЕ-УДАЛЕНИЕ ФОКУСА НА ТЕКСТОВЫЕ ИНПУТЫ
+
+    for (var j = 0; j < form.elements.length; j++) {
+      if (form.elements[j].classList.contains('form__control')) {
+        (function () {
+          var ElementInput = form.elements[j];
+          ElementInput.addEventListener('focus', addFocus);
+          ElementInput.addEventListener('input', function () {
+            if (ElementInput.value) {
+              ElementInput.parentElement.classList.remove('focused');
+              ElementInput.parentElement.classList.add('valid');
+            } else {
+              ElementInput.parentElement.classList.remove('valid');
+            }
+          });
+          ElementInput.addEventListener('blur', removeFocus);
+        })();
+      }
+    }
+  } // ------------------------------------------------
+  // ОТПРАВКА ФОРМЫ AJAX
+
+
+  var modalContent = document.querySelector('.modal-callback');
+  var thanks = document.createElement('div');
+  var messageSuccessful = '<h3><span>Спасибо</span>Мы перезвоним Вам в ближайшее время!</h3>';
+  var messageError = '<h3><span>Ошибка</span>Сохранение лида доступно только на коммерческих планах.</h3>';
+  thanks.className = 'thanks'; // Функции установки, удаления лоадера кнопки формы
+
+  function setupLoader(formId) {
+    var loader = document.createElement('div'),
+        loaderContainer = formId.querySelector('.loader-container');
+    loader.className = 'submit-loader';
+    loaderContainer.appendChild(loader);
+  }
+
+  function removeLoader(formId) {
+    var loader = formId.querySelector('.submit-loader');
+    loader.remove();
+  } // ------------------------------------------------
+  // Отправка формы AJAX
+
+
+  var _loop3 = function _loop3(_i4) {
+    var form = forms[_i4];
+    $(form).submit(function (ev) {
+      ev.preventDefault();
+      setupLoader(form);
+      $.ajax({
+        type: 'POST',
+        url: '/mail.php',
+        data: $(this).serialize()
+      }).done(function (response) {
+        if (!response.status) {
+          thanks.innerHTML = messageError;
+        } else {
+          thanks.innerHTML = messageSuccessful;
+        }
+
+        $(this).find('input').val('');
+        $(form).trigger('reset');
+        removeLoader(form);
+        thanks.classList.add('active');
+        wrapper.appendChild(thanks);
+        modal.classList.remove('opened');
+        setTimeout(function () {
+          thanks.remove();
+          thanks.classList.remove('active');
+        }, 6500);
+      });
+      return false;
+    });
+  };
+
+  for (var _i4 = 0; _i4 < forms.length; _i4++) {
+    _loop3(_i4);
+  } // = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+  /* Smoothy scrolling
+  -------------------------*/
+
+
+  $(function () {
+    $('a[href^="#"]').on('click', function (event) {
+      event.preventDefault();
+      var sc = $(this).attr("href"),
+          dn = $(sc).offset().top;
+      /*
+      * sc - в переменную заносим информацию о том, к какому блоку надо перейти
+      * dn - определяем положение блока на странице
+      */
+
+      $('html, body').animate({
+        scrollTop: dn
+      }, 1000, 'swing');
+    });
+  }); // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+}); // SLIDERS 
+// Stars-slider
 
 var starsSlider = new Swiper('.stars__slider', {
-  // Optional parameters
   direction: 'horizontal',
   loop: true,
   slidesPerView: 1,
@@ -197,84 +202,36 @@ var starsSlider = new Swiper('.stars__slider', {
   autoplay: {
     delay: 5000
   },
-  // If we need pagination
-  // pagination: {
-  //   el: '.swiper-pagination',
-  // },
-  // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   },
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
-  // Responsive breakpoints
   breakpoints: {
-    // when window width is >= 320px
-    // 320: {
-    //   slidesPerView: 1,
-    //   spaceBetween: 20
-    // },
-    // // when window width is >= 480px
-    // 480: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 30
-    // },
-    // when window width is >= 992px
     992: {
       slidesPerView: "auto",
       centeredSlides: true
     }
   }
-}); // - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-// STARS - REVIEWS
+}); // ------------------------------------------------
+// Reviews-slider
 
 var reviewsSlider = new Swiper('.reviews__slider', {
-  // Optional parameters
   direction: 'horizontal',
   loop: true,
-  slidesPerView: 1,
   speed: 500,
+  slidesPerView: "auto",
+  centeredSlides: true,
   spaceBetween: 40,
   autoplay: {
     delay: 5000
   },
-  // If we need pagination
-  // pagination: {
-  //   el: '.swiper-pagination',
-  // },
-  // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
-  },
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
-  // Responsive breakpoints
-  breakpoints: {
-    // when window width is >= 320px
-    // 320: {
-    //   slidesPerView: 1,
-    //   spaceBetween: 20
-    // },
-    // // when window width is >= 480px
-    // 480: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 30
-    // },
-    // when window width is >= 992px
-    480: {
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 40
-    }
   }
-}); // - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-// STARS - IMPORTANT
+}); // ------------------------------------------------
+// Important-slider
+//Swiper plugin initialization on window resize
 
 var mySwiper = undefined;
 
@@ -283,51 +240,30 @@ function initSwiper() {
 
   if (screenWidth < 576 && mySwiper == undefined) {
     mySwiper = new Swiper('.important__slider', {
-      // Optional parameters
       direction: 'horizontal',
       loop: true,
       slidesPerView: 1,
       speed: 500,
-      // centeredSlides: true,
       spaceBetween: 20,
       autoplay: {
         delay: 5000
       },
-      // If we need pagination
-      // pagination: {
-      //   el: '.swiper-pagination',
-      // },
-      // Navigation arrows
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
       },
-      // And if we need scrollbar
-      // scrollbar: {
-      //   el: '.swiper-scrollbar',
-      // },
-      // Responsive breakpoints
       breakpoints: {
-        // // when window width is >= 480px
         480: {
           slidesPerView: "auto",
           centeredSlides: true,
-          spaceBetween: 40 // freeMode: true
-
-        } // when window width is >= 992px
-        // 576: {
-        //     enabled: false,
-        // }
-
+          spaceBetween: 40
+        }
       }
     });
   } else if (screenWidth >= 576 && mySwiper != undefined) {
     mySwiper.destroy();
-    mySwiper = undefined; // jQuery('.swiper-wrapper').removeAttr('style');
-    // jQuery('.swiper-slide').removeAttr('style');
-
-    jQuery('.swiper-wrapper').removeAttr('style'); //или .important__slider ???
-
+    mySwiper = undefined;
+    jQuery('.important__item-wrapper').removeAttr('style');
     jQuery('.important-slide').removeAttr('style');
   }
 } //Swiper plugin initialization
@@ -337,68 +273,4 @@ initSwiper(); //Swiper plugin initialization on window resize
 
 $(window).on('resize', function () {
   initSwiper();
-}); // const importantSlider = new Swiper('.important__slider', {
-//     // Optional parameters
-//     direction: 'horizontal',
-//     loop: true,
-//     slidesPerView: 1,
-//     speed: 500,
-//     // centeredSlides: true,
-//     spaceBetween: 20,
-//      autoplay: {
-//         delay: 5000,
-//     },
-//     // If we need pagination
-//     // pagination: {
-//     //   el: '.swiper-pagination',
-//     // },
-//     // Navigation arrows
-//     navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//     },
-//     // And if we need scrollbar
-//     // scrollbar: {
-//     //   el: '.swiper-scrollbar',
-//     // },
-//       // Responsive breakpoints
-//     breakpoints: {
-//         // // when window width is >= 480px
-//         480: {
-//             slidesPerView: "auto",
-//             centeredSlides: true,
-//             spaceBetween: 40,
-//             // freeMode: true
-//         },
-//         // when window width is >= 992px
-//         576: {
-//             enabled: false,
-//         }
-//     }
-// });
-
-/* Smoothy scrolling
--------------------------*/
-
-$(function () {
-  $('a[href^="#"]').on('click', function (event) {
-    // отменяем стандартное действие
-    event.preventDefault();
-    var sc = $(this).attr("href"),
-        dn = $(sc).offset().top;
-    /*
-    * sc - в переменную заносим информацию о том, к какому блоку надо перейти
-    * dn - определяем положение блока на странице
-    */
-
-    $('html, body').animate({
-      scrollTop: dn
-    }, 1000, 'swing');
-    /*
-    * 1000 скорость перехода в миллисекундах
-    */
-  });
-}); // window.onload = function(){
-//     let start2 = Date.now();
-//     console.log(`Событие "onload": ${Date.now() - start}`);
-// };
+}); // = = = = = = = = = = = = = = = = = = = = = = = = = = = =

@@ -1093,6 +1093,7 @@
 			}
 		}
 		&__box{
+			display: block;
 			top: -11rem;
 			right: 0;
 			z-index: 5;
@@ -1122,7 +1123,6 @@
 	.footer{
 		padding-top: 6rem;
 		font-size: 2rem;
-		border-top: solid 1px rgba(154, 162, 186, 0.3);
 		&__logo{
 			max-width: 12.6rem;
 			width: 100%;
@@ -2575,7 +2575,10 @@
 		&-slide{
 			&__img{
 				img{
-					width: 80%;
+					// margin-left: auto;
+					// margin-right: auto;
+					// width: 80%;
+					// max-width: 302px;
 				}
 			}
 		}
