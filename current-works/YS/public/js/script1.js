@@ -45,12 +45,23 @@ window.addEventListener("load", function () {
 
 
   var modalOpenBtns = document.querySelectorAll('.modal-trigger');
+  var formThemes = {
+    callback: "Перезвоните мне",
+    "test-street-2": "Взять на тест-драйв Street-2",
+    "test-street-2-pro": "Взять на тест-драйв Street-2-pro",
+    "test-street-utra-pro": "Взять на тест-драйв Street-ultra-pro",
+    partn: "Хочу стать партнером"
+  };
 
   if (modalOpenBtns) {
     var _loop2 = function _loop2(_i) {
       var modalOpenBtn = modalOpenBtns[_i];
       modalOpenBtn.addEventListener('click', function () {
         openModal(modalOpenBtn);
+
+        if (modalOpenBtn.dataset.form) {
+          formTheme.value = formThemes[modalOpenBtn.dataset.form];
+        }
       });
     };
 
@@ -118,8 +129,9 @@ window.addEventListener("load", function () {
 
   var modalContent = document.querySelector('.modal-callback');
   var thanks = document.createElement('div');
-  var messageSuccessful = '<h3><span>Спасибо</span>Мы перезвоним Вам в ближайшее время!</h3>';
-  var messageError = '<h3><span>Ошибка</span>Сохранение лида доступно только на коммерческих планах.</h3>';
+  var messageSuccessful = '<h3><span>Спасибо</span>Мы перезвоним Вам в ближайшее время!</h3>'; // let messageError        = '<h3><span>Ошибка</span>Сохранение лида доступно только на коммерческих планах.</h3>';
+
+  var messageError = '<h3><span>Ошибка</span>отправки данных.</h3>';
   thanks.className = 'thanks'; // Функции установки, удаления лоадера кнопки формы
 
   function setupLoader(formId) {
@@ -145,16 +157,23 @@ window.addEventListener("load", function () {
         type: 'POST',
         url: '/mail.php',
         data: $(this).serialize()
-      }).done(function (response) {
-        if (!response.status) {
-          thanks.innerHTML = messageError;
-        } else {
-          thanks.innerHTML = messageSuccessful;
-        }
-
+      }).done(function () {
         $(this).find('input').val('');
         $(form).trigger('reset');
         removeLoader(form);
+        thanks.innerHTML = messageSuccessful;
+        thanks.classList.add('active');
+        wrapper.appendChild(thanks);
+        modal.classList.remove('opened');
+        setTimeout(function () {
+          thanks.remove();
+          thanks.classList.remove('active');
+        }, 6500);
+      }).fail(function () {
+        $(this).find('input').val('');
+        $(form).trigger('reset');
+        removeLoader(form);
+        thanks.innerHTML = messageError;
         thanks.classList.add('active');
         wrapper.appendChild(thanks);
         modal.classList.remove('opened');

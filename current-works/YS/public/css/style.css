@@ -2539,10 +2539,7 @@ select::-ms-expand {
 .footer-menu__item {
   max-width: 20rem;
 }
-.footer-menu__item > a {
-  -webkit-transition: none;
-  -o-transition: none;
-  transition: none;
+.footer-menu__item > span {
   font-weight: 700;
 }
 .footer-menu__item a:hover {
@@ -2586,7 +2583,7 @@ select::-ms-expand {
   position: absolute;
   display: inline-block;
   top: auto;
-  bottom: 0.45em;
+  bottom: 0.2em;
   left: -3rem;
 }
 .footer-contacts__phone {
@@ -3829,6 +3826,9 @@ ANIMATIONS
   .footer-contacts__phone {
     font-size: 2.5rem;
     bottom: 0;
+  }
+  .footer-contacts__phone svg {
+    bottom: 0.1em;
   }
 }
 @media (max-width: 767.98px) {

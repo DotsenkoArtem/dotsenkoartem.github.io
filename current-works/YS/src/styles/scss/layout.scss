@@ -1566,8 +1566,7 @@
       justify-content: space-between;
       &__item{
          max-width: 20rem;
-         & > a{
-            transition: none;
+         & > span{
             font-weight: 700;
          }
          a{
@@ -1615,7 +1614,7 @@
             position: absolute;
             display: inline-block;
             top: auto;
-            bottom: 0.45em;
+            bottom: 0.2em;
             left: -3rem;
          }
       }

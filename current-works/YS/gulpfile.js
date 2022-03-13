@@ -34,7 +34,7 @@ gulp.task('fonts', function() {
 
 // ПРОСТО КОПИРОВАНИЕ PHP В КОРЕНЬ
 gulp.task('php', function() {
-    return  gulp.src('src/**/*.php', {since: gulp.lastRun('php')})
+    return  gulp.src('src/php/**/*.*', {since: gulp.lastRun('php')})
             .pipe(gulp.dest('public'));
 });
 
@@ -213,7 +213,7 @@ gulp.task('watch', function() {
     gulp.watch('src/js/**/*.*', gulp.series('js'));
     gulp.watch('src/styles/**/*.scss', gulp.series('styles'));
     gulp.watch('src/pug/**/*.*', gulp.series('pug'));
-    gulp.watch('src/**/*.php', gulp.series('php'));
+    gulp.watch('src/php/**/*.*', gulp.series('php'));
     gulp.watch('src/assets/libs/**/*.*', gulp.series('libs'));
 });
 

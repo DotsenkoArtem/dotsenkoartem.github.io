@@ -51,12 +51,12 @@ html(lang="ru")
                             .intro-offer.line-blue Посмотрите 2х минутное видео о нашем устройстве или скачайте презентацию в pdf
 
                             .intro-btns 
-                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                a(data-fancybox, href="https://www.youtube.com/watch?v=xik3yOWovg0")
                                     .btn.btn_primary.btn_shiny
                                         i.svg-play-transp.svg-play-transp-dims
                                         span.btn__text Посмотреть видео 
                                         span.btn__text.d-none_sm об устройстве
-                                a(href="img/zhuk.png", title="Скачать PDF" download).btn.btn_file 
+                                a(href="#", title="Скачать PDF" download).btn.btn_file 
                                     i.svg-pdf.svg-pdf-dims.icon_default
                                     i.svg-pdf-white.svg-pdf-white-dims.icon_hover
 
@@ -118,6 +118,8 @@ html(lang="ru")
                                         label.form__label.form__label_control(for="userPhone1") 
                                             |Ваш телефон
                                         i.svg-phone.svg-phone-dims.form-icon
+
+                                    input(type="hidden", value="Хотите проверить «Street» у себя?", name="formTheme")
                                         
                                     //- submit
                                     .form__submit-wrap.form-section__submit.loader-container
@@ -170,7 +172,7 @@ html(lang="ru")
                                             .stars-card__text 
                                                 p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
                                             .stars-card__btn-wrapper 
-                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=wjfdUVkj8_c")
                                                     .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
 
 
@@ -186,7 +188,7 @@ html(lang="ru")
                                             .stars-card__text 
                                                 p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
                                             .stars-card__btn-wrapper 
-                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=zR3vGLE1Lyc")
                                                     .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
 
 
@@ -202,7 +204,7 @@ html(lang="ru")
                                             .stars-card__text 
                                                 p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
                                             .stars-card__btn-wrapper 
-                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=gZMxn3JaNeU")
                                                     .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
 
 
@@ -218,7 +220,7 @@ html(lang="ru")
                                             .stars-card__text 
                                                 p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
                                             .stars-card__btn-wrapper 
-                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=h_stp99TMC8")
                                                     .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
 
 
@@ -234,7 +236,7 @@ html(lang="ru")
                                             .stars-card__text 
                                                 p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
                                             .stars-card__btn-wrapper 
-                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=HRDl2WqayMY")
                                                     .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
 
 
@@ -250,7 +252,7 @@ html(lang="ru")
                                             .stars-card__text 
                                                 p Команда YS-System установила Street 2Pro Сергею Жукову в офис. Помогли настроить и проконсультировали по поводу гарантии.
                                             .stars-card__btn-wrapper 
-                                                a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k")
+                                                a(data-fancybox, href="https://www.youtube.com/watch?v=99EO2aNWw6k")
                                                     .btn.btn_secondary.stars-card__btn Посмотреть видеоотзыв
 
 
@@ -488,8 +490,8 @@ html(lang="ru")
                                                 span.rub ₽
 
                                     .good__btns
-                                        .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal") Взять на тест-драйв
-                                        .btn.btn_outline.good-btn.good-btn_outline Технические характеристики
+                                        .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal", data-form="test-street-2") Взять на тест-драйв
+                                        a.btn.btn_outline.good-btn.good-btn_outline(target="_blank", href="https://ys-system.ru/wp-content/uploads/2018/11/Street-II_manual.pdf") Технические характеристики
                             
                             
                             
@@ -540,8 +542,8 @@ html(lang="ru")
                                                 span.rub ₽
 
                                     .good__btns
-                                        .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal") Взять на тест-драйв
-                                        .btn.btn_outline.good-btn.good-btn_outline Технические характеристики
+                                        .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal", data-form="test-street-2-pro") Взять на тест-драйв
+                                        a.btn.btn_outline.good-btn.good-btn_outline(target="_blank", href="https://ys-system.ru/wp-content/uploads/2018/11/instr_street-ii-pro.pdf") Технические характеристики
                             
                             
                             
@@ -593,8 +595,8 @@ html(lang="ru")
                                                 span.rub ₽
 
                                     .good__btns
-                                        .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal") Взять на тест-драйв
-                                        .btn.btn_outline.good-btn.good-btn_outline Технические характеристики
+                                        .btn.btn_primary.btn_shiny.good-btn.good-btn_primary.modal-trigger(data-target="modal", data-form="test-street-utra-pro") Взять на тест-драйв
+                                        a.btn.btn_outline.good-btn.good-btn_outline(target="_blank", href="https://ys-system.ru/wp-content/uploads/2018/11/instr_street-ultra-pro.pdf") Технические характеристики
 
                     .section__img.goods__box.lazy
                         picture 
@@ -629,6 +631,8 @@ html(lang="ru")
                                         label.form__label.form__label_control(for="userPhone2") 
                                             |Ваш телефон
                                         i.svg-phone.svg-phone-dims.form-icon
+
+                                    input(type="hidden", value="Нужна помощь в подборе?", name="formTheme")
                                         
                                     //- submit
                                     .form__submit-wrap.form-section__submit.loader-container
@@ -814,6 +818,8 @@ html(lang="ru")
                                         label.form__label.form__label_control(for="userPhone3") 
                                             |Ваш телефон
                                         i.svg-phone.svg-phone-dims.form-icon
+
+                                    input(type="hidden", value="Весь январь получите в подарок...", name="formTheme")
                                         
                                     //- submit
                                     .form__submit-wrap.form-section__submit.loader-container
@@ -914,7 +920,7 @@ html(lang="ru")
                                             span.text_semibold по всему миру.
                                         p   Отправка производится через транспортные компании, Почту России и любые другие службы перевозок.
                                         p   Для получения точной стоимости пересылки пожалуйста 
-                                            a.text-link(href="#") свяжитесь с нашими менеджерами. 
+                                            a.text-link(href="tel:+74957402303") свяжитесь с нашими менеджерами. 
 
                         .section__img.buy__box.lazy
                             picture 
@@ -1002,7 +1008,7 @@ html(lang="ru")
                                 picture 
                                     source(srcset="img/ov-main-vid.webp", type="image/webp")
                                     img(data-src="img/ov-main-vid.png", alt=" ")
-                                a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                a.play-btn.play-btn_lg.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=GJkENz9QoyI") 
                                     i.svg-ov-play-white.svg-ov-play-white-dims
 
                         .section__img.overviews__yt.lazy
@@ -1022,19 +1028,19 @@ html(lang="ru")
                                 picture 
                                     source(srcset="img/ov-vid-1.webp", type="image/webp")
                                     img(data-src="img/ov-vid-1.png", alt=" ")
-                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=FvSdEtVruvA") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
                             .video__img.lazy
                                 picture 
                                     source(srcset="img/ov-vid-2.webp", type="image/webp")
                                     img(data-src="img/ov-vid-2.png", alt=" ")
-                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=yIwvuCkSggI") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
                             .video__img.lazy
                                 picture 
                                     source(srcset="img/ov-vid-3.webp", type="image/webp")
                                     img(data-src="img/ov-vid-3.png", alt=" ")
-                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=ZktSJdmZlhs") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
                             .video__img.lazy
                                 picture 
@@ -1046,13 +1052,13 @@ html(lang="ru")
                                 picture 
                                     source(srcset="img/ov-vid-5.webp", type="image/webp")
                                     img(data-src="img/ov-vid-5.png", alt=" ")
-                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=1Fhx4hQyl1M") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
                             .video__img.lazy
                                 picture 
                                     source(srcset="img/ov-vid-6.webp", type="image/webp")
                                     img(data-src="img/ov-vid-6.png", alt=" ")
-                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k") 
+                                    a.play-btn.play-btn_md.video__btn(data-fancybox, href="https://www.youtube.com/watch?v=6sKK8KzhYRg") 
                                         i.svg-ov-play-white.svg-ov-play-white-dims
 
                         .section__img.overviews__otv.lazy
@@ -1083,10 +1089,10 @@ html(lang="ru")
                                 span.section__subheading
                                     |в Instagram и Youtube
                             .social__links 
-                                a.yt(href="#") 
+                                a.yt(target="_blank", href="https://www.youtube.com/channel/UCciMxtNSBcCdSRnLbfX73Qw") 
                                     i.svg-soc-yt-320.svg-soc-yt-320-dims.d-none.d-block_xs
                                     i.svg-soc-yt.svg-soc-yt-dims.d-none_xs
-                                a.inst(href="#") 
+                                a.inst(target="_blank", href="https://www.instagram.com/internet_boosters/?utm_medium=copy_link") 
                                     i.svg-soc-inst-320.svg-soc-inst-320-dims.d-none.d-block_xs
                                     i.svg-soc-inst.svg-soc-inst-dims.d-none_xs
                         .social__phones-wrapper
@@ -1138,6 +1144,8 @@ html(lang="ru")
                                         label.form__label.form__label_control(for="userPhone4") 
                                             |Ваш телефон
                                         i.svg-phone.svg-phone-dims.form-icon
+
+                                    input(type="hidden", value="Остались вопросы?", name="formTheme")
                                         
                                     //- submit
                                     .form__submit-wrap.form-section__submit.loader-container
@@ -1204,7 +1212,7 @@ html(lang="ru")
                                             br
                                             span.text_semibold оставьте свои контакты и мы свяжемся с вами!
 
-                                        .btn.btn_primary.btn_shiny.partn-card__btn.modal-trigger(data-target="modal") Хочу стать партнером
+                                        .btn.btn_primary.btn_shiny.partn-card__btn.modal-trigger(data-target="modal", data-form="partn") Хочу стать партнером
 
                                     
 
@@ -1228,7 +1236,7 @@ html(lang="ru")
                                     .partn__video-round
                                         i.svg-partn-line-round.svg-partn-line-round-dims
                                     .partn-video__btn-wrapper.lazy
-                                        a(data-fancybox, href="https://www.youtube.com/watch?v=eGniutFG45k").partn-video__btn 
+                                        a(data-fancybox, href="https://www.youtube.com/watch?v=xik3yOWovg0").partn-video__btn 
                                         picture 
                                             source(srcset="img/part-play.webp", type="image/webp")
                                             img(data-src="img/part-play.png", alt="кнопка play")
@@ -1286,6 +1294,8 @@ html(lang="ru")
                             label.form__label.form__label_control(for="userPhone") 
                                 |Ваш телефон
                             i.svg-phone.svg-phone-dims.form-icon
+
+                        input#formTheme(type="hidden", value="Форма консультации", name="formTheme")
                             
                         //- submit
                         .form__submit-wrap.loader-container

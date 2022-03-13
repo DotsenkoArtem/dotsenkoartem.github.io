@@ -45,12 +45,23 @@ window.addEventListener("load", ()=>{
 
     // MODAL-WINDOW-SETTINGS
     const modalOpenBtns = document.querySelectorAll('.modal-trigger');
+    const formThemes    = {
+        callback:               "Перезвоните мне",
+        "test-street-2":        "Взять на тест-драйв Street-2",
+        "test-street-2-pro":    "Взять на тест-драйв Street-2-pro",
+        "test-street-utra-pro": "Взять на тест-драйв Street-ultra-pro",
+        partn:                  "Хочу стать партнером",
+    };
 
     if(modalOpenBtns){
         for(let i = 0; i < modalOpenBtns.length; i++){
             let modalOpenBtn    = modalOpenBtns[i];
             modalOpenBtn.addEventListener('click', ()=>{
                 openModal(modalOpenBtn);
+
+                if(modalOpenBtn.dataset.form) {
+                    formTheme.value = formThemes[modalOpenBtn.dataset.form];
+                }
             });
         }
     }
@@ -115,7 +126,8 @@ window.addEventListener("load", ()=>{
     let modalContent        = document.querySelector('.modal-callback');
     const thanks            = document.createElement('div');
     let messageSuccessful   = '<h3><span>Спасибо</span>Мы перезвоним Вам в ближайшее время!</h3>';
-    let messageError        = '<h3><span>Ошибка</span>Сохранение лида доступно только на коммерческих планах.</h3>';
+    // let messageError        = '<h3><span>Ошибка</span>Сохранение лида доступно только на коммерческих планах.</h3>';
+    let messageError        = '<h3><span>Ошибка</span>отправки данных.</h3>';
 
     thanks.className  = 'thanks';
 
@@ -142,19 +154,28 @@ window.addEventListener("load", ()=>{
             setupLoader(form);
         
             $.ajax({
-            type: 'POST',
-            url: '/mail.php',
-            data: $(this).serialize()
-            }).done(function (response) {
-            if(!response.status) {
-                    thanks.innerHTML = messageError;
-                }
-                else {
-                    thanks.innerHTML = messageSuccessful;
-                }
+
+                type: 'POST',
+                url: '/mail.php',
+                data: $(this).serialize(),
+            
+            }).done(function () {
                 $(this).find('input').val('');
                 $(form).trigger('reset');
                 removeLoader(form);
+                thanks.innerHTML = messageSuccessful;
+                thanks.classList.add('active');
+                wrapper.appendChild(thanks);
+                modal.classList.remove('opened');
+                setTimeout(function () {
+                thanks.remove();
+                thanks.classList.remove('active');
+                }, 6500);
+            }).fail(function () {
+                $(this).find('input').val('');
+                $(form).trigger('reset');
+                removeLoader(form);
+                thanks.innerHTML = messageError;
                 thanks.classList.add('active');
                 wrapper.appendChild(thanks);
                 modal.classList.remove('opened');
