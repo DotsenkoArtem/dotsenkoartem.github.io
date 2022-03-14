@@ -22,7 +22,9 @@ $mail->Port = 465; // TCP port to connect to / этот порт может от
 
 $mail->setFrom('ys-send@mail.ru', 'internet-boosters'); // от кого будет уходить письмо?
 
-$mail->addAddress('yota-system@mail.ru');     // Кому будет уходить письмо 
+$mail->addAddress('internet.booster@mail.ru');     // Кому будет уходить письмо 
+$mail->addAddress('doclko31@gmail.com');     // Кому будет уходить письмо 
+$mail->addAddress('artemdoc1@inbox.ru');     // Кому будет уходить письмо 
 // $mail->addAddress('info@uneversum.com');     // Кому будет уходить письмо /добавил еще один email
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
