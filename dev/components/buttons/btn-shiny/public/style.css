@@ -1,0 +1,75 @@
+html {
+  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
+  font-size: 10px;
+}
+
+body {
+  background: #bdbbbb;
+}
+
+.container {
+  margin: 100px auto;
+  padding: 0 15px;
+  max-width: 960px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: none;
+  overflow: hidden;
+  user-select: none;
+}
+.btn_primary {
+  padding: 0 1.4em;
+  height: 8rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, #37AAFD 0%, #1C84E3 100%);
+  box-shadow: 0px 4px 0px -1px #1A6EBB, 0px 40px 60px -10px rgba(126, 176, 240, 0.5), inset 0px 4px 8px 4px rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+.btn_primary:hover {
+  background: linear-gradient(180deg, #54B7FF 0%, #2A93F4 100%);
+}
+.btn_primary:active {
+  background: #5BB8FF;
+}
+
+.btn_shiny {
+  position: relative;
+  overflow: hidden;
+}
+.btn_shiny::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  transform: skewX(-45deg);
+  animation: shiny;
+  left: -150%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  animation: shiny 5s infinite linear;
+}
+
+@keyframes shiny {
+  0% {
+    left: -150%;
+  }
+  20% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}

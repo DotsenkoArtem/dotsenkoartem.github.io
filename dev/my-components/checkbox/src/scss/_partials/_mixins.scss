@@ -1,3 +1,0 @@
-@mixin textShadow ($offset-x: 15px, $offset-y: 15px, $blur: 5px, $color: rgba(0, 0, 0, 0.575)) {
-    text-shadow: $offset-x $offset-y $blur $color;
-}

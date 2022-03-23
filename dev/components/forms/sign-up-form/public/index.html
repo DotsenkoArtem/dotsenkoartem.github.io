@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+     
+    
+    <h1>Registration Form</h1>
+    
+    <div class="container row">
+      <div class="sidebar">
+         
+        <ul>
+          <li>Input расположен после label</li>
+          <li>Кастомный чекбокс</li>
+          <li>Функционал скрытия пароля</li>
+          <li>
+            <s>Валидация</s>
+          </li>
+          <li>Состояние фокуса</li>
+          <li>Состояние ошибки</li>
+          <!-- <li>advantage</li> -->
+          <!-- <li>advantage</li> --> 
+        </ul>
+        
+      </div>
+      <div class="content">
+        <div class="content__inner"> </div>
+        <!-- COMPONENT`S CODE --><!-- Form -->
+        <form class="form" id="login-form" action="#" name="loginForm" method="POST">
+          
+          <!-- email-group -->
+          <div class="form__group form__group_control">
+            <input class="form__control" id="userName" type="email" required name="userName">
+            <label class="form__label form__label_control" for="userName">Введите email</label>
+          </div>
+          
+          <!-- password-group  -->
+          <div class="form__group form__group_control form__group_pass form__group_pass-confirm">
+            <input class="form__control" id="userPass" type="password" required name="userPass">
+            <label class="form__label form__label_control" for="userPass">Введите пароль</label>
+            <div class="show-pass"></div>
+          </div>
+          
+          <!-- password-confirm-group  -->
+          <div class="form__group form__group_control form__group_pass form__group_pass-confirm form__group_pass-confirm">
+            <input class="form__control" id="userPassReplay" type="password" required name="userPassReplay">
+            <label class="form__label form__label_control" for="userPassReplay">Повторите пароль</label>
+            <div class="show-pass"></div>
+          </div>
+          
+          <!-- checkbox-group  -->
+          <div class="fieldset fieldset_check fieldset_row">
+            <div class="form__group form__group_check">
+              <input class="checkbox" id="userCheck" type="checkbox" name="userCheck">
+              <label class="form__label form__label_check" for="userCheck">Я даю согласие на обработку  моих персональных данных</label>
+            </div>
+          </div>
+          
+          <!-- submit -->
+          <div class="form__submit-wrap">
+            <input class="btn btn_prim form__submit" type="submit" value="Зарегистрироваться">
+          </div>
+          
+        </form><!-- End Form --><!-- END OF COMPONENT`S CODE -->
+      </div>
+    </div>
+    <script src="script.dev.js"></script>
+  </body>
+</html>

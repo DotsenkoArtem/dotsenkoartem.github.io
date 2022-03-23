@@ -1,3 +1,13 @@
 {
-    "compile-hero.disable-compile-files-on-did-save-code": false
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+    "compile-hero.jade-output-directory": "../public",
+    "compile-hero.javascript-output-directory": "../public",
+    "compile-hero.less-output-directory": "../public",
+    "compile-hero.pug-output-directory": "../public",
+    "compile-hero.sass-output-directory": "../public",
+    "compile-hero.scss-output-directory": "../public",
+    "compile-hero.stylus-output-directory": "../public",
+    "compile-hero.typescript-output-directory": "../public",
+    "compile-hero.typescriptx-output-directory": "../public",
+    "compile-hero.generate-minified-css": false
 }
