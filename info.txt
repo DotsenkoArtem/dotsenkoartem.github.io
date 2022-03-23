@@ -6,20 +6,11 @@ Tasks
 Comments for Commits
 ====================
 
-РЕДАКТИРОВАНИЕ СТРУКТУРЫ РЕПОЗИТОРИЯ
+НОВЫЙ КОМПОНЕНТ STARS, ПЕРЕМЕЩЕНИЕ YS
 
-- изменена структура компонентов в папке components/
-    component-name/src/ + public/;
-- пути к компилируемым файлам в настройках CompileHeroPro;
-- изменена структура компонентов
-        - radio
-        - checkbox
-        - modals/modal-fade-in
-        - modals/modal-slide-up
-        - ready-to-copy/checkbox
-        - forms/sign-up-form
-
-
-- в функционале ready-to-copy обновлены стили подсказки .info-tooltip 
-    (именно тень и анимация);
-- в папку component/ добавлен шаблон для компонентов component-template/
+- добавлен новый компонент components/stars;
+- проект YS перемещен из current-works/ в my-works/;
+    - в нем удалены node_modules/,
+                    public/,
+                    tmp/
+    - кстати папка other/ в игноре;
