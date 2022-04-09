@@ -8,10 +8,10 @@
         loop: true,
         slidesPerView: 4,
         speed: 300,
-        // draggable: true,
+        draggable: true,
         // spaceBetween: 20,
         autoplay: {
-            delay: 2500,
+            delay: 5000,
         },
         navigation: {
         nextEl: '.swiper-button-next.expert__button.expert__button_next',
