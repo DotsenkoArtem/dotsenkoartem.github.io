@@ -230,7 +230,7 @@ gulp.task('clean', function() {
 });
 
 // ПОСТРОЕНИЕ
-gulp.task('build', gulp.series('clean', gulp.parallel('assets', 'js', 'styles', 'pug', 'php', 'libs')));
+gulp.task('build', gulp.series('clean', gulp.series('assets', 'js', 'styles', 'pug', 'php', 'libs')));
 
 // РАЗРАБОТКА
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));
