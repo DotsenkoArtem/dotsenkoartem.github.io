@@ -6,6 +6,8 @@ const imagemin      = require('gulp-imagemin');
 const imageminPngquant  = require('imagemin-pngquant');
 const imageminMozjpeg   = require('imagemin-mozjpeg');
 const webp              = require('gulp-webp');
+const ttf2woff          = require('gulp-ttf2woff');
+const ttf2woff2         = require('gulp-ttf2woff2');
 
 
 
@@ -26,11 +28,30 @@ const browserSync = require('browser-sync').create();
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
-// ПРОСТО КОПИРОВАНИЕ ШРИФТОВ В ПАПКУ  СОХРАНЕНИЕМ СТРУКТУРЫ
-gulp.task('fonts', function() {
-    return  gulp.src('src/assets/**/*.{ttf,woff,woff2}', {since: gulp.lastRun('fonts')})
+// КОНВЕРТИРОВАНИЕ TTF --> WOFF, СОХРАНЕНИЕ В PUBLIC/
+gulp.task('ttf2woff', function(){
+    return  gulp.src('src/assets/**/*.ttf', {since: gulp.lastRun('ttf2woff')})
+            .pipe(ttf2woff())
+            .pipe(gulp.dest('public'));
+  });
+  
+// КОНВЕРТИРОВАНИЕ TTF --> WOFF2, СОХРАНЕНИЕ В PUBLIC/
+gulp.task('ttf2woff2', function(){
+    return  gulp.src('src/assets/**/*.ttf', {since: gulp.lastRun('ttf2woff2')})
+            .pipe(ttf2woff2({
+                clone: true,
+            }))
+            .pipe(gulp.dest('public'));
+  });
+
+// ПРОСТО КОПИРОВАНИЕ ШРИФТОВ .TTF В PUBLIC/
+gulp.task('ttf', function() {
+    return  gulp.src('src/assets/**/*.ttf', {since: gulp.lastRun('ttf')})
             .pipe(gulp.dest('public'));
 });
+
+// КОНВЕРТИРОВАНИЕ ШРИФТОВ, КОПИРОВАНИЕ В PUBLIC/
+gulp.task('fonts', gulp.parallel('ttf', 'ttf2woff', 'ttf2woff2'));
 
 // ПРОСТО КОПИРОВАНИЕ PHP В КОРЕНЬ
 gulp.task('php', function() {
