@@ -692,32 +692,55 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .swiper{
-                &-pagination,
-                &-button-prev,
-                &-button-next{
-                    position: static;
-                    color: #335ecb;
-                }
-                &-button-prev,
-                &-button-next{
-                    margin-top: 0;
-                    &::after{
-                        font-size: 2rem;
-                    }
-                }
-                &-button{
-                    &-disabled{
-                        color: rgba(255, 255, 255, 1);
-                    }
-                }
-                &-pagination{
-                    width: auto;
-                    font-size: 2rem;
-                    cursor: default;
-                }
+            // .swiper{
+                // &-pagination,
+                // &-button-prev,
+                // &-button-next{
+                //     position: static;
+                //     color: #335ecb;
+                // }
+                // &-button-prev,
+                // &-button-next{
+                //     margin-top: 0;
+                //     &::after{
+                //         font-size: 2rem;
+                //     }
+                // }
+                // &-button{
+                //     &-disabled{
+                //         color: rgba(255, 255, 255, 1);
+                //     }
+                // }
+                // &-pagination{
+                //     width: auto;
+                //     font-size: 2rem;
+                //     cursor: default;
+                // }
+            // }
+        }
+    }
+
+    &__button,
+    &__pagination{
+        position: static;
+        color: #335ecb;
+    }
+    &__button{
+        &_prev,
+        &_next{
+            margin-top: 0;
+            &::after{
+                font-size: 2rem;
             }
         }
+        &-disabled{
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+    &__pagination{
+        width: auto;
+        font-size: 2rem;
+        cursor: default;
     }
 
     &-slide{

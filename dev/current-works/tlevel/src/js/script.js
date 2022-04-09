@@ -7,18 +7,18 @@
     const expertSlider = new Swiper('.expert__slider', {
         loop: true,
         slidesPerView: 4,
-        // speed: 500,
+        speed: 300,
         // draggable: true,
         // spaceBetween: 20,
         autoplay: {
-            delay: 5000,
+            delay: 2500,
         },
         navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next.expert__button.expert__button_next',
+        prevEl: '.swiper-button-prev.expert__button.expert__button_prev',
         },
         pagination: {
-            el: ".swiper-pagination",
+            el: ".expert__pagination",
             type: "fraction",
           },
         // breakpoints: {
