@@ -1,0 +1,1037 @@
+-
+    var page = {
+        pageUrl: 'index.html',
+        pageTitle: 'Клининговая компания Top Level — Клининг в Самаре',
+        pageName: 'Главная',
+    }
+    
+doctype html
+
+html(lang="ru")
+    include _includes/_head.pug
+
+
+    body
+        .wrapper#wrapper
+            |
+            |
+            <!-- Header
+            |
+            |================================================== -->
+            include _includes/_header.pug
+
+
+            |
+            |
+            main
+                <!-- Intro
+                |
+                |================================================== -->
+                section.section.intro
+                    .container.intro__container
+                        .intro__content 
+                            .intro__heading 
+                                h1 Оставьте заявку на бесплатный аудит Вашего объекта и 
+                                    span.intro__heading-highlight узнайте реальную стоимость уборки
+
+                            .destr.intro__destr
+                                div 
+                                    span.d-block Вы устраните найденные нами нарушения
+                                    span.text_bold 
+                                        |до проверок  Роспотребнадзора 
+                                        br
+                                        |и Санэпидемстанции
+                                .destr__img 
+                                    picture 
+                                        //- source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
+                                        //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                                        source(srcset="img/intro-doc.webp", type="image/webp")
+                                        img(src="img/intro-doc.png", alt="Изображение документа")
+
+                            .row.m-x-0 
+                                .flex-none
+                                    .btn.btn_primary
+                                        span.text_uppercase Оставить заявку
+
+                                .why 
+                                    .why__btn 
+                                        | Почему бесплатно?
+                                    .why__content-wrap
+                                        .why__content
+                                            .why__text.
+                                                Мы продемонстрируем Вам свою
+                                                экспертность и выгоду работы с нами,
+                                                Вы получите качественную услугу
+                                                и сэкономите деньги!
+
+
+                            .digits.intro__digits 
+
+                                .digits__item 
+                                    .digits__head 
+                                        span.digits__value.clip-text 14
+                                        span лет
+                                    .digits__text 
+                                        |безупречной работы 
+                                        br
+                                        |и чистой репутации!
+                            
+                                .digits__item 
+                                    .digits__head 
+                                        span.digits__value.clip-text 87
+                                        span %
+                                    .digits__text 
+                                        |наших клиентов
+                                        br
+                                        |продлевают контракт
+                            
+                                .digits__item 
+                                    .digits__head 
+                                        span.digits__value.clip-text 2 
+                                            span.digits__mln млн.
+                                        span кв. м
+                                    .digits__text 
+                                        |промышленных площадей 
+                                        br
+                                        |уже убрал Top Level
+                                
+
+
+                        .intro__img 
+                            picture 
+                                source(srcset="img/intro-img.webp" type="image/webp")
+                                img(src="img/intro-img.png", alt="Девушка")
+                            .img__title 
+                                span Наталья Богданова
+                                span.img__subtitle.d-block генеральный директор
+                                    
+
+                |
+                |
+                <!-- Tender
+                |
+                |================================================== -->
+                section.section.tender 
+                    .container 
+                        .tender__content 
+                            .tender__text 
+                                |Участвуем в государственных и коммерческих 
+                                span.text_bold тендерах
+                            .btn.btn_secondary Пригласить на тендер
+                            .tender__img 
+                                picture 
+                                    source(srcset="img/tender-folder.webp" type="image/webp")
+                                    img(src="img/tender-folder.png", alt="Канцелярские синие папки")
+
+                |
+                |
+                <!-- Services
+                |
+                |================================================== -->
+                section.section.services 
+                    .container.services__container
+
+                        .services-label
+                            .services-label__img 
+                                picture 
+                                    source(srcset="img/serv-pig.webp" type="image/webp")
+                                    img(src="img/serv-pig.png", alt="Копилка")
+                            .services-label__text 
+                                span Умеем экономить до
+                                img.d-inline(src="img/serv-20.png", alt="")
+                                span.d-inline-block.text_bold на клининговых услугах 
+
+                        .section__heading.services__heading
+                            h2 
+                                |Наши 
+                                span.text_bold услуги
+
+                        .section__subheading 
+                            p Мы знаем и учитываем специфику каждого предприятия
+
+
+                        .services__grid 
+
+                            .services-card.services-card-01
+                                .services-card__img 
+                                    picture 
+                                        source(srcset="img/serv-card-1.webp" type="image/webp")
+                                        img(src="img/serv-card-1.png", alt="") 
+                                .services-card__content 
+                                    .services-card__count / 01
+                                    .services-card__title 
+                                        |Уборка производственных 
+                                        br
+                                        |и пищевых помещений
+                                    .services-card__btn + Подробнее
+
+
+                            .services-card.services-card-02
+                                .services-card__img 
+                                    picture 
+                                        source(srcset="img/serv-card-2.webp" type="image/webp")
+                                        img(src="img/serv-card-2.png", alt="") 
+                                .services-card__content
+                                    .services-card__count / 02
+                                    .services-card__title Уборка территории и вывоз снега
+                                    .services-card__btn + Подробнее
+
+                            .services-card.services-card-03
+                                .services-card__img 
+                                    picture 
+                                        source(srcset="img/serv-card-3.webp" type="image/webp")
+                                        img(src="img/serv-card-3.png", alt="")  
+                                .services-card__content
+                                    .services-card__count / 03
+                                    .services-card__title Дезинфекция помещений  
+                                    .services-card__btn + Подробнее
+
+                            .services-card.services-card-04
+                                .services-card__img 
+                                    picture 
+                                        source(srcset="img/serv-card-4.webp" type="image/webp")
+                                        img(src="img/serv-card-4.png", alt="") 
+                                .services-card__content 
+                                    .services-card__count / 04
+                                    .services-card__title Инженерное обслуживание
+                                    .services-card__btn + Подробнее
+
+                            .services-card.services-card-05
+                                .services-card__img 
+                                    picture 
+                                        source(srcset="img/serv-card-5.webp" type="image/webp")
+                                        img(src="img/serv-card-5.png", alt="")
+                                .services-card__content 
+                                    .services-card__count / 05
+                                    .services-card__title Уборка офисных помещений  
+                                    .services-card__btn + Подробнее
+
+                            .services-card.services-card-06
+                                .services-card__img 
+                                    picture 
+                                        source(srcset="img/serv-card-6.webp" type="image/webp")
+                                        img(src="img/serv-card-6.png", alt="") 
+                                .services-card__content
+                                    .services-card__count / 06
+                                    .services-card__title Уборка складских помещений
+                                    .services-card__btn + Подробнее
+
+                            .services-card.services-card-07
+                                .services-card__img 
+                                    picture 
+                                        source(srcset="img/serv-card-7.webp" type="image/webp")
+                                        img(src="img/serv-card-7.png", alt="") 
+                                .services-card__content 
+                                    .services-card__count / 07
+                                    .services-card__title Промышленный альпинизм
+                                    .services-card__btn + Подробнее
+
+                    |
+                    |
+                    <!-- Manager
+                    |
+                    |================================================== -->
+                    .container.manager 
+                        .manager__content 
+                            .manager__heading 
+                                h2 
+                                    span.d-block Предоставим 
+                                        span.text_bold персонального 
+                                    span.d-block 
+                                        span.text_bold менеджера
+                                        |для каждого 
+                                    span.d-block клиента!
+                            .manager__subheading 
+                                |Любой вопрос будет решен 
+                                span.manager__subheading-highlight в течении 30 мин!
+
+                            .row.m-x-0 
+
+                                .manager-media 
+                                    .manager-media__text Все этапы, стоимость и ответственность за работы прописываются в контракте
+                                    .manager-media__img.manager-media__img_doc
+                                        picture 
+                                            //- source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
+                                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                                            source(srcset="img/mang-doc.webp", type="image/webp")
+                                            img(src="img/mang-doc.png", alt="Изображение документа с печатью")
+                            
+                                .manager-media 
+                                    .manager-media__text Оперативная подмена персонала по болезни в течении 30 минут благодря кадровому резерву
+                                    .manager-media__img.manager-media__img_phone 
+                                        picture 
+                                            //- source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
+                                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                                            source(srcset="img/mang-phone.webp", type="image/webp")
+                                            img(src="img/mang-phone.png", alt="Изображение смартфона")
+
+
+                            .manager__btn-wrapper
+                                .btn.btn_primary 
+                                    span.text_uppercase Оставить заявку
+                                    span на бесплатный аудит
+
+
+                        .manager__img
+                            picture 
+                                //- source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
+                                //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                                source(srcset="img/mang-girl.webp", type="image/webp")
+                                img(src="img/mang-girl.png", alt="Изображение девушки - персонального менеджера")
+
+
+                    .services__bg 
+                        picture 
+                            //- source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
+                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            source(srcset="img/serv-bg.webp", type="image/webp")
+                            img(src="img/serv-bg.png", alt="")
+
+
+
+                |
+                |
+                <!-- Expert
+                |
+                |================================================== -->
+                section.section.expert 
+                    .container.expert__container
+                        .expert__content 
+                            .expert__heading 
+                                h2 
+                                    |Познакомьтесь
+                                    br
+                                    |с экспертами
+                                    br
+                                    span.expert__heading-highlight Top Level
+
+                            .expert__text 
+                                p Персональный эксперт (менеджер) компании берет на себя все вопросы управления клинингом. В компании есть строгие регламенты, автоматизированно управление клинингом и налажены всен бизнес-процессы
+                            
+                            .expert-video
+                                .expert-video__img 
+                                    picture 
+                                        //- source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
+                                        //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                                        source(srcset="img/exp-video.webp", type="image/webp")
+                                        img(src="img/exp-video.png", alt="Заставка для видео")
+                                .expert-video__caption 
+                                    .expert-video__text 
+                                        |Посмотрите 
+                                        br
+                                        |короткое видео 
+                                        br
+                                        |о нашей компании
+                                 
+                                .expert-video__btn
+                                    a(href="#")
+                                        picture 
+                                            source(srcset="img/exp-vid-btn.webp", type="image/webp")
+                                            img(src="img/exp-vid-btn.png", alt="Заставка для видео")
+
+                        .expert__slider-container
+                            .swiper.expert__slider    
+                                .swiper-wrapper
+
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-2.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption
+                                            |Александра
+                                            br
+                                            |
+                                            
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-8.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Евгений 
+                                            br
+                                            |Моисеев
+                                            
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-4.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Владимир
+                                            br
+                                            |
+                                            
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-10.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Елена
+                                            br
+                                            |
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-3.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Артур
+                                            br
+                                            |
+
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-5.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Дмитрий Востров
+                                            br
+                                            |Востров
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-6.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Дмитрий 
+                                            br
+                                            |Силантьев
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-7.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Дмитрий
+                                            br
+                                            |
+
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-9.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Евгения
+                                            br
+                                            |
+
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-11.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Мария 
+                                            br
+                                            |Гебель
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-12.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Мария 
+                                            br
+                                            |Плотникова
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-13.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Мария
+                                            br
+                                            |
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-14.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Наталья 
+                                            br
+                                            |Богданова
+
+                                    .swiper-slide.expert-slide
+                                        .expert-slide__img 
+                                            img(src="img/exp-1.jpg", alt="Фото менеджера")
+                                            .img-gradient
+                                        .expert-slide__caption 
+                                            |Айнур
+                                            br
+                                            |
+
+                                    //- ЕСЛИ ОТКЛЮЧЕНО ЗАЦИКЛИВАНИЕ
+                                    
+
+                                    //- .swiper-slide.expert-slide
+                                    //-     .expert-slide__img 
+                                    //-         picture 
+                                    //-             img(src="img/exp-2.jpg", alt="Фото менеджера")
+                                    //-             .img-gradient
+                                    //-     .expert-slide__caption
+                                    //-         |Александра
+                                    //-         br
+                                    //-         |
+                                            
+                                    //- .swiper-slide.expert-slide
+                                    //-     .expert-slide__img 
+                                    //-         picture 
+                                    //-             img(src="img/exp-8.jpg", alt="Фото менеджера")
+                                    //-             .img-gradient
+                                    //-     .expert-slide__caption 
+                                    //-         |Евгений 
+                                    //-         br
+                                    //-         |Моисеев
+                                            
+                                    //- .swiper-slide.expert-slide
+                                    //-     .expert-slide__img 
+                                    //-         picture 
+                                    //-             img(src="img/exp-4.jpg", alt="Фото менеджера")
+                                    //-             .img-gradient
+                                    //-     .expert-slide__caption 
+                                    //-         |Владимир
+                                    //-         br
+                                    //-         |
+
+
+                                    
+                                        
+                                    
+                                .expert__slider-control
+                                    .swiper-button-prev
+                                    .swiper-pagination
+                                    .swiper-button-next
+
+                                    
+
+
+                            .expert__slider-shine
+
+                |
+                |
+                <!-- Client
+                |
+                |================================================== -->
+                section.section.client 
+                    .container.client__container
+                        .section__heading.client__heading
+                            h2 
+                                |Наши 
+                                span.text_bold клиенты
+
+
+                    .client__slider-container
+
+                        .client__mask.client__mask_left
+
+                        .swiper.client__slider    
+                            .swiper-wrapper
+
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        //- source(srcset="img/exp-1.webp", type="image/webp")
+                                        img(src="img/client-1.jpg", alt="Логотип Росжелдорпроект")
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        //- source(srcset="img/exp-1.webp", type="image/webp")
+                                        img(src="img/client-2.jpg", alt="Логотип юлмарт")
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        //- source(srcset="img/exp-1.webp", type="image/webp")
+                                        img(src="img/client-3.jpg", alt="Логотип Балтика")
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        //- source(srcset="img/exp-1.webp", type="image/webp")
+                                        img(src="img/client-4.jpg", alt="Логотип Собака")
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        //- source(srcset="img/exp-1.webp", type="image/webp")
+                                        img(src="img/client-5.jpg", alt="Логотип РЖД")
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        //- source(srcset="img/exp-1.webp", type="image/webp")
+                                        img(src="img/client-6.jpg", alt="Логотип Кёрхер")
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        //- source(srcset="img/exp-1.webp", type="image/webp")
+                                        img(src="img/client-7.jpg", alt="Логотип Спутник")
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        //- source(srcset="img/exp-1.webp", type="image/webp")
+                                        img(src="img/client-8.jpg", alt="Логотип Каравай")
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        source(srcset="img/client-9.webp", type="image/webp")
+                                        img(src="img/client-9.png", alt="Логотип Электрощит Самара")
+
+                                .swiper-slide.client-slide
+                                    picture 
+                                        source(srcset="img/client-10.webp", type="image/webp")
+                                        img(src="img/client-10.png", alt="Логотип Альфа центр здоровья")
+
+
+                        .swiper-button-prev
+                        .swiper-button-next
+
+                        .client__mask.client__mask_right
+
+
+                |
+                |
+                <!-- Cleaning-wrapper
+                |
+                |================================================== -->
+                .cleaning-wrapper
+
+
+                    |
+                    |
+                    <!-- Problem
+                    |
+                    |================================================== -->
+                    section.section.problem 
+                        .container.problem__container
+                            .problem__heading 
+                                h2 
+                                    |Вам знакомы такие 
+                                    span.problem__heading-highlight проблемы клининга 
+                                    |на предприятии?
+
+                            .problem-list 
+                                ul
+                                    li.problem-list__item Не выполняется техническое задание
+                                    li.problem-list__item Не соблюдается СанПиН
+                                    li.problem-list__item Отсутствует четкий план процесса уборки
+                                    li.problem-list__item «Текучка» линейного персонала
+                                    li.problem-list__item Неправильно подобраны моющие средства
+                                    li.problem-list__item Отсутствует контроль качества и др.
+                                .problem-list__bg ?
+
+                            .problem__img 
+                                picture 
+                                    source(srcset="img/probl-man.webp" type="image/webp")
+                                    img(src="img/probl-man.png", alt="")
+
+                        .form-block 
+                            .form-block__content
+                                .form-block__heading 
+                                    p 
+                                        span.d-block Проведём аудит Вашего объекта и составим лист внедрений, который 
+                                        span поможет 
+                                            span.text_bold сэкономить до 20% на уборке 
+                                            |и 
+                                            span.text_bold уйти от штрафов и предписаний!
+
+                                .form-block__form-wrap 
+
+                                    form.form.form-block__form(action="mail.php", id="audit" name="audit" method="POST") 
+                                        //- name-group
+                                        .form__group.form__group_control.form-block__group
+                                            input.form__control.form-block__control(type="text", name="userName", id="userName1", placeholder="Имя" required) 
+                                            //- label.form__label.form__label_control(for="userName1") 
+                                        //- company-group
+                                        .form__group.form__group_control.form-block__group
+                                            input.form__control.form-block__control(type="text", name="company", id="company", placeholder="Компания", required) 
+                                            //- label.form__label.form__label_control(for="company") 
+
+                                        //- phone-group
+                                        .form__group.form__group_control.form-block__group
+                                            input.form__control.form-block__control(type="text", name="userPhone", id="userPhone1", placeholder="Номер телефона", required) 
+                                            //- label.form__label.form__label_control(for="userPhone1")
+
+                                        //- input(type="hidden", value="Остались вопросы?", name="formTheme")
+                                            
+                                        //- submit
+                                        .form__submit-wrap.form-block__submit.loader-container
+                                            button.btn.btn_primary.form__submit(type="submit") 
+                                                span.text_uppercase Оставить заявку
+                                                span на бесплатный аудит
+
+                                .form-block__footer 
+                                    |Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с 
+                                    a.form-block__link(href="#") Политикой конфиденциальности 
+                                    |сайта
+
+                            .form-block__img 
+                                picture 
+                                    source(srcset="img/form-doc.webp" type="image/webp")
+                                    img(src="img/form-doc.png", alt="Изображение документа")
+
+
+                                    
+
+                    |
+                    |
+                    <!-- Cleaning
+                    |
+                    |================================================== -->
+                    section.section.clean 
+                        .container.clean__container
+
+                            .clean__img-block
+                                .clean__img
+                                    picture 
+                                        source(srcset="img/clean-girl.webp" type="image/webp")
+                                        img(src="img/clean-girl.png", alt="")
+
+                            .clean__content
+                                .clean__heading 
+                                    h2 
+                                        |Клининг - это 
+                                        br
+                                        span.text_bold не только про чистоту! 
+
+                                .clean-media 
+                                    .clean-media__text Это регламенты, СанПиНы, Охрана труда и Система контроля качества
+                                    .clean-media__img
+                                        picture 
+                                            source(srcset="img/clean-book.webp" type="image/webp")
+                                            img(src="img/clean-book.png", alt="Изображение книги СанПиН")
+
+                                .qoute 
+                                    .qoute__text
+                                        p 
+                                            span.text_ex-bold Мы участвуем
+                                            | в процессе
+                                            br
+                                            |производства продукции
+                                            br
+                                            |и 
+                                            span.text_ex-bold отвечаем за ее качество!
+
+                                        i.qoutes
+
+                        .clean__bg
+                            picture 
+                                source(srcset="img/clean-bg.webp" type="image/webp")
+                                img(src="img/clean-bg.png", alt="")
+
+                |
+                |
+                <!-- Care
+                |
+                |================================================== -->
+                section.section.care 
+                    .container.care__container
+                        .care__heading 
+                            h3 
+                                span.text_bold.d-block Заботимся
+                                |об экологии
+
+                        .care-media.care-media_doc 
+                            .care-media__img.care-media__img_doc
+                                picture 
+                                    source(srcset="img/care-doc.webp" type="image/webp")
+                                    img(src="img/care-doc.png", alt="")
+                            .care-media__text Сертификат ИСО 14001 подтверждает высокий уровень экологических показателей Top Level
+
+
+                        .care-media.care-media_mus
+                            .care-media__img.care-media__img_mus
+                                picture 
+                                    source(srcset="img/care-mus.webp" type="image/webp")
+                                    img(src="img/care-mus.png", alt="")
+                            .care-media__text 
+                                |Соблюдаем правила 
+                                br
+                                |утилизации мусора 
+                                br
+                                |и отходов 
+
+
+                |
+                |
+                <!-- Advantages
+                |
+                |================================================== -->
+                section.section.adv
+                    .container.adv__container 
+                        .section__heading.adv__heading
+                                h2 
+                                    span.text_bold.d-block Преимущества работы с Top Level
+                                    |по сравнению с собственным штатом
+
+
+                    .container.adv__slider-container
+
+                        .swiper.adv__slider    
+                            .swiper-wrapper.adv-grid
+
+
+                                .swiper-slide.adv-slide
+                                    .adv-card
+                                        .adv-card__num 
+                                            span.adv-card__digit.adv-card-clip-text 01
+                                        .adv-card__text 
+                                            span.text_bold.d-block Высокая квалификация
+                                            |и компетенция клинеров
+
+                                .swiper-slide.adv-slide
+                                    .adv-card
+                                        .adv-card__num 
+                                            span.adv-card__digit.adv-card-clip-text 02
+                                        .adv-card__text 
+                                            span.text_bold Снижение риска 
+                                            |проверок Роспотребнадзора
+
+                                .swiper-slide.adv-slide
+                                    .adv-card
+                                        .adv-card__num 
+                                            span.adv-card__digit.adv-card-clip-text 03
+                                        .adv-card__text 
+                                            |Узкая специализация клининга: 
+                                            span.text_bold пищевой и промышленный
+
+                                .swiper-slide.adv-slide
+                                    .adv-card
+                                        .adv-card__num 
+                                            span.adv-card__digit.adv-card-clip-text 04
+                                        .adv-card__text 
+                                            |Получение результата от 
+                                            |услуги 
+                                            span.text_bold без управления ей, 
+                                            |уникальная система отчетности 
+
+                                .swiper-slide.adv-slide
+                                    .adv-card
+                                        .adv-card__num 
+                                            span.adv-card__digit.adv-card-clip-text 05
+                                        .adv-card__text 
+                                            |Полная фин. ответственность - 
+                                            span.text_bold штрафы 
+                                                |контролирующих органов 
+                                            span.text_bold оплачивает клининг
+
+                                .swiper-slide.adv-slide
+                                    .adv-card
+                                        .adv-card__num 
+                                            span.adv-card__digit.adv-card-clip-text 06
+                                        .adv-card__text 
+                                            span.text_bold Дополнительные услуги: 
+                                            |высотные работы, вывоз мусора,
+                                            |чистка спец. оборудования и др.
+
+                                .swiper-slide.adv-slide
+                                    .adv-card
+                                        .adv-card__num 
+                                            span.adv-card__digit.adv-card-clip-text 07
+                                        .adv-card__text 
+                                            |Оперативное выполнение задач, 
+                                            span.text_bold автоматизированная система коммуникации 
+
+                                .swiper-slide.adv-slide
+                                    .adv-card
+                                        .adv-card__num 
+                                            span.adv-card__digit.adv-card-clip-text 08
+                                        .adv-card__text 
+                                            span.text_bold Экономия на трудовых ресурсах 
+                                            |за счет эффективных процессов и регламентов
+
+                                .swiper-slide.adv-slide
+                                    .adv-card
+                                        .adv-card__num 
+                                            span.adv-card__digit.adv-card-clip-text 09
+                                        .adv-card__text 
+                                            span.text_bold Заказчик занимается основными процессами компании, 
+                                            |не отвлекаясь на второстепенные
+
+                    .adv__bg 
+                        picture 
+                            source(srcset="img/adv-bg.webp" type="image/webp")
+                            img(src="img/adv-bg.png", alt="")
+
+
+
+                |
+                |
+                <!-- Reveiws
+                |
+                |================================================== -->
+                section.section.rev
+                    .container.rev__container 
+                        .section__heading.rev__heading
+                                h2 
+                                    span.text_bold Видеоотзывы 
+                                    |наших клиентов
+
+
+                    .rev__wide
+                        .container.rev__slider-container
+
+                            .swiper.rev__slider    
+                                .swiper-wrapper
+
+
+                                    .swiper-slide.rev-slide
+                                        .rev-slide__img
+                                            img(src="img/rev-1.jpg", alt="")
+                                            a(href="#") 
+                                                .rev-slide__btn
+                                                    picture
+                                                        source(srcset="img/rev-play.webp" type="image/webp")
+                                                        img(src="img/rev-play.png", alt="")
+
+                                        .rev-slide__caption 
+                                            .rev-slide__author Игорь Ермоленко
+                                            .rev-slide__post директор лицея №1 Спутник
+
+                
+
+
+                                    .swiper-slide.rev-slide
+                                        .rev-slide__img
+                                            img(src="img/rev-2.jpg", alt="")
+                                            a(href="#") 
+                                                .rev-slide__btn
+                                                    picture
+                                                        source(srcset="img/rev-play.webp" type="image/webp")
+                                                        img(src="img/rev-play.png", alt="")
+
+                                        .rev-slide__caption 
+                                            .rev-slide__author Олександр Васенин
+                                            .rev-slide__post руководитель обособленного подр-ния Karcher
+
+                
+
+
+                                    .swiper-slide.rev-slide
+                                        .rev-slide__img
+                                            img(src="img/rev-3.jpg", alt="")
+                                            a(href="#") 
+                                                .rev-slide__btn
+                                                    picture
+                                                        source(srcset="img/rev-play.webp" type="image/webp")
+                                                        img(src="img/rev-play.png", alt="")
+
+                                        .rev-slide__caption 
+                                            .rev-slide__author Антон Перепилица
+                                            .rev-slide__post заместитель директора салона Pent House
+
+
+
+                                    .swiper-slide.rev-slide
+                                        .rev-slide__img
+                                            img(src="img/rev-4.jpg", alt="")
+                                            a(href="#") 
+                                                .rev-slide__btn
+                                                    picture
+                                                        source(srcset="img/rev-play.webp" type="image/webp")
+                                                        img(src="img/rev-play.png", alt="")
+
+                                        .rev-slide__caption 
+                                            .rev-slide__author Ирина Бурова
+                                            .rev-slide__post начальник производства
+
+
+
+                                    .swiper-slide.rev-slide
+                                        .rev-slide__img
+                                            img(src="img/rev-5.jpg", alt="")
+                                            a(href="#") 
+                                                .rev-slide__btn
+                                                    picture
+                                                        source(srcset="img/rev-play.webp" type="image/webp")
+                                                        img(src="img/rev-play.png", alt="")
+
+                                        .rev-slide__caption 
+                                            .rev-slide__author Наталья Переходько
+                                            .rev-slide__post заведующая хозяйством "Альфа центр здоровья"
+
+
+                        .rev__slider-shine
+
+                    .container.rev__footer-container
+                        .rev__footer-text Каждый руководитель компании- клиента может порекомендовать нас
+
+
+                |
+                |
+                <!-- Awards
+                |
+                |================================================== -->
+
+                |
+                |
+                <!-- Gallery
+                |
+                |================================================== -->
+
+
+            |
+            |
+            |<!-- footer
+            |================================================== -->
+            include _includes/_footer.pug
+
+
+
+            |
+            |
+            //- #modal.modal
+            //-     .modal__content.modal-callback
+            //-         .modal__header
+            //-             h3 Консультация
+            //-             p Прямо сейчас оставьте заявку на консультацию – расскажем как и ответим на все ваши вопросы.
+
+            //-             button.modal-close.modal__close 
+            //-                 |
+            //-                 span.modal-close__item
+            //-                 |
+            //-                 |
+            //-                 span.modal-close__item
+
+            //-         .modal__body
+
+            //-             form.form(action="mail.php", id="modalCbForm" name="modalCbForm" method="POST") 
+            //-                 //- name-group
+            //-                 .form__group.form__group_control
+            //-                     input.form__control(type="text", name="userName", id="userName", required) 
+            //-                     label.form__label.form__label_control(for="userName") 
+            //-                         |Ваше имя
+            //-                     i.svg-user.svg-user-dims.form-icon
+            //-                 //- email-group
+            //-                 .form__group.form__group_control
+            //-                     input.form__control(type="text", name="userPhone", id="userPhone", required) 
+            //-                     label.form__label.form__label_control(for="userPhone") 
+            //-                         |Ваш телефон
+            //-                     i.svg-phone.svg-phone-dims.form-icon
+                                
+            //-                 //- submit
+            //-                 .form__submit-wrap.loader-container
+            //-                     button.btn.btn_primary.btn_full-width.form__submit(type="submit") Перезвоните мне
+
+            //-                 .form__footer
+            //-                     p Нажимая кнопку, Вы соглашаетесь
+            //-                         br
+            //-                         |с политикой конфиденциальности сайта
+
+            //-     .modal__overlay.modal-close
+
+
+        //- CDN - JQUERY
+        //- script(src="https://code.jquery.com/jquery-3.6.0.js",
+        //-         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=",
+        //-         crossorigin="anonymous")
+
+        //- CDN - FANCYBOX
+        //- script( src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js",
+        //-         integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
+        //-         crossorigin="anonymous")
+
+        //- LOCAL SCRIPTS  
+        //- script(src="jQuery-3.6.0.js")
+        //- script(src="jquery.fancybox.min.js")
+        script(src="swiper.min.js")
+        script(src="js/script.js")

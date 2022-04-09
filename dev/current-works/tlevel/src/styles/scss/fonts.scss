@@ -1,0 +1,82 @@
+/*  I. Font settings
+--------------------------------------- */ 
+// Для проверки правильности подключения кастомных шрифтов думаю следует удалить (СКРЫТИЕ ШРИФТА НЕ ПОМОГАЕТ) аналог подключаемого шрифта в Windows, затем обязательно открыть проект заново так браузер закеширует шрифты и не помогает принудительная перезагрузка. Вот! - ебсясэтимдолгоя*/
+
+// ПОДКЛЮЧЕНИЕ КАСТОМНЫХ ШРИФТОВ
+@font-face {
+    font-family: 'Winston';
+    src: 
+		local('Winston Light'),
+		local('Winston-Light'),
+        url('../fonts/Winston-Light.woff2') format('woff2'),
+        url('../fonts/Winston-Light.woff') format('woff'),
+        url('../fonts/Winston-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Winston';
+    src: 
+		local('Winston Regular'),
+		local('Winston-Regular'),
+        url('../fonts/Winston-Regular.woff2') format('woff2'),
+        url('../fonts/Winston-Regular.woff') format('woff'),
+        url('../fonts/Winston-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Winston';
+    src: 
+		local('Winston Medium'),
+		local('Winston-Medium'),
+        url('../fonts/Winston-Medium.woff2') format('woff2'),
+        url('../fonts/Winston-Medium.woff') format('woff'),
+        url('../fonts/Winston-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Winston';
+    src: 
+		local('Winston Bold'),
+		local('Winston-Bold'),
+        url('../fonts/Winston-Bold.woff2') format('woff2'),
+        url('../fonts/Winston-Bold.woff') format('woff'),
+        url('../fonts/Winston-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Winston';
+    src: 
+		local('Winston ExtraBold'),
+		local('Winston-ExtraBold'),
+        url('../fonts/Winston-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Winston-ExtraBold.woff') format('woff'),
+        url('../fonts/Winston-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Winston';
+    src: 
+		local('Winston BlackItalic'),
+		local('Winston-BlackItalic'),
+        url('../fonts/Winston-BlackItalic.woff2') format('woff2'),
+        url('../fonts/Winston-BlackItalic.woff') format('woff'),
+        url('../fonts/Winston-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}

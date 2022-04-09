@@ -1,0 +1,19 @@
+@mixin headerShadowMobile ($offset-x: 0, $offset-y: 10px, $blur: 10px, $color: rgba(146, 171, 234, 0.1)) {
+    box-shadow: $offset-x $offset-y $blur $color;
+}
+
+@mixin btnPrimatyBg ($angle: 0deg, $start-color: #002a94, $end-color: #1648c5) {
+    background: linear-gradient($angle, $start-color, $end-color);
+}
+
+@mixin btnPrimatyBgHover ($angle: 0deg, $start-color: #002a94, $end-color: #1648c5) {
+    background: linear-gradient($angle, lighten($start-color, 5%), lighten($end-color, 5%));
+}
+
+@mixin btnPrimatyBgActive ($angle: 0deg, $start-color: #002a94, $end-color: #1648c5) {
+    background: linear-gradient($angle, darken($start-color, 5%), lighten($end-color, 10%));
+}
+
+@mixin btnSecondaryShadow ($offset-x: 13px, $offset-y: 13px, $blur: 32px, $color: rgba(0, 0, 0, .33)) {
+    box-shadow: $offset-x $offset-y $blur $color;
+}
