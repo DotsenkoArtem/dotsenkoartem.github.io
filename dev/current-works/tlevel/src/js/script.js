@@ -10,9 +10,9 @@
         speed: 300,
         draggable: true,
         // spaceBetween: 20,
-        autoplay: {
-            delay: 5000,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        // },
         navigation: {
         nextEl: '.swiper-button-next.expert__button.expert__button_next',
         prevEl: '.swiper-button-prev.expert__button.expert__button_prev',
