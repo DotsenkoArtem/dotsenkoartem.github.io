@@ -38,13 +38,13 @@ $btn-sec-color: #000000;
 
 // Modal Variables
 // ------------------------------
-// $modal-trigger-bg: #fa7c30;
-// $modal-content-bg: #fff;
-// $modal-close-item-bg: #7D859D;
-// $modal-close-item-bg-hover: #161418;
-// $modal-overlay-bg: rgba(42, 43, 49, 0.2);
-// $modal-border-radius: 24px;
-// $modal-border-radius-sm: 16px;
+$modal-trigger-bg: #fa7c30;
+$modal-content-bg: #e3e8ed;
+$modal-close-item-bg: #ffffff;
+$modal-close-item-bg-hover: darken(#ffffff, 20%);
+$modal-overlay-bg: rgba(0, 0, 0, 0.84);
+$modal-border-radius: 1rem;
+$modal-border-radius-sm: 16px;
 
 // Form Variables
 // ------------------------------

@@ -496,7 +496,10 @@ select{
 }
 
 input:-ms-input-placeholder{color: rgba(0, 0, 0, .45);}
-input::-webkit-input-placeholder{color: rgba(0, 0, 0, .45);}
+input::-webkit-input-placeholder{
+	color: rgba(0, 0, 0, .45);
+	text-align: center;
+}
 input::-moz-placeholder{color: rgba(0, 0, 0, .45);}
 
 input::-ms-clear {
