@@ -200,11 +200,11 @@
   }
   &__img{
     position: absolute;
-    bottom: -30rem;
-    right: -35rem;
+    bottom: -33rem;
+    right: -36rem;
     z-index: 1;
     img{
-      max-width: 122rem;
+      max-width: 125rem;
     }
     .img{
       &__title{
@@ -338,7 +338,7 @@
     position: absolute;
     top: -4rem;
     left: -15rem;
-    z-index: 0;
+    z-index: 1;
     img{
       max-width: 52rem;
     }
@@ -531,16 +531,16 @@
     padding-bottom: 15rem;
     &__content{
         margin-left: auto;
-        max-width: 72rem;
+        max-width: 71rem;
     }
     &__heading {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         h2{
             font-weight: 500;
         }
     }
     &__subheading{
-        margin-bottom: 7rem;
+        margin-bottom: 6rem;
         font-size: 2rem;
         &-highlight{
             font-weight: 700;
@@ -551,6 +551,9 @@
     &-media{
         position: relative;
         padding-left: 8rem;
+        &-wrap{
+            flex-wrap: nowrap;
+        }
         &__img{
             position: absolute;
             z-index: 0;
@@ -584,8 +587,8 @@
     }
     &__img{
         position: absolute;
-        left: 0;
-        bottom: 0;
+        left: 2rem;
+        bottom: -3rem;
         img{
             max-width: 40rem;
         }
@@ -674,12 +677,13 @@
 
 
     &__slider{
+        margin-top: 2rem;
         &-container{
             flex: none;
             align-self: flex-start;
             position: relative;
-            margin-left: 10rem;
-            width: 132rem;
+            margin-left: 16rem;
+            width: 130rem;
         }
         &-shine{
             position: absolute;
@@ -706,13 +710,14 @@
         }
         &-control{
             position: absolute;
-            left: 36rem;
-            bottom: 0;
+            left: 34rem;
+            bottom: 2rem;
             width: 14rem;
             height: var(--swiper-navigation-size);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 1.8rem;
             // .swiper{
                 // &-pagination,
                 // &-button-prev,
@@ -760,7 +765,7 @@
     }
     &__pagination{
         width: auto;
-        font-size: 2rem;
+        // font-size: 2rem;
         cursor: default;
     }
 
@@ -773,7 +778,7 @@
         border-radius: .5rem;
         overflow: hidden;
         box-shadow: 16px 16px 18px rgba(0, 0, 0, .55);
-        transform: scale(.52) translateX(-115%);
+        transform: scale(.5) translateX(-140%);
         transition: transform .3s, background-color .3s;
         // cursor: grab;
         &:active{
@@ -786,10 +791,10 @@
         }
         &.swiper-slide-next{
             // background: #00f;
-            transform: scale(.72) translateX(-6%);
+            transform: scale(.72) translateX(-8%);
             &+.swiper-slide{
                 // background: #0f0;
-                transform: scale(.64) translateX(-41%);
+                transform: scale(.65) translateX(-49%);
             }
         }
         &__img{
@@ -831,7 +836,7 @@
             position: absolute;
             z-index: 10;
             width: 100%;
-            bottom: 4rem;
+            bottom: 9rem;
             padding-left: 6rem;
             font-size: 1.8rem;
             line-height: 1.5;
@@ -846,9 +851,9 @@
 // -------------------------
 .client{
     padding-top: 15rem;
-    padding-bottom: 10rem;
+    padding-bottom: 7rem;
     &__heading{
-        margin-bottom: 8rem;
+        margin-bottom: 3.5rem;
     }
     &__mask{
         flex: 1;
@@ -972,6 +977,7 @@
           font-weight: 900;
           font-style: italic;
           line-height: 1;
+          user-select: none;
           color: rgba(255, 255, 255, 0.1);
           transform: translate(19rem, -10rem) rotate(-15deg);
       }
@@ -982,6 +988,7 @@
   &__img{
       position: absolute;
       bottom: 0;
+      right: -21rem;
       img{
           max-width: 120rem;
       }
@@ -1016,7 +1023,7 @@
             text-align: center;
         }
         &__subheading{
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             font-size: 2rem;
             text-align: center;
         }
@@ -1074,7 +1081,7 @@
         position: relative;
         z-index: 10;
         display: flex;
-        padding-top: 23rem;
+        padding-top: 22rem;
         padding-bottom: 17rem;
     }
     &__img-block,
@@ -1083,16 +1090,17 @@
         flex: 1;
     }
     &__content{
+        padding-left: 13%;
         position: relative;
         z-index: 10;
     }
     &__img{
         position: absolute;
-        left: -40rem;
+        left: -37rem;
         bottom: 0;
         z-index: 1;
         img{
-            max-width: 123rem;
+            max-width: 125rem;
         }
     }
     &__heading{
@@ -1101,7 +1109,7 @@
     }
     &-media{
         position: relative;
-        margin-bottom: 7rem;
+        margin-bottom: 6rem;
         padding-left: 10rem;
         // overflow: hidden;
         &__img{
@@ -1153,13 +1161,16 @@
 // -------------------------
 .care{
     padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-bottom: 8rem;
     color: v.$text-white;
     background: linear-gradient(0deg, #002a94, #1648c5);
     &__container{
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    &__heading{
+        margin-left: 4rem;
     }
     &-media{
         position: relative;
@@ -1203,7 +1214,7 @@
 // -------------------------
 .adv{
     position: relative;
-    padding-top: 10rem;
+    padding-top: 8rem;
     padding-bottom: 8rem;
     overflow: hidden;
     .container{
@@ -1211,7 +1222,7 @@
         z-index: 10;
     }
     &__heading{
-        margin-bottom: 7.5rem;
+        margin-bottom: 8rem;
     }
     &-grid{
         display: grid;
@@ -1231,7 +1242,7 @@
         background: #dce6fa;
         border-radius: .5rem;
         &__num{
-            margin-bottom: 1rem;
+            // margin-bottom: 1rem;
         }
         &__digit{
             display: inline-block;
@@ -1273,7 +1284,7 @@
 // -------------------------
 .rev{
     position: relative;
-    padding-top: 13rem;
+    padding-top: 12rem;
     padding-bottom: 20rem;
     color: v.$text-white;
     background: linear-gradient(0deg, #00081c, #000000);
@@ -1286,7 +1297,7 @@
     &__slider{
         width: 179rem;
         &-container{
-            margin-bottom: 6.5rem;
+            margin-bottom: 5rem;
             // max-width: none;
         }
         &-shine{
@@ -1365,7 +1376,7 @@
 // -------------------------
 .awa{
     position: relative;
-    padding-top: v.$awa-junc-padding-bottom + v.$awa-junc-height;
+    padding-top: v.$awa-junc-padding-bottom + v.$awa-junc-height + 3rem;
     &__junction{
         position: absolute;
         top: 0;
@@ -1383,7 +1394,7 @@
     }
     &__stamp{
         position: absolute;
-        top: -5rem;
+        top: -7rem;
         left: -7.5rem;
         img{
             max-width: 15.5rem;
@@ -1528,6 +1539,8 @@
 }
 
 .footer{
+    padding-top: 12rem;
+    padding-bottom: 12rem;
     font-size: 1.6rem;
     color: v.$text-white;
     background: #000;
@@ -1535,6 +1548,9 @@
         &__item{
             margin-bottom: 3rem;
         }
+    }
+    &__logo{
+        margin-top: -0.4rem;
     }
     &__mail{
         a{
