@@ -183,6 +183,10 @@ p{
 	flex-wrap: wrap;
 }
 
+.col{
+	flex: 1;
+}
+
 .m{
 	&-x{
 		&-0{
@@ -263,6 +267,9 @@ h3{
 	}
 	&_uppercase{
 		text-transform: uppercase;
+	}
+	&_grey{
+		color: v.$text-grey;
 	}
 }
 

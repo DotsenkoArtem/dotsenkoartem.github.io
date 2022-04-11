@@ -45,6 +45,18 @@
   @include sprite($awa-arrow);
 }
 
+.vk {
+  @include sprite($vk);
+}
+
+.inst {
+  @include sprite($inst);
+}
+
+.yt {
+  @include sprite($yt);
+}
+
 
 // Здесь будут основные стили проекта
 /* VI. Layout
@@ -98,6 +110,10 @@
       font-size: 3rem;
       font-weight: 700;
       color: v.$header-phone;
+      transition: color 0s;
+      &:hover{
+        color: darken(v.$header-phone, 15%);
+      }
     }
   }
   &__cb-btn{
@@ -584,6 +600,7 @@
     padding-top: 15rem;
     color: v.$text-white;
     background: linear-gradient(180deg, #00081c, #000);
+    overflow: hidden;
     &__container{
         display: flex;
     }
@@ -1511,8 +1528,75 @@
 }
 
 .footer{
+    font-size: 1.6rem;
     color: v.$text-white;
     background: #000;
+    &-col{
+        &__item{
+            margin-bottom: 3rem;
+        }
+    }
+    &__mail{
+        a{
+            color: v.$text-white;
+            text-decoration: underline;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+    &__contacts{
+        max-width: 18rem;
+        text-align: center;
+    }
+    &__phone{
+        a{
+            font-size: 2rem;
+            font-weight: 700;
+            color: v.$header-phone;
+            transition: color 0s;
+            &:hover{
+              color: darken(v.$header-phone, 15%);
+            }
+        }
+    }
+    &__cb-btn{
+        margin-bottom: 8rem;
+        font-size: 1.4rem;
+        text-align: center;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover{
+        text-decoration: none;
+        }
+    }
+    &__social{
+        display: flex;
+        // justify-content: center;
+        i{
+            margin-left: 0.9rem;
+            margin-right: 0.9rem;
+            transition: transform .3s;
+            &:hover{
+                transform: translateY(-2px);
+            }
+            &:active{
+                transform: translateY(0);
+                transition: transform 0s;
+            }
+        }
+    }
+    &-menu{
+        &__item{
+            margin-bottom: 3rem;
+        }
+        a{
+            color: rgba(255, 255, 255, .4);
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 
