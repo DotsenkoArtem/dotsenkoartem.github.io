@@ -129,7 +129,7 @@
             <div class="tender__content"> 
               <div class="tender__text">
                  Участвуем в государственных и коммерческих <span class="text_bold">тендерах</span></div>
-              <div class="btn btn_secondary">Пригласить на тендер</div>
+              <div class="btn btn_secondary modal-trigger" data-target="tenderModal">Пригласить на тендер</div>
               <div class="tender__img"> 
                 <picture> 
                   <source srcset="img/tender-folder.webp" type="image/webp"><img src="img/tender-folder.png" alt="Канцелярские синие папки">
@@ -990,6 +990,49 @@
               </div>
               <div class="form__submit-wrap loader-container">
                 <button class="btn btn_primary form__submit" type="submit"> <span class="text_uppercase">Оставить заявку</span></button>
+              </div>
+              <div class="modal__footer">
+                <p>
+                   Нажимая на кнопку «Оставить заявку»,<br>Вы соглашаетесь с <a><span class="text_bold">Политикой конфиденциальности </span></a>сайта</p>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal__overlay modal-close"></div>
+      </div><!-- Modal Tender
+      -------------------------------------------------- -->
+      
+      
+      <div class="modal" id="tenderModal">
+        <div class="modal__content modal-tender">
+          <div class="modal__header">
+            <p> <span class="text_bold">Пригласить на тендер</span></p>
+            <button class="modal-close modal__close">
+               <span class="modal-close__item"></span>
+              <span class="modal-close__item"></span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <form class="form" action="mail.php" enctype="multipart/form-data" id="modalTenderForm" name="modalTenderForm" onsubmit="send(event, 'tender-mail.php')"> 
+              <div class="form__group form__group_control">
+                <input class="form__control" type="text" name="userName" id="userName5" placeholder="Имя" required>
+              </div>
+              <div class="form__group form__group_control">
+                <input class="form__control" type="text" name="company" id="company5" placeholder="Компания" required>
+              </div>
+              <div class="form__group form__group_control">
+                <input class="form__control" type="text" name="userPhone" id="userPhone5" placeholder="Номер телефона" required>
+              </div>
+              <div class="form__group form__group_control">
+                <input class="form__control" type="email" name="userEmail" id="userEmail5" placeholder="E-mail" required>
+              </div>
+              <div class="form__group form__group_file"><span class="form__file-caption"> <i class="form-screp"></i><span>Прикрепить файл</span></span>
+                <input class="form__file" type="file" name="file[]" id="userFile5" multiple required>
+                <label class="form__label form__label_file" for="userFile5">Выберите файл</label><span class="form__file_selected" id="selectedFile"></span>
+                <div class="form__file-type">pdf, doc, xls, jpeg, jpg, zip, rar</div>
+              </div>
+              <div class="form__submit-wrap loader-container">
+                <button class="btn btn_primary form__submit" type="submit"> <span class="text_uppercase">Отправить запрос</span><span>на тендер</span></button>
               </div>
               <div class="modal__footer">
                 <p>

@@ -35,9 +35,24 @@ function closeModal(modal) {
   modal.classList.remove('opened');
   modal.classList.add('closed');
 } // ------------------------------------------------
+// FORMS
+
+
+userFile5.addEventListener('change', function () {
+  if (userFile5.files.length < 1) {
+    selectedFile.innerHTML = "";
+  } else if (userFile5.files.length == 1) {
+    selectedFile.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u043D \u0444\u0430\u0439\u043B:<br>".concat(userFile5.files[0].name, " ");
+  } else {
+    selectedFile.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u043E \u0444\u0430\u0439\u043B\u043E\u0432: ".concat(userFile5.files.length, " ");
+  } // selectedFile.innerHTML = `Выбранно файлов: ${userFile5.files.length} `;
+
+
+  console.log(userFile5.files);
+  console.log(userFile5.files.length);
+}); // ------------------------------------------------
 // SLIDERS 
 // Expert-slider
-
 
 var expertSlider = new Swiper('.expert__slider', {
   loop: true,

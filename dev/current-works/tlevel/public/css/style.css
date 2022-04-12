@@ -522,6 +522,18 @@ select::-ms-expand {
 .form__group {
   width: 100%;
 }
+.form__group_file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 .form__control {
   padding: 2.5rem;
   width: 100%;
@@ -539,6 +551,13 @@ select::-ms-expand {
 }
 .form__control:focus {
   border-color: #46a7ed;
+}
+.form__file-type {
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.44);
+}
+.form__label {
+  display: inline-block;
 }
 .form__submit {
   display: -webkit-box;
@@ -596,6 +615,13 @@ select::-ms-expand {
   background-position: 0px -87px;
   width: 34px;
   height: 23px;
+}
+
+.form-screp {
+  background-image: url(sprite.png);
+  background-position: 0px -29px;
+  width: 20px;
+  height: 18px;
 }
 
 /* VI. Layout
@@ -2348,9 +2374,74 @@ select::-ms-expand {
 .modal .form__group_control {
   margin-bottom: 1.5rem;
 }
+.modal .form__group_file {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
 .modal .form__control {
   height: 6.5rem;
   font-size: 1.4rem;
+}
+.modal .form__file {
+  width: 0px;
+  height: 0px;
+}
+.modal .form__file-caption {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.modal .form__file-caption i {
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-right: 1rem;
+}
+.modal .form__file_selected {
+  display: inline-block;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+  max-width: 26rem;
+  text-align: center;
+  overflow: hidden;
+}
+.modal .form__label_file {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 12.5rem;
+  height: 2.5rem;
+  background: #fff;
+  border: solid 1px #000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.modal .form__label_file:hover {
+  background: #e6e6e6;
+}
+.modal .form__label_file:active {
+  background: #d9d9d9;
+  -webkit-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
 }
 .modal .form__submit-wrap {
   margin-top: 1.5rem;

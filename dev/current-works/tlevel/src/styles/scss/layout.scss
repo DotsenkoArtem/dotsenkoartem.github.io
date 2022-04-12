@@ -57,6 +57,10 @@
   @include sprite($yt);
 }
 
+.form-screp {
+  @include sprite($form-screp);
+}
+
 
 // Здесь будут основные стили проекта
 /* VI. Layout
@@ -1766,10 +1770,75 @@
            &_control{
                margin-bottom: 1.5rem;
            }
+           &_file{
+               margin-top: 0.5rem;
+               margin-bottom: 1.5rem;
+           }
        }
        &__control{
            height: 6.5rem;
            font-size: 1.4rem;
+       }
+       &__file{
+           width: 0px;
+           height: 0px;
+           &::after{
+            //    display: inline-flex;
+            //    justify-content: center;
+            //    align-items: center;
+            //    content: '';
+            //    position: absolute;
+            //    width: 12.5rem;
+            //    height: 2.5rem;
+            //    border: solid 1px #000;
+            //    border-radius: .5rem;
+           }
+           &-caption{
+               position: relative;
+                margin-bottom: .5rem;
+                i{
+                    position: absolute;
+                    left: -2.5rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    
+                    margin-right: 1rem;
+                }
+           }
+           &-type{
+            //    margin-top: 0.5rem;
+           }
+           &_selected{
+               display: inline-block;
+               margin-top: 0.8rem;
+               margin-bottom: 0.5rem;
+               max-width: 26rem;
+               text-align: center;
+               overflow: hidden;
+           }
+       }
+       &__label_file{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            // position: absolute;
+            width: 12.5rem;
+            height: 2.5rem;
+            background: #fff;
+            border: solid 1px #000;
+            border-radius: .5rem;
+            cursor: pointer;
+            user-select: none;
+            transition: .3s;
+            &:hover{
+                background: darken(#fff, 10%);
+                // transform: scale(1.02);
+            }
+            &:active{
+                background: darken(#fff, 15%);
+                transform: translateY(1px);
+                transition: 0s;
+            }
        }
        &__submit{
            &-wrap{

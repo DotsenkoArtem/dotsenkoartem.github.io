@@ -563,6 +563,11 @@ select::-ms-expand {
 		// 		color: blue;
 		// 	}
 		// }
+		&_file{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	&__control{
@@ -586,7 +591,15 @@ select::-ms-expand {
 		}
 	}
 
-	// &__label{
+	&__file{
+		&-type{
+			font-size: 1.4rem;
+			color: rgba(0, 0, 0, .44);
+		}
+	}
+
+	&__label{
+		display: inline-block;
 	// 	&_control{
 	// 		position: absolute;
 	// 		left: 0;
@@ -602,7 +615,7 @@ select::-ms-expand {
 	// 		cursor: text;
 	// 		user-select: none;
 	// 	}
-	// }
+	}
 
 	// &-icon{
 	// 	position: absolute;

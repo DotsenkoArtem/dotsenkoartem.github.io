@@ -117,7 +117,7 @@ html(lang="ru")
                             .tender__text 
                                 |Участвуем в государственных и коммерческих 
                                 span.text_bold тендерах
-                            .btn.btn_secondary Пригласить на тендер
+                            .btn.btn_secondary.modal-trigger(data-target="tenderModal") Пригласить на тендер
                             .tender__img 
                                 picture 
                                     source(srcset="img/tender-folder.webp" type="image/webp")
@@ -1128,7 +1128,7 @@ html(lang="ru")
                                 input.form__control(type="text", name="userName", id="userName3", placeholder="Имя", required) 
                                 //- label.form__label.form__label_control(for="userName") 
                                     |Ваше имя
-                            //- email-group
+                            //- phone-group
                             .form__group.form__group_control
                                 input.form__control(type="text", name="userPhone", id="userPhone3", placeholder="Номер телефона" required) 
                                 //- label.form__label.form__label_control(for="userPhone") 
@@ -1185,7 +1185,7 @@ html(lang="ru")
                                 input.form__control(type="text", name="company", id="company4", placeholder="Компания", required) 
                                 //- label.form__label.form__label_control(for="userName") 
                                     |Ваше имя
-                            //- email-group
+                            //- phone-group
                             .form__group.form__group_control
                                 input.form__control(type="text", name="userPhone", id="userPhone4", placeholder="Номер телефона" required) 
                                 //- label.form__label.form__label_control(for="userPhone") 
@@ -1196,6 +1196,75 @@ html(lang="ru")
                             .form__submit-wrap.loader-container
                                 button.btn.btn_primary.form__submit(type="submit") 
                                     span.text_uppercase Оставить заявку
+
+                            .modal__footer
+                                p 
+                                    |Нажимая на кнопку «Оставить заявку»,
+                                    br
+                                    |Вы соглашаетесь с 
+                                    a
+                                        span.text_bold Политикой конфиденциальности 
+                                    |сайта
+
+                .modal__overlay.modal-close
+
+
+            |<!-- Modal Tender
+            |-------------------------------------------------- -->
+            |
+            |
+            #tenderModal.modal
+                .modal__content.modal-tender
+                    .modal__header
+                        p 
+                            span.text_bold Пригласить на тендер
+
+                        button.modal-close.modal__close 
+                            |
+                            span.modal-close__item
+                            |
+                            |
+                            span.modal-close__item
+
+                    .modal__body
+
+                        form.form(action="mail.php", enctype="multipart/form-data", id="modalTenderForm", name="modalTenderForm", onsubmit="send(event, 'tender-mail.php')") 
+                            //- name-group
+                            .form__group.form__group_control
+                                input.form__control(type="text", name="userName", id="userName5", placeholder="Имя", required) 
+                                //- label.form__label.form__label_control(for="userName") 
+                                    |Ваше имя
+                            //- name-group
+                            .form__group.form__group_control
+                                input.form__control(type="text", name="company", id="company5", placeholder="Компания", required) 
+                                //- label.form__label.form__label_control(for="userName") 
+                                    |Ваше имя
+                            //- phone-group
+                            .form__group.form__group_control
+                                input.form__control(type="text", name="userPhone", id="userPhone5", placeholder="Номер телефона" required) 
+                                //- label.form__label.form__label_control(for="userPhone") 
+                                    |Ваш телефон
+                            //- email-group
+                            .form__group.form__group_control
+                                input.form__control(type="email", name="userEmail", id="userEmail5", placeholder="E-mail" required) 
+                            //- file-group
+                            .form__group.form__group_file
+                                span.form__file-caption 
+                                    i.form-screp
+                                    span Прикрепить файл
+                                
+                                    
+                                input.form__file(type="file", name="file[]", id="userFile5", multiple, required) 
+                                label.form__label.form__label_file(for="userFile5") Выберите файл
+                                span#selectedFile.form__file_selected
+                                .form__file-type pdf, doc, xls, jpeg, jpg, zip, rar
+                                
+                                
+                            //- submit
+                            .form__submit-wrap.loader-container
+                                button.btn.btn_primary.form__submit(type="submit") 
+                                    span.text_uppercase Отправить запрос
+                                    span на тендер
 
                             .modal__footer
                                 p 

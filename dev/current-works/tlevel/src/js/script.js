@@ -39,6 +39,24 @@
     }
 // ------------------------------------------------
 
+    // FORMS
+    userFile5.addEventListener('change', function(){
+        if (userFile5.files.length < 1) {
+            selectedFile.innerHTML = ``;
+        } else if (userFile5.files.length == 1) {
+            selectedFile.innerHTML = `Выбран файл:<br>${userFile5.files[0].name} `;
+        } else {
+            selectedFile.innerHTML = `Выбранно файлов: ${userFile5.files.length} `;
+        }
+
+        // selectedFile.innerHTML = `Выбранно файлов: ${userFile5.files.length} `;
+        console.log(userFile5.files);
+        console.log(userFile5.files.length);
+
+    })
+    
+// ------------------------------------------------
+
 
     // SLIDERS 
     // Expert-slider
