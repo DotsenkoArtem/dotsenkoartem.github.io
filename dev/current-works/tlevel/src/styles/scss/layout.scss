@@ -261,6 +261,7 @@
       height: 0.2rem;
       background: #1040b8;
       content: '';
+      transition: transform .3s;
     }
     &::after{
       transform: rotate(90deg);
@@ -281,11 +282,34 @@
     background: rgba(253, 253, 253, 0.22);
     border-radius: .5rem;
     overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
   }
   &__text{
       font-size: 1.4rem;
       line-height: 1.25;
   }
+
+    &.open{
+        .why__btn{
+            &::after{
+                transform: rotate(180deg);
+            }
+        }
+        .why__content{
+            animation: slideUpIn .3s ease-in forwards;
+        }
+    }
+    &.close{
+        .why__btn{
+            &::after{
+                transform: rotate(90deg);
+            }
+        }
+        .why__content{
+            animation: slideDownOut .3s ease-in forwards;
+        }
+    }
 }
 
 .digits{
@@ -411,8 +435,6 @@
     height: 25.5rem;
     border-radius: .5rem;
     overflow: hidden;
-
-
     background: #fff;
     &-01{
       grid-area: services-card-01;
@@ -438,6 +460,7 @@
     &__content{
       position: relative;
       z-index: 10;
+      cursor: default;
     }
     &__count{
       margin-bottom: 2.5rem;
@@ -890,6 +913,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: grab;
+        user-select: none;
+        &:active{
+            cursor: grabbing;
+        }
     }
 
 
@@ -1975,6 +2003,19 @@ ANIMATIONS
         opacity: 1;
         visibility: visible;
         transform: translateY(0%);
+   }
+}
+
+@keyframes slideDownOut {
+   from {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0%);
+   }
+   to {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10%);
    }
 }
 

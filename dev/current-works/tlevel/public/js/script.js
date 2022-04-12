@@ -1,5 +1,17 @@
 "use strict"; // window.onload = function (){
+// Intro Why Collapse
+
+whyBtn.onclick = function () {
+  if (why.classList.contains('open')) {
+    why.classList.remove('open');
+    why.classList.add('close');
+  } else {
+    why.classList.remove('close');
+    why.classList.add('open');
+  }
+}; // ------------------------------------------------
 // MODALS
+
 
 var modalOpenBtns = document.querySelectorAll('.modal-trigger');
 

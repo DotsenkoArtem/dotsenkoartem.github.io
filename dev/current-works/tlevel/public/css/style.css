@@ -799,6 +799,11 @@ select::-ms-expand {
   height: 0.2rem;
   background: #1040b8;
   content: "";
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 .why__btn::after {
   -webkit-transform: rotate(90deg);
@@ -815,6 +820,8 @@ select::-ms-expand {
   background: rgba(253, 253, 253, 0.22);
   border-radius: 0.5rem;
   overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 .why__content-wrap {
   margin-top: 0.5rem;
@@ -824,6 +831,24 @@ select::-ms-expand {
 .why__text {
   font-size: 1.4rem;
   line-height: 1.25;
+}
+.why.open .why__btn::after {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.why.open .why__content {
+  -webkit-animation: slideUpIn 0.3s ease-in forwards;
+  animation: slideUpIn 0.3s ease-in forwards;
+}
+.why.close .why__btn::after {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.why.close .why__content {
+  -webkit-animation: slideDownOut 0.3s ease-in forwards;
+  animation: slideDownOut 0.3s ease-in forwards;
 }
 
 .digits {
@@ -984,6 +1009,7 @@ select::-ms-expand {
 .services-card__content {
   position: relative;
   z-index: 10;
+  cursor: default;
 }
 .services-card__count {
   margin-bottom: 2.5rem;
@@ -1453,6 +1479,16 @@ select::-ms-expand {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  cursor: -webkit-grab;
+  cursor: grab;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.client-slide:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 .client .swiper-button-prev, .client .swiper-button-next {
   z-index: 15;
@@ -2629,6 +2665,34 @@ ANIMATIONS
     visibility: visible;
     -webkit-transform: translateY(0%);
     transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slideDownOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+}
+@keyframes slideDownOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
   }
 }
 @-webkit-keyframes slideUpIn {
