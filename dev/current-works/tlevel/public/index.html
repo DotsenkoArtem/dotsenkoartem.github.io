@@ -544,7 +544,7 @@
                   <p> <span class="d-block">Проведём аудит Вашего объекта и составим лист внедрений, который </span><span>поможет <span class="text_bold">сэкономить до 20% на уборке </span>и <span class="text_bold">уйти от штрафов и предписаний!</span></span></p>
                 </div>
                 <div class="form-block__form-wrap"> 
-                  <form class="form form-block__form" action="mail.php" id="audit" name="audit" method="POST"> 
+                  <form class="form form-block__form" id="audit" name="audit" data-action="send-audit.php"> 
                     <div class="form__group form__group_control form-block__group">
                       <input class="form__control form-block__control" type="text" name="userName" id="userName1" placeholder="Имя" required>
                     </div>
@@ -554,6 +554,7 @@
                     <div class="form__group form__group_control form-block__group">
                       <input class="form__control form-block__control" type="text" name="userPhone" id="userPhone1" placeholder="Номер телефона" required>
                     </div>
+                    <input type="hidden" value="Заявка на бесплатный аудит" name="formTheme">
                     <div class="form__submit-wrap form-block__submit loader-container">
                       <button class="btn btn_primary form__submit" type="submit"> <span class="text_uppercase">Оставить заявку</span><span>на бесплатный аудит</span></button>
                     </div>
@@ -806,7 +807,7 @@
                   <p>Вы сможете вживую увидеть и оценить результат нашей работы</p>
                 </div>
                 <div class="form-block__form-wrap"> 
-                  <form class="form form-block__form" action="mail.php" id="tour" name="tour" method="POST"> 
+                  <form class="form form-block__form" id="tour" name="audit" data-action="send-audit.php"> 
                     <div class="form__group form__group_control form-block__group">
                       <input class="form__control form-block__control" type="text" name="userName" id="userName2" placeholder="Имя" required>
                     </div>
@@ -816,6 +817,7 @@
                     <div class="form__group form__group_control form-block__group">
                       <input class="form__control form-block__control" type="text" name="userPhone" id="userPhone2" placeholder="Номер телефона" required>
                     </div>
+                    <input type="hidden" value="Записаться на экскурсию" name="formTheme">
                     <div class="form__submit-wrap form-block__submit loader-container">
                       <button class="btn btn_primary form__submit" type="submit"> <span class="text_uppercase">Записаться</span><span>на экскурсию</span></button>
                     </div>
@@ -945,13 +947,14 @@
             </button>
           </div>
           <div class="modal__body">
-            <form class="form" action="mail.php" id="modalCbForm" name="modalCbForm" method="POST"> 
+            <form class="form" id="modalCbForm" name="callback" data-action="send-callback.php"> 
               <div class="form__group form__group_control">
                 <input class="form__control" type="text" name="userName" id="userName3" placeholder="Имя" required>
               </div>
               <div class="form__group form__group_control">
                 <input class="form__control" type="text" name="userPhone" id="userPhone3" placeholder="Номер телефона" required>
               </div>
+              <input type="hidden" value="Обратный звонок" name="formTheme">
               <div class="form__submit-wrap loader-container">
                 <button class="btn btn_primary form__submit" type="submit"> <span class="text_uppercase">Перезвоните мне</span></button>
               </div>
@@ -978,7 +981,7 @@
             </button>
           </div>
           <div class="modal__body">
-            <form class="form" action="mail.php" id="modalCheckForm" name="modalCheckForm" method="POST"> 
+            <form class="form" id="modalCheckForm" name="audit" data-action="send-audit.php"> 
               <div class="form__group form__group_control">
                 <input class="form__control" type="text" name="userName" id="userName4" placeholder="Имя" required>
               </div>
@@ -988,6 +991,7 @@
               <div class="form__group form__group_control">
                 <input class="form__control" type="text" name="userPhone" id="userPhone4" placeholder="Номер телефона" required>
               </div>
+              <input type="hidden" value="Заявка на бесплатный аудит" name="formTheme">
               <div class="form__submit-wrap loader-container">
                 <button class="btn btn_primary form__submit" type="submit"> <span class="text_uppercase">Оставить заявку</span></button>
               </div>
@@ -1013,7 +1017,7 @@
             </button>
           </div>
           <div class="modal__body">
-            <form class="form" action="mail.php" enctype="multipart/form-data" id="modalTenderForm" name="modalTenderForm" onsubmit="send(event, 'tender-mail.php')"> 
+            <form class="form loader-container" enctype="multipart/form-data" id="modalTenderForm" name="tender" data-action="send-tender.php"> 
               <div class="form__group form__group_control">
                 <input class="form__control" type="text" name="userName" id="userName5" placeholder="Имя" required>
               </div>
@@ -1027,10 +1031,11 @@
                 <input class="form__control" type="email" name="userEmail" id="userEmail5" placeholder="E-mail" required>
               </div>
               <div class="form__group form__group_file"><span class="form__file-caption"> <i class="form-screp"></i><span>Прикрепить файл</span></span>
-                <input class="form__file" type="file" name="file[]" id="userFile5" multiple required>
-                <label class="form__label form__label_file" for="userFile5">Выберите файл</label><span class="form__file_selected" id="selectedFile"></span>
+                <input class="form__file" type="file" name="file[]" id="userFile5" multiple>
+                <label class="form__label form__label_file" for="userFile5">Выберите файл</label><span class="form__file_selected"></span>
                 <div class="form__file-type">pdf, doc, xls, jpeg, jpg, zip, rar</div>
               </div>
+              <input type="hidden" value="Приглашение на тендер" name="formTheme">
               <div class="form__submit-wrap loader-container">
                 <button class="btn btn_primary form__submit" type="submit"> <span class="text_uppercase">Отправить запрос</span><span>на тендер</span></button>
               </div>

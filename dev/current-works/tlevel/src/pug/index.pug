@@ -620,7 +620,7 @@ html(lang="ru")
 
                                 .form-block__form-wrap 
 
-                                    form.form.form-block__form(action="mail.php", id="audit" name="audit" method="POST") 
+                                    form.form.form-block__form(id="audit", name="audit" data-action="send-audit.php") 
                                         //- name-group
                                         .form__group.form__group_control.form-block__group
                                             input.form__control.form-block__control(type="text", name="userName", id="userName1", placeholder="Имя" required) 
@@ -635,7 +635,7 @@ html(lang="ru")
                                             input.form__control.form-block__control(type="text", name="userPhone", id="userPhone1", placeholder="Номер телефона", required) 
                                             //- label.form__label.form__label_control(for="userPhone1")
 
-                                        //- input(type="hidden", value="Остались вопросы?", name="formTheme")
+                                        input(type="hidden", value="Заявка на бесплатный аудит", name="formTheme")
                                             
                                         //- submit
                                         .form__submit-wrap.form-block__submit.loader-container
@@ -954,7 +954,7 @@ html(lang="ru")
 
                                 .form-block__form-wrap 
 
-                                    form.form.form-block__form(action="mail.php", id="tour" name="tour" method="POST") 
+                                    form.form.form-block__form(id="tour" name="audit" data-action="send-audit.php") 
                                         //- name-group
                                         .form__group.form__group_control.form-block__group
                                             input.form__control.form-block__control(type="text", name="userName", id="userName2", placeholder="Имя" required) 
@@ -969,7 +969,7 @@ html(lang="ru")
                                             input.form__control.form-block__control(type="text", name="userPhone", id="userPhone2", placeholder="Номер телефона", required) 
                                             //- label.form__label.form__label_control(for="userPhone1")
 
-                                        //- input(type="hidden", value="Остались вопросы?", name="formTheme")
+                                        input(type="hidden", value="Записаться на экскурсию", name="formTheme")
                                             
                                         //- submit
                                         .form__submit-wrap.form-block__submit.loader-container
@@ -1122,7 +1122,7 @@ html(lang="ru")
 
                     .modal__body
 
-                        form.form(action="mail.php", id="modalCbForm" name="modalCbForm" method="POST") 
+                        form.form(id="modalCbForm" name="callback" data-action="send-callback.php") 
                             //- name-group
                             .form__group.form__group_control
                                 input.form__control(type="text", name="userName", id="userName3", placeholder="Имя", required) 
@@ -1133,7 +1133,8 @@ html(lang="ru")
                                 input.form__control(type="text", name="userPhone", id="userPhone3", placeholder="Номер телефона" required) 
                                 //- label.form__label.form__label_control(for="userPhone") 
                                     |Ваш телефон
-                                //- i.svg-phone.svg-phone-dims.form-icon
+                            input(type="hidden", value="Обратный звонок", name="formTheme")
+                            
                                 
                             //- submit
                             .form__submit-wrap.loader-container
@@ -1174,7 +1175,7 @@ html(lang="ru")
 
                     .modal__body
 
-                        form.form(action="mail.php", id="modalCheckForm" name="modalCheckForm" method="POST") 
+                        form.form(id="modalCheckForm" name="audit" data-action="send-audit.php") 
                             //- name-group
                             .form__group.form__group_control
                                 input.form__control(type="text", name="userName", id="userName4", placeholder="Имя", required) 
@@ -1190,7 +1191,7 @@ html(lang="ru")
                                 input.form__control(type="text", name="userPhone", id="userPhone4", placeholder="Номер телефона" required) 
                                 //- label.form__label.form__label_control(for="userPhone") 
                                     |Ваш телефон
-                                //- i.svg-phone.svg-phone-dims.form-icon
+                            input(type="hidden", value="Заявка на бесплатный аудит", name="formTheme")
                                 
                             //- submit
                             .form__submit-wrap.loader-container
@@ -1228,7 +1229,8 @@ html(lang="ru")
 
                     .modal__body
 
-                        form.form(action="mail.php", enctype="multipart/form-data", id="modalTenderForm", name="modalTenderForm", onsubmit="send(event, 'tender-mail.php')") 
+                        //- form.form(enctype="multipart/form-data", id="modalTenderForm", name="modalTenderForm", onsubmit="send(event, 'mail.php')") 
+                        form.form.loader-container(enctype="multipart/form-data", id="modalTenderForm", name="tender" data-action="send-tender.php") 
                             //- name-group
                             .form__group.form__group_control
                                 input.form__control(type="text", name="userName", id="userName5", placeholder="Имя", required) 
@@ -1254,12 +1256,14 @@ html(lang="ru")
                                     span Прикрепить файл
                                 
                                     
-                                input.form__file(type="file", name="file[]", id="userFile5", multiple, required) 
+                                input.form__file(type="file", name="file[]", id="userFile5", multiple) 
                                 label.form__label.form__label_file(for="userFile5") Выберите файл
-                                span#selectedFile.form__file_selected
+                                span.form__file_selected
                                 .form__file-type pdf, doc, xls, jpeg, jpg, zip, rar
                                 
                                 
+                            input(type="hidden", value="Приглашение на тендер", name="formTheme")
+
                             //- submit
                             .form__submit-wrap.loader-container
                                 button.btn.btn_primary.form__submit(type="submit") 

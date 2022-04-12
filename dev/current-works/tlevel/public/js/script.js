@@ -34,25 +34,152 @@ function openModal(modalOpenBtn) {
 function closeModal(modal) {
   modal.classList.remove('opened');
   modal.classList.add('closed');
-} // ------------------------------------------------
+} // ================================================
 // FORMS
+// Массив всех форм
 
 
-userFile5.addEventListener('change', function () {
-  if (userFile5.files.length < 1) {
-    selectedFile.innerHTML = "";
-  } else if (userFile5.files.length == 1) {
-    selectedFile.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u043D \u0444\u0430\u0439\u043B:<br>".concat(userFile5.files[0].name, " ");
-  } else {
-    selectedFile.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u043E \u0444\u0430\u0439\u043B\u043E\u0432: ".concat(userFile5.files.length, " ");
-  } // selectedFile.innerHTML = `Выбранно файлов: ${userFile5.files.length} `;
+var forms = document.forms;
+
+var _loop2 = function _loop2(_i2) {
+  var form = forms[_i2];
+  var attach = form.querySelector('[type="file"]');
+  var selectedFile = form.querySelector('.form__file_selected');
+
+  if (attach) {
+    attach.addEventListener('change', function () {
+      if (this.files.length < 1) {
+        selectedFile.innerHTML = "";
+      } else if (this.files.length == 1) {
+        selectedFile.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u043D \u0444\u0430\u0439\u043B:<br>".concat(this.files[0].name, " ");
+      } else {
+        selectedFile.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u043E \u0444\u0430\u0439\u043B\u043E\u0432: ".concat(this.files.length, " ");
+      } // console.log(this.files);
+      // console.log(this.files.length);
+
+    });
+  }
+
+  form.addEventListener('submit', function (event) {
+    send(event, form.dataset.action);
+  });
+
+  function send(event, php) {
+    // Отключаю поля формы на врем отправки данных - тогда не работает отправка вложений
+    // for (let i = 0; i < form.elements.length; i++) {
+    //   form.elements[i].disabled = true;
+    // }
+    setupLoader(form); // console.log("Отправка запроса");
+    // if(attach){
+    //     // Вычисляю объем выбранных файлов - чисто для себя - в консоль
+    //     let fSizes = 0;
+    //     for(let i = 0; i < userFile5.files.length; i++) {
+    //     fSizes += userFile5.files[i].size;
+    //     }
+    //     console.log(`fSizes: ${fSizes} байт`);
+    //     console.log(`userFile5.files.length: ${userFile5.files.length} файлов`);
+    // }
+
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
+    var req = new XMLHttpRequest();
+    req.open('POST', php, true);
+
+    req.onload = function () {
+      // Определение переменных для оповещения
+      var thanks = document.createElement('div');
+      var thanksContent = document.createElement('div');
+      var thanksClose = document.createElement('div');
+      var messageSuccessful = '<h3><span>Спасибо</span>Мы перезвоним Вам в ближайшее время!</h3>';
+      var limitExceeded = '<h3><span>Ошибка.</span>Превышен максимальный размер прикрепляемых файлов (10мб).</h3>';
+      var messageError = '<h3><span>Ошибка</span>Сообщение не отправлено</h3>'; // Установка окна оповещения
+
+      setupThanks();
+
+      function setupThanks() {
+        thanks.className = 'thanks';
+        thanksContent.className = 'thanks__content';
+        thanksClose.className = 'thanks__close';
+        thanks.append(thanksContent, thanksClose);
+        wrapper.append(thanks); // Закрытие окна оповещения
+
+        thanksClose.onclick = function () {
+          removeThanks(thanks);
+        };
+      }
+
+      removeLoader(form);
+
+      if (req.status >= 200 && req.status < 400) {
+        var json = JSON.parse(this.response); // console.log(json);
+
+        if (json.result == "success") {
+          // Текстовое содержимое для окна оповещения в зависимости от результата
+          thanksContent.innerHTML = messageSuccessful;
+        } else if (json.result == "limitExceeded") {
+          // Текстовое содержимое для окна оповещения в зависимости от результата
+          thanksContent.innerHTML = limitExceeded;
+        } else {
+          // Текстовое содержимое для окна оповещения в зависимости от результата
+          thanksContent.innerHTML = messageError;
+        } // Если не удалось связаться с php файлом
+
+      } else {
+        alert("Ошибка сервера. Номер: " + req.status);
+      } //   Вывод окна оповещения на страницу
 
 
-  console.log(userFile5.files);
-  console.log(userFile5.files.length);
-}); // ------------------------------------------------
+      thanks.classList.add('active'); // Очистка формы после отправки
+
+      form.reset();
+
+      if (attach) {
+        selectedFile.innerHTML = "";
+      } //   Включаю поля формы после отправки данных
+
+
+      for (var _i4 = 0; _i4 < form.elements.length; _i4++) {
+        form.elements[_i4].disabled = false;
+      } //   Автоудаление окна оповещения
+
+
+      setTimeout(function () {
+        removeThanks();
+      }, 6500); //   Удаление окна оповещения
+
+      function removeThanks() {
+        thanks.classList.remove('active');
+        thanks.remove(); // console.log('Выполнено: removeThanks()');
+        // console.log(`А это thanks: ${thanks}`);
+      }
+    }; // Если не удалось отправить запрос. Стоит блок на хостинге
+
+
+    req.onerror = function () {
+      alert("Ошибка отправки запроса");
+    };
+
+    req.send(new FormData(event.target));
+  }
+};
+
+for (var _i2 = 0; _i2 < forms.length; _i2++) {
+  _loop2(_i2);
+} // Функции установки, удаления лоадера кнопки формы
+
+
+function setupLoader(form) {
+  var loader = document.createElement('div');
+  loader.className = 'submit-loader';
+  form.querySelector('.loader-container').appendChild(loader); // form.appendChild(loader);
+}
+
+function removeLoader(form) {
+  var loader = form.querySelector('.submit-loader');
+  loader.remove();
+} // ================================================
 // SLIDERS 
 // Expert-slider
+
 
 var expertSlider = new Swiper('.expert__slider', {
   loop: true,
@@ -142,8 +269,8 @@ function initSwiper() {
     advSwiper = undefined;
     advSlideContainer.removeAttribute('style');
 
-    for (var _i2 = 0; _i2 < advSlides.length; _i2++) {
-      advSlides[_i2].removeAttribute('style');
+    for (var _i3 = 0; _i3 < advSlides.length; _i3++) {
+      advSlides[_i3].removeAttribute('style');
     }
   }
 } //Swiper plugin initialization
