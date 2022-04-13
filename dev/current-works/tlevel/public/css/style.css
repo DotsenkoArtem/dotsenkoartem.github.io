@@ -2037,6 +2037,7 @@ select::-ms-expand {
   position: absolute;
   top: -7rem;
   left: -7.5rem;
+  z-index: 10;
 }
 .awa__stamp img {
   max-width: 15.5rem;
