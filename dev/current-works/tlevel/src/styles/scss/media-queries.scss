@@ -4,8 +4,20 @@
 /* VII. Media-queries
 --------------------------------------- */
 
-@media (max-width: 1699.98px){
-
+@media (max-width: 1599.98px){
+	.form{
+		&-block{
+			padding: 5rem 5rem 8rem 5rem;
+			&__content{
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 114rem;
+			}
+			&__img{
+				left: 0;
+			}
+		}
+	}
 }
 
 
@@ -34,18 +46,68 @@
 			}
 		}
 	}
+	
+	.client{
+		// &__mask{
+		// 	flex: none;
+		// }
+		&__slider{
+			max-width: 96rem;
+		// 	&-container{
+		// 		margin-left: auto;
+		// 		margin-right: auto;
+		// 		padding-left: v.$gutter;
+		// 		padding-right: v.$gutter;
+		// 		max-width: 114rem;
+		// 	}
+		}
+		&__button{
+			&_prev{
+				left: 8rem;
+			}
+			&_next{
+				right: 8rem;
+			}
+		}
+	}
+
+	.form{
+		&-block{
+			&__img{
+				left: -10rem;
+			}
+		}
+	}
+
+	.awa{
+		&__content{
+			padding-left: v.$gutter;
+			padding-right: v.$gutter;
+		}
+		&-slide{
+			// Убрать при инициализации
+			flex-shrink: 1;
+			// ------------------------
+			&:not(:last-child){
+				margin-right: 3rem;
+			}
+		}
+		&__stamp{
+			left: 0;
+		}
+	}
 }
 
 
 // LG
 @media (max-width: 1199.98px){
-	// html{
-	// 	font-size: 8px;
-	// }
+	html{
+		font-size: 8px;
+	}
 	.container{
 		&,
 		&_xl{
-			max-width: 96rem;
+			max-width: 960px;
 		}
 	}
 	.d{
@@ -62,6 +124,13 @@
 		&-inline{
 			&_lg{
 				display: inline;
+			}
+		}
+	}
+	.expert{
+		&__slider{
+			&-container{
+				margin-left: 5rem;
 			}
 		}
 	}

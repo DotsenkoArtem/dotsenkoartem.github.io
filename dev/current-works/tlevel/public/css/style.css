@@ -1326,6 +1326,7 @@ select::-ms-expand {
   position: absolute;
   left: 34rem;
   bottom: 2rem;
+  z-index: 10;
   width: 14rem;
   height: var(--swiper-navigation-size);
   display: -webkit-box;
@@ -1500,10 +1501,10 @@ select::-ms-expand {
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
-.client .swiper-button-prev, .client .swiper-button-next {
+.client__button {
   z-index: 15;
 }
-.client .swiper-button-prev::before, .client .swiper-button-next::before {
+.client__button::before {
   position: absolute;
   z-index: -1;
   display: block;
@@ -1518,16 +1519,16 @@ select::-ms-expand {
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
-.client .swiper-button-prev::after, .client .swiper-button-next::after {
+.client__button::after {
   font-size: 2.5rem;
   font-weight: 700;
 }
-.client .swiper-button-prev:hover, .client .swiper-button-next:hover {
+.client__button:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
-.client .swiper-button-prev:active, .client .swiper-button-next:active {
+.client__button:active {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
@@ -1537,13 +1538,12 @@ select::-ms-expand {
   transition: transform 0s;
   transition: transform 0s, -webkit-transform 0s;
 }
-.client .swiper-button-prev {
+.client__button_prev {
   left: calc(50vw - 60rem);
 }
-.client .swiper-button-next {
+.client__button_next {
   right: calc(50vw - 60rem);
 }
-
 .cleaning-wrapper {
   color: #ffffff;
   background: #00040e;
@@ -2303,9 +2303,9 @@ select::-ms-expand {
   right: 0;
   bottom: 0;
   z-index: 999;
-  overflow: hidden;
   opacity: 0;
   visibility: hidden;
+  overflow: auto;
 }
 .modal__content {
   margin: auto;
@@ -2784,6 +2784,19 @@ ANIMATIONS
 }
 /* VII. Media-queries
 --------------------------------------- */
+@media (max-width: 1599.98px) {
+  .form-block {
+    padding: 5rem 5rem 8rem 5rem;
+  }
+  .form-block__content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 114rem;
+  }
+  .form-block__img {
+    left: 0;
+  }
+}
 @media (max-width: 1399.98px) {
   .container {
     max-width: 114rem;
@@ -2798,10 +2811,43 @@ ANIMATIONS
   .d-inline_xl {
     display: inline;
   }
+
+  .client__slider {
+    max-width: 96rem;
+  }
+  .client__button_prev {
+    left: 8rem;
+  }
+  .client__button_next {
+    right: 8rem;
+  }
+
+  .form-block__img {
+    left: -10rem;
+  }
+
+  .awa__content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .awa-slide {
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+  }
+  .awa-slide:not(:last-child) {
+    margin-right: 3rem;
+  }
+  .awa__stamp {
+    left: 0;
+  }
 }
 @media (max-width: 1199.98px) {
+  html {
+    font-size: 8px;
+  }
+
   .container, .container_xl {
-    max-width: 96rem;
+    max-width: 960px;
   }
 
   .d-none_lg {
@@ -2812,6 +2858,10 @@ ANIMATIONS
   }
   .d-inline_lg {
     display: inline;
+  }
+
+  .expert__slider-container {
+    margin-left: 5rem;
   }
 }
 @media (max-width: 991.98px) {

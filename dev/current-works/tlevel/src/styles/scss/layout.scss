@@ -743,6 +743,7 @@
             position: absolute;
             left: 34rem;
             bottom: 2rem;
+            z-index: 10;
             width: 14rem;
             height: var(--swiper-navigation-size);
             display: flex;
@@ -923,41 +924,72 @@
             cursor: grabbing;
         }
     }
+    &__button{
+        z-index: 15;
+        &::before{
+            position: absolute;
+            z-index: -1;
+            display: block;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background: #e6e6e8;
+            content: '';
+            transition: transform .3s;
+        }
+        &::after{
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+        &:active{
+            transform: scale(1);
+            transition: transform 0s;
+        }
+        &_prev{
+            left: calc(50vw - 60rem);
+        }
+        &_next{
+            right: calc(50vw - 60rem);
+        }
+    }
 
 
     .swiper{
         &-button{
             &-prev,
             &-next{
-                z-index: 15;
+                // z-index: 15;
                 &::before{
-                    position: absolute;
-                    z-index: -1;
-                    display: block;
-                    width: 6rem;
-                    height: 6rem;
-                    border-radius: 50%;
-                    background: #e6e6e8;
-                    content: '';
-                    transition: transform .3s;
+                    // position: absolute;
+                    // z-index: -1;
+                    // display: block;
+                    // width: 6rem;
+                    // height: 6rem;
+                    // border-radius: 50%;
+                    // background: #e6e6e8;
+                    // content: '';
+                    // transition: transform .3s;
                 }
                 &::after{
-                    font-size: 2.5rem;
-                    font-weight: 700;
+                    // font-size: 2.5rem;
+                    // font-weight: 700;
                 }
-                &:hover{
-                    transform: scale(1.05);
-                }
-                &:active{
-                    transform: scale(1);
-                    transition: transform 0s;
-                }
+                // &:hover{
+                //     transform: scale(1.05);
+                // }
+                // &:active{
+                //     transform: scale(1);
+                //     transition: transform 0s;
+                // }
             }
             &-prev{
-                left: calc(50vw - 60rem);
+                // left: calc(50vw - 60rem);
             }
             &-next{
-                right: calc(50vw - 60rem);
+                // right: calc(50vw - 60rem);
             }
         }
     }
@@ -1685,9 +1717,9 @@
    right: 0;
    bottom: 0;
    z-index: 999;
-   overflow: hidden;
    opacity: 0;
    visibility: hidden;
+   overflow: auto;
    &__content{
       margin: auto;
       padding: 8rem 5rem;
