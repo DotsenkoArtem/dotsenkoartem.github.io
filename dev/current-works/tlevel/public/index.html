@@ -27,6 +27,7 @@
     
     <!--CSS
     ================================================== -->
+    <link rel="stylesheet" href="jquery.fancybox.min.css">
     <link rel="stylesheet" href="swiper.min.css">
     <link rel="stylesheet" href="css/style.css">
     
@@ -140,7 +141,7 @@
         </section>
         <!-- Services
         ================================================== -->
-        <section class="section services"> 
+        <section class="section services">
           <div class="container services__container">
             <div class="services-label">
               <div class="services-label__img"> 
@@ -150,7 +151,7 @@
               </div>
               <div class="services-label__text"> <span>Умеем экономить до</span><img class="d-inline" src="img/serv-20.png" alt=""><span class="d-inline-block text_bold">на клининговых услугах </span></div>
             </div>
-            <div class="section__heading services__heading">
+            <div class="section__heading services__heading" id="serv-anchor">
               <h2>
                  Наши <span class="text_bold">услуги</span></h2>
             </div>
@@ -283,10 +284,10 @@
         </section>
         <!-- Expert
         ================================================== -->
-        <section class="section expert"> 
+        <section class="section expert">
           <div class="container expert__container">
             <div class="expert__content"> 
-              <div class="expert__heading"> 
+              <div class="expert__heading" id="expert-anchor">
                 <h2>
                    Познакомьтесь<br>с экспертами<br><span class="expert__heading-highlight">Top Level</span></h2>
               </div>
@@ -497,8 +498,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev client__button client__button_prev"></div>
+            <div class="swiper-button-next client__button client__button_next"></div>
             <div class="client__mask client__mask_right"></div>
           </div>
         </section>
@@ -531,7 +532,7 @@
                 </picture>
               </div>
             </div>
-            <div class="form-block"> 
+            <div class="form-block" id="audit-anchor">
               <div class="form-block__content">
                 <div class="form-block__heading"> 
                   <p> <span class="d-block">Проведём аудит Вашего объекта и составим лист внедрений, который </span><span>поможет <span class="text_bold">сэкономить до 20% на уборке </span>и <span class="text_bold">уйти от штрафов и предписаний!</span></span></p>
@@ -554,7 +555,7 @@
                   </form>
                 </div>
                 <div class="form-block__footer">
-                   Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с <a class="form-block__link" href="#">Политикой конфиденциальности </a>сайта</div>
+                   Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с <a class="form-block__link" href="https://tlevel.ru/obrabotka-personalnyh-dannyh/" target="_blank">Политикой конфиденциальности </a>сайта</div>
               </div>
               <div class="form-block__img"> 
                 <picture> 
@@ -702,6 +703,8 @@
                   </div>
                 </div>
               </div>
+              <div class="swiper-button-prev adv__button adv__button_prev"></div>
+              <div class="swiper-button-next adv__button adv__button_next"></div>
             </div>
           </div>
           <div class="adv__bg"> 
@@ -712,7 +715,7 @@
         </section>
         <!-- Reveiws
         ================================================== -->
-        <section class="section rev">
+        <section class="section rev" id="rev-anchor">
           <div class="container rev__container"> 
             <div class="section__heading rev__heading">
               <h2> <span class="text_bold">Видеоотзывы </span>наших клиентов</h2>
@@ -723,7 +726,7 @@
               <div class="swiper rev__slider">   
                 <div class="swiper-wrapper">
                   <div class="swiper-slide rev-slide">
-                    <div class="rev-slide__img"><img src="img/rev-1.jpg" alt=""><a href="#"> 
+                    <div class="rev-slide__img"><img src="img/rev-1.jpg" alt=""><a data-fancybox href="https://www.youtube.com/watch?v=-_zv2wCj4KE"> 
                         <div class="rev-slide__btn">
                           <picture>
                             <source srcset="img/rev-play.webp" type="image/webp"><img src="img/rev-play.png" alt="">
@@ -735,7 +738,7 @@
                     </div>
                   </div>
                   <div class="swiper-slide rev-slide">
-                    <div class="rev-slide__img"><img src="img/rev-2.jpg" alt=""><a href="#"> 
+                    <div class="rev-slide__img"><img src="img/rev-2.jpg" alt=""><a data-fancybox href="https://www.youtube.com/watch?v=TIa7AznYsws"> 
                         <div class="rev-slide__btn">
                           <picture>
                             <source srcset="img/rev-play.webp" type="image/webp"><img src="img/rev-play.png" alt="">
@@ -747,7 +750,7 @@
                     </div>
                   </div>
                   <div class="swiper-slide rev-slide">
-                    <div class="rev-slide__img"><img src="img/rev-3.jpg" alt=""><a href="#"> 
+                    <div class="rev-slide__img"><img src="img/rev-3.jpg" alt=""><a data-fancybox href="https://www.youtube.com/watch?v=CGhAJf7kXfM"> 
                         <div class="rev-slide__btn">
                           <picture>
                             <source srcset="img/rev-play.webp" type="image/webp"><img src="img/rev-play.png" alt="">
@@ -759,7 +762,7 @@
                     </div>
                   </div>
                   <div class="swiper-slide rev-slide">
-                    <div class="rev-slide__img"><img src="img/rev-4.jpg" alt=""><a href="#"> 
+                    <div class="rev-slide__img"><img src="img/rev-4.jpg" alt=""><a data-fancybox href="https://www.youtube.com/watch?v=YAXWOLrwDZA">
                         <div class="rev-slide__btn">
                           <picture>
                             <source srcset="img/rev-play.webp" type="image/webp"><img src="img/rev-play.png" alt="">
@@ -771,14 +774,14 @@
                     </div>
                   </div>
                   <div class="swiper-slide rev-slide">
-                    <div class="rev-slide__img"><img src="img/rev-5.jpg" alt=""><a href="#"> 
+                    <div class="rev-slide__img"><img src="img/rev-5.jpg" alt=""><a data-fancybox href="https://www.youtube.com/watch?v=tL6QCAtCWGw"> 
                         <div class="rev-slide__btn">
                           <picture>
                             <source srcset="img/rev-play.webp" type="image/webp"><img src="img/rev-play.png" alt="">
                           </picture>
                         </div></a></div>
                     <div class="rev-slide__caption"> 
-                      <div class="rev-slide__author">Наталья Переходько</div>
+                      <div class="rev-slide__author">Надежда Переходько</div>
                       <div class="rev-slide__post">заведующая хозяйством "Альфа центр здоровья"</div>
                     </div>
                   </div>
@@ -791,7 +794,7 @@
             <div class="rev__footer-text">Каждый руководитель компании- клиента может порекомендовать нас</div>
           </div>
           <div class="form-block-wrapper">
-            <div class="form-block">
+            <div class="form-block" id="tour-anchor">
               <div class="form-block__content">
                 <div class="form-block__heading rev-form-block__heading">
                   <h3> <span class="text_bold">Устроим экскурсию </span>на наш объект!</h3>
@@ -817,7 +820,7 @@
                   </form>
                 </div>
                 <div class="form-block__footer">
-                   Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с <a class="form-block__link" href="#">Политикой конфиденциальности </a>сайта</div>
+                   Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с <a class="form-block__link" href="https://tlevel.ru/obrabotka-personalnyh-dannyh/" target="_blank">Политикой конфиденциальности </a>сайта</div>
               </div>
             </div>
           </div>
@@ -828,30 +831,42 @@
           <div class="awa__junction"></div>
           <div class="container awa__container">
             <div class="awa__content"> 
-              <div class="awa__item"><a href="#"> 
-                  <div class="awa__img"> <img src="img/awa-1.jpg" alt="Изображение лицензии"></div></a>
-                <div class="awa__descr"> 
-                  <div class="awa__top">c 2018 года</div>
-                  <div class="awa__title">Медицинская лицензия</div>
-                  <div class="awa__about">Она особенно важна для клининга в пищевой промышленности и в медицинских учреждениях</div>
+              <div class="swiper awa__slider">   
+                <div class="swiper-wrapper awa__slider-inner">
+                  <div class="swiper-slide awa-slide">
+                    <div class="awa__item"><a data-fancybox="awa-gallery" href="img/gal/awa-1.jpg"> 
+                        <div class="awa__img"> <img src="img/awa-1.jpg" alt="Изображение лицензии"></div></a>
+                      <div class="awa__descr"> 
+                        <div class="awa__top">c 2018 года</div>
+                        <div class="awa__title">Медицинская лицензия</div>
+                        <div class="awa__about">Она особенно важна для клининга в пищевой промышленности и в медицинских учреждениях</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide awa-slide">
+                    <div class="awa__item"><a data-fancybox="awa-gallery" href="img/gal/awa-2.jpg"> 
+                        <div class="awa__img"> <img src="img/awa-2.jpg" alt="Изображение национального сертификата Лидер Отрасли"></div></a>
+                      <div class="awa__descr"> 
+                        <div class="awa__top">2017</div>
+                        <div class="awa__title">Лидер отрасли</div>
+                        <div class="awa__about">За весомый вклад в развите российской экономики, достижение высоких экономических показателей</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide awa-slide">
+                    <div class="awa__item"><a data-fancybox="awa-gallery" href="img/gal/awa-3.jpg"> 
+                        <div class="awa__img"> <img src="img/awa-3.jpg" alt="Изображение лицензии"></div></a>
+                      <div class="awa__descr"> 
+                        <div class="awa__top">ФМ.РАДО.РУС</div>
+                        <div class="awa__title">Реестр добросовестных клининговых компаний</div>
+                        <div class="awa__about"> Каждый заказчик может проверить Top Level  на соблюдение налогового законодательства РФ</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="awa__item"><a href="#"> 
-                  <div class="awa__img"> <img src="img/awa-2.jpg" alt="Изображение национального сертификата Лидер Отрасли"></div></a>
-                <div class="awa__descr"> 
-                  <div class="awa__top">2017</div>
-                  <div class="awa__title">Лидер отрасли</div>
-                  <div class="awa__about">За весомый вклад в развите российской экономики, достижение высоких экономических показателей</div>
-                </div>
-              </div>
-              <div class="awa__item"><a href="#"> 
-                  <div class="awa__img"> <img src="img/awa-3.jpg" alt="Изображение лицензии"></div></a>
-                <div class="awa__descr"> 
-                  <div class="awa__top">ФМ.РАДО.РУС</div>
-                  <div class="awa__title">Реестр добросовестных клининговых компаний</div>
-                  <div class="awa__about"> Каждый заказчик может проверить Top Level  на соблюдение налогового законодательства РФ</div>
-                </div>
-              </div>
+              <div class="swiper-button-prev awa__button awa__button_prev"></div>
+              <div class="swiper-button-next awa__button awa__button_next"></div>
             </div>
             <div class="awa__stamp"> 
               <picture> 
@@ -861,7 +876,7 @@
           </div>
           <div class="container">
             <div class="awa__footer"> 
-              <div class="awa__footer-link"> <a href="#">Посмотреть все <i class="awa-arrow"></i><br>сертификаты и лицензии  </a></div>
+              <div class="awa__footer-link"> <a href="https://tlevel.ru/sertifikaty-i-licenzii/" target="_blank">Посмотреть все <i class="awa-arrow"></i><br>сертификаты и лицензии  </a></div>
             </div>
           </div>
         </div>
@@ -870,15 +885,15 @@
         <div class="gal"> 
           <div class="container gal__container"> 
             <div class="gal-grid"> 
-              <div class="gal__img gal__img-1"> <a href="#"><img src="img/gal-thumb-1.jpg" alt=""></a></div>
-              <div class="gal__img gal__img-2"><a href="#"><img src="img/gal-thumb-2.jpg" alt=""></a></div>
-              <div class="gal__img gal__img-3"> <a href="#"><img src="img/gal-thumb-3.jpg" alt=""></a></div>
-              <div class="gal__img gal__img-4"> <a href="#"><img src="img/gal-thumb-4.jpg" alt=""></a></div>
-              <div class="gal__img gal__img-5"> <a href="#"><img src="img/gal-thumb-5.jpg" alt=""></a></div>
-              <div class="gal__img gal__img-6"> <a href="#"><img src="img/gal-thumb-6.jpg" alt=""></a></div>
-              <div class="gal__img gal__img-7"> <a href="#"><img src="img/gal-thumb-7.jpg" alt=""></a></div>
-              <div class="gal__img gal__img-8"> <a href="#"><img src="img/gal-thumb-8.jpg" alt=""></a></div>
-              <div class="gal__img gal__img-9"> <a href="#"><img src="img/gal-thumb-9.jpg" alt=""></a></div>
+              <div class="gal__img gal__img-1"> <a data-fancybox="gallery" href="img/gal/gal-1.jpg"><img src="img/gal-thumb-1.jpg" alt=""></a></div>
+              <div class="gal__img gal__img-2"><a data-fancybox="gallery" href="img/gal/gal-2.jpg"><img src="img/gal-thumb-2.jpg" alt=""></a></div>
+              <div class="gal__img gal__img-3"> <a data-fancybox="gallery" href="img/gal/gal-3.jpg"><img src="img/gal-thumb-3.jpg" alt=""></a></div>
+              <div class="gal__img gal__img-4"> <a data-fancybox="gallery" href="img/gal/gal-4.jpg"><img src="img/gal-thumb-4.jpg" alt=""></a></div>
+              <div class="gal__img gal__img-5"> <a data-fancybox="gallery" href="img/gal/gal-5.jpg"><img src="img/gal-thumb-5.jpg" alt=""></a></div>
+              <div class="gal__img gal__img-6"> <a data-fancybox="gallery" href="img/gal/gal-6.jpg"><img src="img/gal-thumb-6.jpg" alt=""></a></div>
+              <div class="gal__img gal__img-7"> <a data-fancybox="gallery" href="img/gal/gal-7.jpg"><img src="img/gal-thumb-7.jpg" alt=""></a></div>
+              <div class="gal__img gal__img-8"> <a data-fancybox="gallery" href="img/gal/gal-8.jpg"><img src="img/gal-thumb-8.jpg" alt=""></a></div>
+              <div class="gal__img gal__img-9"> <a data-fancybox="gallery" href="img/gal/gal-9.jpg"><img src="img/gal-thumb-9.jpg" alt=""></a></div>
             </div>
           </div>
         </div>
@@ -890,10 +905,9 @@
         <div class="container"> 
           <div class="row">
             <div class="col">
-              <div class="footer-col__item footer__logo logo">
-                <div class="logo_img"><img src="img/logo-blue.png" alt="Логотип - toplevel"></div>
-                <div class="logo__caption">коммерческий клининг</div>
-              </div>
+              <div class="footer-col__item footer__logo logo"><a href="#header"> 
+                  <div class="logo_img"><img src="img/logo-blue.png" alt="Логотип - toplevel"></div>
+                  <div class="logo__caption">коммерческий клининг</div></a></div>
               <div class="footer-col__item text_grey">
                  © Клининговая компания <br>Top Level, 2009-2022</div>
               <div class="footer-col__item text_grey">ИНН 6315624973<br>ОГРН 1096315002706</div>
@@ -908,18 +922,18 @@
               <div class="footer__contacts">
                 <div class="footer__phone"> <a href="tel:+78000000000">8 (800) 000-00-00</a></div>
                 <div class="footer__cb-btn modal-trigger" data-target="callBackModal">Обратный звонок</div>
-                <div class="footer__social"> <a href="#"><i class="vk"></i></a><a href="#"><i class="inst"></i></a><a href="#"><i class="yt"></i></a></div>
+                <div class="footer__social"> <a href="https://vk.com/tlevel" target="_blank"><i class="vk"></i></a><a href="#"><i class="inst"></i></a><a href="https://www.youtube.com/channel/UCWC5FbNbtQzSCYieFs4twzw" target="_blank"><i class="yt"></i></a></div>
               </div>
             </div>
             <div class="col"> 
               <nav> 
                 <ul class="footer-menu"> 
-                  <li class="footer-menu__item"><a href="#">Записаться на аудит</a></li>
-                  <li class="footer-menu__item"><a href="#">Наши услуги</a></li>
-                  <li class="footer-menu__item"><a href="#">Эксперты Top Level</a></li>
-                  <li class="footer-menu__item"><a href="#">Видеоотзывы</a></li>
-                  <li class="footer-menu__item"><a href="#">Записаться на экскурсию</a></li>
-                  <li class="footer-menu__item"><a href="#">Политика конфиденциальности</a></li>
+                  <li class="footer-menu__item"><a href="#audit-anchor">Записаться на аудит</a></li>
+                  <li class="footer-menu__item"><a href="#serv-anchor">Наши услуги</a></li>
+                  <li class="footer-menu__item"><a href="#expert-anchor">Эксперты Top Level</a></li>
+                  <li class="footer-menu__item"><a href="#rev-anchor">Видеоотзывы</a></li>
+                  <li class="footer-menu__item"><a href="#tour-anchor">Записаться на экскурсию</a></li>
+                  <li class="footer-menu__item"><a href="https://tlevel.ru/obrabotka-personalnyh-dannyh/" target="_blank">Политика конфиденциальности</a></li>
                 </ul>
               </nav>
             </div>
@@ -953,7 +967,7 @@
               </div>
               <div class="modal__footer">
                 <p>
-                   Нажимая на кнопку «Оставить заявку»,<br>Вы соглашаетесь с <a><span class="text_bold">Политикой конфиденциальности </span></a>сайта</p>
+                   Нажимая на кнопку «Оставить заявку»,<br>Вы соглашаетесь с <a href="https://tlevel.ru/obrabotka-personalnyh-dannyh/" target="_blank"><span class="text_bold">Политикой конфиденциальности </span></a>сайта</p>
               </div>
             </form>
           </div>
@@ -990,7 +1004,7 @@
               </div>
               <div class="modal__footer">
                 <p>
-                   Нажимая на кнопку «Оставить заявку»,<br>Вы соглашаетесь с <a><span class="text_bold">Политикой конфиденциальности </span></a>сайта</p>
+                   Нажимая на кнопку «Оставить заявку»,<br>Вы соглашаетесь с <a href="https://tlevel.ru/obrabotka-personalnyh-dannyh/" target="_blank"><span class="text_bold">Политикой конфиденциальности </span></a>сайта</p>
               </div>
             </form>
           </div>
@@ -1034,7 +1048,7 @@
               </div>
               <div class="modal__footer">
                 <p>
-                   Нажимая на кнопку «Оставить заявку»,<br>Вы соглашаетесь с <a><span class="text_bold">Политикой конфиденциальности </span></a>сайта</p>
+                   Нажимая на кнопку «Оставить заявку»,<br>Вы соглашаетесь с <a href="https://tlevel.ru/obrabotka-personalnyh-dannyh/" target="_blank"><span class="text_bold">Политикой конфиденциальности </span></a>сайта</p>
               </div>
             </form>
           </div>
@@ -1042,6 +1056,8 @@
         <div class="modal__overlay modal-close"></div>
       </div>
     </div>
+    <script src="jQuery-3.6.0.js"></script>
+    <script src="jquery.fancybox.min.js"></script>
     <script src="swiper.min.js"></script>
     <script src="js/script.js"></script>
   </body>

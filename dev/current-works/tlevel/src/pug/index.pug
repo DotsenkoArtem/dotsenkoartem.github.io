@@ -128,7 +128,7 @@ html(lang="ru")
                 <!-- Services
                 |
                 |================================================== -->
-                section.section.services 
+                section.section.services
                     .container.services__container
 
                         .services-label
@@ -141,7 +141,7 @@ html(lang="ru")
                                 img.d-inline(src="img/serv-20.png", alt="")
                                 span.d-inline-block.text_bold на клининговых услугах 
 
-                        .section__heading.services__heading
+                        .section__heading.services__heading#serv-anchor
                             h2 
                                 |Наши 
                                 span.text_bold услуги
@@ -294,10 +294,10 @@ html(lang="ru")
                 <!-- Expert
                 |
                 |================================================== -->
-                section.section.expert 
+                section.section.expert
                     .container.expert__container
                         .expert__content 
-                            .expert__heading 
+                            .expert__heading#expert-anchor
                                 h2 
                                     |Познакомьтесь
                                     br
@@ -566,8 +566,8 @@ html(lang="ru")
                                         img(src="img/client-10.png", alt="Логотип Альфа центр здоровья")
 
 
-                        .swiper-button-prev
-                        .swiper-button-next
+                        .swiper-button-prev.client__button.client__button_prev
+                        .swiper-button-next.client__button.client__button_next
 
                         .client__mask.client__mask_right
 
@@ -608,7 +608,7 @@ html(lang="ru")
                                     source(srcset="img/probl-man.webp" type="image/webp")
                                     img(src="img/probl-man.png", alt="")
 
-                        .form-block 
+                        .form-block#audit-anchor
                             .form-block__content
                                 .form-block__heading 
                                     p 
@@ -645,7 +645,7 @@ html(lang="ru")
 
                                 .form-block__footer 
                                     |Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с 
-                                    a.form-block__link(href="#") Политикой конфиденциальности 
+                                    a.form-block__link(href="https://tlevel.ru/obrabotka-personalnyh-dannyh/", target="_blank") Политикой конфиденциальности 
                                     |сайта
 
                             .form-block__img 
@@ -831,6 +831,9 @@ html(lang="ru")
                                             span.text_bold Заказчик занимается основными процессами компании, 
                                             |не отвлекаясь на второстепенные
 
+                            .swiper-button-prev.adv__button.adv__button_prev
+                            .swiper-button-next.adv__button.adv__button_next
+
                     .adv__bg 
                         picture 
                             source(srcset="img/adv-bg.webp" type="image/webp")
@@ -843,7 +846,7 @@ html(lang="ru")
                 <!-- Reveiws
                 |
                 |================================================== -->
-                section.section.rev
+                section.section.rev#rev-anchor
                     .container.rev__container 
                         .section__heading.rev__heading
                                 h2 
@@ -861,7 +864,7 @@ html(lang="ru")
                                     .swiper-slide.rev-slide
                                         .rev-slide__img
                                             img(src="img/rev-1.jpg", alt="")
-                                            a(href="#") 
+                                            a(data-fancybox, href="https://www.youtube.com/watch?v=-_zv2wCj4KE") 
                                                 .rev-slide__btn
                                                     picture
                                                         source(srcset="img/rev-play.webp" type="image/webp")
@@ -877,7 +880,7 @@ html(lang="ru")
                                     .swiper-slide.rev-slide
                                         .rev-slide__img
                                             img(src="img/rev-2.jpg", alt="")
-                                            a(href="#") 
+                                            a(data-fancybox, href="https://www.youtube.com/watch?v=TIa7AznYsws") 
                                                 .rev-slide__btn
                                                     picture
                                                         source(srcset="img/rev-play.webp" type="image/webp")
@@ -893,7 +896,7 @@ html(lang="ru")
                                     .swiper-slide.rev-slide
                                         .rev-slide__img
                                             img(src="img/rev-3.jpg", alt="")
-                                            a(href="#") 
+                                            a(data-fancybox, href="https://www.youtube.com/watch?v=CGhAJf7kXfM") 
                                                 .rev-slide__btn
                                                     picture
                                                         source(srcset="img/rev-play.webp" type="image/webp")
@@ -908,7 +911,7 @@ html(lang="ru")
                                     .swiper-slide.rev-slide
                                         .rev-slide__img
                                             img(src="img/rev-4.jpg", alt="")
-                                            a(href="#") 
+                                            a(data-fancybox, href="https://www.youtube.com/watch?v=YAXWOLrwDZA")
                                                 .rev-slide__btn
                                                     picture
                                                         source(srcset="img/rev-play.webp" type="image/webp")
@@ -923,14 +926,14 @@ html(lang="ru")
                                     .swiper-slide.rev-slide
                                         .rev-slide__img
                                             img(src="img/rev-5.jpg", alt="")
-                                            a(href="#") 
+                                            a(data-fancybox, href="https://www.youtube.com/watch?v=tL6QCAtCWGw") 
                                                 .rev-slide__btn
                                                     picture
                                                         source(srcset="img/rev-play.webp" type="image/webp")
                                                         img(src="img/rev-play.png", alt="")
 
                                         .rev-slide__caption 
-                                            .rev-slide__author Наталья Переходько
+                                            .rev-slide__author Надежда Переходько
                                             .rev-slide__post заведующая хозяйством "Альфа центр здоровья"
 
 
@@ -942,7 +945,7 @@ html(lang="ru")
 
                     
                     .form-block-wrapper
-                        .form-block
+                        #tour-anchor.form-block
                             .form-block__content
                                 .form-block__heading.rev-form-block__heading
                                     h3 
@@ -979,7 +982,7 @@ html(lang="ru")
 
                                 .form-block__footer 
                                     |Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с 
-                                    a.form-block__link(href="#") Политикой конфиденциальности 
+                                    a.form-block__link(href="https://tlevel.ru/obrabotka-personalnyh-dannyh/", target="_blank") Политикой конфиденциальности 
                                     |сайта
 
                         //- .form-block__img 
@@ -1001,34 +1004,45 @@ html(lang="ru")
                         .awa__content 
 
 
-                            .awa__item
-                                a(href="#") 
-                                    .awa__img 
-                                        img(src="img/awa-1.jpg", alt="Изображение лицензии")
-                                .awa__descr 
-                                    .awa__top c 2018 года
-                                    .awa__title Медицинская лицензия
-                                    .awa__about Она особенно важна для клининга в пищевой промышленности и в медицинских учреждениях
+                            .swiper.awa__slider    
+                                .swiper-wrapper.awa__slider-inner
 
 
-                            .awa__item
-                                a(href="#") 
-                                    .awa__img 
-                                        img(src="img/awa-2.jpg", alt="Изображение национального сертификата Лидер Отрасли")
-                                .awa__descr 
-                                    .awa__top 2017
-                                    .awa__title Лидер отрасли
-                                    .awa__about За весомый вклад в развите российской экономики, достижение высоких экономических показателей
+                                    .swiper-slide.awa-slide
+                                        .awa__item
+                                            a(data-fancybox="awa-gallery" href="img/gal/awa-1.jpg") 
+                                                .awa__img 
+                                                    img(src="img/awa-1.jpg", alt="Изображение лицензии")
+                                            .awa__descr 
+                                                .awa__top c 2018 года
+                                                .awa__title Медицинская лицензия
+                                                .awa__about Она особенно важна для клининга в пищевой промышленности и в медицинских учреждениях
 
 
-                            .awa__item
-                                a(href="#") 
-                                    .awa__img 
-                                        img(src="img/awa-3.jpg", alt="Изображение лицензии")
-                                .awa__descr 
-                                    .awa__top ФМ.РАДО.РУС
-                                    .awa__title Реестр добросовестных клининговых компаний
-                                    .awa__about  Каждый заказчик может проверить Top Level  на соблюдение налогового законодательства РФ
+                                    .swiper-slide.awa-slide
+                                        .awa__item
+                                            a(data-fancybox="awa-gallery" href="img/gal/awa-2.jpg")  
+                                                .awa__img 
+                                                    img(src="img/awa-2.jpg", alt="Изображение национального сертификата Лидер Отрасли")
+                                            .awa__descr 
+                                                .awa__top 2017
+                                                .awa__title Лидер отрасли
+                                                .awa__about За весомый вклад в развите российской экономики, достижение высоких экономических показателей
+
+
+                                    .swiper-slide.awa-slide
+                                        .awa__item
+                                            a(data-fancybox="awa-gallery" href="img/gal/awa-3.jpg")  
+                                                .awa__img 
+                                                    img(src="img/awa-3.jpg", alt="Изображение лицензии")
+                                            .awa__descr 
+                                                .awa__top ФМ.РАДО.РУС
+                                                .awa__title Реестр добросовестных клининговых компаний
+                                                .awa__about  Каждый заказчик может проверить Top Level  на соблюдение налогового законодательства РФ
+
+
+                            .swiper-button-prev.awa__button.awa__button_prev
+                            .swiper-button-next.awa__button.awa__button_next
 
                         .awa__stamp 
                             picture 
@@ -1039,7 +1053,7 @@ html(lang="ru")
                     .container
                         .awa__footer 
                             .awa__footer-link 
-                                a(href="#")
+                                a(href="https://tlevel.ru/sertifikaty-i-licenzii/", target="_blank")
                                     |Посмотреть все 
                                     i.awa-arrow
                                     br
@@ -1057,39 +1071,39 @@ html(lang="ru")
                         .gal-grid 
 
                             .gal__img.gal__img-1 
-                                a(href="#")
+                                a(data-fancybox="gallery" href="img/gal/gal-1.jpg")
                                     img(src="img/gal-thumb-1.jpg", alt="") 
                         
                             .gal__img.gal__img-2
-                                a(href="#")
+                                a(data-fancybox="gallery" href="img/gal/gal-2.jpg")
                                     img(src="img/gal-thumb-2.jpg", alt="") 
                         
                             .gal__img.gal__img-3 
-                                a(href="#")
+                                a(data-fancybox="gallery" href="img/gal/gal-3.jpg")
                                     img(src="img/gal-thumb-3.jpg", alt="") 
                         
                             .gal__img.gal__img-4 
-                                a(href="#")
+                                a(data-fancybox="gallery" href="img/gal/gal-4.jpg")
                                     img(src="img/gal-thumb-4.jpg", alt="") 
                         
                             .gal__img.gal__img-5 
-                                a(href="#")
+                                a(data-fancybox="gallery" href="img/gal/gal-5.jpg")
                                     img(src="img/gal-thumb-5.jpg", alt="") 
                         
                             .gal__img.gal__img-6 
-                                a(href="#")
+                                a(data-fancybox="gallery" href="img/gal/gal-6.jpg")
                                     img(src="img/gal-thumb-6.jpg", alt="") 
                         
                             .gal__img.gal__img-7 
-                                a(href="#")
+                                a(data-fancybox="gallery" href="img/gal/gal-7.jpg")
                                     img(src="img/gal-thumb-7.jpg", alt="") 
                         
                             .gal__img.gal__img-8 
-                                a(href="#")
+                                a(data-fancybox="gallery" href="img/gal/gal-8.jpg")
                                     img(src="img/gal-thumb-8.jpg", alt="") 
                         
                             .gal__img.gal__img-9 
-                                a(href="#")
+                                a(data-fancybox="gallery" href="img/gal/gal-9.jpg")
                                     img(src="img/gal-thumb-9.jpg", alt="") 
 
 
@@ -1146,7 +1160,7 @@ html(lang="ru")
                                     |Нажимая на кнопку «Оставить заявку»,
                                     br
                                     |Вы соглашаетесь с 
-                                    a
+                                    a(href="https://tlevel.ru/obrabotka-personalnyh-dannyh/", target="_blank")
                                         span.text_bold Политикой конфиденциальности 
                                     |сайта
 
@@ -1203,7 +1217,7 @@ html(lang="ru")
                                     |Нажимая на кнопку «Оставить заявку»,
                                     br
                                     |Вы соглашаетесь с 
-                                    a
+                                    a(href="https://tlevel.ru/obrabotka-personalnyh-dannyh/", target="_blank")
                                         span.text_bold Политикой конфиденциальности 
                                     |сайта
 
@@ -1275,7 +1289,7 @@ html(lang="ru")
                                     |Нажимая на кнопку «Оставить заявку»,
                                     br
                                     |Вы соглашаетесь с 
-                                    a
+                                    a(href="https://tlevel.ru/obrabotka-personalnyh-dannyh/", target="_blank")
                                         span.text_bold Политикой конфиденциальности 
                                     |сайта
 
@@ -1293,7 +1307,7 @@ html(lang="ru")
         //-         crossorigin="anonymous")
 
         //- LOCAL SCRIPTS  
-        //- script(src="jQuery-3.6.0.js")
-        //- script(src="jquery.fancybox.min.js")
+        script(src="jQuery-3.6.0.js")
+        script(src="jquery.fancybox.min.js")
         script(src="swiper.min.js")
         script(src="js/script.js")

@@ -266,6 +266,9 @@
     &::after{
       transform: rotate(90deg);
     }
+    &:hover{
+        text-decoration: none;
+    }
   }
   &__content{
     &-wrap{
@@ -337,8 +340,9 @@
 
 .clip-text{
   color: transparent;
-  background: linear-gradient(0deg, #103baa, #2052cf);
-  background-clip: text;
+//   background: linear-gradient(0deg, #103baa, #2052cf);
+    background: linear-gradient(0deg, #002277, #5d81db);
+    background-clip: text;
 }
 
 
@@ -807,9 +811,9 @@
         box-shadow: 16px 16px 18px rgba(0, 0, 0, .55);
         transform: scale(.5) translateX(-140%);
         transition: transform .3s, background-color .3s;
-        // cursor: grab;
+        cursor: grab;
         &:active{
-        //   cursor: grabbing;
+          cursor: grabbing;
         }
         &.swiper-slide-active{
             // background: #f00;
@@ -1265,7 +1269,9 @@
     }
     &-slide{
         display: flex;
-
+    }
+    &__button{
+        display: none;
     }
     &-card{
         padding: 2.5rem 3.5rem 2.5rem 3rem;
@@ -1347,6 +1353,10 @@
         }
     }
     &-slide{
+        cursor: grab;
+        &:active{
+            cursor: grabbing;
+        }
         &__img{
             position: relative;
             margin-bottom: 2rem;
@@ -1436,7 +1446,15 @@
         display: flex;
         margin-bottom: 5rem;
     }
-    &__item{
+    &__button{
+        display: none;
+    }
+    // Настройки отключенного слайдера
+    // удалить в мобильной версии при включении слайдера
+    &__slider{
+        overflow: visible;
+    }
+    &-slide{
         width: 100%;
         max-width: 33rem;
         text-align: center;
@@ -1444,6 +1462,7 @@
             margin-right: 6rem;
         }
     }
+    // ------------------------------
     &__img{
         // display: flex;
         // justify-content: center;
@@ -1583,6 +1602,9 @@
     }
     &__logo{
         margin-top: -0.4rem;
+        a{
+            color: v.$text-white;
+        }
     }
     &__mail{
         a{

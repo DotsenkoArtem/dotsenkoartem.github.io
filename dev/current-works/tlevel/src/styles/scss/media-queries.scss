@@ -192,11 +192,20 @@
 			width: auto;
 			height: auto;
 		}
+		&__button{
+			display: flex;
+		}
 		&-card{
 			width: 100%;
 			max-width: 28rem;
 			// margin-left: auto;
 			// margin-right: auto;
+		}
+	}
+
+	.awa{
+		&__button{
+			display: flex;
 		}
 	}
 }
