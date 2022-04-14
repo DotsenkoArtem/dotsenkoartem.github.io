@@ -680,6 +680,7 @@
         height: 14.5rem;
         border-radius: .5rem;
         background: linear-gradient(-48deg, #002a94, #1648c5);
+        overflow: hidden;
         &__img,
         &__caption{
             width: 50%;
@@ -797,17 +798,11 @@
     &-slide{
         &.swiper-slide-active{
             transform: scale(1)  translateX(0);
-            // transition: transform 0s;
         }
         &.swiper-slide-next{
             transform: scale(.72) translateX(-8%);
-            // transform: scale(.72);
-            // transition: transform 0s;
             &+.swiper-slide{
-                // background: #0f0;
                 transform: scale(.65) translateX(-49%);
-                // transform: scale(.65);
-                // transition: transform 0s;
             }
         }
         position: relative;
@@ -815,14 +810,11 @@
         overflow: hidden;
         box-shadow: 16px 16px 18px rgba(0, 0, 0, .55);
         transform: scale(.5) translateX(-140%);
-        // transform: scale(.5);
-        // transition: transform .3s, background-color .3s;
         transition: transform 0.4s;
         cursor: grab;
         &:active{
           cursor: grabbing;
         }
-
         &__img{
             position: relative;
             &::before{
@@ -848,7 +840,6 @@
                 display: block;
                 width: 100%;
                 height: 100%;
-                // content: '';
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -867,7 +858,6 @@
             padding-left: 6rem;
             font-size: 1.8rem;
             line-height: 1.5;
-            // text-align: center;
         }
     }
 }
@@ -998,21 +988,23 @@
 // Problem
 // -------------------------
 .problem{
-  padding-top: 18rem;
-  overflow: hidden;
-  &__container{
-      position: relative;
-      display: flex;
-      padding-bottom: 14rem;
-  }
-  &__heading{
-      max-width: 47rem;
-      align-self: center;
-    &-highlight{
-      font-weight: 700;
-      color: #1345bf;
+    padding-top: 18rem;
+    overflow: hidden;
+    &__container{
+        position: relative;
+        display: flex;
+        padding-bottom: 14rem;
     }
-  }
+    &__heading{
+        position: relative;
+        z-index: 10;
+        max-width: 47rem;
+        align-self: center;
+        &-highlight{
+            font-weight: 700;
+            color: #1345bf;
+        }
+    }
   &-list{
       position: relative;
       z-index: 10;
@@ -1052,6 +1044,7 @@
       position: absolute;
       bottom: 0;
       right: -21rem;
+      z-index: 1;
       img{
           max-width: 120rem;
       }
@@ -1071,6 +1064,7 @@
         border-radius: 1.5rem;
         overflow: hidden;
         &-wrapper{
+		    padding: 0 v.$gutter;
             position: absolute;
             z-index: 2;
             width: 100%;

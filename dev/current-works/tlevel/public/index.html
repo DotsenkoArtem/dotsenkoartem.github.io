@@ -247,7 +247,7 @@
                 <h2> <span class="d-block">Предоставим <span class="text_bold">персонального </span></span><span class="d-block"> <span class="text_bold">менеджера</span>для каждого </span><span class="d-block">клиента!</span></h2>
               </div>
               <div class="manager__subheading">
-                 Любой вопрос будет решен <span class="manager__subheading-highlight">в течении 30 мин!</span></div>
+                 Любой вопрос будет решен <span class="manager__subheading-highlight d-block_md">в течение 30 мин!</span></div>
               <div class="manager-media-wrap row m-x-0"> 
                 <div class="manager-media"> 
                   <div class="manager-media__text">Все этапы, стоимость и ответственность за работы прописываются в контракте</div>
@@ -291,13 +291,12 @@
           <div class="container expert__container">
             <div class="expert__content"> 
               <div class="expert__heading" id="expert-anchor">
-                <h2>
-                   Познакомьтесь<br>с экспертами<br><span class="expert__heading-highlight">Top Level</span></h2>
+                <h2> <span class="d-block d-inline_md">Познакомьтесь </span><span class="d-block d-inline_md">с экспертами </span><span class="expert__heading-highlight d-block">Top Level</span></h2>
               </div>
               <div class="expert__text"> 
                 <p>Персональный эксперт (менеджер) компании берет на себя все вопросы управления клинингом. В компании есть строгие регламенты, автоматизированно управление клинингом и налажены всен бизнес-процессы</p>
               </div>
-              <div class="expert-video">
+              <div class="expert-video d-none_md">
                 <div class="expert-video__img"> 
                   <picture> 
                     <source srcset="img/exp-video.webp" type="image/webp"><img src="img/exp-video.png" alt="Заставка для видео">
@@ -366,7 +365,7 @@
                         <div class="img-gradient"></div>
                       </div>
                       <div class="expert-slide__caption">
-                         Дмитрий Востров<br>Востров</div>
+                         Дмитрий <br>Востров</div>
                     </div>
                   </div>
                   <div class="swiper-slide expert-slide">
@@ -449,6 +448,21 @@
                 </div>
               </div>
               <div class="expert__slider-shine"></div>
+            </div>
+            <div class="expert-video d-none d-flex_md">
+              <div class="expert-video__img"> 
+                <picture> 
+                  <source srcset="img/exp-video.webp" type="image/webp"><img src="img/exp-video.png" alt="Заставка для видео">
+                </picture>
+              </div>
+              <div class="expert-video__caption"> 
+                <div class="expert-video__text">
+                   Посмотрите <br>короткое видео <br>о нашей компании</div>
+              </div>
+              <div class="expert-video__btn"><a href="#">
+                  <picture> 
+                    <source srcset="img/exp-vid-btn.webp" type="image/webp"><img src="img/exp-vid-btn.png" alt="Заставка для видео">
+                  </picture></a></div>
             </div>
           </div>
         </section>
@@ -535,35 +549,37 @@
                 </picture>
               </div>
             </div>
-            <div class="form-block" id="audit-anchor">
-              <div class="form-block__content">
-                <div class="form-block__heading"> 
-                  <p> <span class="d-block">Проведём аудит Вашего объекта и составим лист внедрений, который </span><span>поможет <span class="text_bold">сэкономить до 20% на уборке </span>и <span class="text_bold">уйти от штрафов и предписаний!</span></span></p>
+            <div class="container_fluid">
+              <div class="form-block problem__form-block" id="audit-anchor">
+                <div class="form-block__content">
+                  <div class="form-block__heading"> 
+                    <p> <span class="d-block">Проведём аудит Вашего объекта и составим лист внедрений, который </span><span>поможет <span class="text_bold">сэкономить до 20% на уборке </span>и <span class="text_bold">уйти от штрафов и предписаний!</span></span></p>
+                  </div>
+                  <div class="form-block__form-wrap"> 
+                    <form class="form form-block__form" id="audit" name="audit" data-action="send-audit.php"> 
+                      <div class="form__group form__group_control form-block__group">
+                        <input class="form__control form-block__control" type="text" name="userName" id="userName1" placeholder="Имя" required>
+                      </div>
+                      <div class="form__group form__group_control form-block__group">
+                        <input class="form__control form-block__control" type="text" name="company" id="company1" placeholder="Компания" required>
+                      </div>
+                      <div class="form__group form__group_control form-block__group">
+                        <input class="form__control form-block__control" type="text" name="userPhone" id="userPhone1" placeholder="Номер телефона" required>
+                      </div>
+                      <input type="hidden" value="Заявка на бесплатный аудит" name="formTheme">
+                      <div class="form__submit-wrap form-block__submit loader-container">
+                        <button class="btn btn_primary form__submit" type="submit"> <span class="text_uppercase">Оставить заявку</span><span>на бесплатный аудит</span></button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="form-block__footer">
+                     Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с <a class="form-block__link" href="https://tlevel.ru/obrabotka-personalnyh-dannyh/" target="_blank">Политикой конфиденциальности </a>сайта</div>
                 </div>
-                <div class="form-block__form-wrap"> 
-                  <form class="form form-block__form" id="audit" name="audit" data-action="send-audit.php"> 
-                    <div class="form__group form__group_control form-block__group">
-                      <input class="form__control form-block__control" type="text" name="userName" id="userName1" placeholder="Имя" required>
-                    </div>
-                    <div class="form__group form__group_control form-block__group">
-                      <input class="form__control form-block__control" type="text" name="company" id="company1" placeholder="Компания" required>
-                    </div>
-                    <div class="form__group form__group_control form-block__group">
-                      <input class="form__control form-block__control" type="text" name="userPhone" id="userPhone1" placeholder="Номер телефона" required>
-                    </div>
-                    <input type="hidden" value="Заявка на бесплатный аудит" name="formTheme">
-                    <div class="form__submit-wrap form-block__submit loader-container">
-                      <button class="btn btn_primary form__submit" type="submit"> <span class="text_uppercase">Оставить заявку</span><span>на бесплатный аудит</span></button>
-                    </div>
-                  </form>
+                <div class="form-block__img"> 
+                  <picture> 
+                    <source srcset="img/form-doc.webp" type="image/webp"><img src="img/form-doc.png" alt="Изображение документа">
+                  </picture>
                 </div>
-                <div class="form-block__footer">
-                   Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с <a class="form-block__link" href="https://tlevel.ru/obrabotka-personalnyh-dannyh/" target="_blank">Политикой конфиденциальности </a>сайта</div>
-              </div>
-              <div class="form-block__img"> 
-                <picture> 
-                  <source srcset="img/form-doc.webp" type="image/webp"><img src="img/form-doc.png" alt="Изображение документа">
-                </picture>
               </div>
             </div>
           </section>
@@ -610,7 +626,7 @@
         <section class="section care"> 
           <div class="container care__container">
             <div class="care__heading"> 
-              <h3> <span class="text_bold d-block">Заботимся</span>об экологии</h3>
+              <h3> <span class="text_bold d-block d-inline_md">Заботимся</span>об экологии</h3>
             </div>
             <div class="care-media care-media_doc"> 
               <div class="care-media__img care-media__img_doc">
@@ -796,7 +812,7 @@
           <div class="container rev__footer-container">
             <div class="rev__footer-text">Каждый руководитель компании- клиента может порекомендовать нас</div>
           </div>
-          <div class="form-block-wrapper">
+          <div class="rev__form-block form-block-wrapper">
             <div class="form-block" id="tour-anchor">
               <div class="form-block__content">
                 <div class="form-block__heading rev-form-block__heading">
@@ -915,11 +931,13 @@
                  © Клининговая компания <br>Top Level, 2009-2022</div>
               <div class="footer-col__item text_grey">ИНН 6315624973<br>ОГРН 1096315002706</div>
             </div>
-            <div class="col"> 
-              <address class="footer__address footer-col__item">443011, г. Самара, <br>3-я просека, д. 250</address>
-              <div class="footer__timetable footer-col__item">Режим работы: <br>пн-пт, с 9 до 18</div>
-              <div class="footer__mail footer-col__item">E-mail:<br><a href="mailto:tlevel@tlevel.ru">
-                   tlevel@tlevel.ru</a></div>
+            <div class="col footer__col_2">
+              <div class="footer__address-wrapper">
+                <address class="footer__address footer-col__item">443011, г. Самара, <br>3-я просека, д. 250</address>
+                <div class="footer__timetable footer-col__item">Режим работы: <br>пн-пт, с 9 до 18</div>
+                <div class="footer__mail footer-col__item">E-mail:<br><a href="mailto:tlevel@tlevel.ru">
+                     tlevel@tlevel.ru</a></div>
+              </div>
             </div>
             <div class="col">
               <div class="footer__contacts">

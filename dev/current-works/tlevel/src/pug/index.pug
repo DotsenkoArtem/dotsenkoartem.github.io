@@ -243,7 +243,7 @@ html(lang="ru")
                                     span.d-block клиента!
                             .manager__subheading 
                                 |Любой вопрос будет решен 
-                                span.manager__subheading-highlight в течении 30 мин!
+                                span.manager__subheading-highlight.d-block_md в течение 30 мин!
 
                             .manager-media-wrap.row.m-x-0 
 
@@ -302,16 +302,14 @@ html(lang="ru")
                         .expert__content 
                             .expert__heading#expert-anchor
                                 h2 
-                                    |Познакомьтесь
-                                    br
-                                    |с экспертами
-                                    br
-                                    span.expert__heading-highlight Top Level
+                                    span.d-block.d-inline_md Познакомьтесь 
+                                    span.d-block.d-inline_md с экспертами 
+                                    span.expert__heading-highlight.d-block Top Level
 
                             .expert__text 
                                 p Персональный эксперт (менеджер) компании берет на себя все вопросы управления клинингом. В компании есть строгие регламенты, автоматизированно управление клинингом и налажены всен бизнес-процессы
                             
-                            .expert-video
+                            .expert-video.d-none_md
                                 .expert-video__img 
                                     picture 
                                         //- source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
@@ -394,7 +392,7 @@ html(lang="ru")
                                                 img(src="img/exp-5.jpg", alt="Фото менеджера")
                                                 .img-gradient
                                             .expert-slide__caption 
-                                                |Дмитрий Востров
+                                                |Дмитрий 
                                                 br
                                                 |Востров
 
@@ -497,6 +495,27 @@ html(lang="ru")
 
                             .expert__slider-shine
 
+
+                        .expert-video.d-none.d-flex_md
+                            .expert-video__img 
+                                picture 
+                                    //- source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
+                                    //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                                    source(srcset="img/exp-video.webp", type="image/webp")
+                                    img(src="img/exp-video.png", alt="Заставка для видео")
+                            .expert-video__caption 
+                                .expert-video__text 
+                                    |Посмотрите 
+                                    br
+                                    |короткое видео 
+                                    br
+                                    |о нашей компании
+                                
+                            .expert-video__btn
+                                a(href="#")
+                                    picture 
+                                        source(srcset="img/exp-vid-btn.webp", type="image/webp")
+                                        img(src="img/exp-vid-btn.png", alt="Заставка для видео")
                 |
                 |
                 <!-- Client
@@ -611,53 +630,54 @@ html(lang="ru")
                                     source(srcset="img/probl-man.webp" type="image/webp")
                                     img(src="img/probl-man.png", alt="")
 
-                        .form-block#audit-anchor
-                            .form-block__content
-                                .form-block__heading 
-                                    p 
-                                        span.d-block Проведём аудит Вашего объекта и составим лист внедрений, который 
-                                        span поможет 
-                                            span.text_bold сэкономить до 20% на уборке 
-                                            |и 
-                                            span.text_bold уйти от штрафов и предписаний!
+                        .container_fluid
+                            .form-block.problem__form-block#audit-anchor
+                                .form-block__content
+                                    .form-block__heading 
+                                        p 
+                                            span.d-block Проведём аудит Вашего объекта и составим лист внедрений, который 
+                                            span поможет 
+                                                span.text_bold сэкономить до 20% на уборке 
+                                                |и 
+                                                span.text_bold уйти от штрафов и предписаний!
 
-                                .form-block__form-wrap 
+                                    .form-block__form-wrap 
 
-                                    form.form.form-block__form(id="audit", name="audit" data-action="send-audit.php") 
-                                        //- name-group
-                                        .form__group.form__group_control.form-block__group
-                                            input.form__control.form-block__control(type="text", name="userName", id="userName1", placeholder="Имя" required) 
-                                            //- label.form__label.form__label_control(for="userName1") 
-                                        //- company-group
-                                        .form__group.form__group_control.form-block__group
-                                            input.form__control.form-block__control(type="text", name="company", id="company1", placeholder="Компания", required) 
-                                            //- label.form__label.form__label_control(for="company") 
+                                        form.form.form-block__form(id="audit", name="audit" data-action="send-audit.php") 
+                                            //- name-group
+                                            .form__group.form__group_control.form-block__group
+                                                input.form__control.form-block__control(type="text", name="userName", id="userName1", placeholder="Имя" required) 
+                                                //- label.form__label.form__label_control(for="userName1") 
+                                            //- company-group
+                                            .form__group.form__group_control.form-block__group
+                                                input.form__control.form-block__control(type="text", name="company", id="company1", placeholder="Компания", required) 
+                                                //- label.form__label.form__label_control(for="company") 
 
-                                        //- phone-group
-                                        .form__group.form__group_control.form-block__group
-                                            input.form__control.form-block__control(type="text", name="userPhone", id="userPhone1", placeholder="Номер телефона", required) 
-                                            //- label.form__label.form__label_control(for="userPhone1")
+                                            //- phone-group
+                                            .form__group.form__group_control.form-block__group
+                                                input.form__control.form-block__control(type="text", name="userPhone", id="userPhone1", placeholder="Номер телефона", required) 
+                                                //- label.form__label.form__label_control(for="userPhone1")
 
-                                        input(type="hidden", value="Заявка на бесплатный аудит", name="formTheme")
-                                            
-                                        //- submit
-                                        .form__submit-wrap.form-block__submit.loader-container
-                                            button.btn.btn_primary.form__submit(type="submit") 
-                                                span.text_uppercase Оставить заявку
-                                                span на бесплатный аудит
+                                            input(type="hidden", value="Заявка на бесплатный аудит", name="formTheme")
+                                                
+                                            //- submit
+                                            .form__submit-wrap.form-block__submit.loader-container
+                                                button.btn.btn_primary.form__submit(type="submit") 
+                                                    span.text_uppercase Оставить заявку
+                                                    span на бесплатный аудит
 
-                                .form-block__footer 
-                                    |Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с 
-                                    a.form-block__link(href="https://tlevel.ru/obrabotka-personalnyh-dannyh/", target="_blank") Политикой конфиденциальности 
-                                    |сайта
+                                    .form-block__footer 
+                                        |Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с 
+                                        a.form-block__link(href="https://tlevel.ru/obrabotka-personalnyh-dannyh/", target="_blank") Политикой конфиденциальности 
+                                        |сайта
 
-                            .form-block__img 
-                                picture 
-                                    source(srcset="img/form-doc.webp" type="image/webp")
-                                    img(src="img/form-doc.png", alt="Изображение документа")
+                                .form-block__img 
+                                    picture 
+                                        source(srcset="img/form-doc.webp" type="image/webp")
+                                        img(src="img/form-doc.png", alt="Изображение документа")
 
 
-                                    
+                                        
 
                     |
                     |
@@ -714,7 +734,7 @@ html(lang="ru")
                     .container.care__container
                         .care__heading 
                             h3 
-                                span.text_bold.d-block Заботимся
+                                span.text_bold.d-block.d-inline_md Заботимся
                                 |об экологии
 
                         .care-media.care-media_doc 
@@ -947,7 +967,7 @@ html(lang="ru")
 
 
                     
-                    .form-block-wrapper
+                    .rev__form-block.form-block-wrapper
                         #tour-anchor.form-block
                             .form-block__content
                                 .form-block__heading.rev-form-block__heading

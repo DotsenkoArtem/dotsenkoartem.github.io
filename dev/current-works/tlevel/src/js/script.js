@@ -216,13 +216,12 @@ $(function(){
     // Expert-slider
     const expertSlider = new Swiper('.expert__slider', {
         loop: true,
-        slidesPerView: 4,
+        slidesPerView: 5,
         draggable: true,
-        // spaceBetween: 20,
-        
+        spaceBetween: 35,
         speed: 500,
         autoplay: {
-            delay: 500,
+            delay: 5000,
         },
         navigation: {
         nextEl: '.swiper-button-next.expert__button.expert__button_next',
@@ -232,12 +231,16 @@ $(function(){
             el: ".expert__pagination",
             type: "fraction",
           },
-        // breakpoints: {
-        //     992: {
-        //         slidesPerView: "auto",
-        //         centeredSlides: true,
-        //     }
-        // }
+        // slidesPerView: "auto",
+        centeredSlides: true,
+
+        breakpoints: {
+            992: {
+                spaceBetween: 0,
+                centeredSlides: false,
+                slidesPerView: 4,
+            }
+        }
     });
 // ------------------------------------------------
 
@@ -245,7 +248,7 @@ $(function(){
     // Client-slider
     const clientSlider = new Swiper('.client__slider', {
         loop: true,
-        slidesPerView: 6,
+        slidesPerView: 4,
         speed: 500,
         draggable: true,
         spaceBetween: 20,
@@ -260,12 +263,11 @@ $(function(){
         //     el: ".swiper-pagination",
         //     type: "fraction",
         //   },
-        // breakpoints: {
-        //     992: {
-        //         slidesPerView: "auto",
-        //         centeredSlides: true,
-        //     }
-        // }
+        breakpoints: {
+            991: {
+                slidesPerView: 6,
+            }
+        },
     });
 // ------------------------------------------------
     // Advantages-slider
