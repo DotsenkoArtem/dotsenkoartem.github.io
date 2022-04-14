@@ -217,12 +217,13 @@ $(function(){
     const expertSlider = new Swiper('.expert__slider', {
         loop: true,
         slidesPerView: 4,
-        speed: 300,
         draggable: true,
         // spaceBetween: 20,
-        // autoplay: {
-        //     delay: 5000,
-        // },
+        
+        speed: 500,
+        autoplay: {
+            delay: 500,
+        },
         navigation: {
         nextEl: '.swiper-button-next.expert__button.expert__button_next',
         prevEl: '.swiper-button-prev.expert__button.expert__button_prev',

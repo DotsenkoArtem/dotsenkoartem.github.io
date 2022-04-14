@@ -1385,22 +1385,18 @@ select::-ms-expand {
   -webkit-transform: scale(0.5) translateX(-140%);
   -ms-transform: scale(0.5) translateX(-140%);
   transform: scale(0.5) translateX(-140%);
-  -webkit-transition: background-color 0.3s, -webkit-transform 0.3s;
-  transition: background-color 0.3s, -webkit-transform 0.3s;
-  -o-transition: transform 0.3s, background-color 0.3s;
-  transition: transform 0.3s, background-color 0.3s;
-  transition: transform 0.3s, background-color 0.3s, -webkit-transform 0.3s;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  -o-transition: transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
   cursor: -webkit-grab;
   cursor: grab;
 }
-.expert-slide:active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
-}
 .expert-slide.swiper-slide-active {
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
+  -webkit-transform: scale(1) translateX(0);
+  -ms-transform: scale(1) translateX(0);
+  transform: scale(1) translateX(0);
 }
 .expert-slide.swiper-slide-next {
   -webkit-transform: scale(0.72) translateX(-8%);
@@ -1411,6 +1407,10 @@ select::-ms-expand {
   -webkit-transform: scale(0.65) translateX(-49%);
   -ms-transform: scale(0.65) translateX(-49%);
   transform: scale(0.65) translateX(-49%);
+}
+.expert-slide:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 .expert-slide__img {
   position: relative;
@@ -1435,6 +1435,7 @@ select::-ms-expand {
   z-index: 0;
   -webkit-filter: grayscale(0.7);
   filter: grayscale(0.7);
+  background: none;
 }
 .expert-slide__img .img-gradient {
   display: block;

@@ -769,31 +769,6 @@
             justify-content: space-between;
             align-items: center;
             font-size: 1.8rem;
-            // .swiper{
-                // &-pagination,
-                // &-button-prev,
-                // &-button-next{
-                //     position: static;
-                //     color: #335ecb;
-                // }
-                // &-button-prev,
-                // &-button-next{
-                //     margin-top: 0;
-                //     &::after{
-                //         font-size: 2rem;
-                //     }
-                // }
-                // &-button{
-                //     &-disabled{
-                //         color: rgba(255, 255, 255, 1);
-                //     }
-                // }
-                // &-pagination{
-                //     width: auto;
-                //     font-size: 2rem;
-                //     cursor: default;
-                // }
-            // }
         }
     }
 
@@ -816,38 +791,38 @@
     }
     &__pagination{
         width: auto;
-        // font-size: 2rem;
         cursor: default;
     }
 
     &-slide{
+        &.swiper-slide-active{
+            transform: scale(1)  translateX(0);
+            // transition: transform 0s;
+        }
+        &.swiper-slide-next{
+            transform: scale(.72) translateX(-8%);
+            // transform: scale(.72);
+            // transition: transform 0s;
+            &+.swiper-slide{
+                // background: #0f0;
+                transform: scale(.65) translateX(-49%);
+                // transform: scale(.65);
+                // transition: transform 0s;
+            }
+        }
         position: relative;
-        // background: rgba(255, 255, 255, 0.575);
-
-        
-
         border-radius: .5rem;
         overflow: hidden;
         box-shadow: 16px 16px 18px rgba(0, 0, 0, .55);
         transform: scale(.5) translateX(-140%);
-        transition: transform .3s, background-color .3s;
+        // transform: scale(.5);
+        // transition: transform .3s, background-color .3s;
+        transition: transform 0.4s;
         cursor: grab;
         &:active{
           cursor: grabbing;
         }
-        &.swiper-slide-active{
-            // background: #f00;
-            // opacity: 0.1;
-            transform: none;
-        }
-        &.swiper-slide-next{
-            // background: #00f;
-            transform: scale(.72) translateX(-8%);
-            &+.swiper-slide{
-                // background: #0f0;
-                transform: scale(.65) translateX(-49%);
-            }
-        }
+
         &__img{
             position: relative;
             &::before{
@@ -867,6 +842,7 @@
                 position: relative;
                 z-index: 0;
                 filter: grayscale(.7);
+                background: none;
             }
             .img-gradient{
                 display: block;
