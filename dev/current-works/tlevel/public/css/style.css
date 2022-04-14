@@ -1086,6 +1086,8 @@ select::-ms-expand {
 }
 .services-card__img img {
   max-width: none;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center center;
@@ -1184,6 +1186,23 @@ select::-ms-expand {
 }
 .manager__img img {
   max-width: 40rem;
+}
+.manager__name {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.manager__name-wrap {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  bottom: 42%;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 1rem;
 }
 
 .expert {
@@ -2878,8 +2897,83 @@ ANIMATIONS
   .d-inline_md {
     display: inline;
   }
+
+  .intro__img img {
+    max-width: 118rem;
+  }
+
+  .tender {
+    padding-top: 4.5rem;
+    padding-bottom: 12rem;
+  }
+  .tender__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 10;
+  }
+  .tender__content .btn {
+    position: relative;
+    z-index: 10;
+  }
+  .tender__text {
+    margin-right: 0;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  .tender__img {
+    top: 4rem;
+  }
+
+  .services-label {
+    max-width: 60rem;
+  }
+
+  .manager__content {
+    margin-left: 0;
+    position: relative;
+    z-index: 10;
+  }
+  .manager-media:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+  .manager-media-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .manager-media__img {
+    left: auto;
+    right: 0;
+  }
+  .manager-media__img_phone {
+    left: -1rem;
+  }
+  .manager-media__img_doc {
+    top: -3rem;
+    left: -4rem;
+  }
+  .manager-media__img_doc img {
+    max-width: 18rem;
+  }
+  .manager__img {
+    left: auto;
+    right: 0;
+  }
 }
 @media (max-width: 767.98px) {
+  html {
+    font-size: 7px;
+  }
+
   .container, .container_xl, .container_lg, .container_md {
     max-width: 540px;
   }
@@ -2895,6 +2989,10 @@ ANIMATIONS
   }
 }
 @media (max-width: 575.98px) {
+  html {
+    font-size: 6px;
+  }
+
   .container, .container_xl, .container_lg, .container_md, .container_sm {
     max-width: 440px;
     padding-left: 2.5rem;

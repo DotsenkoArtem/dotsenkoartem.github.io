@@ -176,14 +176,81 @@
 			}
 		}
 	}
+	.intro{
+		&__img{
+			img{
+				max-width: 118rem;
+			}
+		}
+	}
+	.tender{
+		padding-top: 4.5rem;
+		padding-bottom: 12rem;
+		&__content{
+			flex-direction: column;
+			align-items: center;
+			z-index: 10;
+			.btn{
+				position: relative;
+				z-index: 10;
+			}
+		}
+		&__text{
+			margin-right: 0;
+			margin-bottom: 4rem;
+			text-align: center;
+		}
+		&__img{
+			top: 4rem;
+		}
+	}
+	.services{
+		&-label{
+			max-width: 60rem;
+		}
+	}
+	.manager{
+		&__content{
+			margin-left: 0;
+			position: relative;
+			z-index: 10;
+		}
+		&-media{
+			&:not(:last-child){
+				margin-bottom: 4rem;
+			}
+			&-wrap{
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			&__img{
+				left: auto;
+				right: 0;
+				&_phone{
+					left: -1rem;
+				}
+				&_doc{
+					top: -3rem;
+					left: -4rem;
+					img{
+						max-width: 18rem;
+					}
+				}
+			}
+		}
+		&__img{
+			left: auto;
+			right: 0;
+		}
+	}
 }
 
 
 // SM
 @media (max-width: 767.98px){
-	// html{
-	// 	font-size: 7px;
-	// }
+	html{
+		font-size: 7px;
+	}
 	.container{
 		&,
 		&_xl,
@@ -215,9 +282,9 @@
 
 // XS
 @media (max-width: 575.98px){
-	// html{
-	// 	font-size: 6px;
-	// }
+	html{
+		font-size: 6px;
+	}
 	.container{
 		&,
 		&_xl,
