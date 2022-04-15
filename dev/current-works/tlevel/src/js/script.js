@@ -1,6 +1,6 @@
 "use strict"
 
-// window.onload = function (){
+window.onload = function (){
 
     // Intro Why Collapse
     whyBtn.onclick = function () {
@@ -221,9 +221,9 @@ $(function(){
         centeredSlides: true,
         spaceBetween: 35,
         speed: 500,
-        autoplay: {
-            delay: 5000,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        // },
         navigation: {
         nextEl: '.swiper-button-next.expert__button.expert__button_next',
         prevEl: '.swiper-button-prev.expert__button.expert__button_prev',
@@ -249,7 +249,7 @@ $(function(){
             },
         }
     });
-// ------------------------------------------------
+// -----------------------------------------------
 
 
     // Client-slider
@@ -428,5 +428,5 @@ $(function(){
     });
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// };
+};
 
