@@ -48,12 +48,12 @@ html(lang="ru")
                                         source(srcset="img/intro-doc.webp", type="image/webp")
                                         img(src="img/intro-doc.png", alt="Изображение документа")
 
-                            .row.m-x-0 
+                            .intro__why-wrap.row.m-x-0 
                                 .flex-none
                                     .btn.btn_primary.modal-trigger(data-target="checkModal")
                                         span.text_uppercase Оставить заявку
 
-                                #why.why 
+                                #why.why.intro__why
                                     #whyBtn.why__btn 
                                         | Почему бесплатно?
                                     .why__content-wrap
@@ -104,6 +104,11 @@ html(lang="ru")
                             .img__title 
                                 span Наталья Богданова
                                 span.img__subtitle.d-block генеральный директор
+                    
+                    .intro__mob-shine.d-none.d-block_xs
+                        picture 
+                            source(srcset="img/mob/header-shine.webp" type="image/webp")
+                            img(src="img/mob/header-shine.png", alt="")
                                     
 
                 |
@@ -974,6 +979,13 @@ html(lang="ru")
                     .container.rev__footer-container
                         .rev__footer-text Каждый руководитель компании- клиента может порекомендовать нас
 
+                        .rev__footer-link.d-none.d-i-block_xs
+                            a(href="https://tlevel.ru/sertifikaty-i-licenzii/", target="_blank")
+                                |Посмотреть все 
+                                i.awa-arrow
+                                br
+                                |отзывы
+
 
                     
                     .rev__form-block.form-block-wrapper
@@ -1084,7 +1096,7 @@ html(lang="ru")
 
                     .container
                         .awa__footer 
-                            .awa__footer-link 
+                            .awa__footer-link.d-none_xs
                                 a(href="https://tlevel.ru/sertifikaty-i-licenzii/", target="_blank")
                                     |Посмотреть все 
                                     i.awa-arrow

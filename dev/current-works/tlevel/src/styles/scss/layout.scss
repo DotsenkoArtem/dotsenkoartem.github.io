@@ -1296,6 +1296,36 @@
     }
     &__button{
         display: none;
+        top: 50%;
+        z-index: 15;
+        &::before{
+            position: absolute;
+            z-index: -1;
+            display: block;
+            width: v.$rev-btn-width;
+            height: v.$rev-btn-width;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.43);
+            content: '';
+            transition: transform .3s;
+        }
+        &::after{
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+        &:active{
+            transform: scale(1);
+            transition: transform 0s;
+        }
+        &_prev{
+            left: calc(50% - (v.$adv-card-width-mob/2) - (v.$rev-btn-width));
+        }
+        &_next{
+            right: calc(50% - (v.$adv-card-width-mob/2) - (v.$rev-btn-width));
+        }
     }
     &-card{
         padding: 2.5rem 3.5rem 2.5rem 3rem;
@@ -1467,6 +1497,20 @@
     }
     &-form-block__heading{
         margin-bottom: 2rem;
+    }
+    &__footer-link {
+        margin-left: auto;
+        margin-right: 5rem;
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.25;
+        a{
+            color: #0b39ac;
+        }
+        .awa-arrow{
+            margin-left: 5rem;
+            transition: transform .3s;
+        }
     }
 }
 

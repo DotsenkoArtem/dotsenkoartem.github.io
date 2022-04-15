@@ -286,6 +286,7 @@ function initAdvSlider() {
       slidesPerView: 1,
       speed: 500,
       spaceBetween: 20,
+      centeredSlides: true,
       // autoplay: {
       //     delay: 5000,
       // },
@@ -295,9 +296,7 @@ function initAdvSlider() {
       },
       breakpoints: {
         480: {
-          slidesPerView: "auto",
-          centeredSlides: true,
-          spaceBetween: 40
+          slidesPerView: "auto"
         }
       }
     });
