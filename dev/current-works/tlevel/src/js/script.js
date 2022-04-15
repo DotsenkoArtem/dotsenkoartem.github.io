@@ -216,8 +216,9 @@ $(function(){
     // Expert-slider
     const expertSlider = new Swiper('.expert__slider', {
         loop: true,
-        slidesPerView: 3,
-        draggable: true,
+        slidesPerView: "auto",
+        // draggable: true,
+        centeredSlides: true,
         spaceBetween: 35,
         speed: 500,
         autoplay: {
@@ -232,10 +233,13 @@ $(function(){
             type: "fraction",
           },
         // slidesPerView: "auto",
-        centeredSlides: true,
+        
 
         breakpoints: {
-            767: {
+            576: {
+                slidesPerView: 3,
+            },
+            768: {
                 slidesPerView: 5,
             },
             992: {
@@ -251,7 +255,7 @@ $(function(){
     // Client-slider
     const clientSlider = new Swiper('.client__slider', {
         loop: true,
-        slidesPerView: 4,
+        slidesPerView: 2,
         speed: 500,
         draggable: true,
         spaceBetween: 20,
@@ -267,6 +271,12 @@ $(function(){
         //     type: "fraction",
         //   },
         breakpoints: {
+            401: {
+                slidesPerView: 3,
+            },
+            481: {
+                slidesPerView: 4,
+            },
             991: {
                 slidesPerView: 6,
             }

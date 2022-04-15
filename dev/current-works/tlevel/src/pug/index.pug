@@ -274,7 +274,7 @@ html(lang="ru")
                             .manager__btn-wrapper
                                 .btn.btn_primary.modal-trigger(data-target="checkModal")
                                     span.text_uppercase Оставить заявку
-                                    span на бесплатный аудит
+                                    span.d-none_xxs на бесплатный аудит
 
 
                         .manager__img
@@ -290,8 +290,8 @@ html(lang="ru")
 
                     .services__bg 
                         picture 
-                            //- source(srcset="img/x320/bg-intro-320.webp", media="(max-width: 414px)", type="image/webp")
-                            //- source(srcset="img/x320/bg-intro-320.png", media="(max-width: 414px)", type="image/png")
+                            source(srcset="img/mob/serv-bg.webp", media="(max-width: 414px)", type="image/webp")
+                            source(srcset="img/mob/serv-bg.png", media="(max-width: 414px)", type="image/png")
                             source(srcset="img/serv-bg.webp", type="image/webp")
                             img(src="img/serv-bg.png", alt="")
 
@@ -632,8 +632,14 @@ html(lang="ru")
 
                             .problem__img 
                                 picture 
+                                    source(srcset="img/mob/probl-man.webp", media="(max-width: 480px)", type="image/webp")
+                                    source(srcset="img/mob/probl-man.png", media="(max-width: 480px)", type="image/png")
                                     source(srcset="img/probl-man.webp" type="image/webp")
                                     img(src="img/probl-man.png", alt="")
+
+                            .problem__shine
+                                source(srcset="img/mob/probl-shine.webp" type="image/webp")
+                                img(src="img/mob/probl-shine.png", alt="")
 
                         .problem__form-block.container_fluid
                             .form-block#audit-anchor
@@ -777,7 +783,7 @@ html(lang="ru")
                     .container.adv__container 
                         .section__heading.adv__heading
                                 h2 
-                                    span.text_bold.d-block Преимущества работы с Top Level
+                                    span.text_bold.d-block.d-inline_xxs Преимущества работы с Top Level 
                                     |по сравнению с собственным штатом
 
 

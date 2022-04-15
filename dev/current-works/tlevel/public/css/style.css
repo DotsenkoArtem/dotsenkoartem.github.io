@@ -3080,6 +3080,28 @@ ANIMATIONS
   .expert__slider-container {
     margin-left: 5rem;
   }
+
+  .modal .form__group {
+    max-width: 38rem;
+  }
+  .modal .form__control {
+    height: 8rem;
+    font-size: 2rem;
+  }
+  .modal .form__file-caption i {
+    left: -3.5rem;
+  }
+  .modal .form__submit {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 38rem;
+    height: 8rem;
+    font-size: 2rem;
+  }
+  .modal .form__submit-wrap {
+    width: 100%;
+  }
 }
 @media (max-width: 991.98px) {
   h1, h2, h3 {
@@ -3490,7 +3512,7 @@ ANIMATIONS
   }
 
   .expert__slider {
-    padding-top: 20%;
+    padding-top: 16rem;
   }
   .expert__slider-control {
     width: 16rem;
@@ -3755,12 +3777,12 @@ ANIMATIONS
   }
 
   .btn_primary, .btn_secondary {
-    width: 38rem;
-    height: 11.5rem;
-    font-size: 2rem;
+    width: 24rem;
+    height: 7rem;
+    font-size: 1.8rem;
   }
   .btn_primary .text_uppercase, .btn_secondary .text_uppercase {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
   .btn_primary {
     -webkit-box-shadow: 0px 15px 27px -14px #1648c5;
@@ -3849,6 +3871,9 @@ ANIMATIONS
     padding-top: 7rem;
   }
 
+  .expert-slide {
+    max-width: 22.5rem;
+  }
   .expert-video__caption {
     font-size: 1.6rem;
   }
@@ -3884,6 +3909,14 @@ ANIMATIONS
     margin-right: auto;
     max-width: 50rem;
     font-size: 1.6rem;
+  }
+  .form-block .btn_primary, .form-block .btn_secondary {
+    width: 38rem;
+    height: 11.5rem;
+    font-size: 2rem;
+  }
+  .form-block .btn_primary .text_uppercase, .form-block .btn_secondary .text_uppercase {
+    font-size: 2.2rem;
   }
 
   .clean__content {
@@ -3957,6 +3990,23 @@ ANIMATIONS
   .rev__slider-shine {
     display: none;
   }
+  .rev-slide__img {
+    width: 46rem;
+  }
+  .rev-slide__caption {
+    padding-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .rev__button {
+    top: 37%;
+  }
+  .rev__button_prev {
+    left: 1rem;
+  }
+  .rev__button_next {
+    right: 1rem;
+  }
 
   .awa__about {
     max-height: 20rem;
@@ -3965,12 +4015,256 @@ ANIMATIONS
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    top: 37%;
+  }
+  .awa__button_prev {
+    left: 2.5rem;
+  }
+  .awa__button_next {
+    right: 2.5rem;
   }
 
   .gal-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 25rem 25rem 25rem 25rem 25rem 25rem;
     grid-template-areas: "img-1 img-2" "img-1 img-3" "img-5 img-4" "img-7 img-4" "img-6 img-8" "img-6 img-9";
+  }
+
+  .modal .form__group {
+    max-width: 38rem;
+  }
+  .modal .form__label_file {
+    height: 3rem;
+  }
+  .modal .form__file-caption i {
+    left: -4.5rem;
+  }
+}
+@media (max-width: 479.98px) {
+  .intro__container {
+    padding-bottom: 6rem;
+  }
+  .intro__destr {
+    margin-bottom: 3.5rem;
+  }
+  .intro__why {
+    padding-bottom: 3rem;
+  }
+  .intro__digits {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .intro__img {
+    right: -29rem;
+  }
+  .intro__img img {
+    max-width: 100rem;
+  }
+  .intro__img .img__title {
+    min-width: 20rem;
+    top: auto;
+    bottom: 36rem;
+    left: auto;
+    right: 34rem;
+  }
+
+  .why__content {
+    background: rgba(253, 253, 253, 0.5);
+  }
+
+  .destr__img {
+    left: 0;
+    top: -0.5rem;
+  }
+  .destr__img img {
+    max-width: 14rem;
+  }
+
+  .services {
+    background: #fff;
+  }
+  .services__bg {
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+  .services__bg img {
+    width: 100%;
+  }
+  .services-label__text img {
+    max-width: 14rem;
+  }
+
+  .manager-media-wrap {
+    max-width: 31rem;
+  }
+  .manager__img {
+    right: -4rem;
+  }
+  .manager__img img {
+    max-width: 32rem;
+  }
+  .manager__name-wrap {
+    left: auto;
+    right: 25%;
+    bottom: 20%;
+  }
+
+  .expert__container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .expert__content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .expert__heading, .expert__text {
+    text-align: center;
+  }
+
+  .client {
+    background: #fff;
+  }
+  .client__slider {
+    max-width: 40rem;
+    overflow: hidden;
+  }
+  .client__button_prev {
+    left: 2rem;
+  }
+  .client__button_next {
+    right: 2rem;
+  }
+
+  .problem {
+    position: relative;
+  }
+  .problem__container {
+    position: static;
+  }
+  .problem__heading, .problem-list {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .problem__heading {
+    max-width: 32rem;
+    text-align: center;
+  }
+  .problem__img {
+    right: 0;
+    bottom: auto;
+    top: 0;
+    z-index: 2;
+  }
+  .problem__shine {
+    position: absolute;
+    top: -15rem;
+    left: 0;
+    z-index: 1;
+  }
+  .clean__content {
+    padding-left: 0;
+    width: 35rem;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+  }
+  .clean__heading, .clean-media {
+    padding-left: 12rem;
+  }
+  .clean__img {
+    left: -50rem;
+  }
+
+  .care-media {
+    padding-left: 11rem;
+  }
+  .care-media__img_doc {
+    top: 0;
+    left: -4rem;
+  }
+  .care-media_doc img {
+    max-width: 18rem;
+  }
+
+  .adv__heading {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 38rem;
+  }
+  .adv-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .adv__button::before {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .adv__button_prev {
+    left: 1rem;
+  }
+  .adv__button_next {
+    right: 1rem;
+  }
+
+  .rev-form-block__heading, .rev-form-block__heading + .form-block__subheading {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 34rem;
+  }
+  .rev-slide__author {
+    font-size: 2rem;
+  }
+  .rev-slide__post {
+    font-size: 1.8rem;
+  }
+  .rev__footer-container {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .rev__footer-text {
+    width: 50%;
+    font-size: 1.6rem;
+  }
+  .rev__footer-link {
+    margin-right: 8rem;
+  }
+  .rev__footer-link .awa-arrow {
+    right: -8rem;
+  }
+
+  .awa {
+    padding-top: 5rem;
+  }
+  .awa__top, .awa__about {
+    font-size: 1.6rem;
+  }
+  .awa__top {
+    margin-bottom: 0rem;
+  }
+  .awa__title {
+    margin-bottom: 0rem;
+    font-size: 2rem;
+  }
+
+  .gal {
+    margin-top: 4rem;
+  }
+
+  .modal__close {
+    top: -6rem;
+    right: -2.5rem;
+  }
+  .modal__close:hover .modal-close__item {
+    background: #000;
+  }
+  .modal-close__item {
+    background: #353535;
   }
 }
 @media (max-width: 414.98px) {

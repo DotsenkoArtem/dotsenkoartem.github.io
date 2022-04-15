@@ -215,8 +215,9 @@ function removeLoader(form) {
 
 var expertSlider = new Swiper('.expert__slider', {
   loop: true,
-  slidesPerView: 3,
-  draggable: true,
+  slidesPerView: "auto",
+  // draggable: true,
+  centeredSlides: true,
   spaceBetween: 35,
   speed: 500,
   autoplay: {
@@ -231,9 +232,11 @@ var expertSlider = new Swiper('.expert__slider', {
     type: "fraction"
   },
   // slidesPerView: "auto",
-  centeredSlides: true,
   breakpoints: {
-    767: {
+    576: {
+      slidesPerView: 3
+    },
+    768: {
       slidesPerView: 5
     },
     992: {
@@ -247,7 +250,7 @@ var expertSlider = new Swiper('.expert__slider', {
 
 var clientSlider = new Swiper('.client__slider', {
   loop: true,
-  slidesPerView: 4,
+  slidesPerView: 2,
   speed: 500,
   draggable: true,
   spaceBetween: 20,
@@ -263,6 +266,12 @@ var clientSlider = new Swiper('.client__slider', {
   //     type: "fraction",
   //   },
   breakpoints: {
+    401: {
+      slidesPerView: 3
+    },
+    481: {
+      slidesPerView: 4
+    },
     991: {
       slidesPerView: 6
     }

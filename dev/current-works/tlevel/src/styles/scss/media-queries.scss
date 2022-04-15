@@ -145,6 +145,35 @@
 			}
 		}
 	}
+	.modal{
+		.form{
+			&__group{
+				max-width: 38rem;
+			}
+			&__control{
+				height: 8rem;
+				font-size: 2rem;
+			}
+			&__file{
+				&-caption{
+					i{
+						left: -3.5rem;
+					}
+				}
+			}
+			&__submit{
+				&-wrap{
+					width: 100%;
+				}
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+				max-width: 38rem;
+				height: 8rem;
+				font-size: 2rem;
+			}
+		}
+	}
 }
 
 // MD
@@ -630,7 +659,7 @@
 	}
 	.expert{
 		&__slider{
-			padding-top: 20%;
+			padding-top: 16rem;
 			&-control{
 				width: 16rem;
 			}
@@ -919,11 +948,11 @@
 	.btn{
 		&_primary,
 		&_secondary{
-			width: 38rem;
-			height: 11.5rem;
-			font-size: 2rem;
+			width: 24rem;
+			height: 7rem;
+			font-size: 1.8rem;
 			.text_uppercase{
-				font-size: 2.2rem;
+				font-size: 1.8rem;
 			}
 		}
 		&_primary{
@@ -1021,6 +1050,9 @@
 		padding-top: 7rem;
 	}
 	.expert{
+		&-slide{
+			max-width: 22.5rem;
+		}
 		&-video{
 			&__caption{
 				font-size: 1.6rem;
@@ -1055,6 +1087,18 @@
 			margin-right: auto;
 			max-width: 50rem;
 			font-size: 1.6rem;
+		}
+
+		.btn{
+			&_primary,
+			&_secondary{
+				width: 38rem;
+				height: 11.5rem;
+				font-size: 2rem;
+				.text_uppercase{
+					font-size: 2.2rem;
+				}
+			}
 		}
 	}
 	.clean{
@@ -1124,6 +1168,25 @@
 		&__slider-shine{
 			display: none;
 		}
+		&-slide{
+			&__img{
+				width: 46rem;
+			}
+			&__caption{
+				padding-left: 0;
+				width: 100%;
+				text-align: center;
+			}
+		}
+		&__button{
+			top: 37%;
+			&_prev{
+				left: 1rem;
+			}
+			&_next{
+				right: 1rem;
+			}
+		}
 	}
 
 	.awa{
@@ -1132,6 +1195,13 @@
 		}
 		&__button{
 			display: flex;
+			top: 37%;
+			&_prev{
+				left: 2.5rem;
+			}
+			&_next{
+				right: 2.5rem;
+			}
 		}
 	}
 	.gal{
@@ -1146,10 +1216,291 @@
 									"img-6 img-9";
 		}
 	}
+	.modal{
+		.form{
+			&__group{
+				max-width: 38rem;
+			}
+			&__label{
+				&_file{
+					height: 3rem;
+				}
+			}
+			&__file{
+				&-caption{
+					i{
+						left: -4.5rem;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 479.98px){
+	.intro{
+		&__container{
+			padding-bottom: 6rem;
+		}
+		&__destr{
+			margin-bottom: 3.5rem;
+		}
+		&__why{
+			padding-bottom: 3rem;
+		}
+		&__digits{
+			flex-direction: column;
+		}
+		&__img{
+			right: -29rem;
+			img{
+				max-width: 100rem;
+			}
+			.img__title{
+				min-width: 20rem;
+				top: auto;
+				bottom: 36rem;
+				left: auto;
+				right: 34rem;
+			}
+		}
+	}
+	.why{
+		&__content{
+			background: rgba(253, 253, 253, 0.5);
+		}
+	}
+	.destr__img{
+		left: 0;
+		top: -0.5rem;
+		img {
+			max-width: 14rem;
+		}
+	}
+	.services{
+		background: #fff;
+		&__bg{
+			left: 0;
+			right: 0;
+			width: 100%;
+			transform: none;
+			img{
+				width: 100%;
+			}
+		}
+		&-label{
+			&__text{
+				img{
+					max-width: 14rem;
+				}
+			}
+		}
+	}
+	.manager{
+		&-media{
+			&-wrap{
+				max-width: 31rem;
+			}
+		}
+		&__img{
+			right: -4rem;
+			img{
+				max-width: 32rem;
+			}
+		}
+		&__name{
+			&-wrap{
+				left: auto;
+				right: 25%;
+				bottom: 20%;
+			}
+		}
+	}
+	.expert{
+		&__container{
+			padding-left: 0;
+			padding-right: 0;
+		}
+		&__content{
+			padding-left: v.$gutter;
+			padding-right: v.$gutter;
+		}
+		&__heading,
+		&__text{
+			text-align: center;
+		}
+	}
+	.client{
+		background: #fff;
+		&__slider{
+			max-width: 40rem;
+			overflow: hidden;
+		}
+		&__button{
+			&_prev{
+				left: 2rem;
+			}
+			&_next{
+				right: 2rem;
+			}
+		}
+	}
+	.problem{
+		position: relative;
+		&__container{
+			position: static;
+		}
+		&__heading,
+		&-list{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&__heading{
+			max-width: 32rem;
+			text-align: center;
+		}
+		&__img{
+			right: 0;
+			bottom: auto;
+			top: 0;
+			z-index: 2;
+		}
+		&__shine{
+			position: absolute;
+			top: -15rem;
+			left: 0;
+			z-index: 1;
+			img{
+				// max-width: ;
+			}
+		}
+	}
+	.clean{
+		&__content{
+			padding-left: 0;
+			width: 35rem;
+			flex: none;
+		}
+		&__heading,
+		&-media{
+			padding-left: 12rem;
+		}
+		&__img-block{
+			// flex: none;
+			// width: 45%;
+		}
+		&__img{
+			left: -50rem;
+		}
+	}
+	.care{
+		&-media{
+			padding-left: 11rem;
+			&__img{
+				&_doc{
+					top: 0;
+					left: -4rem;
+				}
+			}
+			&_doc{
+				img{
+					max-width: 18rem;
+				}
+			}
+		}
+	}
+	.adv{
+		&__heading{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 38rem;
+		}
+		&-card{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&__button{
+			&::before{
+				background: rgba(0, 0, 0, 0.05);
+			}
+			&_prev{
+				left: 1rem;
+			}
+			&_next{
+				right: 1rem;
+			}
+		}
+	}
+	.rev{
+		&-form-block__heading{
+			&,
+			&+.form-block__subheading{
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 34rem;
+			}
+		}
+		&-slide{
+			&__author{
+				font-size: 2rem;
+			}
+			&__post{
+				font-size: 1.8rem;
+			}
+		}
+		// &__button{
+		// 	top: 32%;
+		// }
+		&__footer{
+			&-container{
+				align-items: center;
+			}
+			&-text{
+				width: 50%;
+				font-size: 1.6rem;
+			}
+			&-link{
+				margin-right: 8rem;
+				.awa-arrow{
+					right: -8rem;
+				}
+			}
+		}
+	}
+	.awa{
+		padding-top: 5rem;
+		&__top,
+		&__about{
+			font-size: 1.6rem;
+		}
+		&__top{
+			margin-bottom: 0rem;
+		}
+		&__title{
+			margin-bottom: 0rem;
+			font-size: 2rem;
+		}
 
+	}
+	.gal{
+		margin-top: 4rem;
+	}
+	.modal{
+		&__close{
+			top: -6rem;
+			right: -2.5rem;
+			&:hover{
+				.modal-close__item{
+					background: #000;
+				}
+			}
+		}
+		&-close{
+			&__item{
+				background: rgb(53, 53, 53);
+			}
+		}
+	}
 }
 
 
