@@ -493,7 +493,7 @@ html(lang="ru")
                                     
 
 
-                            .expert__slider-shine
+                            //- .expert__slider-shine
 
 
                         .expert-video.d-none.d-flex_md
@@ -630,8 +630,8 @@ html(lang="ru")
                                     source(srcset="img/probl-man.webp" type="image/webp")
                                     img(src="img/probl-man.png", alt="")
 
-                        .container_fluid
-                            .form-block.problem__form-block#audit-anchor
+                        .problem__form-block.container_fluid
+                            .form-block#audit-anchor
                                 .form-block__content
                                     .form-block__heading 
                                         p 
@@ -725,6 +725,11 @@ html(lang="ru")
                                 source(srcset="img/clean-bg.webp" type="image/webp")
                                 img(src="img/clean-bg.png", alt="")
 
+                        .clean__shine.d-none.d-block_sm
+                            picture
+                                source(srcset="img/mob/clean-shine.webp" type="image/webp")
+                                img(src="img/mob/clean-shine.png", alt="")
+
                 |
                 |
                 <!-- Care
@@ -734,7 +739,7 @@ html(lang="ru")
                     .container.care__container
                         .care__heading 
                             h3 
-                                span.text_bold.d-block.d-inline_md Заботимся
+                                span.text_bold.d-block.d-inline_md Заботимся 
                                 |об экологии
 
                         .care-media.care-media_doc 
@@ -751,11 +756,11 @@ html(lang="ru")
                                     source(srcset="img/care-mus.webp" type="image/webp")
                                     img(src="img/care-mus.png", alt="")
                             .care-media__text 
-                                |Соблюдаем правила 
-                                br
-                                |утилизации мусора 
-                                br
-                                |и отходов 
+                                span.d-block.d-inline_sm Соблюдаем правила 
+                                
+                                span.d-block.d-inline_sm утилизации мусора 
+                                
+                                span.d-block.d-inline_sm и отходов 
 
 
                 |
@@ -958,6 +963,10 @@ html(lang="ru")
                                         .rev-slide__caption 
                                             .rev-slide__author Надежда Переходько
                                             .rev-slide__post заведующая хозяйством "Альфа центр здоровья"
+
+
+                                .swiper-button-prev.rev__button.rev__button_prev
+                                .swiper-button-next.rev__button.rev__button_next
 
 
                         .rev__slider-shine

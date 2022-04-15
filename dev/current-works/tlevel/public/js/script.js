@@ -215,7 +215,7 @@ function removeLoader(form) {
 
 var expertSlider = new Swiper('.expert__slider', {
   loop: true,
-  slidesPerView: 5,
+  slidesPerView: 3,
   draggable: true,
   spaceBetween: 35,
   speed: 500,
@@ -233,6 +233,9 @@ var expertSlider = new Swiper('.expert__slider', {
   // slidesPerView: "auto",
   centeredSlides: true,
   breakpoints: {
+    767: {
+      slidesPerView: 5
+    },
     992: {
       spaceBetween: 0,
       centeredSlides: false,
@@ -330,13 +333,14 @@ function initAwaSlider() {
   var awaSlideContainer = document.querySelector('.awa__slider-inner');
   var awaSlides = document.querySelectorAll('.awa-slide'); // console.log(awaSlides);
 
-  if (screenWidth < 576 && awaSlider == undefined) {
+  if (screenWidth < 768 && awaSlider == undefined) {
     awaSlider = new Swiper('.awa__slider', {
       // direction: 'horizontal',
       loop: true,
-      slidesPerView: 1,
+      slidesPerView: "auto",
+      centeredSlides: true,
       speed: 500,
-      spaceBetween: 20,
+      spaceBetween: 30,
       // autoplay: {
       //     delay: 5000,
       // },
@@ -345,14 +349,11 @@ function initAwaSlider() {
         prevEl: '.swiper-button-prev.awa__button.awa__button_prev'
       },
       breakpoints: {
-        480: {
-          slidesPerView: "auto",
-          centeredSlides: true,
-          spaceBetween: 40
+        480: {// slidesPerView: "auto",
         }
       }
     });
-  } else if (screenWidth >= 576 && awaSlider != undefined) {
+  } else if (screenWidth >= 768 && awaSlider != undefined) {
     awaSlider.destroy();
     awaSlider = undefined;
     awaSlideContainer.removeAttribute('style');
@@ -377,27 +378,28 @@ window.onresize = function () {
 
 
 var revSlider = new Swiper('.rev__slider', {
+  slidesPerView: "auto",
+  centeredSlides: true,
   loop: true,
-  slidesPerView: 5,
   speed: 500,
   draggable: true,
   spaceBetween: 20,
   autoplay: {
     delay: 5000
-  } // navigation: {
-  // nextEl: '.swiper-button-next',
-  // prevEl: '.swiper-button-prev',
-  // },
+  },
+  navigation: {
+    nextEl: '.swiper-button-next.rev__button.rev__button_next',
+    prevEl: '.swiper-button-prev.rev__button.rev__button_prev'
+  },
   // pagination: {
   //     el: ".swiper-pagination",
   //     type: "fraction",
   //   },
-  // breakpoints: {
-  //     992: {
-  //         slidesPerView: "auto",
-  //         centeredSlides: true,
-  //     }
-  // }
-
+  breakpoints: {
+    767: {
+      slidesPerView: 5,
+      centeredSlides: false
+    }
+  }
 }); // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 // };

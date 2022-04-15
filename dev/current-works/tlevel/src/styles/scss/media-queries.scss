@@ -435,7 +435,9 @@
 			padding-bottom: 9rem;
 		}
 		&__form-block{
-			padding-top: 12rem;
+			.form-block{
+				padding-top: 12rem;
+			}
 		}
 		&-list{
 			font-size: 1.6rem;
@@ -593,9 +595,85 @@
 				display: inline;
 			}
 		}
+		&-i-block{
+			&_sm{
+				display: inline-block;
+			}
+		}
+	}
+
+	.intro{
+		&__heading{
+			max-width: 50rem;
+		}
+	}
+
+	.services{
+		&-label{
+			&__text{
+				img{
+					max-width: 16rem;
+				}
+			}
+		}
+		&__grid{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 460px;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr;
+			grid-template-areas:	"services-card-01 services-card-01"
+									"services-card-02 services-card-03"
+									"services-card-04 services-card-05"
+									"services-card-06 services-card-07";
+		}
+	}
+	.expert{
+		&__slider{
+			padding-top: 20%;
+			&-control{
+				width: 16rem;
+			}
+		}
+		&-slide{
+			&.swiper-slide-prev{
+				transform: scale(1.2) translateX(-22px);
+			}
+			&.swiper-slide-next{
+				transform: scale(1.2) translateX(22px);
+			}
+		}
+	}
+	.client{
+		&__slider{
+			max-width: 55rem;
+		}
+	}
+	.problem,
+	.rev{
+		&__form-block{
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	.problem{
+		padding-top: 10rem;
+		&__form-block{
+			padding-top: 0rem;
+		}
+		&__container{
+			padding-bottom: 8rem;
+			display: block;
+		}
+		&__heading{
+			margin-bottom: 6rem;
+		}
 	}
 	.form{
 		&-block{
+			padding-left: v.$gutter;
+			padding-right: v.$gutter;
+			border-radius: 0;
 			&__subheding{
 				font-size: 1.6rem;
 			}
@@ -637,13 +715,190 @@
 		&__img{
 		}
 	}
+	.clean{
+		overflow: hidden;
+		&__container{
+			padding-top: 15rem;
+			padding-bottom: 5rem;
+		}
+		&__heading{
+			margin-bottom: 3.5rem;
+		}
+		&-media{
+			display: flex;
+			flex-direction: column-reverse;
+			padding-left: 0;
+			&__img{
+				position: static;
+				left: unset;
+				top: unset;
+			}
+		}
+		&__img{
+			img{
+				max-width: 110rem;
+			}
+		}
+		&__shine{
+			position: absolute;
+			top: -25rem;
+			left: 0;
+			z-index: 1;
+			img{
+				max-width: 50rem;
+			}
+		}
+	}
+	.qoute{
+		padding: 2rem 3rem 2rem 7rem;
+		&__text{
+			.qoutes{
+				left: -5rem;
+				transform: scale(.7);
+			}
+		}
+	}
+	.care{
+		&__container{
+			flex-wrap: nowrap;
+			flex-direction: column;
+			align-items: stretch;
+		}
+		&-media{
+			padding-left: 15rem;
+			&_doc{
+				max-width: 55rem;
+				img{
+					max-width: 20rem;
+				}
+			}
+			&_mus{
+				margin-top: 8rem;
+				margin-left: 0;
+				max-width: 50rem;
+			}
+			&__img{
+				&_doc{
+					top: -1rem;
+				}
+				&_mus{
+					top: -4rem;
+				}
+			}
+		}
+	}
 	.rev{
 		padding-bottom: 0;
 		&__form-block{
 			position: static;
 		}
+		&__slider{
+			width: auto;
+		}
+		&-slide{
+			width: auto;
+			opacity: 0.3;
+			&.swiper-slide-active{
+				opacity: 1;
+				transition: opacity .4s;
+			}
+		}
+		&__button{
+			display: flex;
+
+		}
+	}
+	.awa{
+		padding-top: 8rem;
+		&__junction{
+			display: none;
+		}
+		&__content{
+			display: block;
+		}
+		&__descr{
+			opacity: 0;
+		}
+		&__slider{
+			padding-top: 8rem;
+			padding-bottom: 8rem;
+		}
+		&-slide{
+			transition: opacity .4s, transform .4s;
+			&.swiper-slide-active{
+				transform: scale(1.2) translateY(3rem);
+				opacity: 1;
+				transition: opacity .4s, transform .4s;
+				.awa__descr{
+					opacity: 1;
+					transition: opacity .2s .2s;
+				}
+			}
+			&:not(:last-child){
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+		&__button{
+			display: flex;
+		}
+		&__img{
+			width: 26.4rem;
+			img{
+				&:not(.swiper-slide-active img){
+					filter: brightness(85%);
+				}
+			}
+		}
+		&__stamp{
+			top: -3rem;
+			left: calc(50% - 22rem);
+		}
+		&__about{
+			max-height: 14rem;
+			overflow: hidden;
+		}
+	}
+	.gal{
+		&-grid{
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 19rem 19rem 19rem 19rem;
+			grid-template-areas:	"img-1 img-2 img-3"
+									"img-1 img-5 img-6"
+									"img-7 img-4 img-6"
+									"img-8 img-4 img-9";
+		}
 	}
 	.footer{
+		padding-top: 5rem;
+		padding-bottom: 12rem;
+		&__grid{
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			grid-template-areas:	"item-7" "item-1" "item-4" "item-5" "item-6" "item-8" "item-9" "item-2" "item-3";
+		}
+		&__item,
+		&-menu__item{
+			text-align: center;
+		}
+		&__item{
+			margin-left: 0;
+			&_1,
+			&_6,
+			&_7,
+			&_8,
+			&_9{
+				margin-bottom: 5rem;
+			}
+			&_2,
+			&_4,
+			&_5{
+				margin-bottom: 3rem;
+			}
+		}
+		&__logo{
+			justify-self: center;
+		}
 		&__phone{
 			a{
 				font-size: 3rem;
@@ -690,7 +945,12 @@
 			}
 		}
 	}
-
+	.header{
+		&__content{
+			position: relative;
+			flex-direction: column;
+		}
+	}
 	.adv{
 		&-grid{
 			display: flex;

@@ -52,8 +52,8 @@
             </div>
           </div>
           <div class="header__contacts"> 
-            <div class="header__phone"> <a href="tel:+78000000000">+7 (800) 000-00-00</a></div>
-            <div class="header__cb-btn modal-trigger" data-target="callBackModal">Перезвоните мне</div>
+            <div class="header__phone"> <a href="tel:+78000000000"> <span class="tel-blue d-none d-i-block_sm"></span><span class="d-none_sm">+7 (800) 000-00-00</span></a></div>
+            <div class="header__cb-btn modal-trigger d-none_sm" data-target="callBackModal">Перезвоните мне</div>
           </div>
         </div>
       </header>
@@ -447,7 +447,6 @@
                   <div class="swiper-button-next expert__button expert__button_next"></div>
                 </div>
               </div>
-              <div class="expert__slider-shine"></div>
             </div>
             <div class="expert-video d-none d-flex_md">
               <div class="expert-video__img"> 
@@ -549,8 +548,8 @@
                 </picture>
               </div>
             </div>
-            <div class="container_fluid">
-              <div class="form-block problem__form-block" id="audit-anchor">
+            <div class="problem__form-block container_fluid">
+              <div class="form-block" id="audit-anchor">
                 <div class="form-block__content">
                   <div class="form-block__heading"> 
                     <p> <span class="d-block">Проведём аудит Вашего объекта и составим лист внедрений, который </span><span>поможет <span class="text_bold">сэкономить до 20% на уборке </span>и <span class="text_bold">уйти от штрафов и предписаний!</span></span></p>
@@ -619,6 +618,11 @@
                 <source srcset="img/clean-bg.webp" type="image/webp"><img src="img/clean-bg.png" alt="">
               </picture>
             </div>
+            <div class="clean__shine d-none d-block_sm">
+              <picture>
+                <source srcset="img/mob/clean-shine.webp" type="image/webp"><img src="img/mob/clean-shine.png" alt="">
+              </picture>
+            </div>
           </section>
         </div>
         <!-- Care
@@ -626,7 +630,7 @@
         <section class="section care"> 
           <div class="container care__container">
             <div class="care__heading"> 
-              <h3> <span class="text_bold d-block d-inline_md">Заботимся</span>об экологии</h3>
+              <h3> <span class="text_bold d-block d-inline_md">Заботимся </span>об экологии</h3>
             </div>
             <div class="care-media care-media_doc"> 
               <div class="care-media__img care-media__img_doc">
@@ -642,8 +646,7 @@
                   <source srcset="img/care-mus.webp" type="image/webp"><img src="img/care-mus.png" alt="">
                 </picture>
               </div>
-              <div class="care-media__text">
-                 Соблюдаем правила <br>утилизации мусора <br>и отходов </div>
+              <div class="care-media__text"> <span class="d-block d-inline_sm">Соблюдаем правила </span><span class="d-block d-inline_sm">утилизации мусора </span><span class="d-block d-inline_sm">и отходов </span></div>
             </div>
           </div>
         </section>
@@ -805,6 +808,8 @@
                     </div>
                   </div>
                 </div>
+                <div class="swiper-button-prev rev__button rev__button_prev"></div>
+                <div class="swiper-button-next rev__button rev__button_next"></div>
               </div>
             </div>
             <div class="rev__slider-shine"></div>
@@ -922,31 +927,23 @@
       ================================================== -->
       <footer class="footer" id="footer">
         <div class="container"> 
-          <div class="row">
-            <div class="col">
-              <div class="footer-col__item footer__logo logo"><a href="#header"> 
-                  <div class="logo_img"><img src="img/logo-blue.png" alt="Логотип - toplevel"></div>
-                  <div class="logo__caption">коммерческий клининг</div></a></div>
-              <div class="footer-col__item text_grey">
-                 © Клининговая компания <br>Top Level, 2009-2022</div>
-              <div class="footer-col__item text_grey">ИНН 6315624973<br>ОГРН 1096315002706</div>
+          <div class="footer__grid">
+            <div class="footer__item footer__item_1 footer__logo logo"><a href="#header"> 
+                <div class="logo_img"><img src="img/logo-blue.png" alt="Логотип - toplevel"></div>
+                <div class="logo__caption">коммерческий клининг</div></a></div>
+            <div class="footer__item footer__item_2 text_grey">
+               © Клининговая компания <br>Top Level, 2009-2022</div>
+            <div class="footer__item footer__item_3 text_grey">ИНН 6315624973<br>ОГРН 1096315002706</div>
+            <address class="footer__item footer__item_4 footer__address">443011, г. Самара, <br>3-я просека, д. 250</address>
+            <div class="footer__item footer__item_5 footer__timetable">Режим работы: <br>пн-пт, с 9 до 18</div>
+            <div class="footer__item footer__item_6 footer__mail">E-mail:<br><a href="mailto:tlevel@tlevel.ru">
+                 tlevel@tlevel.ru</a></div>
+            <div class="footer__item footer__item_7">
+              <div class="footer__phone"> <a href="tel:+78000000000">8 (800) 000-00-00</a></div>
+              <div class="footer__cb-btn modal-trigger" data-target="callBackModal">Обратный звонок</div>
             </div>
-            <div class="col footer__col_2">
-              <div class="footer__address-wrapper">
-                <address class="footer__address footer-col__item">443011, г. Самара, <br>3-я просека, д. 250</address>
-                <div class="footer__timetable footer-col__item">Режим работы: <br>пн-пт, с 9 до 18</div>
-                <div class="footer__mail footer-col__item">E-mail:<br><a href="mailto:tlevel@tlevel.ru">
-                     tlevel@tlevel.ru</a></div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="footer__contacts">
-                <div class="footer__phone"> <a href="tel:+78000000000">8 (800) 000-00-00</a></div>
-                <div class="footer__cb-btn modal-trigger" data-target="callBackModal">Обратный звонок</div>
-                <div class="footer__social"> <a href="https://vk.com/tlevel" target="_blank"><i class="vk"></i></a><a href="#"><i class="inst"></i></a><a href="https://www.youtube.com/channel/UCWC5FbNbtQzSCYieFs4twzw" target="_blank"><i class="yt"></i></a></div>
-              </div>
-            </div>
-            <div class="col"> 
+            <div class="footer__item footer__item_8 footer__social"> <a href="https://vk.com/tlevel" target="_blank"><i class="vk"></i></a><a href="#"><i class="inst"></i></a><a href="https://www.youtube.com/channel/UCWC5FbNbtQzSCYieFs4twzw" target="_blank"><i class="yt"></i></a></div>
+            <div class="footer__item footer__item_9"> 
               <nav> 
                 <ul class="footer-menu"> 
                   <li class="footer-menu__item"><a href="#audit-anchor">Записаться на аудит</a></li>

@@ -61,6 +61,10 @@
   @include sprite($form-screp);
 }
 
+.tel-blue {
+  @include sprite($tel-blue);
+}
+
 
 // Здесь будут основные стили проекта
 /* VI. Layout
@@ -736,19 +740,19 @@
             margin-left: 16rem;
             width: 130rem;
         }
-        &-shine{
-            position: absolute;
-            left: 16rem;
-            top: 0rem;
-            z-index: 0;
-            display: block;
-            width: 1px;
-            height: 1px;
-            background: #1546c1;
-            border-radius: 50%;
-            content: '';
-            box-shadow: 0 0 15rem 12rem #1546c1;
-        }
+        // &-shine{
+        //     position: absolute;
+        //     left: 16rem;
+        //     top: 0rem;
+        //     z-index: 0;
+        //     display: block;
+        //     width: 1px;
+        //     height: 1px;
+        //     background: #1546c1;
+        //     border-radius: 50%;
+        //     content: '';
+        //     box-shadow: 0 0 15rem 12rem #1546c1;
+        // }
         .swiper-button{
           &-prev,
           &-next{
@@ -861,7 +865,6 @@
         }
     }
 }
-
 
 
 // Client
@@ -1373,6 +1376,39 @@
             box-shadow: 0 0 15rem 12rem #1546c1;
         }
     }
+    &__button{
+        display: none;
+        top: 37%;
+        z-index: 15;
+        &::before{
+            position: absolute;
+            z-index: -1;
+            display: block;
+            width: v.$rev-btn-width;
+            height: v.$rev-btn-width;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.43);
+            content: '';
+            transition: transform .3s;
+        }
+        &::after{
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+        &:active{
+            transform: scale(1);
+            transition: transform 0s;
+        }
+        &_prev{
+            left: calc(50% - (v.$rev-slide-img-width/2) - (v.$rev-btn-width));
+        }
+        &_next{
+            right: calc(50% - (v.$rev-slide-img-width/2) - (v.$rev-btn-width));
+        }
+    }
     &-slide{
         cursor: grab;
         &:active{
@@ -1381,7 +1417,7 @@
         &__img{
             position: relative;
             margin-bottom: 2rem;
-            width: 33rem;
+            width: v.$rev-slide-img-width;
             height: 55.7575%;
         }
         &__btn{
@@ -1470,6 +1506,36 @@
     }
     &__button{
         display: none;
+        top: 30%;
+        z-index: 15;
+        &::before{
+            position: absolute;
+            z-index: -1;
+            display: block;
+            width: v.$rev-btn-width;
+            height: v.$rev-btn-width;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.75);
+            content: '';
+            transition: transform .3s;
+        }
+        &::after{
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+        &:active{
+            transform: scale(1);
+            transition: transform 0s;
+        }
+        &_prev{
+            left: calc(50% - (v.$rev-slide-img-width/2) - (v.$rev-btn-width));
+        }
+        &_next{
+            right: calc(50% - (v.$rev-slide-img-width/2) - (v.$rev-btn-width));
+        }
     }
     // Настройки отключенного слайдера
     // удалить в мобильной версии при включении слайдера
@@ -1617,11 +1683,62 @@
     font-size: 1.6rem;
     color: v.$text-white;
     background: #000;
-    &-col{
-        &__item{
-            margin-bottom: 3rem;
+    &__grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        // grid-template-rows: auto;
+        grid-template-areas:    "item-1 item-4 item-7 item-9"
+                                "item-2 item-5 item-8 item-9"
+                                "item-3 item-6 item-8 item-9"
+                                "none none none item-9";
+    }
+    &__item{
+        &-wrap{
+            // display: flex;
+            // justify-content: center;
+        }
+        &_4,
+        &_5,
+        &_6{
+            justify-self: center;
+            width: 100%;
+            max-width: 16rem;
+        }
+        &_1{
+            grid-area: item-1;
+        }
+        &_2{
+            grid-area: item-2;
+        }
+        &_3{
+            grid-area: item-3;
+        }
+        &_4{
+            grid-area: item-4;
+        }
+        &_5{
+            grid-area: item-5;
+        }
+        &_6{
+            grid-area: item-6;
+        }
+        &_7{
+            grid-area: item-7;
+        }
+        &_8{
+            grid-area: item-8;
+        }
+        &_9{
+            grid-area: item-9;
+            margin-left: 2.5rem;
         }
     }
+    // &-col{
+    //     &__item{
+    //         margin-bottom: 3rem;
+    //     }
+    // }
     &__logo{
         margin-top: -0.4rem;
         a{
@@ -1642,6 +1759,7 @@
         text-align: center;
     }
     &__phone{
+        text-align: center;
         a{
             font-size: 2rem;
             font-weight: 700;
@@ -1653,7 +1771,7 @@
         }
     }
     &__cb-btn{
-        margin-bottom: 8rem;
+        // margin-bottom: 8rem;
         font-size: 1.4rem;
         text-align: center;
         text-decoration: underline;
@@ -1664,7 +1782,8 @@
     }
     &__social{
         display: flex;
-        // justify-content: center;
+        justify-content: center;
+        align-items: center;
         i{
             margin-left: 0.9rem;
             margin-right: 0.9rem;
