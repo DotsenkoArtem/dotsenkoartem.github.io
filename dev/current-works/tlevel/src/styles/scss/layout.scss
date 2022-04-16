@@ -740,19 +740,19 @@
             margin-left: 16rem;
             width: 130rem;
         }
-        // &-shine{
-        //     position: absolute;
-        //     left: 16rem;
-        //     top: 0rem;
-        //     z-index: 0;
-        //     display: block;
-        //     width: 1px;
-        //     height: 1px;
-        //     background: #1546c1;
-        //     border-radius: 50%;
-        //     content: '';
-        //     box-shadow: 0 0 15rem 12rem #1546c1;
-        // }
+        &-shine{
+            position: absolute;
+            left: 16rem;
+            top: 0rem;
+            z-index: 0;
+            display: block;
+            width: 1px;
+            height: 1px;
+            background: #1546c1;
+            border-radius: 50%;
+            content: '';
+            box-shadow: 0 0 15rem 12rem #1546c1;
+        }
         .swiper-button{
           &-prev,
           &-next{

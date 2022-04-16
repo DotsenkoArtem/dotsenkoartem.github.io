@@ -1328,6 +1328,20 @@ select::-ms-expand {
   margin-left: 16rem;
   width: 130rem;
 }
+.expert__slider-shine {
+  position: absolute;
+  left: 16rem;
+  top: 0rem;
+  z-index: 0;
+  display: block;
+  width: 1px;
+  height: 1px;
+  background: #1546c1;
+  border-radius: 50%;
+  content: "";
+  -webkit-box-shadow: 0 0 15rem 12rem #1546c1;
+  box-shadow: 0 0 15rem 12rem #1546c1;
+}
 .expert__slider .swiper-button-prev, .expert__slider .swiper-button-next {
   top: auto;
   bottom: 0rem;

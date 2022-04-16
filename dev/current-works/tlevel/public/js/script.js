@@ -221,9 +221,9 @@ window.onload = function () {
     centeredSlides: true,
     spaceBetween: 35,
     speed: 500,
-    // autoplay: {
-    //     delay: 5000,
-    // },
+    autoplay: {
+      delay: 1000
+    },
     navigation: {
       nextEl: '.swiper-button-next.expert__button.expert__button_next',
       prevEl: '.swiper-button-prev.expert__button.expert__button_prev'
@@ -246,7 +246,7 @@ window.onload = function () {
         slidesPerView: 4
       }
     }
-  }); // ------------------------------------------------
+  }); // -----------------------------------------------
   // Client-slider
 
   var clientSlider = new Swiper('.client__slider', {
