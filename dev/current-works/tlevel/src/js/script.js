@@ -215,7 +215,7 @@ $(function(){
     // SLIDERS 
     // Expert-slider
     const expertSlider = new Swiper('.expert__slider', {
-        loop: true,
+        // loop: true,
         slidesPerView: "auto",
         // draggable: true,
         centeredSlides: true,

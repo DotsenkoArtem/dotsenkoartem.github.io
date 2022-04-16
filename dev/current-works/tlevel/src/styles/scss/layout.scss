@@ -798,6 +798,14 @@
     }
 
     &-slide{
+
+        position: relative;
+        border-radius: .5rem;
+        overflow: hidden;
+        box-shadow: 16px 16px 18px rgba(0, 0, 0, .55);
+        transform: scale(.5) translateX(-140%);
+        transition: transform 0.4s;
+        cursor: grab;
         &.swiper-slide-active{
             transform: scale(1)  translateX(0);
         }
@@ -807,13 +815,6 @@
                 transform: scale(.65) translateX(-49%);
             }
         }
-        position: relative;
-        border-radius: .5rem;
-        overflow: hidden;
-        box-shadow: 16px 16px 18px rgba(0, 0, 0, .55);
-        transform: scale(.5) translateX(-140%);
-        transition: transform 0.4s;
-        cursor: grab;
         &:active{
           cursor: grabbing;
         }
