@@ -222,7 +222,7 @@ window.onload = function () {
     spaceBetween: 35,
     speed: 500,
     autoplay: {
-      delay: 1000
+      delay: 5000
     },
     navigation: {
       nextEl: '.swiper-button-next.expert__button.expert__button_next',

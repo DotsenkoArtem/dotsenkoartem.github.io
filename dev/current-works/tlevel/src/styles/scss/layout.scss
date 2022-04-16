@@ -741,17 +741,15 @@
             width: 130rem;
         }
         &-shine{
+            width: 100%;
+            max-width: 66rem;
             position: absolute;
-            left: 16rem;
-            top: 0rem;
+            left: -12%;
+            top: -20rem;
             z-index: 0;
-            display: block;
-            width: 1px;
-            height: 1px;
-            background: #1546c1;
-            border-radius: 50%;
-            content: '';
-            box-shadow: 0 0 15rem 12rem #1546c1;
+            img{
+                width: 100%;
+            }
         }
         .swiper-button{
           &-prev,
