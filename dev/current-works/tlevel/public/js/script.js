@@ -215,7 +215,7 @@ window.onload = function () {
 
 
   var expertSlider = new Swiper('.expert__slider', {
-    // loop: true,
+    loop: true,
     slidesPerView: "auto",
     // draggable: true,
     centeredSlides: true,
@@ -241,6 +241,7 @@ window.onload = function () {
         slidesPerView: 5
       },
       992: {
+        // loop: false,
         spaceBetween: 0,
         centeredSlides: false,
         slidesPerView: 4
