@@ -61,16 +61,16 @@ gulp.task('ttf', function() {
 // КОНВЕРТИРОВАНИЕ ШРИФТОВ, КОПИРОВАНИЕ В PUBLIC/
 gulp.task('fonts', gulp.parallel('ttf', 'ttf2woff', 'ttf2woff2'));
 
-// ПРОСТО КОПИРОВАНИЕ PHP В КОРЕНЬ
+// ПРОСТО КОПИРОВАНИЕ PHP
 gulp.task('php', function() {
     return  gulp.src('src/php/**/*.*', {since: gulp.lastRun('php')})
-            .pipe(gulp.dest('public'));
+            .pipe(gulp.dest('public/php/'));
 });
 
 // ПРОСТО КОПИРОВАНИЕ libs В КОРЕНЬ
 gulp.task('libs', function() {
     return  gulp.src('src/assets/libs/**/*.*', {since: gulp.lastRun('libs')})
-            .pipe(gulp.dest('public'));
+            .pipe(gulp.dest('public/libs/'));
 });
 
 
@@ -314,4 +314,5 @@ gulp.task('clean', function() {
 gulp.task('build', gulp.series('clean', gulp.series('assets', 'js', 'styles', 'pug', 'php', 'libs')));
 
 // РАЗРАБОТКА
+gulp.task('dev:lite', gulp.series('build', gulp.parallel('watch')));
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));

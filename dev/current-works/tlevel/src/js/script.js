@@ -89,7 +89,7 @@ $(function(){
         }
 
         form.addEventListener('submit', function (event){
-            send(event, form.dataset.action);
+            send(event, `php/${form.dataset.action}`);
         });
     
         function send(event, php){
