@@ -336,6 +336,8 @@
 		position: relative;
 		overflow: visible;
 		&__container{
+			grid-template-columns: unset;
+			display: flex;
 			flex-direction: column;
 		}
 		&__content{

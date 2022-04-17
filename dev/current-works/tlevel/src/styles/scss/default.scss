@@ -148,21 +148,22 @@ p,
 	}
 }
 
-.d{
-	&-none{
-		display: none;
-	}
-	&-block{
-		display: block;
-	}
-	&-inline{
-		display: inline;
-		&-block{
-			display: inline-block;
-		}
-	}
-}
-
+// ПЕРЕНЕСЕН В КОНЕЦ LAYOUT
+// .d{
+// 	&-none{
+// 		display: none;
+// 	}
+// 	&-block{
+// 		display: block;
+// 	}
+// 	&-inline{
+// 		display: inline;
+// 		&-block{
+// 			display: inline-block;
+// 		}
+// 	}
+// }
+// - - - - - - - - - - - - - - 
 .flex{
 	&-none{
 		flex: none;
