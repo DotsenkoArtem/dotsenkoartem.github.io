@@ -432,9 +432,6 @@ input[type=button],
   background: -webkit-gradient(linear, left bottom, left top, from(#00237b), to(#275ee7));
   background: -o-linear-gradient(bottom, #00237b, #275ee7);
   background: linear-gradient(0deg, #00237b, #275ee7);
-  -webkit-transform: translateY(1px);
-  -ms-transform: translateY(1px);
-  transform: translateY(1px);
   z-index: 1;
 }
 .btn_primary:active::after, .btn_primary:focus::after {
@@ -442,6 +439,25 @@ input[type=button],
   top: 5rem;
   -webkit-box-shadow: 5px 11px 40px 21px #1648c5;
   box-shadow: 5px 11px 40px 21px #1648c5;
+}
+.btn_primary:disabled {
+  background: -webkit-gradient(linear, left bottom, left top, from(#2c3d68), to(#425b99));
+  background: -o-linear-gradient(bottom, #2c3d68, #425b99);
+  background: linear-gradient(0deg, #2c3d68, #425b99);
+}
+.btn_primary:disabled::after {
+  -webkit-box-shadow: 0px 0px 75px 30px #425b99;
+  box-shadow: 0px 0px 75px 30px #425b99;
+}
+.btn_primary:disabled:active {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.btn_primary:disabled:active::after {
+  -webkit-box-shadow: 0px 0px 75px 25px #425b99;
+  box-shadow: 0px 0px 75px 25px #425b99;
+  width: 55%;
 }
 .btn_secondary {
   padding: 0.5em;
@@ -482,7 +498,6 @@ input:-ms-input-placeholder {
 
 input::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.45);
-  text-align: center;
 }
 
 input::-moz-placeholder {
@@ -2646,6 +2661,15 @@ select::-ms-expand {
   -webkit-animation: fadeOut 0.5s ease-in forwards;
   animation: fadeOut 0.5s ease-in forwards;
 }
+.modal input:-ms-input-placeholder {
+  text-align: center;
+}
+.modal input::-webkit-input-placeholder {
+  text-align: center;
+}
+.modal input::-moz-placeholder {
+  text-align: center;
+}
 .modal .form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2671,6 +2695,7 @@ select::-ms-expand {
 .modal .form__control {
   height: 6.5rem;
   font-size: 1.4rem;
+  text-align: center;
 }
 .modal .form__file {
   width: 0px;
@@ -2847,7 +2872,7 @@ select::-ms-expand {
   z-index: 55;
   background: rgba(0, 0, 0, 0.3) url("../img/loader.gif") center no-repeat;
   background-size: contain;
-  border-radius: 10px;
+  border-radius: 0.5rem;
 }
 
 .d-none {
@@ -3128,6 +3153,7 @@ ANIMATIONS
   }
   .modal .form__submit-wrap {
     width: 100%;
+    max-width: 38rem;
   }
 }
 @media (max-width: 991.98px) {

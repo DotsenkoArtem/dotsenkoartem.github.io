@@ -205,10 +205,10 @@ $(function(){
             // form.appendChild(loader);
     }
     
-    function removeLoader(form){
-        let loader            = form.querySelector('.submit-loader');
-        loader.remove();
-    }
+    // function removeLoader(form){
+    //     let loader            = form.querySelector('.submit-loader');
+    //     loader.remove();
+    // }
 // ================================================
 
 
@@ -429,5 +429,37 @@ $(function(){
     });
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-};
+    // let phoneInputs = document.querySelectorAll('[name="userPhone"]');
+    // for(let phoneInput of phoneInputs) {
 
+    //     let im = new Inputmask("+7 (999)-999-99-99");
+    //     im.mask(phoneInput);
+    // }
+
+    let iForms = document.forms;
+
+    for (let iForm of iForms) {
+        let phoneInput = iForm.querySelector('[name="userPhone"]');
+
+        if (phoneInput) {
+            let submitbtn = iForm.querySelector('[type="submit"]');
+            let im = new Inputmask("+7 (\\999) 999-99-99");
+            im.mask(phoneInput);
+
+
+
+            // ОТКЛЮЧЕНИЕ КНОПКИ SUBMIT В СЛУЧАЕ НЕКОРРЕКТНОГО ВВОДА НОМЕРА
+            phoneInput.oninput = function () {
+                if (!$(phoneInput).inputmask("isComplete")){
+                    submitbtn.disabled = true;
+                    
+                } else {
+                    submitbtn.removeAttribute('disabled');
+                }
+            }; 
+       
+        }
+    }
+
+
+};

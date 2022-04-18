@@ -2011,6 +2011,17 @@
    }
 
 
+    input:-ms-input-placeholder{
+        text-align: center;
+    }
+    input::-webkit-input-placeholder{
+        text-align: center;
+    }
+    input::-moz-placeholder{
+        text-align: center;
+    }
+
+
    .form{
        display: flex;
        flex-direction: column;
@@ -2028,6 +2039,7 @@
        &__control{
            height: 6.5rem;
            font-size: 1.4rem;
+           text-align: center;
        }
        &__file{
            width: 0px;
@@ -2095,6 +2107,9 @@
                margin-top: 1.5rem;
                margin-bottom: 3.5rem;
            }
+        //    &:disabled{
+        //        color: red;
+        //    }
        }
    }
 }
@@ -2187,7 +2202,7 @@
    z-index: 55;
    background: rgba(0, 0, 0, .3) url('../img/loader.gif') center no-repeat;
    background-size: contain;
-   border-radius: 10px;
+   border-radius: .5rem;
 }
 
 // DISPLAY SETTINGS
