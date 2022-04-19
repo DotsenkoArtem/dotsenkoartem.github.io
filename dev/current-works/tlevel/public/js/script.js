@@ -176,8 +176,8 @@ window.onload = function () {
         } //   Включаю поля формы после отправки данных
 
 
-        for (var _i5 = 0; _i5 < form.elements.length; _i5++) {
-          form.elements[_i5].disabled = false;
+        for (var _i6 = 0; _i6 < form.elements.length; _i6++) {
+          form.elements[_i6].disabled = false;
         } //   Автоудаление окна оповещения
 
 
@@ -384,44 +384,86 @@ window.onload = function () {
   // $(window).on('resize', function(){
   //     initAwaSlider();
   // });
+  // ------------------------------------------------
+  // Reviews-slider
+  //Swiper plugin initialization on window resize
+
+  var revSlider = undefined;
+
+  function initRevSlider() {
+    // var screenWidth = $(window).width();
+    var screenWidth = document.documentElement.clientWidth;
+    var revSlideContainer = document.querySelector('.rev__slider-inner');
+    var revSlides = document.querySelectorAll('.rev-slide'); // console.log(awaSlides);
+
+    if (screenWidth < 576 && revSlider == undefined) {
+      revSlider = new Swiper('.rev__slider', {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        loop: true,
+        speed: 500,
+        draggable: true,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 5000
+        },
+        navigation: {
+          nextEl: '.swiper-button-next.rev__button.rev__button_next',
+          prevEl: '.swiper-button-prev.rev__button.rev__button_prev'
+        } // breakpoints: {
+        //     767: {
+        //         slidesPerView: 5,
+        //         centeredSlides: false,
+        //     }
+        // }
+
+      });
+    } else if (screenWidth >= 576 && awaSlider != undefined) {
+      revSlider.destroy();
+      revSlider = undefined;
+      revSlideContainer.removeAttribute('style');
+
+      for (var _i5 = 0; _i5 < revSlides.length; _i5++) {
+        revSlides[_i5].removeAttribute('style');
+      }
+    }
+  }
+
+  initRevSlider(); // КОД СЛАЙДЕРА ДО УДАЛЕНИЯ 3 ИЗ 5 СЛАЙДОВ ОТЗЫВОВ
+  // const revSlider = new Swiper('.rev__slider', {
+  // slidesPerView: "auto",
+  // centeredSlides: true,
+  // loop: true,
+  // speed: 500,
+  // draggable: true,
+  // spaceBetween: 20,
+  // autoplay: {
+  //     delay: 5000,
+  // },
+  // navigation: {
+  //     nextEl: '.swiper-button-next.rev__button.rev__button_next',
+  //     prevEl: '.swiper-button-prev.rev__button.rev__button_prev',
+  // },
+  // breakpoints: {
+  //     767: {
+  //         slidesPerView: 5,
+  //         centeredSlides: false,
+  //     }
+  // }
+  // });
+  // Инициализация слайдеров при изменении ширины экрана
 
   window.onresize = function () {
     initAdvSlider();
     initAwaSlider();
-  }; // ------------------------------------------------
-  // Reviews-slider
-
-
-  var revSlider = new Swiper('.rev__slider', {
-    slidesPerView: "auto",
-    centeredSlides: true,
-    loop: true,
-    speed: 500,
-    draggable: true,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 5000
-    },
-    navigation: {
-      nextEl: '.swiper-button-next.rev__button.rev__button_next',
-      prevEl: '.swiper-button-prev.rev__button.rev__button_prev'
-    },
-    // pagination: {
-    //     el: ".swiper-pagination",
-    //     type: "fraction",
-    //   },
-    breakpoints: {
-      767: {
-        slidesPerView: 5,
-        centeredSlides: false
-      }
-    }
-  }); // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    initRevSlider();
+  }; // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
   // let phoneInputs = document.querySelectorAll('[name="userPhone"]');
   // for(let phoneInput of phoneInputs) {
   //     let im = new Inputmask("+7 (999)-999-99-99");
   //     im.mask(phoneInput);
   // }
+
 
   var iForms = document.forms;
 

@@ -2007,11 +2007,13 @@ select::-ms-expand {
 .rev__wide {
   position: relative;
 }
-.rev__slider {
-  width: 179rem;
-}
 .rev__slider-container {
   margin-bottom: 5rem;
+}
+.rev__slider-inner {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .rev__slider-shine {
   position: absolute;
@@ -2070,6 +2072,9 @@ select::-ms-expand {
   right: calc(50% - 16.5rem - 6rem);
 }
 .rev-slide {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  width: auto;
   cursor: -webkit-grab;
   cursor: grab;
 }
@@ -3707,24 +3712,6 @@ ANIMATIONS
   .rev__form-block {
     position: static;
   }
-  .rev__slider {
-    width: auto;
-  }
-  .rev-slide {
-    width: auto;
-    opacity: 0.3;
-  }
-  .rev-slide.swiper-slide-active {
-    opacity: 1;
-    -webkit-transition: opacity 0.4s;
-    -o-transition: opacity 0.4s;
-    transition: opacity 0.4s;
-  }
-  .rev__button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 
   .awa {
     padding-top: 8rem;
@@ -4044,8 +4031,25 @@ ANIMATIONS
     -ms-transform: scale(0.5) translateX(10px);
     transform: scale(0.5) translateX(10px);
   }
+  .rev__slider-inner {
+    -webkit-box-pack: unset;
+    -ms-flex-pack: unset;
+    justify-content: unset;
+  }
   .rev__slider-shine {
     display: none;
+  }
+  .rev-slide {
+    margin-left: unset;
+    margin-right: unset;
+    width: auto;
+    opacity: 0.3;
+  }
+  .rev-slide.swiper-slide-active {
+    opacity: 1;
+    -webkit-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    transition: opacity 0.4s;
   }
   .rev-slide__img {
     width: 46rem;
@@ -4056,6 +4060,9 @@ ANIMATIONS
     text-align: center;
   }
   .rev__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     top: 37%;
   }
   .rev__button_prev {

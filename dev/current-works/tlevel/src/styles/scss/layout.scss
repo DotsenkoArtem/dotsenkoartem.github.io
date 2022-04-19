@@ -1402,10 +1402,13 @@
         position: relative;
     }
     &__slider{
-        width: 179rem;
+        // width: 179rem;
         &-container{
             margin-bottom: 5rem;
             // max-width: none;
+        }
+        &-inner{
+            justify-content: center;
         }
         &-shine{
             position: absolute;
@@ -1455,6 +1458,9 @@
         }
     }
     &-slide{
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+        width: auto;
         cursor: grab;
         &:active{
             cursor: grabbing;

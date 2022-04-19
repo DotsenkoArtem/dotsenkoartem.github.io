@@ -389,44 +389,91 @@ $(function(){
     // $(window).on('resize', function(){
     //     initAwaSlider();
     // });
-    window.onresize = function(){
-        initAdvSlider();
-        initAwaSlider();
-    };
+
 
 // ------------------------------------------------
     // Reviews-slider
-    const revSlider = new Swiper('.rev__slider', {
+    //Swiper plugin initialization on window resize
+    let revSlider = undefined;
+    function initRevSlider() {
+        // var screenWidth = $(window).width();
+        let screenWidth = document.documentElement.clientWidth;
+        const revSlideContainer = document.querySelector('.rev__slider-inner');
+        const revSlides = document.querySelectorAll('.rev-slide');
 
-        slidesPerView: "auto",
-        centeredSlides: true,
+        // console.log(awaSlides);
+        if(screenWidth < 576 && revSlider == undefined) {
+            revSlider = new Swiper('.rev__slider', {
+                slidesPerView: "auto",
+                centeredSlides: true,
+        
+                loop: true,
+                speed: 500,
+                draggable: true,
+                spaceBetween: 20,
+                autoplay: {
+                    delay: 5000,
+                },
+        
+        
+                navigation: {
+                    nextEl: '.swiper-button-next.rev__button.rev__button_next',
+                    prevEl: '.swiper-button-prev.rev__button.rev__button_prev',
+                },
+                // breakpoints: {
+                //     767: {
+                //         slidesPerView: 5,
+                //         centeredSlides: false,
+                //     }
+                // }
+            });
+        } else if (screenWidth >= 576 && awaSlider != undefined) {
+            revSlider.destroy();
+            revSlider = undefined;
 
-        loop: true,
-        speed: 500,
-        draggable: true,
-        spaceBetween: 20,
-        autoplay: {
-            delay: 5000,
-        },
-
-
-        navigation: {
-            nextEl: '.swiper-button-next.rev__button.rev__button_next',
-            prevEl: '.swiper-button-prev.rev__button.rev__button_prev',
-        },
-        // pagination: {
-        //     el: ".swiper-pagination",
-        //     type: "fraction",
-        //   },
-
-
-        breakpoints: {
-            767: {
-                slidesPerView: 5,
-                centeredSlides: false,
+            revSlideContainer.removeAttribute('style');
+            for(let i = 0; i < revSlides.length; i++) {
+                revSlides[i].removeAttribute('style');
             }
         }
-    });
+    }
+    initRevSlider();
+
+
+    // КОД СЛАЙДЕРА ДО УДАЛЕНИЯ 3 ИЗ 5 СЛАЙДОВ ОТЗЫВОВ
+    // const revSlider = new Swiper('.rev__slider', {
+
+        // slidesPerView: "auto",
+        // centeredSlides: true,
+
+        // loop: true,
+        // speed: 500,
+        // draggable: true,
+        // spaceBetween: 20,
+        // autoplay: {
+        //     delay: 5000,
+        // },
+
+
+        // navigation: {
+        //     nextEl: '.swiper-button-next.rev__button.rev__button_next',
+        //     prevEl: '.swiper-button-prev.rev__button.rev__button_prev',
+        // },
+        // breakpoints: {
+        //     767: {
+        //         slidesPerView: 5,
+        //         centeredSlides: false,
+        //     }
+        // }
+    // });
+
+
+// Инициализация слайдеров при изменении ширины экрана
+    window.onresize = function(){
+        initAdvSlider();
+        initAwaSlider();
+        initRevSlider();
+    };
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
     // let phoneInputs = document.querySelectorAll('[name="userPhone"]');
