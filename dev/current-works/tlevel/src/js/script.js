@@ -143,7 +143,7 @@ $(function(){
 
                 if (req.status >= 200 && req.status < 400) {
                     let json = JSON.parse(this.response);
-                    // console.log(json);
+                    console.log(json);
                   
                     if (json.result == "success") {
                     // Текстовое содержимое для окна оповещения в зависимости от результата
@@ -205,10 +205,10 @@ $(function(){
             // form.appendChild(loader);
     }
     
-    // function removeLoader(form){
-    //     let loader            = form.querySelector('.submit-loader');
-    //     loader.remove();
-    // }
+    function removeLoader(form){
+        let loader            = form.querySelector('.submit-loader');
+        loader.remove();
+    }
 // ================================================
 
 

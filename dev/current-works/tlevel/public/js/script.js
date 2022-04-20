@@ -149,7 +149,8 @@ window.onload = function () {
         removeLoader(form);
 
         if (req.status >= 200 && req.status < 400) {
-          var json = JSON.parse(this.response); // console.log(json);
+          var json = JSON.parse(this.response);
+          console.log(json);
 
           if (json.result == "success") {
             // Текстовое содержимое для окна оповещения в зависимости от результата
@@ -210,11 +211,12 @@ window.onload = function () {
     var loader = document.createElement('div');
     loader.className = 'submit-loader';
     form.querySelector('.loader-container').appendChild(loader); // form.appendChild(loader);
-  } // function removeLoader(form){
-  //     let loader            = form.querySelector('.submit-loader');
-  //     loader.remove();
-  // }
-  // ================================================
+  }
+
+  function removeLoader(form) {
+    var loader = form.querySelector('.submit-loader');
+    loader.remove();
+  } // ================================================
   // SLIDERS 
   // Expert-slider
 
