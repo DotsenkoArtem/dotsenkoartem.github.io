@@ -418,7 +418,7 @@ window.onload = function () {
         // }
 
       });
-    } else if (screenWidth >= 576 && awaSlider != undefined) {
+    } else if (screenWidth >= 576 && revSlider != undefined) {
       revSlider.destroy();
       revSlider = undefined;
       revSlideContainer.removeAttribute('style');
