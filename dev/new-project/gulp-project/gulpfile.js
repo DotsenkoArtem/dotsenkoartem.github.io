@@ -24,8 +24,16 @@ const sourcemaps    = require('gulp-sourcemaps')
 const notify        = require('gulp-notify');
 const combiner      = require('stream-combiner2').obj;
 const svgSprite     = require('gulp-svg-sprite');
-const browserSync = require('browser-sync').create();
 
+const spritesmith   = require('gulp.spritesmith');
+// ======== TEST ========
+var buffer = require('vinyl-buffer');
+var csso = require('gulp-csso');
+var merge = require('merge-stream');
+// ======== TEST ========
+// const { src } = require('gulp');
+
+const browserSync = require('browser-sync').create();
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 // КОНВЕРТИРОВАНИЕ TTF --> WOFF, СОХРАНЕНИЕ В PUBLIC/
@@ -53,16 +61,16 @@ gulp.task('ttf', function() {
 // КОНВЕРТИРОВАНИЕ ШРИФТОВ, КОПИРОВАНИЕ В PUBLIC/
 gulp.task('fonts', gulp.parallel('ttf', 'ttf2woff', 'ttf2woff2'));
 
-// ПРОСТО КОПИРОВАНИЕ PHP В КОРЕНЬ
+// ПРОСТО КОПИРОВАНИЕ PHP
 gulp.task('php', function() {
     return  gulp.src('src/php/**/*.*', {since: gulp.lastRun('php')})
-            .pipe(gulp.dest('public'));
+            .pipe(gulp.dest('public/php/'));
 });
 
 // ПРОСТО КОПИРОВАНИЕ libs В КОРЕНЬ
 gulp.task('libs', function() {
     return  gulp.src('src/assets/libs/**/*.*', {since: gulp.lastRun('libs')})
-            .pipe(gulp.dest('public'));
+            .pipe(gulp.dest('public/libs/'));
 });
 
 
@@ -86,7 +94,7 @@ gulp.task('sprite:svg', function() {
                             //dimensions: true,           //размеры картинки в одно классе с бэкграундом
                             render:     {
                                 scss: {
-                                    dest: 'sprite.scss'
+                                    dest: 'sprite-svg.scss'
                                 }
                                 // css: true
                             }
@@ -100,13 +108,64 @@ gulp.task('sprite:svg', function() {
                 );
 });
 
+// SPRITE:PNG
+// gulp.task('sprite:png', function () {
+//     return  gulp.src('src/assets/img/icons/**/*.png')
+//             .pipe(spritesmith({
+//                 imgName: 'sprite.png',
+//                 cssName: 'sprite.css',
+//                 algorithm: 'top-down',
+//                 cssName: 'sprite-png.scss',
+//               }))
+//             .pipe(gulpIf('*.scss', 
+//                 gulp.dest('tmp/scss'),
+//                 gulp.dest('public/css'))
+//             );
+//   });
+
+
+// SPRITE:PNG
+gulp.task('sprite:png', function () {
+    // Generate our spritesheet
+    var spriteData = gulp.src('src/assets/img/icons/**/*.png').pipe(spritesmith({
+        imgName: 'sprite.png',
+        algorithm: 'top-down',
+        cssName: 'sprite-png.scss',
+    }));
+  
+    // Pipe image stream through image optimizer and onto disk
+    var imgStream = spriteData.img
+      // DEV: We must buffer our stream into a Buffer for `imagemin`
+      .pipe(buffer())
+      .pipe(imagemin())
+      .pipe(gulp.dest('public/css'));
+  
+    // Pipe CSS stream through CSS optimizer and onto disk
+    var cssStream = spriteData.css
+    
+    // ХУЙНЯ ЕБАНАЯ - УБИРАЕТ ПЕРЕМЕННЫЕ ИЗ SCSS
+    //   .pipe(csso(
+    //       { 
+    //         // restructure: false,
+    //         // debug: true,
+    //     }
+    //   ))
+      .pipe(gulp.dest('tmp/scss'));
+  
+    // Return a merged stream to handle both `end` events
+    return merge(imgStream, cssStream);
+  });
+
+
+// ======== END of TEST ========
+
 // КОНВЕРТИРОВАНИЕ PNG --> WEBP
 gulp.task('webp', function() {
-    return  gulp.src(
+    return  gulp.src([
                     'src/assets/img/**/*.png',
-                    '!src/assets/img/icons/',
-                    '!src/assets/img/favicons/'
-                )
+                    '!src/assets/img/icons/**/*.*',
+                    '!src/assets/img/favicons/**/*.*'
+                ])
             .pipe(webp(
                 {
                     // preset: 'photo',
@@ -122,7 +181,7 @@ gulp.task('webp', function() {
 gulp.task('imgmin', function() {
     return  gulp.src([
             'src/assets/img/**/*.*',
-            '!src/assets/img/icons/**/*.svg'
+            '!src/assets/img/icons/**/*.*'
             ], {since: gulp.lastRun('img')})
             .pipe(gulpIf(
                 function(file) {
@@ -141,7 +200,7 @@ gulp.task('img', gulp.series('imgmin', 'webp'));
 
 
 // ОБЩАЯ ЗАДАЧА ДЛЯ СОДЕРЖИМОГО "ASSETS" (FONTS, IMG, ICONS)
-gulp.task('assets', gulp.parallel('fonts', 'sprite:svg', 'img'));
+gulp.task('assets', gulp.parallel('fonts', 'sprite:svg', 'sprite:png', 'img'));
 
 // JS
 gulp.task('js', function() {
@@ -223,13 +282,13 @@ gulp.task('pug', function() {
                     message: err.message,
                 }
             }));
-     
 });
 
 // НАБЛЮДЕНИЕ
 gulp.task('watch', function() {
     gulp.watch('src/assets/fonts/', gulp.series('fonts'));
     gulp.watch('src/assets/img/icons/**/*.svg', gulp.series('sprite:svg'));
+    gulp.watch('src/assets/img/icons/**/*.png', gulp.series('sprite:png'));
     gulp.watch(['src/assets/img/**/*.*', '!src/assets/img/icons/**/*.svg'], gulp.series('img'));
     gulp.watch('src/js/**/*.*', gulp.series('js'));
     gulp.watch('src/styles/**/*.scss', gulp.series('styles'));
@@ -247,11 +306,12 @@ gulp.task('serve', ()=> {
 
 // УДАЛЕНИЕ ПАПКИ PUBLIC
 gulp.task('clean', function() {
-    return del('public');
+    return del(['public', 'tmp']);
 });
 
 // ПОСТРОЕНИЕ
 gulp.task('build', gulp.series('clean', gulp.series('assets', 'js', 'styles', 'pug', 'php', 'libs')));
 
 // РАЗРАБОТКА
+gulp.task('dev:lite', gulp.series('build', gulp.parallel('watch')));
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));

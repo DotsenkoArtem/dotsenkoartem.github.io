@@ -6,7 +6,38 @@
 @import "fonts.scss";
 @import "default.scss";
 // @import "grid.scss";
-@import "../../../tmp/scss/sprite.scss";
+
+
+/* V. Sprite
+--------------------------------------- */ 
+
+/* 1. Sprite:svg 
+-------------------------*/
+// Для добавления svg-спрайтов: необходимо только задать нужный класс а html.
+// например     i.svg-icons.svg-icons-dims
+@import "../../../tmp/scss/sprite-svg.scss";
+
+
+/* 2. Sprite:png  
+-------------------------*/
+// scss-свойства спрайтов не добавлены по умочанию, свойство каждого спрайта нужно добавлять отдельно.
+// Для добавления png-спрайтов:
+//      - добавить в html разметку
+//                                  div.sprite-class либо 
+//                                  i.sprite-class
+//      - добавить в scss-файл свойство 
+//                                   .icon-home {
+//                                          @include sprite($icon-email);
+//                                  }
+@import "../../../tmp/scss/sprite-png.scss";
+
+// Sprite:png styles
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+.house-blue {
+  @include sprite($house-blue);
+}
 
 
 // Здесь будут основные стили проекта
