@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: 'Raleway';
+    display: flex;
+    height: 100%;
+}
+body{
+    width: 100%;
+    flex-grow: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000 url(https://funforkids.ru/pictures/cosmoswp/cosmos663.jpg) center no-repeat;
+    background-position: cover;
+}
+h1{
+    font-size: 17rem;
+    text-align: center;
+    font-weight: 800;
+    white-space: nowrap;
+
+
+
+    /* Сециально  для IE - не поддерживает -webkit-text-stroke */
+    color: rgba(255, 255, 255, 0.65);
+    /* Обводка текста */
+    -webkit-text-stroke: .05em rgba(255, 255, 255, 0.65);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.01);
+}
