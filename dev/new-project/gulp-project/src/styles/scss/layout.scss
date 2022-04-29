@@ -388,6 +388,13 @@ ANIMATIONS
 //    }
 // }
 
+.menu__item.red{
+  
+  font-weight: 800;
+  a{
+    color: red;
+  }
+}
 
 @import "media-queries.scss";
 @import "gte-ie10-style.scss";

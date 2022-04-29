@@ -1,0 +1,112 @@
+doctype html
+html(lang="ru")
+
+
+    //- Common variables
+    -
+        let author = 'Artem Dots'
+        //- ! URL определяется автоматом в миксине "меню" : pages-key+.html
+        let pages = {
+            index: {
+                name:   'главная',
+                title:  'Проект - главная',
+                descr:  'Краткое описание главной страницы',
+                author:  author,
+            },
+            page2: {
+                name:   'страница-2',
+                title:  'Проект - вторая',
+                descr:  'Краткое описание страницы-2',
+                author:  author,
+            },
+            page3: {
+                name:   'страница-3',
+                title:  'Проект - третья',
+                descr:  'Краткое описание страницы-3',
+                author:  author,
+            },
+            page4: {
+                name:   'страница-4',
+                title:  'Проект - четвертая',
+                descr:  'Краткое описание страницы-4',
+                author:  author,
+            },
+            page5: {
+                name:   'страница-5',
+                title:  'Проект - пятая',
+                descr:  'Краткое описание страницы-5',
+                author:  author,
+            },
+            page6: {
+                name:   'страница-6',
+                title:  'Проект - шестая',
+                descr:  'Краткое описание страницы-6',
+                author:  author,
+            },
+        };
+
+
+    //- Mixins
+    include ../_mixins/_m-default
+
+
+    //- Page`s variables
+    block page-vars
+
+
+    head
+        block head
+            include ../_includes/_head.pug
+
+    
+    body 
+        .wrapper#wrapper
+
+            |
+            |
+            //
+                Header
+                ==================================================
+            header.header#header
+                block header
+                    include ../_includes/_header.pug
+            
+            |
+            |
+            main
+                block main
+
+            |
+            |
+            //
+                footer
+                ==================================================
+            footer.footer#footer
+                block footer
+                    include ../_includes/_footer.pug
+
+            |
+            |
+            //
+                Modals
+                ==================================================
+            block modals
+                |
+                |
+                
+                // modal-callback
+                // ==================================================
+                include ../_includes/_modals/_modal-callback.pug
+
+        |
+        |
+        //
+            Scripts
+            ==================================================
+        block scripts
+
+            //- LOCAL SCRIPTS  
+            script(src="libs/jQuery-3.6.0.js")
+            script(src="libs/jquery.fancybox.min.js")
+            script(src="libs/swiper.min.js")
+            script(src="js/script.js")

@@ -1,109 +1,42 @@
--
-    var page = {
-        pageUrl: 'index.html',
-        pageTitle: 'Название станицы',
-        pageName: 'Главная',
-    }
-    
-doctype html
+extends _templates/_base.pug
 
-html(lang="ru")
-    include _includes/_head.pug
+block page-vars
+    -
+        let page = pages.index;
 
 
-    body
-        .wrapper#wrapper
-            |
-            |
-            <!-- Header
-            |
-            |================================================== -->
-            include _includes/_header.pug
+//- block head
+//-     h2 Wow, Block Head is undefined!
 
 
-            |
-            |
-            main
-                <!-- Section-name
-                |
-                |================================================== -->
-                section.section
-                    .container
-                        h1(style="text-align: center; font-size: 35px;") Let`s do it, bro!
-                    
-                    .container 
-                        i.svg-user.svg-user-dims
-                    
-                    .container 
-                        i.house-blue
+//- block header
+//-     h2 Wow, Block Header is undefined!
 
 
+block main 
+    //
+        Section-name
+        ==================================================
+    section.section
+        .container
+            h1(style="text-align: center; font-size: 35px;") Let`s do it, bro!
+        
+        .container 
+            p Пример спользоания svg-иконки
+            i.svg-user.svg-user-dims
+        
+        .container 
+            p Пример спользоания png-иконки
+            i.house-blue
 
 
-
-            |
-            |
-            |<!-- footer
-            |================================================== -->
-            include _includes/_footer.pug
+//- block footer
+//-     h2 Wow, Block Footer is undefined!
 
 
-
-            |
-            |
-            //- #modal.modal
-            //-     .modal__content.modal-callback
-            //-         .modal__header
-            //-             h3 Консультация
-            //-             p Прямо сейчас оставьте заявку на консультацию – расскажем как и ответим на все ваши вопросы.
-
-            //-             button.modal-close.modal__close 
-            //-                 |
-            //-                 span.modal-close__item
-            //-                 |
-            //-                 |
-            //-                 span.modal-close__item
-
-            //-         .modal__body
-
-            //-             form.form(action="mail.php", id="modalCbForm" name="modalCbForm" method="POST") 
-            //-                 //- name-group
-            //-                 .form__group.form__group_control
-            //-                     input.form__control(type="text", name="userName", id="userName", required) 
-            //-                     label.form__label.form__label_control(for="userName") 
-            //-                         |Ваше имя
-            //-                     i.svg-user.svg-user-dims.form-icon
-            //-                 //- email-group
-            //-                 .form__group.form__group_control
-            //-                     input.form__control(type="text", name="userPhone", id="userPhone", required) 
-            //-                     label.form__label.form__label_control(for="userPhone") 
-            //-                         |Ваш телефон
-            //-                     i.svg-phone.svg-phone-dims.form-icon
-                                
-            //-                 //- submit
-            //-                 .form__submit-wrap.loader-container
-            //-                     button.btn.btn_primary.btn_full-width.form__submit(type="submit") Перезвоните мне
-
-            //-                 .form__footer
-            //-                     p Нажимая кнопку, Вы соглашаетесь
-            //-                         br
-            //-                         |с политикой конфиденциальности сайта
-
-            //-     .modal__overlay.modal-close
+//- block modals
+//-     h2 Wow, Block Modals is undefined!
 
 
-        //- CDN - JQUERY
-        //- script(src="https://code.jquery.com/jquery-3.6.0.js",
-        //-         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=",
-        //-         crossorigin="anonymous")
-
-        //- CDN - FANCYBOX
-        //- script( src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js",
-        //-         integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
-        //-         crossorigin="anonymous")
-
-        //- LOCAL SCRIPTS  
-        script(src="libs/jQuery-3.6.0.js")
-        script(src="libs/jquery.fancybox.min.js")
-        script(src="libs/swiper.min.js")
-        script(src="js/script.js")
+//- block scripts
+//-     h2 Wow, Block Scripts is undefined!
