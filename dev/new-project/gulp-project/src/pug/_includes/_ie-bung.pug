@@ -1,0 +1,69 @@
+//- Разметка заглушки для Internet Explorer
+#ieBung.ie-bung
+    .ie-bung__content 
+        .ie-bung__header 
+            .ie-bung__smile
+                i.sad-icon
+            h2 К сожалению, мы больше не поддерживаем этот браузер...
+        .ie-bung__main 
+            p Для корректного отображения данного сайта Вы можете выбрать и скачать последнюю версию любого из наиболее популярных браузеров по ссылкам ниже:
+        .ie-bung__footer
+            .ie-bung__links 
+                a(href="https://www.google.com/intl/ru_ru/chrome/", target="_blank", title="Скачать Chrome") 
+                    i.chrome
+                a(href="https://browser.yandex.ru/", target="_blank", title="Скачать Yandex") 
+                    i.yandex
+                a(href="https://www.mozilla.org/ru/firefox/", target="_blank", title="Скачать Firefox") 
+                    i.firefox
+                a(href="https://www.opera.com/ru", target="_blank", title="Скачать Opera") 
+                    i.opera
+                a(href="https://www.microsoft.com/ru-ru/edge", target="_blank", title="Скачать Microsoft Edge") 
+                    i.edge
+
+style.
+    .ie-bung{
+        display: none;
+    }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .ie-bung {
+            display: -ms-flexbox;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            background: linear-gradient(180deg, #a3fff3, #003535);
+            overflow: hidden;
+        }
+        .ie-bung__smile {
+            margin-bottom: 2rem;
+            display: -ms-flexbox;
+            -ms-flex-pack: center;
+        }
+        .ie-bung__content {
+            margin-top: 10rem;
+            max-width: 80rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        .ie-bung__header {
+            margin-bottom: 2rem;
+        }
+        .ie-bung__main {
+            margin-bottom: 3rem;
+        }
+        .ie-bung__links i {
+            display: inline-block;
+            margin-left: 15px;
+            margin-right: 15px;
+            transition: all 0.3s;
+            opacity: 0.75;
+        }
+        .ie-bung__links i:hover {
+            -ms-transform: translateY(-2px);
+            opacity: 1;
+        }
+    }

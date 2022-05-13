@@ -38,6 +38,24 @@
 .house-blue {
   @include sprite($house-blue);
 }
+.sad-icon {
+  @include sprite($sad-icon);
+}
+.chrome {
+  @include sprite($chrome);
+}
+.yandex {
+  @include sprite($yandex);
+}
+.firefox {
+  @include sprite($firefox);
+}
+.opera {
+  @include sprite($opera);
+}
+.edge {
+  @include sprite($edge);
+}
 
 
 // Здесь будут основные стили проекта
