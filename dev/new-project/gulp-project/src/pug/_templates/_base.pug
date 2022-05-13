@@ -5,7 +5,10 @@ html(lang="ru")
     //- Common variables
     -
         let author = 'Artem Dots'
-        let ieBung = true                   // Если требуется заглушка для Internet Explorer
+
+        // Если требуется заглушка для Internet Explorer
+        let ieBung = true
+        
         //- ! URL определяется автоматом в миксине "меню" : pages-key+.html
         let pages = {
             index: {
@@ -58,13 +61,17 @@ html(lang="ru")
     head
         block head
             include ../_includes/_head.pug
+        if (ieBung)
+            block ie-bung-styles
+                include ../_includes/_ie-bung-styles.pug
 
     
     body 
         //- 
             Заглушка для Internet Explorer
-                - разметка и стили для IE > 9 в _includes/_ie-bung.pug
-                - стили для IE <= 9 в _head.pug ([if lte IE 9])
+                - разметка в _includes/_ie-bung.pug
+                - стили для IE > 9 в _includes/_ie-bung-styles.pug
+                - стили для IE <= 9 в _includes/_ie-bung-styles.pug
                 - изображения для ссылок собираются в srite.png
         if (ieBung) 
             block ie-bung
