@@ -5,7 +5,7 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Smoothy Scrolling Sidebar Menu
-        link(rel="stylesheet", href="css/style.css")
+        link(rel="stylesheet", href="style.css")
     body 
         - let sectionsSum = 9;
         .wrapper
@@ -15,7 +15,9 @@ html(lang="en")
                 while i < sectionsSum
                     - i++
                         section.section(id= "s" + i)
-                            h2 #{i} Lorem ipsum dolor sit amet.
+                            h2 
+                                |Section #{i} 
+                                span(style="font-weight: 400;") Lorem ipsum dolor sit amet.
                             p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere incidunt dolor corrupti provident! Ad quo, vero officia esse, assumenda architecto fuga et vel perferendis dolore asperiores commodi quos tempora nobis voluptate cupiditate quasi aut nulla! Tempora, nemo architecto blanditiis voluptate omnis ab quaerat tenetur iste ad commodi aliquid sed ut repellat. Ipsam saepe cupiditate quisquam eos. Ducimus voluptatem accusantium, consequatur illum exercitationem nesciunt cupiditate sunt natus qui doloribus ab error quo aliquid consectetur maiores, magnam dolor accusamus dicta sapiente delectus praesentium! Deserunt labore, suscipit necessitatibus quos temporibus obcaecati dolorum neque possimus cumque sint, voluptatem, explicabo veniam nihil. Deserunt ipsam atque voluptas blanditiis illo sequi laudantium earum perspiciatis assumenda labore minus totam quae ex iste enim nulla explicabo, tempore quaerat ut ad eveniet amet quo possimus voluptatum. Suscipit soluta mollitia deserunt non fugit laborum repellendus iure? Praesentium, aut quia nisi eligendi ipsum excepturi quis ad. Atque voluptate blanditiis vero in iste?
 
             aside.sidebar
@@ -24,12 +26,12 @@ html(lang="en")
                     while k < sectionsSum
                         - k++
                         li 
-                            a(href="#s" + k) section #{k}
+                            a(href="#s" + k) to section #{k}
                 
                 div.console-btn Текущая прокрутка
                 button#btn Вывести в консоль
                     
             footer.footer
         
-        script(src="js/jQuery-3.6.0.js")
-        script(src="js/script.dev.js")
+        script(src="jQuery-3.6.0.js")
+        script(src="script.dev.js")
