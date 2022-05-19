@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+body {
+  background: aqua;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.wrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  max-width: 96rem;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar {
+  flex: none;
+  width: 25rem;
+  background: #f2f2f2;
+  color: #242424;
+  min-height: 100vh;
+}
+
+.section {
+  padding-right: 1.5rem;
+  width: 100%;
+}
+
+.section::after {
+  margin: 10px;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #fff;
+}
+
+.sidebar {
+  padding-left: 2rem;
+}
+
+.menu {
+  margin-top: 1rem;
+  list-style: none;
+}
+.menu a:hover {
+  text-decoration: none;
+}
+
+.console-btn {
+  margin-top: 2rem;
+}
