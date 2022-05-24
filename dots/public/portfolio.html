@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head> 
+    <!--
+    Basic Page Needs 
+    ==============================================
+    -->
+    <meta charset="UTF-8">
+    <title>Dots.... - portfolio</title>
+    <meta name="description" content="Краткое описание страницы portfolio">
+    <meta name="author" content="Artem Dots">
+    <meta name="robots" content="index, nofollow">
+    
+    <!--
+    Fonts preload
+    ==================================================
+    -->
+    <link rel="preload" as="font" href="fonts/OpenSans-Light.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="fonts/OpenSans-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="fonts/OpenSans-Bold.woff2" type="font/woff2" crossorigin="anonymous">
+    <!--Fonts preload end-->
+    
+    <!--
+    Mobile Specific Metas 
+    ==================================================
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!--
+    CSS
+    ==================================================
+    -->
+    <link rel="stylesheet" href="libs/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="libs/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!--
+    Favicons
+    ==================================================
+    -->
+    <link rel="icon" href="img/favicons/favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png" type="image/png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <style>
+      .ie-bung{
+          display: none;
+      }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          .ie-bung {
+              display: -ms-flexbox;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              position: fixed;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: 9999;
+              background: linear-gradient(180deg, #a3fff3, #003535);
+              overflow: hidden;
+          }
+          .ie-bung__smile {
+              margin-bottom: 2rem;
+              display: -ms-flexbox;
+              -ms-flex-pack: center;
+          }
+          .ie-bung__content {
+              margin-top: 10rem;
+              max-width: 80rem;
+              font-size: 1.8rem;
+              text-align: center;
+          }
+          .ie-bung__header {
+              margin-bottom: 2rem;
+          }
+          .ie-bung__main {
+              margin-bottom: 3rem;
+          }
+          .ie-bung__links i {
+              display: inline-block;
+              margin-left: 15px;
+              margin-right: 15px;
+              transition: all 0.3s;
+              opacity: 0.75;
+          }
+          .ie-bung__links i:hover {
+              -ms-transform: translateY(-2px);
+              opacity: 1;
+          }
+      }
+      
+    </style>
+    <!--[if lte IE 9]>
+    <style>
+        .ie-bung {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            height: 100%;
+            background: #a3fff3;
+            overflow: hidden;
+        }
+        .ie-bung__smile {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .ie-bung__content {
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 800px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .ie-bung__header {
+            margin-bottom: 20px;
+        }
+        .ie-bung__main {
+            margin-bottom: 30px;
+        }
+        .ie-bung__links i {
+            display: inline-block;
+            margin-left: 15px;
+            margin-right: 15px;
+            opacity: 0.75;
+        }
+        .ie-bung__links i:hover {
+            -ms-transform: translateY(-2px);
+            opacity: 1;
+        }
+    </style>
+    <![endif]
+    -->
+  </head>
+  <body> 
+    <div class="ie-bung" id="ieBung">
+      <div class="ie-bung__content"> 
+        <div class="ie-bung__header"> 
+          <div class="ie-bung__smile"><i class="sad-icon"></i></div>
+          <h2>К сожалению, мы больше не поддерживаем этот браузер...</h2>
+        </div>
+        <div class="ie-bung__main"> 
+          <p>Для корректного отображения данного сайта Вы можете выбрать и скачать последнюю версию любого из наиболее популярных браузеров по ссылкам ниже:</p>
+        </div>
+        <div class="ie-bung__footer">
+          <div class="ie-bung__links"> <a href="https://www.google.com/intl/ru_ru/chrome/" target="_blank" title="Скачать Chrome"> <i class="chrome"></i></a><a href="https://browser.yandex.ru/" target="_blank" title="Скачать Yandex"> <i class="yandex"></i></a><a href="https://www.mozilla.org/ru/firefox/" target="_blank" title="Скачать Firefox"> <i class="firefox"></i></a><a href="https://www.opera.com/ru" target="_blank" title="Скачать Opera"> <i class="opera"></i></a><a href="https://www.microsoft.com/ru-ru/edge" target="_blank" title="Скачать Microsoft Edge"> <i class="edge"></i></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper" id="wrapper">
+      
+      
+      <!--
+      Header
+      ==================================================
+      -->
+      <header class="header" id="header">
+        <div class="container header__container"> 
+          <div class="header__item header__item_first">
+            <div class="logo">
+              <div class="logo__inner"><span class="logo__name">Dots</span><span class="dots"><span class="dots__item"> <span>e</span></span><span class="dots__item"> <span>n</span></span><span class="dots__item"> <span>k</span></span><span class="dots__item"> <span>o</span></span></span></div>
+            </div>
+          </div>
+          
+          <div class="header__item header__item_second top-nav">
+              <nav>
+                <ul class="top-menu top-menu_underlined">
+                  <li class="top-menu__item"><a href="index.html">Главная</a></li>
+                  <li class="top-menu__item"><a href="about.html">About</a></li>
+                  <li class="top-menu__item current"><a href="portfolio.html">Portfolio</a></li>
+                  <li class="top-menu__item"><a href="сomponents.html">Components</a></li>
+                  <li class="top-menu__item"><a href="сontacts.html">Contacts</a></li>
+                </ul>
+              </nav>
+          </div>
+           
+          <div class="header__item"></div>
+        </div>
+        
+        <!-- BURGER-BTN-->
+        <div class="top-menu-toggle-wrap">
+          <div class="top-menu-toggle">
+            <div class="top-menu-toggle__item"> </div>
+            <div class="top-menu-toggle__item"> </div>
+            <div class="top-menu-toggle__item"> </div>
+          </div>
+        </div>
+      </header>
+      
+      <main class="main">
+        <div class="container">
+          <h1>Привет, Анатолий Юрич! Вступайте в ПСП</h1>
+          <main>
+            <!--
+            Section-name
+            ==================================================
+            
+            
+            -->
+          </main>
+        </div>
+      </main>
+      
+      <!--
+      footer
+      ==================================================
+      -->
+      <footer class="footer" id="footer">
+        <p style="background-color: tomato;">footer</p>
+      </footer>
+      
+      <!--
+      Modals
+      ==================================================
+      -->
+      
+      
+      <!-- modal-callback-->
+      <!-- ==================================================-->
+    </div>
+    
+    <!--
+    Scripts
+    ==================================================
+    -->
+    <script src="libs/jQuery-3.6.0.js"></script>
+    <script src="libs/jquery.fancybox.min.js"></script>
+    <script src="libs/swiper.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 "use strict"
-const dots 	= document.querySelectorAll('.dots__item');
+let windowWidth	= window.innerWidth;
+const dots 		= document.querySelectorAll('.dots__item');
 
 for (let i = 0; i < dots.length; i++) {
 	let count = 0;
@@ -12,8 +13,6 @@ for (let i = 0; i < dots.length; i++) {
 			let blue = Math.round(Math.random() * 255 + 1);
 			dots[i].style.backgroundColor = "rgba(" + red + ", " + green + "," + blue + ")";
 			dotJump(this);
-			console.log(count);
-			// console.log(letter);
 		} else if (count == 9){
 			let red = Math.round(Math.random() * 255 + 1);
 			let green = Math.round(Math.random() * 255 + 1);
@@ -41,6 +40,8 @@ function dotJump(el) {
 	}, 500);
 }
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
 // ОБРАБОТКА МОБИЛЬНОГО МЕНЮ
 const menuToggle  	= document.querySelector('.top-menu-toggle'),
 	  menu 			= document.querySelector('.top-nav'),
@@ -78,4 +79,29 @@ function menuClose(){
 	menuOverl.classList.remove('open');
 }
 
-console.log(menuToggle);
+
+
+let setupMenuDash = function(){
+	const menuDashed	= document.querySelector('.top-menu_underlined');
+	const menuItems			= menuDashed.querySelectorAll('.top-menu__item > a');
+
+	for (let menuItem of menuItems) {
+		let dash = document.createElement('div');
+		dash.className = 'menu-line';
+		menuItem.append(dash);
+
+		menuItem.addEventListener('mouseover', function() {
+			dash.classList.remove('shrink-right');
+			dash.classList.add('grow-right');
+		})
+
+		menuItem.addEventListener('mouseout', function() {
+			dash.classList.remove('grow-right');
+			dash.classList.add('shrink-right');
+		})
+	}
+}
+
+setupMenuDash();
+
+console.log(windowWidth);
