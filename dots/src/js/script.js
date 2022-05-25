@@ -81,27 +81,88 @@ function menuClose(){
 
 
 
-let setupMenuDash = function(){
-	const menuDashed	= document.querySelector('.top-menu_underlined');
-	const menuItems			= menuDashed.querySelectorAll('.top-menu__item > a');
+// let setupMenuDash = function(){
+// 	const menuDashed	= document.querySelector('.top-menu_underlined');
+// 	const menuItems		= menuDashed.querySelectorAll('.top-menu__item > a');
+
+// 	for (let menuItem of menuItems) {
+// 		let dash = document.createElement('div');
+// 		dash.className = 'menu-dash';
+// 		menuItem.append(dash);
+
+// 		menuItem.addEventListener('mouseover', function() {
+// 			dash.classList.remove('shrink-right');
+// 			dash.classList.add('grow-right');
+// 		})
+
+// 		menuItem.addEventListener('mouseout', function() {
+// 			dash.classList.remove('grow-right');
+// 			dash.classList.add('shrink-right');
+// 		})
+// 	}
+// }
+
+// setupMenuDash();
+
+
+// ОБРАБОТКА ПОДЧЕРКИВАНИЯ ПУНКТОВ МЕНЮ
+const menuDashed	= document.querySelector('.top-menu_underlined.responsive');
+const menuItems		= menuDashed.querySelectorAll('.top-menu__item > a');
+
+function setupMenuDashResponsive(){
 
 	for (let menuItem of menuItems) {
 		let dash = document.createElement('div');
-		dash.className = 'menu-line';
+		dash.className = 'menu-dash';
 		menuItem.append(dash);
 
-		menuItem.addEventListener('mouseover', function() {
-			dash.classList.remove('shrink-right');
-			dash.classList.add('grow-right');
-		})
-
-		menuItem.addEventListener('mouseout', function() {
-			dash.classList.remove('grow-right');
-			dash.classList.add('shrink-right');
-		})
+		menuDashHandler(menuItem, dash);
 	}
 }
 
-setupMenuDash();
+function menuDashHandler(item, dash) {
 
-console.log(windowWidth);
+	// Определение середины пункта меню
+	let menuItemMiddle = item.getBoundingClientRect().x + (item.getBoundingClientRect().width / 2); 
+
+	item.addEventListener('mouseover', function(e) {
+		dash.className = 'menu-dash';		//Сброс всех лишних классов (появления и исчезания)
+		menuItemMiddle >= e.clientX ? dash.classList.add('grow-right') :  dash.classList.add('grow-left');
+	});
+
+	item.addEventListener('mouseout', function(e) {
+		dash.className = 'menu-dash';
+		menuItemMiddle >= e.clientX ? dash.classList.add('shrink-left') :  dash.classList.add('shrink-right');
+	});
+}
+
+// Запуск установки только на мобильных
+if(windowWidth >= 992) {
+	setupMenuDashResponsive();
+}
+
+// Обработка при изменении экрана
+window.onresize = function() {
+	windowWidth = window.innerWidth;
+	let dash = document.querySelector('.menu-dash');				//Получить .dash
+
+	if(windowWidth >= 992) {
+		if(dash) {													//Если хоть одна .dash существует
+			for (let menuItem of menuItems) {
+				let dash = menuItem.querySelector('.menu-dash');	//то получаем все имеющиеся в меню
+				dash.className = 'menu-dash';						//и сбрасываем лишние стили
+				menuDashHandler(menuItem, dash);					//и обработка снова
+			} 
+		} else {
+				setupMenuDashResponsive();							//если .dash не существует - просто установка
+		}
+	} else {														//Удаление всех .dash на мобильном
+		for (let menuItem of menuItems) {
+			let dash = menuItem.querySelector('.menu-dash');
+			if(dash) {
+				dash.remove();
+			}
+		}
+	}
+};
+// ===================================================

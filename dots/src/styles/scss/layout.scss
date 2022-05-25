@@ -189,7 +189,7 @@
   }
 }
 
-.menu-line{
+.menu-dash{
   display: block;
   width: 0;
   height: 1px;
@@ -197,20 +197,30 @@
   bottom: 0;
   content: '';
   background: v.$primary-color;
+  &.grow-left{
+    right: 0;
+    left: auto;
+    animation: grow .3s ease-in forwards;
+  }
   &.grow-right{
     left: 0;
     right: auto;
-    animation: grow-right .3s ease-in forwards;
+    animation: grow .3s ease-in forwards;
+  }
+  &.shrink-left{
+    left: 0;
+    right: auto;
+    animation: shrink .3s ease-in forwards;
   }
   &.shrink-right{
     right: 0;
     left: auto;
-    animation: shrink-right .3s ease-in forwards;
+    animation: shrink .3s ease-in forwards;
   }
 }
 
 
-@keyframes grow-right {
+@keyframes grow {
   from{
     width: 0%;
   }
@@ -220,7 +230,7 @@
 }
 
 
-@keyframes shrink-right {
+@keyframes shrink {
   from{
     width: 100%;
   }

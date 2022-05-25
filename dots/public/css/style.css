@@ -587,7 +587,7 @@ select::-ms-expand {
   display: none;
 }
 
-.menu-line {
+.menu-dash {
   display: block;
   width: 0;
   height: 1px;
@@ -596,20 +596,32 @@ select::-ms-expand {
   content: "";
   background: #335eea;
 }
-.menu-line.grow-right {
-  left: 0;
-  right: auto;
-  -webkit-animation: grow-right 0.3s ease-in forwards;
-  animation: grow-right 0.3s ease-in forwards;
-}
-.menu-line.shrink-right {
+.menu-dash.grow-left {
   right: 0;
   left: auto;
-  -webkit-animation: shrink-right 0.3s ease-in forwards;
-  animation: shrink-right 0.3s ease-in forwards;
+  -webkit-animation: grow 0.3s ease-in forwards;
+  animation: grow 0.3s ease-in forwards;
+}
+.menu-dash.grow-right {
+  left: 0;
+  right: auto;
+  -webkit-animation: grow 0.3s ease-in forwards;
+  animation: grow 0.3s ease-in forwards;
+}
+.menu-dash.shrink-left {
+  left: 0;
+  right: auto;
+  -webkit-animation: shrink 0.3s ease-in forwards;
+  animation: shrink 0.3s ease-in forwards;
+}
+.menu-dash.shrink-right {
+  right: 0;
+  left: auto;
+  -webkit-animation: shrink 0.3s ease-in forwards;
+  animation: shrink 0.3s ease-in forwards;
 }
 
-@-webkit-keyframes grow-right {
+@-webkit-keyframes grow {
   from {
     width: 0%;
   }
@@ -618,7 +630,7 @@ select::-ms-expand {
   }
 }
 
-@keyframes grow-right {
+@keyframes grow {
   from {
     width: 0%;
   }
@@ -626,7 +638,7 @@ select::-ms-expand {
     width: 100%;
   }
 }
-@-webkit-keyframes shrink-right {
+@-webkit-keyframes shrink {
   from {
     width: 100%;
   }
@@ -634,7 +646,7 @@ select::-ms-expand {
     width: 0%;
   }
 }
-@keyframes shrink-right {
+@keyframes shrink {
   from {
     width: 100%;
   }

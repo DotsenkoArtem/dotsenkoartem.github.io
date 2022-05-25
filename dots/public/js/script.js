@@ -73,40 +73,117 @@ function menuClose() {
   menu.classList.remove('open');
   body.classList.remove('scroll-hidden');
   menuOverl.classList.remove('open');
-}
+} // let setupMenuDash = function(){
+// 	const menuDashed	= document.querySelector('.top-menu_underlined');
+// 	const menuItems		= menuDashed.querySelectorAll('.top-menu__item > a');
+// 	for (let menuItem of menuItems) {
+// 		let dash = document.createElement('div');
+// 		dash.className = 'menu-dash';
+// 		menuItem.append(dash);
+// 		menuItem.addEventListener('mouseover', function() {
+// 			dash.classList.remove('shrink-right');
+// 			dash.classList.add('grow-right');
+// 		})
+// 		menuItem.addEventListener('mouseout', function() {
+// 			dash.classList.remove('grow-right');
+// 			dash.classList.add('shrink-right');
+// 		})
+// 	}
+// }
+// setupMenuDash();
+// ОБРАБОТКА ПОДЧЕРКИВАНИЯ ПУНКТОВ МЕНЮ
 
-var setupMenuDash = function setupMenuDash() {
-  var menuDashed = document.querySelector('.top-menu_underlined');
-  var menuItems = menuDashed.querySelectorAll('.top-menu__item > a');
 
+var menuDashed = document.querySelector('.top-menu_underlined.responsive');
+var menuItems = menuDashed.querySelectorAll('.top-menu__item > a');
+
+function setupMenuDashResponsive() {
   var _iterator = _createForOfIteratorHelper(menuItems),
       _step;
 
   try {
-    var _loop2 = function _loop2() {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var menuItem = _step.value;
       var dash = document.createElement('div');
-      dash.className = 'menu-line';
+      dash.className = 'menu-dash';
       menuItem.append(dash);
-      menuItem.addEventListener('mouseover', function () {
-        dash.classList.remove('shrink-right');
-        dash.classList.add('grow-right');
-      });
-      menuItem.addEventListener('mouseout', function () {
-        dash.classList.remove('grow-right');
-        dash.classList.add('shrink-right');
-      });
-    };
-
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      _loop2();
+      menuDashHandler(menuItem, dash);
     }
   } catch (err) {
     _iterator.e(err);
   } finally {
     _iterator.f();
   }
-};
+}
 
-setupMenuDash();
-console.log(windowWidth);
+function menuDashHandler(item, dash) {
+  // Определение середины пункта меню
+  var menuItemMiddle = item.getBoundingClientRect().x + item.getBoundingClientRect().width / 2;
+  item.addEventListener('mouseover', function (e) {
+    dash.className = 'menu-dash'; //Сброс всех лишних классов (появления и исчезания)
+
+    menuItemMiddle >= e.clientX ? dash.classList.add('grow-right') : dash.classList.add('grow-left');
+  });
+  item.addEventListener('mouseout', function (e) {
+    dash.className = 'menu-dash';
+    menuItemMiddle >= e.clientX ? dash.classList.add('shrink-left') : dash.classList.add('shrink-right');
+  });
+} // Запуск установки только на мобильных
+
+
+if (windowWidth >= 992) {
+  setupMenuDashResponsive();
+} // Обработка при изменении экрана
+
+
+window.onresize = function () {
+  windowWidth = window.innerWidth;
+  var dash = document.querySelector('.menu-dash'); //Получить .dash
+
+  if (windowWidth >= 992) {
+    if (dash) {
+      //Если хоть одна .dash существует
+      var _iterator2 = _createForOfIteratorHelper(menuItems),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var menuItem = _step2.value;
+
+          var _dash = menuItem.querySelector('.menu-dash'); //то получаем все имеющиеся в меню
+
+
+          _dash.className = 'menu-dash'; //и сбрасываем лишние стили
+
+          menuDashHandler(menuItem, _dash); //и обработка снова
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+    } else {
+      setupMenuDashResponsive(); //если .dash не существует - просто установка
+    }
+  } else {
+    //Удаление всех .dash на мобильном
+    var _iterator3 = _createForOfIteratorHelper(menuItems),
+        _step3;
+
+    try {
+      for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+        var _menuItem = _step3.value;
+
+        var _dash2 = _menuItem.querySelector('.menu-dash');
+
+        if (_dash2) {
+          _dash2.remove();
+        }
+      }
+    } catch (err) {
+      _iterator3.e(err);
+    } finally {
+      _iterator3.f();
+    }
+  }
+}; // ===================================================
