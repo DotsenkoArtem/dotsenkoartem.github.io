@@ -47,6 +47,8 @@ var menuItems = menuDashed.querySelectorAll('.top-menu__item > a');
 var windowWidth = window.innerWidth;
 
 function setupMenuDashResponsive() {
+  windowWidth = window.innerWidth;
+
   if (menuItems) {
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
@@ -84,8 +86,6 @@ function menuDashHandler(item, dash) {
     dash.className = 'menu-dash'; //Сброс всех лишних классов (появления и исчезания)
 
     menuItemMiddle >= e.clientX ? dash.classList.add('grow-right') : dash.classList.add('grow-left');
-    console.log("menuItemMiddle: ".concat(menuItemMiddle));
-    console.log("e.clientX: ".concat(e.clientX));
   });
   item.addEventListener('mouseout', function (e) {
     dash.className = 'menu-dash';
@@ -94,80 +94,43 @@ function menuDashHandler(item, dash) {
 } // Запуск установки только на мобильных
 
 
-if (windowWidth >= 992) {
+if (windowWidth > 991) {
   setupMenuDashResponsive();
 } // Обработка при изменении экрана
 
 
 window.onresize = function () {
   windowWidth = window.innerWidth;
-  var dash = document.querySelector('.menu-dash'); //Получить .dash
+  var dashes = menuDashed.querySelectorAll('.menu-dash');
 
-  if (windowWidth >= 992) {
-    if (dash) {
-      //Если хоть одна .dash существует
-      var _iteratorNormalCompletion2 = true;
-      var _didIteratorError2 = false;
-      var _iteratorError2 = undefined;
-
-      try {
-        for (var _iterator2 = menuItems[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var menuItem = _step2.value;
-
-          var _dash = menuItem.querySelector('.menu-dash'); //то получаем все имеющиеся в меню
-
-
-          _dash.className = 'menu-dash'; //и сбрасываем лишние стили
-
-          menuDashHandler(menuItem, _dash); //и обработка снова
-        }
-      } catch (err) {
-        _didIteratorError2 = true;
-        _iteratorError2 = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-            _iterator2["return"]();
-          }
-        } finally {
-          if (_didIteratorError2) {
-            throw _iteratorError2;
-          }
-        }
-      }
-    } else {
-      setupMenuDashResponsive(); //если .dash не существует - просто установка
-    }
-  } else {
-    //Удаление всех .dash на мобильном
-    var _iteratorNormalCompletion3 = true;
-    var _didIteratorError3 = false;
-    var _iteratorError3 = undefined;
+  if (dashes) {
+    var _iteratorNormalCompletion2 = true;
+    var _didIteratorError2 = false;
+    var _iteratorError2 = undefined;
 
     try {
-      for (var _iterator3 = menuItems[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-        var _menuItem = _step3.value;
-
-        var _dash2 = _menuItem.querySelector('.menu-dash');
-
-        if (_dash2) {
-          _dash2.remove();
-        }
+      for (var _iterator2 = dashes[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        var dash = _step2.value;
+        dash.remove();
       }
     } catch (err) {
-      _didIteratorError3 = true;
-      _iteratorError3 = err;
+      _didIteratorError2 = true;
+      _iteratorError2 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
-          _iterator3["return"]();
+        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+          _iterator2["return"]();
         }
       } finally {
-        if (_didIteratorError3) {
-          throw _iteratorError3;
+        if (_didIteratorError2) {
+          throw _iteratorError2;
         }
       }
     }
+  }
+
+  if (windowWidth > 991) {
+    setupMenuDashResponsive();
   }
 }; // END OF COMPONENT`S CODE
 // ===================================================

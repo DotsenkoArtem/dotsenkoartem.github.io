@@ -11,9 +11,6 @@ menuOverl.className = 'top-nav-overl';
 menu.after(menuOverl);
 
 
-
-
-
 menuToggle.addEventListener('click', function(){
 	menuToggle.classList.toggle('open');
 	menu.classList.toggle('open');
@@ -21,7 +18,9 @@ menuToggle.addEventListener('click', function(){
 	menuOverl.classList.toggle('open');
 });
 
+
 menuOverl.addEventListener('click', menuClose);
+
 
 function menuClose(){
 	menuToggle.classList.remove('open');
@@ -29,7 +28,6 @@ function menuClose(){
 	body.classList.remove('scroll-hidden');
 	menuOverl.classList.remove('open');
 }
-
 
 
 // let setupMenuDash = function(){
@@ -57,6 +55,7 @@ function menuClose(){
 
 
 
+
 // COMPONENT`S CODE
 // ===================================================
 // ОБРАБОТКА ПОДЧЕРКИВАНИЯ ПУНКТОВ МЕНЮ
@@ -65,12 +64,13 @@ const menuItems		= menuDashed.querySelectorAll('.top-menu__item > a');
 let windowWidth		= window.innerWidth;
 
 function setupMenuDashResponsive(){
+	windowWidth		= window.innerWidth;
 	if(menuItems) {
 		for (let menuItem of menuItems) {
 			let dash = document.createElement('div');
 			dash.className = 'menu-dash';
 			menuItem.append(dash);
-	
+
 			menuDashHandler(menuItem, dash);
 		}
 	}
@@ -79,14 +79,11 @@ function setupMenuDashResponsive(){
 
 function menuDashHandler(item, dash) {
 	// Определение середины пункта меню
-	let menuItemMiddle = item.getBoundingClientRect().x + (item.getBoundingClientRect().width / 2); 
+	let menuItemMiddle = item.getBoundingClientRect().x + (item.getBoundingClientRect().width / 2);
 
 	item.addEventListener('mouseover', function(e) {
 		dash.className = 'menu-dash';		//Сброс всех лишних классов (появления и исчезания)
 		menuItemMiddle >= e.clientX ? dash.classList.add('grow-right') :  dash.classList.add('grow-left');
-
-		console.log(`menuItemMiddle: ${menuItemMiddle}`);
-		console.log(`e.clientX: ${e.clientX}`);
 	});
 
 	item.addEventListener('mouseout', function(e) {
@@ -97,7 +94,7 @@ function menuDashHandler(item, dash) {
 
 
 // Запуск установки только на мобильных
-if(windowWidth >= 992) {
+if(windowWidth > 991) {
 	setupMenuDashResponsive();
 }
 
@@ -105,25 +102,16 @@ if(windowWidth >= 992) {
 // Обработка при изменении экрана
 window.onresize = function() {
 	windowWidth = window.innerWidth;
-	let dash = document.querySelector('.menu-dash');				//Получить .dash
 
-	if(windowWidth >= 992) {
-		if(dash) {													//Если хоть одна .dash существует
-			for (let menuItem of menuItems) {
-				let dash = menuItem.querySelector('.menu-dash');	//то получаем все имеющиеся в меню
-				dash.className = 'menu-dash';						//и сбрасываем лишние стили
-				menuDashHandler(menuItem, dash);					//и обработка снова
-			} 
-		} else {
-				setupMenuDashResponsive();							//если .dash не существует - просто установка
+	let dashes = menuDashed.querySelectorAll('.menu-dash');
+	if(dashes) {
+		for (let dash of dashes) {
+			dash.remove();	
 		}
-	} else {														//Удаление всех .dash на мобильном
-		for (let menuItem of menuItems) {
-			let dash = menuItem.querySelector('.menu-dash');
-			if(dash) {
-				dash.remove();
-			}
-		}
+	}
+
+	if(windowWidth > 991) {
+		setupMenuDashResponsive();
 	}
 };
 // END OF COMPONENT`S CODE

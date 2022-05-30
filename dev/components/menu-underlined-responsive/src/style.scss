@@ -71,9 +71,9 @@ ul{
 		display: inline-block;
 		position: relative;
 		color: #506690;
-		-webkit-transition: .3s;
-		-o-transition: .3s;
-		transition: .3s;
+		-webkit-transition: color .3s;
+		-o-transition: color .3s;
+		transition: color .3s;
 		// &::after{
 		//   display: block;
 		//   width: 0;
@@ -181,7 +181,15 @@ ul{
   }
   // END OF COMPONENT`S STYLES
   
-
+// УДАЛИТЬ
+.mediana{
+	position: fixed;
+	top: 0;
+	width: 1px;
+	height: 500px;
+	background: red;
+}
+// УАЛИТЬ - КОНЕЦ
 
   
 
