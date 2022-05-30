@@ -1,0 +1,77 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Menu underlined responsive
+        link(rel="stylesheet", href="style.css")
+    body 
+        -
+
+            //- ! URL определяется автоматом в миксине "меню" : pages-key+.html
+            let pages = {
+                index: {
+                    name:   'Главная',
+                    title:  'Dots.... - главная',
+                    descr:  'Краткое описание главной страницы',
+                    author:  author,
+                },
+                about: {
+                    name:   'About',
+                    title:  'Dots.... - about',
+                    descr:  'Краткое описание страницы about',
+                    author:  author,
+                },
+                portfolio: {
+                    name:   'Portfolio',
+                    title:  'Dots.... - portfolio',
+                    descr:  'Краткое описание страницы portfolio',
+                    author:  author,
+                },
+                сomponents: {
+                    name:   'Components',
+                    title:  'Dots.... - сomponents',
+                    descr:  'Краткое описание страницы сomponents',
+                    author:  author,
+                },
+                сontacts: {
+                    name:   'Contacts',
+                    title:  'Dots.... - сontacts',
+                    descr:  'Краткое описание страницы сontacts',
+                    author:  author,
+                },
+            };
+
+            let page = pages.index;
+
+        mixin topMenuUnderlined 
+            nav
+                ul.top-menu.top-menu_underlined.responsive
+                    each menuItem, key in pages
+                        li.top-menu__item(class= (menuItem.name == page.name) ? 'current': '')
+                            a(href= `${key}.html`)= menuItem.name
+        |
+        |
+        h1 Menu underlined responsive
+        |
+        |
+        .container
+            |
+            |
+            .header__item.header__item_second.top-nav
+                <!-- COMPONENT`S CODE -->
+                |
+                |
+                +topMenuUnderlined
+                |
+                |
+                <!-- END OF COMPONENT`S CODE -->
+        // BURGER-BTN
+        .top-menu-toggle-wrap
+            .top-menu-toggle
+                .top-menu-toggle__item 
+                .top-menu-toggle__item 
+                .top-menu-toggle__item 
+
+        script(src="script.dev.js")

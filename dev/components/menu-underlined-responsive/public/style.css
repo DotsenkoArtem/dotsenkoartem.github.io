@@ -1,0 +1,321 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.36;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 100;
+  line-height: 1.177;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin: 100px auto;
+  padding: 0 1.2rem;
+  max-width: 960px;
+}
+
+.top-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.top-menu__item {
+  margin: 0 2rem;
+}
+.top-menu__item a {
+  display: inline-block;
+  position: relative;
+  color: #506690;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.top-menu__item a:hover {
+  color: #335eea;
+}
+.top-menu__item.current a {
+  color: #335eea;
+}
+.top-menu-toglle-wrap {
+  display: none;
+}
+
+.menu-dash {
+  display: block;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  content: "";
+  background: #335eea;
+}
+.menu-dash.grow-left {
+  right: 0;
+  left: auto;
+  -webkit-animation: grow 0.3s ease-in forwards;
+  animation: grow 0.3s ease-in forwards;
+}
+.menu-dash.grow-right {
+  left: 0;
+  right: auto;
+  -webkit-animation: grow 0.3s ease-in forwards;
+  animation: grow 0.3s ease-in forwards;
+}
+.menu-dash.shrink-left {
+  left: 0;
+  right: auto;
+  -webkit-animation: shrink 0.3s ease-in forwards;
+  animation: shrink 0.3s ease-in forwards;
+}
+.menu-dash.shrink-right {
+  right: 0;
+  left: auto;
+  -webkit-animation: shrink 0.3s ease-in forwards;
+  animation: shrink 0.3s ease-in forwards;
+}
+
+@-webkit-keyframes grow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes grow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+@media (max-width: 991.98px) {
+  .container, .container_xl, .container_lg {
+    max-width: 740px;
+  }
+
+  .scroll-hidden {
+    padding-right: 0;
+  }
+
+  .top-nav {
+    margin-bottom: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 50%;
+    background: #ffffff;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    overflow: hidden;
+  }
+  .top-nav nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 4rem;
+    padding-left: 0;
+    padding-right: 0;
+    height: 100%;
+  }
+  .top-nav .top-menu {
+    position: relative;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    overflow: auto;
+  }
+  .top-nav .top-menu-item {
+    position: static;
+  }
+  .top-nav .top-menu .menu-item {
+    max-width: none;
+    padding-right: 3em;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left: 2rem;
+  }
+  .top-nav .top-menu.hidden {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    overflow: visible;
+  }
+  .top-nav-overl {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 980;
+    width: 0%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .top-nav-overl.open {
+    width: 100%;
+  }
+  .top-nav.open {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  .top-menu__item {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .top-menu__item a {
+    padding: 0.5em 1em;
+    width: 100%;
+    background: #fff;
+  }
+  .top-menu__item a:hover {
+    color: #506690;
+    background: #d9d9d9;
+  }
+
+  .top-menu-toggle {
+    position: relative;
+    z-index: 9999;
+    width: 27px;
+    height: 17px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .top-menu-toggle-wrap {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .top-menu-toggle__item {
+    position: absolute;
+    width: 27px;
+    height: 3px;
+    background-color: #335eea;
+    border-radius: 2px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .top-menu-toggle__item:first-child {
+    top: 0;
+    left: 0;
+  }
+  .top-menu-toggle__item:nth-child(2) {
+    top: 7px;
+    left: 0;
+  }
+  .top-menu-toggle__item:last-child {
+    top: 14px;
+    left: 0;
+  }
+  .top-menu-toggle.open .top-menu-toggle__item:first-child {
+    top: 7px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .top-menu-toggle.open .top-menu-toggle__item:nth-child(2) {
+    opacity: 0;
+  }
+  .top-menu-toggle.open .top-menu-toggle__item:last-child {
+    top: 7px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+@media (max-width: 767.98px) {
+  .container, .container_xl, .container_lg, .container_md {
+    max-width: 540px;
+  }
+
+  .d-none_sm {
+    display: none;
+  }
+  .d-block_sm {
+    display: block;
+  }
+  .d-inline_sm {
+    display: inline;
+  }
+
+  .top-nav {
+    width: 90%;
+  }
+  .top-nav nav {
+    max-width: none;
+  }
+}
