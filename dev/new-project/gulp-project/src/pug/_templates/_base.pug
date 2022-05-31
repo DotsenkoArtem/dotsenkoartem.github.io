@@ -3,51 +3,7 @@ html(lang="ru")
 
 
     //- Common variables
-    -
-        let author = 'Artem Dots'
-
-        // Если требуется заглушка для Internet Explorer
-        let ieBung = true
-        
-        //- ! URL определяется автоматом в миксине "меню" : pages-key+.html
-        let pages = {
-            index: {
-                name:   'главная',
-                title:  'Проект - главная',
-                descr:  'Краткое описание главной страницы',
-                author:  author,
-            },
-            page2: {
-                name:   'страница-2',
-                title:  'Проект - вторая',
-                descr:  'Краткое описание страницы-2',
-                author:  author,
-            },
-            page3: {
-                name:   'страница-3',
-                title:  'Проект - третья',
-                descr:  'Краткое описание страницы-3',
-                author:  author,
-            },
-            page4: {
-                name:   'страница-4',
-                title:  'Проект - четвертая',
-                descr:  'Краткое описание страницы-4',
-                author:  author,
-            },
-            page5: {
-                name:   'страница-5',
-                title:  'Проект - пятая',
-                descr:  'Краткое описание страницы-5',
-                author:  author,
-            },
-            page6: {
-                name:   'страница-6',
-                title:  'Проект - шестая',
-                descr:  'Краткое описание страницы-6',
-                author:  author,
-            },
-        };
+    include _vars.pug
 
 
     //- Mixins
@@ -123,7 +79,7 @@ html(lang="ru")
         block scripts
 
             //- LOCAL SCRIPTS  
-            script(src="libs/jQuery-3.6.0.js")
-            script(src="libs/jquery.fancybox.min.js")
-            script(src="libs/swiper.min.js")
+            //- script(src="libs/jQuery-3.6.0.js")
+            //- script(src="libs/jquery.fancybox.min.js")
+            //- script(src="libs/swiper.min.js")
             script(src="js/script.js")

@@ -406,11 +406,12 @@ ANIMATIONS
 //    }
 // }
 
-.menu__item.red{
-  
-  font-weight: 800;
-  a{
-    color: red;
+.menu__item{
+  &_current{
+    font-weight: 800;
+    a{
+      color: red;
+    }
   }
 }
 

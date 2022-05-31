@@ -271,7 +271,7 @@ gulp.task('styles', function() {
 // PUG
 gulp.task('pug', function() {
     return  combiner(
-                gulp.src('src/pug/*.*'),
+                gulp.src('src/pug/pages/*.*'),
                 gulpIf(function(file) {
                     return file.extname == '.pug';
                 }, pug({pretty: true})),

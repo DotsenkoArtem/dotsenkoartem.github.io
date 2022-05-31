@@ -449,10 +449,10 @@ select::-ms-expand {
 /* 
 ANIMATIONS
 ------------------------------ */
-.menu__item.red {
+.menu__item_current {
   font-weight: 800;
 }
-.menu__item.red a {
+.menu__item_current a {
   color: red;
 }
 
