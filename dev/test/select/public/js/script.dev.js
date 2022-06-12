@@ -17,6 +17,7 @@ initSelect();
 
 function initSelect() {
   var selectArr = document.querySelectorAll('.select');
+  var bodyWrapper = document.body || document.querySelector('#wrapper');
 
   if (selectArr) {
     var _loop = function _loop(i) {
@@ -38,17 +39,15 @@ function initSelect() {
     for (var i = 0; i < selectArr.length; i++) {
       _loop(i);
     } // TEST CODE
+    // const wrapper = document.querySelector('#wrapper');
+    // wrapper.style.color = 'rgba(000, 000, 250, 0.808)';
+    // wrapper.style.backgroundColor= 'rgba(225, 000, 50, 0.808)';
 
 
-    var wrapper = document.querySelector('#wrapper');
-    wrapper.style.color = 'rgba(000, 000, 250, 0.808)';
-    wrapper.style.backgroundColor = 'rgba(225, 000, 50, 0.808)';
-    wrapper.addEventListener('click', function () {
+    bodyWrapper.addEventListener('click', function () {
       for (var _i = 0; _i < selectArr.length; _i++) {
         var select = selectArr[_i];
         closeSelect(select);
-        wrapper.style.backgroundColor = 'rgba(50, 50, 50, 0.808)';
-        alert("Wrapper сработал!");
       }
     }); // ==========================================================
     // document.body.addEventListener('click', ()=> {

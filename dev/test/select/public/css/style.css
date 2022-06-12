@@ -155,7 +155,3 @@ h1 {
   -ms-transform: translateX(30%) rotate(-45deg);
   transform: translateX(30%) rotate(-45deg);
 }
-
-#wrapper {
-  background: rgba(91, 255, 15, 0.808);
-}
