@@ -9,7 +9,7 @@ initSelect();
 
 function initSelect() {
   const selectArr = document.querySelectorAll('.select');
-  const bodyWrapper = document.body || document.querySelector('#wrapper');
+  const wrapper = document.querySelector('#wrapper');
 
   if(selectArr) {
     for(let i = 0; i < selectArr.length; i++) {
@@ -34,7 +34,7 @@ function initSelect() {
     // wrapper.style.color = 'rgba(000, 000, 250, 0.808)';
     // wrapper.style.backgroundColor= 'rgba(225, 000, 50, 0.808)';
 
-    bodyWrapper.addEventListener('click', function() {
+    wrapper.addEventListener('click', function() {
       for(let i = 0; i < selectArr.length; i++) {
         const select = selectArr[i];
         closeSelect(select);

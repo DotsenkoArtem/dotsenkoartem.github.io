@@ -17,7 +17,7 @@ initSelect();
 
 function initSelect() {
   var selectArr = document.querySelectorAll('.select');
-  var bodyWrapper = document.body || document.querySelector('#wrapper');
+  var wrapper = document.querySelector('#wrapper');
 
   if (selectArr) {
     var _loop = function _loop(i) {
@@ -44,7 +44,7 @@ function initSelect() {
     // wrapper.style.backgroundColor= 'rgba(225, 000, 50, 0.808)';
 
 
-    bodyWrapper.addEventListener('click', function () {
+    wrapper.addEventListener('click', function () {
       for (var _i = 0; _i < selectArr.length; _i++) {
         var select = selectArr[_i];
         closeSelect(select);
