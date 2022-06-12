@@ -9,7 +9,7 @@ initSelect();
 
 function initSelect() {
   const selectArr = document.querySelectorAll('.select');
-  const wrapper = document.querySelector('#wrapper');
+  const wrapper   = document.querySelector('#wrapper');
 
   if(selectArr) {
     for(let i = 0; i < selectArr.length; i++) {
@@ -28,35 +28,12 @@ function initSelect() {
       });
     }
 
-    // TEST CODE
-    // const wrapper = document.querySelector('#wrapper');
-
-    // wrapper.style.color = 'rgba(000, 000, 250, 0.808)';
-    // wrapper.style.backgroundColor= 'rgba(225, 000, 50, 0.808)';
-
     wrapper.addEventListener('click', function() {
       for(let i = 0; i < selectArr.length; i++) {
         const select = selectArr[i];
         closeSelect(select);
-        wrapper.style.backgroundColor= 'rgba(225, 000, 50, 0.808)';
       }
     })
-// ==========================================================
-
-    // document.body.addEventListener('click', ()=> {
-    //   for(let i = 0; i < selectArr.length; i++) {
-    //     const select = selectArr[i];
-    //     closeSelect(select);
-    //   }
-    // });   
-    
-    
-    // document.body.addEventListener('click', ()=> {
-    //   for(let i = 0; i < selectArr.length; i++) {
-    //     const select = selectArr[i];
-    //     closeSelect(select);
-    //   }
-    // });
   } else {
     console.log(`Ошибка! Переменная ${selectArr} не определена.`);
   }
@@ -64,7 +41,7 @@ function initSelect() {
 // = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Functions
-// Заполнение данных значений .option
+// Заполнение данных значений пунктов .option
 function completeOptionsData(options) {
   const arr = [];
   for(let i = 0; i < options.length; i++) {
@@ -74,7 +51,7 @@ function completeOptionsData(options) {
   return [] = arr;
 }
 
-// Обработка списка .option
+// Обработка списка пунктов .option
 function optionsHandler(select, optionsData) {
   const options = select.querySelectorAll('.select__option');
 
