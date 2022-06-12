@@ -114,3 +114,6 @@ function closeSelect(select) {
 var wrapper = document.querySelector('#wrapper');
 wrapper.style.color = 'rgba(000, 000, 250, 0.808)';
 wrapper.style.backgroundColor = 'rgba(225, 000, 50, 0.808)';
+wrapper.addEventListener('click', function () {
+  wrapper.style.backgroundColor = 'rgba(50, 50, 50, 0.808)';
+});
