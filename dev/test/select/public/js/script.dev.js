@@ -112,5 +112,4 @@ function closeSelect(select) {
 
 
 var wrapper = document.getElementById('wrapper');
-
 wrapper.style = 'background-color: rgba(225, 000, 50, 0.808);';

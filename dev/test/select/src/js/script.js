@@ -94,6 +94,4 @@ function closeSelect(select) {
 
 // TEST CODE
 const wrapper = document.getElementById('wrapper');
-setTimeout(function() {
-  wrapper.style = 'background-color: rgba(109, 141, 133, 0.808);';
-}, 2500);
+wrapper.style = 'background-color: rgba(225, 000, 50, 0.808);';
