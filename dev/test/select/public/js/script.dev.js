@@ -37,14 +37,32 @@ function initSelect() {
 
     for (var i = 0; i < selectArr.length; i++) {
       _loop(i);
-    }
+    } // TEST CODE
 
-    document.body.addEventListener('click', function () {
+
+    var wrapper = document.querySelector('#wrapper');
+    wrapper.style.color = 'rgba(000, 000, 250, 0.808)';
+    wrapper.style.backgroundColor = 'rgba(225, 000, 50, 0.808)';
+    wrapper.addEventListener('click', function () {
       for (var _i = 0; _i < selectArr.length; _i++) {
         var select = selectArr[_i];
         closeSelect(select);
+        wrapper.style.backgroundColor = 'rgba(50, 50, 50, 0.808)';
+        alert("Wrapper сработал!");
       }
-    });
+    }); // ==========================================================
+    // document.body.addEventListener('click', ()=> {
+    //   for(let i = 0; i < selectArr.length; i++) {
+    //     const select = selectArr[i];
+    //     closeSelect(select);
+    //   }
+    // });   
+    // document.body.addEventListener('click', ()=> {
+    //   for(let i = 0; i < selectArr.length; i++) {
+    //     const select = selectArr[i];
+    //     closeSelect(select);
+    //   }
+    // });
   } else {
     console.log("\u041E\u0448\u0438\u0431\u043A\u0430! \u041F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u0430\u044F ".concat(selectArr, " \u043D\u0435 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0430."));
   }
@@ -108,12 +126,4 @@ function openSelect(select) {
 
 function closeSelect(select) {
   select.classList.remove('open');
-} // TEST CODE
-
-
-var wrapper = document.querySelector('#wrapper');
-wrapper.style.color = 'rgba(000, 000, 250, 0.808)';
-wrapper.style.backgroundColor = 'rgba(225, 000, 50, 0.808)';
-wrapper.addEventListener('click', function () {
-  wrapper.style.backgroundColor = 'rgba(50, 50, 50, 0.808)';
-});
+}

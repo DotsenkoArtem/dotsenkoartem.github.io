@@ -32,10 +32,6 @@ h1 {
   max-width: 960px;
 }
 
-#wrapper {
-  background: rgba(91, 255, 15, 0.808);
-}
-
 .select {
   margin-left: 2rem;
   padding: 1rem 4rem 1rem 1rem;
@@ -158,4 +154,8 @@ h1 {
   -webkit-transform: translateX(30%) rotate(-45deg);
   -ms-transform: translateX(30%) rotate(-45deg);
   transform: translateX(30%) rotate(-45deg);
+}
+
+#wrapper {
+  background: rgba(91, 255, 15, 0.808);
 }

@@ -27,12 +27,37 @@ function initSelect() {
       });
     }
 
-    document.body.addEventListener('click', ()=> {
-      for(let i = 0; i < selectArr.length; i++) {
-        const select = selectArr[i];
-        closeSelect(select);
-      }
-    });
+    // TEST CODE
+const wrapper = document.querySelector('#wrapper');
+
+wrapper.style.color = 'rgba(000, 000, 250, 0.808)';
+wrapper.style.backgroundColor= 'rgba(225, 000, 50, 0.808)';
+
+wrapper.addEventListener('click', function() {
+  
+  for(let i = 0; i < selectArr.length; i++) {
+    const select = selectArr[i];
+    closeSelect(select);
+    wrapper.style.backgroundColor= 'rgba(50, 50, 50, 0.808)';
+    alert("Wrapper сработал!");
+  }
+})
+// ==========================================================
+
+    // document.body.addEventListener('click', ()=> {
+    //   for(let i = 0; i < selectArr.length; i++) {
+    //     const select = selectArr[i];
+    //     closeSelect(select);
+    //   }
+    // });   
+    
+    
+    // document.body.addEventListener('click', ()=> {
+    //   for(let i = 0; i < selectArr.length; i++) {
+    //     const select = selectArr[i];
+    //     closeSelect(select);
+    //   }
+    // });
   } else {
     console.log(`Ошибка! Переменная ${selectArr} не определена.`);
   }
@@ -92,12 +117,3 @@ function closeSelect(select) {
 
 
 
-// TEST CODE
-const wrapper = document.querySelector('#wrapper');
-
-wrapper.style.color = 'rgba(000, 000, 250, 0.808)';
-wrapper.style.backgroundColor= 'rgba(225, 000, 50, 0.808)';
-
-wrapper.addEventListener('click', function() {
-  wrapper.style.backgroundColor= 'rgba(50, 50, 50, 0.808)';
-})

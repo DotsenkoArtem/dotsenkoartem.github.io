@@ -52,10 +52,6 @@ $arrow-x-offset: (100% - $arrow-width) / 2;
 $arrow-y-offset: (100% - $arrow-height) / 2;
 
 
-#wrapper{
-	background: rgba(91, 255, 15, 0.808);
-}
-
 .select{
 	margin-left: 2rem;
 	padding: 1rem $select-right-padding 1rem 1rem;
@@ -187,3 +183,10 @@ $arrow-y-offset: (100% - $arrow-height) / 2;
 }
 // END OF COMPONENT`S STYLES
 // - - - - - - - - - - - - - - - - - -
+
+
+
+// TEST CODE
+#wrapper{
+	background: rgba(91, 255, 15, 0.808);
+}
