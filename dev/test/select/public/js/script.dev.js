@@ -108,4 +108,10 @@ function openSelect(select) {
 
 function closeSelect(select) {
   select.classList.remove('open');
-}
+} // TEST CODE
+
+
+var wrapper = document.getElementById('wrapper');
+setTimeout(function () {
+  wrapper.style = 'background-color: rgba(109, 141, 133, 0.808);';
+}, 2500);

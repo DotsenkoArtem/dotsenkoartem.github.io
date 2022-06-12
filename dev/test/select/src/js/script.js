@@ -40,52 +40,60 @@ function initSelect() {
 // = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Functions
-  // Заполнение данных значений .option
-  function completeOptionsData(options) {
-    const arr = [];
-    for(let i = 0; i < options.length; i++) {
-      const option = options[i];
-      arr.push(option.innerHTML);
-    };
-    return [] = arr;
-  }
+// Заполнение данных значений .option
+function completeOptionsData(options) {
+  const arr = [];
+  for(let i = 0; i < options.length; i++) {
+    const option = options[i];
+    arr.push(option.innerHTML);
+  };
+  return [] = arr;
+}
 
-  // Обработка списка .option
-  function optionsHandler(select, optionsData) {
-    const options = select.querySelectorAll('.select__option');
+// Обработка списка .option
+function optionsHandler(select, optionsData) {
+  const options = select.querySelectorAll('.select__option');
 
-    for(let j = 0; j < options.length; j++) {
-      const option = options[j];
-      option.addEventListener('click', ()=> selectOption(select, option, optionsData));
-    }
+  for(let j = 0; j < options.length; j++) {
+    const option = options[j];
+    option.addEventListener('click', ()=> selectOption(select, option, optionsData));
   }
+}
 
 /*
   - выбор пункта из списка, 
   - перерисовка списка из изначально полученных данных optionsData с целью упорядоченного его отображения
 */
     
-  function selectOption(select, option, optionsData) {
-    const optionsBox = select.querySelector('.select__option-box > ul');
-    const optionSelected = select.querySelector('.select__option_selected');
+function selectOption(select, option, optionsData) {
+  const optionsBox = select.querySelector('.select__option-box > ul');
+  const optionSelected = select.querySelector('.select__option_selected');
 
-    optionSelected.innerHTML = option.innerHTML;
-    optionsBox.innerHTML = '';
+  optionSelected.innerHTML = option.innerHTML;
+  optionsBox.innerHTML = '';
 
-    for(let i = 0; i < optionsData.length; i++) {
-      const data = optionsData[i];
-  
-      if (data !== optionSelected.innerHTML)
-      optionsBox.innerHTML += `<li class="select__option">${data}</li>`;
-    }
+  for(let i = 0; i < optionsData.length; i++) {
+    const data = optionsData[i];
+
+    if (data !== optionSelected.innerHTML)
+    optionsBox.innerHTML += `<li class="select__option">${data}</li>`;
   }
+}
 
-  // Открытие списка .option
-  function openSelect(select) {
-    select.classList.add('open');
-  }
+// Открытие списка .option
+function openSelect(select) {
+  select.classList.add('open');
+}
 
-  // Закрытие списка .option
-  function closeSelect(select) {
-    select.classList.remove('open');
-  }
+// Закрытие списка .option
+function closeSelect(select) {
+  select.classList.remove('open');
+}
+
+
+
+// TEST CODE
+const wrapper = document.getElementById('wrapper');
+setTimeout(function() {
+  wrapper.style = 'background-color: rgba(109, 141, 133, 0.808);';
+}, 2500);
