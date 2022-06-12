@@ -48,6 +48,7 @@ function initSelect() {
       for (var _i = 0; _i < selectArr.length; _i++) {
         var select = selectArr[_i];
         closeSelect(select);
+        wrapper.style.backgroundColor = 'rgba(225, 000, 50, 0.808)';
       }
     }); // ==========================================================
     // document.body.addEventListener('click', ()=> {

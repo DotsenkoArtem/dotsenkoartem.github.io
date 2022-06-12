@@ -38,6 +38,7 @@ function initSelect() {
       for(let i = 0; i < selectArr.length; i++) {
         const select = selectArr[i];
         closeSelect(select);
+        wrapper.style.backgroundColor= 'rgba(225, 000, 50, 0.808)';
       }
     })
 // ==========================================================
