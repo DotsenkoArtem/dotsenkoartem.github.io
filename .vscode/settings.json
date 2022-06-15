@@ -1,13 +1,21 @@
 {
-    "compile-hero.disable-compile-files-on-did-save-code": false,
-    "compile-hero.jade-output-directory": "../public",
-    "compile-hero.javascript-output-directory": "../public",
-    "compile-hero.less-output-directory": "../public",
-    "compile-hero.pug-output-directory": "../public",
-    "compile-hero.sass-output-directory": "../public",
-    "compile-hero.scss-output-directory": "../public",
-    "compile-hero.stylus-output-directory": "../public",
-    "compile-hero.typescript-output-directory": "../public",
-    "compile-hero.typescriptx-output-directory": "../public",
-    "compile-hero.generate-minified-css": false
+  "compile-hero.disable-compile-files-on-did-save-code": false,
+  "compile-hero.jade-output-directory": "../public",
+  "compile-hero.javascript-output-directory": "../../public/js",
+  "compile-hero.less-output-directory": "../../public/css",
+  "compile-hero.pug-output-directory": "../public",
+  "compile-hero.sass-output-directory": "../../public/css",
+  "compile-hero.scss-output-directory": "../../public/css",
+  "compile-hero.stylus-output-directory": "../../public/css",
+  "compile-hero.typescript-output-directory": "../../public/js",
+  "compile-hero.typescriptx-output-directory": "../../public/js",
+  "compile-hero.generate-minified-css": false,
+
+  // IGNORE SETTINGS
+  "compile-hero.ignore": [
+    "**/_partials/**/*.scss",
+    "**/_includes/**/*.pug",
+    "**/_templates/**/*.pug"
+  ],
+  "compile-hero.config": ""
 }

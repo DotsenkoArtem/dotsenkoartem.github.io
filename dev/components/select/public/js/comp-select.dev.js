@@ -16,18 +16,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 initSelect();
 
 function initSelect() {
-  var selectArr = document.querySelectorAll('.select');
-  var wrapper = document.querySelector('#wrapper');
+  var selectArr = document.querySelectorAll(".select");
+  var wrapper = document.querySelector("#wrapper");
 
   if (selectArr) {
     var _loop = function _loop(i) {
       var select = selectArr[i],
-          defaultOptions = select.querySelectorAll('.select__option'),
+          defaultOptions = select.querySelectorAll(".select__option"),
           optionsData = completeOptionsData(defaultOptions);
-      select.addEventListener('click', function (event) {
+      select.addEventListener("click", function (event) {
         event.stopPropagation();
 
-        if (!select.classList.contains('open')) {
+        if (!select.classList.contains("open")) {
           openSelect(select);
           optionsHandler(select, optionsData);
         } else {
@@ -40,7 +40,7 @@ function initSelect() {
       _loop(i);
     }
 
-    wrapper.addEventListener('click', function () {
+    wrapper.addEventListener("click", function () {
       for (var _i = 0; _i < selectArr.length; _i++) {
         var select = selectArr[_i];
         closeSelect(select);
@@ -64,17 +64,16 @@ function completeOptionsData(options) {
     arr.push(option.innerHTML);
   }
 
-  ;
   return _arr = arr, _arr2 = _toArray(_arr), _arr;
 } // Обработка списка пунктов .option
 
 
 function optionsHandler(select, optionsData) {
-  var options = select.querySelectorAll('.select__option');
+  var options = select.querySelectorAll(".select__option");
 
   var _loop2 = function _loop2(j) {
     var option = options[j];
-    option.addEventListener('click', function () {
+    option.addEventListener("click", function () {
       return selectOption(select, option, optionsData);
     });
   };
@@ -90,10 +89,10 @@ function optionsHandler(select, optionsData) {
 
 
 function selectOption(select, option, optionsData) {
-  var optionsBox = select.querySelector('.select__option-box > ul');
-  var optionSelected = select.querySelector('.select__option_selected');
+  var optionsBox = select.querySelector(".select__option-box > ul");
+  var optionSelected = select.querySelector(".select__option_selected");
   optionSelected.innerHTML = option.innerHTML;
-  optionsBox.innerHTML = '';
+  optionsBox.innerHTML = "";
 
   for (var i = 0; i < optionsData.length; i++) {
     var data = optionsData[i];
@@ -103,10 +102,10 @@ function selectOption(select, option, optionsData) {
 
 
 function openSelect(select) {
-  select.classList.add('open');
+  select.classList.add("open");
 } // Закрытие списка .option
 
 
 function closeSelect(select) {
-  select.classList.remove('open');
+  select.classList.remove("open");
 }

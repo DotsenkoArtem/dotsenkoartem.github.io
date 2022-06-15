@@ -1,40 +1,5 @@
-// COMMON STYLES
-// VARIABLES
-$gutter: 1.2rem;
-*,
-*:before,
-*:after{
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
-	-webkit-tap-highlight-color: transparent;
-}
-
-html{
-    font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
-	font-weight: 400;
-	font-size: 10px;
-}
-body{
-	font-size: 1.6rem;
-	line-height: 1.36;
-}
-h1 {
-	font-size: 4.5rem;
-	font-weight: 100;
-	line-height: 1.177;
-	text-align: center;
-  }
-.container{
-    margin: 100px auto;
-    padding: 0 $gutter;
-    max-width: 960px;
-}
-
-// END OF COMMON STYLES
-// - - - - - - - - - - - - - - - - - -
-
+@import url(./default.css);
+@import url(./code-copy.css);
 // COMPONENT`S STYLES
 
 // VARIABLES
@@ -51,8 +16,7 @@ $arrow-height: 10%;
 $arrow-x-offset: (100% - $arrow-width) / 2;
 $arrow-y-offset: (100% - $arrow-height) / 2;
 
-
-.select{
+.select {
 	margin-left: 2rem;
 	padding: 1rem $select-right-padding 1rem 1rem;
 	width: 20rem;
@@ -60,21 +24,24 @@ $arrow-y-offset: (100% - $arrow-height) / 2;
 	display: inline-block;
 	font-size: 1.4rem;
 	line-height: 1;
-	background-color: rgba(255,255,255, 1);
+	background-color: rgba(255, 255, 255, 1);
 	border: solid $select-border-width $select-border-color;
-	border-radius: .5rem;
-	cursor:pointer;
-	&__option{
+	border-radius: 0.5rem;
+	cursor: pointer;
+
+	&__option {
 		display: block;
 		padding: 1rem;
-		background-color: rgba(255,255,255, 1);
-		cursor:pointer;
-		&_selected{
+		background-color: rgba(255, 255, 255, 1);
+		cursor: pointer;
+
+		&_selected {
 			display: inline-block;
 			width: 100%;
 			overflow: hidden;
 		}
-		&-box{
+
+		&-box {
 			opacity: 0;
 			visibility: hidden;
 			z-index: -1;
@@ -82,10 +49,11 @@ $arrow-y-offset: (100% - $arrow-height) / 2;
 			right: -$select-border-width;
 			bottom: -$select-border-width;
 			left: -$select-border-width;
-			-webkit-transition: .35s;
-			-o-transition: .35s;
-			transition: .35s;
-			& > ul{
+			-webkit-transition: 0.35s;
+			-o-transition: 0.35s;
+			transition: 0.35s;
+
+			&>ul {
 				padding: 0;
 				width: 100%;
 				max-height: 30rem;
@@ -96,39 +64,43 @@ $arrow-y-offset: (100% - $arrow-height) / 2;
 				border: solid 2px #ed8722;
 				border-bottom-left-radius: $option-box-radius;
 				border-bottom-right-radius: $option-box-radius;
-				-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,.5);
-				box-shadow: 2px 5px 10px rgba(0,0,0,.5);
+				-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+				box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 			}
 		}
-		&:last-child{
+
+		&:last-child {
 			border-bottom-left-radius: 2px;
 			border-bottom-right-radius: 2px;
 		}
-		&:hover{
+
+		&:hover {
 			color: #fff;
 			background-color: #ed8722;
 		}
 	}
-	&.open{
-		.select__option{
-			&-box{
+
+	&.open {
+		.select__option {
+			&-box {
 				opacity: 1;
 				visibility: visible;
-				z-index: 1;
+				z-index: 10;
 				-webkit-transform: translateY(0%);
-				    -ms-transform: translateY(0%);
-				        transform: translateY(0%);
+				-ms-transform: translateY(0%);
+				transform: translateY(0%);
 			}
 		}
-		.arrow{
+
+		.arrow {
 			-webkit-transform: scaleY(-1);
-			    -ms-transform: scaleY(-1);
-			        transform: scaleY(-1);
+			-ms-transform: scaleY(-1);
+			transform: scaleY(-1);
 		}
 	}
 }
 
-.arrow{
+.arrow {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -141,45 +113,50 @@ $arrow-y-offset: (100% - $arrow-height) / 2;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	-webkit-transition: .3s;
-	-o-transition: .3s;
-	transition: .3s;
-	&-bg{
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+
+	&-bg {
 		position: absolute;
 		top: 0;
 		right: -2px;
 		width: $select-right-padding;
 		height: 100%;
-		border-top-right-radius: .5rem;
-		border-bottom-right-radius: .5rem;
+		border-top-right-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
 		background: #ed8722;
 	}
+
 	&::before,
-	&::after{
+	&::after {
 		display: inline-block;
 		position: absolute;
 		// Left задается только для позиционирования по-центру в IE
 		top: $arrow-y-offset;
 		left: $arrow-x-offset;
-		content: '';
+		content: "";
 		width: $arrow-width;
 		height: $arrow-height;
 		background: #fff;
 	}
-	&::before{
-		border-top-left-radius: .2em;
-		border-bottom-left-radius: .2em;
+
+	&::before {
+		border-top-left-radius: 0.2em;
+		border-bottom-left-radius: 0.2em;
 		-webkit-transform: translateX(#{-25% - $arrow-height / 2}) rotate(45deg);
-			-ms-transform: translateX(#{-25% - $arrow-height / 2}) rotate(45deg);
-				transform: translateX(#{-25% - $arrow-height / 2}) rotate(45deg);
+		-ms-transform: translateX(#{-25% - $arrow-height / 2}) rotate(45deg);
+		transform: translateX(#{-25% - $arrow-height / 2}) rotate(45deg);
 	}
-	&::after{
-		border-top-right-radius: .2em;
-		border-bottom-right-radius: .2em;
+
+	&::after {
+		border-top-right-radius: 0.2em;
+		border-bottom-right-radius: 0.2em;
 		-webkit-transform: translateX(#{25% + $arrow-height / 2}) rotate(-45deg);
-			-ms-transform: translateX(#{25% + $arrow-height / 2}) rotate(-45deg);
-				transform: translateX(#{25% + $arrow-height / 2}) rotate(-45deg);
+		-ms-transform: translateX(#{25% + $arrow-height / 2}) rotate(-45deg);
+		transform: translateX(#{25% + $arrow-height / 2}) rotate(-45deg);
 	}
 }
+
 // END OF COMPONENT`S STYLES
 // - - - - - - - - - - - - - - - - - -

@@ -1,0 +1,167 @@
+/* Tabs styles
+-------------------------*/
+.tabs {
+  margin: 50px auto;
+  width: 100%;
+  max-width: 60rem;
+  border-radius: 1rem;
+  border: 1px solid #888;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.2);
+}
+.tabs__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.tabs__content {
+  position: relative;
+  height: 30rem;
+  line-height: 1.5;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.tab__caption {
+  padding: 1rem;
+  width: calc(100% / 3);
+  text-align: center;
+  border-left: 1px solid #888;
+  border-bottom: 1px solid #888;
+  background: #f0f0f0;
+  list-style: none;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tab__caption:first-child {
+  border-left-color: transparent;
+  border-top-left-radius: 1rem;
+}
+.tab__caption:last-child {
+  border-top-right-radius: 1rem;
+}
+.tab__caption.active {
+  background: #fff;
+  border-bottom-color: transparent;
+}
+.tab__caption:hover {
+  background: #fafafa;
+}
+.tab__pane {
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.tab__pane.active {
+  z-index: 5;
+  opacity: 1;
+}
+.tab__pane pre {
+  height: calc(100% - 25px - 1rem);
+  white-space: pre;
+}
+.tab__pane pre[class*=language-] {
+  margin: 0;
+  padding: 0;
+}
+.tab__pane code {
+  overflow: hidden;
+}
+
+/* Copy-btn styles
+-------------------------*/
+.code-copy-btn {
+  margin-bottom: 1rem;
+  width: 2.5rem;
+  height: 25px;
+  line-height: 0.5;
+  background: url(../img/copy.svg) center no-repeat;
+  background-size: contain;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.code-copy-btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.code-copy-btn:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.code-copy-btn:active {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0;
+  transition: -webkit-transform 0;
+  -o-transition: transform 0;
+  transition: transform 0;
+  transition: transform 0, -webkit-transform 0;
+}
+
+/* Info tooltip styles
+-------------------------*/
+.info-tooltip {
+  position: absolute;
+  z-index: 999;
+  left: 5rem;
+  padding: 0.5rem;
+  background: white;
+  border: solid 1px #222;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 15px 30px rgba(34, 34, 34, 0.4);
+  box-shadow: 0 15px 30px rgba(34, 34, 34, 0.4);
+  -webkit-animation: fadeOut 0.5s cubic-bezier(0.71, -0.41, 1, 0.07) 1s forwards;
+  animation: fadeOut 0.5s cubic-bezier(0.71, -0.41, 1, 0.07) 1s forwards;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Animations
+-------------------------*/
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}

@@ -5,7 +5,8 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Custom Select
-        link(rel="stylesheet", href="css/style.css")
+        link(rel="stylesheet", href="prism/prism.css")
+        link(rel="stylesheet", href="css/comp-select.css")
     body 
         #wrapper
             |
@@ -16,89 +17,295 @@ html(lang="en")
             .container
                 |
                 |
-                <!-- COMPONENT`S CODE -->
+                // COMPONENT`S CODE
+                include _includes/_comp-select.pug
                 |
                 |
-                .select
-                    span.select__option_selected
-                        | Выбрать город
-                    span.arrow-bg
-                        span.arrow
-
-                    .select__option-box
-                        ul
-                            li.select__option Астрахань
-                            li.select__option Белгород
-                            li.select__option Воронеж
-                            li.select__option Грозный
-                            li.select__option Екатеринбург
-                            li.select__option Казань
-                            li.select__option Москва
-                            li.select__option Новосибирск
-                            li.select__option Пермь
-                            li.select__option Ростов-на-Дону
-                            li.select__option Санкт-Петербург
-                            li.select__option Тюмень
-                            li.select__option Чита
-                //- |
-                //- |
-                //- .select
-                //-     span.select__option_selected
-                //-         | Выбрать город
-                //-     span.arrow-bg
-                //-         span.arrow
-
-                //-     .select__option-box
-                //-         ul
-                //-             li.select__option Астрахань
-                //-             li.select__option Белгород
-                //-             li.select__option Воронеж
-                //-             li.select__option Грозный
-                //-             li.select__option Екатеринбург
-                //-             li.select__option Казань
-                //-             li.select__option Москва
-                //-             li.select__option Новосибирск
-                //-             li.select__option Пермь
-                //-             li.select__option Ростов-на-Дону
-                //-             li.select__option Санкт-Петербург
-                //-             li.select__option Тюмень
-                //-             li.select__option Чита
-                //- |
-                //- |
-                .select
-                    span.select__option_selected
-                        | Выбрать город
-                    span.arrow-bg
-                        span.arrow
-
-                    .select__option-box
-                        ul
-                            li.select__option Астрахань
-                            li.select__option Белгород
-                            li.select__option Воронеж
-                            li.select__option Грозный
-                            li.select__option Екатеринбург
-                            li.select__option Казань
-                            li.select__option Москва
-                            li.select__option Новосибирск
-                            li.select__option Пермь
-                            li.select__option Ростов-на-Дону
-                            li.select__option Санкт-Петербург
-                            li.select__option Тюмень
-                            li.select__option Чита
-
-
-
-
-
-                <!-- END OF COMPONENT`S CODE -->
+                // END OF COMPONENT`S CODE
                 |
                 |
-                br
-                br
-                br
-                br
-                br
+            |
+            |
+            // CODE-COPY
 
-                <!-- END OF COMPONENT`S CODE -->
-        script(src="js/script.dev.js")
+            .container
+                .tabs
+                    ul.tabs__menu 
+                        li.tab__caption.active(data-target="tab-pane1") HTML
+                        li.tab__caption(data-target="tab-pane2") CSS
+                        li.tab__caption(data-target="tab-pane3") JS
+        
+                    .tabs__content
+                        |
+                        |
+                        // Tab-pane 1
+                        // ------------------------------
+                        #tab-pane1.tab__pane.active 
+                            .code-copy-btn-wrap
+                                div.code-copy-btn(data-target="item-to-copy1")
+                            |
+                            |
+                            pre
+                                code(class="language-html" id="item-to-copy1")
+                                    |&lt;div class="select"&gt;
+                                    |    &lt;span class="select__option_selected"&gt;Выбрать город&lt;/span&gt;
+                                    |    &lt;span class="arrow-bg"&gt;
+                                    |        &lt;span class="arrow"&gt;&lt;/span&gt;
+                                    |    &lt;/span&gt;
+                                    |    &lt;div class="select__option-box"&gt;
+                                    |        &lt;ul&gt;
+                                    |            &lt;li class="select__option"&gt;Астрахань&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Белгород&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Воронеж&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Грозный&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Екатеринбург&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Казань&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Москва&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Новосибирск&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Пермь&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Ростов-на-Дону&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Санкт-Петербург&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Тюмень&lt;/li&gt;
+                                    |            &lt;li class="select__option"&gt;Чита&lt;/li&gt;
+                                    |        &lt;/ul&gt;
+                                    |    &lt;/div&gt;
+                                    |&lt;/div&gt;
+                        |
+                        |   
+                        // Tab-pane 2
+                        // ------------------------------
+                        #tab-pane2.tab__pane
+                            .code-copy-btn-wrap
+                                div.code-copy-btn(data-target="item-to-copy2")
+                            |
+                            |
+                            pre
+                                code(class="language-css" id="item-to-copy2")
+                                    |.select {
+                                    |    margin-left: 2rem;
+                                    |    padding: 1rem 4rem 1rem 1rem;
+                                    |    width: 20rem;
+                                    |    position: relative;
+                                    |    display: inline-block;
+                                    |    font-size: 1.4rem;
+                                    |    line-height: 1;
+                                    |    background-color: white;
+                                    |    border: solid 2px #ed8722;
+                                    |    border-radius: 0.5rem;
+                                    |    cursor: pointer;
+                                    |    }
+                                    |    .select__option {
+                                    |    display: block;
+                                    |    padding: 1rem;
+                                    |    background-color: white;
+                                    |    cursor: pointer;
+                                    |    }
+                                    |    .select__option_selected {
+                                    |    display: inline-block;
+                                    |    width: 100%;
+                                    |    overflow: hidden;
+                                    |    }
+                                    |    .select__option-box {
+                                    |    opacity: 0;
+                                    |    visibility: hidden;
+                                    |    z-index: -1;
+                                    |    position: absolute;
+                                    |    right: -2px;
+                                    |    bottom: -2px;
+                                    |    left: -2px;
+                                    |    -webkit-transition: 0.35s;
+                                    |    -o-transition: 0.35s;
+                                    |    transition: 0.35s;
+                                    |    }
+                                    |    .select__option-box > ul {
+                                    |    padding: 0;
+                                    |    width: 100%;
+                                    |    max-height: 30rem;
+                                    |    overflow: auto;
+                                    |    position: absolute;
+                                    |    top: -2px;
+                                    |    list-style: none;
+                                    |    border: solid 2px #ed8722;
+                                    |    border-bottom-left-radius: 5px;
+                                    |    border-bottom-right-radius: 5px;
+                                    |    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+                                    |    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+                                    |    }
+                                    |    .select__option:last-child {
+                                    |    border-bottom-left-radius: 2px;
+                                    |    border-bottom-right-radius: 2px;
+                                    |    }
+                                    |    .select__option:hover {
+                                    |    color: #fff;
+                                    |    background-color: #ed8722;
+                                    |    }
+                                    |    .select.open .select__option-box {
+                                    |    opacity: 1;
+                                    |    visibility: visible;
+                                    |    z-index: 10;
+                                    |    -webkit-transform: translateY(0%);
+                                    |    -ms-transform: translateY(0%);
+                                    |    transform: translateY(0%);
+                                    |    }
+                                    |    .select.open .arrow {
+                                    |    -webkit-transform: scaleY(-1);
+                                    |    -ms-transform: scaleY(-1);
+                                    |    transform: scaleY(-1);
+                                    |    }
+                                    |
+                                    |    .arrow {
+                                    |    position: absolute;
+                                    |    width: 100%;
+                                    |    height: 100%;
+                                    |    display: -webkit-inline-box;
+                                    |    display: -ms-inline-flexbox;
+                                    |    display: inline-flex;
+                                    |    -webkit-box-pack: center;
+                                    |    -ms-flex-pack: center;
+                                    |    justify-content: center;
+                                    |    -webkit-box-align: center;
+                                    |    -ms-flex-align: center;
+                                    |    align-items: center;
+                                    |    -webkit-transition: 0.3s;
+                                    |    -o-transition: 0.3s;
+                                    |    transition: 0.3s;
+                                    |    }
+                                    |    .arrow-bg {
+                                    |    position: absolute;
+                                    |    top: 0;
+                                    |    right: -2px;
+                                    |    width: 4rem;
+                                    |    height: 100%;
+                                    |    border-top-right-radius: 0.5rem;
+                                    |    border-bottom-right-radius: 0.5rem;
+                                    |    background: #ed8722;
+                                    |    }
+                                    |    .arrow::before, .arrow::after {
+                                    |    display: inline-block;
+                                    |    position: absolute;
+                                    |    top: 45%;
+                                    |    left: 30%;
+                                    |    content: "";
+                                    |    width: 40%;
+                                    |    height: 10%;
+                                    |    background: #fff;
+                                    |    }
+                                    |    .arrow::before {
+                                    |    border-top-left-radius: 0.2em;
+                                    |    border-bottom-left-radius: 0.2em;
+                                    |    -webkit-transform: translateX(-30%) rotate(45deg);
+                                    |    -ms-transform: translateX(-30%) rotate(45deg);
+                                    |    transform: translateX(-30%) rotate(45deg);
+                                    |    }
+                                    |    .arrow::after {
+                                    |    border-top-right-radius: 0.2em;
+                                    |    border-bottom-right-radius: 0.2em;
+                                    |    -webkit-transform: translateX(30%) rotate(-45deg);
+                                    |    -ms-transform: translateX(30%) rotate(-45deg);
+                                    |    transform: translateX(30%) rotate(-45deg);
+                                    |    }
+                        |
+                        |
+                        // Tab-pane 3
+                        // ------------------------------
+                        #tab-pane3.tab__pane
+                            .code-copy-btn-wrap
+                                div.code-copy-btn(data-target="item-to-copy3")
+                            |
+                            |
+                            pre
+                                code.language-js#item-to-copy3 
+                                    |initSelect();
+                                    |
+                                    |function initSelect() {
+                                    |const selectArr = document.querySelectorAll(".select");
+                                    |const wrapper = document.querySelector("#wrapper");
+                                    |
+                                    |if (selectArr) {
+                                    |    for (let i = 0; i < selectArr.length; i++) {
+                                    |    const select = selectArr[i],
+                                    |        defaultOptions = select.querySelectorAll(".select__option"),
+                                    |        optionsData = completeOptionsData(defaultOptions);
+                                    |
+                                    |    select.addEventListener("click", (event) => {
+                                    |        event.stopPropagation();
+                                    |        if (!select.classList.contains("open")) {
+                                    |        openSelect(select);
+                                    |        optionsHandler(select, optionsData);
+                                    |        } else {
+                                    |        closeSelect(select);
+                                    |        }
+                                    |    });
+                                    |    }
+                                    |
+                                    |    wrapper.addEventListener("click", function () {
+                                    |    for (let i = 0; i < selectArr.length; i++) {
+                                    |        const select = selectArr[i];
+                                    |        closeSelect(select);
+                                    |    }
+                                    |    });
+                                    |} else {
+                                    |    console.log(`Ошибка! Переменная ${selectArr} не определена.`);
+                                    |}
+                                    |}
+                                    |// = = = = = = = = = = = = = = = = = = = = = = = = = =
+                                    |
+                                    |// Functions
+                                    |// Заполнение данных значений пунктов .option
+                                    |function completeOptionsData(options) {
+                                    |const arr = [];
+                                    |for (let i = 0; i < options.length; i++) {
+                                    |    const option = options[i];
+                                    |    arr.push(option.innerHTML);
+                                    |}
+                                    |return ([] = arr);
+                                    |}
+                                    |
+                                    |// Обработка списка пунктов .option
+                                    |function optionsHandler(select, optionsData) {
+                                    |const options = select.querySelectorAll(".select__option");
+                                    |
+                                    |for (let j = 0; j < options.length; j++) {
+                                    |    const option = options[j];
+                                    |    option.addEventListener("click", () =>
+                                    |    selectOption(select, option, optionsData)
+                                    |    );
+                                    |}
+                                    |}
+                                    |
+                                    |/*
+                                    |- выбор пункта из списка, 
+                                    |- перерисовка списка из изначально полученных данных optionsData с целью упорядоченного его отображения
+                                    |*/
+                                    |
+                                    |function selectOption(select, option, optionsData) {
+                                    |const optionsBox = select.querySelector(".select__option-box > ul");
+                                    |const optionSelected = select.querySelector(".select__option_selected");
+                                    |
+                                    |optionSelected.innerHTML = option.innerHTML;
+                                    |optionsBox.innerHTML = "";
+                                    |
+                                    |for (let i = 0; i < optionsData.length; i++) {
+                                    |    const data = optionsData[i];
+                                    |
+                                    |    if (data !== optionSelected.innerHTML)
+                                    |    optionsBox.innerHTML += `<li class="select__option">${data}</li>`;
+                                    |}
+                                    |}
+                                    |
+                                    |// Открытие списка .option
+                                    |function openSelect(select) {
+                                    |select.classList.add("open");
+                                    |}
+                                    |
+                                    |// Закрытие списка .option
+                                    |function closeSelect(select) {
+                                    |select.classList.remove("open");
+                                    |}
+
+                // END OF CODE-COPY
+                |
+                |
+        script(src="prism/prism.js")
+        script(src="js/code-copy.dev.js")
+        script(src="js/comp-select.dev.js")

@@ -1,0 +1,41 @@
+// Common styles
+// Vars
+$gutter: 1.2rem;
+
+// Styles
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.36;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 100;
+  line-height: 1.177;
+  text-align: center;
+}
+
+.container {
+  margin: 100px auto;
+  padding: 0 $gutter;
+  max-width: 960px;
+}
+
+// End of common styles
+// - - - - - - - - - - - - - - - - - -

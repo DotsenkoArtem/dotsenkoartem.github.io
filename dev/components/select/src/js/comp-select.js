@@ -3,23 +3,23 @@
 
 -
 */
-"use strict"
+"use strict";
 
 initSelect();
 
 function initSelect() {
-  const selectArr = document.querySelectorAll('.select');
-  const wrapper   = document.querySelector('#wrapper');
+  const selectArr = document.querySelectorAll(".select");
+  const wrapper = document.querySelector("#wrapper");
 
-  if(selectArr) {
-    for(let i = 0; i < selectArr.length; i++) {
+  if (selectArr) {
+    for (let i = 0; i < selectArr.length; i++) {
       const select = selectArr[i],
-            defaultOptions = select.querySelectorAll('.select__option'),
-            optionsData = completeOptionsData(defaultOptions);
+        defaultOptions = select.querySelectorAll(".select__option"),
+        optionsData = completeOptionsData(defaultOptions);
 
-      select.addEventListener('click', (event)=> {
+      select.addEventListener("click", (event) => {
         event.stopPropagation();
-        if(!select.classList.contains('open')) {
+        if (!select.classList.contains("open")) {
           openSelect(select);
           optionsHandler(select, optionsData);
         } else {
@@ -28,12 +28,12 @@ function initSelect() {
       });
     }
 
-    wrapper.addEventListener('click', function() {
-      for(let i = 0; i < selectArr.length; i++) {
+    wrapper.addEventListener("click", function () {
+      for (let i = 0; i < selectArr.length; i++) {
         const select = selectArr[i];
         closeSelect(select);
       }
-    })
+    });
   } else {
     console.log(`Ошибка! Переменная ${selectArr} не определена.`);
   }
@@ -44,20 +44,22 @@ function initSelect() {
 // Заполнение данных значений пунктов .option
 function completeOptionsData(options) {
   const arr = [];
-  for(let i = 0; i < options.length; i++) {
+  for (let i = 0; i < options.length; i++) {
     const option = options[i];
     arr.push(option.innerHTML);
-  };
-  return [] = arr;
+  }
+  return ([] = arr);
 }
 
 // Обработка списка пунктов .option
 function optionsHandler(select, optionsData) {
-  const options = select.querySelectorAll('.select__option');
+  const options = select.querySelectorAll(".select__option");
 
-  for(let j = 0; j < options.length; j++) {
+  for (let j = 0; j < options.length; j++) {
     const option = options[j];
-    option.addEventListener('click', ()=> selectOption(select, option, optionsData));
+    option.addEventListener("click", () =>
+      selectOption(select, option, optionsData)
+    );
   }
 }
 
@@ -65,28 +67,28 @@ function optionsHandler(select, optionsData) {
   - выбор пункта из списка, 
   - перерисовка списка из изначально полученных данных optionsData с целью упорядоченного его отображения
 */
-    
+
 function selectOption(select, option, optionsData) {
-  const optionsBox = select.querySelector('.select__option-box > ul');
-  const optionSelected = select.querySelector('.select__option_selected');
+  const optionsBox = select.querySelector(".select__option-box > ul");
+  const optionSelected = select.querySelector(".select__option_selected");
 
   optionSelected.innerHTML = option.innerHTML;
-  optionsBox.innerHTML = '';
+  optionsBox.innerHTML = "";
 
-  for(let i = 0; i < optionsData.length; i++) {
+  for (let i = 0; i < optionsData.length; i++) {
     const data = optionsData[i];
 
     if (data !== optionSelected.innerHTML)
-    optionsBox.innerHTML += `<li class="select__option">${data}</li>`;
+      optionsBox.innerHTML += `<li class="select__option">${data}</li>`;
   }
 }
 
 // Открытие списка .option
 function openSelect(select) {
-  select.classList.add('open');
+  select.classList.add("open");
 }
 
 // Закрытие списка .option
 function closeSelect(select) {
-  select.classList.remove('open');
+  select.classList.remove("open");
 }
