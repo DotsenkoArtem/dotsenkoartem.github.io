@@ -2,3 +2,13 @@
 а с помощью настроек Workspace VSCode;
 
 - поледняя актуальная правка компонентов в select/
+
+
+For commits:
+
+ADDED A TEMPLATE FOR CREATING COMPONENTS
+
+- расположение шаблона dev/components/_comp-copy
+- папка prism - плагин для вставки и раскраски кода в html
+
+- удален компонент select разработанный на старом шаблоне
