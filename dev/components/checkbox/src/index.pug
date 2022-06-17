@@ -1,37 +1,80 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Checkbox
-        |
-        |
-        |<!--CSS
-        |==================================================-->
-        link(rel="stylesheet", href="style.css")
-        |
-        |
+extends ../../comp-templates/comp-copy/_comp-copy-tmpl.pug
 
-    body 
+
+block comp-title
+  title Checkbox
+
+append comp-styles
+  link(rel="stylesheet", href="css/comp-select.css")
+
+
+block comp-content
+  h1 Checkbox
+  .container
+    |
+    |
+    // COMPONENT`S CODE
+    include _includes/_comp-select.pug
+    |
+    |
+    // END OF COMPONENT`S CODE
+    |
+    |
+
+block comp-code
+  // CODE-COPY
+
+  .container
+    .tabs
+      ul.tabs__menu
+        li.tab__caption.active(data-target="tab-pane1") HTML
+        li.tab__caption(data-target="tab-pane2") CSS
+        li.tab__caption(data-target="tab-pane3") JS
+
+      .tabs__content
+        |
+        |
+        // Tab-pane 1
+        // ------------------------------
+        #tab-pane1.tab__pane.active
+          .code-copy-btn-wrap
+            div.code-copy-btn(data-target="item-to-copy1")
+          |
+          |
+          pre
+            code(class="language-html" id="item-to-copy1")
+
+              include _includes/_comp-code-html.pug
+        |
+        |
+        // Tab-pane 2
+        // ------------------------------
+        #tab-pane2.tab__pane
+          .code-copy-btn-wrap
+            div.code-copy-btn(data-target="item-to-copy2")
+          |
+          |
+          pre
+            code(class="language-css" id="item-to-copy2")
+
+              include _includes/_comp-code-css.pug
 
         |
         |
-        h1 Checkbox
-        |
-        |
-        .container
-            |
-            |
-            <!-- COMPONENT`S CODE -->
+        // Tab-pane 3
+        // ------------------------------
+        #tab-pane3.tab__pane
+          .code-copy-btn-wrap
+            div.code-copy-btn(data-target="item-to-copy3")
+          |
+          |
+          pre
+            code.language-js#item-to-copy3
 
-            .checkbox
-                input#userCheck.checkbox__input(type="checkbox", name="userCheck")
-                label.checkbox__label(for="userCheck") Я даю согласие на обработку  моих персональных данных
-            
-            |
-            |
-            <!-- END OF COMPONENT`S CODE -->
-            |
-            |
-            |
+              include _includes/_comp-code-js.pug
+
+  // END OF CODE-COPY
+  |
+  |
+append comp-scripts
+  script(src="js/comp-select.dev.js")
