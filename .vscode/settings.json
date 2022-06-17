@@ -15,7 +15,7 @@
   "compile-hero.ignore": [
     "**/_partials/**/*.scss",
     "**/_includes/**/*.pug",
-    "**/_comp-templates/**/*.pug",
+    "**/comp-templates/**/*.pug",
     "**/_templates/**/*.pug"
   ],
   "compile-hero.config": ""

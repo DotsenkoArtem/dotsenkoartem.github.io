@@ -1,4 +1,4 @@
-extends ../../_comp-templates/_comp-copy/_comp-copy-tmpl.pug
+extends ../../comp-templates/comp-copy/comp-copy-tmpl.pug
 
 
 block comp-title
@@ -14,7 +14,7 @@ block comp-content
     |
     |
     // COMPONENT`S CODE
-    include _includes/_comp-select.pug
+    include _includes/comp-select.pug
     |
     |
     // END OF COMPONENT`S CODE
@@ -44,7 +44,7 @@ block comp-code
           pre
             code(class="language-html" id="item-to-copy1")
 
-              include _includes/_comp-code-html.pug
+              include _includes/comp-code-html.pug
         |
         |
         // Tab-pane 2
@@ -57,7 +57,7 @@ block comp-code
           pre
             code(class="language-css" id="item-to-copy2")
 
-              include _includes/_comp-code-css.pug
+              include _includes/comp-code-css.pug
 
         |
         |
@@ -71,7 +71,7 @@ block comp-code
           pre
             code.language-js#item-to-copy3
 
-              include _includes/_comp-code-js.pug
+              include _includes/comp-code-js.pug
 
   // END OF CODE-COPY
   |
