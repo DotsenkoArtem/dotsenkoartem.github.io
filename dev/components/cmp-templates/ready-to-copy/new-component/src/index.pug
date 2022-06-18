@@ -2,19 +2,19 @@ extends ../../cmp-templates/ready-to-copy/base/_tmpl.pug
 
 
 block comp-title
-  title Checkbox
+  title Указать название
 
 append comp-styles
-  link(rel="stylesheet", href="css/comp-select.css")
+  link(rel="stylesheet", href="css/cmp-name.css")
 
 
 block comp-content
-  h1 Checkbox
+  h1 Указать название
   .container
     |
     |
     // COMPONENT`S CODE
-    include _includes/_cmp-select.pug
+    include _includes/_cmp.pug
     |
     |
     // END OF COMPONENT`S CODE
@@ -57,7 +57,7 @@ block comp-code
           pre
             code(class="language-css" id="item-to-copy2")
 
-              include _includes/_comp-code-css.pug
+              include _includes/_code-css.pug
 
         |
         |
@@ -71,10 +71,10 @@ block comp-code
           pre
             code.language-js#item-to-copy3
 
-              include _includes/_comp-code-js.pug
+              include _includes/_code-js.pug
 
   // END OF CODE-COPY
   |
   |
 append comp-scripts
-  script(src="js/cmp-select.dev.js")
+  script(src="js/cmp-name.dev.js")

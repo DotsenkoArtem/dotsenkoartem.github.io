@@ -1,3 +1,0 @@
-- забрать указанную разметку с index.html
-- забрать стили с checkbox.scss / checkbox.scss
-- забрать переменные с _partials/_variables => // checkbox variables
