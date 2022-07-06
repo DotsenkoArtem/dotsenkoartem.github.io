@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="css/clock.css">
+  </head>
+  <body>
+    <div class="clock-wrapper"> 
+      <div class="clock">
+         
+        
+        <div class="panel">
+          <svg class="progress panel__progress">
+            <circle class="progress__item progress__item_bg" cx="50%" cy="50%" r="70"></circle>
+            <circle class="progress__item progress__item_current progress__item_hours" id="hh" cx="50%" cy="50%" r="70"></circle>
+          </svg>
+          <div class="panel__data" data-dateUnit="hours">
+            <div class="time-value">00</div><span class="time-label">hh</span>
+          </div>
+          <div class="progress-dot progress-dot_hours" id="hhDot"></div>
+        </div>
+        
+        <div class="panel">
+          <svg class="progress panel__progress">
+            <circle class="progress__item progress__item_bg" cx="50%" cy="50%" r="70"></circle>
+            <circle class="progress__item progress__item_current progress__item_minutes" id="mm" cx="50%" cy="50%" r="70"></circle>
+          </svg>
+          <div class="panel__data" data-dateUnit="minutes">
+            <div class="time-value">00</div><span class="time-label">mm</span>
+          </div>
+          <div class="progress-dot progress-dot_minutes" id="mmDot"></div>
+        </div>
+        
+        <div class="panel">
+          <svg class="progress panel__progress">
+            <circle class="progress__item progress__item_bg" cx="50%" cy="50%" r="70"></circle>
+            <circle class="progress__item progress__item_current progress__item_seconds" id="ss" cx="50%" cy="50%" r="70"></circle>
+          </svg>
+          <div class="panel__data" data-dateUnit="seconds">
+            <div class="time-value">00</div><span class="time-label">ss</span>
+          </div>
+          <div class="progress-dot progress-dot_seconds" id="ssDot"></div>
+        </div>
+        
+        <div class="day-state"> 
+          <div data-dateUnit="ampm">AM</div>
+        </div>
+      </div>
+    </div>
+    <script src="js/clock.dev.js"></script>
+  </body>
+</html>

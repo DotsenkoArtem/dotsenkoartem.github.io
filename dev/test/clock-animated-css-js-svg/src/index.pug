@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Clock
+    link(rel="stylesheet", href="css/clock.css") 
+  body
+    .clock-wrapper 
+      .clock 
+        |
+        |
+        .panel
+          svg.progress.panel__progress
+            circle.progress__item.progress__item_bg(cx="50%", cy="50%", r="70")
+            circle#hh.progress__item.progress__item_current.progress__item_hours(cx="50%", cy="50%", r="70")
+          
+          .panel__data(data-dateUnit ="hours")
+            .time-value 00
+            span.time-label hh
+          #hhDot.progress-dot.progress-dot_hours
+        |
+        |
+        .panel
+          svg.progress.panel__progress
+            circle.progress__item.progress__item_bg(cx="50%", cy="50%", r="70")
+
+            circle#mm.progress__item.progress__item_current.progress__item_minutes(cx="50%", cy="50%", r="70")
+          .panel__data(data-dateUnit ="minutes")
+            .time-value 00
+            span.time-label mm
+          #mmDot.progress-dot.progress-dot_minutes
+        |
+        |
+        .panel
+          svg.progress.panel__progress
+            circle.progress__item.progress__item_bg(cx="50%", cy="50%", r="70")
+            circle#ss.progress__item.progress__item_current.progress__item_seconds(cx="50%", cy="50%", r="70")
+
+          .panel__data(data-dateUnit ="seconds")
+            .time-value 00
+            span.time-label ss
+          #ssDot.progress-dot.progress-dot_seconds
+        |
+        |
+        .day-state 
+          div(data-dateUnit ="ampm") AM
+    script(src="js/clock.dev.js")

@@ -1,0 +1,156 @@
+// @import vars
+
+@use 'vars' as *
+
+=before($d: block, $pos: absolute, $t: 0, $r: 0, $b: 0, $l: 0, $cont: '')
+  display: $d
+  position: $pos
+  top: $t
+  content: $cont
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+*::before
+  @extend *
+
+*::after
+  @extend *
+
+html
+  font:
+    family: 'Raleway', sans-serif
+    size: 10px
+  height: 100vh
+  display: flex
+
+body
+  font-size: 2rem
+  color: $body-color
+  background: $body-bg
+  display: flex
+  flex: 1
+
+.clock
+  display: flex
+  gap: 4rem
+  font:
+    size: 3.5rem
+    weight: 300
+  transition: transform .5s ease-out
+  &:hover
+    transform: scale(1.5)
+
+  &-wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 100%
+
+.panel
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+  width: 14.4rem
+  height: 14.4rem
+  border-radius: 50%
+  box-shadow: 0 0 60px 3px rgba(255, 255, 255, .15), 0 0 10px 0px rgba(255, 255, 255, .4)
+  &__data
+    position: absolute
+    text-align: center
+    user-select: none
+    .time-value
+      overflow: hidden
+      span
+        display: inline-block
+        // animation: slideInTop .2s linear forwards
+    .time-label
+      margin-top: 0.5rem
+      display: block
+      font-size: 1.8rem
+      letter-spacing: .15em
+  &__progress
+    position: relative
+    transform: rotate(270deg)
+
+.progress
+  width: 100%
+  height: 100%
+  &__item
+    width: 100%
+    height: 100%
+    fill: transparent
+    stroke-width: 4
+    &_bg
+      stroke: rgba(25, 25, 25, 0.35)
+    &_current
+      stroke-dasharray: 440
+      // transition: .8s
+    &_hours
+      stroke: #ff2972
+    &_minutes
+      stroke: #fee800
+    &_seconds
+      stroke: #04fc43
+
+.progress-dot
+  position: absolute
+  width: 100%
+  height: 100%
+  // Для "плавности рывками"
+  // transition: .5s
+  &_hours
+    &::before
+      background: radial-gradient(lighten(#ff2972, 20%), darken(#ff2972, 15%))
+      box-shadow: 0 0 2rem #ff2972, 0 0 6rem #ff2972
+  &_minutes
+    &::before
+      background: radial-gradient(lighten(#fee800, 20%), darken(#fee800, 15%))
+      box-shadow: 0 0 2rem #fee800, 0 0 6rem #fee800
+  &_seconds
+    &::before
+      background: radial-gradient(lighten(#04fc43, 20%), darken(#04fc43, 15%))
+      box-shadow: 0 0 2rem #04fc43, 0 0 6rem #04fc43
+  &::before
+    +before($t: -0.6rem)
+    left: calc( 50% - .75rem )
+    width: 1.5rem
+    height: 1.5rem
+    border-radius: 50%
+
+.day-state
+  position: relative
+  font-size: 1.8rem
+  transform: translateX(-2rem)
+
+@keyframes slideInTop
+  0%
+    transform: translateY(-100%)
+  100%
+    transform: translateY(0%)
+
+@keyframes slideOutBottom
+  0%
+    transform: translateY(0%)
+  100%
+    transform: translateY(100%)
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+  .panel
+    &:not(:first-child)
+      margin-left: 4rem
+    &__data
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+  .progress
+    &-dot
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0

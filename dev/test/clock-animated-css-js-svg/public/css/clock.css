@@ -1,0 +1,164 @@
+*, ::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Raleway", sans-serif;
+  font-size: 10px;
+  height: 100vh;
+  display: flex;
+}
+
+body {
+  font-size: 2rem;
+  color: #fafafa;
+  background: #2f363e;
+  display: flex;
+  flex: 1;
+}
+
+.clock {
+  display: flex;
+  gap: 4rem;
+  font-size: 3.5rem;
+  font-weight: 300;
+  transition: transform 0.5s ease-out;
+}
+.clock:hover {
+  transform: scale(1.5);
+}
+.clock-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 14.4rem;
+  height: 14.4rem;
+  border-radius: 50%;
+  box-shadow: 0 0 60px 3px rgba(255, 255, 255, 0.15), 0 0 10px 0px rgba(255, 255, 255, 0.4);
+}
+.panel__data {
+  position: absolute;
+  text-align: center;
+  user-select: none;
+}
+.panel__data .time-value {
+  overflow: hidden;
+}
+.panel__data .time-value span {
+  display: inline-block;
+}
+.panel__data .time-label {
+  margin-top: 0.5rem;
+  display: block;
+  font-size: 1.8rem;
+  letter-spacing: 0.15em;
+}
+.panel__progress {
+  position: relative;
+  transform: rotate(270deg);
+}
+
+.progress {
+  width: 100%;
+  height: 100%;
+}
+.progress__item {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 4;
+}
+.progress__item_bg {
+  stroke: rgba(25, 25, 25, 0.35);
+}
+.progress__item_current {
+  stroke-dasharray: 440;
+}
+.progress__item_hours {
+  stroke: #ff2972;
+}
+.progress__item_minutes {
+  stroke: #fee800;
+}
+.progress__item_seconds {
+  stroke: #04fc43;
+}
+
+.progress-dot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.progress-dot_hours::before {
+  background: radial-gradient(#ff8fb5, #dc004b);
+  box-shadow: 0 0 2rem #ff2972, 0 0 6rem #ff2972;
+}
+.progress-dot_minutes::before {
+  background: radial-gradient(#fff265, #b2a200);
+  box-shadow: 0 0 2rem #fee800, 0 0 6rem #fee800;
+}
+.progress-dot_seconds::before {
+  background: radial-gradient(#69fd8e, #02b12f);
+  box-shadow: 0 0 2rem #04fc43, 0 0 6rem #04fc43;
+}
+.progress-dot::before {
+  display: block;
+  position: absolute;
+  top: -0.6rem;
+  content: "";
+  left: calc( 50% - .75rem );
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.day-state {
+  position: relative;
+  font-size: 1.8rem;
+  transform: translateX(-2rem);
+}
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes slideOutBottom {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .panel:not(:first-child) {
+    margin-left: 4rem;
+  }
+  .panel__data {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .progress-dot {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
