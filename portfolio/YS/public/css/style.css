@@ -957,6 +957,7 @@ select::-ms-expand {
   flex-wrap: wrap;
 }
 .top-menu-wrapper {
+  margin: 0 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2568,7 +2569,9 @@ select::-ms-expand {
 .footer-contacts__mail, .footer-contacts__location {
   position: relative;
 }
-.footer-contacts__mail i, .footer-contacts__mail svg, .footer-contacts__location i, .footer-contacts__location svg {
+.footer-contacts__mail i,
+.footer-contacts__mail svg, .footer-contacts__location i,
+.footer-contacts__location svg {
   position: absolute;
   display: inline-block;
   top: 0.15em;
@@ -3262,6 +3265,7 @@ ANIMATIONS
     max-width: 34rem;
   }
   .top-menu-wrapper {
+    margin: 0;
     display: block;
     position: absolute;
     bottom: 0;
