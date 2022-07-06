@@ -1,0 +1,109 @@
+*, *::before, *::after
+  margin: 0
+  padding: 0
+  border: 0
+  box-sizing: border-box
+
+html
+  font:
+    size: 10px
+    family: 'Open Sans', Helvetica, sans-serif
+
+body
+
+  font:
+    size: 1.8rem
+  color: #f0f
+
+#pageWrapper
+  min-height: 200vh
+  overflow: hidden
+
+.container
+  max-width: 96rem
+  margin: 0 auto
+  padding: 0 1.2rem
+
+// Component styles
+
+// Vars
+$range-height: 0.8rem
+$range-radius: .5rem
+$range-slider-size: 2rem
+$range-slider-bg: rgba(255, 255, 255, 0.99)
+$range-slider-before-bg: #474343
+
+.range
+  margin: 2rem auto
+  height: $range-height
+  position: relative
+  border-radius: $range-radius
+  box-shadow: 0 0 24px 2px rgba(0, 0, 0, .5), 0 0 0px 1px rgba(0, 0, 0, .99)
+  background: linear-gradient(to right, #ff0000 0%, #0f0 70%)
+  cursor: pointer
+  &:hover
+    .range
+      &__progress
+        background: rgba(0, 0, 0, 0.15)
+      &-slider,
+      &__rest
+        background: darken($range-slider-bg, 15%)
+      &-slider::before
+        background: darken($range-slider-before-bg, 15%)
+
+  &-wrapper
+    margin: 0 auto
+    padding: 2.5rem
+    max-width: 69rem
+    border-radius: $range-radius
+    box-shadow: 0 12px 56px 2px rgba(0, 0, 0, .5)
+
+  &-slider
+    display: flex
+    justify-content: center
+    align-items: center
+    width: $range-slider-size
+    height: $range-slider-size
+    border-radius: 50%
+    background: $range-slider-bg
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, .99),0 0 8px 1px rgba(0, 0, 0, .99)
+    cursor: grab
+    &:active
+      cursor: grabbing
+    &::before
+      display: block
+      content: ''
+      width: 50%
+      height: 50%
+      border-radius: 50%
+      background: #474343
+      box-shadow: 0 0 0px 1px rgba(0, 0, 0, .75), inset 0 0 6px 0px rgba(255, 255, 255, .75)
+
+  &-progress
+    height: 100%
+
+    &__slider
+      position: absolute
+      right: -($range-slider-size / 2)
+      top: ($range-height / 2 - $range-slider-size / 2)
+      transition: inherit
+
+  &__progress
+    position: absolute
+    left: 0
+    right: 69rem
+    border-radius: $range-radius
+    transition: inherit
+
+  &__rest
+    position: absolute
+    right: 0
+    left: 0
+    height: $range-height
+    border-radius: $range-radius
+    transition: inherit
+    background: #fff
+
+  &-current
+    margin-top: 5em
+    user-select: none
