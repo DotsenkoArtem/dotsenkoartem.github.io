@@ -1,0 +1,184 @@
+@use '_partials/variables' as v
+@use '_partials/mixins' as m
+
+/* 
+ container-name	 |	 max-width	|	screen-width	|	column-name	 |	media-query 
+ ------------------------------------------------------------------------------------------------------
+ .container		|		1320	|		>= 1400		|		.col		|	none || min-width: 1400px
+ ------------------------------------------------------------------------------------------------------
+ .container_xl	|		1140	|		>= 1200		|		.col_xl		|	max-width: 1399.98px
+ ------------------------------------------------------------------------------------------------------
+ .container_lg	|		960		|		>= 992		|		.col_lg		|	max-width: 1199.98px
+ ------------------------------------------------------------------------------------------------------
+ .container_md	|		720		|		>= 768		|		.col_md		|	max-width: 991.98px
+ ------------------------------------------------------------------------------------------------------
+ .container_sm	|		540		|		>= 576		|		.col_sm		|	max-width: 767.98px
+ ------------------------------------------------------------------------------------------------------
+ none			|		440		|		100%		|		.col_xs		|	max-width: 575.98px
+ ------------------------------------------------------------------------------------------------------
+ none			|		none	|		100%		|		.col_xxs	|	max-width: 414.98px
+ ------------------------------------------------------------------------------------------------------*/
+
+/* контейнеры определены в файле default.sass,
+ адаптив к ним - в файле media-queries.sass */
+
+// закомментиовать после таблицы величину паддингов для контейнеров и колонок!!!
+
+// Grid vars
+$col: col
+$offset: offset
+
+// Grid mixins
+
+/* Column flexibility setting */
+=colFlexSet($media: null)
+  @if $media != null
+    @for $i from 0 through 12
+      @if $i == 0
+        .#{$col}_#{$media}
+          flex: 1
+      @else
+        .#{$col}_#{$media}-#{$i}
+          @extend %flex-none-#{$media}
+    %flex-none-#{$media}
+      flex: none
+  @else
+    @for $i from 0 through 12
+      @if $i == 0
+        .#{$col}
+          @extend %flex-none
+      @else
+        .#{$col}-#{$i}
+          @extend %flex-none
+    %flex-none
+      flex: none
+
+/* Column width setting */
+=colWidthSet($media: null)
+  @if $media != null
+    @for $col-num from 1 through 12
+      @if $col-num == 12
+        .#{$col}_#{$media}
+          flex-basis: 100%
+      @else
+        .#{$col}_#{$media}-#{$col-num}
+          flex-basis: calc( 100% * $col-num / 12 )
+  @else
+    @for $col-num from 1 through 12
+      @if $col-num == 12
+        .#{$col}
+          flex-basis: 100%
+      @else
+        .#{$col}-#{$col-num}
+          flex-basis: calc( 100% * $col-num / 12 )
+
+// Column offset setting
+=colOffetSet($media: null)
+  @if $media != null
+    @for $col-num from 0 through 12
+      @if $col-num == 0
+        .offset_#{$media}-none
+          margin-left: 0
+      @else
+        .offset_#{$media}-#{$col-num}
+          margin-left: calc( 100% * $col-num / 12 )
+  @else
+    @for $col-num from 0 through 12
+      @if $col-num == 0
+        .offset-none
+          margin-left: 0
+      @else
+        .offset-#{$col-num}
+          margin-left: calc( 100% * $col-num / 12 )
+
+.row
+  margin: 0 (- v.$gutter)
+  display: flex
+  flex-wrap: wrap
+
+/* Column flexibility setting */
++colFlexSet()
+
+/* Column width setting */
++colWidthSet()
+
+/* Column offset setting */
++colOffetSet()
+
+.px-12
+  padding: 0 1.2rem
+
+/* XL 
+ ==================== */
+@media (max-width: 1399.98px)
+
+  /* XL column flexibility setting */
+  +colFlexSet(xl)
+
+  /* XL column width setting */
+  +colWidthSet(xl)
+
+  /* XL column offset setting */
+  +colOffetSet(xl)
+
+/* lG 
+ ==================== */
+@media (max-width: 1199.98px)
+
+  /* LG column flexibility setting */
+  +colFlexSet(lg)
+
+  /* LG column width setting */
+  +colWidthSet(lg)
+
+  /* XL column offset setting */
+  +colOffetSet(lg)
+
+/* MD 
+ ==================== */
+@media (max-width: 991.98px)
+
+  /* MD column flexibility setting */
+  +colFlexSet(md)
+
+  /* MD column width setting */
+  +colWidthSet(md)
+
+  /* MD column offset setting */
+  +colOffetSet(md)
+
+/* SM
+ ==================== */
+@media (max-width: 767.98px)
+  /* SM column flexibility setting */
+  +colFlexSet(sm)
+
+  /* SM column width setting */
+  +colWidthSet(sm)
+
+  /* SM column offset setting */
+  +colOffetSet(sm)
+
+/* XS
+ ==================== */
+@media (max-width: 575.98px)
+  /* XS column flexibility setting */
+  +colFlexSet(xs)
+
+  /* XS column width setting */
+  +colWidthSet(xs)
+
+  /* XS column offset setting */
+  +colOffetSet(xs)
+
+/* XXS 
+ ==================== */
+@media (max-width: 414.98px)
+  /* XXS column flexibility setting */
+  +colFlexSet(xxs)
+
+  /* XXS column width setting */
+  +colWidthSet(xxs)
+
+  /* XXS column offset setting */
+  +colOffetSet(xxs)
