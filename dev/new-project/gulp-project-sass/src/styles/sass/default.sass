@@ -108,28 +108,17 @@ p
 	cursor: default
 
 // Use .container if grid.css is not connected
+// .continer_xs не нужен - достаточно функций .container
 .container
 	&,
+	&_xxl,
 	&_xl,
 	&_lg,
 	&_md,
 	&_sm
 		margin: 0 auto
 		padding: 0 v.$gutter
-
-	&
-		max-width: 123rem
-	&_xl
-		max-width: 114rem
-
-	&_lg
-		max-width: 96rem
-
-	&_md
-		max-width: 72rem
-
-	&_sm
-		max-width: 54rem
+		max-width: 1320px
 
 .d
 	&-none
@@ -140,6 +129,11 @@ p
 
 	&-inline
 		display: inline
+
+.row
+	margin: 0 (- v.$gutter)
+	display: flex
+	flex-wrap: wrap
 
 .scroll-hidden
 	// для скрытия полосы прокрутки

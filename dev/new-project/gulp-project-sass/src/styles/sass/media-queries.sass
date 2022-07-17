@@ -12,7 +12,24 @@
     font-size: 9px
 
   .container
-    max-width: 114rem
+    &,
+    &_xl,
+    &_lg,
+    &_md,
+    &_sm
+      max-width: 1140px
+    &_xxl
+      max-width: 100%
+
+  @if v.$grid-style
+    /* XL column flexibility setting */
+    +colFlexSet(xl)
+
+    /* XL column width setting */
+    +colWidthSet(xl)
+
+    /* XL column offset setting */
+    +colOffetSet(xl)
 
   .d
     &-none
@@ -34,8 +51,22 @@
 
   .container
     &,
+    &_lg,
+    &_md,
+    &_sm
+      max-width: 960px
     &_xl
-      max-width: 96rem
+      max-width: 100%
+
+  @if v.$grid-style
+    /* XL column flexibility setting */
+    +colFlexSet(lg)
+
+    /* XL column width setting */
+    +colWidthSet(lg)
+
+    /* XL column offset setting */
+    +colOffetSet(lg)
 
   .d
     &-none
@@ -66,9 +97,21 @@
 
   .container
     &,
-    &_xl,
+    &_md,
+    &_sm
+      max-width: 720px
     &_lg
-      max-width: 740px
+      max-width: 100%
+
+  @if v.$grid-style
+    /* XL column flexibility setting */
+    +colFlexSet(md)
+
+    /* XL column width setting */
+    +colWidthSet(md)
+
+    /* XL column offset setting */
+    +colOffetSet(md)
 
   .d
     &-none
@@ -90,10 +133,20 @@
   // 
   .container
     &,
-    &_xl,
-    &_lg,
-    &_md
+    &_sm
       max-width: 540px
+    &_md
+      max-width: 100%
+
+  @if v.$grid-style
+    /* XL column flexibility setting */
+    +colFlexSet(sm)
+
+    /* XL column width setting */
+    +colWidthSet(sm)
+
+    /* XL column offset setting */
+    +colOffetSet(sm)
 
   .d
     &-none
@@ -114,14 +167,19 @@
   // 	font-size: 6px
   // 
   .container
-    &,
-    &_xl,
-    &_lg,
-    &_md,
+    max-width: 410px
     &_sm
-      max-width: 440px
-      padding-left: 2.5rem
-      padding-right: 2.5rem
+      max-width: 100%
+
+  @if v.$grid-style
+    /* XL column flexibility setting */
+    +colFlexSet(xs)
+
+    /* XL column width setting */
+    +colWidthSet(xs)
+
+    /* XL column offset setting */
+    +colOffetSet(xs)
 
   .d
     &-none
@@ -139,7 +197,19 @@
 @media (max-width: 479.98px)
 
 // XXS
-@media (max-width: 414.98px)
+@media (max-width: 413.98px)
+  .container
+    max-width: 100%
+  @if v.$grid-style
+    /* XL column flexibility setting */
+    +colFlexSet(xxs)
+
+    /* XL column width setting */
+    +colWidthSet(xxs)
+
+    /* XL column offset setting */
+    +colOffetSet(xxs)
+
   .d
     &-none
       &_xxs

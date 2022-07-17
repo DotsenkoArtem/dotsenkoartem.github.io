@@ -6,3 +6,5 @@ node_modules
 public
 # Папка с временными файлами
 tmp
+# 
+package-lock.json
