@@ -95,19 +95,18 @@ table
 //  1. Basic
 // -------------------  
 
-html
-	font-family: "Raleway", "Helvetica", sans-serif
-	font-feature-settings: 'pnum' on, 'lnum' on
-	font-weight: 400
-	line-height: 1.2
-	font-size: 10px
-	color: v.$text-primary-color
+// html
+// 	font-family: v.$ff-primary
+// 	font-feature-settings: 'pnum' on, 'lnum' on
+// 	font-weight: 400
+// 	line-height: 1.2
+// 	font-size: 10px
+	// color: v.$text-primary-color
 
 h1, h2, h3, h4, h5, h6,
 p
 	cursor: default
 
-// Use .container if grid.css is not connected
 // .continer_xs не нужен - достаточно функций .container
 .container
 	&,
@@ -121,14 +120,12 @@ p
 		max-width: 1320px
 
 .d
-	&-none
-		display: none
-
 	&-block
 		display: block
-
 	&-inline
 		display: inline
+	&-none
+		display: none
 
 .row
 	margin: 0 (- v.$gutter)
@@ -177,41 +174,36 @@ address
 // 	font-size: 2rem
 // 
 
-.text
-	&_primary-blue
-		color: v.$text-primary-blue
-
-	&_medium
-		font-weight: 600
-
-	&_semibold
-		font-weight: 600
-
-	&_bold
-		font-weight: 700
+// Text
+// .text
+// 	&-highlight
+// 		color: v.$text-highlight
+// 	&_medium
+// 		font-weight: 500
+// 	&_semibold
+// 		font-weight: 600
+// 	&_bold
+// 		font-weight: 700
 
 //  3. Links
 //  -------------------------
 
-a, a:visited
-	text-decoration: none
-	outline: none
-	color: v.$menu-item-color
-	transition: color .3s ease-in-out
-
-	&-link
-		color: v.$text-link-color
-		text-decoration: underline
-
 a
+	&, &:visited
+		text-decoration: none
+		outline: none
+		color: v.$link-color
+		transition: color .3s ease-in-out
 
-	&-link
-		&:hover,
-		&:focus
-			text-decoration: none
-
-		&:active
-			text-decoration: none
+	// &.text-link
+	// 	&,
+	// 	&:visited
+	// 		color: v.$text-link-color
+	// 	&:hover,
+	// 	&:active,
+	// 	&:focus
+	// 		color: v.$text-link-hover-color
+	// 		text-decoration: underline
 
 //   4. Images
 //  -------------------------
@@ -229,118 +221,34 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 .btn
-	font-family: "Raleway", "Helvetica", sans-serif
+	font-family: v.$ff-primary
 	text-decoration: none
 	cursor: pointer
 	user-select: none
 
-//  .btn styles from prev version
+.btn
+	padding: v.$btn-padding-y v.$btn-padding-x
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	border-radius: v.$btn-radius
+	background: none
+	overflow: hidden
+		// &:hover
+		// &:active
 
-	&
-		display: inline-flex
-		justify-content: center
-		align-items: center
-		border-radius: 8px
-		background: none
-		overflow: hidden
-	&__text
-		margin-left: 1.2rem
+		// &_primary
+		// &_secondary
+		// &_success
+		// &_warning
 
-	&_full-width,
-	&_lg,
-	&_md,
-	&_sm
-		// заполняет всю ширину родителя- независимо от текста
-		width: 100%
+		// &_outline
 
-	&_lg
-		max-width: 20rem
+		// &_large
+		// &_medium
+		// &_small
 
-	&_md
-		max-width: 15rem
-
-	&_sm
-		max-width: 10rem
-
-	// &_file
-	// 	width: 8rem
-	// 	height: 8rem
-	// 	border: 2px solid rgba(125, 133, 157, 0.2)
-	// 	.icon
-	// 		&_hover
-	// 			display: none
-	// 		
-	// 	
-	// 	&:hover
-	// 		@include m.btnFileHover
-	// 		.icon
-	// 			&_default
-	// 				display: none
-	// 			
-	// 			&_hover
-	// 				display: block
-	// 			
-	// 		
-	// 	
-	// 	&:active
-	// 		@include m.btnFileActive
-	// 		.icon
-	// 			&_default
-	// 				display: none
-	// 			
-	// 			&_hover
-	// 				display: block
-	// 			
-	// 		
-	// 	
-	// 
-	// &_primary
-	// 	padding: 1.4em
-	// 	height: 8rem
-	// 	font-size: 1.8rem
-	// 	font-weight: 700
-	// 	color: v.$btn-primary-color
-	// 	@include m.btnPrimatyBg
-	// 	@include m.btnPrimatyShadow
-	// 	overflow: hidden
-	// 	&:hover
-	// 		@include m.btnPrimatyBgHover
-	// 	
-	// 	&:active
-	// 		@include m.btnPrimatyBgActive
-	// 	
-	// 
-	// &_secondary
-	// 	padding: 0 1.33em
-	// 	height: 3.3em
-	// 	line-height: 3.3em
-	// 	font-size: 1.5rem
-	// 	font-weight: 600
-	// 	color: v.$btn-sec-color
-	// 	background: v.$btn-sec-bg
-	// 	&:hover
-	// 		background: v.$btn-sec-bg-hover
-	// 	
-	// 	&:active
-	// 		background: v.$btn-sec-bg-active
-	// 	
-	// 
-	// &_outline
-	// 	color: v.$outline-btn-color
-	// 	background: none
-	// 	border: .1rem solid v.$outline-btn-color
-	// 	&:hover
-	// 		@include m.btnFileHover
-	// 		color: #fff
-	// 	
-	// 	&:active
-	// 		@include m.btnFileActive
-	// 		color: #fff
-	// 	
-	// 
-	// &:active
-	// 	transform: translateY(10px)
-	// 
+		// &_type-file
 
 button
 	&[type="submit"]
@@ -357,11 +265,11 @@ select
 	outline: none
 
 input::-ms-input-placeholder
-	color: rgba(115, 255, 0, 0.938)
+	color: v.$input-placeholder-color
 input::-webkit-input-placeholder
-	color: rgba(255, 0, 0, 0.95)
+	color: v.$input-placeholder-color
 input::-moz-placeholder
-	color: rgba(8, 94, 255, 0.918)
+	color: v.$input-placeholder-color
 
 input::-ms-clear
 	display: none
@@ -375,99 +283,8 @@ input[type=search]::-webkit-search-results-decoration
 select::-ms-expand
 	display: none
 
-.form
-	// font-size: 1.8rem
-	&__group
-		// position: relative
-		// margin-bottom: 2.5rem
-		// padding-top: .8rem
-		// width: 100%
-		// overflow: hidden
-
-		// &.focused
-		// 	.form__control
-		// 		border-color: v.$form-control-border-focus
-		// 	
-		// 	.form__label_control
-		// 		margin-top: 1rem
-		// 		margin-left: .8rem
-		// 		padding: 0 0.5rem
-		// 		height: auto
-		// 		color: v.$form-control-border-focus
-		// 		background-color: rgb(255, 255, 255)
-		// 		transform-origin: 0 50%
-		// 		transform: translateY(calc(-100% + 1rem)) scale(.8)
-		// 	
-		// 
-
-		// &.valid
-		// 	.form__label_control
-		// 		    margin-top: 1rem
-		// 			margin-left: .8rem
-		// 			padding: 0 0.5rem
-		// 			height: auto
-		// 			color: v.$form-control-border-focus
-		// 			background-color: rgb(255, 255, 255)
-		// 			transform-origin: 0 50%
-		// 			transform: translateY(calc(-100% + 1rem)) scale(.8)
-		// 	
-		// 	.form__control
-		// 		border-color:v.$form-control-border-focus
-		// 	
-		// 
-
-		// &.form__group_search:not(.focused):not(.valid)
-		// 	.form__label_search
-		// 		color: blue
-		// 	
-		// 
-
-	// &__control
-	// 	padding: 2.2rem 2.2rem 2.2rem 5.8rem
-	// 	width: 100%
-	// 	height: 7rem
-	// 	font-family: "Raleway", "Helvetica", sans-serif
-	// 	font-size: 1.8rem
-	// 	font-weight: 400
-	// 	color: v.$form-control-color
-	// 	background: v.$form-control-bg
-	// 	border: 1px solid v.$form-control-border
-	// 	border-radius: v.$form-control-radius
-	// 	box-shadow: inset 0px 2px 15px v.$form-control-shadow
-	// 	outline: none
-	// 	&:hover
-	// 		border-color: v.$form-control-border-hover
-	// 	
-	// 
-
-	// &__label
-	// 	&_control
-	// 		position: absolute
-	// 		left: 0
-	// 		top: 0
-	// 		padding: 1.2rem 1.2rem 0rem v.$form-label-padding-left
-	// 		padding-left: v.$form-label-padding-left
-	// 		display: flex
-	// 		align-items: center
-	// 		height: 100%
-	// 		color: v.$form-label-color
-	// 		white-space: nowrap
-	// 		transition: transform .2s
-	// 		cursor: text
-	// 		user-select: none
-	// 	
-	// 
-
-	// &-icon
-	// 	position: absolute
-	// 	top: 50%
-	// 	transform: translateY(-30%)
-	// 	left: calc(v.$form-label-padding-left / 2)
-	// 
-
-	// &__submit
-	// 	height: 7rem
-	// 
+// .form
+// 	font-size: 1.8rem
 
 //  III. Grid
 // ---------------------------------------  

@@ -10,7 +10,7 @@ block page-vars
 //- MIXINS
 //- Создание контейнера
 mixin container(media) 
-  div(class=`container${media}`, style="font-size: 3rem; text-align: center; margin-top: 2rem; height: 5rem; border: solid 2px #00f; background: #aff;") Container
+  div(class=`container${media}`, class=attributes.class, style="font-size: 3rem; text-align: center; margin-top: 2rem; height: 5rem; border: solid 2px #00f; background: #aff;") Container
     span(style="color: blue; font-weight: 700") #{media}
 //- End of Создание контейнера
 
@@ -92,6 +92,11 @@ block main
     +container('_md')
     +container('_sm')
       //- End of Тестирование контейнеров
+
+    //- Тестирование классов свойства display в зависимости от разрешения экрана
+    //- +container()(class='d-none d-block_xl d-none_lg d-block_md d-none_sm d-block_xs d-none_xxs ')
+    //- End of Тестирование классов свойства display в зависимости от разрешения экрана
+
 
 //- block footer
 //-     h2 Wow, Block Footer is undefined!
