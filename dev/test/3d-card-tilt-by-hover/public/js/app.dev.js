@@ -1,51 +1,56 @@
 "use strict";
 
-console.log(scrollY);
-var cards3D = document.querySelectorAll(".card-wrapper");
+var cards3D = document.querySelectorAll(".card");
 var _iteratorNormalCompletion = true;
 var _didIteratorError = false;
 var _iteratorError = undefined;
 
 try {
   var _loop = function _loop() {
-    var cardWrapper = _step.value;
-    // let cardWrapper = document.querySelector(".card-wrapper");
-    var card = cardWrapper.querySelector(".card");
-    var cardCoords = cardWrapper.getBoundingClientRect();
-    console.log(cardCoords);
+    var card = _step.value;
+    var cardInner = card.querySelector(".card__inner");
+    var cardCoords = card.getBoundingClientRect();
     var cardCenter = {
       x: cardCoords.right - cardCoords.width / 2,
       y: cardCoords.bottom + scrollY - cardCoords.height / 2
     };
-    var cardTransform = {
-      x: 0,
-      y: 0,
-      z: 0,
-      angle: 90
-    };
+    card.fixed = false;
     var maxHypotenuse = Math.sqrt(Math.pow(cardCoords.width / 2, 2) + Math.pow(cardCoords.height / 2, 2));
-    cardWrapper.addEventListener("mouseover", function () {
-      var timerID = setTimeout(function () {
-        card.style.transition = "transform 0s";
+    var timerID = null;
+    var cardCurrentTransform = null;
+    card.addEventListener("mouseover", function () {
+      timerID = setTimeout(function () {
+        cardInner.style.transition = "transform 0s";
       }, 300);
-      cardWrapper.addEventListener("mouseleave", function () {
-        clearTimeout(timerID);
-        card.style.transition = "transform .3s";
-        card.style.transform = "";
-      });
     });
-    cardWrapper.addEventListener("mousemove", function (e) {
-      var cardCenterOffsetX = e.pageX - cardCenter.x;
-      var cardCenterOffsetY = e.pageY - cardCenter.y; // let cardCenterOffsetX = e.clientX - cardCenter.x;
-      // let cardCenterOffsetY = e.clientY - cardCenter.y;
+    card.addEventListener("click", function (e) {
+      if (card.fixed == false) {
+        card.fixed = true;
+      } else {
+        card.fixed = false;
+        cardInner.style.transition = "transform .3s";
+        calcCardTransform(e);
+      }
+    });
+    card.addEventListener("mousemove", function (e) {
+      if (card.fixed == false) {
+        calcCardTransform(e);
+      }
+    });
+    card.addEventListener("mouseleave", function () {
+      if (card.fixed == false) {
+        clearTimeout(timerID);
+        cardInner.style.transition = "transform .3s";
+        cardInner.style.transform = "";
+      }
+    }); // Functions
 
-      card.style.transform = "rotate3d(".concat(-cardCenterOffsetY / (cardCoords.height / 2), ", ").concat(cardCenterOffsetX / (cardCoords.width / 2), ", 0, ").concat((Math.sqrt(Math.pow(cardCenterOffsetX, 2) + Math.pow(cardCenterOffsetY, 2)) / maxHypotenuse * 45).toFixed(2), "deg)");
-    }); // cardWrapper.addEventListener("mouseleave", function () {
-    //   setTimeout(() => {
-    //     card.style.transition = "transform .3s";
-    //   }, 10);
-    //   card.style.transform = "";
-    // });
+    function calcCardTransform(e) {
+      var cardCenterOffsetX = e.pageX - cardCenter.x;
+      var cardCenterOffsetY = e.pageY - cardCenter.y;
+      cardCurrentTransform = "rotate3d(".concat(-cardCenterOffsetY / (cardCoords.height / 2), ", ").concat(cardCenterOffsetX / (cardCoords.width / 2), ", 0, ").concat((Math.sqrt(Math.pow(cardCenterOffsetX, 2) + Math.pow(cardCenterOffsetY, 2)) / maxHypotenuse * 45).toFixed(2), "deg)");
+      cardInner.style.transform = cardCurrentTransform;
+    }
   };
 
   for (var _iterator = cards3D[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
