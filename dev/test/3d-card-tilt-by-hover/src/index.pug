@@ -11,12 +11,13 @@ html(lang="en")
     mixin 3d-card(imgUrl)
       .card
         .card__inner
-          .card__img 
-              img(src=imgUrl, alt="Логтип компании Nike")
-          .card__descr
-            h3 Nike Logo
-            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel voluptates temporibus cupiditate eos? Temporibus, eos cum ullam sunt nesciunt ducimus laborum velit ut autem.
-            .btn.btn_black Посмотреть
+          .card__content
+            .card__img 
+                img(src=imgUrl, alt="Логтип компании Nike")
+            .card__descr
+              h3 Nike Logo
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel voluptates temporibus cupiditate eos? Temporibus, eos cum ullam sunt nesciunt ducimus laborum velit ut autem.
+              .btn.btn_black Посмотреть
 
 
     #pageWrapper
@@ -32,17 +33,5 @@ html(lang="en")
 
 
 
-
-
-    //- 
-          .card-wrapper
-            .card
-              figure.card__inner
-                .card__img 
-                  img(src="img/nike-logo.jpg", alt="Логтип компании Nike")
-                figcaption.card__descr
-                  h3 Nike Logo
-                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum vel voluptates temporibus cupiditate eos? Temporibus, eos cum ullam sunt nesciunt ducimus laborum velit ut autem.
-                  .btn.btn_black Посмотреть
 
     script(src="js/app.dev.js") 

@@ -19,9 +19,14 @@ for (let card of cards3D) {
   let cardCurrentTransform = null;
 
   card.addEventListener("mouseover", function () {
-    timerID = setTimeout(() => {
-      cardInner.style.transition = "transform 0s";
-    }, 300);
+    // Очищаю таймаут
+    clearTimeout(timerID);
+    // Задаю новый не постоянно, а только в случае transition не равному 0, чтобы не добавлять лишних
+    if (cardInner.style.transition !== "transform 0s ease 0s") {
+      timerID = setTimeout(() => {
+        cardInner.style.transition = "transform 0s";
+      }, 300);
+    }
   });
 
   card.addEventListener("click", function (e) {
