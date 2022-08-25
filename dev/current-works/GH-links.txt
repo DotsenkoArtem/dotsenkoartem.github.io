@@ -1,0 +1,23 @@
+﻿Примеры верстки:
+https://dotsenkoartem.github.io/portfolio/tlevel/
+https://dotsenkoartem.github.io/portfolio/YS/public/
+https://dotsenkoartem.github.io/portfolio/4smm/
+https://dotsenkoartem.github.io/portfolio/tprofit/
+https://dotsenkoartem.github.io/portfolio/avianna/
+https://dotsenkoartem.github.io/portfolio/ice-king/
+
+https://dotsenkoartem.github.io/portfolio/eurobeton/
+https://dotsenkoartem.github.io/portfolio/flag_alpha/
+
+
+
+
+Пример калькуляторов:
+https://dotsenkoartem.github.io/portfolio/calc_ceiling/
+https://dotsenkoartem.github.io/portfolio/calc_house/
+https://dotsenkoartem.github.io/portfolio/calc_mortgage/
+
+
+Рабочие проекты:
+https://internet-boosters.ru/
+https://tlevel.ru/
