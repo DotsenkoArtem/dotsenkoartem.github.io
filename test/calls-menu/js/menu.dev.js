@@ -1,15 +1,15 @@
 "use strict"; // ОБРАБОТКА МОБИЛЬНОГО МЕНЮ
 
 var windowWidth;
-var navBarBreakPoint = 992;
+var navBarBreakPoint = 768;
 initNavBar();
-window.onresize = initNavBar;
+// window.onresize = initNavBar;
 
 function initNavBar() {
   windowWidth = document.documentElement.clientWidth;
   var menu = document.querySelector(".top-nav"),
-      menuOverl = document.querySelector(".top-nav-overl"),
-      body = document.body;
+    menuOverl = document.querySelector(".top-nav-overl"),
+    body = document.body;
   var menuInner = document.querySelector(".menu");
   var parentItems = document.querySelectorAll(".menu-item-has-children"); // let parentItems = menu.querySelectorAll(".menu > .menu-item-has-children");
   // ?????????????????????????????????????????????????????????????????????????
@@ -18,7 +18,9 @@ function initNavBar() {
 
   function checkMenuLevels(menu) {
     var parentMenuItems = Array.from(menu.childNodes).filter(function (item) {
-      return item.nodeType == 1 && item.classList.contains("menu-item-has-children");
+      return (
+        item.nodeType == 1 && item.classList.contains("menu-item-has-children")
+      );
     }); // console.log(parentMenuItems);
 
     if (parentMenuItems.length > 0) {
@@ -28,7 +30,11 @@ function initNavBar() {
       var _iteratorError = undefined;
 
       try {
-        for (var _iterator = parentMenuItems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (
+          var _iterator = parentMenuItems[Symbol.iterator](), _step;
+          !(_iteratorNormalCompletion = (_step = _iterator.next()).done);
+          _iteratorNormalCompletion = true
+        ) {
           var parentMenuItem = _step.value;
           var subMenu = parentMenuItem.querySelector(".sub-menu"); // console.log(subMenu);
 
@@ -43,7 +49,8 @@ function initNavBar() {
           if (subMenu.querySelector(".back-btn") === null) {
             var backBtn = document.createElement("li");
             backBtn.className = "menu-item back-btn";
-            backBtn.innerHTML = '<div class="back-btn__arrow"></div><span>назад</span>';
+            backBtn.innerHTML =
+              '<div class="back-btn__arrow"></div><span>назад</span>';
             subMenu.prepend(backBtn);
           }
 
@@ -71,7 +78,8 @@ function initNavBar() {
   checkMenuLevels(menuInner); // ?????????????????????????????????????????????????????????????????????????
   // -------------------------------------------
 
-  if (windowWidth > navBarBreakPoint) {// for (let i = 0; i < parentItems.length; i++) {
+  if (windowWidth > navBarBreakPoint) {
+    // for (let i = 0; i < parentItems.length; i++) {
     //   let parentItem = parentItems[i];
     //   let subMenu = parentItem.querySelector(".sub-menu");
     //   let itemAngle = parentItem.querySelector(".item__angle");
@@ -105,7 +113,6 @@ function initNavBar() {
       //     }
       //   }
 
-
       var levelDown = function levelDown(subMenu) {
         // if (parentItem.querySelector(".back-btn") === null) {
         //   subMenu.prepend(backBtn);
@@ -119,14 +126,12 @@ function initNavBar() {
       //     levelUp(subMenu);
       //   });
 
-
       var levelUp = function levelUp(subMenu) {
         // menuInner.classList.remove("hidden");
         menuPositionX += 100;
         menuInner.style.transform = "translateX(".concat(menuPositionX, "%)");
         subMenu.classList.remove("current");
       }; // }
-
 
       var menuToggle = document.querySelector(".menu-toggle");
       menuToggle.addEventListener("click", function () {
@@ -157,7 +162,14 @@ function initNavBar() {
           });
         };
 
-        for (var _iterator2 = menuInner.querySelectorAll(".menu-item__angle")[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        for (
+          var _iterator2 = menuInner
+              .querySelectorAll(".menu-item__angle")
+              [Symbol.iterator](),
+            _step2;
+          !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done);
+          _iteratorNormalCompletion2 = true
+        ) {
           _loop();
         }
       } catch (err) {
