@@ -36,6 +36,7 @@
 
     <link rel="stylesheet" href="css/plugins.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/menu.css">
     <!-- <meta name="csrf-param" content="_csrf-frontend">
       <meta name="csrf-token" content="pzIgikMaZnXgOrwNuyGf6y0ju3D0fYdGnzg7qrtfMrvsdk--C2lWM6dvymOKStuIQHWIQ78p9yLvVg2e4wcf8g=="> -->
     <meta name="keywords" content="голосования, конкурсы, опросы" />
@@ -48,11 +49,11 @@
         margin-right: 17px;
       }
     </style>
-    <link
+<!--     <link
       rel="stylesheet"
       href="https://code.jivo.ru/css/54feddb/widget.css"
       class="jv-css"
-    />
+    /> -->
   </head>
   <body>
     <section class="page_head">
@@ -129,28 +130,60 @@
           </div>
         </div>
 
+
+        <div class="menu-toggle-wrap">
+          <div class="menu-toggle">
+            <div class="menu-toggle__item"> </div>
+            <div class="menu-toggle__item"> </div>
+            <div class="menu-toggle__item"> </div>
+          </div>
+        </div>
+
+
         <div class="container">
           <div class="logo_block">
             <a href="/"><img src="img/logo.png" alt="Calls-Online.ru" /></a>
             <h1>Качественная накрутка голосов</h1>
           </div>
-          <div id="menu-center" class="main_mnu">
-            <button type="button" class="collapsed navbar-toggle">
-              <span class="sr-only">Меню</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <ul>
-              <li class="active"><a href="/">Главная</a></li>
-              <li><a href="/prices">Цены</a></li>
-              <li><a href="/warranty">Гарантии</a></li>
-              <li><a href="/reviews">Отзывы</a></li>
-              <li><a href="/contacts">Контакты</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="/blog">Блог</a></li>
-            </ul>
+          <div id="menu-center" class="main_mnu top-nav">
+
+            <div class="top-nav__container">
+              <ul class="menu">
+                <li class="menu-item menu-item-has-children active">
+                  <a href="/">Услуги</a>
+              
+                  <ul class="sub-menu">
+                    <li class="menu-item menu-item-has-children">
+                      <a href="#">Тип голосов </a>
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="#">Живые</a></li>
+                        <li class="menu-item"><a href="#">Боты</a></li>
+                      </ul>
+                    </li>
+              
+                    <li class="menu-item menu-item-has-children"><a href="#">Вид глосования</a>
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="#">Простое (1-2 клика)</a></li>
+                        <li class="menu-item"><a href="#">С капчей, re-captcha</a></li>
+                        <li class="menu-item"><a href="#">С регистрацией на сайте</a></li>
+                        <li class="menu-item"><a href="#">С авторизацией через соц. сети</a></li>
+                        <li class="menu-item"><a href="#">С подтверждением электронной почты</a></li>
+                        <li class="menu-item"><a href="#">С подтверждением телефона</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+              
+                </li>
+                <li class="menu-item"><a href="/prices">Цены</a></li>
+                <li class="menu-item"><a href="/warranty">Гарантии</a></li>
+                <li class="menu-item"><a href="/reviews">Отзывы</a></li>
+                <li class="menu-item"><a href="/contacts">Контакты</a></li>
+                <li class="menu-item"><a href="/faq">FAQ</a></li>
+                <li class="menu-item"><a href="/blog">Блог</a></li>
+              </ul>
+            </div>
           </div>
+          <div class="top-nav-overl"></div>
         </div>
       </div>
     </section>
@@ -1325,6 +1358,8 @@
     ></script> -->
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+
 
     <!-- Yandex.Metrika counter -->
     <!-- <script type="text/javascript">
