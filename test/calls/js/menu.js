@@ -7,6 +7,30 @@ initNavBar();
 
 // window.onresize = initNavBar;
 
+// ============================================================================
+// ОБРАБОТКА ПОЛОЖЕНИЯ САБМЕНЮ ТРЕТЬЕГО УРОВНЯ, ВЫХОДЯЩЕГО ЗА ГРНИЦЫ ОКНА
+// ОНО ЗДЕСЬ НЕ ТРЕБУЕТСЯ
+
+// const windowWidth = document.documentElement.clientWidth;
+// const subMenus = document.querySelectorAll('.sub-menu__lvl3');
+
+// alignSubMenu();
+
+// function alignSubMenu() {
+//  for(let i = 0; i < subMenus.length; i++) {
+    
+//    let coords = subMenus[i].getBoundingClientRect();
+   // let subMenuRight = coords.right;
+   // let subMenusOffsetRight = windowWidth - subMenuRight;
+
+   // subMenusOffsetRight < 0 ? subMenus[i].style.left = '-100%' : subMenus[i].style.left = '';
+//  }
+// }
+// --------------------
+// https://learn.javascript.ru/metrics-window
+// https://learn.javascript.ru/coordinates#document-coordinates
+// ============================================================================
+
 function initNavBar() {
   windowWidth = document.documentElement.clientWidth;
   const menu = document.querySelector(".top-nav");
@@ -27,6 +51,8 @@ function initNavBar() {
 
         subMenu.setAttribute("data-level", menuLevel);
 
+
+
         if (parentMenuItem.querySelector(".item__angle") === null) {
           let itemAngle = document.createElement("div");
           itemAngle.className = "menu-item__angle item__angle";
@@ -42,6 +68,28 @@ function initNavBar() {
 
           subMenu.prepend(backBtn);
         }
+
+
+        function correctSubMenuPosition (subMenu){
+          let coords = subMenu.getBoundingClientRect();
+          let subMenuRight = coords.right;
+          let subMenusOffsetRight = windowWidth - subMenuRight;
+
+          if(subMenusOffsetRight < 0) {
+            subMenu.style.left = '0px';
+            subMenu.style.transform = 'translateX(-100%)';
+          }
+
+          console.log('subMenu.style.left: ', subMenu.style.left);
+        }
+        if (windowWidth > navBarBreakPoint){
+          correctSubMenuPosition (subMenu);
+        }
+        
+
+
+
+
         setMenuControls(subMenu);
       }
     } else {
