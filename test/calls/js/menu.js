@@ -105,7 +105,6 @@ function initNavBar(menu) {
     function levelDown(subMenu) {
       subMenu.classList.add("current");
       menuPositionX -= 100;
-      // console.log(menuPositionX);
       menuInner.style.transform = `translateX(${menuPositionX}%)`;
     }
 
