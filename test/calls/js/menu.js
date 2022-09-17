@@ -2,42 +2,24 @@
 
 // ОБРАБОТКА МОБИЛЬНОГО МЕНЮ
 let windowWidth;
+const menuToggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".top-nav");
+const menuOverl = document.querySelector(".top-nav-overl");
+
 const navBarBreakPoint = 768;
-initNavBar();
 
-// window.onresize = initNavBar;
+initNavBar(menu);
+navBarHandle(menuToggle, menu, menuOverl);
 
-// ============================================================================
-// ОБРАБОТКА ПОЛОЖЕНИЯ САБМЕНЮ ТРЕТЬЕГО УРОВНЯ, ВЫХОДЯЩЕГО ЗА ГРНИЦЫ ОКНА
-// ОНО ЗДЕСЬ НЕ ТРЕБУЕТСЯ
+window.onresize = function(){
 
-// const windowWidth = document.documentElement.clientWidth;
-// const subMenus = document.querySelectorAll('.sub-menu__lvl3');
+  initNavBar(menu);
+};
 
-// alignSubMenu();
-
-// function alignSubMenu() {
-//  for(let i = 0; i < subMenus.length; i++) {
-    
-//    let coords = subMenus[i].getBoundingClientRect();
-   // let subMenuRight = coords.right;
-   // let subMenusOffsetRight = windowWidth - subMenuRight;
-
-   // subMenusOffsetRight < 0 ? subMenus[i].style.left = '-100%' : subMenus[i].style.left = '';
-//  }
-// }
-// --------------------
-// https://learn.javascript.ru/metrics-window
-// https://learn.javascript.ru/coordinates#document-coordinates
-// ============================================================================
-
-function initNavBar() {
+function initNavBar(menu) {
   windowWidth = document.documentElement.clientWidth;
-  const menu = document.querySelector(".top-nav");
-  const menuOverl = document.querySelector(".top-nav-overl");
-  const body = document.body;
 
-  let menuInner = document.querySelector(".menu");
+  let menuInner = menu.querySelector(".menu");
   
   let menuLevel = 1;
   function setMenuControls(menu, menuLevel) {
@@ -54,12 +36,6 @@ function initNavBar() {
         let subMenu = parentMenuItem.querySelector(".sub-menu");
 
         subMenu.setAttribute("data-level", menuLevel);
-
-
-
-
-
-
 
 
         if (parentMenuItem.querySelector(".item__angle") === null) {
@@ -111,23 +87,7 @@ function initNavBar() {
   setMenuControls(menuInner, menuLevel);
 
   if (windowWidth <= navBarBreakPoint) {
-    const menuToggle = document.querySelector(".menu-toggle");
 
-    menuToggle.addEventListener("click", function () {
-      menuToggle.classList.toggle("open");
-      menu.classList.toggle("open");
-      body.classList.toggle("scroll-hidden");
-      menuOverl.classList.toggle("open");
-    });
-
-    menuOverl.addEventListener("click", menuClose);
-
-    function menuClose() {
-      menuToggle.classList.remove("open");
-      menu.classList.remove("open");
-      body.classList.remove("scroll-hidden");
-      menuOverl.classList.remove("open");
-    }
 
     let menuPositionX = 0;
     for (let itemAngle of menuInner.querySelectorAll(".menu-item__angle")) {
@@ -154,5 +114,30 @@ function initNavBar() {
       menuInner.style.transform = `translateX(${menuPositionX}%)`;
       subMenu.classList.remove("current");
     }
+  }
+}
+
+
+
+
+
+
+function navBarHandle(menuToggle, menu, menuOverl) {
+
+
+  menuToggle.addEventListener("click", function () {
+    menuToggle.classList.toggle("open");
+    menu.classList.toggle("open");
+    document.body.classList.toggle("scroll-hidden");
+    menuOverl.classList.toggle("open");
+  });
+
+  menuOverl.addEventListener("click", menuClose);
+
+  function menuClose() {
+    menuToggle.classList.remove("open");
+    menu.classList.remove("open");
+    document.body.classList.remove("scroll-hidden");
+    menuOverl.classList.remove("open");
   }
 }
