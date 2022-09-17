@@ -38,18 +38,27 @@ function initNavBar() {
   const body = document.body;
 
   let menuInner = document.querySelector(".menu");
+  
   let menuLevel = 1;
-  function setMenuControls(menu) {
+  function setMenuControls(menu, menuLevel) {
     let parentMenuItems = Array.from(menu.childNodes).filter(
       (item) =>
         item.nodeType == 1 && item.classList.contains("menu-item-has-children")
     );
+
     if (parentMenuItems.length > 0) {
-      menuLevel++;
+      menuLevel++
+      // - - - - - - - -
       for (let parentMenuItem of parentMenuItems) {
+        
         let subMenu = parentMenuItem.querySelector(".sub-menu");
 
         subMenu.setAttribute("data-level", menuLevel);
+
+
+
+
+
 
 
 
@@ -76,28 +85,30 @@ function initNavBar() {
           let subMenusOffsetRight = windowWidth - subMenuRight;
 
           if(subMenusOffsetRight < 0) {
-            subMenu.style.left = '0px';
-            subMenu.style.transform = 'translateX(-100%)';
+            if(menuLevel == 2) {
+              subMenu.style.left = 'auto';
+              subMenu.style.right = '0';
+            } else{
+              subMenu.style.left = 'auto';
+              subMenu.style.right = '100%';
+            }
+            
           }
-
-          console.log('subMenu.style.left: ', subMenu.style.left);
         }
+
+        // Применяется только на десктопе
         if (windowWidth > navBarBreakPoint){
           correctSubMenuPosition (subMenu);
         }
-        
 
-
-
-
-        setMenuControls(subMenu);
+        if (subMenu.querySelector(".menu-item-has-children")){
+          setMenuControls(subMenu, menuLevel)
+        }
       }
-    } else {
-      return;
     }
   }
 
-  setMenuControls(menuInner);
+  setMenuControls(menuInner, menuLevel);
 
   if (windowWidth <= navBarBreakPoint) {
     const menuToggle = document.querySelector(".menu-toggle");
@@ -134,7 +145,7 @@ function initNavBar() {
     function levelDown(subMenu) {
       subMenu.classList.add("current");
       menuPositionX -= 100;
-      console.log(menuPositionX);
+      // console.log(menuPositionX);
       menuInner.style.transform = `translateX(${menuPositionX}%)`;
     }
 

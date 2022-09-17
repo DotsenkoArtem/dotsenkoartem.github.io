@@ -10,7 +10,7 @@
   max-width: 15rem;
 }
 .top-nav .menu > .menu-item > .sub-menu {
-  transform: translateY(100%);
+  /*transform: translateY(100%);*/
 }
 .top-nav .menu-item {
   display: flex;
@@ -47,9 +47,9 @@
   min-width: 100%;
   width: fit-content;
   position: absolute;
-  right: 0;
+  /*right: 0;*/
   left: 0;
-  bottom: 0;
+  top: 100%;
   background-color: #f6f6f6;
   border-radius: 4px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
@@ -81,8 +81,8 @@
 .top-nav .sub-menu .menu-item-has-children > .sub-menu {
   top: -1px;
   left: 100%;
-  right: auto;
-  bottom: auto;
+/*  right: auto;
+  bottom: auto;*/
 }
 
 .menu-item__angle {
