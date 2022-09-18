@@ -35,6 +35,7 @@ function initNavBar(menu) {
       menuLevel++;
 
       for (let parentMenuItem of parentMenuItems) {
+        let menuItemLbel = parentMenuItem.querySelector(".menu-item-lbel");
         let subMenu = parentMenuItem.querySelector(".sub-menu");
         
         subMenu.setAttribute("data-level", menuLevel);
@@ -43,7 +44,8 @@ function initNavBar(menu) {
           let itemAngle = document.createElement("div");
           itemAngle.className = "menu-item__angle item__angle";
 
-          subMenu.after(itemAngle);
+          // subMenu.after(itemAngle);
+          menuItemLbel.append(itemAngle);
         }
 
         if (subMenu.querySelector(".back-btn") === null) {
@@ -114,9 +116,13 @@ function initNavBar(menu) {
 
   function changeMenuLevel() {
 
-    for (let itemAngle of menuInner.querySelectorAll(".menu-item__angle")) {
-      let subMenu = itemAngle.previousElementSibling;
+    // for (let itemAngle of menuInner.querySelectorAll(".menu-item__angle")) {
+    for (let menuItemHasChildren of menuInner.querySelectorAll(".menu-item-has-children")) {
+
+      let subMenu = menuItemHasChildren.querySelector('.sub-menu');
       let backBtn = subMenu.querySelector(".back-btn");
+      let itemAngle = menuItemHasChildren.querySelector(".menu-item-lbel > .menu-item__angle");
+
 
       let levelDown = function () {
         subMenu.classList.add("current");
@@ -135,7 +141,7 @@ function initNavBar(menu) {
         backBtn.onclick = levelUp;
         console.log(menuPositionX);
       }
-
+// ЗАКОНЧИЛ ЗДЕСЬ
       if (windowWidth >= navBarBreakPoint) {
         itemAngle.onclick = '';
         // Этой кнопки нет на обильном
