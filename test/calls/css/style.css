@@ -2564,6 +2564,7 @@ p.primer__text {
   justify-content: center;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
 }
 
@@ -4562,6 +4563,25 @@ ol.s li p {
 
 /* Small Devices, Tablets*/
 @media only screen and (max-width: 768px) {
+  .top_head{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  .logo-wraper{
+    padding-top: 10px;
+    padding-bottom: 18px;
+    background-color: #f8f8f8;
+  }
+
+  .head_bag{
+    background: none;
+  }
 
   .big_ac p:before,
   .big_ac p:after {
@@ -4783,9 +4803,9 @@ ol.s li p {
     margin: 0 auto;
   }
 
-  .page_head {
+/*  .page_head {
     padding-bottom: 45px;
-  }
+  }*/
 
   .block-instruction__item {
     width: 49%;
