@@ -23,6 +23,7 @@ function initNavBar(menu) {
   let menuInner = menu.querySelector(".menu");
   let menuLevel = 1;
 
+
   function setMenuControls(menu, menuLevel) {
 
     let parentMenuItems = Array.from(menu.childNodes).filter(
@@ -32,7 +33,7 @@ function initNavBar(menu) {
 
     if (parentMenuItems.length > 0) {
       menuLevel++;
-      // - - - - - - - -
+
       for (let parentMenuItem of parentMenuItems) {
         let subMenu = parentMenuItem.querySelector(".sub-menu");
         
@@ -156,7 +157,31 @@ function initNavBar(menu) {
 
 // Открытие-закрытие мобильного навбара
 function navBarHandle(menuToggle, menu, menuOverl) {
+
+  const items = menu.querySelectorAll('.menu > .menu-item');
+  
+  let isDelay;
+
+  // menuItemsAddDelay(menu);
+  function menuItemsAddDelay(menu) {
+    let delay = 0.2;
+    for(let item of items) {
+      delay += 0.06;
+      item.style.transitionDelay = `${delay}s`;
+    }
+    isDelay = true;
+  }
+
+  function menuItemsRemoveDelay(menu) { 
+    for(let item of items) {
+      item.style.transitionDelay = ``;
+    }
+    isDelay = false;
+  }
+
+
   menuToggle.addEventListener("click", function () {
+    isDelay ? menuItemsRemoveDelay(menu) : menuItemsAddDelay(menu);
     menuToggle.classList.toggle("open");
     menu.classList.toggle("open");
     document.body.classList.toggle("scroll-hidden");
@@ -166,6 +191,7 @@ function navBarHandle(menuToggle, menu, menuOverl) {
   menuOverl.addEventListener("click", menuClose);
 
   function menuClose() {
+    menuItemsRemoveDelay(menu);
     menuToggle.classList.remove("open");
     menu.classList.remove("open");
     document.body.classList.remove("scroll-hidden");
