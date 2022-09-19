@@ -36,7 +36,7 @@
 
     <link rel="stylesheet" href="css/plugins.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/menu.css" />
     <!-- <meta name="csrf-param" content="_csrf-frontend">
       <meta name="csrf-token" content="pzIgikMaZnXgOrwNuyGf6y0ju3D0fYdGnzg7qrtfMrvsdk--C2lWM6dvymOKStuIQHWIQ78p9yLvVg2e4wcf8g=="> -->
     <meta name="keywords" content="голосования, конкурсы, опросы" />
@@ -49,7 +49,7 @@
         margin-right: 17px;
       }
     </style>
-<!--     <link
+    <!--     <link
       rel="stylesheet"
       href="https://code.jivo.ru/css/54feddb/widget.css"
       class="jv-css"
@@ -130,15 +130,13 @@
           </div>
         </div>
 
-
         <div class="menu-toggle-wrap">
           <div class="menu-toggle">
-            <div class="menu-toggle__item"> </div>
-            <div class="menu-toggle__item"> </div>
-            <div class="menu-toggle__item"> </div>
+            <div class="menu-toggle__item"></div>
+            <div class="menu-toggle__item"></div>
+            <div class="menu-toggle__item"></div>
           </div>
         </div>
-
 
         <div class="container logo-wraper">
           <div class="logo_block">
@@ -146,41 +144,142 @@
             <h1>Качественная накрутка голосов</h1>
           </div>
           <div id="menu-center" class="main_mnu top-nav">
-
             <div class="logo_block logo_block_mobile">
               <a href="/"><img src="img/logo.png" alt="Calls-Online.ru" /></a>
             </div>
 
             <div class="top-nav__container">
               <ul class="menu">
+                <li class="menu-item">
+                  <a href="/" class="menu-item-lbel">Главная</a>
+                </li>
+
+                <!-- Блок *** -->
                 <li class="menu-item menu-item-has-children active">
                   <span class="menu-item-lbel">Услуги</span>
-                  
+
                   <!-- 2 уровень -->
                   <ul class="sub-menu">
-                    <li class="menu-item menu-item-has-children">
-                      <span class="menu-item-lbel">Тип голосов </span>
-                      <!-- 3 уровень -->
-                      <ul class="sub-menu">
-                        <li class="menu-item"><a href="#" class="menu-item-lbel">Живые</a></li>
-                        <li class="menu-item"><a href="#" class="menu-item-lbel">Боты</a></li>
-                      </ul>
-                    </li>
-              
-                    <li class="menu-item menu-item-has-children"><span class="menu-item-lbel">Вид глосования</span>
-                      <!-- 3 уровень -->
-                      <ul class="sub-menu">
-                        <li class="menu-item"><a href="#" class="menu-item-lbel">Простое (1-2 клика)</a></li>
-                        <li class="menu-item"><a href="#" class="menu-item-lbel">С капчей, re-captcha</a></li>
-                        <li class="menu-item"><a href="#" class="menu-item-lbel">С регистрацией на сайте</a></li>
-                        <li class="menu-item"><a href="#" class="menu-item-lbel">С авторизацией через соц. сети</a></li>
-                        <li class="menu-item"><a href="#" class="menu-item-lbel">С подтверждением электронной почты</a></li>
-                        <li class="menu-item"><a href="#" class="menu-item-lbel">С подтверждением телефона</a></li>
-                      </ul>
-                    </li>
+                    <div class="enable-scroll-submenu">
+                      <li class="menu-item menu-item-has-children">
+                        <span class="menu-item-lbel">Тип голосов </span>
+                        <!-- 3 уровень -->
+                        <ul class="sub-menu">
+                          <div class="enable-scroll-submenu">
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Живые</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Боты</a>
+                            </li>
+                          </div>
+                        </ul>
+                      </li>
+                      <li class="menu-item menu-item-has-children">
+                        <span class="menu-item-lbel">Вид голосования</span>
+                        <!-- 3 уровень -->
+                        <ul class="sub-menu">
+                          <div class="enable-scroll-submenu">
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >Простое (1-2 клика)</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >С капчей, re-captcha</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >С регистрацией на сайте</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >С авторизацией через соц.сети</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >С подтверждением электронной почты</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >С подтверждением телефона</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >Смс голосования</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >С разных IP адресов</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >С подтверждением через гос.услуги</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Другое</a>
+                            </li>
+                          </div>
+                        </ul>
+                      </li>
+                      <li class="menu-item menu-item-has-children">
+                        <span class="menu-item-lbel">Площадка голосования</span>
+                        <!-- 4 уровень -->
+                        <ul class="sub-menu">
+                          <div class="enable-scroll-submenu">
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Вконтакте</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Телеграм</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Инстаграм</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >Одноклассники</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Change.org</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel"
+                                >Google формы</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Viber</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Twitter</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Twitch</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Добродел</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="#" class="menu-item-lbel">Другое</a>
+                            </li>
+                          </div>
+                        </ul>
+                      </li>
+                    </div>
                   </ul>
-              
                 </li>
+
                 <li class="menu-item">
                   <a href="/prices" class="menu-item-lbel">Цены</a>
                 </li>
@@ -196,12 +295,16 @@
                 <li class="menu-item">
                   <a href="/faq" class="menu-item-lbel">FAQ</a>
                 </li>
-                <li class="menu-item menu-item-has-children">
+                <li class="menu-item">
                   <a href="/blog" class="menu-item-lbel">Блог</a>
                 </li>
+                <!-- Конец Блока *** -->
+
+                <!-- Взамен этого кода вставлен блок *** -->
+                <!-- <?php foreach( \common\models\Menu::get() as $item ){ ?>
+                  <li<?=$item->setActive()?>><a href="<?=$item->link?>"><?=$item->name?></a></li>
+                <?php } ?> -->
               </ul>
-
-
 
               <div class="top_contact top_contact_mobile">
                 <div class="icq top-contact_mobile__item">
@@ -270,8 +373,6 @@
                   >
                 </div>
               </div>
-
-
             </div>
           </div>
           <div class="top-nav-overl"></div>
@@ -1449,9 +1550,8 @@
     ></script> -->
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/menu.js"></script>
-    <!-- <script src="js/lklklklk.js"></script> -->
-
+    <!-- <script src="js/menu.js"></script> -->
+    <script src="js/test-menu.js"></script>
 
     <!-- Yandex.Metrika counter -->
     <!-- <script type="text/javascript">
@@ -1493,7 +1593,7 @@
     <!-- /Yandex.Metrika counter -->
 
     <!-- BEGIN видео-ютуб-->
-<!--     <script type="text/javascript">
+    <!--     <script type="text/javascript">
       function lazyVideo() {
         window.setTimeout(function () {
           let src = $("iframe[data-src]");
