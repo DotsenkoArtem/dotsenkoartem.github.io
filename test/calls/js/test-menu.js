@@ -1,5 +1,26 @@
 // НОРМАЛЬНАЯ РАБОЧАЯ ВЕРСИЯ МЕНЮ - не корректно отрабатывает при ресайзе
 // взять код для ресайза из menu.js и пофиксить
+
+// ++++++++++++++++++++++++++
+function setActiveMenuItem() {
+  const menuItems = document.querySelectorAll(".top-nav .menu-item");
+  const mark = document.querySelector(".current-page-mark");
+
+  for (let menuItem of menuItems) {
+    console.log(menuItem);
+    if (
+      menuItem.querySelector("a.menu-item-lbel").innerText === mark.dataset.page
+    ) {
+      menuItem.classList.add("active");
+
+      return;
+    }
+  }
+}
+
+setActiveMenuItem();
+// ++++++++++++++++++++++++++
+
 /*TOP - NAV SETTINGS*/
 let windowWidth;
 let menuPositionX = 0;
