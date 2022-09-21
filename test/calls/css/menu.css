@@ -747,13 +747,14 @@
   }
 }
 
+@media (max-width: 768px) {
+  .sub-menu {
+    height: 100%;
+  }
 
-.sub-menu {
-  height: 100%;
-}
-
-.enable-scroll-submenu {
-  max-height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  .enable-scroll-submenu {
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }

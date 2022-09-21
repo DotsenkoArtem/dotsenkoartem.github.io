@@ -1,5 +1,25 @@
-"use strict";
+// НОРМАЛЬНАЯ РАБОЧАЯ ВЕРСИЯ МЕНЮ - не корректно отрабатывает при ресайзе
+// взять код для ресайза из menu.js и пофиксить
 
+// ++++++++++++++++++++++++++
+function setActiveMenuItem() {
+  const menuItems = document.querySelectorAll(".top-nav .menu-item");
+  const mark = document.querySelector(".current-page-mark");
+
+  for (let menuItem of menuItems) {
+    console.log(menuItem);
+    if (
+      menuItem.querySelector("a.menu-item-lbel").innerText === mark.dataset.page
+    ) {
+      menuItem.classList.add("active");
+
+      return;
+    }
+  }
+}
+
+setActiveMenuItem();
+// ++++++++++++++++++++++++++
 
 /*TOP - NAV SETTINGS*/
 let windowWidth;
@@ -10,15 +30,14 @@ const menu = document.querySelector(".top-nav");
 const menuOverl = document.querySelector(".top-nav-overl");
 const navBarBreakPoint = 768;
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener("DOMContentLoaded", () => {
   initNavBar(menu);
   navBarHandle(menuToggle, menu, menuOverl);
-})
+});
 
 window.onresize = function () {
   initNavBar(menu);
 };
-
 
 function initNavBar(menu) {
   windowWidth = document.documentElement.clientWidth;
@@ -26,31 +45,41 @@ function initNavBar(menu) {
   let menuInner = menu.querySelector(".menu");
   let menuLevel = 1;
 
-
-  function setMenuControls(menu, menuLevel) {
-
-    let parentMenuItems = Array.from(menu.childNodes).filter(
-      (item) =>
-        item.nodeType == 1 && item.classList.contains("menu-item-has-children")
-    );
+  function setMenuControls(menu, enableScrollSubmenu, menuLevel) {
+    let parentMenuItems;
+    if (enableScrollSubmenu === false) {
+      parentMenuItems = Array.from(menu.childNodes).filter(
+        (item) =>
+          item.nodeType == 1 &&
+          item.classList.contains("menu-item-has-children")
+      );
+      // console.log("parentMenuItems: ", parentMenuItems);
+    } else if (enableScrollSubmenu === true) {
+      parentMenuItems = Array.from(
+        menu.querySelector(".enable-scroll-submenu").childNodes
+      ).filter(
+        (item) =>
+          item.nodeType == 1 &&
+          item.classList.contains("menu-item-has-children")
+      );
+      // console.log("ARRAY-childNodes:", parentMenuItems);
+      // return;
+    }
 
     if (parentMenuItems.length > 0) {
       menuLevel++;
-
+      // console.log(parentMenuItems);
       for (let parentMenuItem of parentMenuItems) {
         let menuItemLbel = parentMenuItem.querySelector(".menu-item-lbel");
+        // console.log(menuItemLbel);
         let subMenu = parentMenuItem.querySelector(".sub-menu");
-
-        // console.log('parentMenuItem: ', parentMenuItem);
-        
         subMenu.setAttribute("data-level", menuLevel);
 
         if (parentMenuItem.querySelector(".item__angle") === null) {
           let itemAngle = document.createElement("div");
           itemAngle.className = "menu-item__angle item__angle";
-
-          // subMenu.after(itemAngle);
           menuItemLbel.append(itemAngle);
+          // console.log(menuItemLbel);
         }
 
         if (subMenu.querySelector(".back-btn") === null) {
@@ -58,76 +87,50 @@ function initNavBar(menu) {
           backBtn.className = "menu-item back-btn";
           backBtn.innerHTML =
             '<div class="back-btn__arrow"></div><span>Назад</span>';
-
-          subMenu.prepend(backBtn);
+          subMenu.querySelector(".enable-scroll-submenu").prepend(backBtn);
         }
 
         function correctSubMenuPosition(subMenu) {
-
           let coords = subMenu.getBoundingClientRect();
           let subMenuRight = coords.right;
           let subMenusOffsetRight = windowWidth - subMenuRight;
-
           if (windowWidth >= navBarBreakPoint) {
-
-
             if (subMenusOffsetRight < 0) {
               if (menuLevel == 2) {
                 subMenu.style.left = "auto";
                 subMenu.style.right = "0";
-              } else if(menuLevel == 3) {
+              } else if (menuLevel == 3) {
                 subMenu.style.left = "auto";
                 subMenu.style.right = "100%";
               }
             }
-
-          } else if(windowWidth < navBarBreakPoint) {
-            // А МОЖЕТ И ТАК ПОЙДЕТ - ПРОСТО СБРОС
-            subMenu.style = '';
-
-
-
-
-            // if (menuLevel == 2) {
-            //   subMenu.style.left = "0";
-            //   subMenu.style.right = "auto";
-            // } else if (menuLevel == 3) {
-            //   subMenu.style.left = "100%";
-            //   subMenu.style.right = "auto";
-            // }
+          } else if (windowWidth < navBarBreakPoint) {
+            subMenu.style = "";
           }
-
-
-
-
-        } //Конец функции
-
-        // Применяется только на десктопе
-        // if (windowWidth >= navBarBreakPoint) {
-        correctSubMenuPosition(subMenu);
-        // }
-
-        if (subMenu.querySelector(".menu-item-has-children")) {
-          setMenuControls(subMenu, menuLevel);
         }
 
+        correctSubMenuPosition(subMenu);
+
+        if (subMenu.querySelector(".menu-item-has-children")) {
+          setMenuControls(subMenu, true, menuLevel);
+        }
       }
     }
   }
 
-  setMenuControls(menuInner, menuLevel);
+  setMenuControls(menuInner, false, menuLevel);
 
   changeMenuLevel();
 
   function changeMenuLevel() {
-
-    // for (let itemAngle of menuInner.querySelectorAll(".menu-item__angle")) {
-    for (let menuItemHasChildren of menuInner.querySelectorAll(".menu-item-has-children")) {
-
-      let subMenu = menuItemHasChildren.querySelector('.sub-menu');
+    for (let menuItemHasChildren of menuInner.querySelectorAll(
+      ".menu-item-has-children"
+    )) {
+      let subMenu = menuItemHasChildren.querySelector(".sub-menu");
       let backBtn = subMenu.querySelector(".back-btn");
-      let itemAngle = menuItemHasChildren.querySelector(".menu-item-lbel > .menu-item__angle");
-
+      let itemAngle = menuItemHasChildren.querySelector(
+        ".menu-item-lbel > .menu-item__angle"
+      );
 
       let levelDown = function () {
         subMenu.classList.add("current");
@@ -141,55 +144,40 @@ function initNavBar(menu) {
       };
 
       if (windowWidth < navBarBreakPoint) {
-        // Не использую adEventListener, так как их при ресайзе очень много и хрен всех удалишь, а onclick - запросто!
         itemAngle.onclick = levelDown;
         backBtn.onclick = levelUp;
-        // console.log(menuPositionX);
       }
-// ЗАКОНЧИЛ ЗДЕСЬ
       if (windowWidth >= navBarBreakPoint) {
-        itemAngle.onclick = '';
-        // Этой кнопки нет на обильном
-
-        backBtn.onclick = '';
-
-        // С ЭТОЙ ШТУКОЙ НАДО ЧТО_ТО ДЕЛАТЬ
+        itemAngle.onclick = "";
+        backBtn.onclick = "";
         menuPositionX = 0;
-        // Изменил menuInner.style.transform = `translateX(${menuPositionX}%)`; на style = '' и меню не стало пропадать за облаками
         menuInner.style.transform = ``;
-        // subMenu.classList.remove("current");
-        // ==============================================
       }
     }
   }
-
-
 }
 
 // Открытие-закрытие мобильного навбара
 function navBarHandle(menuToggle, menu, menuOverl) {
+  const items = menu.querySelectorAll(".menu > .menu-item");
 
-  const items = menu.querySelectorAll('.menu > .menu-item');
-  
   let isDelay;
 
-  // menuItemsAddDelay(menu);
   function menuItemsAddDelay(menu) {
     let delay = 0.2;
-    for(let item of items) {
+    for (let item of items) {
       delay += 0.06;
       item.style.transitionDelay = `${delay}s`;
     }
     isDelay = true;
   }
 
-  function menuItemsRemoveDelay(menu) { 
-    for(let item of items) {
+  function menuItemsRemoveDelay(menu) {
+    for (let item of items) {
       item.style.transitionDelay = ``;
     }
     isDelay = false;
   }
-
 
   menuToggle.addEventListener("click", function () {
     isDelay ? menuItemsRemoveDelay(menu) : menuItemsAddDelay(menu);
