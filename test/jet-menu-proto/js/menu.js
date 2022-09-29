@@ -43,13 +43,13 @@ function addMenuItem(){
   let socSubmenu = createSocialMob();
 
   const topMenu = document.querySelector('.top-menu');
-  let lastMenuItem = document.createElement('li');
-  lastMenuItem.innerHTML = '<span class="top-menu-item-lbel">Социальные сети<div class="top-menu-item__angle item__angle"></div></span>';
+  let firstMenuItem = document.createElement('li');
+  firstMenuItem.innerHTML = '<span class="top-menu-item-lbel">Социальные сети<div class="top-menu-item__angle item__angle"></div></span>';
 
-  lastMenuItem.innerHTML += socSubmenu;
-  lastMenuItem.className = 'top-menu-item top-menu-item-has-children d-mobile';
+  firstMenuItem.innerHTML += socSubmenu;
+  firstMenuItem.className = 'top-menu-item top-menu-item-has-children d-mobile';
 
-  topMenu.append(lastMenuItem);
+  topMenu.prepend(firstMenuItem);
   // console.log(socSubmenu);
 }
 
