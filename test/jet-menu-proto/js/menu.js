@@ -31,9 +31,11 @@ function createSocialMob(){
   backBtn.innerHTML = '<div class="back-btn__arrow"></div><span>Назад</span>';
 
   enableScrollSubmenu.innerHTML = social.innerHTML;
-  enableScrollSubmenu.prepend(backBtn);
+  // enableScrollSubmenu.prepend(backBtn);
 
   socialMob.prepend(enableScrollSubmenu);
+  // socialMob.prepend(backBtn);
+  menu.prepend(backBtn);
   return socialMob.outerHTML;
 }
 
@@ -105,27 +107,33 @@ function navBarHandle(menuTrigger, menu, menuOverl) {
   let menuInner = menu.querySelector(".top-menu");
   function changeMenuLevel() {
     windowWidth = document.documentElement.clientWidth;
+    let backBtn = menu.querySelector(".back-btn");
+    console.log('backBtn: ', backBtn);
+
     for (let menuItemHasChildren of menuInner.querySelectorAll(
       ".top-menu-item-has-children"
     )) {
       
       let subMenu = menuItemHasChildren.querySelector(".sub-menu");
-      let backBtn = subMenu.querySelector(".back-btn");
+      // let backBtn = subMenu.querySelector(".back-btn");
       let itemAngle = menuItemHasChildren.querySelector(
         ".top-menu-item-lbel > .top-menu-item__angle"
       );
 
-      console.log('itemAngle: ',itemAngle);
+      // console.log('itemAngle: ',itemAngle);
 
       let levelDown = function () {
         subMenu.classList.add("current");
         menuPositionX -= 100;
         menuInner.style.transform = `translateX(${menuPositionX}%)`;
+        backBtn.classList.add('shown');
+
       };
       let levelUp = function () {
         menuPositionX += 100;
         menuInner.style.transform = `translateX(${menuPositionX}%)`;
         subMenu.classList.remove("current");
+        if(menuPositionX >= 0) {backBtn.classList.remove('shown')}
       };
 
       if (windowWidth < navBarBreakPoint) {
