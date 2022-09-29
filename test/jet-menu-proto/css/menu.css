@@ -525,3 +525,48 @@
     background: rgba(0, 0, 0, 0.5);
   }
 }
+
+@media (max-width: 479.8px) {
+  #header {
+    margin-top: 0;
+  }
+
+  #header>.header-inner {
+    padding: 10px;
+  }
+
+  .text-header-first {
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .text-header-first img {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .shop_basket-inner {
+    width: auto;
+  }
+}
+
+@media (max-width: 439.8px) {
+  .text-header-first {
+    max-width: 60%;
+  }
+
+  .logo_text {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 2.8vw;
+    float: none;
+    text-align: center;
+  }
+}
