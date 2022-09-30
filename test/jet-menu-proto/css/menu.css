@@ -291,7 +291,7 @@
     margin-top: 0;
     overflow: visible;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
