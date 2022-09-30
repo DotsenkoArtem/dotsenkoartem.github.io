@@ -3085,6 +3085,13 @@
     />
     <link rel="stylesheet" href="css/main.min.css" />
     <link rel="stylesheet" href="css/menu.css" />
+
+
+
+    <link rel="stylesheet" href="css/waves.css">
+
+
+
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script src="libs/jquery/jquery.min.js"></script>
     <!-- <script
@@ -5297,18 +5304,22 @@
 
     <!-- ОТКРЫТИЕ-ЗАКРЫТИЕ ССЫЛОК СОЦСЕТЕЙ -->
     <script>
-      $(document).ready(function () {
-        $(".ds_link").click(function () {
-          var id = $(this).attr("id");
-          if (!$(this).hasClass("active")) {
-            $("#" + id + "_ul").slideDown("fast");
-            $(this).addClass("active");
-          } else {
-            $("#" + id + "_ul").slideUp("fast");
-            $(this).removeClass("active");
-          }
-        });
-      });
+      window.addEventListener('load', ()=>{
+        $(document).ready(function () {
+          
+          $(".ds_link").click(function () {
+            var id = $(this).attr("id");
+            if (!$(this).hasClass("active")) {
+              $("#" + id + "_ul").slideDown("fast");
+              $(this).addClass("active");
+            } else {
+              $("#" + id + "_ul").slideUp("fast");
+              $(this).removeClass("active");
+            }
+          });
+        })
+      })
+      
     </script>
 
     <script name="Add_balance_user">
@@ -5486,7 +5497,8 @@
       src="https://static.me-talk.ru/cabinet/build/chat/modern.support.js"
     ></script> -->
     <!-- <div style="position: absolute; left: 0px; top: 0px"></div> -->
-
     <script src="js/menu.js"></script>
+
+    
   </body>
 </html>
