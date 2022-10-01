@@ -4,13 +4,13 @@ let windowWidth;
 let menuPositionX = 0;
 
 const menuTrigger = document.querySelector(".burger-icon-wrapper");
-const menu = document.querySelector(".top-nav");
+const topNav = document.querySelector(".top-nav");
 const menuOverl = document.querySelector(".top-nav-overl");
 const navBarBreakPoint = 992;
 
 document.addEventListener("DOMContentLoaded", () => {
   addMenuItem();
-  navBarHandle(menuTrigger, menu, menuOverl);
+  navBarHandle(menuTrigger, topNav, menuOverl);
   changeMenuLevel();
 });
 
@@ -42,7 +42,7 @@ function createSocialMob(){
   }
 
   socialMob.prepend(enableScrollSubmenu);
-  menu.prepend(backBtn);
+  topNav.prepend(backBtn);
   return socialMob.outerHTML;
 }
 
@@ -73,17 +73,17 @@ function navBarHandle(menuTrigger, menu, menuOverl) {
   topMenuCloseBtn.addEventListener("click", menuClose);
 
   function menuClose() {
-    menu.classList.remove("open");
+    topNav.classList.remove("open");
     document.body.classList.remove("scroll-hidden");
     menuOverl.classList.remove("open");
   }
 }
 
   // Переход по уровням меню
-  let menuInner = menu.querySelector(".top-menu");
+  let menuInner = topNav.querySelector(".top-menu");
   function changeMenuLevel() {
     windowWidth = document.documentElement.clientWidth;
-    let backBtn = menu.querySelector(".back-btn");
+    let backBtn = topNav.querySelector(".back-btn");
 
     for (let menuItemHasChildren of menuInner.querySelectorAll(
       ".top-menu-item-has-children"
