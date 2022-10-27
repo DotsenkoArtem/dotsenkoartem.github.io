@@ -1,0 +1,261 @@
+//
+    footer
+        ================================================== 
+footer.footer#footer
+  .container
+    .footer__grid
+      .footer__item.footer__item_1.footer__logo.logo
+          a(href='#header')
+            .logo_img
+              img(src='img/logo-blue.png', alt='Логотип - toplevel')
+            .logo__caption коммерческий клининг
+      .footer__item.footer__item_2.text_grey
+          | © Клининговая компания
+          br
+          | Top Level, 2009-2022
+      .footer__item.footer__item_3.text_grey
+          | ИНН 6315624973
+          br
+          | ОГРН 1096315002706
+      address.footer__item.footer__item_4.footer__address
+          | 443011, г. Самара,
+          br
+          | 3-я просека, д. 250
+      .footer__item.footer__item_5.footer__timetable
+          | Режим работы:
+          br
+          | пн-пт, с 9 до 18
+      .footer__item.footer__item_6.footer__mail
+          | E-mail:
+          br
+          a(href='mailto:tlevel@tlevel.ru').
+            tlevel@tlevel.ru
+      .footer__item.footer__item_7
+          .footer__phone
+            a(href='tel:+78462060304') +7 (846) 206-03-04
+          .footer__cb-btn.modal-trigger(data-target='callBackModal') Обратный звонок
+      .footer__item.footer__item_8.footer__social
+          a(href='https://vk.com/tlevel', target='_blank')
+            i.vk
+          a(href='#')
+            i.inst
+          a(href='https://www.youtube.com/channel/UCWC5FbNbtQzSCYieFs4twzw', target='_blank')
+            i.yt
+      .footer__item.footer__item_9
+          nav
+            ul.footer-menu
+                li.footer-menu__item
+                    a(href='#audit-anchor') Записаться на аудит
+                li.footer-menu__item
+                    a(href='#serv-anchor') Наши услуги
+                li.footer-menu__item
+                    a(href='#expert-anchor') Эксперты Top Level
+                li.footer-menu__item
+                    a(href='#rev-anchor') Видеоотзывы
+                li.footer-menu__item
+                    a(href='#tour-anchor') Записаться на экскурсию
+                li.footer-menu__item
+                    a(href='https://tlevel.ru/obrabotka-personalnyh-dannyh/', target='_blank') Политика конфиденциальности
+//
+    Modal Callback
+        -------------------------------------------------- 
+.modal#callBackModal
+  .modal__content.modal-callback
+      .modal__header
+          p
+          | Оставьте Ваш номер и мы перезвоним
+          br
+          | Вам в ближайшее время
+          button.modal-close.modal__close
+            span.modal-close__item
+            span.modal-close__item
+      .modal__body
+          form.form#modalCbForm(name='callback', data-action='send-callback.php')
+            .form__group.form__group_control
+              input.form__control#userName3(type='text', name='userName', placeholder='Имя', required)
+            .form__group.form__group_control
+              input.form__control#userPhone3(type='text', name='userPhone', placeholder='Номер телефона', required)
+            input(type='hidden', value='Обратный звонок', name='formTheme')
+            .form__submit-wrap.loader-container
+              button.btn.btn_primary.form__submit(type='submit')
+                span.text_uppercase Перезвоните мне
+      .modal__footer
+        p
+          | Нажимая на кнопку «Оставить заявку»,
+          br
+          | Вы соглашаетесь с 
+          a(href='https://tlevel.ru/obrabotka-personalnyh-dannyh/', target='_blank')
+            span.text_bold Политикой конфиденциальности 
+          | сайта
+  .modal__overlay.modal-close
+//
+  Modal Check
+    -------------------------------------------------- 
+.modal#checkModal
+  .modal__content.modal-check
+    .modal__header
+      p
+        | Оставьте заявку 
+        span.text_bold
+          | на бесплатный
+          br
+          | аудит Вашего объекта
+      button.modal-close.modal__close
+        span.modal-close__item
+        span.modal-close__item
+    .modal__body
+      form.form#modalCheckForm(name='audit', data-action='send-audit.php')
+        .form__group.form__group_control
+          input.form__control#userName4(type='text', name='userName', placeholder='Имя', required)
+        .form__group.form__group_control
+          input.form__control#company4(type='text', name='company', placeholder='Компания', required)
+        .form__group.form__group_control
+          input.form__control#userPhone4(type='text', name='userPhone', placeholder='Номер телефона', required)
+        input(type='hidden', value='Заявка на бесплатный аудит', name='formTheme')
+        .form__submit-wrap.loader-container
+          button.btn.btn_primary.form__submit(type='submit')
+            span.text_uppercase Оставить заявку
+        .modal__footer
+          p
+            | Нажимая на кнопку «Оставить заявку»,
+            br
+            | Вы соглашаетесь с 
+            a(href='https://tlevel.ru/obrabotka-personalnyh-dannyh/', target='_blank')
+              span.text_bold Политикой конфиденциальности 
+            | сайта
+  .modal__overlay.modal-close
+//
+  Modal Tender
+    -------------------------------------------------- 
+.modal#tenderModal
+  .modal__content.modal-tender
+    .modal__header
+      p
+        span.text_bold Пригласить на тендер
+      button.modal-close.modal__close
+        span.modal-close__item
+        span.modal-close__item
+    .modal__body
+      form.form.loader-container#modalTenderForm(enctype='multipart/form-data', name='tender', data-action='send-tender.php')
+        .form__group.form__group_control
+          input.form__control#userName5(type='text', name='userName', placeholder='Имя', required)
+        .form__group.form__group_control
+          input.form__control#company5(type='text', name='company', placeholder='Компания', required)
+        .form__group.form__group_control
+          input.form__control#userPhone5(type='text', name='userPhone', placeholder='Номер телефона', required)
+        .form__group.form__group_control
+          input.form__control#userEmail5(type='email', name='userEmail', placeholder='E-mail', required)
+        .form__group.form__group_file
+          span.form__file-caption
+            i.form-screp
+            span Прикрепить файл
+          input.form__file#userFile5(type='file', name='file[]', multiple)
+          label.form__label.form__label_file(for='userFile5') Выберите файл
+          span.form__file_selected
+          .form__file-type pdf, doc, xls, jpeg, jpg, zip, rar
+        input(type='hidden', value='Приглашение на тендер', name='formTheme')
+        .form__submit-wrap.loader-container
+          button.btn.btn_primary.form__submit(type='submit')
+            span.text_uppercase Отправить запрос
+            span на тендер
+        .modal__footer
+          p
+            | Нажимая на кнопку «Оставить заявку»,
+            br
+            | Вы соглашаетесь с 
+            a(href='https://tlevel.ru/obrabotka-personalnyh-dannyh/', target='_blank')
+              span.text_bold Политикой конфиденциальности 
+            | сайта
+  .modal__overlay.modal-close
+
+
+//
+    Modal Calc
+        -------------------------------------------------- 
+.modal.calc-modal#calcModal
+  .modal__content.calc-modal-content
+    
+    .calc-frame.calc-modal-select.open
+      button.modal-close.calc-modal__close
+            span X
+      .calc-modal-select__img 
+        img(src="img/calc-modal-img.png", alt="")
+      
+      .calc-modal-select__content
+        .calc-modal-select__header
+            p
+              span.d-block Мы ценим Ваше время и 
+              span.text_highlight.text_bold готовы заплатить 10 000₽
+              span.text_bold , 
+              span.text_bold.d-block если наш эксперт-оценщик потратит Ваше время зря!
+
+        .calc-modal-select__body
+          ul.check-list 
+            li 
+              | Для расчета стоимости сообщите ему 
+              span.text_bold задачу, площадь и особенности Вашего объекта.
+            li Уже в разговоре узнаете о возможности реализации и предварительную стоимость работ.
+
+        .calc-modal-select__footer
+          .row 
+            a(href="tel:+78462060304") 
+              .btn.btn_primary.do-call
+                span.text_uppercase позвонить
+                span.text_uppercase самостоятельно
+
+            .callack-order
+              .callack-order__icon 
+                i.phone-transp
+              .callack-order__caption 
+                span Заказать звонок
+
+
+
+
+
+    .calc-frame.calc-modal-callback
+      button.modal-close.calc-modal__close
+            span X
+      .calc-modal-callback__header
+      .calc-modal-callback__body
+
+
+          form.form#calcModalCbForm(name='callback', data-action='send-callback.php')
+            .form__group.form__group_xl.form__group_control
+                input.form__control.form__control_xl#userPhone6(type='text', name='userPhone', placeholder='Номер телефона', required)
+
+            .form__group.form__group_xl.form__group_control
+              input.form__control.form__control_xl#userDate6(type='datetime-local', name='userDate', placeholder='Дата и время', required)
+
+            input(type='hidden', value='Обратный звонок', name='formTheme')
+
+            .form__submit-wrap.calc-modal-form__submit-wrap.loader-container
+              button.btn.btn_primary.form__submit(type='submit')
+                span.text_uppercase Заказать звонок
+
+      .calc-modal-callback__footer
+        div.policy
+          span.d-block Нажимая на кнопку «Заказать звонок»,
+          span Вы соглашаетесь с 
+            a(href='https://tlevel.ru/obrabotka-personalnyh-dannyh/', target='_blank')
+              span.text_bold Политикой конфиденциальности сайта
+
+
+
+
+
+
+  .modal__overlay.modal-close
+
+
+
+
+
+
+
+
+script(src='libs/jQuery-3.6.0.js')
+script(src='libs/jquery.fancybox.min.js')
+script(src='libs/swiper.min.js')
+script(src='libs/jquery.inputmask.js')
+script(src='js/script.js')

@@ -1,0 +1,103 @@
+.cleaning-wrapper  
+  //
+      Problem
+              ================================================== 
+  section.section.problem
+    .container.problem__container
+      .problem__heading
+        h2
+          | Вам знакомы такие 
+          span.problem__heading-highlight проблемы клининга 
+          | на предприятии?
+      .problem-list
+        ul
+          li.problem-list__item Не выполняется техническое задание
+          li.problem-list__item Не соблюдается СанПиН
+          li.problem-list__item Отсутствует четкий план процесса уборки
+          li.problem-list__item «Текучка» линейного персонала
+          li.problem-list__item Неправильно подобраны моющие средства
+          li.problem-list__item Отсутствует контроль качества и др.
+        .problem-list__bg ?
+      .problem__img
+        picture
+          source(srcset='img/mob/probl-man.webp', media='(max-width: 480px)', type='image/webp')
+          source(srcset='img/mob/probl-man.png', media='(max-width: 480px)', type='image/png')
+          source(srcset='img/probl-man.webp', type='image/webp')
+          img(src='img/probl-man.png', alt)
+      .problem__shine
+        source(srcset='img/mob/probl-shine.webp', type='image/webp')
+        img(src='img/mob/probl-shine.png', alt)
+    .problem__form-block.container_fluid
+      .form-block#audit-anchor
+        .form-block__content
+          .form-block__heading
+            p
+              span.d-block Проведём аудит Вашего объекта и составим лист внедрений, который 
+              span
+                | поможет 
+                span.text_bold сэкономить до 20% на уборке 
+                | и 
+                span.text_bold уйти от штрафов и предписаний!
+          .form-block__form-wrap
+            form.form.form-block__form#audit(name='audit', data-action='send-audit.php')
+              .form__group.form__group_control.form-block__group
+                input.form__control.form-block__control#userName1(type='text', name='userName', placeholder='Имя', required)
+              .form__group.form__group_control.form-block__group
+                input.form__control.form-block__control#company1(type='text', name='company', placeholder='Компания', required)
+              .form__group.form__group_control.form-block__group
+                input.form__control.form-block__control#userPhone1(type='text', name='userPhone', placeholder='Номер телефона', required)
+              input(type='hidden', value='Заявка на бесплатный аудит', name='formTheme')
+              .form__submit-wrap.form-block__submit
+                .loader-container
+                  button.btn.btn_primary.form__submit(type='submit')
+                    span.text_uppercase Оставить заявку
+                    span на бесплатный аудит
+          .form-block__footer
+            | Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с 
+            a.form-block__link(href='https://tlevel.ru/obrabotka-personalnyh-dannyh/', target='_blank') Политикой конфиденциальности 
+            | сайта
+        .form-block__img
+          picture
+            source(srcset='img/form-doc.webp', type='image/webp')
+            img(src='img/form-doc.png', alt='Изображение документа')
+  //
+      Clean
+              ================================================== 
+  section.section.clean
+    .container.clean__container
+      .clean__img-block
+        .clean__img
+          picture
+            source(srcset='img/clean-girl.webp', type='image/webp')
+            img(src='img/clean-girl.png', alt)
+      .clean__content
+        .clean__heading
+          h2
+            | Клининг - это
+            br
+            span.text_bold не только про чистоту!
+        .clean-media
+          .clean-media__text Это регламенты, СанПиНы, Охрана труда и Система контроля качества
+          .clean-media__img
+            picture
+              source(srcset='img/clean-book.webp', type='image/webp')
+              img(src='img/clean-book.png', alt='Изображение книги СанПиН')
+        .qoute
+          .qoute__text
+            p
+              span.text_ex-bold Мы участвуем 
+              | в процессе
+              br
+              | производства продукции
+              br
+              | и 
+              span.text_ex-bold отвечаем за ее качество!
+            i.qoutes
+    .clean__bg
+      picture
+        source(srcset='img/clean-bg.webp', type='image/webp')
+        img(src='img/clean-bg.png', alt)
+    .clean__shine.d-none.d-block_sm
+      picture
+        source(srcset='img/mob/clean-shine.webp', type='image/webp')
+        img(src='img/mob/clean-shine.png', alt)
