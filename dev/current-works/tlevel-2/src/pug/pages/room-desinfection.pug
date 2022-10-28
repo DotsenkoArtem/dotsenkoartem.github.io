@@ -18,43 +18,7 @@ block main
   //
       Intro-desinfection
     ================================================== 
-  section.section.intro-des
-    .glow.intro-des__glow-left
-    .glow.intro-des__glow-right
-    
-
-    .container.intro-des__container
-      .intro-des__img
-        picture
-          source(srcset='img/intro-des-man.webp', type='image/webp')
-          source(srcset='img/mob/intro-des-man-mob.png', media="(max-width: 480px)",type='image/png')
-          source(srcset='img/mob/intro-des-man-mob.webp', media="(max-width: 480px)",type='image/webp')
-          img(src='img/intro-des-man.png', alt='Человек-дезинфектор')
-        //- .img__title
-        //-   span Наталья Богданова
-        //-   span.img__subtitle.d-block генеральный директор
-
-
-      .intro-des__content
-        .intro-des__heading
-          h1 
-            span.text_ex-bold  Проводим дезинфекцию помещений от бактерий и вирусов, 
-            span в том числе 
-            span.d-block.d-inline_xs от SARS-CoV-2 (COVID-19)
-        .intro-des-call Выбирайте нас !
-
-        .calc-call 
-          .cash-label.calc-call__cash-label
-            .cash-label__inner 
-              .cash-label__title 
-                span.perc 1%
-                | сashback
-              .cash-label__text на уборку личной  недвижимости
-          .calc-call-label.
-            Рассчитайте предварительную стоимость услуг в течении 15 минут и получите 1% кэшбека на уборку личной недвижимости!
-
-        .btn.btn_primary.modal-trigger(data-target='calcModal')
-            span.text_uppercase Рассчитать стоимость
+  +intro-2('<span class="text_ex-bold"> Проводим дезинфекцию помещений от бактерий и вирусов, </span><span>в том числе </span><span class="d-block d-inline_xs">от SARS-CoV-2 (COVID-19)</span>', 'intro-des-man')
           
 
 

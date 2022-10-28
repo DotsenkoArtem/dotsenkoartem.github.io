@@ -819,7 +819,7 @@ select::-ms-expand {
  * --------------------------------------- */
 .header,
 .intro,
-.intro-des {
+.intro-2 {
   color: #ffffff;
 }
 
@@ -1371,10 +1371,13 @@ select::-ms-expand {
   max-width: none;
 }
 
-.services__container,
+.services__container {
+  z-index: 10;
+}
+
 .manager {
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }
 
 section.manager {
@@ -3020,14 +3023,14 @@ section.manager {
 
 /* Intro-desinfection 
  * ------------------------- */
-.intro-des {
+.intro-2 {
   padding-top: 27rem;
   background: #000614;
   background-size: cover;
   position: relative;
   overflow: hidden;
 }
-.intro-des__container {
+.intro-2__container {
   padding-bottom: 10rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3035,41 +3038,41 @@ section.manager {
   position: relative;
   z-index: 1;
 }
-.intro-des__content {
+.intro-2__content {
   margin-left: auto;
   max-width: 67.5rem;
 }
-.intro-des__heading {
+.intro-2__heading {
   margin-bottom: 1.5rem;
 }
-.intro-des__heading h1 {
+.intro-2__heading h1 {
   font-size: 3.5rem;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0em;
 }
-.intro-des-call {
+.intro-2-call {
   margin-bottom: 2rem;
   color: #1242bb;
   font-size: 3.4rem;
   font-weight: 700;
 }
-.intro-des__glow-left {
+.intro-2__glow-left {
   left: -30rem;
   top: -30rem;
 }
-.intro-des__glow-right {
+.intro-2__glow-right {
   right: -50rem;
   bottom: -45rem;
 }
-.intro-des__img {
+.intro-2__img {
   width: 69.6rem;
   position: absolute;
   bottom: -7rem;
   left: -16rem;
   z-index: 0;
 }
-.intro-des__img img {
+.intro-2__img img {
   max-width: 100%;
 }
 
@@ -4173,7 +4176,7 @@ section.manager {
     width: 100%;
     max-width: 38rem;
   }
-  .intro-des__img {
+  .intro-2__img {
     left: -13rem;
   }
   .calc-modal-select__header {
@@ -4184,7 +4187,7 @@ section.manager {
   }
 }
 @media (max-width: 991.98px) {
-  h1, h2, h3, .intro-des__heading h1 {
+  h1, h2, h3, .intro-2__heading h1 {
     font-size: 3rem;
   }
   .btn_primary, .btn_secondary {
@@ -4538,11 +4541,11 @@ section.manager {
     -ms-transform: scale(0.8);
     transform: scale(0.8);
   }
-  .intro-des__content {
+  .intro-2__content {
     margin-left: 0;
     max-width: 57rem;
   }
-  .intro-des__img {
+  .intro-2__img {
     right: -21rem;
     left: auto;
   }
@@ -4848,7 +4851,7 @@ section.manager {
   .footer__cb-btn {
     font-size: 1.6rem;
   }
-  .intro-des__img {
+  .intro-2__img {
     right: -30rem;
   }
   .calc-modal-select {
@@ -5172,7 +5175,7 @@ section.manager {
   .modal .form__file-caption i {
     left: -4.5rem;
   }
-  .intro-des__container {
+  .intro-2__container {
     padding-bottom: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -5182,7 +5185,7 @@ section.manager {
     -ms-flex-align: center;
     align-items: center;
   }
-  .intro-des__content {
+  .intro-2__content {
     margin-left: auto;
     margin-right: auto;
     display: -webkit-box;
@@ -5196,37 +5199,37 @@ section.manager {
     -ms-flex-align: center;
     align-items: center;
   }
-  .intro-des__heading {
+  .intro-2__heading {
     margin-bottom: 0;
     max-width: 43rem;
   }
-  .intro-des__heading h1 {
+  .intro-2__heading h1 {
     margin-top: 3rem;
     margin-bottom: 2rem;
   }
-  .intro-des__heading h1, .intro-des-call {
+  .intro-2__heading h1, .intro-2-call {
     font-size: 18px;
     text-align: center;
   }
-  .intro-des-call {
+  .intro-2-call {
     margin-bottom: 2rem;
   }
-  .intro-des__img {
+  .intro-2__img {
     margin-top: -9rem;
     position: static;
   }
-  .intro-des__img img {
+  .intro-2__img img {
     -webkit-transform: translateY(7rem);
     -ms-transform: translateY(7rem);
     transform: translateY(7rem);
   }
-  .intro-des .btn_primary {
+  .intro-2 .btn_primary {
     margin-left: auto;
     margin-right: auto;
     width: 168px;
     height: 50px;
   }
-  .intro-des__glow-left {
+  .intro-2__glow-left {
     left: -55rem;
     top: 13rem;
   }
@@ -5461,7 +5464,7 @@ section.manager {
 }
 /* X X S */
 @media (max-width: 414.98px) {
-  .intro-des__img {
+  .intro-2__img {
     margin-left: 3rem;
     width: 62rem;
   }

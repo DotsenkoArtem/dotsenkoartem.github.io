@@ -11,3 +11,43 @@
 mixin fontPreloadLinks 
     each val in fonts 
         link(rel="preload" as="font" href=`fonts/${val}.woff2` type="font/woff2" crossorigin="anonymous")
+
+
+
+
+
+mixin intro-2(h1, imgStem)
+  section.section.intro-2
+    .glow.intro-2__glow-left
+    .glow.intro-2__glow-right
+    
+
+    .container.intro-2__container
+      .intro-2__img
+        picture
+          source(srcset=`img/${imgStem}.webp`, type='image/webp')
+          source(srcset=`img/mob/${imgStem}-mob.png`, media="(max-width: 480px)",type='image/png')
+          source(srcset=`img/mob/${imgStem}-mob.webp`, media="(max-width: 480px)",type='image/webp')
+          img(src=`img/${imgStem}.png`, alt='Человек-дезинфектор')
+        //- .img__title
+        //-   span Наталья Богданова
+        //-   span.img__subtitle.d-block генеральный директор
+
+
+      .intro-2__content
+        .intro-2__heading
+          h1 !{h1}
+        .intro-2-call Выбирайте нас !
+
+        .calc-call 
+          .cash-label.calc-call__cash-label
+            .cash-label__inner 
+              .cash-label__title 
+                span.perc 1%
+                | сashback
+              .cash-label__text на уборку личной  недвижимости
+          .calc-call-label.
+            Рассчитайте предварительную стоимость услуг в течении 15 минут и получите 1% кэшбека на уборку личной недвижимости!
+
+        .btn.btn_primary.modal-trigger(data-target='calcModal')
+            span.text_uppercase Рассчитать стоимость
