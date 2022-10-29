@@ -79,8 +79,21 @@ window.onload = function () {
       why.classList.remove('close');
       why.classList.add('open');
     }
-  }; // ------------------------------------------------
+  };
+  // ------------------------------------------------
 
+  // Work-list
+  var workListBtn = document.querySelector('.work-list-btn');
+  var workList = document.querySelector('.work-list-wrap');
+  var workListClose = workList.querySelector('.work-list-close');
+  workListBtn.onclick = function () {
+    workList.classList.remove('close');
+    workList.classList.add('open');
+  };
+  workListClose.onclick = function () {
+    workList.classList.remove('open');
+    workList.classList.add('close');
+  };
   $(function () {
     $('a[href^="#"]').on('click', function (event) {
       event.preventDefault();

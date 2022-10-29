@@ -16,7 +16,22 @@ window.onload = function () {
       why.classList.remove('close');
       why.classList.add('open');
     }
-  }; // ------------------------------------------------
+  }; 
+  // ------------------------------------------------
+
+  // Work-list
+  const workListBtn = document.querySelector('.work-list-btn')
+  const workList = document.querySelector('.work-list-wrap')
+  const workListClose = workList.querySelector('.work-list-close')
+
+  workListBtn.onclick = function () {
+    workList.classList.remove('close');
+    workList.classList.add('open');
+  }; 
+  workListClose.onclick = function () {
+    workList.classList.remove('open');
+    workList.classList.add('close');
+  }; 
 
 
   $(function () {
