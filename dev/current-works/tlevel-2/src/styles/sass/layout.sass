@@ -81,6 +81,15 @@
 .phone-transp
   +sprite($phone-transp)
 
+.vb-icon
+  +sprite($vb-icon)
+
+.tlg-icon
+  +sprite($tlg-icon)
+
+.wa-icon
+  +sprite($wa-icon)
+
 // Здесь будут основные стили проекта
 /* VI. Layout
  --------------------------------------- */
@@ -326,6 +335,7 @@
   margin-top: -1.5rem
 
 .digits__value
+  font-family: "Mont", "Winston", "Helvetica", sans-serif
   font-size: 5.5rem
   font-weight: 900
   letter-spacing: 0
@@ -2299,6 +2309,381 @@ section.manager
       transition: box-shadow 0s
       span
         color: lighten(v.$calc-modal-close-x, 10%)
+
+
+
+/* Client190
+ -------------------------*/
+.client190
+  
+  position: relative
+  background: #00081b
+  color: #fff
+  &__inner
+    position: relative
+    padding-top: 12rem
+    padding-bottom: 8rem
+    overflow: hidden
+  &__container
+    display: flex
+  &-card-wrap,
+  &-list-wrap
+    width: 50%
+    flex: none
+  &-card
+    position: relative
+    padding: 6.5rem 9rem 4.5rem
+    max-width: 48rem
+    font-size: 2.2rem
+    font-weight: 500
+    line-height: 1.25
+    text-align: center
+    background: rgba(255, 255, 255, 0.07)
+    border-radius: 2rem
+    &-text 
+      margin-left: auto
+      margin-right: auto
+      max-width: 30rem
+    &__label 
+      position: absolute
+      top: -13rem
+      left: 50%
+      transform: translateX(-50%)
+      img
+        max-width: 26rem
+  &-digit
+    display: inline-block
+    font-family: "Mont", "Winston", "Helvetica", sans-serif
+    font-size: 8rem
+    font-weight: 900
+    letter-spacing: 0
+  &-list
+    max-width: 23em
+    font-size: 1.8rem
+    font-weight: 500
+    line-height: 1.5
+    li
+      position: relative
+      padding-left: 2.5em
+      &:not(:last-child)
+        margin-bottom: 2rem
+      &::before
+        content: ''
+        display: inline-block
+        width: 1.5em
+        height: 1.5em
+        position: absolute
+        top: .4em
+        left: .4em
+        background: url(../img/check-blue.png) center no-repeat
+        background-size: contain
+  &-glow
+    position: absolute
+    z-index: 0
+    width: v.$glow-width
+    height: v.$glow-width
+    border-radius: 50%
+    background: radial-gradient(closest-side, v.$glow-color, transparent)
+    &__left
+      top: -15rem
+      left: -50rem
+    &__right
+      top: -15rem
+      right: -50rem
+  &__img
+    position: absolute
+    top: -20rem
+    right: calc( 50vw - 90rem )
+    img
+      max-width: 38.8rem
+
+
+
+/* Spec-gal
+ -------------------------*/
+.spec-gal
+  display: flex
+  width: 100%
+  &__item
+    position: relative
+    width: 25%
+    flex: none
+    &::before
+      content: ''
+      display: block
+      height: 0
+      width: 100%
+      padding-top: 75.5%  
+    img
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      z-index: 1
+      width: 100%
+      height: 100%
+      object-fit: cover
+      
+
+
+  /* Subscribe
+    -------------------------*/
+.subscribe 
+  padding-top: 8rem
+  padding-bottom: 8rem
+  background: #e2e5ef
+  &-row 
+    display: flex
+    justify-content: space-between
+    margin-left: -1.5rem
+    margin-right: -1.5rem
+  &__item
+    width: 48%
+    flex: none
+  &-logo 
+    margin-bottom: 4rem
+    text-align: center
+    img
+      margin-left: auto
+      margin-right: auto
+      max-width: 20.7rem
+  &-text
+    font-size: 2.8rem
+    font-weight: 500
+    line-height: 1.25
+    text-align: center
+  &__video 
+    margin-top: 3.5rem
+    margin-left: auto
+    margin-right: auto
+    position: relative
+    width: 100%
+    max-width: 53.6rem
+    max-height: 30.1rem
+    &-bg
+      position: relative
+      box-shadow: 1.8rem 1.8rem 3.2rem rgba(1, 22, 76, .3)
+      img
+        max-width: 100%
+    &-btn 
+      position: absolute
+      top: calc( 50% - 4.25rem )
+      left: calc( 50% - 3rem )
+      width: 8.5rem
+      height: 6rem
+      transition: transform .3s
+      &:hover
+        transform: scale(1.05)
+      &:active
+        transform: scale(1)
+        transition: transform 0s
+      img
+        max-width: 100%
+  &__social
+    margin-bottom: 3.1rem
+    display: flex
+    justify-content: center
+    align-items: center
+    i
+      position: relative
+      z-index: 1
+      margin-left: 0.9rem
+      margin-right: 0.9rem
+      transition: transform 0.3s
+    a
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 6.5rem
+      height: 6.5rem
+      border-radius: 50%
+      background: #0a49e9
+      overflow: hidden
+      transition: transform .3s
+      &:not(:last-child)
+        margin-right: 2.4rem
+        
+      &:hover
+        transform: translateY(-2px)
+      &:active
+        transform: translateY(0)
+        transition: transform 0s
+  &__soc-screen 
+    margin-top: 4.4rem
+    margin-left: auto
+    margin-right: auto
+    max-width: 56.6rem
+    border-radius: 1rem
+    box-shadow: 1.8rem 1.8rem 3.2rem rgba(1, 22, 76, .3)
+    overflow: hidden
+
+
+
+/* Actions
+ -------------------------*/
+.actions
+  padding-top: 6rem
+  padding-bottom: 6rem
+  &__heading
+    margin-bottom: 5.5rem
+    h2
+      font-weight: 700
+      color: #00081b
+  &-block 
+    margin-left: -2rem
+    margin-right: -2rem
+    display: flex
+    justify-content: center
+  &-card
+    position: relative
+    margin-left: 2rem
+    margin-right: 2rem
+    padding-top: 5rem
+    width: 55.2rem
+    height: 54.7rem
+    border-radius: 1rem
+    box-shadow: 1.1rem 1.1rem 12rem rgba(0, 10, 69, 0.26)
+    overflow: hidden
+    &__bg 
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 0
+      width: 100%
+      height: 100%
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &__content
+      position: relative
+      z-index: 1
+      text-align: center
+    &-label 
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 4.5rem
+      padding-left: 4rem
+      padding-right: 4rem
+      width: 26rem
+      text-align: center
+      border-radius: 1rem
+      color: #fff
+      background: #1648c5
+      &_cash 
+        padding-top: 1.8rem
+        padding-bottom: 1.8rem
+        line-height: 2.2rem
+        .cashback
+          &-uppercase
+            font-size: 2rem
+            font-weight: 700
+            font-style: italic
+          &-text
+            font-size: 1.7rem
+            font-weight: 500
+      &_ord
+        padding-top: 3rem
+        padding-bottom: 3rem
+        font-size: 1.7rem
+        font-weight: 600
+        font-style: italic
+        line-height: 1.3
+        text-transform: uppercase
+    &-title
+      margin-bottom: 1.5rem
+      font-size: 4rem
+      font-weight: 800
+      font-style: italic
+      line-height: 1
+      color: transparent
+      &_cash
+        background: #fff linear-gradient(-38deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0))
+        background-clip: text
+      &_ord
+        background: linear-gradient(-38deg, #002a94, #1648c5)
+        background-clip: text
+        
+    &-subtitle
+      font-size: 1.8rem
+      font-weight: 500
+      line-height: 1.25
+      &_cash
+        color: #fff
+      &_ord
+        color: #000614
+
+
+
+/* Cheaper 
+ -------------------------*/
+.cheaper
+  position: relative
+  padding-top: 10rem
+  padding-bottom: 7rem
+  background: #e2e5ef
+  color: #00081b
+  overflow: hidden
+  &__container
+    position: relative
+  &__content
+    max-width: 45rem 
+  &__heading
+    margin-bottom: 2.5rem
+    h2
+      color: #00081b
+      font-weight: 700
+      text-align: left
+  &__text
+    margin-bottom: 4.5rem
+    max-width: 45rem 
+    font-size: 2.5rem
+    line-height: 1.4
+  &-highlight
+    color: #3c64cd
+  &__contacts
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+  &-msg
+    margin-right: 1.5rem
+    transition: transform .3s
+    &:hover
+      transform: translateY(-2px)
+    &:active
+      transform: translateY(0)
+      transition: transform 0s
+        
+  &-phone
+    margin-right: 2.5rem
+    a 
+      font-size: 2.8rem
+      font-weight: 800
+      font-style: italic
+      color: #00081b
+    &:hover
+      a
+        text-decoration: underline
+  &-mail
+    a
+      font-size: 2.2rem
+      font-weight: 500
+      font-style: italic
+      color: #1648c5
+      text-decoration: underline
+      &:hover
+        text-decoration: none
+  &__img
+    position: absolute
+    top: 0
+    left: calc( 50vw - 1rem )
+    z-index: 0
+    img
+      max-width: 84rem
+      max-height: 49rem
 
 
 /* Modals
