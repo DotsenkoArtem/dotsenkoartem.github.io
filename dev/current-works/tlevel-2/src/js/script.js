@@ -8,30 +8,36 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 window.onload = function () {
   // Intro Why Collapse
-  whyBtn.onclick = function () {
-    if (why.classList.contains('open')) {
-      why.classList.remove('open');
-      why.classList.add('close');
-    } else {
-      why.classList.remove('close');
-      why.classList.add('open');
+  const whyBtn = document.querySelector('#why')
+  if(whyBtn) {
+    whyBtn.onclick = function () {
+      if (why.classList.contains('open')) {
+        why.classList.remove('open');
+        why.classList.add('close');
+      } else {
+        why.classList.remove('close');
+        why.classList.add('open');
+      }
     }
-  }; 
+  }
   // ------------------------------------------------
 
   // Work-list
-  const workListBtn = document.querySelector('.work-list-btn')
   const workList = document.querySelector('.work-list-wrap')
-  const workListClose = workList.querySelector('.work-list-close')
+  if(workList) {
+    const workListBtn = document.querySelector('.work-list-btn')
+    const workListClose = workList.querySelector('.work-list-close')
 
-  workListBtn.onclick = function () {
-    workList.classList.remove('close');
-    workList.classList.add('open');
-  }; 
-  workListClose.onclick = function () {
-    workList.classList.remove('open');
-    workList.classList.add('close');
-  }; 
+    workListBtn.onclick = function () {
+      workList.classList.remove('close');
+      workList.classList.add('open');
+    };
+
+    workListClose.onclick = function () {
+      workList.classList.remove('open');
+      workList.classList.add('close');
+    }; 
+  }
 
 
   $(function () {
@@ -369,7 +375,8 @@ window.onload = function () {
         slidesPerView: 6
       }
     }
-  }); // ------------------------------------------------
+  }); 
+  // ------------------------------------------------
   // Advantages-slider
   //Swiper plugin initialization on window resize
 
@@ -538,6 +545,40 @@ window.onload = function () {
   // }
   // });
   // Инициализация слайдеров при изменении ширины экрана
+
+  // Other-serv-slider
+
+  var otherServSlider = new Swiper('.other-serv__slider', {
+    loop: true,
+    slidesPerView: 2,
+    speed: 500,
+    draggable: true,
+    spaceBetween: 10,
+    autoplay: {
+      delay: 5000
+    },
+    navigation: {
+      nextEl: '.swiper-button-next.other-serv__button.other-serv__button_next',
+      prevEl: '.swiper-button-prev.other-serv__button.other-serv__button_prev'
+    },
+    // pagination: {
+    //     el: ".swiper-pagination",
+    //     type: "fraction",
+    //   },
+    breakpoints: {
+      401: {
+        slidesPerView: 3
+      },
+      481: {
+        slidesPerView: 4
+      },
+      991: {
+        slidesPerView: 4
+      }
+    }
+  }); 
+// - - - - - -- - - - - - - - -- -
+
 
   window.onresize = function () {
     initAdvSlider();

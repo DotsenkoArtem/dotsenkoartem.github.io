@@ -1,0 +1,43 @@
+section.section.rev.rev_lite#rev-anchor
+  .container.rev__container
+    .section__heading.rev__heading
+      h2
+        span.text_bold Видеоотзывы 
+        | наших клиентов
+  .rev__wide
+    .container.rev__slider-container
+      .swiper.rev__slider
+        .swiper-wrapper.rev__slider-inner
+          .swiper-slide.rev-slide
+            .rev-slide__img
+              img(src='img/rev-2.jpg', alt)
+              a(data-fancybox, href='https://www.youtube.com/watch?v=TIa7AznYsws')
+                .rev-slide__btn
+                  picture
+                    source(srcset='img/rev-play.webp', type='image/webp')
+                    img(src='img/rev-play.png', alt)
+            .rev-slide__caption
+              .rev-slide__author Олександр Васенин
+              .rev-slide__post руководитель обособленного подр-ния Karcher
+          .swiper-slide.rev-slide
+            .rev-slide__img
+              img(src='img/rev-4.jpg', alt)
+              a(data-fancybox, href='https://www.youtube.com/watch?v=YAXWOLrwDZA')
+                .rev-slide__btn
+                  picture
+                    source(srcset='img/rev-play.webp', type='image/webp')
+                    img(src='img/rev-play.png', alt)
+            .rev-slide__caption
+              .rev-slide__author Ирина Бурова
+              .rev-slide__post начальник производства
+        .swiper-button-prev.rev__button.rev__button_prev
+        .swiper-button-next.rev__button.rev__button_next
+    .rev__slider-shine
+  .container.rev__footer-container
+    .rev__footer-text Каждый руководитель компании- клиента может порекомендовать нас
+    .rev__footer-link.d-none.d-i-block_xs
+      a(href='https://tlevel.ru/sertifikaty-i-licenzii/', target='_blank')
+        | Посмотреть все 
+        i.awa-arrow
+        br
+        | отзывы

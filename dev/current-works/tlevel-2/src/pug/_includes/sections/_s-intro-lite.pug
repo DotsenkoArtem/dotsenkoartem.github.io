@@ -1,4 +1,4 @@
-section.section.intro
+section.section.intro.intro_lite
   .container.intro__container
     .intro__content
       .intro__heading
@@ -20,46 +20,21 @@ section.section.intro
         .flex-none
           .btn.btn_primary.modal-trigger(data-target='checkModal')
             span.text_uppercase Оставить заявку
-        .why.intro__why#why
-          .why__btn#whyBtn.
+        .why.intro__why
             
-            Почему бесплатно?
+            
           .why__content-wrap
             .why__content
+              .why__title Почему бесплатно?
+                
               .why__text.
                 Мы продемонстрируем Вам свою экспертность и выгоду работы с нами, Вы получите качественную услугу и сэкономите деньги!
                 
-      .digits.intro__digits
-        .digits__item
-          .digits__head
-            span.digits__value.clip-text 14 
-            span лет
-          .digits__text
-            | безупречной работы
-            br
-            | и чистой репутации!
-        .digits__item
-          .digits__head
-            span.digits__value.clip-text 87 
-            span %
-          .digits__text
-            | наших клиентов
-            br
-            | продлевают контракт
-        .digits__item
-          .digits__head
-            span.digits__value.clip-text
-              | 2 
-              span.digits__mln млн. 
-            span кв. м
-          .digits__text
-            | промышленных площадей
-            br
-            | убрано Top Level
+
     .intro__img
       picture
         source(srcset='img/intro-img.webp', type='image/webp')
         img(src='img/intro-img.png', alt='Девушка')
-      .img__title
-        span Наталья Богданова
-        span.img__subtitle.d-block генеральный директор
+      //- .img__title
+      //-   span Наталья Богданова
+      //-   span.img__subtitle.d-block генеральный директор

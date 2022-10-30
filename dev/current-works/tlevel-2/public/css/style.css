@@ -4052,6 +4052,168 @@ section.manager {
   max-height: 49rem;
 }
 
+/* Intro_lite
+ * -------------------------*/
+.intro_lite {
+  padding-top: 17rem;
+  padding-bottom: 6rem;
+}
+.intro_lite .intro__img {
+  bottom: -43rem;
+}
+.intro_lite .why {
+  margin-left: 3rem;
+  padding-top: 0;
+}
+.intro_lite .why__content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 31rem;
+  opacity: 1;
+  visibility: visible;
+}
+.intro_lite .why__content-wrap {
+  margin-top: 0;
+  height: auto;
+}
+.intro_lite .why__title {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1546c1;
+}
+
+/* Rev_lite
+ * -------------------------*/
+.rev_lite {
+  padding-bottom: 2rem;
+}
+
+/* Econom
+ * -------------------------*/
+.econom {
+  position: relative;
+  padding-top: 14rem;
+  padding-bottom: 9rem;
+  background: #e3e6ef;
+  overflow: hidden;
+}
+.econom__content {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.econom__content-inner {
+  margin-left: auto;
+  max-width: 56rem;
+}
+.econom__heading {
+  margin-bottom: 4rem;
+  text-align: left;
+}
+.econom__heading h2 {
+  color: #000411;
+}
+.econom__heading h2 .econom-highlight {
+  color: #1647c3;
+}
+.econom-text {
+  position: relative;
+  margin-bottom: 7rem;
+  padding-left: 9rem;
+}
+.econom-text__img {
+  position: absolute;
+  top: 0rem;
+  left: -2.5rem;
+  z-index: 0;
+}
+.econom-text__img img {
+  max-width: 8rem;
+}
+.econom-text p {
+  position: relative;
+  z-index: 1;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #000514;
+}
+.econom__form {
+  position: relative;
+  z-index: 1;
+}
+.econom__img {
+  position: absolute;
+  bottom: 0;
+  left: calc(50vw - 75rem);
+  z-index: 0;
+}
+.econom__img img {
+  max-width: 79rem;
+}
+.econom-form__group {
+  max-width: 36rem;
+}
+.econom-form__control {
+  -webkit-box-shadow: 0.3rem 0.3rem 2.1rem rgba(4, 26, 82, 0.3);
+  box-shadow: 0.3rem 0.3rem 2.1rem rgba(4, 26, 82, 0.3);
+  max-width: 36rem;
+  height: 8rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.econom-form__control::-webkit-input-placeholder {
+  color: #000614;
+}
+.econom-form__submit {
+  width: 29rem;
+  height: 9rem;
+  font-weight: 300;
+}
+
+/* Other-serv
+ * -------------------------*/
+.other-serv {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+.other-serv__heading {
+  margin-bottom: 6rem;
+}
+.other-serv__slider-container {
+  margin-bottom: 6rem;
+  position: relative;
+}
+.other-serv-slide .services-card {
+  padding-top: 10rem;
+}
+.other-serv__button_prev {
+  left: -6rem;
+}
+.other-serv__button_next {
+  right: -6rem;
+}
+.other-serv__footer {
+  text-align: center;
+}
+.other-serv__footer p {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #000411;
+}
+.other-serv__footer .text-link_blue {
+  color: #1545c1;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.other-serv__footer .text-link_blue:hover {
+  text-decoration: none;
+}
+
 /* Modals
  * -------------------------*/
 .modal {
