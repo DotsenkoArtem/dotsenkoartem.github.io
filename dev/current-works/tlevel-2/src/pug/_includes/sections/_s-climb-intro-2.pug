@@ -1,0 +1,47 @@
+section.section.intro-2.climb-intro-2
+  .glow.intro-2__glow-left
+  .glow.intro-2__glow-right
+  
+
+  .container.intro-2__container
+    .intro-2__img
+      picture
+        source(srcset=`img/intro-climb-man.webp`, type='image/webp')
+        //- source(srcset=`img/mob/intro-climb-man-mob.png`, media="(max-width: 480px)",type='image/png')
+        //- source(srcset=`img/mob/intro-climb-man-mob.webp`, media="(max-width: 480px)",type='image/webp')
+        img(src=`img/intro-climb-man.png`, alt='Человек-дезинфектор')
+      //- .img__title
+      //-   span !{name}
+      //-   span.img__subtitle.d-block !{post}
+
+
+    .intro-2__content
+      .intro-2__heading
+        h1 
+          span.d-block Нужен промышленный
+          span.d-block.text_bold альпинизм или высотный
+          span.text_bold клининг? 
+      .intro-2-call Выбирайте нас !
+
+      .calc-call 
+        .cash-label.calc-call__cash-label
+          .cash-label__inner 
+            .cash-label__title 
+              span.perc 1%
+              | сashback
+            .cash-label__text на уборку личной  недвижимости
+        .calc-call-label.
+          Рассчитайте предварительную стоимость услуг в течении 15 минут и получите 1% кэшбека на уборку личной недвижимости!
+
+      .intro-2__footer
+        .btn.btn_primary.modal-trigger(data-target='calcModal')
+            span.text_uppercase Рассчитать стоимость
+
+        .digits.intro__digits
+          .digits__item
+            .digits__head
+              span от 
+              span.digits__value.clip-text  40 
+              span руб./м
+                span.sup 2
+            .digits__text стоимость мойки окон
