@@ -17,7 +17,7 @@ block main
   //
       Intro-desinfection
     ================================================== 
-  +intro-2('<span class="d-block"> Ищите подрядчика <span class="text_ex-bold"> на техническое </span></span><span class="d-block text_ex-bold"> обслуживание инженерного </span><span class="text_ex-bold"> оборудования? </span>', 'intro-ing-serv-man')
+  +intro-2('<span class="d-block"> Ищите подрядчика <span class="text_ex-bold"> на техническое </span></span><span class="d-block text_ex-bold"> обслуживание инженерного </span><span class="text_ex-bold"> оборудования? </span>', 'intro-ing-serv-man', 'Дмитрий Востров', 'Эксперт Top Level')(class="eng-service-intro-2")
 
 
   //
@@ -93,11 +93,79 @@ block main
   //
       Client190
             ==================================================
-  include ../_includes/sections/_s-сlient190.pug
+  //- include ../_includes/sections/_s-сlient190.pug
+  +client190()(class="eng-service-client190")
 
 
 
+  //
+      Spec-gal
+            ==================================================
+  +specGal('spec-gal-eng-1', 'spec-gal-eng-2', 'spec-gal-eng-3', 'spec-gal-eng-4')
 
+
+
+  //
+      Subscribe
+            ==================================================
+  include ../_includes/sections/_s-subscribe.pug
+
+
+  //
+    Actions
+          ================================================== 
+  include ../_includes/sections/_s-actions.pug
+
+
+  //
+      Cheaper
+            ================================================== 
+  include ../_includes/sections/_s-cheaper.pug
+
+
+  //
+      Client
+            ================================================== 
+  include ../_includes/sections/_s-сlient.pug
+
+
+
+  //
+      Intro
+            ================================================== 
+  include ../_includes/sections/_s-intro-lite.pug
+
+  //
+      Manager
+            ================================================== 
+  section.manager  
+    include ../_includes/sections/_b-manager.pug 
+
+
+  //
+      Expert
+            ================================================== 
+  include ../_includes/sections/_s-expert.pug
+  
+
+  //
+      Reveiws
+            ================================================== 
+  include ../_includes/sections/_s-reveiws-lite.pug 
+
+  
+
+  //
+      Econom
+            ================================================== 
+  include ../_includes/sections/_s-econom.pug 
+  
+
+
+  //
+      Other-serv
+            ==================================================
+  include ../_includes/sections/_s-other-serv.pug 
 
 
 

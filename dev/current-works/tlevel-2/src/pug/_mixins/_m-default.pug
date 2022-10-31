@@ -16,8 +16,8 @@ mixin fontPreloadLinks
 
 
 
-mixin intro-2(h1, imgStem)
-  section.section.intro-2
+mixin intro-2(h1, imgStem, name, post)
+  section.section.intro-2&attributes(attributes)
     .glow.intro-2__glow-left
     .glow.intro-2__glow-right
     
@@ -29,9 +29,9 @@ mixin intro-2(h1, imgStem)
           source(srcset=`img/mob/${imgStem}-mob.png`, media="(max-width: 480px)",type='image/png')
           source(srcset=`img/mob/${imgStem}-mob.webp`, media="(max-width: 480px)",type='image/webp')
           img(src=`img/${imgStem}.png`, alt='Человек-дезинфектор')
-        //- .img__title
-        //-   span Наталья Богданова
-        //-   span.img__subtitle.d-block генеральный директор
+        .img__title
+          span !{name}
+          span.img__subtitle.d-block !{post}
 
 
       .intro-2__content
@@ -51,3 +51,63 @@ mixin intro-2(h1, imgStem)
 
         .btn.btn_primary.modal-trigger(data-target='calcModal')
             span.text_uppercase Рассчитать стоимость
+
+
+
+mixin client190
+  .client190&attributes(attributes)
+    .client190__img
+      picture
+        source(srcset='img/cl-190-vacuum.webp', type='image/webp')
+        img(src='img/cl-190-vacuum.png', alt)
+
+    .client190__inner
+      .client190-glow.client190-glow__left
+      .client190-glow.client190-glow__right
+
+      .container.client190__container
+        
+
+        .client190-card-wrap 
+          .client190-card
+            .client190-card__label 
+              picture
+                source(srcset='img/cl-190-label.webp', type='image/webp')
+                img(src='img/cl-190-label.png', alt)
+
+            .client190-digit.clip-text 190+
+            .client190-card-text Опытных клинеров готовы к работе
+          
+        .client190-list-wrap
+          ul.client190-list
+            li  14 лет безупречной работы и чистой репутации
+            li 100 000 м2 административных и офисных помещений убрано нашей компанией
+            li от 35 до 65 руб./м2 - средняя стоимость уборки наших объектов, в зависимости от объема, графика и сложности работ
+
+
+
+
+mixin specGal(imgStem1, imgStem2, imgStem3, imgStem4)
+  .spec-gal
+
+    .spec-gal__item 
+      picture
+        //- source(srcset='img/mob/gal-7-mob.jpg', media='(max-width: 480px)', type='image/jpg')
+        img(src=`img/${imgStem1}.jpg`, alt)
+  
+    .spec-gal__item 
+      picture
+        //- source(srcset='img/mob/gal-7.jpg', media='(max-width: 480px)', type='image/jpg')
+        img(src=`img/${imgStem2}.jpg`, alt)
+  
+    .spec-gal__item 
+      picture
+        //- source(srcset='img/mob/gal-7.jpg', media='(max-width: 480px)', type='image/jpg')
+        img(src=`img/${imgStem3}.jpg`, alt)
+  
+    .spec-gal__item 
+      picture
+        //- source(srcset='img/mob/gal-7.jpg', media='(max-width: 480px)', type='image/jpg')
+        img(src=`img/${imgStem4}.jpg`, alt)
+
+

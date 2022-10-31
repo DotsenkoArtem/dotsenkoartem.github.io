@@ -148,7 +148,6 @@ window.onload = function () {
           calcModalCallback.classList.remove('closed')
         }, delay)
       })
-      console.log(calcModalClose);
     }
 
     // Закрытие окна после активации самостоятельного звонка
@@ -183,9 +182,7 @@ window.onload = function () {
           selectedFile.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u043D \u0444\u0430\u0439\u043B:<br>".concat(this.files[0].name, " ");
         } else {
           selectedFile.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u043E \u0444\u0430\u0439\u043B\u043E\u0432: ".concat(this.files.length, " ");
-        } // console.log(this.files);
-        // console.log(this.files.length);
-
+        }
       });
     }
 
@@ -386,7 +383,7 @@ window.onload = function () {
     // var screenWidth = $(window).width();
     var screenWidth = document.documentElement.clientWidth;
     var advSlideContainer = document.querySelector('.adv-grid');
-    var advSlides = document.querySelectorAll('.adv-slide'); // console.log(advSlides);
+    var advSlides = document.querySelectorAll('.adv-slide');
 
     if (screenWidth < 576 && advSlider == undefined) {
       advSlider = new Swiper('.adv__slider', {
@@ -439,7 +436,7 @@ window.onload = function () {
     // var screenWidth = $(window).width();
     var screenWidth = document.documentElement.clientWidth;
     var awaSlideContainer = document.querySelector('.awa__slider-inner');
-    var awaSlides = document.querySelectorAll('.awa-slide'); // console.log(awaSlides);
+    var awaSlides = document.querySelectorAll('.awa-slide');
 
     if (screenWidth < 768 && awaSlider == undefined) {
       awaSlider = new Swiper('.awa__slider', {
@@ -487,7 +484,7 @@ window.onload = function () {
     // var screenWidth = $(window).width();
     var screenWidth = document.documentElement.clientWidth;
     var revSlideContainer = document.querySelector('.rev__slider-inner');
-    var revSlides = document.querySelectorAll('.rev-slide'); // console.log(awaSlides);
+    var revSlides = document.querySelectorAll('.rev-slide');
 
     if (screenWidth < 576 && revSlider == undefined) {
       revSlider = new Swiper('.rev__slider', {

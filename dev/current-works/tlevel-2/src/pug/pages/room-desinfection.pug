@@ -113,8 +113,8 @@ block main
   //
     Client190
           ==================================================
-  include ../_includes/sections/_s-сlient190.pug
-
+  //- include ../_includes/sections/_s-сlient190.pug
+  +client190
 
 
 
@@ -122,27 +122,7 @@ block main
   //
       Spec-gal
             ==================================================
-  .spec-gal
-
-    .spec-gal__item 
-      picture
-        //- source(srcset='img/mob/gal-7-mob.jpg', media='(max-width: 480px)', type='image/jpg')
-        img(src='img/spec-gal-1.jpg', alt)
-  
-    .spec-gal__item 
-      picture
-        //- source(srcset='img/mob/gal-7.jpg', media='(max-width: 480px)', type='image/jpg')
-        img(src='img/spec-gal-2.jpg', alt)
-  
-    .spec-gal__item 
-      picture
-        //- source(srcset='img/mob/gal-7.jpg', media='(max-width: 480px)', type='image/jpg')
-        img(src='img/spec-gal-3.jpg', alt)
-  
-    .spec-gal__item 
-      picture
-        //- source(srcset='img/mob/gal-7.jpg', media='(max-width: 480px)', type='image/jpg')
-        img(src='img/spec-gal-4.jpg', alt)
+  +specGal('spec-gal-1', 'spec-gal-2', 'spec-gal-3', 'spec-gal-4')
 
 
 
@@ -151,128 +131,22 @@ block main
   //
       Subscribe
             ==================================================
-  .subscribe
-    .container
-      .subscribe-row 
-
-        .subscribe__item
-          .subscribe-logo 
-            picture
-              source(srcset='img/check-blue-text.webp', type='image/webp')
-              img(src='img/check-blue-text.png', alt="логотип")
-          .subscribe-text 
-            |Посмотрите видео и узнайте, почему 
-            span.d-block.text_bold государственные и частные 
-            span.d-block.text_bold организации  выбирают нас
-          .subscribe__video 
-            .subscribe__video-bg
-              picture
-                //- source(srcset='img/mob/subsc-video-mob.jpg', media='(max-width: 480px)', type='image/jpg')
-                img(src='img/subsc-video.jpg', alt="логотип")
-            .subscribe__video-btn 
-              a(data-fancybox, href='https://www.youtube.com/watch?v=4sZzXpBOIDI')
-                picture
-                  source(srcset='img/yt-btn.webp' type='image/webp')
-                  img(src='img/yt-btn.png', alt="")
-
-
-
-        .subscribe__item
-          .subscribe__social
-            a(href='https://vk.com/tlevel', target='_blank')
-              i.vk
-            a(href='#')
-              i.inst
-            a(href='https://www.youtube.com/channel/UCWC5FbNbtQzSCYieFs4twzw', target='_blank')
-              i.yt
-          .subscribe-text 
-            span.d-block Подписывайтесь на нас 
-            span.d-block в социальных сетях 
-
-          .subscribe__soc-screen 
-            a(href="https://vk.com/tlevel", target="_blank") 
-              picture
-                source(srcset='img/subsc-screen.webp' type='image/webp')
-                img(src='img/subsc-screen.png', alt="")
+  include ../_includes/sections/_s-subscribe.pug
 
 
 
   //
-      Client
+      Actions
             ================================================== 
-  section.section.actions
-    .container.actions__container
-      .section__heading.actions__heading
-        h2 Акции
-      .actions-block 
-        .actions-card
-          .actions-card__bg 
-            picture
-              source(srcset='img/act-1.webp' type='image/webp')
-              img(src='img/act-1.png', alt="")
-          .actions-card__content
-            .actions-card-label.actions-card-label_cash 
-              span.d-block.cashback-uppercase CAShback
-              span.cashback-text для собственников компаний
-            .actions-card-title.actions-card-title_cash
-              span.d-block Вернём 1% 
-              span.d-block от контракта  
-            .actions-card-subtitle.actions-card-subtitle_cash
-              span.d-block на уборку Вашей квартиры
-              span.d-block или загородного дома
+  include ../_includes/sections/_s-actions.pug
 
-
-
-        .actions-card
-          .actions-card__bg 
-            picture
-              source(srcset='img/act-2.webp' type='image/webp')
-              img(src='img/act-2.png', alt="")
-          .actions-card__content
-            .actions-card-label.actions-card-label_ord
-              span.d-block Специальное 
-              span.d-block предложение
-            .actions-card-title.actions-card-title_ord
-              span.d-block 3 уборки
-              span.d-block за наш счет!  
-            .actions-card-subtitle.actions-card-subtitle_ord
-              span.d-block При заключении договора 
-              span.d-block с нами до 31.09.2022
 
 
   //
       Cheaper
             ================================================== 
-  .cheaper 
-    .cheaper__img
-      picture
-        source(srcset='img/cheap-docs.webp' type='image/webp')
-        img(src='img/cheap-docs.png', alt="")
-
-
-
-    .container.cheaper__container
-      .cheaper__content
-        .section__heading.cheaper__heading
-          h2 Хотите дешевле?
-        .cheaper__text 
-          p
-            span.d-block.text_bold.cheaper-highlight Пришлите смету другой компании 
-            span и мы постараемся дать Вам более выгодное предложение
-        .cheaper__contacts 
-          .cheaper-phone
-            a(href="tel:78462060304", target="_blank") 8 (846) 206-03-04
-          .cheaper-vb.cheaper-msg
-            a(href="viber://chat?number=%2B78462060304", target="_blank") 
-              i.vb-icon
-          .cheaper-wh.cheaper-msg
-            a(href="https://wa.me/78462060304", target="_blank") 
-              i.wa-icon
-          .cheaper-tlg.cheaper-msg
-            a(href="https://t.me/tlevel", target="_blank") 
-              i.tlg-icon
-          .cheaper-mail 
-            a(href="mailto:tlevel@tlevel.ru") tlevel@tlevel.ru
+  include ../_includes/sections/_s-cheaper.pug
+  
 
 
   //
@@ -308,156 +182,24 @@ block main
   //
       Econom
             ================================================== 
-  section.section.econom
-
-    .econom__img
-      picture
-        source(srcset='img/econ-girls.webp' type='image/webp')
-        img(src='img/econ-girls.png', alt="")
-
-    .container.econom__container
-      .econom__content
-        .econom__content-inner
-          .section__heading.econom__heading
-            h2 
-              span.econom-highlight.text_bold Умеем экономить до 20% 
-              span на клининговых услугах!
-          
-          .econom-text 
-            .econom-text__img 
-              picture
-                source(srcset='img/serv-pig.webp' type='image/webp')
-                img(src='img/serv-pig.png', alt="")
-            p 
-              span.text_bold Если у вас заключён контракт с другой компанией 
-              | - закажите звонок нашего эксперта, мы тактично покажем Вам, где Вы переплачиваете, и где мы можем сэкономить Ваши деньги
-
-
-
-      .econom__form.form-block__form-wrap
-        form.form.econom-form.form-block__form#econom(name='callback', data-action='send-callback.php')
-
-
-          .form__group.econom-form__group.form__group_control.form-block__group
-            input.form__control.form-block__control.econom-form__control#userPhoneEco(type='text', name='userPhone', placeholder='Номер телефона', required)
-
-
-          .form__group.econom-form__group.form__group_control.form-block__group
-            input.form__control.form-block__control.econom-form__control#userNameEco(type='text', name='userName', placeholder='Ваше Имя', required)
-
-       
-          input(type='hidden', value='Обратный звонок', name='formTheme')
-
-          .form__submit-wrap
-            .loader-container
-              button.btn.btn_primary.form__submit.econom-form__submit(type='submit')
-                span.text_uppercase Заказать звонок
+  include ../_includes/sections/_s-econom.pug 
+  
 
 
   //
       Other-serv
             ==================================================
-  .other-serv
-    .container 
-      .section__heading.other-serv__heading
-        h2 
-          span Другие 
-          span.text_bold услуги компании
-
-      .other-serv__slider-container
-        .swiper.other-serv__slider
-          .swiper-wrapper
+  include ../_includes/sections/_s-other-serv.pug 
+  
 
 
-            .swiper-slide.other-serv-slide
-              .services-card.services-card-01
-                .services-card__img
-                  picture
-                    source(srcset='img/serv-card-1.webp', type='image/webp')
-                    img(src='img/serv-card-1.png', alt)
-                .services-card__content
-                  .services-card__title
-                    | Уборка производственных
-                    br
-                    | и пищевых помещений
-                  a.services-card__btn(href='company-cleaning.html', target='_blank') + Подробнее
-          
-
-            .swiper-slide.other-serv-slide
-              .services-card.services-card-02
-                .services-card__img
-                  picture
-                    source(srcset='img/serv-card-2.webp', type='image/webp')
-                    img(src='img/serv-card-2.png', alt)
-                .services-card__content
-                  .services-card__title Уборка территории и вывоз снега
-                  a.services-card__btn(href='territory-cleaning.html', target='_blank') + Подробнее
-          
-
-            .swiper-slide.other-serv-slide
-              .services-card.services-card-03
-                .services-card__img
-                  picture
-                    source(srcset='img/serv-card-3.webp', type='image/webp')
-                    img(src='img/serv-card-3.png', alt)
-                .services-card__content
-                  .services-card__title Дезинфекция помещений
-                  a.services-card__btn(href='room-desinfection.html', target='_blank') + Подробнее
-          
-
-            .swiper-slide.other-serv-slide
-              .services-card.services-card-04
-                .services-card__img
-                  picture
-                    source(srcset='img/serv-card-4.webp', type='image/webp')
-                    img(src='img/serv-card-4.png', alt)
-                .services-card__content
-                  .services-card__title Инженерное обслуживание
-                  a.services-card__btn(href='eng-service.html', target='_blank') + Подробнее
-          
-
-            .swiper-slide.other-serv-slide
-              .services-card.services-card-05
-                .services-card__img
-                  picture
-                    source(srcset='img/serv-card-5.webp', type='image/webp')
-                    img(src='img/serv-card-5.png', alt)
-                .services-card__content
-                  .services-card__title Уборка офисных помещений
-                  a.services-card__btn(href='office-cleaning.html', target='_blank') + Подробнее
-          
-
-            .swiper-slide.other-serv-slide
-              .services-card.services-card-06
-                .services-card__img
-                  picture
-                    source(srcset='img/serv-card-6.webp', type='image/webp')
-                    img(src='img/serv-card-6.png', alt)
-                .services-card__content
-                  .services-card__title Уборка складских помещений
-                  a.services-card__btn(href='store-cleaning.html', target='_blank') + Подробнее
-          
-
-            .swiper-slide.other-serv-slide
-              .services-card.services-card-07
-                .services-card__img
-                  picture
-                    source(srcset='img/serv-card-7.webp', type='image/webp')
-                    img(src='img/serv-card-7.png', alt)
-                .services-card__content
-                  .services-card__title Промышленный альпинизм
-                  a.services-card__btn(href='prom-climbing.html', target='_blank') + Подробнее
-   
 
 
-        .swiper-button-prev.other-serv__button.other-serv__button_prev
-        .swiper-button-next.other-serv__button.other-serv__button_next
 
-      .other-serv__footer 
-        p 
-          |Перейти на 
-          a.text-link_blue(href="/") главную страницу 
-          | и узнать подробнее о компании 
+
+
+
+  
 //- block footer
 //-     h2 Wow, Block Footer is undefined!
 

@@ -4242,6 +4242,31 @@ section.manager {
 .eng-service-work-list ul li:not(:last-child) {
   margin-bottom: 0;
 }
+.eng-service-client190 .client190__img {
+  display: none;
+}
+.eng-service-intro-2 .img__title {
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 40rem;
+  left: calc(50vw - 87rem);
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+}
+.eng-service-intro-2 .img__subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+.eng-service-intro-2 .intro-2__img {
+  left: calc(50vw - 104rem);
+  bottom: 0;
+}
+.eng-service-intro-2 .intro-2__content {
+  margin-right: 4.5em;
+}
 
 /* Modals
  * -------------------------*/
