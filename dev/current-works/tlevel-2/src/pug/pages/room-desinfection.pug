@@ -113,34 +113,7 @@ block main
   //
     Client190
           ==================================================
-  .client190
-    .client190__img
-      picture
-        source(srcset='img/cl-190-vacuum.webp', type='image/webp')
-        img(src='img/cl-190-vacuum.png', alt)
-
-    .client190__inner
-      .client190-glow.client190-glow__left
-      .client190-glow.client190-glow__right
-
-      .container.client190__container
-        
-
-        .client190-card-wrap 
-          .client190-card
-            .client190-card__label 
-              picture
-                source(srcset='img/cl-190-label.webp', type='image/webp')
-                img(src='img/cl-190-label.png', alt)
-
-            .client190-digit.clip-text 190+
-            .client190-card-text Опытных клинеров готовы к работе
-          
-        .client190-list-wrap
-          ul.client190-list
-            li  14 лет безупречной работы и чистой репутации
-            li 100 000 м2 административных и офисных помещений убрано нашей компанией
-            li от 35 до 65 руб./м2 - средняя стоимость уборки наших объектов, в зависимости от объема, графика и сложности работ
+  include ../_includes/sections/_s-сlient190.pug
 
 
 
@@ -362,7 +335,7 @@ block main
 
 
       .econom__form.form-block__form-wrap
-        form.form.form-block__form#econom(name='callback', data-action='send-callback.php')
+        form.form.econom-form.form-block__form#econom(name='callback', data-action='send-callback.php')
 
 
           .form__group.econom-form__group.form__group_control.form-block__group

@@ -1986,6 +1986,7 @@ section.manager
     z-index: 1
   &__content
     margin-left: auto
+    margin-right: -1.5rem
     max-width: 67.5rem
   &__heading
     margin-bottom: 1.5rem
@@ -2013,7 +2014,7 @@ section.manager
     width: 69.6rem
     position: absolute
     bottom: -7rem
-    left: -16rem
+    left: calc(50vw - 110rem)
     z-index: 0
     img
       max-width: 100%
@@ -2082,9 +2083,11 @@ section.manager
 /* Features
  -------------------------*/
 .features
-  padding: 7rem 0
+  padding: 7.5rem 0
   background: linear-gradient(-16deg, v.$primary-blue, #1648c5)
   &-block
+    margin-left: 0
+    margin-right: 0
     justify-content: space-between
     align-items: flex-start
 
@@ -2166,15 +2169,13 @@ section.manager
   &-body
     padding-left: 0
     padding-right: 0
-  &__content-wrap,
-  &__img-wrap
-    width: 50%
-    flex: none
   &__content-wrap
     display: flex
     justify-content: flex-end
+    flex: 1
   &__content
-    padding-top: 11rem
+    margin-right: 6rem
+    padding-top: 10.5rem
     padding-bottom: 8rem
     width: 100%
     max-width: 58.5rem
@@ -2182,7 +2183,7 @@ section.manager
   &-highlight
     color: #1546c1
   &-title
-    margin-bottom: 4rem
+    margin-bottom: 3rem
     font-size: 2.8rem
     font-weight: 700
     line-height: 1.25
@@ -2203,8 +2204,8 @@ section.manager
       display: flex
       position: relative
   &-footer
-    padding-top: 6rem
-    padding-bottom: 6rem
+    padding-top: 5.5rem
+    padding-bottom: 5.5rem
     background: linear-gradient(-16deg, v.$primary-blue, #1648c5)
     text-align: center
     color: #fff
@@ -2220,6 +2221,9 @@ section.manager
   &__img
     width: 100%
     height: 100%
+    &-wrap
+      width: 46%
+      flex: none
     img
       width: 100%
       height: 100%
@@ -2251,6 +2255,9 @@ section.manager
     font-weight: 700
     color: #1445c0
   ul
+    margin-bottom: 2.5rem
+    margin-left: 2rem
+    list-style-type: disc
     li
       &:not(:last-child)
         margin-bottom: 1.8rem
@@ -2321,8 +2328,8 @@ section.manager
   color: #fff
   &__inner
     position: relative
-    padding-top: 12rem
-    padding-bottom: 8rem
+    padding-top: 15rem
+    padding-bottom: 8.5rem
     overflow: hidden
   &__container
     display: flex
@@ -2332,7 +2339,7 @@ section.manager
     flex: none
   &-card
     position: relative
-    padding: 6.5rem 9rem 4.5rem
+    padding: 4.5rem 9rem 4.5rem
     max-width: 48rem
     font-size: 2.2rem
     font-weight: 500
@@ -2358,20 +2365,22 @@ section.manager
     font-weight: 900
     letter-spacing: 0
   &-list
-    max-width: 23em
+    margin-top: -2rem
+    margin-left: 8rem
+    max-width: 24em
     font-size: 1.8rem
     font-weight: 500
     line-height: 1.5
     li
       position: relative
-      padding-left: 2.5em
+      padding-left: 3.5em
       &:not(:last-child)
-        margin-bottom: 2rem
+        margin-bottom: 3rem
       &::before
         content: ''
         display: inline-block
-        width: 1.5em
-        height: 1.5em
+        width: 2em
+        height: 2em
         position: absolute
         top: .4em
         left: .4em
@@ -2526,7 +2535,7 @@ section.manager
   padding-top: 6rem
   padding-bottom: 6rem
   &__heading
-    margin-bottom: 5.5rem
+    margin-bottom: 5rem
     h2
       font-weight: 700
       color: #00081b
@@ -2565,7 +2574,7 @@ section.manager
     &-label 
       margin-left: auto
       margin-right: auto
-      margin-bottom: 4.5rem
+      margin-bottom: 3.5rem
       padding-left: 4rem
       padding-right: 4rem
       width: 26rem
@@ -2632,13 +2641,13 @@ section.manager
   &__content
     max-width: 45rem 
   &__heading
-    margin-bottom: 2.5rem
+    margin-bottom: 1.5rem
     h2
       color: #00081b
       font-weight: 700
       text-align: left
   &__text
-    margin-bottom: 4.5rem
+    margin-bottom: 2.5rem
     max-width: 45rem 
     font-size: 2.5rem
     line-height: 1.4
@@ -2658,7 +2667,7 @@ section.manager
       transition: transform 0s
         
   &-phone
-    margin-right: 2.5rem
+    margin-right: 3.5rem
     a 
       font-size: 2.8rem
       font-weight: 800
@@ -2668,6 +2677,7 @@ section.manager
       a
         text-decoration: underline
   &-mail
+    margin-top: 1rem
     a
       font-size: 2.2rem
       font-weight: 500
@@ -2679,7 +2689,7 @@ section.manager
   &__img
     position: absolute
     top: 0
-    left: calc( 50vw - 1rem )
+    left: calc( 50vw - 2rem )
     z-index: 0
     img
       max-width: 84rem
@@ -2718,7 +2728,8 @@ section.manager
 /* Rev_lite
  -------------------------*/
 .rev_lite
-  padding-bottom: 2rem
+  padding-top: 5rem
+  padding-bottom: 6.5rem
     
 
 /* Econom
@@ -2735,9 +2746,9 @@ section.manager
     display: flex
     &-inner
       margin-left: auto
-      max-width: 56rem
+      max-width: 53.5rem
   &__heading
-    margin-bottom: 4rem
+    margin-bottom: 3rem
     text-align: left
     h2
       color: #000411
@@ -2766,12 +2777,13 @@ section.manager
     z-index: 1
   &__img
     position: absolute
-    bottom: 0
-    left: calc( 50vw - 75rem )
+    bottom: -1.5rem
+    left: calc( 50vw - 70rem )
     z-index: 0
     img
       max-width: 79rem 
   &-form
+    justify-content: center
     &__group
       max-width: 36rem
     &__control
@@ -2818,6 +2830,20 @@ section.manager
       text-decoration: underline
       &:hover
         text-decoration: none
+
+
+
+
+/* ENG-SERVICE
+ -------------------------*/
+.eng-service
+  &-work-list
+    ul
+      li
+        &:not(:last-child)
+          margin-bottom: 0
+
+
 
 /* Modals
  -------------------------*/

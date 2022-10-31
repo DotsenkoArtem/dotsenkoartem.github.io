@@ -3097,6 +3097,7 @@ section.manager {
 }
 .intro-2__content {
   margin-left: auto;
+  margin-right: -1.5rem;
   max-width: 67.5rem;
 }
 .intro-2__heading {
@@ -3126,7 +3127,7 @@ section.manager {
   width: 69.6rem;
   position: absolute;
   bottom: -7rem;
-  left: -16rem;
+  left: calc(50vw - 110rem);
   z-index: 0;
 }
 .intro-2__img img {
@@ -3217,11 +3218,13 @@ section.manager {
 /* Features
  * -------------------------*/
 .features {
-  padding: 7rem 0;
+  padding: 7.5rem 0;
   background: -o-linear-gradient(106deg, #002a94, #1648c5);
   background: linear-gradient(-16deg, #002a94, #1648c5);
 }
 .features-block {
+  margin-left: 0;
+  margin-right: 0;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -3324,12 +3327,6 @@ section.manager {
   padding-left: 0;
   padding-right: 0;
 }
-.special__content-wrap, .special__img-wrap {
-  width: 50%;
-  -webkit-box-flex: 0;
-  -ms-flex: none;
-  flex: none;
-}
 .special__content-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3337,9 +3334,13 @@ section.manager {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 .special__content {
-  padding-top: 11rem;
+  margin-right: 6rem;
+  padding-top: 10.5rem;
   padding-bottom: 8rem;
   width: 100%;
   max-width: 58.5rem;
@@ -3349,7 +3350,7 @@ section.manager {
   color: #1546c1;
 }
 .special-title {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 1.25;
@@ -3379,8 +3380,8 @@ section.manager {
   position: relative;
 }
 .special-footer {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
   background: -o-linear-gradient(106deg, #002a94, #1648c5);
   background: linear-gradient(-16deg, #002a94, #1648c5);
   text-align: center;
@@ -3400,6 +3401,12 @@ section.manager {
 .special__img {
   width: 100%;
   height: 100%;
+}
+.special__img-wrap {
+  width: 46%;
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
 }
 .special__img img {
   width: 100%;
@@ -3439,6 +3446,11 @@ section.manager {
   font-size: 16px;
   font-weight: 700;
   color: #1445c0;
+}
+.work-list ul {
+  margin-bottom: 2.5rem;
+  margin-left: 2rem;
+  list-style-type: disc;
 }
 .work-list ul li:not(:last-child) {
   margin-bottom: 1.8rem;
@@ -3538,8 +3550,8 @@ section.manager {
 }
 .client190__inner {
   position: relative;
-  padding-top: 12rem;
-  padding-bottom: 8rem;
+  padding-top: 15rem;
+  padding-bottom: 8.5rem;
   overflow: hidden;
 }
 .client190__container {
@@ -3555,7 +3567,7 @@ section.manager {
 }
 .client190-card {
   position: relative;
-  padding: 6.5rem 9rem 4.5rem;
+  padding: 4.5rem 9rem 4.5rem;
   max-width: 48rem;
   font-size: 2.2rem;
   font-weight: 500;
@@ -3588,23 +3600,25 @@ section.manager {
   letter-spacing: 0;
 }
 .client190-list {
-  max-width: 23em;
+  margin-top: -2rem;
+  margin-left: 8rem;
+  max-width: 24em;
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.5;
 }
 .client190-list li {
   position: relative;
-  padding-left: 2.5em;
+  padding-left: 3.5em;
 }
 .client190-list li:not(:last-child) {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .client190-list li::before {
   content: "";
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
+  width: 2em;
+  height: 2em;
   position: absolute;
   top: 0.4em;
   left: 0.4em;
@@ -3837,7 +3851,7 @@ section.manager {
   padding-bottom: 6rem;
 }
 .actions__heading {
-  margin-bottom: 5.5rem;
+  margin-bottom: 5rem;
 }
 .actions__heading h2 {
   font-weight: 700;
@@ -3889,7 +3903,7 @@ section.manager {
 .actions-card-label {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 4.5rem;
+  margin-bottom: 3.5rem;
   padding-left: 4rem;
   padding-right: 4rem;
   width: 26rem;
@@ -3970,7 +3984,7 @@ section.manager {
   max-width: 45rem;
 }
 .cheaper__heading {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .cheaper__heading h2 {
   color: #00081b;
@@ -3978,7 +3992,7 @@ section.manager {
   text-align: left;
 }
 .cheaper__text {
-  margin-bottom: 4.5rem;
+  margin-bottom: 2.5rem;
   max-width: 45rem;
   font-size: 2.5rem;
   line-height: 1.4;
@@ -4020,7 +4034,7 @@ section.manager {
   transition: transform 0s, -webkit-transform 0s;
 }
 .cheaper-phone {
-  margin-right: 2.5rem;
+  margin-right: 3.5rem;
 }
 .cheaper-phone a {
   font-size: 2.8rem;
@@ -4030,6 +4044,9 @@ section.manager {
 }
 .cheaper-phone:hover a {
   text-decoration: underline;
+}
+.cheaper-mail {
+  margin-top: 1rem;
 }
 .cheaper-mail a {
   font-size: 2.2rem;
@@ -4044,7 +4061,7 @@ section.manager {
 .cheaper__img {
   position: absolute;
   top: 0;
-  left: calc(50vw - 1rem);
+  left: calc(50vw - 2rem);
   z-index: 0;
 }
 .cheaper__img img {
@@ -4087,7 +4104,8 @@ section.manager {
 /* Rev_lite
  * -------------------------*/
 .rev_lite {
-  padding-bottom: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 6.5rem;
 }
 
 /* Econom
@@ -4108,10 +4126,10 @@ section.manager {
 }
 .econom__content-inner {
   margin-left: auto;
-  max-width: 56rem;
+  max-width: 53.5rem;
 }
 .econom__heading {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   text-align: left;
 }
 .econom__heading h2 {
@@ -4148,12 +4166,17 @@ section.manager {
 }
 .econom__img {
   position: absolute;
-  bottom: 0;
-  left: calc(50vw - 75rem);
+  bottom: -1.5rem;
+  left: calc(50vw - 70rem);
   z-index: 0;
 }
 .econom__img img {
   max-width: 79rem;
+}
+.econom-form {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .econom-form__group {
   max-width: 36rem;
@@ -4212,6 +4235,12 @@ section.manager {
 }
 .other-serv__footer .text-link_blue:hover {
   text-decoration: none;
+}
+
+/* ENG-SERVICE
+ * -------------------------*/
+.eng-service-work-list ul li:not(:last-child) {
+  margin-bottom: 0;
 }
 
 /* Modals

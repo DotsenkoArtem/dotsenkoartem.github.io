@@ -17,7 +17,88 @@ block main
   //
       Intro-desinfection
     ================================================== 
-  +intro-2('<span class="d-block text_ex-bold"> Ищите подрядчика <span class="text_ex-bold"> на техническое </span></span><span class="d-block text_ex-bold"> обслуживание инженерного </span><span class="text_ex-bold"> оборудования? </span>', 'intro-ing-serv-man')
+  +intro-2('<span class="d-block"> Ищите подрядчика <span class="text_ex-bold"> на техническое </span></span><span class="d-block text_ex-bold"> обслуживание инженерного </span><span class="text_ex-bold"> оборудования? </span>', 'intro-ing-serv-man')
+
+
+  //
+    Special
+          ==================================================
+  .special
+    .row.special-body
+      .special__content-wrap 
+        .special__content
+          .special-title 
+            span Специализируемся 
+            span.special-highlight  на техническом
+            span.d-block.special-highlight  обслуживании инженерного
+            span.d-block  оборудования 
+
+          .special-label-wrap
+            .special-label 
+              span Посмотреть список выполняемых работ 
+              .special__stamp
+                picture
+                  source(srcset='img/awa-stamp.webp', type='image/webp')
+                  img(src='img/awa-stamp.png', alt)
+              .work-list-btn
+              .work-list-wrap
+                .work-list.eng-service-work-list
+                  button.work-list-close
+                    span X
+                  .work-list-title Список выполняемых работ:
+                  .work-list-subtitle Обслуживание и эксплуатация инженерных систем:
+                  ul 
+                    li мониторинг технического состояния инженерных сетей;
+                    li плановые профилактические работы;
+                    li измерение параметров и регулировка инженерных систем; 
+                    li измерение параметров электробезопасности и составление протоколов;
+                    li подготовка объекта к сезонной эксплуатации;
+                    li опрессовка системы теплоснабжения;
+                    li промывка  системы теплоснабжения; плановые ремонтные работы;
+                    li составление технической документации;
+                    li снятие показаний приборов учета и передача их энергоснабжающим организациям;
+                    li оперативное устранение неисправностей.
+
+                  .work-list-subtitle Техническое обслуживание инженерного оборудования:
+                  ul 
+                    li теплоснабжения (отопления и горячего водоснабжения);
+                    li вентиляции, кондиционирования и холодоснабжения;
+                    li дымоходов;
+                    li водопровода и канализации; 
+                    li противопожарного водопровода;
+                    li мусоропровода;
+                    li дымоудаления, пожаротушения, пожарной сигнализации;
+                    li внутридомового и наружного электроснабжения, электро-, радио-, теле- и прочего оборудования;
+                    li тепловых пунктов и других инженерных систем.
+
+ 
+
+
+
+      .special__img-wrap
+        .special__img 
+          picture
+            source(srcset='img/spec-eng.jpg', type='image/jpg')
+            img(src='img/spec-eng.jpg', alt)
+
+    .special-footer
+      span.d-block Сотрудники компании Top Level 
+        span.text_bold гарантируют 
+      span.d-block.text_bold информационную безопасность, корректность и 
+      span.d-block
+          span.text_bold воспитанность, 
+          | выполняя свою работу
+
+
+  //
+      Client190
+            ==================================================
+  include ../_includes/sections/_s-сlient190.pug
+
+
+
+
+
 
 
 //- block footer
