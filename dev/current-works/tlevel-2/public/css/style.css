@@ -4683,6 +4683,21 @@ section.manager {
   left: calc(50vw - 93rem);
 }
 
+.territory-intro-2 .intro-2__img {
+  bottom: 0;
+}
+.territory-intro-2 .img__title {
+  padding: 1rem 2rem;
+  position: absolute;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  top: 32rem;
+  left: calc(50vw - 93rem);
+}
+
 /* Modals
  * -------------------------*/
 .modal {

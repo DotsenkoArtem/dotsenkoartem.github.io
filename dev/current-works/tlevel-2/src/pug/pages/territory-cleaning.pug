@@ -15,10 +15,167 @@ block page-vars
 
 block main 
   
+  
+  
+  
   //
-      Intro-desinfection
+      Intro-2
     ================================================== 
-  +intro-2('<span class="text_ex-bold"> Проводим дезинфекцию помещений от бактерий и вирусов, </span><span>в том числе </span><span class="d-block d-inline_xs">от SARS-CoV-2 (COVID-19)</span>', 'intro-des-man')
+  +intro-2('<span class="d-block">Нужна <span class="text_ex-bold"> уборка и озеленение </span></span><span class="d-block text_ex-bold"> коммерческих территорий, </span><span class="d-block text_ex-bold"> чистка и вывоз снега? </span>', 'intro-territory-man', 'Владимир', 'Эксперт Top Level')(class="territory-intro-2")
+
+
+  //
+    Special
+          ==================================================
+  .special
+    .row.special-body
+      .special__content-wrap 
+        .special__content
+          .special-title 
+            span.d-block Специализируемся на комплексной 
+            span.d-block.special-highlight уборке и озеленении коммерческих  
+            span.special-highlight  территорий
+
+          .special-label-wrap
+            .special-label 
+              span Посмотреть список выполняемых работ 
+              .special__stamp
+                picture
+                  source(srcset='img/awa-stamp.webp', type='image/webp')
+                  img(src='img/awa-stamp.png', alt)
+              .work-list-btn
+              .work-list-wrap
+                .work-list
+                  button.work-list-close
+                    span X
+                  .work-list-title Список выполняемых работ:
+                  ul 
+                    li уборка прилегающей коммерческой территории;
+                    li озеленение территории, стрижка газонов, полив и уход за растениями;
+                    li уборка снега с придомовых территорий МКД
+                    li вывоз снега с объекта, либо его временное складирование в отведенном месте;
+                    li уборка и вывоз снега с парковок и стоянок; 
+                    li уборка снега на территории частного дома; 
+                    li очистка тротуаров от наледи; 
+                    li очистка крыш от снега, наледи и сосулек (методом промышленного альпинизма);
+                    li очистка от наледи и сосулек козырьков балконов на последних этажах.
+
+
+
+
+      .special__img-wrap
+        .special__img 
+          picture
+            source(srcset='img/spec-territory.jpg', type='image/jpg')
+            img(src='img/spec-territory.jpg', alt)
+
+    .special-footer
+      span.d-block Сотрудники компании Top Level 
+        span.text_bold гарантируют 
+      span.d-block.text_bold информационную безопасность, корректность и 
+      span.d-block
+          span.text_bold воспитанность, 
+          | выполняя свою работу
+
+
+
+
+
+  //
+      Client190
+            ==================================================
+  //- include ../_includes/sections/_s-сlient190.pug
+  +client190('cl-190-label', '<div class="client190-digit clip-text">190+</div>', 'Опытных клинеров готовы к работе', '14 лет безупречной работы и чистой репутации', '100 000 м2 административных и офисных помещений убрано нашей компанией', 'от 35 до 65 руб./м2 - средняя стоимость уборки наших объектов, в зависимости от объема, графика и сложности работ')(class="eng-service-client190")
+
+
+
+
+  //
+      Spec-gal
+            ==================================================
+  +specGal('spec-gal-territory-1', 'spec-gal-territory-2', 'spec-gal-territory-3', 'spec-gal-territory-4')
+
+
+
+
+
+  //
+      Subscribe
+            ==================================================
+  include ../_includes/sections/_s-subscribe.pug
+
+
+
+  //
+      Actions
+            ================================================== 
+  include ../_includes/sections/_s-actions.pug
+
+
+
+  //
+      Cheaper
+            ================================================== 
+  include ../_includes/sections/_s-cheaper.pug
+  
+
+
+  //
+      Client
+            ================================================== 
+  +client()(class="client_lite")
+
+
+  //
+      Intro
+            ================================================== 
+  include ../_includes/sections/_s-intro-lite.pug
+
+  //
+      Manager
+            ================================================== 
+  section.manager  
+    include ../_includes/sections/_b-manager.pug 
+
+
+  //
+      Expert
+            ================================================== 
+  include ../_includes/sections/_s-expert.pug
+  
+
+  //
+      Reveiws
+            ================================================== 
+  include ../_includes/sections/_s-reveiws-lite.pug 
+    
+
+  //
+      Econom
+            ================================================== 
+  include ../_includes/sections/_s-econom.pug 
+  
+
+
+  //
+      Other-serv
+            ==================================================
+  include ../_includes/sections/_s-other-serv.pug 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //- block footer
