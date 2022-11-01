@@ -15,10 +15,143 @@ block page-vars
 
 block main 
   
+  
+  
   //
-      Intro-desinfection
+      Intro-2
     ================================================== 
-  +intro-2('<span class="text_ex-bold"> Проводим дезинфекцию помещений от бактерий и вирусов, </span><span>в том числе </span><span class="d-block d-inline_xs">от SARS-CoV-2 (COVID-19)</span>', 'intro-des-man')
+  +intro-2('<span class="d-block text_ex-bold"> Нужна уборка складских </span><span class="text_ex-bold"> помещений? </span>', 'intro-store-girl', 'Мария', 'Эксперт Top Level')(class="store-intro-2")
+
+
+  //
+    Special
+          ==================================================
+  .special
+    .row.special-body
+      .special__content-wrap 
+        .special__content
+          .special-title 
+            span Специализируемся на регулярной 
+            span.d-block уборке  
+              span.special-highlight складов и складских
+            span.d-block.special-highlight  помещений
+
+          .special-label-wrap
+            .special-label 
+              span Посмотреть список выполняемых работ 
+              .special__stamp
+                picture
+                  source(srcset='img/awa-stamp.webp', type='image/webp')
+                  img(src='img/awa-stamp.png', alt)
+              .work-list-btn
+              .work-list-wrap
+                .work-list
+                  button.work-list-close
+                    span X
+                  .work-list-title Список выполняемых работ:
+                  ul 
+                    li проводим сухую и влажную уборку всех видов напольных покрытий механизированным и ручным способами;
+                    li устраняем локальные загрязнения и пыли с любых типов поверхностей; моем и натираем стеклянные и зеркальные поверхности;
+                    li очищаем металлоконструкции, стены, стеллажи любой высоты; 
+                    li моем и дезинфицируем санузлы; 
+                    li убираем все подсобные и дополнительные помещения склада.
+
+
+
+      .special__img-wrap
+        .special__img 
+          picture
+            source(srcset='img/spec-store.jpg', type='image/jpg')
+            img(src='img/spec-store.jpg', alt)
+
+    .special-footer
+      span.d-block Сотрудники компании Top Level 
+        span.text_bold гарантируют 
+      span.d-block.text_bold информационную безопасность, корректность и 
+      span.d-block
+          span.text_bold воспитанность, 
+          | выполняя свою работу
+
+
+
+  //
+    Office-Client190
+          ==================================================
+  +client190('cl-190-label-office', 'от <div class="client190-digit clip-text">35</div>до<div class="client190-digit clip-text">65</div>руб./м<small class="sup">2</small>','Средняя стоимость уборки наших объектов, в зависимости от объема, графика и сложности работ', ' 14 лет безупречной работы и чистой репутации', 'Более 190 опытных клинеров готовы к работе', '100 000 кв. м административных и офисных помещений убрано нашей компанией')(class="store-client190")
+
+
+
+  //
+      Spec-gal
+            ==================================================
+  +specGal('spec-gal-store-1', 'spec-gal-store-2', 'spec-gal-store-3', 'spec-gal-store-4')
+
+
+
+  //
+      Subscribe
+            ==================================================
+  include ../_includes/sections/_s-subscribe.pug
+
+
+  //
+    Actions
+          ================================================== 
+  include ../_includes/sections/_s-actions.pug
+
+
+  //
+      Cheaper
+            ================================================== 
+  include ../_includes/sections/_s-cheaper.pug
+
+
+  //
+      Client
+            ================================================== 
+  +client()(class="client_lite")
+
+
+
+  //
+      Intro
+            ================================================== 
+  include ../_includes/sections/_s-intro-lite.pug
+
+  //
+      Manager
+            ================================================== 
+  section.manager  
+    include ../_includes/sections/_b-manager.pug 
+
+
+  //
+      Expert
+            ================================================== 
+  include ../_includes/sections/_s-expert.pug
+  
+
+  //
+      Reveiws
+            ================================================== 
+  include ../_includes/sections/_s-reveiws-lite.pug 
+
+  
+
+  //
+      Econom
+            ================================================== 
+  include ../_includes/sections/_s-econom.pug 
+  
+
+
+  //
+      Other-serv
+            ==================================================
+  include ../_includes/sections/_s-other-serv.pug 
+
+
+
 
 
 //- block footer

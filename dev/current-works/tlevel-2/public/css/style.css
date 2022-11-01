@@ -4552,23 +4552,29 @@ section.manager {
   left: calc(50vw - 93rem);
 }
 
-.office-client190 .client190-card {
+.office-client190 .client190-card,
+.store-client190 .client190-card {
   padding: 4.5rem 4rem 4.5rem;
 }
-.office-client190 .client190-card__label {
+.office-client190 .client190-card__label,
+.store-client190 .client190-card__label {
   top: -3.5rem;
 }
-.office-client190 .client190-card-text {
+.office-client190 .client190-card-text,
+.store-client190 .client190-card-text {
   max-width: 40rem;
 }
-.office-client190 .client190-digit {
+.office-client190 .client190-digit,
+.store-client190 .client190-digit {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.office-client190 .client190-list {
+.office-client190 .client190-list,
+.store-client190 .client190-list {
   margin-top: 1rem;
 }
-.office-client190 small.sup {
+.office-client190 small.sup,
+.store-client190 small.sup {
   vertical-align: super;
 }
 
@@ -4658,6 +4664,23 @@ section.manager {
 
 .company-form-block {
   position: static;
+}
+
+/* STORE-CLEANING
+ * -------------------------*/
+.store-intro-2 .intro-2__img {
+  bottom: 0;
+}
+.store-intro-2 .img__title {
+  padding: 1rem 2rem;
+  position: absolute;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  top: 32rem;
+  left: calc(50vw - 93rem);
 }
 
 /* Modals
