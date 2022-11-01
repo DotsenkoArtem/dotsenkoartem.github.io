@@ -1043,6 +1043,10 @@ section.manager
 .client__button_next
   right: calc(50vw - 60rem)
 
+.client_lite
+  padding-top: 6.5rem
+  padding-bottom: 6.5rem
+
 .cleaning-wrapper
   color: #ffffff
   background: #00040e
@@ -2876,28 +2880,38 @@ section.manager
  -------------------------*/
 .climb
   &-intro-2
-    .intro-2__footer
-      display: flex
-      align-items: baseline
-      .digits
-        margin-left: 5.5rem
-      .digits
-        &__head
-          font-size: 2rem
-        &__item
-          font-size: 2rem
-        &__value
-          margin-left: 0.5rem
-          margin-right: 0.5rem
-          display: inline-block
-          font-size: 8rem
-          line-height: 1.1
+    padding-top: 25rem
+    .intro-2
+      &__container
+        padding-top: 1rem
+        padding-bottom: 8rem
+      &__content
+        margin-right: 6.5rem
+      &__footer
+        display: flex
+        align-items: baseline
+        .digits
+          margin-left: 5.5rem
+        .digits
+          &__head
+            font-size: 2rem
+          &__item
+            font-size: 2rem
+          &__value
+            margin-left: 0.5rem
+            margin-right: 0.5rem
+            display: inline-block
+            font-size: 8rem
+            line-height: 1.1
     .intro-2
       &__img 
+        bottom: -6rem
+        left: calc(50vw - 114rem)
         img
           max-width: none
-          width: 80rem
+          width: 75rem
   &__attention-label
+    margin-top: 1.5rem
     margin-bottom: 3rem
 
 
@@ -2944,7 +2958,7 @@ section.manager
     z-index: 1
   &-top 
     margin-top: 6.5rem
-    margin-bottom: 7rem
+    margin-bottom: 5rem
     display: flex
     justify-content: center
   &-card
@@ -3022,6 +3036,7 @@ section.manager
     z-index: 1
     display: flex
     justify-content: space-between
+    max-width: 107rem
   &__item 
     font-size: 1.8rem
     font-weight: 500

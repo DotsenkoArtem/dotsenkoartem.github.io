@@ -1982,6 +1982,11 @@ section.manager {
   right: calc(50vw - 60rem);
 }
 
+.client_lite {
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+}
+
 .cleaning-wrapper {
   color: #ffffff;
   background: #00040e;
@@ -4274,6 +4279,16 @@ section.manager {
 
 /* PROM-CLIMBING
  * -------------------------*/
+.climb-intro-2 {
+  padding-top: 25rem;
+}
+.climb-intro-2 .intro-2__container {
+  padding-top: 1rem;
+  padding-bottom: 8rem;
+}
+.climb-intro-2 .intro-2__content {
+  margin-right: 6.5rem;
+}
 .climb-intro-2 .intro-2__footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4298,11 +4313,16 @@ section.manager {
   font-size: 8rem;
   line-height: 1.1;
 }
+.climb-intro-2 .intro-2__img {
+  bottom: -6rem;
+  left: calc(50vw - 114rem);
+}
 .climb-intro-2 .intro-2__img img {
   max-width: none;
-  width: 80rem;
+  width: 75rem;
 }
 .climb__attention-label {
+  margin-top: 1.5rem;
   margin-bottom: 3rem;
 }
 
@@ -4354,7 +4374,7 @@ section.manager {
 }
 .geography-top {
   margin-top: 6.5rem;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4450,6 +4470,7 @@ section.manager {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  max-width: 107rem;
 }
 .feature-panel__item {
   font-size: 1.8rem;

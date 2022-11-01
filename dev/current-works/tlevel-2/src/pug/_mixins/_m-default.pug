@@ -111,3 +111,49 @@ mixin specGal(imgStem1, imgStem2, imgStem3, imgStem4)
         img(src=`img/${imgStem4}.jpg`, alt)
 
 
+mixin client
+  section.section.client&attributes(attributes)
+    .container.client__container
+      .section__heading.client__heading
+        h2
+          | Наши 
+          span.text_bold клиенты
+    .client__slider-container
+      .client__mask.client__mask_left
+      .swiper.client__slider
+        .swiper-wrapper
+          .swiper-slide.client-slide
+            picture
+              img(src='img/client-1.jpg', alt='Логотип Росжелдорпроект')
+          .swiper-slide.client-slide
+            picture
+              img(src='img/client-2.jpg', alt='Логотип юлмарт')
+          .swiper-slide.client-slide
+            picture
+              img(src='img/client-3.jpg', alt='Логотип Балтика')
+          .swiper-slide.client-slide
+            picture
+              img(src='img/client-4.jpg', alt='Логотип Собака')
+          .swiper-slide.client-slide
+            picture
+              img(src='img/client-5.jpg', alt='Логотип РЖД')
+          .swiper-slide.client-slide
+            picture
+              img(src='img/client-6.jpg', alt='Логотип Кёрхер')
+          .swiper-slide.client-slide
+            picture
+              img(src='img/client-7.jpg', alt='Логотип Спутник')
+          .swiper-slide.client-slide
+            picture
+              img(src='img/client-8.jpg', alt='Логотип Каравай')
+          .swiper-slide.client-slide
+            picture
+              source(srcset='img/client-9.webp', type='image/webp')
+              img(src='img/client-9.png', alt='Логотип Электрощит Самара')
+          .swiper-slide.client-slide
+            picture
+              source(srcset='img/client-10.webp', type='image/webp')
+              img(src='img/client-10.png', alt='Логотип Альфа центр здоровья')
+      .swiper-button-prev.client__button.client__button_prev
+      .swiper-button-next.client__button.client__button_next
+      .client__mask.client__mask_right
