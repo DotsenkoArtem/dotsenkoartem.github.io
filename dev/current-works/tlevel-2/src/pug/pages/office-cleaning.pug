@@ -15,10 +15,159 @@ block page-vars
 
 block main 
   
+  
   //
-      Intro-desinfection
+      Intro-2
     ================================================== 
-  +intro-2('<span class="text_ex-bold"> Проводим дезинфекцию помещений от бактерий и вирусов, </span><span>в том числе </span><span class="d-block d-inline_xs">от SARS-CoV-2 (COVID-19)</span>', 'intro-des-man')
+  +intro-2('<span class="d-block"> Нужна уборка <span class="text_ex-bold"> офисных </span></span><span class="d-block text_ex-bold"> и административно- </span><span class="text_ex-bold"> -хозяйственных помещений? </span>', 'intro-office-man', 'Евгений Моисеев', 'Эксперт Top Level')(class="office-intro-2")
+
+
+  //
+    Special
+          ==================================================
+  .special
+    .row.special-body
+      .special__content-wrap 
+        .special__content
+          .special-title 
+            span Специализируемся на ежедневной, 
+            span комплексной уборке 
+            span.special-highlight  административно- 
+            span.d-block.special-highlight -бытовых корпусов на объектах 
+            span.d-block.special-highlight  промышленного производства
+
+          .special-label-wrap
+            .special-label 
+              span Посмотреть список выполняемых работ 
+              .special__stamp
+                picture
+                  source(srcset='img/awa-stamp.webp', type='image/webp')
+                  img(src='img/awa-stamp.png', alt)
+              .work-list-btn
+              .work-list-wrap
+                .work-list
+                  button.work-list-close
+                    span X
+                  .work-list-title Список выполняемых работ:
+                  ul 
+                    li проводим сухую и влажную уборку пола с использованием специальной техники и ручного инвентаря; 
+                    li проводим уборку лестничных маршей и площадок с использованием ручного инвентаря;
+                    li  проводим комплексную уборку кабин лифтов, входных групп;
+                    li проводим комплексную санитарно-гигиеническую уборку в санузлах; 
+                    li пополнение дозаторов и диспенсеров расходными материалами (туалетная бумага, бумажные полотенца, жидкое или кусковое мыло, дезодоранты);
+                    li уход за комнатными растениями, проветривание помещений; 
+                    li все виды фасадных работ;
+                    li проводим все виды работ, связанные с прилегающей территорией (включая закрытые и открытые паркинги, уборку и вывоз снега и мусора); 
+                    li уборка территории;
+                    li удаляем мусор из мусорных корзин с заменой пакетов для сбора мусора;
+                    li удаляем отходы из уничтожителей бумаг; 
+                    li очищаем и натираем перила, ограждения, барьеры; 
+                    li чистим и ухаживаем за текстильными ковровыми покрытиями; 
+                    li удаляем пыль со всех горизонтальных и вертикальных поверхностей, мебели, предметов интерьера, дверей; 
+                    li очищаем и натираем остекления интерьера (зеркала, перегородки, остекление перил, дверцы шкафов, за исключением окон)
+
+
+ 
+
+
+
+      .special__img-wrap
+        .special__img 
+          picture
+            source(srcset='img/spec-office.jpg', type='image/jpg')
+            img(src='img/spec-office.jpg', alt)
+
+    .special-footer
+      span.d-block Сотрудники компании Top Level 
+        span.text_bold гарантируют 
+      span.d-block.text_bold информационную безопасность, корректность и 
+      span.d-block
+          span.text_bold воспитанность, 
+          | выполняя свою работу
+
+
+
+  //
+    Office-Client190
+          ==================================================
+  +client190('cl-190-label-office', '<div class="client190-digit clip-text">35</div>до<div class="client190-digit clip-text">65</div>руб./м<small class="sup">2</small>','Средняя стоимость уборки наших объектов, в зависимости от объема, графика и сложности работ', ' 14 лет безупречной работы и чистой репутации', 'Более 190 опытных клинеров готовы к работе', '100 000 кв. м административных и офисных помещений убрано нашей компанией')(class="office-client190")
+
+
+
+  //
+      Spec-gal
+            ==================================================
+  +specGal('spec-gal-office-1', 'spec-gal-office-2', 'spec-gal-office-3', 'spec-gal-office-4')
+
+
+
+  //
+      Subscribe
+            ==================================================
+  include ../_includes/sections/_s-subscribe.pug
+
+
+  //
+    Actions
+          ================================================== 
+  include ../_includes/sections/_s-actions.pug
+
+
+  //
+      Cheaper
+            ================================================== 
+  include ../_includes/sections/_s-cheaper.pug
+
+
+  //
+      Client
+            ================================================== 
+  +client()(class="client_lite")
+
+
+
+  //
+      Intro
+            ================================================== 
+  include ../_includes/sections/_s-intro-lite.pug
+
+  //
+      Manager
+            ================================================== 
+  section.manager  
+    include ../_includes/sections/_b-manager.pug 
+
+
+  //
+      Expert
+            ================================================== 
+  include ../_includes/sections/_s-expert.pug
+  
+
+  //
+      Reveiws
+            ================================================== 
+  include ../_includes/sections/_s-reveiws-lite.pug 
+
+  
+
+  //
+      Econom
+            ================================================== 
+  include ../_includes/sections/_s-econom.pug 
+  
+
+
+  //
+      Other-serv
+            ==================================================
+  include ../_includes/sections/_s-other-serv.pug 
+
+
+
+
+
+
 
 
 //- block footer
