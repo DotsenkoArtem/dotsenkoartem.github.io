@@ -389,11 +389,18 @@
 .tender__img img
   max-width: 52rem
 
+  // ???????????
+// .services,
+// .client,
+// .adv,
+// .awa__junction
+//   background: #f3f8fc
+
 .services,
 .client,
 .adv,
 .awa__junction
-  background: #f3f8fc
+  background: #fff
 
 .services
   position: relative
@@ -954,14 +961,10 @@ section.manager
   opacity: 0.85
 
 .client__mask_left
-  background: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(10rem, #f3f8fc))
-  background: -o-linear-gradient(right, transparent, #f3f8fc 10rem)
-  background: linear-gradient(-90deg, transparent, #f3f8fc 10rem)
+  background: linear-gradient(-90deg, transparent, #fff 10rem)
 
 .client__mask_right
-  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(10rem, #f3f8fc))
-  background: -o-linear-gradient(left, transparent, #f3f8fc 10rem)
-  background: linear-gradient(90deg, transparent, #f3f8fc 10rem)
+  background: linear-gradient(90deg, transparent, #fff 10rem)
 
 .client__slider
   -webkit-box-flex: 0
@@ -2910,9 +2913,20 @@ section.manager
         img
           max-width: none
           width: 75rem
+        .img__title
+          padding: 1rem 2rem
+          position: absolute
+          font-size: 1.3rem
+          font-weight: 800
+          text-align: center
+          background: rgba(0, 0, 0, 0.6)
+          border-radius: 1rem
+          top: 32rem
+          left: calc(50vw - 93rem)
   &__attention-label
     margin-top: 1.5rem
     margin-bottom: 3rem
+  
 
 
 .attention-label
@@ -3008,7 +3022,14 @@ section.manager
   padding-top: 6.5rem
   padding-bottom: 6.5rem
   background: linear-gradient(-16deg, #002a94, #1648c5)
+  &__heading
+    margin-bottom: 2.5rem
+    h2
+      font-weight: 700
+      color: #fff
+      text-align: center
   &__content
+    position: relative
     margin-left: auto
     margin-right: auto
     max-width: 85rem
@@ -3108,6 +3129,82 @@ section.manager
       margin-top: 1rem
   small.sup
     vertical-align: super
+
+
+
+
+/* COMPANY-CLEANING
+ -------------------------*/
+.company-intro-2
+  .intro-2
+    &__content
+      margin-right: -1.5rem 
+      max-width: 76rem
+    &__img
+      img
+        width: 64rem
+      .img__title
+        top: 39rem
+  .intro-2__footer
+    align-items: center
+    .digits__value
+      font-size: 5rem
+    .digits__head
+      font-size: 14px
+
+  .digits
+    &__item
+      flex: none
+      max-width: 26rem
+      text-align: center
+    &__text
+      margin-top: -.5rem
+      font-size: 12px
+
+
+
+.company-clean
+  background: #00040e
+  color: #fff
+  .clean__content
+    padding-left: 12rem
+  &-glow
+    position: absolute
+    top: 50%
+    z-index: 0
+    transform: translateY(-50%)
+    width: 90rem
+    height: 90rem
+    border-radius: 50%
+    background: radial-gradient(closest-side, rgba(0, 24, 84, 0.9), transparent)
+    &__left
+      left: -45rem
+    &__right
+      right: -45rem
+.company-blue-panel
+  overflow: hidden
+  &__img
+    position: absolute
+    z-index: 0
+    &_left
+      top: -7rem
+      left: -31rem
+      img
+        max-width: 40rem
+    &_right
+      top: -4rem
+      right: -30rem
+      img
+        max-width: 34rem
+
+.company-form-block
+  position: static
+
+
+
+
+
+
 
 /* Modals
  -------------------------*/

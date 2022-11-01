@@ -16,9 +16,267 @@ block page-vars
 block main 
   
   //
-      Intro-desinfection
+      Climb-intro
     ================================================== 
-  +intro-2('<span class="text_ex-bold"> Проводим дезинфекцию помещений от бактерий и вирусов, </span><span>в том числе </span><span class="d-block d-inline_xs">от SARS-CoV-2 (COVID-19)</span>', 'intro-des-man')
+  //- include ../_includes/sections/_s-climb-intro-2.pug
+  +climb-intro-2('<span class="d-block">Нужна уборка <span class="text_bold">пищевых</span></span><span class="d-block text_bold">предприятий и промышленных производств? </span>', 'intro-company-girl', 'Мария Плотникова', 'Эксперт Top Level', '<span>от </span><span class="digits__value clip-text"> 35 </span><span>руб./м<span class="sup">2</span></span>', 'Средняя стоимость уборки наших объектов, в зависимости от объема, графика и сложности работ')(class="company-intro-2")
+
+
+  //
+    Special
+          ==================================================
+  .special
+    .row.special-body
+      .special__content-wrap 
+        .special__content
+          .special-title 
+            span Специализируемся на ежедневной, 
+            span комплексной уборке 
+            span.special-highlight  пищевых и 
+            span.d-block.special-highlight производственных цехов
+   
+          .special-label-wrap
+            .special-label 
+              span Посмотреть список выполняемых работ 
+              .special__stamp
+                picture
+                  source(srcset='img/awa-stamp.webp', type='image/webp')
+                  img(src='img/awa-stamp.png', alt)
+              .work-list-btn
+              .work-list-wrap
+                .work-list
+                  button.work-list-close
+                    span X
+                  .work-list-title Список выполняемых работ:
+                  ul 
+                    li санитарная обработку оборудования, конвейеров, производственных линий, емкостей и т.д.;
+                    li замена фильтров на воздушных конвейерах в зоне упаковке;
+                    li наружная обработка крупногабаритных емкостей;
+                    li санитарную обработку дренажа и дренажных решеток;
+                    li влажная обработку пожарных ящиков;
+                    li санитарная обработка оборудования, конвейеров, производственных линий, емкостей и т.д.;
+                    li замена фильтров на воздушных конвейерах в зоне упаковки;
+                    li наружная обработка крупногабаритных емкостей;
+                    li проводим санитарную обработку дренажа и дренажных решеток;
+                    li делаем влажная обработка пожарных ящиков;
+                    li очищаем кухонное технологическое оборудование с использованием специальных химических средств;
+                    li очищаем жироуловители с использованием специальных химических средств; 
+                    li очищаем внешние и внутренние поверхности холодильников, размораживаем в случае необходимости; 
+                    li очищаем сантехнику и полируем металлические смесители; 
+                    li очищаем, моем и дезинфицируем напольные покрытия с использованием ручного и механизированного инвентаря с противоскользящей и грязезащитной обработкой;
+                    li очищаем стены и потолки, наружных поверхностей вентиляционных коробов и решеток; 
+                    li моем окна и подоконники; 
+                    li проводим очистку деталей интерьера, зеркал и светильников с применением специального инвентаря очищаем и дезинфицируем двери и дверные ручки; 
+                    li собираем мусора из урн с заменой полиэтиленовых пакетов и дезинфекцией поверхности урн и контейнеров;
+                    li проводим комплексную уборку и дезинфекцию санузлов;
+                    li проводим комплексную уборка всех подсобных, складских и офисных помещений;
+                    li проветриваем помещения, проводим разовую уборку после мероприятий;
+                    li проводим все виды фасадных работ.
+                    li проводим все виды работ, связанные с прилегающей территорией.
+
+
+      .special__img-wrap
+        .special__img 
+          picture
+            source(srcset='img/spec-company.jpg', type='image/jpg')
+            img(src='img/spec-company.jpg', alt)
+
+    .special-footer
+      sapn Мы знаем и 
+      span.text_bold  учитываем специфику каждого предприятия
+
+  //
+      Clean
+              ================================================== 
+  section.section.clean.company-clean
+    .company-clean-glow.company-clean-glow__left
+    .company-clean-glow.company-clean-glow__right
+    .container.clean__container
+      .clean__img-block
+        .clean__img
+          picture
+            source(srcset='img/clean-girl.webp', type='image/webp')
+            img(src='img/clean-girl.png', alt)
+      .clean__content
+        .clean__heading
+          h2
+            | Клининг - это
+            br
+            span.text_bold не только про чистоту!
+        .clean-media
+          .clean-media__text Это регламенты, СанПиНы, Охрана труда и Система контроля качества
+          .clean-media__img
+            picture
+              source(srcset='img/clean-book.webp', type='image/webp')
+              img(src='img/clean-book.png', alt='Изображение книги СанПиН')
+        .qoute
+          .qoute__text
+            p
+              span.text_ex-bold Мы участвуем 
+              | в процессе
+              br
+              | производства продукции
+              br
+              | и 
+              span.text_ex-bold отвечаем за ее качество!
+            i.qoutes
+    .clean__bg
+      picture
+        source(srcset='img/clean-bg.webp', type='image/webp')
+        img(src='img/clean-bg.png', alt)
+    .clean__shine.d-none.d-block_sm
+      picture
+        source(srcset='img/mob/clean-shine.webp', type='image/webp')
+        img(src='img/mob/clean-shine.png', alt)
+
+
+
+
+  //
+      Blue-panel 
+            ==================================================
+  .blue-panel.company-blue-panel
+    .blue-panel__content 
+
+      .company-blue-panel__img.company-blue-panel__img_left
+        picture
+          source(srcset='img/comp-bp-doc.webp', type='image/webp')
+          img(src='img/comp-bp-doc.png', alt)
+
+      .company-blue-panel__img.company-blue-panel__img_right 
+        picture
+          source(srcset='img/comp-bp-pasp.webp', type='image/webp')
+          img(src='img/comp-bp-pasp.png', alt)
+
+      .blue-panel__heading 
+        h2 Перестаньте платить штрафы!
+      .blue-panel__content
+        p Компания Top Level гарантирует отсутствие нарушений при проверках Роспотребнадзором и Санэпидемстанции.
+
+
+
+  //
+      Spec-gal
+            ==================================================
+  +specGal('spec-gal-comp-1', 'spec-gal-comp-2', 'spec-gal-comp-3', 'spec-gal-comp-4')
+
+
+
+  //
+      Subscribe
+            ==================================================
+  include ../_includes/sections/_s-subscribe.pug
+
+
+  //
+    Actions
+          ================================================== 
+  include ../_includes/sections/_s-actions.pug
+
+
+
+  //
+      Intro
+            ================================================== 
+  include ../_includes/sections/_s-intro-lite.pug
+    
+
+  //
+      Tender
+    ================================================== 
+  include ../_includes/sections/_s-tender.pug
+
+
+  //
+      Manager
+            ================================================== 
+  section.manager  
+    include ../_includes/sections/_b-manager.pug 
+
+
+  //
+      Expert
+            ================================================== 
+  include ../_includes/sections/_s-expert.pug
+
+
+
+  //
+      Advantages
+            ==================================================
+  include ../_includes/sections/_s-advantages.pug 
+
+
+  //
+      Client
+            ================================================== 
+  +client()(class="client_lite")
+
+
+
+
+
+
+
+  //
+      Rev-form-block
+            ================================================== 
+  .rev__form-block.form-block-wrapper.company-form-block
+    .form-block#tour-anchor
+      .form-block__content
+        .form-block__heading.rev-form-block__heading
+          h3
+            span.text_bold Устроим экскурсию 
+            | на наш объект!
+        .form-block__subheading
+          p Вы сможете вживую увидеть и оценить результат нашей работы
+        .form-block__form-wrap
+          form.form.form-block__form#tour(name='audit', data-action='send-audit.php')
+            .form__group.form__group_control.form-block__group
+              input.form__control.form-block__control#userName2(type='text', name='userName', placeholder='Имя', required)
+            .form__group.form__group_control.form-block__group
+              input.form__control.form-block__control#company2(type='text', name='company', placeholder='Компания', required)
+            .form__group.form__group_control.form-block__group
+              input.form__control.form-block__control#userPhone2(type='text', name='userPhone', placeholder='Номер телефона', required)
+            input(type='hidden', value='Записаться на экскурсию', name='formTheme')
+            .form__submit-wrap.form-block__submit
+              .loader-container
+                button.btn.btn_primary.form__submit(type='submit')
+                  span.text_uppercase Записаться
+                  span на экскурсию
+        .form-block__footer
+          | Нажимая на кнопку «Оставить заявку», Вы соглашаетесь с 
+          a.form-block__link(href='https://tlevel.ru/obrabotka-personalnyh-dannyh/', target='_blank') Политикой конфиденциальности 
+          | сайта
+
+
+
+
+
+
+
+
+
+
+
+
+  //
+      Awards
+            ================================================== 
+  include ../_includes/sections/_s-awards.pug 
+  
+
+  //
+      Cheaper
+            ================================================== 
+  include ../_includes/sections/_s-cheaper.pug
+    
+
+
+  //
+      Other-serv
+            ==================================================
+  include ../_includes/sections/_s-other-serv.pug 
 
 
 //- block footer
