@@ -564,12 +564,12 @@ window.onload = function () {
     //   },
     breakpoints: {
       401: {
+        slidesPerView: 2
+      },
+      768: {
         slidesPerView: 3
       },
-      481: {
-        slidesPerView: 3
-      },
-      991: {
+      992: {
         slidesPerView: 4
       }
     }

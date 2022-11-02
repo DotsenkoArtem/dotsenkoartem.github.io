@@ -4055,6 +4055,11 @@ section.manager {
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
+.cheaper-msg-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .cheaper-msg:hover {
   -webkit-transform: translateY(-2px);
   -ms-transform: translateY(-2px);
@@ -5847,6 +5852,9 @@ section.manager {
   .client190__img {
     display: none;
   }
+  .cheaper__content {
+    max-width: 48rem;
+  }
   .store-intro-2 .intro-2__img img {
     max-width: 106%;
   }
@@ -6488,18 +6496,6 @@ section.manager {
   .container, .container_xl, .container_lg, .container_md {
     max-width: 540px;
   }
-  .d-none_sm {
-    display: none;
-  }
-  .d-block_sm {
-    display: block;
-  }
-  .d-inline_sm {
-    display: inline;
-  }
-  .d-i-block_sm {
-    display: inline-block;
-  }
   .intro__heading {
     max-width: 50rem;
   }
@@ -6744,8 +6740,143 @@ section.manager {
   .footer__cb-btn {
     font-size: 1.6rem;
   }
+  .office-intro-2 .intro-2__img img,
+.eng-service-intro-2 .intro-2__img img,
+.territory-intro-2 .intro-2__img img,
+.store-intro-2 .intro-2__img img {
+    max-width: 80%;
+  }
+  .company-intro-2 .intro-2__img img {
+    width: 52rem;
+  }
+  .company-intro-2 .intro-2__img,
+.eng-service-intro-2 .intro-2__img,
+.office-intro-2 .intro-2__img,
+.store-intro-2 .intro-2__img,
+.territory-intro-2 .intro-2__img {
+    right: -24rem;
+  }
+  .company-intro-2 .intro-2__img .img__title,
+.eng-service-intro-2 .intro-2__img .img__title,
+.office-intro-2 .intro-2__img .img__title,
+.store-intro-2 .intro-2__img .img__title,
+.territory-intro-2 .intro-2__img .img__title {
+    left: 18rem;
+  }
   .intro-2__img {
-    right: -30rem;
+    right: -20rem;
+  }
+  .calc-call-label {
+    max-width: 38rem;
+    font-size: 1.8rem;
+  }
+  .client190-list {
+    margin-left: 4rem;
+  }
+  .work-list-close span {
+    font-size: 16px;
+  }
+  .actions-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .actions-card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 51rem;
+    height: 51rem;
+  }
+  .actions-card:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  .cheaper {
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+  .cheaper__content, .cheaper__heading h2 {
+    text-align: center;
+  }
+  .cheaper__contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .cheaper-msg-wrap {
+    margin-bottom: 1.5rem;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  .cheaper-phone {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .cheaper-mail {
+    margin-top: 0;
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  .cheaper__text {
+    margin-bottom: 3rem;
+  }
+  .cheaper-phone {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  .cheaper__img {
+    position: static;
+  }
+  .rev_lite {
+    padding-bottom: 2rem;
+  }
+  .econom__form {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+  .company-intro-2 .digits__item {
+    max-width: 30rem;
+  }
+  .office-client190 .client190-digit {
+    font-size: 6rem;
+  }
+  .office-client190 .client190-card {
+    padding: 3.5rem 2rem;
+    font-size: 1.8rem;
+  }
+  .office-client190 .client190-card__label img {
+    max-width: 8rem;
+  }
+  .office-client190 .client190-card-text {
+    line-height: 1.4;
+  }
+  .store-client190 .client190-digit {
+    font-size: 6rem;
+  }
+  .store-client190 .client190-card {
+    padding: 3.5rem 2rem;
+    font-size: 1.8rem;
+  }
+  .store-client190 .client190-card__label img {
+    max-width: 8rem;
+  }
+  .store-client190 .client190-card-text {
+    line-height: 1.4;
   }
   .calc-modal-select {
     padding: 1.5rem 4.5rem 0 4.5rem;
@@ -6772,6 +6903,18 @@ section.manager {
   .btn_primary:active::after {
     -webkit-box-shadow: 0px 0px 25px 16px #1648c5;
     box-shadow: 0px 0px 25px 16px #1648c5;
+  }
+  .d-none_sm {
+    display: none;
+  }
+  .d-block_sm {
+    display: block;
+  }
+  .d-inline_sm {
+    display: inline;
+  }
+  .d-i-block_sm {
+    display: inline-block;
   }
 }
 /* X S */

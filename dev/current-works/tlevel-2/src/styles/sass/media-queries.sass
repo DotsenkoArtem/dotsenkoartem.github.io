@@ -169,6 +169,10 @@
   .client190
     &__img
       display: none
+
+  // Cheaper
+  .cheaper__content
+    max-width: 48rem
   
   // STORE-CLEANING
   .store-intro-2
@@ -711,16 +715,6 @@
       &::after
         font-size: 2.5rem
         font-weight: 700
-      // &::before
-      //   position: absolute
-      //   z-index: -1
-      //   display: block
-      //   width: 6rem
-      //   height: 6rem
-      //   border-radius: 50%
-      //   background: #e6e6e8
-      //   content: ""
-      //   transition: transform 0.3s
   
 
   // Econom
@@ -733,25 +727,10 @@
         flex-direction: column
         align-items: flex-end
         max-width: 65rem
-        // width: 100%
     &__heading
-      // margin-bottom: 18rem
-      // margin-left: auto
-      // margin-right: auto
       max-width: 55rem
-      // h2
-      //   text-align: center
     &-text 
       margin-top: 7rem
-      // margin-left: auto
-      // margin-right: auto
-      // padding-left: 0
-      // max-width: 65rem
-      // transform: translateX(-5rem)
-      // text-align: center
-      // &__img
-      //   left: calc( 50% - 5rem )
-      //   top: -13rem
     &__img
       left: calc(50vw - 38rem)
       bottom: -9rem
@@ -817,55 +796,6 @@
           img
             max-width: 100%
   
-
-  
-  // ENG-SERVICE
-  // .eng-service-intro-2
-    // .intro-2
-      // &__img
-      //   left: auto
-      //   right: -15rem
-      //   .img
-      //     &__title
-      //       left: 25rem
-      // &__heading
-      //   max-width: 50rem
-  
-  // OFFICE-CLEANING
-  // .office-intro-2
-    // .intro-2
-    //   &__img
-    //     left: auto
-    //     right: -15rem
-    //     .img
-    //       &__title
-    //         left: 25rem
-      // &__heading
-      //   max-width: 50rem
-  
-  // STORE-CLEANING
-  // .store-intro-2
-  //   .intro-2
-      // &__img
-      //   left: auto
-      //   right: -15rem
-      //   .img
-      //     &__title
-      //       left: 25rem
-      // &__heading
-      //   max-width: 50rem
-  
-  // TERRITORY-CLEANING
-  // .territory-intro-2
-    // .intro-2
-    //   &__img
-    //     left: auto
-    //     right: -15rem
-    //     .img
-    //       &__title
-    //         left: 25rem
-      // &__heading
-      //   max-width: 50rem
   
   // Calc-modal
   .calc-modal
@@ -912,19 +842,7 @@
 
   .container, .container_xl, .container_lg, .container_md 
     max-width: 540px
-  
 
-  .d-none_sm 
-    display: none
-  
-  .d-block_sm 
-    display: block
-  
-  .d-inline_sm 
-    display: inline
-  
-  .d-i-block_sm 
-    display: inline-block
   
 
   .intro__heading 
@@ -1183,11 +1101,137 @@
   
   .footer__cb-btn 
     font-size: 1.6rem
+  
+
+  .office-intro-2 .intro-2__img img,
+  .eng-service-intro-2 .intro-2__img img,
+  .territory-intro-2 .intro-2__img img,
+  .store-intro-2 .intro-2__img img
+    max-width: 80%
+  
+  .company-intro-2 .intro-2__img img
+    width: 52rem
+
+  .company-intro-2 .intro-2__img,
+  .eng-service-intro-2 .intro-2__img,
+  .office-intro-2 .intro-2__img,
+  .store-intro-2 .intro-2__img,
+  .territory-intro-2 .intro-2__img 
+    right: -24rem
+
+  .company-intro-2 .intro-2__img .img__title,
+  .eng-service-intro-2 .intro-2__img .img__title,
+  .office-intro-2 .intro-2__img .img__title,
+  .store-intro-2 .intro-2__img .img__title,
+  .territory-intro-2 .intro-2__img .img__title 
+    left: 18rem
 
   // Intro-des
   .intro-2
     &__img
-      right: -30rem
+      right: -20rem
+  .calc-call-label
+    max-width: 38rem
+    font-size: 1.8rem
+
+  // Client-190
+  .client190-list
+    margin-left: 4rem
+
+  
+  // Spec
+  .work-list-close span
+    font-size: 16px
+  
+
+  // Actions
+  .actions
+    &-block
+      flex-direction: column
+      align-items: center
+    &-card 
+      margin-left: auto
+      margin-right: auto
+      width: 100%
+      max-width: 51rem
+      height: 51rem
+      &:not(:last-child)
+        margin-bottom: 2rem
+
+
+  // Cheaper
+  .cheaper
+    padding-top: 8rem
+    padding-bottom: 2rem
+    display: flex
+    flex-direction: column-reverse
+    &__content,
+    &__heading h2
+      text-align: center
+    &__contacts
+      flex-direction: column
+    &-msg-wrap
+      margin-bottom: 1.5rem
+      order: 1
+    &-phone
+      order: 2
+    &-mail 
+      margin-top: 0
+      order: 3
+    &__text
+      margin-bottom: 3rem
+    &-phone
+      margin-right: 0
+      margin-bottom: 2rem
+    &__img
+      position: static
+
+
+  // Rev-lite
+  .rev_lite
+    padding-bottom: 2rem
+  
+
+  // Econom
+  .econom
+    &__form
+      margin-left: -1.5rem
+      margin-right: -1.5rem
+
+  // COMPANY-CLEANING
+  .company-intro-2 .digits__item
+    max-width: 30rem
+
+  // OFFICE-CLEANING
+  .office-client190
+    .client190
+      &-digit
+        font-size: 6rem
+    .client190-card
+      padding: 3.5rem 2rem
+      font-size: 1.8rem
+      &__label
+        img
+          max-width: 8rem
+      &-text 
+        line-height: 1.4
+
+  // STORE-CLEANING
+  .store-client190
+    .client190
+      &-digit
+        font-size: 6rem
+    .client190-card
+      padding: 3.5rem 2rem
+      font-size: 1.8rem
+      &__label
+        img
+          max-width: 8rem
+      &-text 
+        line-height: 1.4
+        
+  
+
 
   // Calc-modal
   .calc-modal
@@ -1211,6 +1255,20 @@
     &:active
       &::after
         box-shadow: 0px 0px 25px 16px #1648c5
+
+    
+  // Displays
+  .d-none_sm 
+    display: none
+  
+  .d-block_sm 
+    display: block
+  
+  .d-inline_sm 
+    display: inline
+  
+  .d-i-block_sm 
+    display: inline-block
 
 /* X S */
 @media (max-width: 575.98px) 
