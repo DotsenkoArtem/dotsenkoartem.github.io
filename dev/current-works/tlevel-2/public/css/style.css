@@ -5798,15 +5798,6 @@ section.manager {
   .container, .container_xl {
     max-width: 960px;
   }
-  .d-none_lg {
-    display: none;
-  }
-  .d-block_lg {
-    display: block;
-  }
-  .d-inline_lg {
-    display: inline;
-  }
   .form-block__img {
     left: -2rem;
     top: 4rem;
@@ -5842,11 +5833,32 @@ section.manager {
   .intro-2__img {
     left: -13rem;
   }
+  .intro-2__img {
+    width: 54rem;
+  }
   .calc-modal-select__header {
     font-size: 3.2rem;
   }
   .calc-modal-select__img {
     max-width: 38rem;
+  }
+  .client190__img {
+    display: none;
+  }
+  .store-intro-2 .intro-2__img img {
+    max-width: 106%;
+  }
+  .territory-intro-2 .intro-2__img img {
+    max-width: 106%;
+  }
+  .d-none_lg {
+    display: none;
+  }
+  .d-block_lg {
+    display: block;
+  }
+  .d-inline_lg {
+    display: inline;
   }
 }
 @media (max-width: 991.98px) {
