@@ -208,7 +208,7 @@
   .container, .container_xl, .container_lg 
     max-width: 740px
   
-
+  // Displays
   .d-none_md 
     display: none
   
@@ -567,19 +567,305 @@
     -ms-transform: scale(0.8)
     transform: scale(0.8)
 
+
+  .territory-intro-2 .intro-2__img img,
+  .store-intro-2 .intro-2__img img,
+  .intro-2__img img,
+  .intro-2__img img
+    max-width: 90%
+  
+
+  .client190-digit
+    font-size: 7rem
+
+  .store-intro-2 .intro-2__heading h1,
+  .store-intro-2 .intro-2-call,
+  .climb-intro-2 .intro-2__heading h1,
+  .climb-intro-2 .intro-2-call,
+  .eng-service-intro-2 .intro-2__heading h1,
+  .eng-service-intro-2 .intro-2-call,
+  .office-intro-2 .intro-2__heading h1,
+  .office-intro-2 .intro-2-call,
+  .territory-intro-2 .intro-2__heading h1,
+  .territory-intro-2 .intro-2-call
+    font-size: 3rem
+  
+  .special-footer,
+  .blue-panel p
+    font-size: 2.4rem
+  
+  .feature-caption,
+  .special-label,
+  .client190-card,
+  .cheaper__text,
+  .cheaper-mail a,
+  .econom-text p,
+  .other-serv__footer p,
+  .geography-card-text,
+  .geography-body p
+    font-size: 2rem
+  
+  .client190-list
+    font-size: 1.5rem
+
   // Intro-des
   .intro-2
     &__content
       margin-left: 0
       max-width: 57rem
     &__img
-      right: -21rem
+      right: -15rem
       left: auto
+      width: 60rem
   
   .calc-call
     &-label
       color: #000
       background: rgba(255, 255, 255, 0.75)
+  
+  // Special
+  .special
+    &-body
+      flex-direction: column-reverse
+      align-items: center
+    &__content
+      padding-top: 8rem
+      padding-bottom: 8rem
+    &__img
+      &-wrap
+        width: 97%
+
+  .work
+    &-list 
+      width: 100%
+      max-width: 41.5rem
+      &-wrap
+        top: -0.5rem
+        left: -.5rem
+        box-shadow: 1.7rem 1.7rem 1.8rem rgba(0, 0, 0, 0.18)
+
+
+  // Spec-Gal
+  .spec-gal
+    flex-wrap: wrap
+    &__item
+      width: 50%
+
+  
+  // Client-190
+  .client190-list
+    margin-top: -1rem
+
+
+  // Subscribe
+  .subscribe
+    &-row
+      flex-direction: column
+      align-items: center
+    &__item
+      width: 100%
+      max-width: 75rem 
+      &:not(:last-child) 
+        margin-bottom: 8rem
+  
+
+
+  // Actions
+  .actions
+    &-card 
+      &-title
+        font-size: 3rem
+      &-label 
+        &_cash .cashback-text,
+        &_ord
+          font-size: 1.6rem
+
+
+  // Cheaper
+  .cheaper
+    &__img
+      left: calc(50vw - 6rem)
+
+
+  // Expert
+  .expert
+    padding-bottom: 8rem
+
+
+  // Rev-lite
+  .rev_lite
+    padding-bottom: 8rem
+
+  
+  // Other-serv
+  .other-serv
+    &__slider
+      &-container
+        padding-left: 4rem
+        padding-right: 4rem
+    &__button
+      &_prev
+        left: -1rem
+      &_next
+        right: -1rem
+      &::after
+        font-size: 2.5rem
+        font-weight: 700
+      // &::before
+      //   position: absolute
+      //   z-index: -1
+      //   display: block
+      //   width: 6rem
+      //   height: 6rem
+      //   border-radius: 50%
+      //   background: #e6e6e8
+      //   content: ""
+      //   transition: transform 0.3s
+  
+
+  // Econom
+  .econom
+    padding-top: 8rem
+    background: rgba(227, 230, 239, 0.7)
+    &__content
+      &-inner 
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        max-width: 65rem
+        // width: 100%
+    &__heading
+      // margin-bottom: 18rem
+      // margin-left: auto
+      // margin-right: auto
+      max-width: 55rem
+      // h2
+      //   text-align: center
+    &-text 
+      margin-top: 7rem
+      // margin-left: auto
+      // margin-right: auto
+      // padding-left: 0
+      // max-width: 65rem
+      // transform: translateX(-5rem)
+      // text-align: center
+      // &__img
+      //   left: calc( 50% - 5rem )
+      //   top: -13rem
+    &__img
+      left: calc(50vw - 38rem)
+      bottom: -9rem
+      z-index: -1
+  .econom-form
+    justify-content: space-around
+    &__control
+      max-width: 25.8rem
+      height: 6.5rem
+      font-size: 1.8rem
+    .form-block__group
+      max-width: 25.8rem
+
+
+  // PROM-CLIMBING
+  .climb-intro-2
+    .intro-2
+      &__img
+        left: auto
+        right: 6rem
+        img
+          opacity: .5
+
+  .company-intro-2,
+  .eng-service-intro-2,
+  .office-intro-2,
+  .store-intro-2,
+  .territory-intro-2
+    .intro-2
+      &__img
+        left: auto
+        right: -15rem
+        .img
+          &__title
+            left: 25rem
+
+  .eng-service-intro-2,
+  .office-intro-2,
+  .store-intro-2,
+  .territory-intro-2
+    .intro-2
+      &__heading
+        max-width: 68rem
+  
+  // COMPANY-CLEANING
+  .company-intro-2
+    .intro-2
+      &__img
+        img
+          opacity: 1
+  
+  .company
+    &-blue-panel
+      padding-top: 4rem
+      &__img
+        &_left
+          display: none
+        &_right
+          margin-left: auto
+          margin-right: auto
+          max-width: 15rem 
+          position: static
+          img
+            max-width: 100%
+  
+
+  
+  // ENG-SERVICE
+  // .eng-service-intro-2
+    // .intro-2
+      // &__img
+      //   left: auto
+      //   right: -15rem
+      //   .img
+      //     &__title
+      //       left: 25rem
+      // &__heading
+      //   max-width: 50rem
+  
+  // OFFICE-CLEANING
+  // .office-intro-2
+    // .intro-2
+    //   &__img
+    //     left: auto
+    //     right: -15rem
+    //     .img
+    //       &__title
+    //         left: 25rem
+      // &__heading
+      //   max-width: 50rem
+  
+  // STORE-CLEANING
+  // .store-intro-2
+  //   .intro-2
+      // &__img
+      //   left: auto
+      //   right: -15rem
+      //   .img
+      //     &__title
+      //       left: 25rem
+      // &__heading
+      //   max-width: 50rem
+  
+  // TERRITORY-CLEANING
+  // .territory-intro-2
+    // .intro-2
+    //   &__img
+    //     left: auto
+    //     right: -15rem
+    //     .img
+    //       &__title
+    //         left: 25rem
+      // &__heading
+      //   max-width: 50rem
   
   // Calc-modal
   .calc-modal
@@ -606,6 +892,17 @@
       font-size: 2rem
     .phone-transp
       transform: scale(.7)
+
+    
+  // Displays
+  .d-none_md 
+    display: none
+  
+  .d-block_md 
+    display: block
+  
+  .d-inline_md 
+    display: inline
   
 
 @media (max-width: 767.98px) 

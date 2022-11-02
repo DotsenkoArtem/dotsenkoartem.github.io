@@ -587,7 +587,7 @@ window.onload = function () {
         slidesPerView: 3
       },
       481: {
-        slidesPerView: 4
+        slidesPerView: 3
       },
       991: {
         slidesPerView: 4
