@@ -1303,19 +1303,7 @@
     max-width: 440px
     padding-left: 1.5rem
     padding-right: 1.5rem
-  
 
-  .d-none_xs 
-    display: none
-  
-  .d-block_xs 
-    display: block
-  
-  .d-i-block_xs 
-    display: inline-block
-  
-  .d-inline_xs 
-    display: inline
   
 
   .header
@@ -1623,6 +1611,185 @@
       padding: 1.5rem 1rem 1.5rem 5rem
       color: #fff
       background: rgba(255, 255, 255, 0.13)
+  
+  // Fonts
+  .feature-caption,
+  .special-title
+    font-size: 18px
+
+  .client190-card-text,
+  .client190-list,
+  .subscribe-text,
+  .cheaper__text,
+  .cheaper-mail,
+  .econom-text p
+    font-size: 14px
+
+  
+  // Features
+  .features
+    padding-top: 8rem
+    padding-bottom: 0
+    &-block
+      flex-direction: column
+      align-items: center
+  .feature,
+  .feature-2
+    margin-bottom: 8rem
+    max-width: 240px
+  .feature-2
+    margin-top: 8rem
+  .feature
+    &-img 
+      &-1
+        img
+          max-width: 160px
+      &-2
+        height: 200px
+        img
+          max-width: 155px
+      &-3
+        img
+          max-width: 150px
+      &::after
+        width: 150px
+        height: 150px
+      &-wrap
+        margin-left: auto
+        margin-right: auto
+        width: 150px
+        height: 150px
+  
+
+  // Special
+  .special
+    &-title
+      text-align: center
+    &-label 
+      &-wrap 
+        justify-content: center
+
+
+  // Client-190
+  .client190
+    &__container
+      flex-direction: column
+      align-items: center
+    &-card-wrap,
+    &-list-wrap
+      width: 100%
+    &-list 
+      margin-top: 0
+      margin-left: auto
+      margin-right: auto
+    &-card 
+      margin-left: auto
+      margin-right: auto
+      max-width: 265px
+      &-wrap 
+        margin-bottom: 30px
+
+
+  // Actions
+  .actions 
+    &-card 
+      &-title
+        font-size: 22px
+
+
+
+  // Econom
+  .econom
+    padding-top: 2rem
+    padding-bottom: 0
+    display: flex
+    flex-direction: column-reverse
+    background: rgb(227, 230, 239)
+    &__content-inner
+      align-items: center
+    &__img
+      margin-top: 1rem
+      position: static
+      z-index: 1
+      img
+        margin-left: auto
+        margin-right: auto
+    &__heading
+      margin-left: auto
+      margin-right: auto
+      max-width: 250px
+      width: 100%
+      h2
+        text-align: center
+    &-text 
+      margin-top: 0
+      margin-bottom: 4rem
+      padding-left: 0
+      text-align: center
+      &__img
+        display: none
+    &__pig
+      margin-bottom: 1rem
+      img
+        margin-left: auto
+        margin-right: auto
+        max-width: 60px
+
+    &-form 
+      &__control
+        width: 258px
+        height: 65px
+        font-size: 2rem
+      &__submit
+        margin-top: 2rem
+        width: 240px
+        height: 74px
+        font-size: 2.2rem
+      .form-block__group
+        max-width: none
+
+
+  // Other Services
+  .other-serv 
+    &__slider 
+      &-container
+        padding-left: 0
+        padding-right: 0
+    &__button
+      &::after
+        font-size: 2rem
+        font-weight: 700
+      &::before
+        position: absolute
+        z-index: -1
+        display: block
+        width: 6rem
+        height: 6rem
+        border-radius: 50%
+        background: rgba(255, 255, 255, 0.75)
+        content: ""
+        transition: transform 0.3s
+      &_prev
+        left: 5px
+      &_next
+        right: 5px
+
+    .services-card__img::after
+      opacity: 0.85
+
+    
+  // Displays
+  .d-none_xs 
+    display: none
+  
+  .d-block_xs 
+    display: block
+  
+  .d-i-block_xs 
+    display: inline-block
+  
+  .d-inline_xs 
+    display: inline
   
 
 @media (max-width: 479.98px) 
