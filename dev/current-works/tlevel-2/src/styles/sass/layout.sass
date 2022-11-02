@@ -2028,6 +2028,10 @@ section.manager
     z-index: 0
     img
       max-width: 100%
+    .img
+      &__subtitle
+            font-size: 1.1rem
+            font-weight: 300
 
 .glow
   position: absolute
@@ -2252,7 +2256,7 @@ section.manager
     &.close
       animation: slideDownOut 0.3s ease-in forwards
   width: 39.5rem
-  padding: 3rem 2rem 2rem 3rem
+  padding: 3rem 2rem 2rem 3.5rem
   background: #e3e8ed
   border-radius: 1.5rem
   font-size: 13px
@@ -2266,9 +2270,17 @@ section.manager
     color: #1445c0
   ul
     margin-bottom: 2.5rem
-    margin-left: 2rem
-    list-style-type: disc
+    margin-left: 0
     li
+      &::before
+        content: ''
+        display: inline-block
+        margin-right: 0.5em
+        width: 0.6rem
+        height: 0.6rem
+        background: #000
+        border-radius: 50%
+        vertical-align: middle
       &:not(:last-child)
         margin-bottom: 1.8rem
         
@@ -2411,8 +2423,8 @@ section.manager
       right: -50rem
   &__img
     position: absolute
-    top: -20rem
-    right: calc( 50vw - 90rem )
+    top: -19rem
+    right: calc( 50vw - 92rem )
     img
       max-width: 38.8rem
 
@@ -2855,26 +2867,32 @@ section.manager
   &-client190
     .client190__img
       display: none
+
   &-intro-2
+    .intro-2
+      &__content
+        margin-right: 0rem
+        max-width: 71.5rem
+      &__heading
+        margin-bottom: 0
+      &__heading h1,
+      &-call
+        font-size: 4rem
+      &__img
+        left: calc(50vw - 104rem)
+        bottom: 0
     .img
       &__title
         padding: 1rem 2rem
         position: absolute
-        top: 40rem
-        left: calc( 50vw - 87rem )
+        top: 39rem
+        left: calc( 50vw - 86rem )
         font-size: 1.3rem
         font-weight: 800
         text-align: center
         background: rgba(0, 0, 0, 0.6)
         border-radius: 1rem
-      &__subtitle
-        font-size: 1.1rem
-        font-weight: 300
-    .intro-2__img
-      left: calc(50vw - 104rem)
-      bottom: 0
-    .intro-2__content
-      margin-right: 4.5em
+      
 
 
 
@@ -2888,8 +2906,14 @@ section.manager
       &__container
         padding-top: 1rem
         padding-bottom: 8rem
+      &__heading
+        margin-bottom: 0
+      &__heading h1,
+      &-call
+        font-size: 4rem
       &__content
-        margin-right: 6.5rem
+        margin-right: 0rem
+        max-width: 71.5rem
       &__footer
         display: flex
         align-items: baseline
@@ -2923,6 +2947,8 @@ section.manager
           border-radius: 1rem
           top: 32rem
           left: calc(50vw - 93rem)
+    .calc-call
+      margin-bottom: 3rem
   &__attention-label
     margin-top: 1.5rem
     margin-bottom: 3rem
@@ -3100,7 +3126,17 @@ section.manager
 /* OFFICE-CLEANING
  -------------------------*/
 .office-intro-2
+  .intro-2
+    &__heading
+      margin-bottom: 0
+    &__heading h1,
+    &-call
+      font-size: 4rem
+    &__content
+      margin-right: 3rem
+      max-width: 71.5rem
   .intro-2__img
+    left: calc(50vw - 99rem)
     bottom: 0
   .img
     &__title
@@ -3113,6 +3149,7 @@ section.manager
       border-radius: 1rem
       top: 32rem
       left: calc(50vw - 93rem)
+    
 
 .office-client190,
 .store-client190
@@ -3131,6 +3168,10 @@ section.manager
   small.sup
     vertical-align: super
 
+.office-client190
+  .client190__inner
+    padding-top: 11rem
+
 
 
 
@@ -3140,12 +3181,14 @@ section.manager
   .intro-2
     &__content
       margin-right: -1.5rem 
-      max-width: 76rem
+      max-width: 65rem
     &__img
+      bottom: -0.5rem
+      left: calc(50vw - 99rem)
       img
-        width: 64rem
+        width: 55rem
       .img__title
-        top: 39rem
+        top: 34rem
   .intro-2__footer
     align-items: center
     .digits__value
@@ -3167,8 +3210,15 @@ section.manager
 .company-clean
   background: #00040e
   color: #fff
+  overflow: hidden
+  &__container
+    padding-top: 17rem
+    padding-bottom: 10rem
   .clean__content
     padding-left: 12rem
+  &__img
+    left: -36rem
+    bottom: -7rem
   &-glow
     position: absolute
     top: 50%
@@ -3201,14 +3251,30 @@ section.manager
 .company-form-block
   position: static
 
+.company-awa
+  .awa
+    padding-top: 13rem
+    padding-bottom: 5rem
+
 
 
 
 /* STORE-CLEANING
  -------------------------*/
 .store-intro-2
-  .intro-2__img
-    bottom: 0
+  .intro-2
+    &__img
+      left: calc(50vw - 97rem)
+      bottom: 0
+    &__content
+      margin-right: 5.5rem
+    &__heading
+      margin-bottom: 0
+    &__heading h1,
+    &-call
+      font-size: 4rem
+  .calc-call
+    margin-bottom: 7rem
   .img
     &__title
       padding: 1rem 2rem
@@ -3221,14 +3287,28 @@ section.manager
       top: 32rem
       left: calc(50vw - 93rem)  
 
+.store-client190
+  .client190__inner
+    padding-top: 11rem
 
 
 
 
 
+/* TERRITORY-CLEANING
+ -------------------------*/
 .territory-intro-2
-  .intro-2__img
-    bottom: 0
+  .intro-2
+    &__img
+      left: calc(50vw - 103rem)
+      bottom: 0
+    &__content
+      margin-right: 5.5rem
+    &__heading
+      margin-bottom: 0
+    &__heading h1,
+    &-call
+      font-size: 4rem
   .img
     &__title
       padding: 1rem 2rem
@@ -3238,8 +3318,8 @@ section.manager
       text-align: center
       background: rgba(0, 0, 0, 0.6)
       border-radius: 1rem
-      top: 32rem
-      left: calc(50vw - 93rem)
+      top: 34rem
+      left: calc(50vw - 87rem)
 
 
 

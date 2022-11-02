@@ -91,9 +91,9 @@ block main
   section.section.clean.company-clean
     .company-clean-glow.company-clean-glow__left
     .company-clean-glow.company-clean-glow__right
-    .container.clean__container
+    .container.clean__container.company-clean__container
       .clean__img-block
-        .clean__img
+        .clean__img.company-clean__img
           picture
             source(srcset='img/clean-girl.webp', type='image/webp')
             img(src='img/clean-girl.png', alt)
@@ -263,7 +263,8 @@ block main
   //
       Awards
             ================================================== 
-  include ../_includes/sections/_s-awards.pug 
+  .company-awa
+    include ../_includes/sections/_s-awards.pug 
   
 
   //
