@@ -2024,7 +2024,8 @@ section.manager
     width: 69.6rem
     position: absolute
     bottom: -7rem
-    left: calc(50vw - 110rem)
+    // left: calc(50vw - 110rem)
+    left: -14rem
     z-index: 0
     img
       max-width: 100%
@@ -2039,8 +2040,6 @@ section.manager
   width: v.$glow-width
   height: v.$glow-width
   border-radius: 50%
-  // background: v.$glow-color
-  // background: radial-gradient(v.$glow-color, rgb(0, 6, 20, .9))
   background: radial-gradient(closest-side, v.$glow-color, transparent)
 
 .calc-call
@@ -2248,26 +2247,37 @@ section.manager
     position: absolute
     top: 6.5rem
     left: 36.5rem
-    z-index: 10
+    z-index: 50
+    background: #e3e8ed
+    border-radius: 1.5rem
     opacity: 0
     visibility: hidden
     &.open
       animation: slideUpIn 0.3s ease-in forwards
     &.close
       animation: slideDownOut 0.3s ease-in forwards
+  &-inner 
+    padding-top: 1.5rem
+    padding-bottom: 2rem
   width: 39.5rem
-  padding: 3rem 2rem 2rem 3.5rem
-  background: #e3e8ed
-  border-radius: 1.5rem
+  padding: 0rem 2rem 0rem 3.5rem
   font-size: 13px
   font-weight: 400
   line-height: 1.25
   text-align: left
+  max-height: 45rem
+  overflow-x: hidden
+  overflow-y: auto
   &-title
-    margin-bottom: 1.5rem
+    margin-top: 2.5rem
     font-size: 16px
     font-weight: 700
+    text-align: left
     color: #1445c0
+    padding-left: 3rem
+  &-subtitle
+    margin-bottom: 1rem
+    font-weight: 600
   ul
     margin-bottom: 2.5rem
     margin-left: 0
@@ -2879,14 +2889,15 @@ section.manager
       &-call
         font-size: 4rem
       &__img
-        left: calc(50vw - 104rem)
+        // left: calc(50vw - 104rem)
+        left: -8rem
         bottom: 0
     .img
       &__title
         padding: 1rem 2rem
         position: absolute
         top: 39rem
-        left: calc( 50vw - 86rem )
+        left: 10rem
         font-size: 1.3rem
         font-weight: 800
         text-align: center
@@ -2933,7 +2944,8 @@ section.manager
     .intro-2
       &__img 
         bottom: -6rem
-        left: calc(50vw - 114rem)
+        // left: calc(50vw - 114rem)
+        left: -18rem
         img
           max-width: none
           width: 75rem
@@ -2946,7 +2958,7 @@ section.manager
           background: rgba(0, 0, 0, 0.6)
           border-radius: 1rem
           top: 32rem
-          left: calc(50vw - 93rem)
+          left: 3rem
     .calc-call
       margin-bottom: 3rem
   &__attention-label
@@ -3136,7 +3148,8 @@ section.manager
       margin-right: 3rem
       max-width: 71.5rem
   .intro-2__img
-    left: calc(50vw - 99rem)
+    // left: calc(50vw - 99rem)
+    left: -3rem
     bottom: 0
   .img
     &__title
@@ -3148,7 +3161,7 @@ section.manager
       background: rgba(0, 0, 0, 0.6)
       border-radius: 1rem
       top: 32rem
-      left: calc(50vw - 93rem)
+      left: 3rem
     
 
 .office-client190,
@@ -3184,7 +3197,8 @@ section.manager
       max-width: 65rem
     &__img
       bottom: -0.5rem
-      left: calc(50vw - 99rem)
+      // left: calc(50vw - 99rem)
+      left: -3rem
       img
         width: 55rem
       .img__title
@@ -3264,7 +3278,8 @@ section.manager
 .store-intro-2
   .intro-2
     &__img
-      left: calc(50vw - 97rem)
+      // left: calc(50vw - 97rem)
+      left: -1rem
       bottom: 0
     &__content
       margin-right: 5.5rem
@@ -3285,7 +3300,7 @@ section.manager
       background: rgba(0, 0, 0, 0.6)
       border-radius: 1rem
       top: 32rem
-      left: calc(50vw - 93rem)  
+      left: 3rem 
 
 .store-client190
   .client190__inner
@@ -3300,7 +3315,8 @@ section.manager
 .territory-intro-2
   .intro-2
     &__img
-      left: calc(50vw - 103rem)
+      // left: calc(50vw - 103rem)
+      left: -7rem
       bottom: 0
     &__content
       margin-right: 5.5rem
@@ -3319,7 +3335,7 @@ section.manager
       background: rgba(0, 0, 0, 0.6)
       border-radius: 1rem
       top: 34rem
-      left: calc(50vw - 87rem)
+      left: 10rem
 
 
 
