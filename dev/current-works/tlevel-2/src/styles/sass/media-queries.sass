@@ -169,6 +169,13 @@
   .client190
     &__img
       display: none
+  
+  // Subscribe
+  .subscribe
+    &__social 
+      a
+        i
+          transform: scale(.8)
 
   // Cheaper
   .cheaper__content
@@ -218,6 +225,9 @@
   
   .d-block_md 
     display: block
+
+  .d-flex_md
+    display: flex
   
   .d-inline_md 
     display: inline
@@ -1144,6 +1154,14 @@
     font-size: 16px
   
 
+    // Subscribe
+  .subscribe
+    &__social 
+      a
+        i
+          transform: scale(.7)
+  
+
   // Actions
   .actions
     &-block
@@ -1587,9 +1605,9 @@
       text-align: center
     &-call
       margin-bottom: 2rem
-    &__img
-      margin-top: -9rem
-      position: static
+    // &__img
+      // margin-top: -9rem
+      // position: static
       img
         transform: translateY(7rem)   
     .btn
@@ -1608,7 +1626,7 @@
       top: 50%
       transform: translateY(-50%)
     &-label
-      padding: 1.5rem 1rem 1.5rem 5rem
+      padding: 1.5rem 1.3rem 1.5rem 5.2rem
       color: #fff
       background: rgba(255, 255, 255, 0.13)
   
@@ -1617,6 +1635,7 @@
   .special-title
     font-size: 18px
 
+  .special-label,
   .client190-card-text,
   .client190-list,
   .subscribe-text,
@@ -1666,8 +1685,16 @@
     &-title
       text-align: center
     &-label 
+      margin-left: 6rem
+      max-width: 245px
       &-wrap 
         justify-content: center
+
+  .work-list
+    width: 50rem
+    max-width: none
+    &-wrap 
+      left: -9.5rem
 
 
   // Client-190
@@ -1682,6 +1709,7 @@
       margin-top: 0
       margin-left: auto
       margin-right: auto
+      max-width: 280px
     &-card 
       margin-left: auto
       margin-right: auto
@@ -1689,12 +1717,42 @@
       &-wrap 
         margin-bottom: 30px
 
+    
+
+
+
+  // Subscribe
+  .subscribe
+    &__social 
+      a
+        i
+          transform: scale(.6)
+
 
   // Actions
   .actions 
     &-card 
       &-title
         font-size: 22px
+
+  // Rev-lite
+  .rev_lite
+    padding-top: 11rem
+    .rev__footer-container
+      margin-bottom: 4rem
+
+
+  // Intro_lite
+  .intro_lite
+    .why
+      margin-left: 0
+    .intro__img
+      right: -40rem
+
+
+  // Client-lite
+  // .client_lite
+  //   padding-top: 0
 
 
 
@@ -1768,6 +1826,7 @@
         border-radius: 50%
         background: rgba(255, 255, 255, 0.75)
         content: ""
+        box-shadow: .9rem .9rem 1.5rem rgb(1, 22, 76, .3)
         transition: transform 0.3s
       &_prev
         left: 5px
@@ -1777,7 +1836,143 @@
     .services-card__img::after
       opacity: 0.85
 
-    
+
+  .company-intro-2,
+  .eng-service-intro-2,
+  .office-intro-2
+    padding-top: 27rem
+    .intro-2
+      &__img
+        right: auto
+        .img__title
+          left: auto
+          font-size: 8px
+        .img__subtitle
+          font-size: 7px
+      &__container
+        padding-bottom: 40px
+      &__content
+        margin-left: 0
+        margin-right: 0
+        max-width: 320px
+      &__heading
+        max-width: none
+      &__footer
+        margin-top: 150px
+        width: 100%
+        flex-direction: column-reverse
+        align-items: center
+        // .digits
+        //   margin-bottom: 70px
+        //   margin-left: 0
+        //   align-self: flex-start
+        //   &__head
+        //     font-size: 10px
+        //   &__value
+        //     font-size: 33px
+        //   &__text 
+        //     font-size: 8px
+
+
+  // COMPANY-CLEANING
+  .company-intro-2 
+    // padding-top: 27rem
+    .intro-2
+      &__img
+        left: calc( 50vw - 165px )
+        .img__title
+          top: 220px
+          right: 70px
+      // &__container
+      //   padding-bottom: 40px
+      // &__content
+      //   margin-left: 0
+      //   margin-right: 0
+      //   max-width: 320px
+      // &__heading
+      //   max-width: none
+
+      &__footer
+        // margin-top: 150px
+        // width: 100%
+        // flex-direction: column-reverse
+        // align-items: center
+        .digits
+          margin-bottom: 70px
+          margin-left: 0
+          align-self: flex-start
+          &__head
+            font-size: 10px
+          &__value
+            font-size: 33px
+          &__text 
+            font-size: 8px
+
+    .digits__item
+      max-width: 140px
+
+  .company-clean 
+    &__container
+      padding-top: 65px
+    .clean
+      &__content
+        padding-left: 0
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+      &__heading,
+      &-media 
+        max-width: 155px
+
+
+  .company-blue-panel
+    &__img 
+      &_right 
+        margin-top: -2rem
+        margin-bottom: -2rem
+        max-width: 22rem
+
+
+
+  // ENG-SERVICE
+  .eng-service-intro-2
+    .intro-2
+      &__img
+        left: calc( 50vw - 150px )
+        .img__title
+          top: 170px
+          right: auto
+          left: 20px
+    .calc-call
+      margin-bottom: 265px
+
+
+
+  // OFFICE-CLEANING
+  .office-intro-2
+    .intro-2
+      &__img
+        left: calc( 50vw - 150px )
+        .img__title
+          top: 170px
+          right: auto
+          left: 20px
+    .calc-call
+      margin-bottom: 265px
+
+
+
+
+
+
+
+
+
+
+  // Texts
+  .text
+    &_medium_xs
+      font-weight: 500
   // Displays
   .d-none_xs 
     display: none
