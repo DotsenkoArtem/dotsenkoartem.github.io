@@ -65,8 +65,6 @@ mixin climb-intro-2(h1, imgStem, name, post, digitsHead, digitsText)
       .intro-2__img
         picture
           source(srcset=`img/${imgStem}.webp`, type='image/webp')
-          //- source(srcset=`img/mob/intro-climb-man-mob.png`, media="(max-width: 480px)",type='image/png')
-          //- source(srcset=`img/mob/intro-climb-man-mob.webp`, media="(max-width: 480px)",type='image/webp')
           img(src=`img/${imgStem}.png`, alt='')
         if name
           .img__title
