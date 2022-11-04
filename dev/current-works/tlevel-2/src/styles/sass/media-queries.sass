@@ -219,19 +219,6 @@
   .container, .container_xl, .container_lg 
     max-width: 740px
   
-  // Displays
-  .d-none_md 
-    display: none
-  
-  .d-block_md 
-    display: block
-
-  .d-flex_md
-    display: flex
-  
-  .d-inline_md 
-    display: inline
-  
 
   .logo 
     max-width: 20.5rem
@@ -704,11 +691,22 @@
   // Expert
   .expert
     padding-bottom: 8rem
+    &-video
+      &-mob 
+        position: relative
+        top: auto
+        left: auto
+        margin-left: auto
+        margin-right: auto
+        transform: none
 
 
   // Rev-lite
   .rev_lite
+    padding-top: 0
     padding-bottom: 8rem
+    .rev__heading
+      margin-bottom: 8rem
 
   
   // Other-serv
@@ -840,7 +838,6 @@
     .phone-transp
       transform: scale(.7)
 
-    
   // Displays
   .d-none_md 
     display: none
@@ -850,6 +847,9 @@
   
   .d-inline_md 
     display: inline
+  
+  .d-flex_md
+    display: flex
   
 
 @media (max-width: 767.98px) 
@@ -1211,6 +1211,10 @@
     &__img
       position: static
 
+
+  // Expert
+  .expert-video-mob
+    margin-top: 6rem
 
   // Rev-lite
   .rev_lite
@@ -1745,10 +1749,14 @@
       &-title
         font-size: 22px
 
+  
+
+  
+
 
   // Rev-lite
   .rev_lite
-    padding-top: 11rem
+    padding-top: 0
     .rev__footer-container
       margin-bottom: 4rem
 
@@ -2322,6 +2330,18 @@
 
   .gal 
     margin-top: 4rem
+
+  // Special
+  .work-list-wrap 
+    left: -7.5rem
+  
+  // Intro-lite
+  .intro_lite 
+    .intro
+      &__img
+        right: -35rem
+      &__why
+        padding-bottom: 15rem
   
 
   .modal__close 
@@ -2333,6 +2353,13 @@
   
   .modal-close__item 
     background: #353535
+
+// COMPANY-CLEANING
+.company-clean
+  .clean__heading,
+  .clean-media 
+    max-width: none
+
   
 /* X X S */
 @media (max-width: 414.98px) 
@@ -2341,6 +2368,9 @@
     &__img
       margin-left: 3rem
       width: 62rem
+
+
+
 
   // Displays 
   .d-none_xxs 
