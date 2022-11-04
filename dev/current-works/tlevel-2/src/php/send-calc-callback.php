@@ -15,19 +15,15 @@ require 'SMTP.php';
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-
-$name           = $_POST['userName'];
-$company        = $_POST['company'];
-$phone          = $_POST['userPhone'];
-$email          = $_POST['userEmail'];
+$phone           = $_POST['userPhone'];
+$date           = $_POST['userDate'];
 $formTheme      = $_POST['formTheme'];
-$myuploads      = $_FILES['file'];
 
 try {
     //Server settings
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                       //Enable verbose debug output
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
-    // $mail->isSMTP();                                             //Send using SMTP
+    $mail->isSMTP();                                             //Send using SMTP
     $mail->CharSet = 'UTF-8';
     $mail->SMTPAuth   = true;                                       //Enable SMTP authentication
 
@@ -40,7 +36,6 @@ try {
     $mail->SMTPSecure = 'ssl';                                      //Enable implicit TLS encryption
     $mail->Port       = 465;                                        //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     
-
     //Recipients
     // $mail->setFrom('artemdoc1@inbox.ru', 'Фамилия Имя Отчество');
     $mail->setFrom('artemdoc1@inbox.ru');
@@ -54,46 +49,29 @@ try {
     // $mail->addAttachment('/var/tmp/file.tar.gz');                //Add attachments
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');           //Optional name
 
-    $attachmentSize = 0;
-    // Прикрепление файлов
-    if (!empty($myuploads['name'][0])) {
-        for ($ct = 0; $ct < count($myuploads['tmp_name']); $ct++) {
-            $uploadfile = tempnam(sys_get_temp_dir(), sha1($myuploads['name'][$ct]));
-            $filename = $myuploads['name'][$ct];
-            $attachmentSize += $myuploads['size'][$ct];
-
-            if (move_uploaded_file($myuploads['tmp_name'][$ct], $uploadfile)) {
-                $mail->addAttachment($uploadfile, $filename);
-                $rfile[] = "Файл $filename прикреплён";
-            } else {
-                $rfile[] = "Не удалось прикрепить файл $filename";
-            }
-        }   
-    }
-    //  - - - - - - - - - - - - 
-
     //Content
     $mail->isHTML(true);                                            //Set email format to HTML
     $mail->Subject = 'Заявка с сайта "tlevel.ru"';
     $mail->Body    =    
                     "<b>Тема: </b>{$formTheme}<br>
-                    <b>Пользователь: </b>{$name}<br>
-                    <b>Компания: </b>{$company}<br>
                     <b>Телефон: </b>{$phone}<br>
-                    <b>Электронная почта: </b>".$email."<br>";
+                    <b>Дата: </b>{$date}<br>";
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
+    // if ($mail->send()) {$result = "success";}       //Дефолтная отправка писем
+    // else {$result = "error";}
 
-    if ($attachmentSize > 10485760) {                  //Отправка с ограничением по суммарному размеру вложений
-        $result = "limitExceeded";
-    } else {
-        $mail->isSMTP();
+   //Отправка с ограничением по суммарному размеру вложений
+    // if ($attachmentSize > 10485760) {                  
+    //     $result = "limitExceeded";
+    // } else {
+        // $mail->isSMTP();
         if ($mail->send()) {
             $result = "success"; 
         } else {
             $result = "error";
         }
-    }
+    // }
 
 } catch (Exception $e) {
     $result = "error";
@@ -101,5 +79,5 @@ try {
 }
 
 // Отображение результата
-echo json_encode(["result" => $result, "status" => $status]);
+echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status, "myuploads['size']" => $myuploads['size'], "attachmentSize" => $attachmentSize]);
 ?>
