@@ -369,37 +369,25 @@
     font-size: 2rem
   
   .expert-slide 
-    -webkit-transform: none
-    -ms-transform: none
     transform: none
-    -webkit-transition: -webkit-transform 0.4s
-    transition: -webkit-transform 0.4s
-    -o-transition: transform 0.4s
     transition: transform 0.4s
-    transition: transform 0.4s, -webkit-transform 0.4s
   
   .expert-slide.swiper-slide-active 
-    -webkit-transform: scale(1.5)
-    -ms-transform: scale(1.5)
     transform: scale(1.5)
     z-index: 10
   
   .expert-slide.swiper-slide-prev 
-    -webkit-transform: scale(1.2) translateX(-14px)
-    -ms-transform: scale(1.2) translateX(-14px)
     transform: scale(1.2) translateX(-14px)
     z-index: 5
   
   .expert-slide.swiper-slide-next 
-    -webkit-transform: scale(1.2) translateX(14px)
-    -ms-transform: scale(1.2) translateX(14px)
     transform: scale(1.2) translateX(14px)
     z-index: 5
   
   .expert-slide.swiper-slide-next + .swiper-slide 
-    -webkit-transform: none
-    -ms-transform: none
-    transform: none
+    // transform: none
+
+    transform: scale(1) translateX(0)
   
   .expert-slide__caption 
     bottom: 3rem
@@ -1405,6 +1393,30 @@
 
   .expert-slide 
     max-width: 22.5rem
+
+  // ++++++++++++++++++++++++++++
+  .expert-slide 
+    transform: none
+    transition: transform 0.4s
+  
+  .expert-slide.swiper-slide-active 
+    // transform: scale(1.5)
+    // transform: scale(1)
+    z-index: 10
+  
+  .expert-slide.swiper-slide-prev 
+    transform: scale(1.2) translateX(-50px)
+    // transform: scale(1) translateX(0px)
+    z-index: 5
+  
+  .expert-slide.swiper-slide-next 
+    transform: scale(1.2) translateX(50px)
+    // transform: scale(1) translateX(0px)
+    z-index: 5
+  
+  // .expert-slide.swiper-slide-next + .swiper-slide 
+  //   transform: scale(1) translateX(0)
+  // ++++++++++++++++++++++++++++
   
   .expert-video__caption 
     font-size: 1.6rem

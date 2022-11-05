@@ -373,11 +373,12 @@ window.onload = function () {
     slidesPerView: "auto",
     // draggable: true,
     centeredSlides: true,
-    spaceBetween: 35,
+    // spaceBetween: 35,
     speed: 500,
-    // autoplay: {
-    //   delay: 5000
-    // },
+    autoplay: {
+      // delay: 5000
+      delay: 500
+    },
     navigation: {
       nextEl: '.swiper-button-next.expert__button.expert__button_next',
       prevEl: '.swiper-button-prev.expert__button.expert__button_prev'
@@ -389,10 +390,12 @@ window.onload = function () {
     // slidesPerView: "auto",
     breakpoints: {
       576: {
-        slidesPerView: 3
+        slidesPerView: 3,
+        spaceBetween: 35
       },
       768: {
-        slidesPerView: 5
+        slidesPerView: 5,
+        spaceBetween: 35
       },
       992: {
         // loop: false,
