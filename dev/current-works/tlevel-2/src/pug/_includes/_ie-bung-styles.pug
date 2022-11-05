@@ -4,6 +4,9 @@ style.
         display: none;
     }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        #wrapper{
+            display: none;
+        }
         .ie-bung {
             display: -ms-flexbox;
             -webkit-box-pack: center;
@@ -14,7 +17,7 @@ style.
             bottom: 0;
             left: 0;
             z-index: 9999;
-            background: linear-gradient(180deg, #a3fff3, #003535);
+            background: linear-gradient(180deg, rgba(21, 70, 195, 0.404), rgb(21, 71, 195));
             overflow: hidden;
         }
         .ie-bung__smile {

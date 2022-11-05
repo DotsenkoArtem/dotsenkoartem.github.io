@@ -8,6 +8,9 @@
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
   // Заглушка для IE версии >= 10
+  #wrapper
+    display: none
+
   .ie-bung
     display: flex
     justify-content: center
@@ -17,7 +20,7 @@
     bottom: 0
     left: 0
     z-index: 9999
-    background: linear-gradient(180deg, rgb(163, 255, 243), rgb(0, 53, 53))
+    background: linear-gradient(180deg, rgba(21, 70, 195, 0.404), rgb(21, 71, 195))
     overflow: hidden
     &__smile
       margin-bottom: 2rem

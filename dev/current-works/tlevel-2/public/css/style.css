@@ -5199,6 +5199,9 @@ section.manager {
 .calc-modal .form__control.form__control_xl::-webkit-input-placeholder {
   text-align: left;
 }
+.calc-modal .form__control.form__control_xl::-moz-placeholder {
+  text-align: left;
+}
 .calc-modal .form__submit {
   width: 29rem;
   height: 9rem;
@@ -8251,6 +8254,9 @@ section.manager {
 /* VIII. IE >= 10 - media-queries
  * --------------------------------------- */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #wrapper {
+    display: none;
+  }
   .ie-bung {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8264,9 +8270,9 @@ section.manager {
     bottom: 0;
     left: 0;
     z-index: 9999;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgb(163, 255, 243)), to(rgb(0, 53, 53)));
-    background: -o-linear-gradient(top, rgb(163, 255, 243), rgb(0, 53, 53));
-    background: linear-gradient(180deg, rgb(163, 255, 243), rgb(0, 53, 53));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 70, 195, 0.404)), to(rgb(21, 71, 195)));
+    background: -o-linear-gradient(top, rgba(21, 70, 195, 0.404), rgb(21, 71, 195));
+    background: linear-gradient(180deg, rgba(21, 70, 195, 0.404), rgb(21, 71, 195));
     overflow: hidden;
   }
   .ie-bung__smile {
