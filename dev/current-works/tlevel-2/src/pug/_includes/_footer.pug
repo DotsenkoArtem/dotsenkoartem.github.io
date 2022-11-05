@@ -224,8 +224,10 @@ footer.footer#footer
             .form__group.form__group_xl.form__group_control
                 input.form__control.form__control_xl#userPhone6(type='text', name='userPhone', placeholder='Номер телефона', required)
 
-            .form__group.form__group_xl.form__group_control
+            .form__group.form-group-label-cover.form__group_xl.form__group_control
+              
               input.form__control.form__control_xl#userDate6(type='datetime-local', name='userDate', placeholder='Дата и время', required)
+              label(for="userDate6") Дата и время
 
             input(type='hidden', value='Обратный звонок', name='formTheme')
 

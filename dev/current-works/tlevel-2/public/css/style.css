@@ -5237,6 +5237,32 @@ section.manager {
   align-self: flex-start;
 }
 
+.form-group-label-cover {
+  position: relative;
+}
+.form-group-label-cover label {
+  padding: 2.5rem 2.5rem 2.5rem 4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  font-size: 2rem;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.45);
+  background: #fff;
+}
+.form input:focus ~ label,
+.form input.valid ~ label {
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.form input.not-valid ~ label {
+  color: #000614;
+}
+
 .calc-frame {
   background: #e3e6ef;
 }

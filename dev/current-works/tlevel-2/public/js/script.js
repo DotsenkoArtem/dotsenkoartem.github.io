@@ -217,8 +217,35 @@ window.onload = function () {
 
   // ================================================
   // FORMS
-  // Массив всех форм
-
+  var labelCoverFormGroups = document.querySelectorAll('.form-group-label-cover');
+  var _iterator3 = _createForOfIteratorHelper2(labelCoverFormGroups),
+    _step3;
+  try {
+    var _loop4 = function _loop4() {
+      var labelCoverFormGroup = _step3.value;
+      var labelCover = labelCoverFormGroup.querySelector('label');
+      var inputCover = labelCoverFormGroup.querySelector('.form__control');
+      inputCover.addEventListener('blur', function () {
+        if (inputCover.value === '') {
+          inputCover.classList.add('not-valid');
+          inputCover.classList.remove('valid');
+          labelCover.innerHTML = "Заполните все данные";
+        } else {
+          inputCover.classList.remove('not-valid');
+          inputCover.classList.add('valid');
+          labelCover.innerHTML = "Время и дата";
+        }
+      });
+    };
+    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+      _loop4();
+    }
+    // Массив всех форм
+  } catch (err) {
+    _iterator3.e(err);
+  } finally {
+    _iterator3.f();
+  }
   var forms = document.forms;
   var _loop2 = function _loop2(_i2) {
     var form = forms[_i2];

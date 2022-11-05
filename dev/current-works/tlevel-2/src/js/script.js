@@ -164,6 +164,23 @@ window.onload = function () {
   
   // ================================================
   // FORMS
+  const labelCoverFormGroups = document.querySelectorAll('.form-group-label-cover')
+  for(let labelCoverFormGroup of labelCoverFormGroups) {
+    let labelCover = labelCoverFormGroup.querySelector('label')
+    let inputCover = labelCoverFormGroup.querySelector('.form__control')
+
+    inputCover.addEventListener('blur', ()=> {
+      if(inputCover.value === '') {
+        inputCover.classList.add('not-valid')
+        inputCover.classList.remove('valid')
+        labelCover.innerHTML = "Заполните все данные"
+      } else {
+        inputCover.classList.remove('not-valid')
+        inputCover.classList.add('valid')
+        labelCover.innerHTML = "Время и дата"
+      }
+    })
+  }
   // Массив всех форм
 
 
