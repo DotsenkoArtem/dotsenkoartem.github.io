@@ -7,10 +7,10 @@
 
 @import "grid.sass"
 
-/* V. Sprite
+/* V. Sprites
  --------------------------------------- */ 
 
-/* 1. Sprite:svg 
+/* Sprite:svg 
  -------------------------*/
 // Для добавления svg-спрайтов: необходимо только задать нужный класс а html.
 // например     i.svg-icons.svg-icons-dims
@@ -178,8 +178,8 @@
   letter-spacing: 0.075em
   color: #fff
 
-/* Lazy 
- -------------------------*/
+// Lazy 
+
 .intro
   padding-top: 32rem
   background: #000410 url("../img/intro-bg.png") left top no-repeat
@@ -388,13 +388,6 @@
 
 .tender__img img
   max-width: 52rem
-
-  // ???????????
-// .services,
-// .client,
-// .adv,
-// .awa__junction
-//   background: #f3f8fc
 
 .services,
 .client,
@@ -1984,7 +1977,6 @@ section.manager
  ------------------------- */
 .intro-2
   padding-top: 27rem
-  // background: #000614 url("../img/intro-bg.png") left top no-repeat
   background: #000614
   background-size: cover
   position: relative
@@ -2026,15 +2018,14 @@ section.manager
     width: 69.6rem
     position: absolute
     bottom: -7rem
-    // left: calc(50vw - 110rem)
     left: -14rem
     z-index: 0
     img
       max-width: 100%
     .img
       &__subtitle
-            font-size: 1.1rem
-            font-weight: 300
+        font-size: 1.1rem
+        font-weight: 300
 
 .glow
   position: absolute
@@ -2145,7 +2136,6 @@ section.manager
       img
         max-width: 19.8rem
     &-2
-      // border: solid 1px #000
       border-bottom-left-radius: 18rem
       border-bottom-right-radius: 18rem
       height: calc( v.$feature-img-width + 5rem )
@@ -2245,7 +2235,7 @@ section.manager
       object-fit: cover
 
 .work-list
-  &-wrap 
+  &-wrap
     position: absolute
     top: 6.5rem
     left: 36.5rem
@@ -2258,18 +2248,18 @@ section.manager
       animation: slideUpIn 0.3s ease-in forwards
     &.close
       animation: slideDownOut 0.3s ease-in forwards
-  &-inner 
+  &-inner
     padding-top: 1.5rem
     padding-bottom: 2rem
-  width: 39.5rem
-  padding: 0rem 2rem 0rem 3.5rem
-  font-size: 13px
-  font-weight: 400
-  line-height: 1.25
-  text-align: left
-  max-height: 45rem
-  overflow-x: hidden
-  overflow-y: auto
+    width: 39.5rem
+    padding: 0rem 2rem 0rem 3.5rem
+    font-size: 13px
+    font-weight: 400
+    line-height: 1.25
+    text-align: left
+    max-height: 45rem
+    overflow-x: hidden
+    overflow-y: auto
   &-title
     margin-top: 2.5rem
     font-size: 16px
@@ -2295,7 +2285,7 @@ section.manager
         vertical-align: middle
       &:not(:last-child)
         margin-bottom: 1.8rem
-        
+
   &-btn
     position: absolute
     top: 50%
@@ -2351,12 +2341,10 @@ section.manager
       span
         color: lighten(v.$calc-modal-close-x, 10%)
 
-
-
 /* Client190
  -------------------------*/
 .client190
-  
+
   position: relative
   background: #00081b
   color: #fff
@@ -2381,11 +2369,11 @@ section.manager
     text-align: center
     background: rgba(255, 255, 255, 0.07)
     border-radius: 2rem
-    &-text 
+    &-text
       margin-left: auto
       margin-right: auto
       max-width: 30rem
-    &__label 
+    &__label
       position: absolute
       top: -13rem
       left: 50%
@@ -2440,8 +2428,6 @@ section.manager
     img
       max-width: 38.8rem
 
-
-
 /* Spec-gal
  -------------------------*/
 .spec-gal
@@ -2456,7 +2442,7 @@ section.manager
       display: block
       height: 0
       width: 100%
-      padding-top: 75.5%  
+      padding-top: 75.5%
     img
       position: absolute
       top: 0
@@ -2467,16 +2453,14 @@ section.manager
       width: 100%
       height: 100%
       object-fit: cover
-      
-
 
   /* Subscribe
-    -------------------------*/
-.subscribe 
+   -------------------------*/
+.subscribe
   padding-top: 8rem
   padding-bottom: 8rem
   background: #e2e5ef
-  &-row 
+  &-row
     display: flex
     justify-content: space-between
     margin-left: -1.5rem
@@ -2484,7 +2468,7 @@ section.manager
   &__item
     width: 48%
     flex: none
-  &-logo 
+  &-logo
     margin-bottom: 4rem
     text-align: center
     img
@@ -2496,7 +2480,7 @@ section.manager
     font-weight: 500
     line-height: 1.25
     text-align: center
-  &__video 
+  &__video
     margin-top: 3.5rem
     margin-left: auto
     margin-right: auto
@@ -2509,7 +2493,7 @@ section.manager
       box-shadow: 1.8rem 1.8rem 3.2rem rgba(1, 22, 76, .3)
       img
         max-width: 100%
-    &-btn 
+    &-btn
       position: absolute
       top: calc( 50% - 4.25rem )
       left: calc( 50% - 3rem )
@@ -2544,13 +2528,13 @@ section.manager
       transition: transform .3s
       &:not(:last-child)
         margin-right: 2.4rem
-        
+
       &:hover
         transform: translateY(-2px)
       &:active
         transform: translateY(0)
         transition: transform 0s
-  &__soc-screen 
+  &__soc-screen
     margin-top: 4.4rem
     margin-left: auto
     margin-right: auto
@@ -2558,8 +2542,6 @@ section.manager
     border-radius: 1rem
     box-shadow: 1.8rem 1.8rem 3.2rem rgba(1, 22, 76, .3)
     overflow: hidden
-
-
 
 /* Actions
  -------------------------*/
@@ -2571,7 +2553,7 @@ section.manager
     h2
       font-weight: 700
       color: #00081b
-  &-block 
+  &-block
     margin-left: -2rem
     margin-right: -2rem
     display: flex
@@ -2586,7 +2568,7 @@ section.manager
     border-radius: 1rem
     box-shadow: 1.1rem 1.1rem 12rem rgba(0, 10, 69, 0.26)
     overflow: hidden
-    &__bg 
+    &__bg
       position: absolute
       top: 0
       right: 0
@@ -2603,7 +2585,7 @@ section.manager
       position: relative
       z-index: 1
       text-align: center
-    &-label 
+    &-label
       margin-left: auto
       margin-right: auto
       margin-bottom: 3.5rem
@@ -2614,7 +2596,7 @@ section.manager
       border-radius: 1rem
       color: #fff
       background: #1648c5
-      &_cash 
+      &_cash
         padding-top: 1.8rem
         padding-bottom: 1.8rem
         line-height: 2.2rem
@@ -2647,7 +2629,7 @@ section.manager
       &_ord
         background: linear-gradient(-38deg, #002a94, #1648c5)
         background-clip: text
-        
+
     &-subtitle
       font-size: 1.8rem
       font-weight: 500
@@ -2656,8 +2638,6 @@ section.manager
         color: #fff
       &_ord
         color: #000614
-
-
 
 /* Cheaper 
  -------------------------*/
@@ -2671,7 +2651,7 @@ section.manager
   &__container
     position: relative
   &__content
-    max-width: 45rem 
+    max-width: 45rem
   &__heading
     margin-bottom: 1.5rem
     h2
@@ -2680,7 +2660,7 @@ section.manager
       text-align: left
   &__text
     margin-bottom: 2.5rem
-    max-width: 45rem 
+    max-width: 45rem
     font-size: 2.5rem
     line-height: 1.4
   &-highlight
@@ -2690,19 +2670,19 @@ section.manager
     flex-wrap: wrap
     align-items: center
   &-msg
-    &-wrap 
+    &-wrap
       display: flex
-    margin-right: 1.5rem
-    transition: transform .3s
+      margin-right: 1.5rem
+      transition: transform .3s
     &:hover
       transform: translateY(-2px)
     &:active
       transform: translateY(0)
       transition: transform 0s
-        
+
   &-phone
     margin-right: 3.5rem
-    a 
+    a
       font-size: 2.8rem
       font-weight: 800
       font-style: italic
@@ -2728,7 +2708,6 @@ section.manager
     img
       max-width: 84rem
       max-height: 49rem
-
 
 /* Intro_lite
  -------------------------*/
@@ -2756,15 +2735,11 @@ section.manager
       text-transform: uppercase
       color: #1546c1
 
-
-    
-
 /* Rev_lite
  -------------------------*/
 .rev_lite
   padding-top: 5rem
   padding-bottom: 6.5rem
-    
 
 /* Econom
  -------------------------*/
@@ -2788,11 +2763,11 @@ section.manager
       color: #000411
       .econom-highlight
         color: #1647c3
-  &-text 
+  &-text
     position: relative
     margin-bottom: 7rem
     padding-left: 9rem
-    &__img 
+    &__img
       position: absolute
       top: 0rem
       left: -2.5rem
@@ -2815,7 +2790,7 @@ section.manager
     left: calc( 50vw - 70rem )
     z-index: 0
     img
-      max-width: 79rem 
+      max-width: 79rem
   &-form
     justify-content: center
     &__group
@@ -2857,7 +2832,7 @@ section.manager
     &:active
       transform: scale(1)
       transition: transform 0s
-  &__footer 
+  &__footer
     text-align: center
     p
       font-size: 2.5rem
@@ -2869,9 +2844,6 @@ section.manager
       text-decoration: underline
       &:hover
         text-decoration: none
-
-
-
 
 /* ENG-SERVICE
  -------------------------*/
@@ -2890,14 +2862,13 @@ section.manager
       &__content
         margin-right: 0rem
         max-width: 71.5rem
-        
+
       &__heading
         margin-bottom: 0
       &__heading h1,
       &-call
         font-size: 4rem
       &__img
-        // left: calc(50vw - 104rem)
         left: -8rem
         bottom: 0
     .img
@@ -2911,10 +2882,6 @@ section.manager
         text-align: center
         background: rgba(0, 0, 0, 0.6)
         border-radius: 1rem
-      
-
-
-
 
 /* PROM-CLIMBING
  -------------------------*/
@@ -2950,9 +2917,8 @@ section.manager
             font-size: 8rem
             line-height: 1.1
     .intro-2
-      &__img 
+      &__img
         bottom: -6rem
-        // left: calc(50vw - 114rem)
         left: -18rem
         img
           max-width: none
@@ -2972,8 +2938,6 @@ section.manager
   &__attention-label
     margin-top: 1.5rem
     margin-bottom: 3rem
-  
-
 
 .attention-label
   position: relative
@@ -2991,10 +2955,8 @@ section.manager
   font-weight: 700
   line-height: 6.5rem
   letter-spacing: .05em
-  text-align: center 
+  text-align: center
   color: #000
-
-
 
 /* Geography
  -------------------------*/
@@ -3010,15 +2972,12 @@ section.manager
     left: 50%
     z-index: 0
     transform: translate(-50%, -50%)
-    // height: 100%
     img
       max-width: 108.6rem
-  // &__container
-  //   position: relative
   &-content
     position: relative
     z-index: 1
-  &-top 
+  &-top
     margin-top: 6.5rem
     margin-bottom: 5rem
     display: flex
@@ -3032,7 +2991,7 @@ section.manager
     max-width: 36rem
     background: #e3e6ef
     border-radius: 1.5rem
-    box-shadow: 1.7rem 1.7rem 2.4rem  rgba(0, 10, 33, 0.18)
+    box-shadow: 1.7rem 1.7rem 2.4rem rgba(0, 10, 33, 0.18)
     &__img
       position: absolute
       top: -4.8rem
@@ -3046,7 +3005,7 @@ section.manager
       line-height: 1.35
       color: #000
       text-align: center
-  &__heading 
+  &__heading
     margin-bottom: 1.5rem
     h2
       font-weight: 700
@@ -3055,14 +3014,11 @@ section.manager
     margin-left: auto
     margin-right: auto
     margin-bottom: 10rem
-    max-width: 82rem 
-    p 
+    max-width: 82rem
+    p
       font-size: 2.2rem
       text-align: center
       line-height: 1.6
-
-  
-
 
 /* Blue-panel
  -------------------------*/
@@ -3088,13 +3044,9 @@ section.manager
     color: #fff
     text-align: center
 
-
-
-
-
 /* Feature-panel 
  -------------------------*/
-.feature-panel 
+.feature-panel
   position: relative
   padding-top: 9rem
   padding-bottom: 10rem
@@ -3106,7 +3058,7 @@ section.manager
     display: flex
     justify-content: space-between
     max-width: 107rem
-  &__item 
+  &__item
     font-size: 1.8rem
     font-weight: 500
     line-height: 1.55
@@ -3126,7 +3078,7 @@ section.manager
     color: transparent
     background: linear-gradient(0deg, #002277, #5d81db)
     background-clip: text
-    
+
   &-glow
     position: absolute
     z-index: 0
@@ -3141,10 +3093,6 @@ section.manager
       top: -30rem
       right: -45rem
 
-
-  
-
-
 /* OFFICE-CLEANING
  -------------------------*/
 .office-intro-2
@@ -3158,7 +3106,6 @@ section.manager
       margin-right: 3rem
       max-width: 71.5rem
   .intro-2__img
-    // left: calc(50vw - 99rem)
     left: -3rem
     bottom: 0
   .img
@@ -3172,18 +3119,17 @@ section.manager
       border-radius: 1rem
       top: 32rem
       left: 3rem
-    
 
 .office-client190,
 .store-client190
   .client190
-    &-card 
+    &-card
       padding: 4.5rem 4rem 4.5rem
       &__label
         top: -3.5rem
-      &-text 
+      &-text
         max-width: 40rem
-    &-digit 
+    &-digit
       margin-left: 1rem
       margin-right: 1rem
     &-list
@@ -3195,19 +3141,15 @@ section.manager
   .client190__inner
     padding-top: 11rem
 
-
-
-
 /* COMPANY-CLEANING
  -------------------------*/
 .company-intro-2
   .intro-2
     &__content
-      margin-right: -1.5rem 
+      margin-right: -1.5rem
       max-width: 65rem
     &__img
       bottom: -0.5rem
-      // left: calc(50vw - 99rem)
       left: -3rem
       img
         width: 55rem
@@ -3228,8 +3170,6 @@ section.manager
     &__text
       margin-top: -.5rem
       font-size: 12px
-
-
 
 .company-clean
   background: #00040e
@@ -3280,9 +3220,6 @@ section.manager
     padding-top: 13rem
     padding-bottom: 5rem
 
-
-
-
 /* STORE-CLEANING
  -------------------------*/
 .store-intro-2
@@ -3309,22 +3246,17 @@ section.manager
       background: rgba(0, 0, 0, 0.6)
       border-radius: 1rem
       top: 32rem
-      left: 3rem 
+      left: 3rem
 
 .store-client190
   .client190__inner
     padding-top: 11rem
-
-
-
-
 
 /* TERRITORY-CLEANING
  -------------------------*/
 .territory-intro-2
   .intro-2
     &__img
-      // left: calc(50vw - 103rem)
       left: -7rem
       bottom: 0
     &__content
@@ -3346,17 +3278,10 @@ section.manager
       top: 34rem
       left: 10rem
 
-
-
-
-
 /* Modals
  -------------------------*/
 .modal
   padding: 1.5rem
-  // display: -webkit-box
-  // display: -ms-flexbox
-  // display: flex
   display: none
   -webkit-box-align: center
   -ms-flex-align: center
@@ -3673,7 +3598,6 @@ section.manager
           margin-bottom: 2rem
           align-self: flex-start
 
-
 .form
   &-group-label-cover
     position: relative
@@ -3696,12 +3620,6 @@ section.manager
     visibility: hidden
   input.not-valid ~ label
     color: #000614
-  
-
-// input::-webkit-datetime-edit-fields-wrapper
-//   color: red
-// input[type="datetime-local" i]::-webkit-calendar-picker-indicator
-//   opacity: .5
 
 .calc-frame
   background: v.$calc-modal-bg
@@ -3935,14 +3853,6 @@ section.manager
 /* 
  ANIMATIONS
  ------------------------------ */
-@-webkit-keyframes fadeIn
-  from 
-    visibility: hidden
-    opacity: 0
-
-  to 
-    visibility: visible
-    opacity: 1
 
 @keyframes fadeIn
   from
@@ -3953,15 +3863,6 @@ section.manager
     visibility: visible
     opacity: 1
 
-@-webkit-keyframes fadeOut
-  from 
-    visibility: visible
-    opacity: 1
-
-    to 
-      visibility: hidden
-      opacity: 0
-
 @keyframes fadeOut
   from
     visibility: visible
@@ -3970,19 +3871,6 @@ section.manager
   to
     visibility: hidden
     opacity: 0
-
-@-webkit-keyframes slideDownIn
-  from 
-    opacity: 0
-    visibility: hidden
-    -webkit-transform: translateY(-10%)
-    transform: translateY(-10%)
-
-  to 
-    opacity: 1
-    visibility: visible
-    -webkit-transform: translateY(0%)
-    transform: translateY(0%)
 
 @keyframes slideDownIn
   from
@@ -3997,19 +3885,6 @@ section.manager
     -webkit-transform: translateY(0%)
     transform: translateY(0%)
 
-@-webkit-keyframes slideDownOut
-  from 
-    opacity: 1
-    visibility: visible
-    -webkit-transform: translateY(0%)
-    transform: translateY(0%)
-
-  to 
-    opacity: 0
-    visibility: hidden
-    -webkit-transform: translateY(10%)
-    transform: translateY(10%)
-
 @keyframes slideDownOut
   from
     opacity: 1
@@ -4022,19 +3897,6 @@ section.manager
     visibility: hidden
     -webkit-transform: translateY(10%)
     transform: translateY(10%)
-
-@-webkit-keyframes slideUpIn
-  from 
-    opacity: 0
-    visibility: hidden
-    -webkit-transform: translateY(10%)
-    transform: translateY(10%)
-
-  to 
-    opacity: 1
-    visibility: visible
-    -webkit-transform: translateY(0%)
-    transform: translateY(0%)
 
 @keyframes slideUpIn
   from
@@ -4049,19 +3911,6 @@ section.manager
     -webkit-transform: translateY(0%)
     transform: translateY(0%)
 
-@-webkit-keyframes slideUpOut
-  from 
-    opacity: 1
-    visibility: visible
-    -webkit-transform: translateY(0%)
-    transform: translateY(0%)
-
-  to 
-    opacity: 0
-    visibility: hidden
-    -webkit-transform: translateY(-10%)
-    transform: translateY(-10%)
-
 @keyframes slideUpOut
   from
     opacity: 1
@@ -4075,8 +3924,8 @@ section.manager
     -webkit-transform: translateY(-10%)
     transform: translateY(-10%)
 
-/* Lazy 
- -------------------------*/
+// For Lazy 
+// -------------------------
 // .lazy 
 //    width: 100%
 //    height: 100%
@@ -4103,8 +3952,8 @@ section.manager
 //    100%  background-position:  150% 0, 0 0, 0px 85px, 0px 110px
 // 
 
-/* ANIMATIONS
- ------------------------------  */
+// ANIMATIONS
+// ------------------------------  
 // !!! Добавляется любой пустой селектор перед @import, так как после использования @include в свойствах выше директива @import смещается на один tab и некорректно отрабатывает импорт
 // ! То есть, после @include следует запускать @import только после объявления нормаьного свойства
 .fake-class-to-add-import-rule

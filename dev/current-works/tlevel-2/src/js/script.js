@@ -39,7 +39,7 @@ window.onload = function () {
     }; 
   }
 
-
+  // SMoothy Scroll
   $(function () {
     $('a[href^="#"]').on('click', function (event) {
       event.preventDefault();
@@ -57,8 +57,9 @@ window.onload = function () {
       * 1000 скорость перехода в миллисекундах
       */
     });
-  }); // ------------------------------------------------
+  }); 
   // ------------------------------------------------
+
   // MODALS
 
   var modalOpenBtns = document.querySelectorAll('.modal-trigger');
@@ -74,8 +75,9 @@ window.onload = function () {
     for (var i = 0; i < modalOpenBtns.length; i++) {
       _loop(i);
     }
-  } // Functions
-
+  } 
+  
+  // Functions
 
   function openModal(modalOpenBtn) {
     var modal = document.getElementById(modalOpenBtn.dataset.target);
@@ -161,9 +163,9 @@ window.onload = function () {
   calcModalHandler('#calcModal');
   
   
-  
   // ================================================
   // FORMS
+  // Обработка input[type="date"]
   const labelCoverFormGroups = document.querySelectorAll('.form-group-label-cover')
   for(let labelCoverFormGroup of labelCoverFormGroups) {
     let labelCover = labelCoverFormGroup.querySelector('label')
@@ -181,9 +183,8 @@ window.onload = function () {
       }
     })
   }
+  
   // Массив всех форм
-
-
   var forms = document.forms;
 
   var _loop2 = function _loop2(_i2) {
@@ -208,20 +209,8 @@ window.onload = function () {
     });
 
     function send(event, php) {
-      // Отключаю поля формы на врем отправки данных - тогда не работает отправка вложений
-      // for (let i = 0; i < form.elements.length; i++) {
-      //   form.elements[i].disabled = true;
-      // }
-      setupLoader(form); // console.log("Отправка запроса");
-      // if(attach){
-      //     // Вычисляю объем выбранных файлов - чисто для себя - в консоль
-      //     let fSizes = 0;
-      //     for(let i = 0; i < userFile5.files.length; i++) {
-      //     fSizes += userFile5.files[i].size;
-      //     }
-      //     console.log(`fSizes: ${fSizes} байт`);
-      //     console.log(`userFile5.files.length: ${userFile5.files.length} файлов`);
-      // }
+      setupLoader(form); 
+      // console.log("Отправка запроса");
 
       event.preventDefault ? event.preventDefault() : event.returnValue = false;
       var req = new XMLHttpRequest();
@@ -243,8 +232,9 @@ window.onload = function () {
           thanksContent.className = 'thanks__content';
           thanksClose.className = 'thanks__close';
           thanks.append(thanksContent, thanksClose);
-          wrapper.append(thanks); // Закрытие окна оповещения
-
+          wrapper.append(thanks); 
+          
+          // Закрытие окна оповещения
           thanksClose.onclick = function () {
             removeThanks(thanks);
           };
@@ -271,33 +261,31 @@ window.onload = function () {
           alert("Ошибка сервера. Номер: " + req.status);
         } //   Вывод окна оповещения на страницу
 
-
         thanks.classList.add('active'); // Очистка формы после отправки
 
         form.reset();
 
         if (attach) {
           selectedFile.innerHTML = "";
-        } //   Включаю поля формы после отправки данных
-
-
+        } 
+        
+        //   Включаю поля формы после отправки данных
         for (var _i6 = 0; _i6 < form.elements.length; _i6++) {
           form.elements[_i6].disabled = false;
-        } //   Автоудаление окна оповещения
-
-
+        }
+        
+        //   Автоудаление окна оповещения
         setTimeout(function () {
           removeThanks();
-        }, 6500); //   Удаление окна оповещения
+        }, 5000); //   Удаление окна оповещения
 
         function removeThanks() {
           thanks.classList.remove('active');
-          thanks.remove(); // console.log('Выполнено: removeThanks()');
-          // console.log(`А это thanks: ${thanks}`);
+          thanks.remove(); 
         }
-      }; // Если не удалось отправить запрос. Стоит блок на хостинге
-
-
+      }; 
+      
+      // Если не удалось отправить запрос. Стоит блок на хостинге
       req.onerror = function () {
         alert("Ошибка отправки запроса");
       };
@@ -308,9 +296,9 @@ window.onload = function () {
 
   for (var _i2 = 0; _i2 < forms.length; _i2++) {
     _loop2(_i2);
-  } // Функции установки, удаления лоадера кнопки формы
-
-
+  }
+  
+  // Функции установки, удаления лоадера кнопки формы
   function setupLoader(form) {
     var loader = document.createElement('div');
     loader.className = 'submit-loader';
@@ -320,21 +308,20 @@ window.onload = function () {
   function removeLoader(form) {
     var loader = form.querySelector('.submit-loader');
     loader.remove();
-  } // ================================================
+  } 
+  
+  
+  // ================================================
   // SLIDERS 
+
   // Expert-slider
-
-
   var expertSlider = new Swiper('.expert__slider', {
     loop: true,
     slidesPerView: "auto",
-    // draggable: true,
     centeredSlides: true,
-    // spaceBetween: 35,
     speed: 500,
     autoplay: {
-      // delay: 5000
-      delay: 500
+      delay: 5000
     },
     navigation: {
       nextEl: '.swiper-button-next.expert__button.expert__button_next',
@@ -344,7 +331,6 @@ window.onload = function () {
       el: ".expert__pagination",
       type: "fraction"
     },
-    // slidesPerView: "auto",
     breakpoints: {
       576: {
         slidesPerView: 3,
@@ -355,15 +341,16 @@ window.onload = function () {
         spaceBetween: 35,
       },
       992: {
-        // loop: false,
         spaceBetween: 0,
         centeredSlides: false,
         slidesPerView: 4
       }
     }
-  }); // -----------------------------------------------
-  // Client-slider
+  }); 
+  // -----------------------------------------------
 
+
+  // Client-slider
   var clientSlider = new Swiper('.client__slider', {
     loop: true,
     slidesPerView: 2,
@@ -377,10 +364,6 @@ window.onload = function () {
       nextEl: '.swiper-button-next.client__button.client__button_next',
       prevEl: '.swiper-button-prev.client__button.client__button_prev'
     },
-    // pagination: {
-    //     el: ".swiper-pagination",
-    //     type: "fraction",
-    //   },
     breakpoints: {
       401: {
         slidesPerView: 3
@@ -394,28 +377,24 @@ window.onload = function () {
     }
   }); 
   // ------------------------------------------------
-  // Advantages-slider
-  //Swiper plugin initialization on window resize
 
+
+  // Advantages-slider
+  // Инициализация слайдера в зависимости от ширины экрана
   var advSlider = undefined;
 
   function initAdvSlider() {
-    // var screenWidth = $(window).width();
     var screenWidth = document.documentElement.clientWidth;
     var advSlideContainer = document.querySelector('.adv-grid');
     var advSlides = document.querySelectorAll('.adv-slide');
 
     if (screenWidth < 576 && advSlider == undefined) {
       advSlider = new Swiper('.adv__slider', {
-        // direction: 'horizontal',
         loop: true,
         slidesPerView: 1,
         speed: 500,
         spaceBetween: 20,
         centeredSlides: true,
-        // autoplay: {
-        //     delay: 5000,
-        // },
         navigation: {
           nextEl: '.swiper-button-next.adv__button.adv__button_next',
           prevEl: '.swiper-button-prev.adv__button.adv__button_prev'
@@ -435,47 +414,31 @@ window.onload = function () {
         advSlides[_i3].removeAttribute('style');
       }
     }
-  } //Swiper plugin initialization
+  } 
+
+  initAdvSlider(); 
+  // ------------------------------------------------
 
 
-  initAdvSlider(); //Swiper plugin initialization on window resize
-  // $(window).on('resize', function(){
-  //     initAdvSlider();
-  // });
-  // window.onresize = function(){
-  //     initAdvSlider();
-  // };
-  // ------------------------------------------------
-  // ------------------------------------------------
   // Awards-slider
-  //Swiper plugin initialization on window resize
-
+  /// Инициализация слайдера в зависимости от ширины экрана
   var awaSlider = undefined;
 
   function initAwaSlider() {
-    // var screenWidth = $(window).width();
     var screenWidth = document.documentElement.clientWidth;
     var awaSlideContainer = document.querySelector('.awa__slider-inner');
     var awaSlides = document.querySelectorAll('.awa-slide');
 
     if (screenWidth < 768 && awaSlider == undefined) {
       awaSlider = new Swiper('.awa__slider', {
-        // direction: 'horizontal',
         loop: true,
         slidesPerView: "auto",
         centeredSlides: true,
         speed: 500,
         spaceBetween: 30,
-        // autoplay: {
-        //     delay: 5000,
-        // },
         navigation: {
           nextEl: '.swiper-button-next.awa__button.awa__button_next',
           prevEl: '.swiper-button-prev.awa__button.awa__button_prev'
-        },
-        breakpoints: {
-          480: {// slidesPerView: "auto",
-          }
         }
       });
     } else if (screenWidth >= 768 && awaSlider != undefined) {
@@ -487,21 +450,17 @@ window.onload = function () {
         awaSlides[_i4].removeAttribute('style');
       }
     }
-  } //Swiper plugin initialization
+  }
 
-
-  initAwaSlider(); //Swiper plugin initialization on window resize
-  // $(window).on('resize', function(){
-  //     initAwaSlider();
-  // });
+  initAwaSlider();
   // ------------------------------------------------
-  // Reviews-slider
-  //Swiper plugin initialization on window resize
 
+
+  // Reviews-slider
+  // Инициализация слайдера в зависимости от ширины экрана
   var revSlider = undefined;
 
   function initRevSlider() {
-    // var screenWidth = $(window).width();
     var screenWidth = document.documentElement.clientWidth;
     var revSlideContainer = document.querySelector('.rev__slider-inner');
     var revSlides = document.querySelectorAll('.rev-slide');
@@ -520,13 +479,7 @@ window.onload = function () {
         navigation: {
           nextEl: '.swiper-button-next.rev__button.rev__button_next',
           prevEl: '.swiper-button-prev.rev__button.rev__button_prev'
-        } // breakpoints: {
-        //     767: {
-        //         slidesPerView: 5,
-        //         centeredSlides: false,
-        //     }
-        // }
-
+        }
       });
     } else if (screenWidth >= 576 && revSlider != undefined) {
       revSlider.destroy();
@@ -539,32 +492,11 @@ window.onload = function () {
     }
   }
 
-  initRevSlider(); // КОД СЛАЙДЕРА ДО УДАЛЕНИЯ 3 ИЗ 5 СЛАЙДОВ ОТЗЫВОВ
-  // const revSlider = new Swiper('.rev__slider', {
-  // slidesPerView: "auto",
-  // centeredSlides: true,
-  // loop: true,
-  // speed: 500,
-  // draggable: true,
-  // spaceBetween: 20,
-  // autoplay: {
-  //     delay: 5000,
-  // },
-  // navigation: {
-  //     nextEl: '.swiper-button-next.rev__button.rev__button_next',
-  //     prevEl: '.swiper-button-prev.rev__button.rev__button_prev',
-  // },
-  // breakpoints: {
-  //     767: {
-  //         slidesPerView: 5,
-  //         centeredSlides: false,
-  //     }
-  // }
-  // });
-  // Инициализация слайдеров при изменении ширины экрана
+  initRevSlider(); 
+  // ---------------------------------------------------- 
+
 
   // Other-serv-slider
-
   var otherServSlider = new Swiper('.other-serv__slider', {
     loop: true,
     slidesPerView: 2,
@@ -578,10 +510,6 @@ window.onload = function () {
       nextEl: '.swiper-button-next.other-serv__button.other-serv__button_next',
       prevEl: '.swiper-button-prev.other-serv__button.other-serv__button_prev'
     },
-    // pagination: {
-    //     el: ".swiper-pagination",
-    //     type: "fraction",
-    //   },
     breakpoints: {
       401: {
         slidesPerView: 2
@@ -594,21 +522,18 @@ window.onload = function () {
       }
     }
   }); 
-// - - - - - -- - - - - - - - -- -
+  // ----------------------------------------------------------
 
-
+  // Инициализация слайдеров при ресайзе
   window.onresize = function () {
     initAdvSlider();
     initAwaSlider();
     initRevSlider();
-  }; // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-  // let phoneInputs = document.querySelectorAll('[name="userPhone"]');
-  // for(let phoneInput of phoneInputs) {
-  //     let im = new Inputmask("+7 (999)-999-99-99");
-  //     im.mask(phoneInput);
-  // }
+  }; 
+  // = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
+  // Маска на поля ввода номера телефона
   var iForms = document.forms;
 
   var _iterator = _createForOfIteratorHelper(iForms),
