@@ -2249,6 +2249,8 @@ section.manager
     &.close
       animation: slideDownOut 0.3s ease-in forwards
   &-inner
+    margin-top: 1.5rem
+    margin-bottom: 1.5rem
     padding-top: 1.5rem
     padding-bottom: 2rem
     width: 39.5rem
@@ -2670,9 +2672,10 @@ section.manager
     flex-wrap: wrap
     align-items: center
   &-msg
+    &:not(:last-child)
+      margin-right: 1.5rem
     &-wrap
       display: flex
-      margin-right: 1.5rem
       transition: transform .3s
     &:hover
       transform: translateY(-2px)

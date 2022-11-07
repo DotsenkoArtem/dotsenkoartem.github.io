@@ -105,60 +105,63 @@ window.onload = function () {
 
   // Обработка модального окна выбора по кнопке "Рассчитать стоимость"
   function calcModalHandler(id){
-    let delay = 300
     const calcModal = document.querySelector(id)
-    const calcModalSelect = calcModal.querySelector('.calc-modal-select')
-    const calcModalCallback = calcModal.querySelector('.calc-modal-callback')
-    const callackOrder = calcModal.querySelector('.callack-order')
-    const doCall = calcModal.querySelector('.do-call')
 
-    calcModalSelect.style.animationDuration = `${delay/1000}s`
-    calcModalCallback.style.animationDuration = `${delay/1000}s`
-
-    // Переключение между фреймами окна
-    callackOrder.addEventListener('click', ()=>{
-      calcModalSelect.classList.remove('open')
-      calcModalSelect.classList.add('closed')
-      
-      setTimeout(()=>{
-        calcModalSelect.style.display = 'none'
-      }, delay)
-
-      setTimeout(()=>{
-        calcModalCallback.style.display = 'block'
-        calcModalCallback.classList.add('open')
-      }, delay * 2)
-    })
-
-    // Закрытие окна
-    const calcModalCloses = calcModal.querySelectorAll('.modal-close')
-    for(let calcModalClose of calcModalCloses) {
-      calcModalClose.addEventListener('click', ()=>{
+    if(calcModal){
+      let delay = 300
+    
+      const calcModalSelect = calcModal.querySelector('.calc-modal-select')
+      const calcModalCallback = calcModal.querySelector('.calc-modal-callback')
+      const callackOrder = calcModal.querySelector('.callack-order')
+      const doCall = calcModal.querySelector('.do-call')
+  
+      calcModalSelect.style.animationDuration = `${delay/1000}s`
+      calcModalCallback.style.animationDuration = `${delay/1000}s`
+  
+      // Переключение между фреймами окна
+      callackOrder.addEventListener('click', ()=>{
+        calcModalSelect.classList.remove('open')
+        calcModalSelect.classList.add('closed')
         
-        calcModalSelect.style.animationDuration = `${delay/1000}s`
-        calcModalCallback.style.animationDuration = `${delay/1000}s`
-        
-        calcModalCallback.classList.remove('open')
-        calcModalCallback.classList.add('closed')
-
         setTimeout(()=>{
-          calcModalSelect.style.display = ''
-          calcModalSelect.classList.remove('closed')
-          calcModalSelect.classList.add('open')
-
-          calcModalCallback.style.display = ''
-          calcModalCallback.classList.remove('closed')
+          calcModalSelect.style.display = 'none'
+        }, delay)
+  
+        setTimeout(()=>{
+          calcModalCallback.style.display = 'block'
+          calcModalCallback.classList.add('open')
+        }, delay * 2)
+      })
+  
+      // Закрытие окна
+      const calcModalCloses = calcModal.querySelectorAll('.modal-close')
+      for(let calcModalClose of calcModalCloses) {
+        calcModalClose.addEventListener('click', ()=>{
+          
+          calcModalSelect.style.animationDuration = `${delay/1000}s`
+          calcModalCallback.style.animationDuration = `${delay/1000}s`
+          
+          calcModalCallback.classList.remove('open')
+          calcModalCallback.classList.add('closed')
+  
+          setTimeout(()=>{
+            calcModalSelect.style.display = ''
+            calcModalSelect.classList.remove('closed')
+            calcModalSelect.classList.add('open')
+  
+            calcModalCallback.style.display = ''
+            calcModalCallback.classList.remove('closed')
+          }, delay)
+        })
+      }
+  
+      // Закрытие окна после активации самостоятельного звонка
+      doCall.addEventListener('click', ()=>{
+        setTimeout(()=>{
+          closeModal(calcModal)
         }, delay)
       })
     }
-
-    // Закрытие окна после активации самостоятельного звонка
-    doCall.addEventListener('click', ()=>{
-      setTimeout(()=>{
-        closeModal(calcModal)
-      }, delay)
-    })
-
   }
   calcModalHandler('#calcModal');
   

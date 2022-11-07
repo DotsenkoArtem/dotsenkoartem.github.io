@@ -162,61 +162,65 @@ window.onload = function () {
 
   // Обработка модального окна выбора по кнопке "Рассчитать стоимость"
   function calcModalHandler(id) {
-    var delay = 300;
     var calcModal = document.querySelector(id);
-    var calcModalSelect = calcModal.querySelector('.calc-modal-select');
-    var calcModalCallback = calcModal.querySelector('.calc-modal-callback');
-    var callackOrder = calcModal.querySelector('.callack-order');
-    var doCall = calcModal.querySelector('.do-call');
-    calcModalSelect.style.animationDuration = "".concat(delay / 1000, "s");
-    calcModalCallback.style.animationDuration = "".concat(delay / 1000, "s");
+    if (calcModal) {
+      (function () {
+        var delay = 300;
+        var calcModalSelect = calcModal.querySelector('.calc-modal-select');
+        var calcModalCallback = calcModal.querySelector('.calc-modal-callback');
+        var callackOrder = calcModal.querySelector('.callack-order');
+        var doCall = calcModal.querySelector('.do-call');
+        calcModalSelect.style.animationDuration = "".concat(delay / 1000, "s");
+        calcModalCallback.style.animationDuration = "".concat(delay / 1000, "s");
 
-    // Переключение между фреймами окна
-    callackOrder.addEventListener('click', function () {
-      calcModalSelect.classList.remove('open');
-      calcModalSelect.classList.add('closed');
-      setTimeout(function () {
-        calcModalSelect.style.display = 'none';
-      }, delay);
-      setTimeout(function () {
-        calcModalCallback.style.display = 'block';
-        calcModalCallback.classList.add('open');
-      }, delay * 2);
-    });
-
-    // Закрытие окна
-    var calcModalCloses = calcModal.querySelectorAll('.modal-close');
-    var _iterator2 = _createForOfIteratorHelper2(calcModalCloses),
-      _step2;
-    try {
-      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-        var calcModalClose = _step2.value;
-        calcModalClose.addEventListener('click', function () {
-          calcModalSelect.style.animationDuration = "".concat(delay / 1000, "s");
-          calcModalCallback.style.animationDuration = "".concat(delay / 1000, "s");
-          calcModalCallback.classList.remove('open');
-          calcModalCallback.classList.add('closed');
+        // Переключение между фреймами окна
+        callackOrder.addEventListener('click', function () {
+          calcModalSelect.classList.remove('open');
+          calcModalSelect.classList.add('closed');
           setTimeout(function () {
-            calcModalSelect.style.display = '';
-            calcModalSelect.classList.remove('closed');
-            calcModalSelect.classList.add('open');
-            calcModalCallback.style.display = '';
-            calcModalCallback.classList.remove('closed');
+            calcModalSelect.style.display = 'none';
+          }, delay);
+          setTimeout(function () {
+            calcModalCallback.style.display = 'block';
+            calcModalCallback.classList.add('open');
+          }, delay * 2);
+        });
+
+        // Закрытие окна
+        var calcModalCloses = calcModal.querySelectorAll('.modal-close');
+        var _iterator2 = _createForOfIteratorHelper2(calcModalCloses),
+          _step2;
+        try {
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var calcModalClose = _step2.value;
+            calcModalClose.addEventListener('click', function () {
+              calcModalSelect.style.animationDuration = "".concat(delay / 1000, "s");
+              calcModalCallback.style.animationDuration = "".concat(delay / 1000, "s");
+              calcModalCallback.classList.remove('open');
+              calcModalCallback.classList.add('closed');
+              setTimeout(function () {
+                calcModalSelect.style.display = '';
+                calcModalSelect.classList.remove('closed');
+                calcModalSelect.classList.add('open');
+                calcModalCallback.style.display = '';
+                calcModalCallback.classList.remove('closed');
+              }, delay);
+            });
+          }
+
+          // Закрытие окна после активации самостоятельного звонка
+        } catch (err) {
+          _iterator2.e(err);
+        } finally {
+          _iterator2.f();
+        }
+        doCall.addEventListener('click', function () {
+          setTimeout(function () {
+            closeModal(calcModal);
           }, delay);
         });
-      }
-
-      // Закрытие окна после активации самостоятельного звонка
-    } catch (err) {
-      _iterator2.e(err);
-    } finally {
-      _iterator2.f();
+      })();
     }
-    doCall.addEventListener('click', function () {
-      setTimeout(function () {
-        closeModal(calcModal);
-      }, delay);
-    });
   }
   calcModalHandler('#calcModal');
 
