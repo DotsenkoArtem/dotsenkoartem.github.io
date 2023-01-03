@@ -7,7 +7,7 @@ html(lang="ru")
 
 
     //- Mixins
-    include ../_mixins/_m-default
+    include ../_mixins/_mixins-base
 
 
     //- Page`s variables
@@ -37,9 +37,7 @@ html(lang="ru")
 
             |
             |
-            //
-                Header
-                ==================================================
+            //  Header ================================================== 
             header.header#header
                 block header
                     include ../_includes/_header.pug
@@ -51,31 +49,16 @@ html(lang="ru")
 
             |
             |
-            //
-                footer
-                ==================================================
+            //  Footer ================================================== 
             footer.footer#footer
                 block footer
                     include ../_includes/_footer.pug
 
             |
             |
-            //
-                Modals
-                ==================================================
-            block modals
-                |
-                |
-                
-                // modal-callback
-                // ==================================================
-                include ../_includes/_modals/_modal-callback.pug
-
         |
         |
-        //
-            Scripts
-            ==================================================
+        // Scripts ================================================== 
         block scripts
 
             //- LOCAL SCRIPTS  

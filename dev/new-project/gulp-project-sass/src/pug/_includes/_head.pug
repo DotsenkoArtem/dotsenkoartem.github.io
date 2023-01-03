@@ -1,7 +1,5 @@
 | 
-//
-    Basic Page Needs 
-    ==============================================
+//  Basic Page Needs ==============================================
 meta(charset="UTF-8")
 title= page ? page.title : 'Укажите название страницы'
 meta(name="description", content= (page) ? page.descr : 'Lorem ipsum dolor sit amet consectetur adipisicing elit.')
@@ -12,31 +10,21 @@ meta(name="theme-color", content= (themeColor) ? themeColor : '#000')
 
 |
 |
-//
-    Fonts preload
-    ==================================================
-link(rel="preload" as="font" href="fonts/Raleway-Regular.woff2" type="font/woff2" crossorigin="anonymous")
-link(rel="preload" as="font" href="fonts/Raleway-Medium.woff2" type="font/woff2" crossorigin="anonymous")
-link(rel="preload" as="font" href="fonts/Raleway-SemiBold.woff2" type="font/woff2" crossorigin="anonymous")
-link(rel="preload" as="font" href="fonts/Raleway-Bold.woff2" type="font/woff2" crossorigin="anonymous")
-//- И так далее с каждым начертанием шрифта
-|
-//Fonts preload end
+//  Fonts preload ==================================================
+//- Перебор всех наименований шрифтов, указанных в переменной fontspreload файла _vars.pug
+each val in fontsPreload
+  link(rel="preload" as="font" href=`fonts/${val}` type="font/woff2" crossorigin="anonymous")
 
 
 |
 |
-//
-    Mobile Specific Metas 
-    ==================================================
+//  Mobile Specific Metas ==================================================
 meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
 
 
 |
 |
-//
-    CSS
-    ==================================================
+//  CSS ==================================================
 //- link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css")
 link(rel="stylesheet", href="libs/jquery.fancybox.min.css")
 link(rel="stylesheet", href="libs/swiper.min.css")
@@ -59,9 +47,7 @@ link(rel="stylesheet", href="css/style.css")
 
 |
 |
-//
-    Favicons
-    ==================================================
+//  Favicons ==================================================
 //- Старый способ - подержка в IE10 
 //- link(rel="shortcut icon" href="/favicon.ico" type="image/x-icon")
 

@@ -1,2 +1,12 @@
+// Миксин для подключения шрифтов - (надо переделать через массив, или объект, или коллекцию - не знаю как там называется)
+// Также миксин в sass можно определять через знак равенства (=fontFace($f-family, ...))
+@mixin fontFace($f-family, $f-ext, $f-weight, $f-style, $f-display)
+  @font-face
+    font-family: $f-family
+    src: local("#{$f-family} #{$f-ext}"), local("#{$f-family}-#{$f-ext}"), url("../fonts/#{$f-family}-#{$f-ext}.woff2") format("woff2"), url("../fonts/#{$f-family}-#{$f-ext}.woff") format("woff"), url("../fonts/#{$f-family}-#{$f-ext}.ttf") format("truetype")
+    font-weight: $f-weight
+    font-style: $f-style
+    font-display: $f-display
+    
 @mixin headerShadowMobile ($offset-x: 0, $offset-y: 10px, $blur: 10px, $color: rgba(146, 171, 234, 0.1))
     box-shadow: $offset-x $offset-y $blur $color
