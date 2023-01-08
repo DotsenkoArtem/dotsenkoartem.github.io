@@ -6,7 +6,7 @@
 
 @media (max-width: 1699.98px)
 
-// XL
+/* XL */
 @media (max-width: 1399.98px)
   html
     font-size: 9px
@@ -21,16 +21,6 @@
     &_xxl
       max-width: 100%
 
-  @if v.$grid-style
-    /* XL column flexibility setting */
-    +colFlexSet(xl)
-
-    /* XL column width setting */
-    +colWidthSet(xl)
-
-    /* XL column offset setting */
-    +colOffetSet(xl)
-
   .d
     &-block
       &_xl
@@ -42,7 +32,7 @@
       &_xl
         display: none
 
-// LG
+/* LG */
 @media (max-width: 1199.98px)
   html
     font-size: 8px
@@ -56,16 +46,6 @@
     &_xl
       max-width: 100%
 
-  @if v.$grid-style
-    /* XL column flexibility setting */
-    +colFlexSet(lg)
-
-    /* XL column width setting */
-    +colWidthSet(lg)
-
-    /* XL column offset setting */
-    +colOffetSet(lg)
-
   .d
     &-block
       &_lg
@@ -77,7 +57,7 @@
       &_lg
         display: none
 
-// MD
+/* MD */
 @media (max-width: 991.98px)
   // html
   //   font-size: 8px
@@ -99,16 +79,6 @@
     &_lg
       max-width: 100%
 
-  @if v.$grid-style
-    /* XL column flexibility setting */
-    +colFlexSet(md)
-
-    /* XL column width setting */
-    +colWidthSet(md)
-
-    /* XL column offset setting */
-    +colOffetSet(md)
-
   .d
     &-block
       &_md
@@ -120,7 +90,7 @@
       &_md
         display: none
 
-// SM
+/* SM */
 @media (max-width: 767.98px)
   // html
   // 	font-size: 7px
@@ -132,16 +102,6 @@
     &_md
       max-width: 100%
 
-  @if v.$grid-style
-    /* XL column flexibility setting */
-    +colFlexSet(sm)
-
-    /* XL column width setting */
-    +colWidthSet(sm)
-
-    /* XL column offset setting */
-    +colOffetSet(sm)
-
   .d
     &-block
       &_sm
@@ -153,7 +113,7 @@
       &_sm
         display: none
 
-// XS
+/* XS */
 @media (max-width: 575.98px)
   // html
   // 	font-size: 6px
@@ -162,16 +122,6 @@
     max-width: 410px
     &_sm
       max-width: 100%
-
-  @if v.$grid-style
-    /* XL column flexibility setting */
-    +colFlexSet(xs)
-
-    /* XL column width setting */
-    +colWidthSet(xs)
-
-    /* XL column offset setting */
-    +colOffetSet(xs)
 
   .d
     &-block
@@ -186,19 +136,10 @@
 
 @media (max-width: 479.98px)
 
-// XXS
+/* XXS */
 @media (max-width: 413.98px)
   .container
     max-width: 100%
-  @if v.$grid-style
-    /* XL column flexibility setting */
-    +colFlexSet(xxs)
-
-    /* XL column width setting */
-    +colWidthSet(xxs)
-
-    /* XL column offset setting */
-    +colOffetSet(xxs)
 
   .d
     &-block
@@ -213,6 +154,5 @@
 
 @media (max-width: 359.99px)
 
-@media (max-width: 320px)
-
+/* IE */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)

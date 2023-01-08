@@ -3,7 +3,6 @@
 
 // =====================================================================
 // TOC:
-// I. Font settings		fonts.sass
 
 // II. Styles reset		default.sass
 // III. Default styles
@@ -13,19 +12,10 @@
 //    4. Images
 //    5. Buttons
 //    6. Forms
-// III. Grid
-// IV. Others
-//    1. Clearing
-//    2. Misc
-// V. Sprite
-// VI. Layout
-// VII. Media-queries
-// VIII. IE >= 10 - media-queries
-
 // =====================================================================
 
-// II. Styles reset
-// ---------------------------------------
+/* II. Styles reset
+	--------------------------------------- */
 
 *,
 *:before,
@@ -89,8 +79,8 @@ table
 	border-collapse: collapse
 	border-spacing: 0
 
-//  III. Default styles
-// ---------------------------------------
+/*  III. Default styles
+	--------------------------------------- */
 
 //  1. Basic
 // -------------------  
@@ -149,7 +139,7 @@ address
 	font-style: normal
 
 // body
-// 	font-size: 1.6rem
+// 	font-size: 1rem
 // 	line-height: 1.6
 // 
 // h1, h2, h3, h4, h5, h6
@@ -174,7 +164,7 @@ address
 // 	font-size: 2rem
 // 
 
-// Text
+// Text settings
 // .text
 // 	&-highlight
 // 		color: v.$text-highlight
@@ -239,6 +229,7 @@ input[type="button"],
 
 		// &_primary
 		// &_secondary
+
 		// &_success
 		// &_warning
 
@@ -247,12 +238,12 @@ input[type="button"],
 		// &_large
 		// &_medium
 		// &_small
-
 		// &_type-file
 
-button
-	&[type="submit"]
-		display: inline-block
+// button,
+// input
+// 	&[type="submit"]
+// 		display: inline-block
 
 //  6. Forms 
 // -------------------------
@@ -285,12 +276,3 @@ select::-ms-expand
 
 // .form
 // 	font-size: 1.8rem
-
-//  III. Grid
-// ---------------------------------------  
-
-//  IV. Others
-// ---------------------------------------  
-// .ie-bung
-// 	display: none
-// 

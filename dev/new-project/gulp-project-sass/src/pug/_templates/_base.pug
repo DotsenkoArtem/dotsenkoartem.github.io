@@ -6,12 +6,12 @@ html(lang="ru")
     include _vars.pug
 
 
-    //- Mixins
-    include ../_mixins/_mixins-base
-
-
     //- Page`s variables
     block page-vars
+
+
+    //- Mixins
+    include ../_mixins/_mixins-base
 
 
     head
@@ -38,21 +38,20 @@ html(lang="ru")
             |
             |
             //  Header ================================================== 
-            header.header#header
-                block header
-                    include ../_includes/_header.pug
+            block header
+                include ../_includes/_header.pug
             
             |
             |
-            main
-                block main
+            block main
+                main
+                
 
             |
             |
             //  Footer ================================================== 
-            footer.footer#footer
-                block footer
-                    include ../_includes/_footer.pug
+            block footer
+                include ../_includes/_footer.pug
 
             |
             |
