@@ -1,27 +1,20 @@
 ﻿Примеры верстки:
-https://dotsenkoartem.github.io/portfolio/tlevel/
-https://dotsenkoartem.github.io/portfolio/YS/public/
-https://dotsenkoartem.github.io/portfolio/4smm/
-https://dotsenkoartem.github.io/portfolio/tprofit/
-https://dotsenkoartem.github.io/portfolio/avianna/
-https://dotsenkoartem.github.io/portfolio/ice-king/
-
-https://dotsenkoartem.github.io/portfolio/eurobeton/
-https://dotsenkoartem.github.io/portfolio/flag_alpha/
+https://dotsenkoartem.github.io/p/tlevel
+https://dotsenkoartem.github.io/p/yota-sys
+https://dotsenkoartem.github.io/p/ice-king
+https://dotsenkoartem.github.io/p/avianna
+https://dotsenkoartem.github.io/p/tprofit
+https://dotsenkoartem.github.io/p/4smm
 
 
 
 
 Пример калькуляторов:
-https://dotsenkoartem.github.io/portfolio/calc_ceiling/
-https://dotsenkoartem.github.io/portfolio/calc_house/
-https://dotsenkoartem.github.io/portfolio/calc_mortgage/
+https://dotsenkoartem.github.io/p/calc_ceiling
+https://dotsenkoartem.github.io/p/calc_house
+https://dotsenkoartem.github.io/p/calc_mortgage
 
 
 Рабочие проекты:
-https://internet-boosters.ru/
+https://internet-boosters.ru
 https://tlevel.ru/
-
-
-Дизайнер:
-airsam_design
