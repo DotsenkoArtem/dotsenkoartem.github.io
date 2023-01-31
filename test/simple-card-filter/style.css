@@ -1,0 +1,91 @@
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+html{
+  font: normal 300 18px/1.4 'Open Sans', sans-serif;
+}
+
+body{
+  font-size: 1rem;
+  background: #f8f8f8;
+  color: #232323;
+  min-height: 200vh;
+}
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 960px;
+}
+
+p{
+  text-indent: 2.5rem;
+}
+
+.cards-block{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  width: calc(100%/6 - 30px);
+  height: 5rem;
+  border-radius: .5em;
+  box-shadow: 0 0 0 1px rgb(68, 68, 68), 0 10px 15px 0px rgba(68, 68, 68, 0.411);
+  user-select: none;
+  transition: transform .2s;
+}
+
+.card:hover{
+  transform: translateY(-3px);
+}
+
+.card_transparent{
+  opacity: .1;
+}
+
+.card.fade-in{
+  animation: fadeInTop .5s ease-out; 
+}
+
+@keyframes fadeInTop {
+  from{
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter{
+  padding: 0.5em 1.5em;
+  box-shadow: 0 0 0 1px rgb(0, 136, 29);
+  color: rgb(0, 136, 29);
+  border-radius: .5em;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.filter:hover{
+  transform: translateY(-2px);
+  box-shadow:  0 0 0 1px rgb(0, 136, 29), 0 5px 18px 0 rgba(0, 0, 0, 0.432);
+}
+
+.filter:active{
+  transform: translateY(0px);
+  box-shadow:  0 0 0 1px rgb(0, 136, 29);
+  transition: 0s;
+}
