@@ -85,13 +85,9 @@ table
 //  1. Basic
 // -------------------  
 
-// html
-// 	font-family: v.$ff-primary
-// 	font-feature-settings: 'pnum' on, 'lnum' on
-// 	font-weight: 400
-// 	line-height: 1.2
-// 	font-size: 10px
-	// color: v.$text-primary-color
+html
+	font:
+		size: 10px
 
 h1, h2, h3, h4, h5, h6,
 p
@@ -138,9 +134,13 @@ p
 address
 	font-style: normal
 
-// body
-// 	font-size: 1rem
-// 	line-height: 1.6
+body
+	font:
+		family: v.$ff-primary
+		size: 1.8rem
+		weight: 500
+	line-height: 1.5
+	color: v.$text-primary-color
 // 
 // h1, h2, h3, h4, h5, h6
 // 	font-family: "Raleway", "Helvetica", sans-serif
