@@ -1,0 +1,54 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Roboto", Helvetica, sans-serif;
+}
+
+body {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #222;
+}
+
+#pageWrapper {
+  overflow: hidden;
+}
+#pageWrapper .container {
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-left: 1.5rem;
+  max-width: 960px;
+}
+
+/* Variables */
+/* Form - basic */
+.form {
+  font-size: 1.8rem;
+}
+.form-submit {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  font-size: 1.8rem;
+  color: #009207;
+  background-color: transparent;
+  border: solid 1px #009207;
+  border-radius: 0.25em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.form-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 13px -1px rgba(180, 180, 180, 0.99);
+}
+.form-submit:active {
+  transform: translateY(0);
+  box-shadow: none;
+  transition: none;
+}

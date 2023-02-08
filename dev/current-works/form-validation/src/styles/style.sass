@@ -1,0 +1,60 @@
+*, *::before, *::after
+  margin: 0
+  padding: 0
+  border: 0
+  box-sizing: border-box
+
+html
+  font:
+    size: 10px
+    family: 'Roboto', Helvetica, sans-serif
+
+body
+  font:
+    size: 1.8rem
+    weight: 300
+  line-height: 1.4
+  color: #222
+
+#pageWrapper
+  overflow: hidden
+
+  .container
+    margin: 0 auto
+    padding-left: 1.5rem
+    padding-left: 1.5rem
+    max-width: 960px
+
+/* Variables */
+$form-fz: 1.8rem
+
+$btn-p-x: 1.5em 
+$btn-p-y: .5em 
+$input-rdadius: .25em
+$submit-color: #009207
+
+
+/* Form - basic */
+.form
+  font:
+    size: $form-fz
+  &-submit
+    display: inline-block
+    padding: $btn-p-y $btn-p-x 
+    font-size: $form-fz
+    color: $submit-color
+    background-color: transparent
+    border: solid 1px $submit-color
+    border-radius: $input-rdadius
+    cursor: pointer
+    transition: all .3s
+    &:hover
+      // color: #fff
+      // background-color: $submit-color
+      transform: translateY(-3px)
+      box-shadow: 0 5px 13px -1px rgba(180, 180, 180, 99%)
+
+    &:active
+      transform: translateY(0)
+      box-shadow: none
+      transition: none
