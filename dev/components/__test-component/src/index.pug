@@ -1,0 +1,80 @@
+extends ../../cmp-templates/ready-to-copy/base/_tmpl.pug
+
+
+block comp-title
+  title Указать название
+
+append comp-styles
+  link(rel="stylesheet", href="css/cmp-name.css")
+
+
+block comp-content
+  h1 Это назание супер-компонента
+  .container
+    |
+    |
+    // COMPONENT`S CODE
+    include _includes/_cmp.pug
+    |
+    |
+    // END OF COMPONENT`S CODE
+    |
+    |
+
+block comp-code
+  // CODE-COPY
+
+  .container
+    .tabs
+      ul.tabs__menu
+        li.tab__caption.active(data-target="tab-pane1") HTML
+        li.tab__caption(data-target="tab-pane2") CSS
+        li.tab__caption(data-target="tab-pane3") JS
+
+      .tabs__content
+        |
+        |
+        // Tab-pane 1
+        // ------------------------------
+        #tab-pane1.tab__pane.active
+          .code-copy-btn-wrap
+            div.code-copy-btn(data-target="item-to-copy1")
+          |
+          |
+          pre
+            code(class="language-html" id="item-to-copy1")
+
+              include _includes/_code-html.pug
+        |
+        |
+        // Tab-pane 2
+        // ------------------------------
+        #tab-pane2.tab__pane
+          .code-copy-btn-wrap
+            div.code-copy-btn(data-target="item-to-copy2")
+          |
+          |
+          pre
+            code(class="language-css" id="item-to-copy2")
+
+              include _includes/_code-css.pug
+
+        |
+        |
+        // Tab-pane 3
+        // ------------------------------
+        #tab-pane3.tab__pane
+          .code-copy-btn-wrap
+            div.code-copy-btn(data-target="item-to-copy3")
+          |
+          |
+          pre
+            code.language-js#item-to-copy3
+
+              include _includes/_code-js.pug
+
+  // END OF CODE-COPY
+  |
+  |
+append comp-scripts
+  script(src="js/cmp-name.dev.js")
