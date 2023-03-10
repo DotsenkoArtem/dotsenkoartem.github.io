@@ -208,14 +208,23 @@ gulp.task("js", function () {
     gulp.src("src/js/**/*.js"),
     // Переименование и дублирование файла
     through2(function (file, enc, callback) {
-      let fileMin = file.clone();
-      fileMin.stem += ".min";
-      this.push(fileMin);
+      let fileDev = file.clone();
+      fileDev.stem += ".dev";
+
+      let fileDevMin = fileDev.clone();
+      fileDevMin.stem += ".min";
+
+      this.push(fileDev);
+      this.push(fileDevMin);
+      
       callback(null, file);
     }),
-    babel({
+    gulpIf(function(file){
+      return file.stem.includes(".dev");
+    }, babel({
       presets: ["@babel/preset-env"],
-    }),
+    }),),
+    
     gulpIf(function (file) {
       return file.stem.includes(".min");
     }, uglify()),
