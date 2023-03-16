@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  background-color: white;
+  background-image: radial-gradient(#000 2px, #eaff78ad 1px);
+background-size: 20px 20px;
+}
+h3{
+  display: none;
+}
+.container {
+ /* margin-left: 250px;*/
+/*  height: 200px;
+  width: 200px;*/
+ /* position: absolute;*/
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+}
+.clock {
+  display: inline-block;
+  margin: 20px;
+  background: #BDD0D7;
+  border-radius: 25px;
+  box-shadow: 6px 6px 0 #ABBABF;
+  height: 200px;
+  width: 200px;
+  position: relative;
+
+
+  -webkit-animation: fadeInRight 1s, tada 1s 1s, flip 6s 2s 199;
+  -o-animation: fadeInRight 1s, tada 1s 1s, flip 6s 2s 199;
+  animation: fadeInRight 1s, tada 1s 1s, flip 6s 2s 199;
+}
+.clock-inner {
+  background: #f9f9f9 url(010720131570_1.jpg) no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain; 
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  left: calc(50% - 80px);
+  top: calc(50% - 80px);
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,.3), inset -2px -2px 4px rgba(0,0,0,.3);
+}
+.clock-numbers {
+  padding-left: 0;
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  left: calc(50% - 60px);
+  top: calc(50% - 60px);
+  list-style: none;
+  margin: 0;
+}
+.clock-numbers li {
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  margin: -10px;
+  position: absolute;
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+  color: #544E3E;
+  font-weight: bold;
+  color: #eae508;
+}
+.clock-numbers li:nth-child(1) {
+  left: 50%;
+  top: 0;
+}
+.clock-numbers li:nth-child(2) {
+  right: 15%;
+  top: 15%;
+}
+.clock-numbers li:nth-child(3) {
+  top: 50%;
+  right: 0%;
+}
+.clock-numbers li:nth-child(4) {
+  right: 15%;
+  top: 85%;
+}
+.clock-numbers li:nth-child(5) {
+  left: 50%;
+  bottom: 0%;
+}
+.clock-numbers li:nth-child(6) {
+  left: 15%;
+  bottom: 15%;
+}
+.clock-numbers li:nth-child(7) {
+  left: 0%;
+  top: 50%;
+}
+.clock-numbers li:nth-child(8) {
+  left: 15%;
+  top: 15%;
+}
+.clock-numbers li:nth-child(-n + 4){
+  color: #0f0;
+}
+.clock-minutes1 {
+  height: 60px;
+  width: 10px;
+  background: #0ff;
+  border-radius: 10px;
+  position: absolute;
+  top: calc(50% - 55px);
+  left: calc(50% - 5px);
+  -webkit-transform-origin: 5px 60px;
+  transform-origin: 5px 60px;
+  -webkit-animation: clock 1s linear infinite;
+  -moz-animation: clock 1s linear infinite;
+  animation: clock 1s linear infinite;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+.clock-minutes {
+  height: 60px;
+  width: 10px;
+  background: #00f;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 55px);
+  left: calc(50% - 5px);
+  -webkit-transform-origin: 5px 60px;
+  transform-origin: 5px 60px;
+  -webkit-animation: clock 60s steps(60, end) infinite;
+  -moz-animation: clock 60s steps(60, end) infinite;
+  animation: clock 60s steps(60, end) infinite;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+.clock:hover .clock-minutes{
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.clock-minutes:before {
+  content: "&";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #D56851;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+  top: calc(100% - 10px);
+  left: calc(100% - 15px); 
+  color: #fff;
+  text-align: center;
+}
+@-webkit-keyframes clock {
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes clock {
+  from {-moz-transform: rotate(0deg);}
+  to {-moz-transform: rotate(360deg);}
+}
+@keyframes clock {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+h3 {
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+
+
+.cock{
+  margin: 15px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: #f0f000;
+}

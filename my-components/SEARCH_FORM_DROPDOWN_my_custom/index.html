@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Search-form & Dropdown-menu</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<nav>
+		<div class="container">
+			<div class="nav-wrap">
+				<ul class="nav" id="menu">
+					<li class="nav__item dropdown" onclick="navToggle()">
+						<a href="#" class="nav__link">О КОМПАНИИ</a>
+						<ul class="dropdown-box">
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+						</ul>
+					</li>
+					<li class="nav__item dropdown" onclick="navToggle()">
+						<a href="#" class="nav__link">БЕТОН</a>
+						<ul class="dropdown-box">
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+						</ul>
+					</li>
+					<li class="nav__item dropdown" onclick="navToggle()">
+						<a href="#" class="nav__link">РАСТВОР</a>
+						<ul class="dropdown-box">
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+						</ul>
+					</li>
+					<li class="nav__item dropdown" onclick="navToggle()">
+						<a href="#" class="nav__link">ЦЕНЫ</a>
+						<ul class="dropdown-box">
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+						</ul>
+					</li>
+					<li class="nav__item dropdown" onclick="navToggle()">
+						<a href="#" class="nav__link">ДОСТАВКА</a>
+						<ul class="dropdown-box">
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+						</ul>
+					</li>
+					<li class="nav__item dropdown" onclick="navToggle()">
+						<a href="#" class="nav__link">БЕТОНОНАСОС</a>
+						<ul class="dropdown-box">
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+						</ul>
+					</li>
+					<li class="nav__item dropdown" onclick="navToggle()">
+						<a href="#" class="nav__link">ИНФОРМАЦИЯ</a>
+						<ul class="dropdown-box">
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+						</ul>
+					</li>
+					<li class="nav__item dropdown" onclick="navToggle()">
+						<a href="#" class="nav__link">КОНТАКТЫ</a>
+						<ul class="dropdown-box">
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+							<li class="dropdown__item"><a href="#" class="nav__link">О КОМПАНИИ</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="nav-search">
+					<form action="#" class="nav-search__form">
+						<div class="nav-search__input-wrap">
+							<input type="search" id="search" class="nav-search__input" placeholder="Введите текст...">
+						</div>
+						<img src="img/icons/search.png" class="nav-search__img" alt="search">
+						<button class="btn-search" type="submit" id="btnsss"></button>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+	<div class="nav-toggle__wrap">
+		<a class="nav-toggle" onclick="navToggle()">
+			<span class="nav-toggle__item"></span>
+			<span class="nav-toggle__item"></span>
+			<span class="nav-toggle__item"></span>
+		</a>
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Dropdown</title>
+	<!-- <link rel="stylesheet" href="css/reset.css"> -->
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		h2{
+			margin-bottom: 1em;
+			text-align: center;
+		}
+		.row{
+			display: flex;
+		}
+		.row ul{
+			width: 50%;
+			flex: none;
+		}
+		.comments li{
+			margin-bottom: 1rem;
+			margin-left: .5em;
+			margin-right: .5em;
+		}
+		.comments.plus li{
+			background: rgba(109, 255, 11, 0.582);
+		}
+		.comments.minus li{
+			background: rgba(255, 11, 11, 0.582);
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul class="menu">
+			<li class="menu__item dropdown">
+				<a href="#" class="menu__link">main</a>
+				<div class="dropdown-box">
+					<ul class="sub-menu">
+						<div>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Deserunt unde doloremque quia quo aut alias, totam quam accusamus in corrupti natus dignissimos hic, cum odio asperiores recusandae necessitatibus, ea nihil quas eos qui repudiandae esse, commodi! Quo, harum eligendi quibusdam officiis asperiores rem, possimus minus nemo .</div>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, minus.</a></li>
+				<!-- 		<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li> -->
+					</ul>
+				</div>
+			</li>
+			<li class="menu__item dropdown">
+				<a href="#" class="menu__link">services</a>
+				<div class="dropdown-box">
+					<ul class="sub-menu">
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="menu__item dropdown">
+				<a href="#" class="menu__link">blog</a>
+				<div class="dropdown-box">
+					<ul class="sub-menu">
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="menu__item dropdown">
+				<a href="#" class="menu__link">about as</a>
+				<div class="dropdown-box">
+					<ul class="sub-menu">
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub-menu__link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub-menu__link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub-menu__link</a></li>
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub-menu__link</a></li>
+						<li class="sub-menu__item dropdown">
+							<a href="#" class="sub-menu__link">sub-menu__link</a>
+							<div class="dropdown-box">
+								<ul class="sub-menu2">
+									<li class="sub-menu2__item"><a href="#" class="sub-menu__link">sub-menu2__link</a></li>
+									<li class="sub-menu2__item"><a href="#" class="sub-menu__link">sub-menu2__link</a></li>
+									<li class="sub-menu2__item"><a href="#" class="sub-menu__link">sub-menu2__link</a></li>
+									<li class="sub-menu2__item"><a href="#" class="sub-menu__link">sub-menu2__link</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="menu__item dropdown">
+				<div class="menu__link">contacts</div>
+				<div class="dropdown-box">
+					<div class="sub-menu">
+					<!-- 					<ul class="sub-menu1">
+							<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+							<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+							<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+							<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+							<li class="sub-menu__item"><a href="#" class="sub-menu__link">sub_link</a></li>
+						</ul> -->
+					</div>
+				</div>
+			</li>
+		</ul>
+	</nav>
+
+	<h2>Dropdown-box реализован с относительным позиционированием, sub-menu с абсолютным</h2>
+
+	<div class="row">
+		<ul class="comments plus">
+			<li>+ задал 100% ширины - и все пункты submenu одинаковой ширины;</li>
+			<li>plus</li>
+			<li>plus</li>
+			<li>plus</li>
+			<li>plus</li>
+		</ul>
+		<ul class="comments minus">
+			<li>- для пунктов sub-menu придется задавать минимальную или фиксированную ширину, иначе его ширина будет равной максимальному слову;</li>
+			<li>- максимальная ширина sub-menu будет по умолчанию равна ширине dropdown-box, а именно ширине пункта главного меню;</li>
+			<li>- если не требуется перенос слов (например, чтобы не увеличивалась высота подпункта sub-menu) тогда придется использовать white-space: nowrap;</li>
+			<li>- ширина в 100% тоже будет равна ширине родителя, т.е. пункта главного меню</li>
+			<li>- не получится задать максимальную ширину более ширины родителя без "white-space" - а тогда будет контент вылезать заблок</li>
+		</ul>
+	</div>
+
+
+
+	<script>
+
+
+// ======================= открытие и закрытие выпадающего списка по клику с анимацией
+		const dropdown = document.querySelectorAll('.dropdown');
+		for(let i = 0; i < dropdown.length; i++){
+			dropdown[i].addEventListener('click', function (e) {
+				let dropdownBox = dropdown[i].querySelector('.dropdown-box');
+				e.stopPropagation();
+				if(!dropdownBox.classList.contains('animated')){
+					dropdownBox.classList.add('animated');
+					dropdownBox.classList.add('fadeIn');
+				} else if(!dropdownBox.classList.contains('fadeIn')){
+					dropdownBox.classList.remove('fadeOut');
+					dropdownBox.classList.add('fadeIn');
+				} else{
+					dropdownBox.classList.remove('fadeIn');
+					dropdownBox.classList.add('fadeOut');
+				}
+			});
+		}
+
+		document.body.addEventListener('click', function () {
+			let dropdownBox = document.querySelectorAll('.dropdown-box');
+
+			for(let i = 0; i < dropdownBox.length; i++){
+				if(dropdownBox[i].classList.contains('fadeIn')) {
+					dropdownBox[i].classList.remove('fadeIn');
+					dropdownBox[i].classList.add('fadeOut');
+				}
+			}
+		})
+
+		
+
+
+		
+// ======================= открытие и закрытие выпадающего списка по клику с анимацией
+	</script>
+	
+</body>
+</html>

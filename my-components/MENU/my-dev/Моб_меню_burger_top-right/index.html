@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Mobile menu</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<nav class="top-menu">
+		<div class="container">
+			<ul>
+				<li class="top-menu__item" onclick="navToggle()"><a href="#" class="top-menu__link">КАТАЛОГ</a></li>
+				<li class="top-menu__item" onclick="navToggle()"><a href="#" class="top-menu__link">НОВОСТИ</a></li>
+				<li class="top-menu__item" onclick="navToggle()"><a href="#" class="top-menu__link">УСЛУГИ</a></li>
+				<li class="top-menu__item" onclick="navToggle()"><a href="#" class="top-menu__link">О КОМПАНИИ</a></li>
+				<li class="top-menu__item" onclick="navToggle()"><a href="#" class="top-menu__link">КОНТАКТЫ</a></li>
+				<li class="top-menu__item" onclick="navToggle()"><a href="#" class="top-menu__link">IN ENGLISH</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="overlay" onclick="navToggle()"></div>
+	<button class="top-menu-toggle" onclick="navToggle()">
+		<span class="top-menu-toggle__item"></span>
+		<span class="top-menu-toggle__item"></span>
+		<span class="top-menu-toggle__item"></span>
+	</button>
+	<script src="js/main.js"></script>
+</body>
+</html>

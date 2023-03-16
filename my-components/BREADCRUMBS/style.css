@@ -1,0 +1,81 @@
+/* FONTS SETTINGS */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v12/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISWaA.ttf) format('truetype');
+}
+/* COLORS */
+/* BASIC SETTINGS */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font: 10px 'Roboto Slab', serif;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+body {
+  background-color: #ffffff;
+}
+ol {
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  outline: none;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #111111;
+}
+
+.breadcrumb ol {
+  margin-top: 2.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.breadcrumb__item {
+  margin-bottom: .5rem;
+  font: normal 500 1.6rem/1.9rem 'Roboto', sans-serif;
+  color: #111111;
+}
+.breadcrumb__item:after {
+  margin-left: .5em;
+  margin-right: .5em;
+  display: inline;
+  content: '\00BB';
+  font-size: 1.1em;
+  line-height: 1;
+}
+.breadcrumb__item.current:after {
+  display: none;
+}
+.breadcrumb__item a {
+  -webkit-transition: .15s;
+  transition: .15s;
+}
+.breadcrumb__item a:hover {
+  color: #1b22af;
+}
+
+.breadcrumb__item.current {
+  color: #595959;
+}

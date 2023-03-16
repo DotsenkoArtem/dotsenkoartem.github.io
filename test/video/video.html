@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 2px #00f;
+        }
+        video{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div>
+            <p>webm</p>
+            <video src="Storm.webm" id="videoWebm"></video>
+        </div>
+        
+        <div>
+            <p>MP4</p>
+            <video src="./Storm.mp4" id="videoMp4"></video>
+        </div>
+
+        <div>
+            <p>OGV</p>
+            <video src="./Storm.ogv" id="videoOgv"></video>
+        </div>
+        <div><img src="https://i.pinimg.com/originals/55/e0/38/55e038a97dc605c6287ee79f017d9142.jpg" alt=""></div>
+    </div>
+
+
+    <script>
+        console.dir(videoWebm);
+        videoWebm.addEventListener('click', function(){
+            if(this.paused){
+                this.style.width = 50 + '%';
+            this.play();
+            this.loop = true;
+            let timerId = setTimeout(function showCurrentTime() {
+                videoWebm.previousElementSibling.innerHTML = 'Время воспроизведения: ' + Math.round(videoWebm.currentTime) + ' c';
+                timerId = setTimeout(showCurrentTime, 1000);
+            }, 1000);
+
+            console.log(videoWebm.paused);
+            } else{
+                this.pause();
+                console.log(videoWebm.paused);
+            }
+
+
+
+        })
+
+        videoWebm.addEventListener('dblclick', function(){
+            this.pause();
+            this.currentTime = 0;
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+<!-- <video controls width="400" height="300"> -->
+    <!-- <source src="video.mp4" type="video/mp4"> -->
+    <!-- MP4 для Safari, IE9, iPhone, iPad, Android, и Windows Phone 7 -->
+    <!-- <source src="video.webm" type="video/webm"> -->
+    <!-- WebM/VP8 для Firefox4, Opera, и Chrome -->
+    <!-- <source src="video.ogv" type="video/ogg"> -->
+    <!-- Ogg/Vorbis для старых версий браузеров Firefox и Opera -->
+    <!-- <object data="video.swf" type="application/x-shockwave-flash"> -->
+        <!-- добавляем видеоконтент для устаревших браузеров, в которых нет поддержки элемента video -->
+      <!-- <param name="movie" value="video.swf"> -->
+    <!-- </object> -->
+  <!-- </video> -->

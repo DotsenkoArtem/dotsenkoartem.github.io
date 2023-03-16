@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mouse Click User Interface</title>
+	<style>
+		html{
+			font-family: 'Raleway', sans-serif;
+		}
+		.pulse{
+			position: absolute;
+			border-radius: 50%;
+			background: rgba(179, 217, 228,  .7);
+			animation: pulse .3s ease-in-out forwards;
+		}
+		@keyframes pulse {
+			from{
+				opacity: 1;
+				box-shadow: 0 0 0 rgba(179, 217, 228,  .7);
+			}
+			to{
+				opacity: 0;
+				box-shadow: 0 0 0 20px rgba(179, 217, 228,  .7);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h1 id="h1"></h1>
+
+	<script src="scr.js"></script>
+</body>
+</html>

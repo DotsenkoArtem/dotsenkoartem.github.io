@@ -1,0 +1,59 @@
+*,*:before,*:after{
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+}
+body{
+	width: 100%;
+}
+table{
+	position: relative;
+	width: 800px;
+	/*height: 400px;*/
+	border-collapse: collapse;
+	table-layout: fixed;
+	border: 5px solid #00f;
+	overflow: hidden;
+}
+thead,
+tbody{
+	position: relative;
+	display: block;
+	width: 800px;
+}
+thead{
+	overflow: visible;
+	border-bottom: 5px solid #00f;
+	background-color: #ccc;
+}
+tbody{
+	height: 300px;
+	overflow: scroll;
+}
+tbody tr td:first-child{
+	position: relative;
+	display: block;
+	height: 50px;
+	background-color: #dfdf00;
+}
+tr{
+	/*height: 50px;*/
+}
+th,td{
+	min-width: 150px;
+	/*height: 50px;*/
+	border: 1px solid #00f;
+}
+th{
+	height: 50px;
+}
+td{
+
+}
+th:first-child{
+	position: relative;
+	display: block;
+
+	background-color: #dfdf00;
+
+}

@@ -1,0 +1,6 @@
+https://www.ogon-ok.ru/
+https://github.com/IonDen/ion.rangeSlider -- плагин 
+
+
+
+https://refreshless.com/nouislider/number-formatting/  -- связка инпута с рэнджем;

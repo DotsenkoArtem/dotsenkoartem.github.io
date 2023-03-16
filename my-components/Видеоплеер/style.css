@@ -1,0 +1,50 @@
+html{
+	font-size: 10px;
+	font-family: 'raleway', sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*, *:before, *:after{
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+body{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0;
+	min-height: 100vh;
+}
+.container{
+	width: 50rem;
+	height: 35rem;
+	-webkit-box-shadow: 0 0 1rem #005;
+	box-shadow: 0 0 1rem #005;
+}
+.custom{
+	display: block;
+}
+.plyr{
+	width: 500px;
+}
+.custom .plyr{
+	margin: 10px;
+	border-radius: 10px;
+	--plyr-color-main: #0f0!important;
+	--plyr-badge-background: #0f0;
+	--plyr-badge-text-color: #f00;
+	--plyr-control-icon-size: 35px;
+	--plyr-video-controls-background: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 0, 0, 0.5));
+	--plyr-menu-radius: 10px;
+	--plyr-menu-border-color: #ff0;
+	--plyr-tooltip-background: #ff0;
+
+}

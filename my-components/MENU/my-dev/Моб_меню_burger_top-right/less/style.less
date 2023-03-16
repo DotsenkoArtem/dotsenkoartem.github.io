@@ -1,0 +1,232 @@
+/* FONTS SETTINGS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@500&display=swap');
+/* COLORS */
+@main-bg: #fff;
+@white-text: #fff;
+@primary-color: #1B22AF;
+@secondary-color: rgba(27, 34, 175, 0.57);
+@top-nav-bg: #D8E8EC;
+@primary-text: #000;
+@secondary-text: #111111;
+@footer-bg: #E5EBF1;
+@category-product-border: #B3B3B3;
+@placeholder-color: #6A6A6A;
+@btn-hover: #B8D5DC;
+/* BASIC SETTINGS */
+html{
+	box-sizing: border-box;
+	font: 10px 'Roboto Slab', serif;
+}
+*,
+*:before,
+*:after{
+	box-sizing: inherit;
+}
+ body{
+ 	background-color: @main-bg;
+ }
+ ul, ol{
+ 	padding: 0;
+ 	list-style: none;
+ }
+a{
+	text-decoration: none;
+	outline: none;
+	&:link,
+	&:visited,
+	&:hover,
+	&:active{
+		color: @secondary-text;
+	}
+}
+button{
+	padding: 0;
+	background: none;
+	border: none;
+	outline: none;
+	appearance: none;
+}
+.container{
+	margin: 0 auto;
+	padding: 0 1.5rem;
+	width: 100%;
+	max-width: 127rem;
+}
+/* TOP-MENU */
+.top-menu,
+.top-menu__link{
+	background: @top-nav-bg;
+}
+.top-menu{
+	ul{
+		margin: 0;
+		padding: 0;
+		display: flex;
+		width: 100%;
+		max-width: 140rem;
+		list-style: none;
+	}
+	&__item{
+		width: calc(~'100% / 6');
+		text-align: center;
+		font: normal 500 1.8rem/.8 'Roboto', sans-serif; 
+		letter-spacing: 0.04em;
+		color: @primary-text;
+		transition: background .25s;
+	}
+	&__link{
+		display: block;
+		padding-top: 1.7rem;
+		padding-bottom: 1.7rem;
+		width: 100%;
+		height: 100%;
+		transition: .25s;
+		&:hover{
+			background: @btn-hover;
+			color: @secondary-text;
+		}
+	}
+}
+.top-menu-toggle{
+	display: none;
+}
+@media (max-width: 767.98px){
+	.scroll-hidden{
+		overflow: hidden;
+	}
+	.overlay{
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 899;
+		width: 0%;
+		height: 100%;
+		background: rgba(17, 17, 17, .46);
+		transition: .4s;
+		&.responsive{
+			width: 100%;
+		}
+
+	}
+	.top-menu{
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 900;
+		padding-top: 5rem;
+		width: 0vw;
+		height: 100vh;
+		background-color: darken(@top-nav-bg, 15%);
+		transition: 0.3s ease-out;
+		overflow: hidden;
+		.container{
+			padding: 0;
+			height: 100%;
+		}
+		ul{
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+		&__item{
+			display: flex;
+			align-items: center;
+			width: auto;
+			height: 5.5rem;
+			font-size: 2rem;
+			transform: translateX(300px);
+			opacity: 0;
+		}
+		&__link{
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+			letter-spacing: .5em;
+		}
+		&-toggle{
+			position: fixed;
+			top: 2.3rem;
+			right: 1.5rem;
+			z-index: 901;
+			display: block;
+			width: 4rem;
+			height: 4rem;
+			&__item{
+				position: absolute;
+				right: 0;
+				display: block;
+				width: 35px;
+				height: 3px;
+				border-radius: 2px;
+				background-color: @secondary-text;
+				transition: .3s;
+				&:first-child{
+					top: 0;
+				}
+				&:nth-child(2) {
+		  			top: 11px;
+				}
+				&:last-child{
+					top: 22px;
+				}
+				&.responsive {
+				background-color: @main-bg;
+				}
+				&:first-child.responsive {
+				transform: rotate(-315deg);
+				top: 11px;
+				}
+				&:nth-child(2).responsive {
+				transform: rotate(-360deg);
+				opacity: 0;
+				}
+				&:last-child.responsive {
+				transform: rotate(-405deg);
+				top: 11px;
+				}
+			}
+		}
+		&.responsive{
+			width: 90vw;
+			.top-menu__item{
+				width: 100%;
+				opacity: 1;
+				transform: translateX(0px);
+				transition: .3s;
+				opacity: 1;
+				.top-menu__link{
+					margin-left: 4rem;
+					text-align: left;
+					color: @white-text;
+					background: transparent;
+				}
+				&:not(:nth-of-type(1)){
+					border-top: 1px solid darken(@top-nav-bg, 5%);
+				}
+				&:first-child {
+				          transition-delay: .2s;
+				}
+				&:nth-child(2) {
+				          transition-delay: .25s;
+				}
+				&:nth-child(3) {
+				          transition-delay: .3s;
+				}
+				&:nth-child(4) {
+				          transition-delay: .35s;
+				}
+				&:nth-child(5) {
+				          transition-delay: .4s;
+				}
+				&:nth-child(6) {
+				          transition-delay: .45s;
+				}
+				&:hover {
+				    background-color: darken(@top-nav-bg, 25%);
+				    transition: 0s;
+				}
+			}
+		}
+	}
+}

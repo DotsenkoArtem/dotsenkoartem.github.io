@@ -1,0 +1,18 @@
+https://s-sd.ru/blog_studio_design/effekt_doposle_dlya_sajta_s_pomowyu_js/
+
+
+ошибки в консоли идут еще с исходников
+
+была ошибка в консоли на мобильных,
+jquery -- https://code.jquery.com/jquery-2.2.4.min.js
+"jquery-2.2.4.min.js:3 [Intervention] Unable to preventDefault inside passive event listener due to target being treated 
+as passive. See https://www.chromestatus.com/features/5093566007214080"
+
+исправил добавлением 
+.twentytwenty-handle {touch-action: none;}
+а еще сюда
+	.twentytwenty-before-label, .twentytwenty-after-label
+	.twentytwenty-handle:before, .twentytwenty-handle:after
+
+ѕосле подключени€ JQUERY 3.6.0
+	дл€ работы картинок-до-после потребовалс€ migrate-plugin (в моем случае 3,3,2)

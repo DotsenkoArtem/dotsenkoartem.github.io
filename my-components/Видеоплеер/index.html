@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="plyr-master/dist/plyr.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- <div class="container"></div> -->
+
+	<div>
+		<video id="player" playsinline controls data-poster="1.jpg">
+		  <source src="na-katke.mp4" type="video/mp4" />
+		</video>
+	</div>
+	<div class="custom">
+		<video class="player1" id="player1" playsinline controls data-poster="1.jpg">
+		  <source src="na-katke.mp4" type="video/mp4" />
+		  <!-- <source src="/path/to/video.webm" type="video/webm" /> -->
+		</video>
+		<video class="player1" id="player1" playsinline controls data-poster="1.jpg">
+		  <source src="na-katke.mp4" type="video/mp4" />
+		  <!-- <source src="/path/to/video.webm" type="video/webm" /> -->
+		</video>
+	</div>
+
+
+	<!-- <div id="youtube" data-plyr-provider="youtube" data-plyr-embed-id="qdLlWYlhdNI"></div> -->
+	
+	<div class="plyr__video-embed" id="yout">
+	  <iframe
+	    src="https://www.youtube.com/embed/ncc7XpWhZro"
+	    allowfullscreen
+	    allowtransparency
+	    allow="autoplay"
+	  ></iframe>
+	</div>
+
+
+	<script src="plyr-master/dist/plyr.js"></script>
+	<script>
+		const player = new Plyr('#player', {
+		  title: 'Example Title',
+		  enabled: true,
+		  clickToPlay: false,
+		  ratio: '1:1',
+		  quality: { default: 576, options: [4320, 2880, 2160, 1440, 1080, 720, 576, 480, 360, 240] },
+
+		});
+		const players = Plyr.setup('.player1');
+		// const youtubePlayer = new Plyr('#youtube');
+
+		const youplayer = new Plyr(document.getElementById('yout'));
+	</script>
+</body>
+</html>

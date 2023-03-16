@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Моальное окно с формой, моя валидация на js</title>
+	<meta name="description" content="Модальное окно, форма, валидация, AJAX, JQ, прелоадер"/>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- PRELOADER -->
+	<div class="loader">
+		<div class="l_text">ОЙ <br> КАКОЙ ИНТЕРНЕТ <br> СЛАБЕНЬКИЙ <br> :)</div>
+		<br><br>
+	<div class="l_main">
+	  <div class="l_square"><span></span><span></span><span></span></div>
+	  <div class="l_square"><span></span><span></span><span></span></div>
+	  <div class="l_square"><span></span><span></span><span></span></div>
+	  <div class="l_square"><span></span><span></span><span></span></div>
+	</div>
+	</div>
+	<!-- END PRELOADER -->
+
+<!-- --------------------- СЕКЦИЯ MAIN -------------------- -->
+
+<button class="btn-prim callback-btn header__callback-btn"><i></i><span>Заказать звонок</span></button>
+
+<!-- --------------------- END - СЕКЦИЯ MAIN -------------------- -->
+
+
+
+	<!-- =============== МОДАЛЬНОЕ ОКНО ==================== -->
+	<div class="modal" id="cb-modal">
+		<div class="modal__content">
+			<div class="modal__header">
+				<h4>Заполните простую заявку, и мастер свяжется с Вами в ближайшее время!</h4>
+			</div>
+			<div class="modal__body">
+				<form action="/mail.php" method="POST" class="cb-form" id="cb-form">
+					<div class="form__group">
+						<input type="text" class="form__control form__control_req" id="user-name" name="user-name">
+						<label for="user-name" class="form__label">Ваше имя</label>
+						
+					</div>
+					<div class="form__group">
+						<input type="text" class="form__control form__control_req" id="user-phone" name="user-phone">
+						<label for="user-phone" class="form__label">Телефон</label>
+						
+					</div>
+					<div class="form__group">
+						<input type="submit" class="btn btn-sec form__submit" value="Заказать звонок">
+					</div>
+				</form>
+			</div>
+			<div class="modal__footer">
+				<p>Нажимая "Заказать звонок", Вы даёте согласие на обработку своих персональных данных в соответствии с Федеральным законом №152-ФЗ «О персональных данных» и принимаете условия</p>
+				<a href="agreement.html" target="_blank" class="text-link">Пользовательского соглашения</a>
+			</div>
+			<div class="modal-close modal-close-btn">
+				<span></span>
+				<span></span>
+			</div>
+			<div class="thanks">
+				<h4>Спасибо!<br>Ваша заявка успешно отправлена, мастер свяжется с Вами в ближайшее время.</h4>
+			</div>
+		</div>
+		<div class="modal__overlay modal-close"></div>
+	</div>
+
+
+
+	<!-- ПОКА JQUERY ПОКЛЮЧЕНА ТОЛЬКО ДЛЯ AJAX -->
+	<script src="jquery/jquery-3.5.0.min.js"></script>
+	<script src="jquery/jquery-migrate-1.4.1.min.js"></script> 
+	<script src="js/main.js"></script>
+</body>
+</html>
