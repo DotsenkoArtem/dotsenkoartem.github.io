@@ -184,7 +184,7 @@ h3 {
 }
 
 .text-accent {
-  color: #818C02;
+  color: #E20E7F;
 }
 
 a, a:visited {
@@ -323,7 +323,7 @@ textarea {
  * --------------------------------------- */ 
 /* 1. Sprite:svg 
  * -------------------------*/
-.svg-phone-icon, .svg-envelop-icon, .svg-agree-icon, .svg-about-icon {
+.svg-phone-icon, .svg-envelop-icon, .svg-agree-icon-green, .svg-agree-icon, .svg-about-icon-green, .svg-about-icon {
   background: url("sprite.svg") no-repeat;
 }
 
@@ -336,8 +336,17 @@ textarea {
   height: 75px;
 }
 
+.svg-about-icon-green {
+  background-position: 0 28.5171102662%;
+}
+
+.svg-about-icon-green-dims {
+  width: 75px;
+  height: 75px;
+}
+
 .svg-agree-icon {
-  background-position: 0 66.3716814159%;
+  background-position: 0 57.0342205323%;
 }
 
 .svg-agree-icon-dims {
@@ -345,8 +354,17 @@ textarea {
   height: 75px;
 }
 
+.svg-agree-icon-green {
+  background-position: 0 85.5513307985%;
+}
+
+.svg-agree-icon-green-dims {
+  width: 75px;
+  height: 75px;
+}
+
 .svg-envelop-icon {
-  background-position: 0 87.2093023256%;
+  background-position: 0 93.1677018634%;
 }
 
 .svg-envelop-icon-dims {
@@ -626,7 +644,7 @@ textarea {
 }
 .requisites-table__caption {
   margin-bottom: 2.2rem;
-  color: #818C02;
+  color: #E20E7F;
 }
 .requisites-table__caption h3 {
   font-family: "avenirnextcyr", "Helvetica", sans-serif;
@@ -716,7 +734,7 @@ textarea {
   left: -1.5rem;
   z-index: -1;
   border-radius: 1.3rem;
-  border: 3px solid #818C02;
+  border: 3px solid #E20E7F;
 }
 
 /* LOCATION */
@@ -1208,7 +1226,7 @@ textarea {
   bottom: 0;
   left: 0;
   z-index: 55;
-  background: rgba(255, 255, 255, 0.5) url("loader.gif") center no-repeat;
+  background: rgba(255, 255, 255, 0.5) url("../img/loader.gif") center no-repeat;
   background-size: 100px 100px;
   border-radius: 10px;
 }

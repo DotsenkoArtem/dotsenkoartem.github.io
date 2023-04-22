@@ -16,11 +16,8 @@ function removePreloader() {
 const menuToggle = document.querySelector(".js-navbar-mobile-trigger");
 const menu = document.querySelector(".js-navbar-mobile");
 // const menuOverl = document.querySelector(".js-overl");
-// const navBarBreakPoint = 768;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // initNavBar(menu);
-  // navBarHandle(menuToggle, menu, menuOverl);
   navBarHandle(menuToggle, menu);
 });
 
@@ -51,7 +48,6 @@ function navBarHandle(menuToggle, menu) {
     menuToggle.classList.toggle("open");
     menu.classList.toggle("open");
     document.body.classList.toggle("scroll-hidden");
-    // menuOverl.classList.toggle("open");
   });
 
   // menuOverl.addEventListener("click", menuClose);
@@ -61,7 +57,6 @@ function navBarHandle(menuToggle, menu) {
     menuToggle.classList.remove("open");
     menu.classList.remove("open");
     document.body.classList.remove("scroll-hidden");
-    // menuOverl.classList.remove("open");
   }
 }
 
@@ -82,7 +77,6 @@ function openModal(modalOpenBtn) {
   let modal = document.getElementById(modalOpenBtn.dataset.target);
   modal.classList.remove("closed");
   modal.classList.add("opened");
-  // document.body.classList.add("scroll-hidden");
 
   let modalCloseBtns = modal.getElementsByClassName("js-modal-close");
 
@@ -97,11 +91,7 @@ function openModal(modalOpenBtn) {
 function closeModal(modal) {
   modal.classList.remove("opened");
   modal.classList.add("closed");
-  // document.body.classList.remove("scroll-hidden");
 }
-
-
-
 
 
 
@@ -124,7 +114,6 @@ function Sound(src) {
   this.play = function() {
     audio.play()
   }
-  // console.log(this);
 }
 
 
@@ -134,29 +123,15 @@ let forms = document.forms;
 for (let i = 0; i < forms.length; i++) {
   let form = forms[i];
 
-  form.addEventListener('submit', function(e) {
-    send(e, 'php/mail.php')
+  form.addEventListener('submit', function(event) {
+    send(event, 'php/mail.php')
   })
 
   function send(event, php) {
-    
-    // Отключаю поля формы на врем отправки данных - тогда не работает отправка вложений
-    // for (let i = 0; i < form.elements.length; i++) {
-    //   form.elements[i].disabled = true;
-    // }
-
     // Установка лоадера на кнопку submit
     setupLoader(form);
 
-    console.log("Отправка запроса");
-
-    // Вычисляю объем выбранных файлов - чисто для себя - в консоль
-    // let fSizes = 0;
-    // for (let i = 0; i < file.files.length; i++) {
-    //   fSizes += file.files[i].size;
-    // }
-    // console.log(`fSizes: ${fSizes} байт`);
-    // console.log(`file.files.length: ${file.files.length} файлов`);
+    // console.log("Отправка запроса!!!");
 
     event.preventDefault ? event.preventDefault() : (event.returnValue = false);
     var req = new XMLHttpRequest();
@@ -192,10 +167,11 @@ for (let i = 0; i < forms.length; i++) {
       removeLoader(form);
 
       if (req.status >= 200 && req.status < 400) {
-        console.log("this: ", this);
-        console.log("this.response: ", this.response);
-        json = JSON.parse(this.response); // Ебанный internet explorer 11
-        console.log(json);
+        // console.log("req.status: ", req.status);
+        // console.log("this: ", this);
+        // console.log("this.response: ", this.response);
+        let json = JSON.parse(this.response); // Ебанный internet explorer 11
+        // console.log(json);
 
         // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
         if (json.result == "success") {
@@ -205,22 +181,18 @@ for (let i = 0; i < forms.length; i++) {
           thanks.classList.add("thanks_success");
           alertSound = soundSuccess;
           // Если сообщение отправлено
-          // alert("Сообщение отправлено");
         } else if (json.result == "limitExceeded") {
           // Текстовое содержимое для окна оповещения в зависимости от результата
           thanksContent.innerHTML = limitExceeded;
           thanks.classList.remove("thanks_success");
           thanks.classList.add("thanks_error");
           alertSound = soundError;
-          // alert("Ошибка. Превышен максимальный размер прикрепляемых файлов (10мб).");
         } else {
           // Текстовое содержимое для окна оповещения в зависимости от результата
           thanksContent.innerHTML = messageError;
           alertSound = soundError;
           thanks.classList.remove("thanks_success");
           thanks.classList.add("thanks_error");
-          // Если произошла ошибка
-          // alert("Ошибка. Сообщение не отправлено");
         }
         // Если не удалось связаться с php файлом
       } else {
@@ -254,8 +226,8 @@ for (let i = 0; i < forms.length; i++) {
           thanks.remove();
         }, 500);
 
-        console.log("Выполнено: removeThanks()");
-        console.log(`А это thanks: ${thanks}`);
+        // console.log("Выполнено: removeThanks()");
+        // console.log(`А это thanks: ${thanks}`);
       }
     };
 
