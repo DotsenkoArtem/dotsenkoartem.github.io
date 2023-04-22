@@ -147,7 +147,7 @@
               <p>Государственные и муниципальные заказчики включают в свои тендеры требование</p>
             </div>
             <div class="modal__body">
-              <form class="form get-consult loader-container" onsubmit="send(event, 'mail.php')">
+              <form class="form get-consult loader-container">
                 <div class="form-group get-consult__form-control-group">
                   <input class="form-control get-consult__form-control" id="userName" type="text" placeholder="Имя" name="name" required>
                 </div>
@@ -158,7 +158,7 @@
                   <textarea class="form-message get-consult__form-message" id="userMessage" name="message" cols="30" rows="10" placeholder="Сообщение"></textarea>
                 </div>
                 <div class="form-group">
-                  <button class="btn btn_primary btn_lg" type="submit">Получить консультацию</button>
+                  <button class="btn btn_primary btn_lg" id="formSubmit" type="submit">Получить консультацию</button>
                 </div>
               </form>
             </div>
@@ -170,7 +170,6 @@
     </div>
     
     <!-- Scripts ================================================== -->
-    <script src="libs/wow.min.js"></script>
-    <script src="js/script.dev.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -55,7 +55,8 @@ footer.footer
 
 
       .modal__body
-        form.form.get-consult.loader-container(onsubmit="send(event, 'mail.php')")
+        //- form.form.get-consult.loader-container(onsubmit="send(event, 'php/mail.php')")
+        form.form.get-consult.loader-container
     
           .form-group.get-consult__form-control-group
             input#userName.form-control.get-consult__form-control(type="text" placeholder="Имя" name="name" required)
@@ -68,7 +69,7 @@ footer.footer
             textarea#userMessage.form-message.get-consult__form-message(name="message" cols="30" rows="10" placeholder="Сообщение")
     
           .form-group
-            button.btn.btn_primary.btn_lg(type="submit") Получить консультацию
+            button#formSubmit.btn.btn_primary.btn_lg(type="submit") Получить консультацию
       
           //- <div id="myFormStatus"></div>
       

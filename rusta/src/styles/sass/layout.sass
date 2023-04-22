@@ -585,6 +585,141 @@
 
 
 
+
+
+
+.thanks
+  padding: 3rem
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 42rem
+  position: fixed
+  right: 1.5rem
+  bottom: 1.5rem
+  text-align: center
+  border-radius: 15px
+  box-shadow: 0 15px 55px 0px rgba(0, 0, 0, .35)
+  opacity: 1
+  z-index: 99999
+
+.thanks_success
+  color: #146c43
+  border: solid 1px #a3cfbb
+  background: rgb(209, 232, 222)
+
+
+.thanks_error
+  color: #b02a37
+  border: solid 1px #f1aeb5
+  background: #f8d7da
+
+
+.thanks__close
+  position: absolute
+  top: 1rem
+  right: 1rem
+  width: 2.4rem
+  height: 2.4rem
+  transition: transform .2s
+
+
+.thanks__close::before,
+.thanks__close::after
+  display: block
+  position: absolute
+  top: 50%
+  content: ''
+  width: 100%
+  height: 0.3rem
+  border-radius: 10px
+  background: rgb(75, 75, 75)
+  transition: background-color .2s
+
+
+.thanks__close::before
+  transform: rotate(45deg)
+
+
+.thanks__close::after
+  transform: rotate(-45deg)
+
+
+.thanks__close:hover
+  transform: scale(1.05)
+
+
+.thanks__close:hover.thanks__close::before,
+.thanks__close:hover.thanks__close::after
+  background: rgb(25, 25, 25)
+
+
+.thanks__close:active
+  transform: scale(1)
+  transition: transform 0s
+
+
+.thanks.active 
+  animation: slideInRightBottom .5s ease forwards
+
+
+
+.thanks h3 
+  font-weight: 500
+
+.thanks span 
+  display: block
+  margin-bottom: 2rem
+
+.thanks h3 span 
+  font-weight: 700
+  font-size: 2.6rem
+
+
+
+
+
+.loader-container
+  position: relative
+  z-index: 50
+ 
+ 
+.submit-loader
+  display: block
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 55
+  background: rgba(255, 255, 255, .5) url('loader.gif') center no-repeat
+  background-size: 100px 100px
+  border-radius: 10px
+
+
+@keyframes slideInRightBottom 
+  from 
+    opacity: .5
+    transform: translateX(150%)
+
+  to 
+    opacity: 1
+    transform: translateX(0)
+ 
+@keyframes slideOutRightBottom 
+  from 
+    opacity: 1
+    transform: translateX(0)
+  to 
+    opacity: .5
+    transform: translateX(150%)
+
+
+
+
+
 /* ANIMATIONS
  ------------------------------  */
 // !!! Добавляется любой пустой селектор перед @import, так как после использования @include в свойствах выше директива @import смещается на один tab и некорректно отрабатывает импорт

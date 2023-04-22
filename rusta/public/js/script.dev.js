@@ -115,3 +115,161 @@ function closeModal(modal) {
   modal.classList.add("closed");
   // document.body.classList.remove("scroll-hidden");
 }
+
+var sounds = {
+  success: 'audio/success.mp3',
+  error: 'audio/error-1.mp3'
+};
+var soundSuccess = new Sound(sounds.success);
+var soundError = new Sound(sounds.error);
+var alertSound = soundSuccess;
+function Sound(src) {
+  var audio = document.createElement('audio');
+  audio.src = src;
+  this.play = function () {
+    audio.play();
+  };
+  // console.log(this);
+}
+
+// Массив всех форм
+var forms = document.forms;
+var _loop2 = function _loop2() {
+  var form = forms[_i2];
+  form.addEventListener('submit', function (e) {
+    send(e, 'php/mail.php');
+  });
+  function send(event, php) {
+    // Отключаю поля формы на врем отправки данных - тогда не работает отправка вложений
+    // for (let i = 0; i < form.elements.length; i++) {
+    //   form.elements[i].disabled = true;
+    // }
+
+    // Установка лоадера на кнопку submit
+    setupLoader(form);
+    console.log("Отправка запроса");
+
+    // Вычисляю объем выбранных файлов - чисто для себя - в консоль
+    // let fSizes = 0;
+    // for (let i = 0; i < file.files.length; i++) {
+    //   fSizes += file.files[i].size;
+    // }
+    // console.log(`fSizes: ${fSizes} байт`);
+    // console.log(`file.files.length: ${file.files.length} файлов`);
+
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
+    var req = new XMLHttpRequest();
+    req.open("POST", php, true);
+    req.onload = function () {
+      // Определение переменных для оповещения
+      var thanks = document.createElement("div");
+      var thanksContent = document.createElement("div");
+      var thanksClose = document.createElement("div");
+      var messageSuccessful = "<h3><span>Спасибо</span>Мы перезвоним Вам в ближайшее время!</h3>";
+      var limitExceeded = "<h3><span>Ошибка.</span>Превышен максимальный размер прикрепляемых файлов (10мб).</h3>";
+      var messageError = "<h3><span>Ошибка</span>Сообщение не отправлено</h3>";
+
+      // Установка окна оповещения
+      setupThanks();
+      function setupThanks() {
+        thanks.className = "thanks";
+        thanksContent.className = "thanks__content";
+        thanksClose.className = "thanks__close";
+        thanks.append(thanksContent, thanksClose);
+        wrapper.append(thanks);
+        // Закрытие окна оповещения
+        thanksClose.onclick = function () {
+          removeThanks();
+        };
+      }
+
+      // Удаление лоадера с кнопки submit
+      removeLoader(form);
+      if (req.status >= 200 && req.status < 400) {
+        console.log("this: ", this);
+        console.log("this.response: ", this.response);
+        json = JSON.parse(this.response); // Ебанный internet explorer 11
+        console.log(json);
+
+        // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
+        if (json.result == "success") {
+          // Текстовое содержимое для окна оповещения в зависимости от результата
+          thanksContent.innerHTML = messageSuccessful;
+          thanks.classList.remove("thanks_error");
+          thanks.classList.add("thanks_success");
+          alertSound = soundSuccess;
+          // Если сообщение отправлено
+          // alert("Сообщение отправлено");
+        } else if (json.result == "limitExceeded") {
+          // Текстовое содержимое для окна оповещения в зависимости от результата
+          thanksContent.innerHTML = limitExceeded;
+          thanks.classList.remove("thanks_success");
+          thanks.classList.add("thanks_error");
+          alertSound = soundError;
+          // alert("Ошибка. Превышен максимальный размер прикрепляемых файлов (10мб).");
+        } else {
+          // Текстовое содержимое для окна оповещения в зависимости от результата
+          thanksContent.innerHTML = messageError;
+          alertSound = soundError;
+          thanks.classList.remove("thanks_success");
+          thanks.classList.add("thanks_error");
+          // Если произошла ошибка
+          // alert("Ошибка. Сообщение не отправлено");
+        }
+        // Если не удалось связаться с php файлом
+      } else {
+        alert("Ошибка сервера. Номер: " + req.status);
+      }
+
+      // Вывод окна оповещения на страницу
+      thanks.classList.add("active");
+      //!!!!!!!!!!!!!!!!!!!!!!!!!!
+      soundPlay(alertSound);
+      function soundPlay(sound) {
+        sound.play();
+      }
+      //!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+      // Включаю поля формы после отправки данных
+      for (var _i3 = 0; _i3 < form.elements.length; _i3++) {
+        form.elements[_i3].disabled = false;
+      }
+
+      // Автоматическое удаление окна оповещения
+      setTimeout(function () {
+        removeThanks();
+      }, 5000);
+
+      // Удаление окна оповещения
+      function removeThanks() {
+        thanks.classList.remove("active");
+        thanks.style.animation = "slideOutRightBottom .5s ease forwards";
+        setTimeout(function () {
+          thanks.remove();
+        }, 500);
+        console.log("Выполнено: removeThanks()");
+        console.log("\u0410 \u044D\u0442\u043E thanks: ".concat(thanks));
+      }
+    };
+
+    // Если не удалось отправить запрос. Стоит блок на хостинге
+    req.onerror = function () {
+      alert("Ошибка отправки запроса");
+    };
+    req.send(new FormData(event.target));
+  }
+};
+for (var _i2 = 0; _i2 < forms.length; _i2++) {
+  _loop2();
+}
+
+// Функции установки, удаления лоадера кнопки формы
+function setupLoader(form) {
+  var loader = document.createElement("div");
+  loader.className = "submit-loader";
+  form.appendChild(loader);
+}
+function removeLoader(form) {
+  var loader = form.querySelector(".submit-loader");
+  loader.remove();
+}
