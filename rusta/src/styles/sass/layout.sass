@@ -251,9 +251,14 @@
     &__value
       padding-left: 6.5rem
       width: 55%
+      a
+        text-decoration: underline
+        &:hover
+          text-decoration: none
     &__prop
       width: 52.5rem
       font-weight: 500
+
 /* REQUEST */
 .request
   padding-bottom: 10rem
@@ -331,10 +336,17 @@
       weight: 400
   &-prop
     font-weight: 500
+  &__phone,
+  &__mail
+    a
+      text-decoration: underline
+      &:hover
+        text-decoration: none
   &__address
     margin-bottom: 2rem
   &__phone
     margin-bottom: 1.5rem
+  
 
 
 
@@ -374,6 +386,8 @@
         margin-right: 3rem
       a
         text-decoration: underline
+        &:hover
+          text-decoration: none
   &-bottom
     padding-top: 2rem
     padding-bottom: 2rem

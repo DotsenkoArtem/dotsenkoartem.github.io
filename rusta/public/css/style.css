@@ -671,6 +671,12 @@ textarea {
   padding-left: 6.5rem;
   width: 55%;
 }
+.requisites-table__value a {
+  text-decoration: underline;
+}
+.requisites-table__value a:hover {
+  text-decoration: none;
+}
 .requisites-table__prop {
   width: 52.5rem;
   font-weight: 500;
@@ -765,6 +771,12 @@ textarea {
 .location-prop {
   font-weight: 500;
 }
+.location__phone a, .location__mail a {
+  text-decoration: underline;
+}
+.location__phone a:hover, .location__mail a:hover {
+  text-decoration: none;
+}
 .location__address {
   margin-bottom: 2rem;
 }
@@ -822,6 +834,9 @@ textarea {
 }
 .footer__contacts-link a {
   text-decoration: underline;
+}
+.footer__contacts-link a:hover {
+  text-decoration: none;
 }
 .footer-bottom {
   padding-top: 2rem;
