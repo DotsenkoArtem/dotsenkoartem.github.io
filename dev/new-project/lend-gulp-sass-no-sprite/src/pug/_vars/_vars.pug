@@ -1,0 +1,33 @@
+//- Common variables
+-
+  let author = 'Artem Dots'
+  let themeColor = '#1C84E3'
+
+  // Если требуется заглушка для Internet Explorer
+  let ieBung = false
+
+  //- Массив наименований шрифтов для перебора в head.pug и предзагрузки
+  let fontsPreload = [
+    'OpenSans-Light.woff2',
+    'OpenSans-LightItalic.woff2',
+    'OpenSans-Regular.woff2',
+    'OpenSans-Italic.woff2',
+    'OpenSans-Medium.woff2',
+    'OpenSans-MediumItalic.woff2',
+    'OpenSans-SemiBold.woff2',
+    'OpenSans-SemiBoldItalic.woff2',
+    'OpenSans-Bold.woff2',
+    'OpenSans-BoldItalic.woff2',
+    'OpenSans-ExtraBold.woff2',
+    'OpenSans-ExtraBoldItalic.woff2'
+    ]
+  
+  //- ! URL определяется автоматом в миксине "меню" : pages-key+.html
+  let pages = {
+    index: {
+      name:   'главная',
+      title:  'Dots Project',
+      descr:  'New project by Dots',
+      author:  author,
+    }
+  };
