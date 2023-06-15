@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Калькулятор -->
+    <div class="calc">
+
+      <!-- Общий доход -->
+      <div class="calc__group">
+        <label class="calc__label">Общий доход семьи</label>
+        <input type="number" class="calc__control js-incom" min="0" value="360000"><span class="calc__unit">руб.</span>
+      </div>
+
+      <!-- Количество членов семьи -->
+      <div class="calc__group">
+        <label class="calc__label">Количество членов семьи</label>
+        <input type="number" class="calc__control js-family-members" min="2" value="3"><span class="calc__unit">чел.</span>
+      </div>
+
+      <!-- Количество детей -->
+      <div class="calc__group">
+        <label class="calc__label">Количество детей</label>
+        <input type="number" class="calc__control js-family-children" min="1" value="2"><span class="calc__unit">чел.</span>
+      </div>
+ 
+      <!-- Ежемесячный доход на одного члена семьи -->
+      <div class="calc__group">
+        <label class="calc__label">Среднедушевой доход семьи</label>
+        <input type="number" readonly class="calc__control js-family-member-income-per-month"><span class="calc__unit">руб.</span>
+      </div>
+ 
+      <!-- Размер пособия -->
+      <div class="calc__group">
+        <label class="calc__label">Размер пособия</label>
+        <input type="text" readonly class="calc__control js-output"><span class="calc__unit">%.</span>
+      </div>
+    </div>
+    <!-- /Калькулятор -->
+
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
