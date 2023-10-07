@@ -8,59 +8,90 @@
     <link rel="stylesheet" href="../../cmp-templates/ready-to-copy/base/prism/prism.css">
     <link rel="stylesheet" href="../../cmp-templates/ready-to-copy/base/public/css/default.css">
     <link rel="stylesheet" href="../../cmp-templates/ready-to-copy/base/public/css/code-copy.css">
-    <link rel="stylesheet" href="css/cmp-name.css">
+    <link rel="stylesheet" href="css/checkbox.css">
   </head>
   <body> 
     <div id="wrapper">
       
       
-      <h1>Checkbox</h1>
-      <div class="container">
-        
-        
-        <!-- COMPONENT`S CODE-->
-        <div class="checkbox">
-          <input class="checkbox__input" id="userCheck" type="checkbox" name="userCheck">
-          <label class="checkbox__label" for="userCheck">Я даю согласие на обработку  моих персональных данных</label>
+      <header> 
+        <div class="container"> 
+          <h1>Checkbox</h1>
+        </div>
+      </header>
+      <main>   
+        <div class="container">
+          <div class="block">
+            <h2>Performance</h2>
+            
+            
+            <!-- COMPONENT`S CODE-->
+            <div class="checkbox">
+              <input class="checkbox__input" id="userCheck" type="checkbox" name="userCheck">
+              <label class="checkbox__label" for="userCheck">Я даю согласие на обработку  моих персональных данных</label>
+            </div>
+            
+            <!-- END OF COMPONENT`S CODE-->
+            
+          </div>
         </div>
         
-        <!-- END OF COMPONENT`S CODE-->
-        <br><br>
-        <hr><br>
-        <p> <b>Внмание! </b>Также для создания чекбокса подтребуется <a href="./img/check-icon.svg" download title="Скачать изображене">изображение стрелки</a>. Положите ее в папку img/ на одном уровне с папкой css/.  </p>
-      </div>
-      <!-- CODE-COPY-->
-      <div class="container">
-        <div class="tabs">
-          <ul class="tabs__menu">
-            <li class="tab__caption active" data-target="tab-pane1">HTML</li>
-            <li class="tab__caption" data-target="tab-pane2">CSS</li>
-            <li class="tab__caption" data-target="tab-pane3">JS</li>
-          </ul>
-          <div class="tabs__content">
+        <div class="container">
+          <div class="block"> 
+            <h2>Usage</h2>
+            <p> <b>Внмание! </b>Также для создания чекбокса подтребуется <a href="./img/check-icon.svg" download title="Скачать изображене">изображение стрелки</a>. Положите ее в папку img/ на одном уровне с папкой css/.  </p>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="block"> 
+            <h2>Code</h2>
             
-            
-            <!-- Tab-pane 1-->
-            <!-- -------------------------------->
-            <div class="tab__pane active" id="tab-pane1">
-              <div class="code-copy-btn-wrap">
-                <div class="code-copy-btn" data-target="item-to-copy1"></div>
-              </div>
-              
-              <pre><code class="language-html" id="item-to-copy1">&lt;div class="checkbox"&gt;
+            <!-- CODE-COPY-->
+            <div class="tabs">
+              <ul class="tabs__menu">
+                <li class="tab__caption active" data-target="tab-pane1">HTML</li>
+                <li class="tab__caption" data-target="tab-pane2">PUG</li>
+                <li class="tab__caption" data-target="tab-pane3">CSS</li>
+                <li class="tab__caption" data-target="tab-pane4">SASS</li>
+                <li class="tab__caption" data-target="tab-pane5">JS</li>
+              </ul>
+              <div class="tabs__content">
+                
+                
+                <!-- Tab-pane 1-->
+                <!-- -------------------------------->
+                <div class="tab__pane active" id="tab-pane1">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy1"></div>
+                  </div>
+                  
+                  <pre><code class="language-html" id="item-to-copy1">&lt;div class="checkbox"&gt;
  &lt;input class="checkbox__input" id="userCheck" type="checkbox" name="userCheck"&gt;
  &lt;label class="checkbox__label" for="userCheck"&gt;Я даю согласие на обработку  моих персональных данных&lt;/label&gt;
 &lt;/div&gt;</code></pre>
-            </div>
-            
-            <!-- Tab-pane 2-->
-            <!-- -------------------------------->
-            <div class="tab__pane" id="tab-pane2">
-              <div class="code-copy-btn-wrap">
-                <div class="code-copy-btn" data-target="item-to-copy2"></div>
-              </div>
-              
-              <pre><code class="language-css" id="item-to-copy2">.checkbox__input {
+                </div>
+                
+                <!-- Tab-pane 2-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane2">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy2"></div>
+                  </div>
+                  
+                  <pre><code class="language-pug" id="item-to-copy2">.checkbox
+   input#userCheck.checkbox__input(type="checkbox", name="userCheck")
+   label.checkbox__label(for="userCheck") Я даю согласие на обработку  моих персональных данных</code></pre>
+                </div>
+                
+                <!-- Tab-pane 3-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane3">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy3"></div>
+                  </div>
+                  
+                  <pre><code class="language-css" id="item-to-copy3">.checkbox__input {
  position: absolute;
  display: none;
 }
@@ -128,27 +159,100 @@ border-color: #ff0000;
 /* .checkbox__input:focus:not(:checked)+.checkbox__label::before{
 border-color: #000000;
 } */</code></pre>
-            </div>
-            
-            <!-- Tab-pane 3-->
-            <!-- -------------------------------->
-            <div class="tab__pane" id="tab-pane3">
-              <div class="code-copy-btn-wrap">
-                <div class="code-copy-btn" data-target="item-to-copy3"></div>
-              </div>
-              
-              <pre><code class="language-js" id="item-to-copy3">/* 
+                </div>
+                
+                <!-- Tab-pane 4-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane4">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy4"></div>
+                  </div>
+                  
+                  <pre><code class="language-sass" id="item-to-copy4">// Vars
+$checkbox-border-color: rgba(196, 196, 196, 0.5)
+$checkbox-hover-border-color: rgb(179, 215, 255)
+$checkbox-active-border-color: rgb(179, 215, 255)
+$checkbox-bg: rgba(196, 196, 196, 0.5)
+$checkbox-active-bg: rgb(0, 119, 255)
+$checkbox-disabled-bg: rgb(11, 3, 34)
+
+.checkbox
+ &__input
+   position: absolute
+   display: none
+
+   &:checked+.checkbox__label::before
+     border-color: $checkbox-border-color
+     background-color: $checkbox-bg
+     background-image: url("../img/check-icon.svg")
+
+ &__label
+   display: inline-flex
+   align-items: center
+   user-select: none
+   cursor: pointer
+
+   &:before
+     display: inline-flex
+     flex: none
+     margin-right: 1em
+     content: ''
+     height: 1.2em
+     width: 1.2em
+     border: solid 1px $checkbox-border-color
+     background-color: $checkbox-bg
+     background-repeat: no-repeat
+     background-size: 115%
+     background-position: center
+     transition: all 0.25s
+
+/* стили при наведении курсора на checkbox */
+.checkbox__input:not(:disabled):not(:checked)+.checkbox__label:hover::before
+ border-color: $checkbox-hover-border-color
+
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.checkbox__input:not(:disabled):active+.checkbox__label::before
+ background-color: $checkbox-active-bg
+ border-color: $checkbox-active-border-color
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.checkbox__input:disabled+.checkbox__label::before
+ background-color: $checkbox-disabled-bg
+
+/* стили для чекбокса, находящегося в фокусе */
+/* не отображается, т.к. .checkbox display: none */
+/* .checkbox__input:focus+.checkbox__label::before */
+ -webkit-box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25)
+ box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25)
+ border-color: #ff0000
+
+/* стили для чекбокса, находящегося в фокусе НО НЕ CHECKED */
+/* не отображается, т.к. .checkbox display: none */
+/* .checkbox__input:focus:not(:checked)+.checkbox__label::before */
+ border-color: #000000</code></pre>
+                </div>
+                
+                <!-- Tab-pane 5-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane5">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy5"></div>
+                  </div>
+                  
+                  <pre><code class="language-js" id="item-to-copy5">/* 
 This component does not contain javascript.
 */</code></pre>
+                </div>
+              </div>
             </div>
+            <!-- END OF CODE-COPY-->
+            
           </div>
         </div>
-      </div>
-      <!-- END OF CODE-COPY-->
-      
+      </main>
     </div>
-    <script src="../../cmp-templates/ready-to-copy/base/prism/prism.js"></script>
-    <script src="../../cmp-templates/ready-to-copy/base/public/js/code-copy.dev.js"></script>
-    <script src="js/cmp-name.dev.js"></script>
   </body>
+  <script src="../../cmp-templates/ready-to-copy/base/prism/prism.js"></script>
+  <script src="../../cmp-templates/ready-to-copy/base/public/js/code-copy.dev.js"></script>
+  <script src="js/checkbox.dev.js"></script>
 </html>

@@ -18,5 +18,6 @@
     "**/comp-templates/**/*.pug",
     "**/_templates/**/*.pug"
   ],
-  "compile-hero.config": ""
+  "compile-hero.config": "",
+  "compile-hero.javascript-output-toggle": true
 }

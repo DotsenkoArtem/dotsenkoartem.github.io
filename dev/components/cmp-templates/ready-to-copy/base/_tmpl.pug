@@ -1,36 +1,154 @@
 - var path = '../../cmp-templates/ready-to-copy/base/';
+- var title = 'Checkbox'
 
 
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        block comp-title
-            title Component Name
-        link(rel="stylesheet", href=`${path}prism/prism.css`)
-        block comp-styles
-            link(rel="stylesheet", href=`${path}public/css/default.css`)
-            link(rel="stylesheet", href=`${path}public/css/code-copy.css`)
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    block comp-title
+      title=title
+    link(rel="stylesheet", href=`${path}prism/prism.css`)
+    block comp-styles
+      link(rel="stylesheet", href=`${path}public/css/default.css`)
+      link(rel="stylesheet", href=`${path}public/css/code-copy.css`)
 
-        
 
-    body 
-        #wrapper
-            |
-            |
+
+  body 
+    #wrapper
+      |
+      |
+      header 
+        .container 
+          block header
+            h1 Указать имя компонента
+
+
+
+
+      main    
+        .container
+          .block
+            h2 Performance
             block comp-content
-                h1 Указать имя компонента
-                .container
-                    |
-                    |
-                    p Место визуального расоложения компонента
+              |
+              |
+              p Место визуального расоложения компонента
+
+        |
+        |
+        .container
+          .block 
+            h2 Usage
+            block comp-usage
+              |
+              |
+              p Инструкция по исользованию компонента
+        |
+        |
+        .container
+          .block 
+            h2 Code
+            |
+            |
+            // CODE-COPY
+            .tabs
+              ul.tabs__menu
+                li.tab__caption.active(data-target="tab-pane1") HTML
+                li.tab__caption(data-target="tab-pane2") PUG
+                li.tab__caption(data-target="tab-pane3") CSS
+                li.tab__caption(data-target="tab-pane4") SASS
+                li.tab__caption(data-target="tab-pane5") JS
+
+              .tabs__content
                 |
                 |
-            block comp-code
-                p Здесь располагаются табы с кодом комонента с возможностью кпирования в 1 клик.
-        
-        block comp-scripts
-            script(src=`${path}prism/prism.js`)
-            script(src=`${path}public/js/code-copy.dev.js`)
+                // Tab-pane 1
+                // ------------------------------
+                #tab-pane1.tab__pane.active
+                  .code-copy-btn-wrap
+                    div.code-copy-btn(title="Click to copy" data-target="item-to-copy1")
+                  |
+                  |
+                  pre
+                    block code-html
+                      p This component does not contain HTML.
+                    
+
+
+                        
+                |
+                |
+                // Tab-pane 2
+                // ------------------------------
+                #tab-pane2.tab__pane
+                  .code-copy-btn-wrap
+                    div.code-copy-btn(title="Click to copy" data-target="item-to-copy2")
+                  |
+                  |
+                  pre
+                    block code-pug
+                      p This component does not contain PUG.                  
+                    
+
+
+                |
+                |
+                // Tab-pane 3
+                // ------------------------------
+                #tab-pane3.tab__pane
+                  .code-copy-btn-wrap
+                    div.code-copy-btn(title="Click to copy" data-target="item-to-copy3")
+                  |
+                  |
+                  pre
+                    block code-css
+                      p This component does not contain CSS.
+                    
+
+
+                |
+                |
+                // Tab-pane 4
+                // ------------------------------
+                #tab-pane4.tab__pane
+                  .code-copy-btn-wrap
+                    div.code-copy-btn(title="Click to copy" data-target="item-to-copy4")
+                  |
+                  |
+                  pre
+                    block code-sass
+                      p This component does not contain SASS.
+
+
+
+                |
+                |
+                // Tab-pane 5
+                // ------------------------------
+                #tab-pane5.tab__pane
+                  .code-copy-btn-wrap
+                    div.code-copy-btn(title="Click to copy" data-target="item-to-copy5")
+                  |
+                  |
+                  pre
+                    block code-js
+                      p This component does not contain Java Script.
+
+
+
+            // END OF CODE-COPY
+            |
+            |
+
+
+
+
+
+
+  block comp-scripts
+    script(src=`${path}prism/prism.js`)
+    script(src=`${path}public/js/code-copy.dev.js`)

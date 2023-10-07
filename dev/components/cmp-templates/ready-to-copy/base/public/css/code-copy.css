@@ -1,41 +1,37 @@
 /* Tabs styles
--------------------------*/
+ * -------------------------*/
 .tabs {
   margin: 50px auto;
   width: 100%;
-  max-width: 60rem;
   border-radius: 1rem;
-  border: 1px solid #888;
-  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.2);
 }
 .tabs__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
+  border-left: 1px solid #888;
+  border-top: 1px solid #888;
+  border-right: 1px solid #888;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 .tabs__content {
   position: relative;
   height: 30rem;
   line-height: 1.5;
+  background-color: #f5f2f0;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
 
 .tab__caption {
   padding: 1rem;
-  width: calc(100% / 3);
+  width: calc(100% / 5);
   text-align: center;
   border-left: 1px solid #888;
-  border-bottom: 1px solid #888;
   background: #f0f0f0;
   list-style: none;
   overflow: hidden;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .tab__caption:first-child {
@@ -53,59 +49,53 @@
   background: #fafafa;
 }
 .tab__pane {
-  padding: 1rem;
   position: absolute;
   top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: 0;
   width: 100%;
   height: 100%;
   background: #fff;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, max-width 0.8s;
 }
 .tab__pane.active {
-  z-index: 5;
   opacity: 1;
+  z-index: 50;
+}
+.tab__pane:hover pre {
+  width: calc(100% + (100vw - 100%) / 2 - 3rem);
+  border-top-right-radius: 1rem;
+  transition: width 1s;
 }
 .tab__pane pre {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  min-width: 100%;
-  max-width: 100%;
-  height: calc(100% - 25px - 1rem);
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  border: 1px solid #888;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
   white-space: pre;
-  overflow-y: auto;
   overflow-x: hidden;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  overflow-y: auto;
+  transition: 1s;
 }
 .tab__pane pre[class*=language-] {
   margin: 0;
   padding: 0;
-}
-.tab__pane pre:hover {
-  max-width: calc(60rem + (100vw - 60rem) / 2);
-  overflow-x: auto;
 }
 .tab__pane code {
   overflow: hidden;
 }
 
 /* Copy-btn styles
--------------------------*/
+ * -------------------------*/
 .code-copy-btn {
-  margin-bottom: 1rem;
   width: 2.5rem;
-  height: 25px;
+  height: 2.5rem;
   line-height: 0.5;
   background: url(../img/copy.svg) center no-repeat;
   background-size: contain;
@@ -113,31 +103,21 @@
   cursor: pointer;
 }
 .code-copy-btn-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  position: absolute;
+  top: 1rem;
+  right: 0.8rem;
+  z-index: 10;
 }
 .code-copy-btn:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 .code-copy-btn:active {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: -webkit-transform 0;
-  transition: -webkit-transform 0;
-  -o-transition: transform 0;
   transition: transform 0;
-  transition: transform 0, -webkit-transform 0;
 }
 
 /* Info tooltip styles
--------------------------*/
+ * -------------------------*/
 .info-tooltip {
   position: absolute;
   z-index: 999;
@@ -146,30 +126,13 @@
   background: white;
   border: solid 1px #222;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 0 15px 30px rgba(34, 34, 34, 0.4);
   box-shadow: 0 15px 30px rgba(34, 34, 34, 0.4);
-  -webkit-animation: fadeOut 0.5s cubic-bezier(0.71, -0.41, 1, 0.07) 1s forwards;
   animation: fadeOut 0.5s cubic-bezier(0.71, -0.41, 1, 0.07) 1s forwards;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
 /* Animations
--------------------------*/
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-}
+ * -------------------------*/
 @keyframes fadeOut {
   0% {
     opacity: 1;
