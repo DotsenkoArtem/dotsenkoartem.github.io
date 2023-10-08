@@ -1,5 +1,7 @@
 extends ../../cmp-templates/ready-to-copy/base/_tmpl.pug
 
+block vars
+  - var title = 'Select'
 
 block comp-title
   title Custom Select
@@ -8,9 +10,10 @@ append comp-styles
   link(rel="stylesheet", href="css/cmp-name.css")
 
 
+block header
+  h1=title
+
 block comp-content
-  h1 Custom Select
-  .container
     |
     |
     // COMPONENT`S CODE
@@ -21,59 +24,39 @@ block comp-content
     |
     |
 
-block comp-code
-  // CODE-COPY
 
-  .container
-    .tabs
-      ul.tabs__menu
-        li.tab__caption.active(data-target="tab-pane1") HTML
-        li.tab__caption(data-target="tab-pane2") CSS
-        li.tab__caption(data-target="tab-pane3") JS
 
-      .tabs__content
-        |
-        |
-        // Tab-pane 1
-        // ------------------------------
-        #tab-pane1.tab__pane.active
-          .code-copy-btn-wrap
-            div.code-copy-btn(data-target="item-to-copy1")
-          |
-          |
-          pre
-            code(class="language-html" id="item-to-copy1")
 
-              include _includes/_code-html.pug
-        |
-        |
-        // Tab-pane 2
-        // ------------------------------
-        #tab-pane2.tab__pane
-          .code-copy-btn-wrap
-            div.code-copy-btn(data-target="item-to-copy2")
-          |
-          |
-          pre
-            code(class="language-css" id="item-to-copy2")
+block code-html 
+  code(class="language-html" id="item-to-copy1")
+    include _includes/_code-html.pug
 
-              include _includes/_code-css.pug
 
-        |
-        |
-        // Tab-pane 3
-        // ------------------------------
-        #tab-pane3.tab__pane
-          .code-copy-btn-wrap
-            div.code-copy-btn(data-target="item-to-copy3")
-          |
-          |
-          pre
-            code.language-js#item-to-copy3
 
-              include _includes/_code-js.pug
+block code-pug 
+  code(class="language-pug" id="item-to-copy2")
+    include _includes/_code-pug.pug
 
-  // END OF CODE-COPY
+
+
+block code-css 
+  code(class="language-css" id="item-to-copy3")
+    include _includes/_code-css.pug
+
+
+
+block code-sass 
+  code(class="language-sass" id="item-to-copy4")
+    include _includes/_code-sass.pug
+
+
+
+block code-js 
+  code(class="language-js" id="item-to-copy5")
+    include _includes/_code-js.pug
+
+
+
   |
   |
 append comp-scripts

@@ -1,0 +1,121 @@
+|// VARIABLES
+|$gutter: 1.2rem
+|
+|$select-right-padding: 4rem
+|$select-border-width: 2px
+|$select-border-color: #ed8722
+|
+|$option-box-radius: 5px
+|
+|$arrow-width: 40%
+|$arrow-height: 10%
+|$arrow-x-offset: (100% - $arrow-width) / 2
+|$arrow-y-offset: (100% - $arrow-height) / 2
+|// - - - - - - - - - - - - - - - - - -
+|
+|.select
+|  margin-left: 2rem
+|  padding: 1rem $select-right-padding 1rem 1rem
+|  width: 20rem
+|  position: relative
+|  display: inline-block
+|  font-size: 1.4rem
+|  line-height: 1
+|  background-color: rgba(255, 255, 255, 1)
+|  border: solid $select-border-width $select-border-color
+|  border-radius: 0.5rem
+|  cursor: pointer
+|
+|  &__option
+|    display: block
+|    padding: 1rem
+|    background-color: rgba(255, 255, 255, 1)
+|    cursor: pointer
+|
+|    &_selected
+|      display: inline-block
+|      width: 100%
+|      overflow: hidden
+|
+|    &-box
+|      opacity: 0
+|      visibility: hidden
+|      z-index: -1
+|      position: absolute
+|      right: -$select-border-width
+|      bottom: -$select-border-width
+|      left: -$select-border-width
+|      transition: 0.35s
+|
+|      &>ul
+|        padding: 0
+|        width: 100%
+|        max-height: 30rem
+|        overflow: auto
+|        position: absolute
+|        top: -2px
+|        list-style: none
+|        border: solid 2px #ed8722
+|        border-bottom-left-radius: $option-box-radius
+|        border-bottom-right-radius: $option-box-radius
+|        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5)
+|
+|    &:last-child
+|      border-bottom-left-radius: 2px
+|      border-bottom-right-radius: 2px
+|
+|    &:hover
+|      color: #fff
+|      background-color: #ed8722
+|
+|  &.open
+|    .select__option
+|      &-box
+|        opacity: 1
+|        visibility: visible
+|        z-index: 10
+|        transform: translateY(0%)
+|
+|    .arrow
+|      transform: scaleY(-1)
+|
+|.arrow
+|  position: absolute
+|  width: 100%
+|  height: 100%
+|  display: inline-flex
+|  justify-content: center
+|  align-items: center
+|  transition: 0.3s
+|
+|  &-bg
+|    position: absolute
+|    top: 0
+|    right: -2px
+|    width: $select-right-padding
+|    height: 100%
+|    border-top-right-radius: 0.5rem
+|    border-bottom-right-radius: 0.5rem
+|    background: #ed8722
+|
+|  &::before,
+|  &::after
+|    display: inline-block
+|    position: absolute
+|    // Left задается только для позиционирования по-центру в IE
+|    top: $arrow-y-offset
+|    left: $arrow-x-offset
+|    content: ""
+|    width: $arrow-width
+|    height: $arrow-height
+|    background: #fff
+|
+|  &::before
+|    border-top-left-radius: 0.2em
+|    border-bottom-left-radius: 0.2em
+|    transform: translateX(-25% - $arrow-height / 2) rotate(45deg)
+|
+|  &::after
+|    border-top-right-radius: 0.2em
+|    border-bottom-right-radius: 0.2em
+|    transform: translateX(25% + $arrow-height / 2) rotate(-45deg)
