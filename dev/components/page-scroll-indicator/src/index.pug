@@ -1,0 +1,123 @@
+extends ../../cmp-templates/ready-to-copy/base/_tmpl.pug
+
+block vars
+  - var title = 'Page-scroll-indicator'
+
+block comp-title
+  title=title
+
+
+append comp-styles
+  link(rel="stylesheet", href="css/page-scroll-indicator.css")
+
+
+block header
+  h1=title
+
+
+block comp-content
+    |
+    |
+    // COMPONENT`S CODE
+    include _includes/_cmp.pug
+    |
+    |
+    // END OF COMPONENT`S CODE
+    |
+    |
+
+
+
+block comp-usage
+  p 
+    b Внмание! 
+    |Также для создания чекбокса подтребуется 
+    a(href="./img/check-icon.svg", download, title="Скачать изображене") изображение стрелки
+    |. Положите ее в папку img/ на одном уровне с папкой css/.  
+
+
+
+block code-html 
+  code(class="language-html" id="item-to-copy1")
+    include _includes/_code-html.pug
+
+
+
+block code-pug 
+  code(class="language-pug" id="item-to-copy2")
+    include _includes/_code-pug.pug
+
+
+
+block code-css 
+  code(class="language-css" id="item-to-copy3")
+    include _includes/_code-css.pug
+
+
+
+block code-sass 
+  code(class="language-sass" id="item-to-copy4")
+    include _includes/_code-sass.pug
+
+
+
+block code-js 
+  code(class="language-js" id="item-to-copy5")
+    include _includes/_code-js.pug
+
+
+
+append comp-scripts
+  //- Page-scroll-indicator`s test content
+  .container(style="background: #fff; border-radius: .5rem; padding: 1.5rem;")
+    h1 Page-scroll-indicator`s test content
+    section.section
+      h2 Section1
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+    section.section
+      h2 Section2
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+    section.section
+      h2 Section3
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+    section.section
+      h2 Section4
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+    section.section
+      h2 Section5
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+    section.section
+      h2 Section6
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+    section.section
+      h2 Section7
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+    section.section
+      h2 Section8
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+    section.section
+      h2 Section9
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+    section.section
+      h2 Section10
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.
+
+
+  //- End of Page-scroll-indicator`s test content
+
+
+
+
+
+append comp-scripts
+  script(src="js/page-scroll-indicator.dev.js")
