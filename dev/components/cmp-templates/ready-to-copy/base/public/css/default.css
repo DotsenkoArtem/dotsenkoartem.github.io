@@ -37,9 +37,16 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5em;
   font-size: 3rem;
   font-weight: 500;
+}
+
+ul, ol {
+  padding-left: 1.5em;
+}
+ul li:not(:last-child), ol li:not(:last-child) {
+  margin-bottom: 0.5em;
 }
 
 .container {

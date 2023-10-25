@@ -1,0 +1,137 @@
+footer.footer#footer
+  .container
+    h2(style="color: white; text-align: center;") F O O  T E R
+
+
+  |
+  |
+  // MODAL
+  .modal#send-order-modal
+    .modal__inner
+      button.modal__close 
+
+      .modal__content
+        .modal__header
+          .section__heading.section__heading_brand.text-center.calc-order__heading
+            h2 
+              span.font_xlite Рассчитать 
+              | заказ
+            p Опишите кратко желаемый результат и прикрепите файл для расчета
+
+
+        .modal__body
+          form#calcOrderFormModal.form.calc-order__form(enctype="multipart/form-data" name="calcOrderModal" data-action="send-order.php")
+            .form-row
+
+              .form__group.calc-order__form-group
+                label.form__label(for="userName2")  Ваше имя:
+                input#userName2.form__control(type="text" name="userName", data-required="true")
+
+              .form__group.calc-order__form-group
+                label.form__label(for="userPhone2")  Телефон:
+                input#userPhone2.form__control(type="text" name="userPhone", data-required="true")
+
+              .form__group.calc-order__form-group
+                label.form__label(for="userEmail2") Email:
+                input#userEmail2.form__control(type="email" name="userEmail", data-required="true")
+
+            .form__group.calc-order__form-group
+              label.form__label(for="userMsg2") Тираж деталей, материал:
+              textarea#userMsg2.form__textarea(name="userMsg")
+
+
+            .form__group.form__group_type-file
+              label.form__label.form__label_type-file(for="userFile2") 
+                i.form-screp.form-screp_red
+                span Прикрепить чертеж 
+                span.file-extname  (pdf, 
+                span.file-extname  jpg, 
+                span.file-extname  jpeg), 
+                span  3D модель 
+                span.file-extname  (step, x_t, stl)
+
+              input#userFile2.form__file(type="file" name="file[]", multiple)
+              .form__file_selected
+
+
+            .form__submit-row 
+              button.btn.btn_primary.form__submit(type="submit") отправить заказ
+              .form__agree-text 
+                p Нажимая на кнопку “Отправить”, я даю согласие на обработку 
+                  a.text-link(href="#" target="_blank") персональных данных
+
+
+<!-- Отложенное подключение API Яндекс карт и онлайн чата -->
+<!-- Скрипт отличается от аналогичного в файле footer-contacts.pug значением переменной mapSetUpScript, так как устанавливается разный центр карты -->
+script.
+  window.addEventListener("load", () => {
+    //- addScripts();
+  });
+  function addScripts() {
+
+    let aipYmapScript = document.createElement('script')
+    aipYmapScript.src = 'https://api-maps.yandex.ru/v3/?apikey=a13b032f-1317-4300-b260-6e7d33049787&lang=ru_RU'
+    document.body.append(aipYmapScript)
+
+    let mapCommonScript = document.createElement('script')
+    aipYmapScript.src = './map.js'
+    document.body.append(mapCommonScript)
+
+    let mapSetUpScript = document.createElement('script')
+    mapSetUpScript.innerHTML = `
+    window.map = null;
+    
+    main();
+    async function main() {
+      await ymaps3.ready;
+      const {
+        YMap,
+        YMapDefaultSchemeLayer,
+        YMapMarker,
+        YMapControls,
+        YMapDefaultFeaturesLayer,
+      } = ymaps3;
+    
+      const { YMapZoomControl } = await ymaps3.import(
+        "@yandex/ymaps3-controls@0.0.1"
+      );
+      const { YMapDefaultMarker } = await ymaps3.import(
+        "@yandex/ymaps3-markers@0.0.1"
+      );
+    
+      map = new YMap(document.getElementById("fokaMap"), { location: LOCATION, behaviors: [
+        'drag',
+        'pinchZoom',
+        'dblClick',
+        ] });
+    
+      map.addChild((scheme = new YMapDefaultSchemeLayer()));
+      map.addChild(
+        new YMapControls({ position: "right" }).addChild(
+          new YMapZoomControl({})
+        )
+      );
+      map.addChild(new YMapDefaultFeaturesLayer({ id: "features" }));
+    
+      POINTS.forEach((point) => {
+        if (point.element) {
+          map.addChild(new YMapMarker(point, point.element(point)));
+        } else {
+          map.addChild(new YMapDefaultMarker(point));
+        }
+      });
+    }
+    
+
+    let windowWidth;
+    function setMapLocation() {
+      windowWidth = document.documentElement.clientWidth;
+      windowWidth > 575
+        ? map.setLocation({ center: [30.251826, 59.9455], zoom: 17 })
+        : map.setLocation({center: [30.2533, 59.9462], zoom: 17})
+    }
+    window.addEventListener('load', setMapLocation)
+    window.addEventListener("resize", setMapLocation);
+  `
+    document.body.append(mapSetUpScript)
+  }

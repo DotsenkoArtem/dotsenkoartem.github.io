@@ -29,11 +29,9 @@ block comp-content
 
 
 block comp-usage
-  p 
-    b Внмание! 
-    |Также для создания чекбокса подтребуется 
-    a(href="./img/check-icon.svg", download, title="Скачать изображене") изображение стрелки
-    |. Положите ее в папку img/ на одном уровне с папкой css/.  
+  ul 
+    li Добавить код html (pug), css (sass), js в свой проект;
+    li Html (pug) код рекомендуется вставлять в начало или конец тега &lt;body&gt;&lt;/body&gt;.
 
 
 
@@ -67,7 +65,7 @@ block code-js
 
 
 
-append comp-scripts
+prepend comp-scripts
   //- Page-scroll-indicator`s test content
   .container(style="background: #fff; border-radius: .5rem; padding: 1.5rem;")
     h1 Page-scroll-indicator`s test content

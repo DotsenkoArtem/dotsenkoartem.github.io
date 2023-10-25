@@ -17,7 +17,7 @@ function pageScrollIndicatorInit() {
   function setPageScrollIndicator() {
     getWindowParams();
     pageScrollIndicatorStrip.style.width = "".concat(Math.floor(window.scrollY / (documentHeight - windowHeight) * 10000) / 100, "%");
-    pageScrollIndicatorValue.innerHTML = "".concat(pageScrollIndicatorStrip.style.width);
+    pageScrollIndicatorValue.innerHTML = "".concat(Math.round(parseInt(pageScrollIndicatorStrip.style.width)), "%");
   }
 
   setPageScrollIndicator(); // Выполнение функции при скролле и изменении размеров окна браузера

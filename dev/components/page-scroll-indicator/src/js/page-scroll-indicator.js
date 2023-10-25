@@ -23,7 +23,7 @@ function pageScrollIndicatorInit() {
       100
     }%`;
 
-    pageScrollIndicatorValue.innerHTML = `${pageScrollIndicatorStrip.style.width}`;
+    pageScrollIndicatorValue.innerHTML = `${Math.round(parseInt(pageScrollIndicatorStrip.style.width))}%`;
   }
 
   setPageScrollIndicator();

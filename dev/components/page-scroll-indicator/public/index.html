@@ -41,7 +41,10 @@
         <div class="container">
           <div class="block"> 
             <h2>Usage</h2>
-            <p> <b>Внмание! </b>Также для создания чекбокса подтребуется <a href="./img/check-icon.svg" download title="Скачать изображене">изображение стрелки</a>. Положите ее в папку img/ на одном уровне с папкой css/.  </p>
+            <ul> 
+              <li>Добавить код html (pug), css (sass), js в свой проект;</li>
+              <li>Html (pug) код рекомендуется вставлять в начало или конец тега &lt;body&gt;&lt;/body&gt;.</li>
+            </ul>
           </div>
         </div>
         
@@ -68,7 +71,9 @@
                     <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy1"></div>
                   </div>
                   
-                  <pre><code class="language-html" id="item-to-copy1">Put here HTML code to insert</code></pre>
+                  <pre><code class="language-html" id="item-to-copy1">&lt;div class="page-scroll-indicator" id="pageScrollIndicator"&gt;
+ &lt;div class="page-scroll-indicator__strip"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                 </div>
                 
                 <!-- Tab-pane 2-->
@@ -78,7 +83,8 @@
                     <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy2"></div>
                   </div>
                   
-                  <pre><code class="language-pug" id="item-to-copy2">Put here PUG code to insert</code></pre>
+                  <pre><code class="language-pug" id="item-to-copy2">#pageScrollIndicator.page-scroll-indicator
+ .page-scroll-indicator__strip</code></pre>
                 </div>
                 
                 <!-- Tab-pane 3-->
@@ -88,7 +94,20 @@
                     <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy3"></div>
                   </div>
                   
-                  <pre><code class="language-css" id="item-to-copy3">Put here CSS code to insert</code></pre>
+                  <pre><code class="language-css" id="item-to-copy3">.page-scroll-indicator {
+ width: 100%;
+ height: 0.4rem;
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+}
+.page-scroll-indicator__strip {
+ width: 0;
+ height: 100%;
+ background: #00aa00;
+ transition: width 300ms;
+}</code></pre>
                 </div>
                 
                 <!-- Tab-pane 4-->
@@ -98,7 +117,18 @@
                     <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy4"></div>
                   </div>
                   
-                  <pre><code class="language-sass" id="item-to-copy4">Put here SASS code to insert</code></pre>
+                  <pre><code class="language-sass" id="item-to-copy4">.page-scroll-indicator
+ width: 100%
+ height: .4rem
+ position: fixed
+ top: 0
+ left: 0
+ right: 0
+ &__strip
+   width: 0
+   height: 100%
+   background: #00aa00
+   transition: width 300ms</code></pre>
                 </div>
                 
                 <!-- Tab-pane 5-->
@@ -108,7 +138,37 @@
                     <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy5"></div>
                   </div>
                   
-                  <pre><code class="language-js" id="item-to-copy5">Put here JS code to insert</code></pre>
+                  <pre><code class="language-js" id="item-to-copy5">pageScrollIndicatorInit();
+
+function pageScrollIndicatorInit() {
+ const pageScrollIndicator = document.querySelector(".page-scroll-indicator");
+ const pageScrollIndicatorStrip = pageScrollIndicator.querySelector(
+   ".page-scroll-indicator__strip"
+ );
+ let documentHeight;
+ let windowHeight;
+
+ // Получить параметры окна и документа
+ function getWindowParams() {
+   documentHeight = document.documentElement.offsetHeight;
+   windowHeight = document.documentElement.clientHeight;
+ }
+ // Вычисление величины прокрутки (в %) и усановка ширины индикатора
+ function setPageScrollIndicator() {
+   getWindowParams();
+   pageScrollIndicatorStrip.style.width = `${
+     Math.floor((window.scrollY / (documentHeight - windowHeight)) * 10000) /
+     100
+   }%`;
+
+   pageScrollIndicatorValue.innerHTML = `${pageScrollIndicatorStrip.style.width}`;
+ }
+
+ setPageScrollIndicator();
+ // Выполнение функции при скролле и изменении размеров окна браузера
+ window.addEventListener("scroll", setPageScrollIndicator);
+ window.addEventListener("resize", setPageScrollIndicator);
+}</code></pre>
                 </div>
               </div>
             </div>
@@ -119,8 +179,6 @@
       </main>
     </div>
   </body>
-  <script src="../../cmp-templates/ready-to-copy/base/prism/prism.js"></script>
-  <script src="../../cmp-templates/ready-to-copy/base/public/js/code-copy.dev.js"></script>
   <div class="container" style="background: #fff; border-radius: .5rem; padding: 1.5rem;">
     <h1>Page-scroll-indicator`s test content</h1>
     <section class="section">
@@ -174,5 +232,7 @@
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eos provident ut, minima a nemo ratione iste debitis quidem, animi inventore odio rem, corrupti quisquam sit voluptates numquam quis at hic. Architecto obcaecati eligendi officia? Obcaecati ex sapiente at laudantium delectus qui temporibus voluptatibus et nisi. Dicta suscipit libero, magnam nobis officiis ab voluptate ducimus error explicabo alias quas tenetur autem vel magni itaque neque, minima est corporis iusto unde pariatur recusandae ad maxime. Ad facere et consectetur, odit velit deleniti rerum molestias porro laudantium, soluta alias quia maiores eos harum sit, quaerat maxime impedit vel voluptatum. Debitis cum quaerat earum quisquam sit, omnis consequuntur voluptatibus temporibus quo quam adipisci esse? Nulla id suscipit voluptatem quisquam quaerat sint iste tempora! Asperiores ex, modi consequatur facere fuga voluptas velit nobis repellendus similique natus quos magnam porro? Molestias labore sunt aliquid ullam beatae autem nostrum impedit natus, cumque neque aliquam maiores iste.</p>
     </section>
   </div>
+  <script src="../../cmp-templates/ready-to-copy/base/prism/prism.js"></script>
+  <script src="../../cmp-templates/ready-to-copy/base/public/js/code-copy.dev.js"></script>
   <script src="js/page-scroll-indicator.dev.js"></script>
 </html>

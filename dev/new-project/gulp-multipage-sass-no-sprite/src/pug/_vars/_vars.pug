@@ -1,0 +1,94 @@
+//- Common variables
+-
+  let author = 'Artem Dots'
+  let themeColor = '#ffffff'
+
+  // Если требуется заглушка для Internet Explorer
+  let ieBung = false
+
+  //- Массив наименований шрифтов для перебора в head.pug и предзагрузки
+  let fontsPreload = [
+    'Montserrat-Regular.woff2',
+    'Oswald-Medium.woff2'
+    ]
+  
+  //- ! URL определяется автоматом в миксине "меню" : pages-key+.html
+  let pages = {
+    index: {
+      name:   'Главная',
+      title:  'Главная - Название',
+      descr:  '',
+      author:  author,
+      isMenuItem: true
+    },
+    page2: {
+      name:   'Страница-2',
+      title:  'Страница-2 - Название',
+      descr:  '',
+      author:  author,
+      isMenuItem: true,
+      isMenuItemHasChildren: {
+        page21: {
+          name:   'Страница 2-1',
+          title:  'Страница 2-1 - Название',
+          descr:  '',
+          fileStem: 'child-page',
+          author:  author,
+          isMenuItem: true,
+        },
+        page22: {
+          name:   'Страница 2-2',
+          title:  'Страница 2-2 - Название',
+          descr:  '',
+          fileStem: 'child-page',
+          author:  author,
+          isMenuItem: true,
+        },
+        page23: {
+          name:   'Страница 2-3',
+          title:  'Страница 2-3 - Название',
+          descr:  '',
+          fileStem: 'child-page',
+          author:  author,
+          isMenuItem: true,
+        },
+        page24: {
+          name:   'Страница 2-4',
+          title:  'Страница 2-4 - Название',
+          descr:  '',
+          fileStem: 'child-page',
+          author:  author,
+          isMenuItem: true,
+        },
+        page25: {
+          name:   'Страница 2-5',
+          title:  'Страница 2-5 - Название',
+          descr:  '',
+          fileStem: 'child-page',
+          author:  author,
+          isMenuItem: true,
+        },
+      },
+    },
+    page3: {
+      name:   'Страница 3',
+      title:  'Страница 3 - Название',
+      descr:  '',
+      author:  author,
+      isMenuItem: true
+    },
+    page4: {
+      name:   'Страница 4',
+      title:  'Страница 4 - Название',
+      descr:  '',
+      author:  author,
+      isMenuItem: true
+    },
+    page5: {
+      name:   'Страница 5',
+      title:  'Страница 5 - Название',
+      descr:  '',
+      author:  author,
+      isMenuItem: true,
+    },
+  };
