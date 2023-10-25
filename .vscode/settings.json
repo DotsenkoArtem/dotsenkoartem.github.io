@@ -19,5 +19,6 @@
     "**/_templates/**/*.pug"
   ],
   "compile-hero.config": "",
-  "compile-hero.javascript-output-toggle": true
+  "compile-hero.javascript-output-toggle": true,
+  "liveServer.settings.port": 5501
 }
