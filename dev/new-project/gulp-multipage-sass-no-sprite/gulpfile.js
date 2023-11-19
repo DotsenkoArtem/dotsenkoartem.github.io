@@ -88,7 +88,7 @@ gulp.task("webp", function () {
     .pipe(
       webp({
         // preset: 'photo',
-        quality: 85,
+        quality: 95,
       })
     )
     .pipe(gulp.dest("public/img"));
