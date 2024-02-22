@@ -6,6 +6,7 @@
   border-radius: 1rem;
 }
 .tabs__menu {
+  padding-left: unset;
   display: flex;
   overflow: hidden;
   border-left: 1px solid #888;
@@ -24,6 +25,7 @@
 }
 
 .tab__caption {
+  margin-bottom: 0;
   padding: 1rem;
   width: calc(100% / 5);
   text-align: center;

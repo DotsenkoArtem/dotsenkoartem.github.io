@@ -1,0 +1,122 @@
+// VARIABLES
+// Common
+$main-bg: #f6f8fb;
+
+// Radio
+// Radio colors
+$radio-border-color: rgb(173, 181, 189);
+$radio-checked-border-color: rgb(11, 118, 239);
+$radio-hover-border-color: lighten($radio-checked-border-color, 10%);
+$radio-active-border-color: $radio-checked-border-color;
+$radio-focus-shadow-color: rgba(0, 123, 255, 0.35);
+// Radio sizes
+$radio-offset-rigth: 0.5em;
+$radio-diameter: 1em;
+// Radio transition
+$radio-transition: 0.2s;
+
+// COMMON STYLES
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.36;
+  background: $main-bg;
+}
+h1 {
+  font-size: 4.5rem;
+  font-weight: 100;
+  line-height: 1.177;
+  text-align: center;
+}
+.container {
+  margin: 100px auto;
+  padding: 0 15px;
+  max-width: 960px;
+}
+
+// RADIO STYLES
+.form {
+  position: relative;
+  &-radio {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    opacity: 0;
+  }
+  &-radio-wrap {
+    position: relative;
+  }
+  &-label-radio {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    &:before {
+      content: "";
+      margin-right: $radio-offset-rigth;
+      display: inline-block;
+      width: $radio-diameter;
+      height: $radio-diameter;
+      border: 1px solid $radio-border-color;
+      border-radius: 50%;
+      transition: $radio-transition;
+    }
+  }
+}
+
+/* Radio states */
+/* Hover Not Checked*/
+.form-radio:not(:disabled):not(:checked)
+  + .form-label-radio:not(:active):hover::before {
+  border-color: $radio-hover-border-color;
+}
+/* Hover Checked*/
+.form-radio:not(:disabled):checked
+  + .form-label-radio:not(:active):hover::before {
+  border-color: $radio-hover-border-color;
+}
+
+/* Active */
+.form-radio:not(:disabled) + .form-label-radio:active::before {
+  border-color: $radio-active-border-color;
+  border-width: 0.5em;
+}
+/* Active Checked*/
+.form-radio:not(:disabled):checked + .form-label-radio:active::before {
+  border-color: $radio-active-border-color;
+  border-width: 0.25em;
+}
+
+/* Focus */
+.form-radio:focus + .form-label-radio::before {
+  box-shadow: 0 0 0 0.08em $radio-focus-shadow-color;
+}
+
+/* Checked */
+.form-radio:checked + .form-label-radio::before {
+  border-color: $radio-checked-border-color;
+  border-width: 0.25em;
+}
+
+/* Not disabled */
+.form-radio:not(:disabled) + .form-label-radio {
+  cursor: pointer;
+}
+/* Disabled */
+.form-radio:disabled + .form-label-radio {
+  color: $radio-border-color;
+}

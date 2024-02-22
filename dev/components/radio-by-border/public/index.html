@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio by border</title>
+    <link rel="icon" href="../../cmp-templates/ready-to-copy/base/public/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../cmp-templates/ready-to-copy/base/prism/prism.css">
+    <link rel="stylesheet" href="../../cmp-templates/ready-to-copy/base/public/css/default.css">
+    <link rel="stylesheet" href="../../cmp-templates/ready-to-copy/base/public/css/code-copy.css">
+    <link rel="stylesheet" href="css/cmp-name.css">
+  </head>
+  <body> 
+    <div id="wrapper">
+      
+      
+      <header> 
+        <div class="container"> 
+          <h1>Radio by border</h1>
+        </div>
+      </header>
+      <main>   
+        <div class="container">
+          <div class="block">
+            <h2>Performance</h2>
+            
+            
+            <!-- COMPONENT`S CODE-->
+            <div class="form-radio-wrap">
+              <input class="form-radio" id="radio1" type="radio" name="radio">
+              <label class="form-label-radio" for="radio1">PHP</label>
+            </div>
+            <div class="form-radio-wrap">
+              <input class="form-radio" id="radio2" type="radio" name="radio">
+              <label class="form-label-radio" for="radio2">Java Script</label>
+            </div>
+            <div class="form-radio-wrap">
+              <input class="form-radio" id="radio3" type="radio" name="radio">
+              <label class="form-label-radio" for="radio3">Python</label>
+            </div>
+            <div class="form-radio-wrap">
+              <input class="form-radio" id="radio4" type="radio" name="radio" disabled>
+              <label class="form-label-radio" for="radio4">Disabled Button</label>
+            </div>
+            
+            
+            <!-- END OF COMPONENT`S CODE-->
+            
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="block"> 
+            <h2>Usage</h2>
+            <p>Инструкция по исользованию компонента</p>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="block"> 
+            <h2>Code</h2>
+            
+            <!-- CODE-COPY-->
+            <div class="tabs">
+              <ul class="tabs__menu">
+                <li class="tab__caption active" data-target="tab-pane1">HTML</li>
+                <li class="tab__caption" data-target="tab-pane2">PUG</li>
+                <li class="tab__caption" data-target="tab-pane3">CSS</li>
+                <li class="tab__caption" data-target="tab-pane4">SASS</li>
+                <li class="tab__caption" data-target="tab-pane5">JS</li>
+              </ul>
+              <div class="tabs__content">
+                
+                
+                <!-- Tab-pane 1-->
+                <!-- -------------------------------->
+                <div class="tab__pane active" id="tab-pane1">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy1"></div>
+                  </div>
+                  
+                  <pre><code class="language-html" id="item-to-copy1">&lt;div class="form-radio-wrap"&gt;
+ &lt;input class="form-radio" id="radio1" type="radio" name="radio"&gt;
+ &lt;label class="form-label-radio" for="radio1"&gt;PHP&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-radio-wrap"&gt;
+ &lt;input class="form-radio" id="radio2" type="radio" name="radio"&gt;
+ &lt;label class="form-label-radio" for="radio2"&gt;Java Script&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-radio-wrap"&gt;
+ &lt;input class="form-radio" id="radio3" type="radio" name="radio"&gt;
+ &lt;label class="form-label-radio" for="radio3"&gt;Python&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-radio-wrap"&gt;
+ &lt;input class="form-radio" id="radio4" type="radio" name="radio" disabled&gt;
+ &lt;label class="form-label-radio" for="radio4"&gt;Disabled Button&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                
+                <!-- Tab-pane 2-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane2">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy2"></div>
+                  </div>
+                  
+                  <pre><code class="language-pug" id="item-to-copy2">.form-radio-wrap
+ input#radio1.form-radio(type="radio" name="radio")
+ label.form-label-radio(for="radio1") PHP
+
+.form-radio-wrap
+ input#radio2.form-radio(type="radio" name="radio")
+ label.form-label-radio(for="radio2") Java Script
+
+.form-radio-wrap
+ input#radio3.form-radio(type="radio" name="radio")
+ label.form-label-radio(for="radio3") Python
+
+.form-radio-wrap
+ input#radio4.form-radio(type="radio" name="radio", disabled)
+ label.form-label-radio(for="radio4") Disabled Button</code></pre>
+                </div>
+                
+                <!-- Tab-pane 3-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane3">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy3"></div>
+                  </div>
+                  
+                  <pre><code class="language-css" id="item-to-copy3">.form {
+ position: relative;
+}
+.form-radio {
+ position: absolute;
+ width: 0;
+ height: 0;
+ z-index: -1;
+ opacity: 0;
+}
+.form-radio:not(:disabled):not(:checked) + .form-label-radio:not(:active):hover::before {
+ border-color: #3791f6;
+}
+.form-radio:not(:disabled):checked + .form-label-radio:not(:active):hover::before {
+ border-color: #3791f6;
+}
+.form-radio:not(:disabled) + .form-label-radio:active::before {
+ border-color: #0b76ef;
+ border-width: 0.5em;
+}
+.form-radio:not(:disabled):checked + .form-label-radio:active::before {
+ border-color: #0b76ef;
+ border-width: 0.25em;
+}
+.form-radio:focus + .form-label-radio::before {
+ box-shadow: 0 0 0 0.08em rgba(0, 123, 255, 0.35);
+}
+.form-radio:checked + .form-label-radio::before {
+ border-color: #0b76ef;
+ border-width: 0.25em;
+}
+.form-radio:not(:disabled) + .form-label-radio {
+ cursor: pointer;
+}
+.form-radio:disabled + .form-label-radio {
+ color: #adb5bd;
+}
+.form-radio-wrap {
+ position: relative;
+}
+.form-label-radio {
+ display: inline-flex;
+ align-items: center;
+ user-select: none;
+}
+.form-label-radio:before {
+ content: "";
+ margin-right: 0.5em;
+ display: inline-block;
+ width: 1em;
+ height: 1em;
+ border: 1px solid #adb5bd;
+ border-radius: 50%;
+ transition: 0.2s;
+}</code></pre>
+                </div>
+                
+                <!-- Tab-pane 4-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane4">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy4"></div>
+                  </div>
+                  
+                  <pre><code class="language-sass" id="item-to-copy4">// VARIABLES
+// Radio colors
+$radio-border-color: rgb(173, 181, 189)
+$radio-checked-border-color: rgb(11, 118, 239)
+$radio-hover-border-color: lighten($radio-checked-border-color, 10%)
+$radio-active-border-color: $radio-checked-border-color
+$radio-focus-shadow-color: rgba(0, 123, 255, 0.35)
+// Radio sizes
+$radio-offset-rigth: 0.5em
+$radio-diameter: 1em
+// Radio transition
+$radio-transition: 0.2s
+// - - - - - - - - - - - - - - - - - -
+
+
+.form 
+ position: relative
+ &-radio 
+   position: absolute
+   width: 0
+   height: 0
+   z-index: -1
+   opacity: 0
+   // Radio states
+   // Hover Not Checked
+   &:not(:disabled):not(:checked) + .form-label-radio:not(:active):hover::before 
+     border-color: $radio-hover-border-color
+
+   // Hover Checked
+   &:not(:disabled):checked + .form-label-radio:not(:active):hover::before 
+     border-color: $radio-hover-border-color
+
+
+   // Active
+   &:not(:disabled) + .form-label-radio:active::before 
+     border-color: $radio-active-border-color
+     border-width: 0.5em
+
+   // Active Checked
+   &:not(:disabled):checked + .form-label-radio:active::before 
+     border-color: $radio-active-border-color
+     border-width: 0.25em
+
+
+   // Focus
+   &:focus + .form-label-radio::before 
+     box-shadow: 0 0 0 0.08em $radio-focus-shadow-color
+
+
+   // Checked
+   &:checked + .form-label-radio::before 
+     border-color: $radio-checked-border-color
+     border-width: 0.25em
+
+
+   // Not disabled
+   &:not(:disabled) + .form-label-radio 
+     cursor: pointer
+
+   // Disabled
+   &:disabled + .form-label-radio 
+     color: $radio-border-color
+
+ &-radio-wrap 
+   position: relative
+ 
+ &-label-radio 
+   display: inline-flex
+   align-items: center
+   user-select: none
+   &:before 
+     content: ""
+     margin-right: $radio-offset-rigth
+     display: inline-block
+     width: $radio-diameter
+     height: $radio-diameter
+     border: 1px solid $radio-border-color
+     border-radius: 50%
+     transition: $radio-transition</code></pre>
+                </div>
+                
+                <!-- Tab-pane 5-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane5">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy5"></div>
+                  </div>
+                  
+                  <pre><code class="language-js" id="item-to-copy5">There is no JS code in this component</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- END OF CODE-COPY-->
+            
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="../../cmp-templates/ready-to-copy/base/prism/prism.js"></script>
+  <script src="../../cmp-templates/ready-to-copy/base/public/js/code-copy.dev.js"></script>
+  <script src="js/cmp-name.dev.js"></script>
+</html>

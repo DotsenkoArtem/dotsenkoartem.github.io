@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Radio Buttons 
+        link(rel="stylesheet", href="css/style.css")
+    body 
+        |
+        |
+        h1 Custom Radio Buttons
+        |
+        |
+        .container
+            |
+            |
+            p Выберите язык программирования:
+            br
+            br
+            <!-- COMPONENT`S CODE -->
+            .form-radio-wrap
+                input#radio1.form-radio(type="radio", name="radio")
+                label.form-label-radio(for="radio1") PHP
+
+            .form-radio-wrap
+                input#radio2.form-radio(type="radio", name="radio")
+                label.form-label-radio(for="radio2") Java Script
+
+            .form-radio-wrap
+                input#radio3.form-radio(type="radio", name="radio")
+                label.form-label-radio(for="radio3") Python
+
+            .form-radio-wrap
+                input#radio4.form-radio(type="radio", name="radio", disabled)
+                label.form-label-radio(for="radio4") Disabled Button
+            |
+            |
+            <!-- END OF COMPONENT`S CODE -->

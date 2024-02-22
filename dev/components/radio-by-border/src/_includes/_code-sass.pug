@@ -1,0 +1,79 @@
+|// VARIABLES
+|// Radio colors
+|$radio-border-color: rgb(173, 181, 189)
+|$radio-checked-border-color: rgb(11, 118, 239)
+|$radio-hover-border-color: lighten($radio-checked-border-color, 10%)
+|$radio-active-border-color: $radio-checked-border-color
+|$radio-focus-shadow-color: rgba(0, 123, 255, 0.35)
+|// Radio sizes
+|$radio-offset-rigth: 0.5em
+|$radio-diameter: 1em
+|// Radio transition
+|$radio-transition: 0.2s
+|// - - - - - - - - - - - - - - - - - -
+|
+|
+|.form 
+|  position: relative
+|  &-radio 
+|    position: absolute
+|    width: 0
+|    height: 0
+|    z-index: -1
+|    opacity: 0
+|    // Radio states
+|    // Hover Not Checked
+|    &:not(:disabled):not(:checked) + .form-label-radio:not(:active):hover::before 
+|      border-color: $radio-hover-border-color
+|
+|    // Hover Checked
+|    &:not(:disabled):checked + .form-label-radio:not(:active):hover::before 
+|      border-color: $radio-hover-border-color
+|
+|
+|    // Active
+|    &:not(:disabled) + .form-label-radio:active::before 
+|      border-color: $radio-active-border-color
+|      border-width: 0.5em
+|
+|    // Active Checked
+|    &:not(:disabled):checked + .form-label-radio:active::before 
+|      border-color: $radio-active-border-color
+|      border-width: 0.25em
+|
+|
+|    // Focus
+|    &:focus + .form-label-radio::before 
+|      box-shadow: 0 0 0 0.08em $radio-focus-shadow-color
+|
+|
+|    // Checked
+|    &:checked + .form-label-radio::before 
+|      border-color: $radio-checked-border-color
+|      border-width: 0.25em
+|
+|
+|    // Not disabled
+|    &:not(:disabled) + .form-label-radio 
+|      cursor: pointer
+|
+|    // Disabled
+|    &:disabled + .form-label-radio 
+|      color: $radio-border-color
+|
+|  &-radio-wrap 
+|    position: relative
+|  
+|  &-label-radio 
+|    display: inline-flex
+|    align-items: center
+|    user-select: none
+|    &:before 
+|      content: ""
+|      margin-right: $radio-offset-rigth
+|      display: inline-block
+|      width: $radio-diameter
+|      height: $radio-diameter
+|      border: 1px solid $radio-border-color
+|      border-radius: 50%
+|      transition: $radio-transition
