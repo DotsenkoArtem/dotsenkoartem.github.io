@@ -1,0 +1,103 @@
+|// VARIABLES
+|// Checkbox colors
+|$checkbox-border-color: rgb(173, 181, 189)
+|$checkbox-checked-border-color: rgb(11, 118, 239)
+|$checkbox-hover-border-color: lighten($checkbox-checked-border-color, 15%)
+|$checkbox-active-border-color: $checkbox-checked-border-color
+|$checkbox-focus-shadow-color: rgba(0, 123, 255, 0.35)
+|$checkbox-bg: rgba(196, 196, 196, 0.25)
+|// checkbox sizes
+|$checkbox-offset-rigth: .5em
+|$checkbox-width: 1.2em
+|// checkbox transition
+|$checkbox-transition: 0.2s
+|// label
+|$label-paddding-left: $checkbox-width + $checkbox-offset-rigth
+|// arrow
+|$arrow-width: $checkbox-width * .4
+|$arrow-height: $checkbox-width * .6
+|$arrow-left-offset: ($checkbox-width - $arrow-width) / 2
+|$arrow-color: rgb(0, 119, 255)
+|// End of VARIABLES- - - - - - - - - - - - - - - - - -
+|
+|
+|
+|
+|.form
+|  &-checkbox-wrap
+|    position: relative
+|  &-checkbox
+|    position: absolute
+|    width: 0
+|    height: 0
+|    z-index: -1
+|    opacity: 0
+|
+|
+|    // Checkbox states
+|    // Hover Not Checked
+|    &:not(:disabled):not(:checked) + .form-label-checkbox:not(:active):hover::before 
+|      border-color: $checkbox-hover-border-color
+|    // Hover Checked
+|    &:not(:disabled):checked + .form-label-checkbox:not(:active):hover::before 
+|      border-color: $checkbox-hover-border-color
+|    &:not(:disabled):checked + .form-label-checkbox:not(:active):hover::after 
+|      border-color: $checkbox-hover-border-color
+|
+|    // Active
+|    &:not(:disabled) + .form-label-checkbox:active::before 
+|      box-shadow: inset 0 0 0 $checkbox-width / 2 $checkbox-active-border-color
+|    // Active Checked - состояние (как у radio) не требуется, так как при нажатии на активный checkbox состояние меняется на :not-checked и галочка пропадает. У радио кнопок же при нажатии на активную кнопуку состояние :checked не пропадает, для них целесообразно стилизовать состояние :active:checked.
+|
+|    // Focus
+|    &:focus + .form-label-checkbox::before 
+|      box-shadow: inset 0 0 0 0 $checkbox-active-border-color, 0 0 0 0.08em $checkbox-focus-shadow-color
+|
+|    // Checked
+|    &:checked + .form-label-checkbox::before 
+|      border-color: $checkbox-checked-border-color
+|    &:checked + .form-label-checkbox::after
+|      display: inline-block
+|
+|    // Not disabled
+|    &:not(:disabled) + .form-label-checkbox 
+|      cursor: pointer
+|
+|    // Disabled
+|    &:disabled + .form-label-checkbox 
+|      color: $checkbox-border-color
+|
+|
+|  &-label-checkbox
+|    display: inline-flex
+|    padding-left: $label-paddding-left
+|    align-items: center
+|    user-select: none
+|
+|    &::before,
+|    &::after
+|      position: absolute
+|      transition: all $checkbox-transition
+|
+|    &::before
+|      content: ''
+|      display: inline-block
+|      flex: none
+|      width: $checkbox-width
+|      height: $checkbox-width
+|      left: 0
+|      z-index: 1
+|      border: solid 1px $checkbox-border-color
+|      background-color: $checkbox-bg
+|      overflow: hidden
+|
+|    &::after
+|      content: ''
+|      display: none
+|      width: $arrow-width
+|      height: $arrow-height
+|      left: $arrow-left-offset
+|      z-index: 2
+|      border-right: solid 2px $arrow-color
+|      border-bottom: solid 2px $arrow-color
+|      transform: translateY(-.15em) rotate(45deg) skew(10deg, 10deg) 

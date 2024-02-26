@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+    <link rel="icon" href="../../cmp-templates/ready-to-copy/base/public/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../cmp-templates/ready-to-copy/base/prism/prism.css">
+    <link rel="stylesheet" href="../../cmp-templates/ready-to-copy/base/public/css/default.css">
+    <link rel="stylesheet" href="../../cmp-templates/ready-to-copy/base/public/css/code-copy.css">
+    <link rel="stylesheet" href="css/checkbox.css">
+  </head>
+  <body> 
+    <div id="wrapper">
+      
+      
+      <header> 
+        <div class="container"> 
+          <h1>Checkbox</h1>
+        </div>
+      </header>
+      <main>   
+        <div class="container">
+          <div class="block">
+            <h2>Performance</h2>
+            
+            
+            <!-- COMPONENT`S CODE-->
+            <div class="form-checkbox-wrap">
+              <input id="checkbox10" type="checkbox" name="checkbox1">
+              <label for="checkbox10">standart checkbox</label>
+            </div><br>
+            <hr style="border-top: solid 1px #adb5bd"><br>
+            <h3>Custom checkboxes</h3><br>
+            <div class="form-checkbox-wrap">
+              <input class="form-checkbox" id="checkbox1" type="checkbox" name="checkbox1">
+              <label class="form-label-checkbox" for="checkbox1">checkbox 1</label>
+            </div>
+            <div class="form-checkbox-wrap">
+              <input class="form-checkbox" id="checkbox2" type="checkbox" name="checkbox2">
+              <label class="form-label-checkbox" for="checkbox2">checkbox 2</label>
+            </div>
+            <div class="form-checkbox-wrap">
+              <input class="form-checkbox" id="checkbox3" type="checkbox" name="checkbox3">
+              <label class="form-label-checkbox" for="checkbox3">checkbox 3</label>
+            </div>
+            <div class="form-checkbox-wrap">
+              <input class="form-checkbox" id="checkbox4" type="checkbox" name="checkbox4">
+              <label class="form-label-checkbox" for="checkbox4">checkbox 4</label>
+            </div>
+            <div class="form-checkbox-wrap">
+              <input class="form-checkbox" id="checkboxDisabled" type="checkbox" name="checkboxDisabled" disabled>
+              <label class="form-label-checkbox" for="checkboxDisabled">checkbox disabled</label>
+            </div>
+            
+            <!-- END OF COMPONENT`S CODE-->
+            
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="block"> 
+            <h2>Usage</h2>
+            <p>Just copy the code below and use it in your project</p>
+          </div>
+        </div>
+        
+        <div class="container">
+          <div class="block"> 
+            <h2>Code</h2>
+            
+            <!-- CODE-COPY-->
+            <div class="tabs">
+              <ul class="tabs__menu">
+                <li class="tab__caption active" data-target="tab-pane1">HTML</li>
+                <li class="tab__caption" data-target="tab-pane2">PUG</li>
+                <li class="tab__caption" data-target="tab-pane3">CSS</li>
+                <li class="tab__caption" data-target="tab-pane4">SASS</li>
+                <li class="tab__caption" data-target="tab-pane5">JS</li>
+              </ul>
+              <div class="tabs__content">
+                
+                
+                <!-- Tab-pane 1-->
+                <!-- -------------------------------->
+                <div class="tab__pane active" id="tab-pane1">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy1"></div>
+                  </div>
+                  
+                  <pre><code class="language-html" id="item-to-copy1">&lt;div class="form-checkbox-wrap"&gt;
+ &lt;input class="form-checkbox" id="checkbox1" type="checkbox" name="checkbox1"&gt;
+ &lt;label class="form-label-checkbox" for="checkbox1"&gt;checkbox 1&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-checkbox-wrap"&gt;
+ &lt;input class="form-checkbox" id="checkbox2" type="checkbox" name="checkbox2"&gt;
+ &lt;label class="form-label-checkbox" for="checkbox2"&gt;checkbox 2&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                
+                <!-- Tab-pane 2-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane2">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy2"></div>
+                  </div>
+                  
+                  <pre><code class="language-pug" id="item-to-copy2">.form-checkbox-wrap
+   input#checkbox1.form-checkbox(type="checkbox", name="checkbox1")
+   label.form-label-checkbox(for="checkbox1") checkbox 1
+
+.form-checkbox-wrap
+   input#checkbox2.form-checkbox(type="checkbox", name="checkbox2")
+   label.form-label-checkbox(for="checkbox2") checkbox 2</code></pre>
+                </div>
+                
+                <!-- Tab-pane 3-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane3">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy3"></div>
+                  </div>
+                  
+                  <pre><code class="language-css" id="item-to-copy3">.form-checkbox-wrap {
+ position: relative;
+}
+.form-checkbox {
+ position: absolute;
+ width: 0;
+ height: 0;
+ z-index: -1;
+ opacity: 0;
+}
+.form-checkbox:not(:disabled):not(:checked) + .form-label-checkbox:not(:active):hover::before {
+ border-color: #509ef7;
+}
+.form-checkbox:not(:disabled):checked + .form-label-checkbox:not(:active):hover::before {
+ border-color: #509ef7;
+}
+.form-checkbox:not(:disabled):checked + .form-label-checkbox:not(:active):hover::after {
+ border-color: #509ef7;
+}
+.form-checkbox:not(:disabled) + .form-label-checkbox:active::before {
+ box-shadow: inset 0 0 0 0.6em #0b76ef;
+}
+.form-checkbox:focus + .form-label-checkbox::before {
+ box-shadow: inset 0 0 0 0 #0b76ef, 0 0 0 0.08em rgba(0, 123, 255, 0.35);
+}
+.form-checkbox:checked + .form-label-checkbox::before {
+ border-color: #0b76ef;
+}
+.form-checkbox:checked + .form-label-checkbox::after {
+ display: inline-block;
+}
+.form-checkbox:not(:disabled) + .form-label-checkbox {
+ cursor: pointer;
+}
+.form-checkbox:disabled + .form-label-checkbox {
+ color: #adb5bd;
+}
+.form-label-checkbox {
+ display: inline-flex;
+ padding-left: 1.7em;
+ align-items: center;
+ user-select: none;
+}
+.form-label-checkbox::before, .form-label-checkbox::after {
+ position: absolute;
+ transition: all 0.2s;
+}
+.form-label-checkbox::before {
+ content: "";
+ display: inline-block;
+ flex: none;
+ width: 1.2em;
+ height: 1.2em;
+ left: 0;
+ z-index: 1;
+ border: solid 1px #adb5bd;
+ background-color: rgba(196, 196, 196, 0.25);
+ overflow: hidden;
+}
+.form-label-checkbox::after {
+ content: "";
+ display: none;
+ width: 0.48em;
+ height: 0.72em;
+ left: 0.36em;
+ z-index: 2;
+ border-right: solid 2px #0077ff;
+ border-bottom: solid 2px #0077ff;
+ transform: translateY(-0.15em) rotate(45deg) skew(10deg, 10deg);
+}</code></pre>
+                </div>
+                
+                <!-- Tab-pane 4-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane4">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy4"></div>
+                  </div>
+                  
+                  <pre><code class="language-sass" id="item-to-copy4">// VARIABLES
+// Checkbox colors
+$checkbox-border-color: rgb(173, 181, 189)
+$checkbox-checked-border-color: rgb(11, 118, 239)
+$checkbox-hover-border-color: lighten($checkbox-checked-border-color, 15%)
+$checkbox-active-border-color: $checkbox-checked-border-color
+$checkbox-focus-shadow-color: rgba(0, 123, 255, 0.35)
+$checkbox-bg: rgba(196, 196, 196, 0.25)
+// checkbox sizes
+$checkbox-offset-rigth: .5em
+$checkbox-width: 1.2em
+// checkbox transition
+$checkbox-transition: 0.2s
+// label
+$label-paddding-left: $checkbox-width + $checkbox-offset-rigth
+// arrow
+$arrow-width: $checkbox-width * .4
+$arrow-height: $checkbox-width * .6
+$arrow-left-offset: ($checkbox-width - $arrow-width) / 2
+$arrow-color: rgb(0, 119, 255)
+// End of VARIABLES- - - - - - - - - - - - - - - - - -
+
+
+
+
+.form
+ &-checkbox-wrap
+   position: relative
+ &-checkbox
+   position: absolute
+   width: 0
+   height: 0
+   z-index: -1
+   opacity: 0
+
+
+   // Checkbox states
+   // Hover Not Checked
+   &:not(:disabled):not(:checked) + .form-label-checkbox:not(:active):hover::before 
+     border-color: $checkbox-hover-border-color
+   // Hover Checked
+   &:not(:disabled):checked + .form-label-checkbox:not(:active):hover::before 
+     border-color: $checkbox-hover-border-color
+   &:not(:disabled):checked + .form-label-checkbox:not(:active):hover::after 
+     border-color: $checkbox-hover-border-color
+
+   // Active
+   &:not(:disabled) + .form-label-checkbox:active::before 
+     box-shadow: inset 0 0 0 $checkbox-width / 2 $checkbox-active-border-color
+   // Active Checked - состояние (как у radio) не требуется, так как при нажатии на активный checkbox состояние меняется на :not-checked и галочка пропадает. У радио кнопок же при нажатии на активную кнопуку состояние :checked не пропадает, для них целесообразно стилизовать состояние :active:checked.
+
+   // Focus
+   &:focus + .form-label-checkbox::before 
+     box-shadow: inset 0 0 0 0 $checkbox-active-border-color, 0 0 0 0.08em $checkbox-focus-shadow-color
+
+   // Checked
+   &:checked + .form-label-checkbox::before 
+     border-color: $checkbox-checked-border-color
+   &:checked + .form-label-checkbox::after
+     display: inline-block
+
+   // Not disabled
+   &:not(:disabled) + .form-label-checkbox 
+     cursor: pointer
+
+   // Disabled
+   &:disabled + .form-label-checkbox 
+     color: $checkbox-border-color
+
+
+ &-label-checkbox
+   display: inline-flex
+   padding-left: $label-paddding-left
+   align-items: center
+   user-select: none
+
+   &::before,
+   &::after
+     position: absolute
+     transition: all $checkbox-transition
+
+   &::before
+     content: ''
+     display: inline-block
+     flex: none
+     width: $checkbox-width
+     height: $checkbox-width
+     left: 0
+     z-index: 1
+     border: solid 1px $checkbox-border-color
+     background-color: $checkbox-bg
+     overflow: hidden
+
+   &::after
+     content: ''
+     display: none
+     width: $arrow-width
+     height: $arrow-height
+     left: $arrow-left-offset
+     z-index: 2
+     border-right: solid 2px $arrow-color
+     border-bottom: solid 2px $arrow-color
+     transform: translateY(-.15em) rotate(45deg) skew(10deg, 10deg) </code></pre>
+                </div>
+                
+                <!-- Tab-pane 5-->
+                <!-- -------------------------------->
+                <div class="tab__pane" id="tab-pane5">
+                  <div class="code-copy-btn-wrap">
+                    <div class="code-copy-btn" title="Click to copy" data-target="item-to-copy5"></div>
+                  </div>
+                  
+                  <pre><code class="language-js" id="item-to-copy5">/* 
+This component does not contain javascript.
+*/</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- END OF CODE-COPY-->
+            
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="../../cmp-templates/ready-to-copy/base/prism/prism.js"></script>
+  <script src="../../cmp-templates/ready-to-copy/base/public/js/code-copy.dev.js"></script>
+  <script src="js/checkbox.dev.js"></script>
+</html>
