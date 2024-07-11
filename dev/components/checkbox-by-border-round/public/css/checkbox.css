@@ -1,0 +1,79 @@
+.form-checkbox-wrap {
+  position: relative;
+}
+.form-checkbox {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  opacity: 0;
+}
+.form-checkbox:not(:disabled):not(:checked) + .form-label-checkbox:not(:active):hover::before {
+  opacity: 0.8;
+}
+.form-checkbox:not(:disabled):checked + .form-label-checkbox:not(:active):hover::before {
+  opacity: 0.8;
+}
+.form-checkbox:not(:disabled):checked + .form-label-checkbox:not(:active):hover::after {
+  border-color: #ffffff;
+}
+.form-checkbox:not(:disabled) + .form-label-checkbox:active::before {
+  box-shadow: inset 0 0 0 0.55575em #f2b705, 0 0 0 1px #f2b705;
+}
+.form-checkbox:not(:disabled) + .form-label-checkbox:active::after {
+  transform: translateY(-0.1235em) rotate(45deg) skew(10deg, 10deg) scale(0);
+}
+.form-checkbox:focus + .form-label-checkbox::before {
+  box-shadow: 0 0 0 1px #f2b705, 0 0 0 3px #fbcf48;
+  box-shadow: inset 0 0 0 0 #f2b705, 0 0 0 1px #f2b705, 0 0 0 3px #fbcf48;
+}
+.form-checkbox:checked + .form-label-checkbox::before {
+  box-shadow: inset 0 0 0 0.55575em #f2b705, 0 0 0 1px #f2b705, 0 0 0 3px #fbcf48;
+}
+.form-checkbox:checked:not(:focus) + .form-label-checkbox::before {
+  box-shadow: inset 0 0 0 0.55575em #f2b705, 0 0 0 1px #f2b705;
+}
+.form-checkbox:checked:not(:focus) + .form-label-checkbox::after {
+  display: inline-block;
+}
+.form-checkbox:not(:disabled) + .form-label-checkbox {
+  cursor: pointer;
+}
+.form-checkbox:disabled + .form-label-checkbox::before {
+  box-shadow: inset 0 0 0 0 #adadad, 0 0 0 1px #adadad, 0 0 0 0 #adadad;
+}
+.form-label-checkbox {
+  display: inline-flex;
+  padding-left: 1.9115em;
+  align-items: center;
+  user-select: none;
+}
+.form-label-checkbox::before, .form-label-checkbox::after {
+  position: absolute;
+  transition: all 0.2s;
+}
+.form-label-checkbox::before {
+  content: "";
+  display: inline-block;
+  flex: none;
+  width: 1.1115em;
+  height: 1.1115em;
+  left: 0;
+  z-index: 1;
+  box-shadow: inset 0 0 0 0 #f2b705, 0 0 0 1px #f2b705, 0 0 0 0 #f2b705;
+  border: none;
+  background-color: #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.form-label-checkbox::after {
+  content: "";
+  display: inline-block;
+  width: 0.4446em;
+  height: 0.6669em;
+  left: 0.33345em;
+  z-index: 2;
+  border-right: solid 2px #ffffff;
+  border-bottom: solid 2px #ffffff;
+  transform: translateY(-0.1235em) rotate(45deg) skew(10deg, 10deg) scale(1);
+}

@@ -1,0 +1,23 @@
+{
+  "name": "SABTRANS",
+  "short_name": "SABTRANS",
+
+  "icons": [
+    {
+      "src": "img/favicons/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "img/favicons/touch-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#616be8",
+  "background_color": "#f9f9ff",
+  "scope": "./",
+  "start_url": "index.html"
+}

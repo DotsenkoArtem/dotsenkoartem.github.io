@@ -1,0 +1,39 @@
+//- Common variables
+-
+  let author = 'Artem Dots'
+  let themeColor = '#616be8'
+
+  // Если требуется заглушка для Internet Explorer
+  let ieBung = false
+
+  //- Массив наименований шрифтов для перебора в head.pug и предзагрузки
+  let fontsPreload = [
+    'Inter-Regular.woff2',
+    ]
+
+  //- ! URL определяется автоматом в миксине "меню" : pages-key+.html
+  let pages = {
+    index: {
+      name:   'главная',
+      title:  'SABTRANS',
+      descr:  'SABTRANS автоматизирует бизнес-процессы, наведет порядок в финансах, поможет увеличить продажи и покажет реальную прибыль',
+      author:  author,
+    }
+  };
+
+
+
+  const topMenu = {
+    index: {
+      name:   'Главная',
+    },
+    opportunities: {
+      name:   'Возможности',
+    },
+    rate: {
+      name:   'Тариф',
+    },
+    contacts: {
+      name:   'Контакты',
+    },
+  }

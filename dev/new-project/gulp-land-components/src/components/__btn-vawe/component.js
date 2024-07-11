@@ -1,8 +1,3 @@
-"use strict"
-
-h1.innerHTML = 'Давай, бро, кликни по странице!!!';
-
-
 window.addEventListener("load", addBtnVawe);
 
 function addBtnVawe() {

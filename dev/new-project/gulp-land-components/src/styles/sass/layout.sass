@@ -1,0 +1,98 @@
+@use '_partials/variables' as v
+@use '_partials/mixins' as m
+
+@import "comments.sass"
+@import "fonts.sass"
+@import "default.sass"
+@import "grid.sass"
+
+@import "../../components/preloader/component"
+// @import "../../components/buttons/component"
+// @import "../../components/menu-underline-js/component"
+// @import "../../components/btn-vawe/component"
+// @import "../../components/modal/component"
+// @import "../../components/form/component"
+
+.wrapper
+  margin: 0 auto
+  max-width: 1920px
+  overflow: hidden
+  position: relative
+
+// .section-title
+//   color: $heading-color
+//   h1
+//     margin-bottom: 1.5rem
+
+// .section-content
+//   p
+//     font-family: $ff-primary
+//     font-size: 1.6rem
+//     font-weight: 500
+//     line-height: 1.375
+
+// .section
+//   &_py-60
+//     padding-top: 6rem
+//     padding-bottom: 6rem
+//   &_py-80
+//     padding-top: 8rem
+//     padding-bottom: 8rem
+
+// .section-invert
+//   h2, p
+//     color: $text-light
+
+// Header 
+// -------------------------
+// .header
+
+// @media (hover: hover) and (pointer: fine)
+
+
+
+
+
+
+
+
+
+
+// Lazy 
+// -------------------------
+// .lazy 
+//    width: 100%
+//    height: 100%
+//    position: relative
+//       background-image: -o-linear-gradient(left, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 100%), -o-linear-gradient(#DDD 100%, transparent 0)
+//       background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, rgba(255, 255, 255, 0.5)), to(transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(100%, #DDD), color-stop(0, transparent))
+//       background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 100%), linear-gradient(#DDD 100%, transparent 0)
+//       background-repeat: no-repeat
+//       background-size: 26% 100%, cover
+//       background-position: 0 0, 0 0, 0px 85px, 0px 110px
+//       animation: animloader 1s linear infinite
+//    img
+//       visibility: hidden
+//    
+// 
+
+// @-webkit-keyframes animloader 
+//    0%  background-position:  0 0, 0 0, 0px 85px, 0px 110px
+//    100%  background-position:  150% 0, 0 0, 0px 85px, 0px 110px
+// 
+
+// @keyframes animloader 
+//    0%  background-position:  0 0, 0 0, 0px 85px, 0px 110px
+//    100%  background-position:  150% 0, 0 0, 0px 85px, 0px 110px
+// 
+
+// ANIMATIONS
+// ------------------------------  
+// !!! Добавляется любой пустой селектор перед @import, так как после использования @include в свойствах выше директива @import смещается на один tab и некорректно отрабатывает импорт
+// ! То есть, после @include следует запускать @import только после объявления нормаьного свойства
+.fake-class-to-add-import-rule
+  visibility: inherit
+
+@import "animations"
+@import "media-queries"
+@import "gte-ie10-style"

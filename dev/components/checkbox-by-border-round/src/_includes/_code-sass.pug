@@ -1,0 +1,126 @@
+|// COMPONENT`S STYLES
+|
+|// VARIABLES
+|// Checkbox colors
+|$white: #ffffff
+|$secondary-color: #f2b705
+|
+|$calc-checkbox-border-color: $secondary-color
+|$calc-checkbox-checked-border-color: $secondary-color
+|$calc-checkbox-hover-border-color: $secondary-color
+|$calc-checkbox-focus-border-color: lighten($secondary-color, 15%)
+|$calc-checkbox-active-border-color: $calc-checkbox-checked-border-color
+|$calc-checkbox-focus-shadow-color: $secondary-color
+|$calc-checkbox-disabled-border-color: #adadad
+|$calc-checkbox-bg: $white
+|// checkbox sizes
+|$calc-checkbox-offset-rigth: .8em
+|$calc-checkbox-width: 1.1115em
+|// checkbox transition
+|$calc-checkbox-transition: 0.2s
+|// label
+|$calc-label-paddding-left: $calc-checkbox-width + $calc-checkbox-offset-rigth
+|// arrow
+|$calc-arrow-width: $calc-checkbox-width * .4
+|$calc-arrow-height: $calc-checkbox-width * .6
+|$calc-arrow-left-offset: ($calc-checkbox-width - $calc-arrow-width) / 2
+|$calc-arrow-translate-y: $calc-checkbox-width / (-9)
+|$calc-arrow-color: $calc-checkbox-bg
+|// - - - - - - - - - - - - - - - - - -
+|
+|
+|
+|
+|.form
+|  &-checkbox-wrap
+|    position: relative
+|  &-checkbox
+|    position: absolute
+|    width: 0
+|    height: 0
+|    z-index: -1
+|    opacity: 0
+|
+|
+|    // Checkbox states
+|    // Hover Not Checked
+|    &:not(:disabled):not(:checked) + .form-label-checkbox:not(:active):hover::before 
+|      opacity: 0.8
+|    // Hover Checked
+|    &:not(:disabled):checked + .form-label-checkbox:not(:active):hover::before 
+|      opacity: 0.8
+|    &:not(:disabled):checked + .form-label-checkbox:not(:active):hover::after 
+|      border-color: $calc-checkbox-bg
+|
+|
+|    // Active
+|    &:not(:disabled) + .form-label-checkbox:active::before
+|      box-shadow: inset 0 0 0 $calc-checkbox-width / 2 $calc-checkbox-active-border-color, 0 0 0 1px $calc-checkbox-focus-shadow-color
+|
+|    &:not(:disabled) + .form-label-checkbox:active::after
+|      transform: translateY($calc-arrow-translate-y) rotate(45deg) skew(10deg, 10deg) scale(0)
+|    // Active Checked - состояние (как у radio) не требуется, так как при нажатии на активный checkbox состояние меняется на :not-checked и галочка пропадает. У радио кнопок же при нажатии на активную кнопуку состояние :checked не пропадает, для них целесообразно стилизовать состояние :active:checked.
+|
+|    // Focus
+|    &:focus + .form-label-checkbox::before 
+|      box-shadow: 0 0 0 1px $calc-checkbox-border-color, 0 0 0 3px $calc-checkbox-focus-border-color
+|      box-shadow: inset 0 0 0 0 $calc-checkbox-border-color, 0 0 0 1px $calc-checkbox-focus-shadow-color, 0 0 0 3px $calc-checkbox-focus-border-color
+|
+|    // Checked
+|    &:checked + .form-label-checkbox::before 
+|      box-shadow: inset 0 0 0 $calc-checkbox-width / 2 $calc-checkbox-active-border-color, 0 0 0 1px $calc-checkbox-focus-shadow-color, 0 0 0 3px $calc-checkbox-focus-border-color
+|
+|
+|    &:checked:not(:focus) + .form-label-checkbox::before 
+|      box-shadow: inset 0 0 0 $calc-checkbox-width / 2 $calc-checkbox-active-border-color, 0 0 0 1px $calc-checkbox-focus-shadow-color
+|    &:checked:not(:focus) + .form-label-checkbox::after
+|      display: inline-block
+|
+|
+|    // Not disabled
+|    &:not(:disabled) + .form-label-checkbox 
+|      cursor: pointer
+|
+|    // Disabled
+|    &:disabled + .form-label-checkbox::before 
+|      box-shadow: inset 0 0 0 0 $calc-checkbox-disabled-border-color, 0 0 0 1px $calc-checkbox-disabled-border-color, 0 0 0 0 $calc-checkbox-disabled-border-color
+|
+|      
+|  &-label-checkbox
+|    display: inline-flex
+|    padding-left: $calc-label-paddding-left
+|    align-items: center
+|    user-select: none
+|    
+|
+|    &::before,
+|    &::after
+|      position: absolute
+|      transition: all $calc-checkbox-transition
+|
+|    &::before
+|      content: ''
+|      display: inline-block
+|      flex: none
+|      width: $calc-checkbox-width
+|      height: $calc-checkbox-width
+|      left: 0
+|      z-index: 1
+|      box-shadow: inset 0 0 0 0 $calc-checkbox-border-color, 0 0 0 1px $calc-checkbox-focus-shadow-color, 0 0 0 0 $calc-checkbox-border-color
+|      border: none
+|      background-color: $calc-checkbox-bg
+|      border-radius: 50%
+|      overflow: hidden
+|
+|    &::after
+|      content: ''
+|      display: inline-block
+|      width: $calc-arrow-width
+|      height: $calc-arrow-height
+|      left: $calc-arrow-left-offset
+|      z-index: 2
+|      border-right: solid 2px $calc-arrow-color
+|      border-bottom: solid 2px $calc-arrow-color
+|      transform: translateY($calc-arrow-translate-y) rotate(45deg) skew(10deg, 10deg) scale(1)
+|
+|
