@@ -2281,6 +2281,7 @@
 
 .how-it-work-slider__nav{
   margin-top: 30px;
+  padding: unset;
   display: flex;
   justify-content: center;
 }
