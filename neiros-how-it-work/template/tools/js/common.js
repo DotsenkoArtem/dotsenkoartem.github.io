@@ -210,20 +210,34 @@ $(function () {
 });
 
 
-$(".js-tab-trigger").on("click", function () {
-	$(".js-tab-trigger").removeClass("active");
+$(".js-where-can-use .js-tab-trigger").on("click", function () {
+	$(".js-where-can-use .js-tab-trigger").removeClass("active");
 	$(this).addClass("active");
 	var e = $(this).attr("data-face"), o = e.split(".");
-	$(".js-tab-content").addClass("no-active");
-	for (var i = 0; i < o.length; i++) $('.js-tab-content[data-face-block="' + o[i] + '"]').removeClass("no-active");
+	$(".js-where-can-use .js-tab-content").addClass("no-active");
+	for (var i = 0; i < o.length; i++) $('.js-where-can-use  .js-tab-content[data-face-block="' + o[i] + '"]').removeClass("no-active");
 });
 
-$("[data-face-block]").on("click", function () {
+
+// ===========================================
+$(".js-who-needs .js-tab-trigger").on("click", function () {
+	$(".js-who-needs .js-tab-trigger").removeClass("active");
+	$(this).addClass("active");
+	var e = $(this).attr("data-face"), o = e.split(".");
+	$(".js-who-needs .js-tab-content").addClass("no-active");
+	for (var i = 0; i < o.length; i++) $('.js-who-needs .js-tab-content[data-face-block="' + o[i] + '"]').removeClass("no-active");
+});
+// ===========================================
+
+
+
+
+$(".js-who-needs [data-face-block]").on("click", function () {
 	var e = $(this).attr("data-face-block");
-	$(window).width() > 991 && ($(".js-tab-content").addClass("no-active"),
-		$(".js-tab-trigger").removeClass("active"),
+	$(window).width() > 991 && ($(".js-who-needs .js-tab-content").addClass("no-active"),
+		$(".js-who-needs .js-tab-trigger").removeClass("active"),
 		$(this).removeClass("no-active"),
-		$(document).find(".js-tab-trigger").each(function () {
+		$(document).find(".js-who-needs .js-tab-trigger").each(function () {
 			for (var o = $(this).attr("data-face"), i = o.split("."), l = 0; l < i.length; l++) i[l] == e && $(this).addClass("active")
 		}))
 });
@@ -313,12 +327,10 @@ $('.how-it-work-slider').slick({
 	nextArrow: '<button type="button" class="how-it-work-slider__btn how-it-work-slider__btn_next"></button>',
 	responsive: [
     {
-      breakpoint: 768,
+      breakpoint: 992,
       settings: {
         adaptiveHeight: true
       }
     }
 	],
 });
-
-// adaptiveHeight: true
