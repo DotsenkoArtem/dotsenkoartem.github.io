@@ -9,33 +9,35 @@ window.addEventListener("load", function () {
 
   handleForms();
 
+  // Contact Director Form
   document.forms["contact-director-form"].addEventListener(
     "submit",
     function (e) {
       e.preventDefault();
       if (this.cdFormAgree.checked) {
         changeScreen(this, lowRateAlert);
-      } else alert("Необходимо принять условия пользовательского соглашения.");
+      }
     }
   );
 
+  // Share Review Form
   document.forms["share-review-form"].addEventListener("submit", function (e) {
     e.preventDefault();
     if (this.shrFormAgree.checked) {
       changeScreen(this, selectLogin);
-    } else alert("Необходимо принять условия пользовательского соглашения.");
+    }
   });
 
-  document.forms["login-email-form"]
-    .querySelector(".login-email-form-submit")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      changeScreen(this, enterCode);
-      // alert("Таймер")
-      setTimer(0, 10);
-    });
+  acceptTerms();
 
-  // Code Form
+  // Login Email Form
+  document.forms["login-email-form"].addEventListener("submit", function (e) {
+    e.preventDefault();
+    changeScreen(this, enterCode);
+    setTimer(0, 10);
+  });
+
+  // Enter Code Form
   const codeForm = document.forms["enter-code-form"];
   const codeInputs = codeForm.querySelectorAll(".enter-code-form-input");
   codeInputs.forEach((input) => {
@@ -80,6 +82,13 @@ window.addEventListener("load", function () {
       }
     });
   });
+
+  document
+    .querySelector(".js-code-timeout-btn")
+    .addEventListener("click", function () {
+      this.setAttribute("disabled", "");
+      setTimer(0, 10);
+    });
 });
 
 function checkStars() {
@@ -135,7 +144,6 @@ function checkStars() {
 
 function changeScreen(currentScreen, targetSreen) {
   currentScreen.closest(".estimation-screen").classList.add("screen-hidden");
-  console.log("targetSreen: ", targetSreen);
   targetSreen.classList.remove("screen-hidden");
 }
 
@@ -151,10 +159,36 @@ function handleUploads(form) {
     inputTypeFile.addEventListener("change", function () {
       if (this.files.length >= 1) {
         inputTypeFile.closest(".label-type-file").innerText = `Фото добавлено`;
-        console.log("this.files: ", this.files);
       }
     });
   }
+}
+
+function acceptTerms() {
+  Array.from(document.forms).forEach((form) => {
+    let checkboxAccept = form.querySelector(".js-accept-terms");
+    if (checkboxAccept) {
+      form
+        .querySelector(".js-accept-terms")
+        .addEventListener("change", function () {
+          let formNotice =
+            this.closest("form").querySelector(".form-notice-agree");
+          if (formNotice) formNotice.remove();
+        });
+
+      form.addEventListener("submit", function () {
+        if (!form.querySelector(".form-notice-agree")) {
+          let noticeAgree = document.createElement("div");
+          noticeAgree.className = `form-notice-agree`;
+          noticeAgree.innerText = `Необходимо принять условия пользовательского соглашения!`;
+          form
+            .querySelector(".js-accept-terms")
+            .closest("label")
+            .after(noticeAgree);
+        }
+      });
+    }
+  });
 }
 
 // TIMER
@@ -235,15 +269,8 @@ function setTimer(startMinutes, startSeconds) {
 
   // updateTimer();
 }
-document
-  .querySelector(".js-code-timeout-btn")
-  .addEventListener("click", function () {
-    this.setAttribute("disabled", "");
-    // alert("Таймер по кнопке")
-    setTimer(0, 10);
-  });
 
-window.addEventListener("load", () => {
-  // document.querySelectorAll('.estimation-screen').forEach(screen => screen.style.display = `none`)
-  // enterCode.style.display = `block`
-});
+// window.addEventListener("load", () => {
+// document.querySelectorAll('.estimation-screen').forEach(screen => screen.style.display = `none`)
+// enterCode.style.display = `block`
+// });

@@ -250,6 +250,7 @@ select:hover {
   font-size: 10px;
 }
 
+
 label {
   width: 100%;
   display: block;
@@ -496,6 +497,14 @@ form button {
   height: 0;
   opacity: 0;
   visibility: hidden;
+}
+
+.form-notice-agree {
+  margin-bottom: 15px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgb(218, 70, 70);
 }
 
 .estimation-wrapper {
