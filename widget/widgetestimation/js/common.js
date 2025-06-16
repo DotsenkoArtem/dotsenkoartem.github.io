@@ -23,9 +23,9 @@ window.addEventListener("load", function () {
   // Share Review Form
   document.forms["share-review-form"].addEventListener("submit", function (e) {
     e.preventDefault();
-    if (this.shrFormAgree.checked) {
+    // if (this.shrFormAgree.checked) {
       changeScreen(this, selectLogin);
-    }
+    // }
   });
 
   acceptTerms();
@@ -33,8 +33,11 @@ window.addEventListener("load", function () {
   // Login Email Form
   document.forms["login-email-form"].addEventListener("submit", function (e) {
     e.preventDefault();
-    changeScreen(this, enterCode);
-    setTimer(0, 10);
+    if (this.lgeFormAgree.checked) {
+      changeScreen(this, enterCode);
+      setTimer(0, 10);
+    }
+    
   });
 
   // Enter Code Form
