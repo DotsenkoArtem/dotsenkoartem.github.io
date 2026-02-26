@@ -1,7 +1,10 @@
-/* VII. Media-queries
- --------------------------------------- */
+// Переменные и миксины
+@use 'partials/variables' as *
+@use 'partials/mixins'    as *
+  
 
 @media (max-width: 1699.98px)
+
 
 @media (max-width: 1499.98px)
 
@@ -60,7 +63,7 @@
     width: 100%
     max-width: 405px
     background: #F5F5F5
-    transition: $prim-transition
+    transition: var(--prim-transition)
     &.open
       transform: translateX(0%)
 
@@ -159,31 +162,31 @@
 @media(hover:hover) and (pointer:fine)
   .menu-mobile-trigger
     &:hover
-      background: $primary-color
+      background: var(--primary-color)
       .menu-mobile-trigger__item
-        background: $white
+        background: var(--white-color)
 
   .menu-item>a
     &:hover
-      color: $primary-color
+      color: var(--primary-color)
 
   .menu-item-has-children
     &:hover
       &>a
-        color: $primary-color
+        color: var(--primary-color)
       &::before,
       &::after
-        background: $primary-color
+        background: var(--primary-color)
       &::before
         transform: rotate(-45deg)
       &::after
         transform: rotate(45deg)
       &>.sub-menu
-        animation: fadeIn $prim-transition ease-out forwards
+        animation: fadeIn var(--prim-transition) ease-out forwards
 
   .sub-menu
     .menu-item:hover
-      background: $white
+      background: var(--white-color)
 
 /* MD */
 @media (max-width: 991.98px)
@@ -211,13 +214,13 @@
 
     &.open
       &::before
-        background-color: $primary-color
+        background-color: var(--primary-color)
         transform: rotate(-45deg)!important
       &::after
-        background-color: $primary-color
+        background-color: var(--primary-color)
         transform: rotate(45deg)!important
       &>a
-        color: $primary-color
+        color: var(--primary-color)
 
   .sub-menu.open
     max-height: none!important

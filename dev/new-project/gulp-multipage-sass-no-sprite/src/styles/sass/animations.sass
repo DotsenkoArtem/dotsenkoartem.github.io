@@ -1,3 +1,7 @@
+// Переменные и миксины
+@use 'partials/variables' as *
+@use 'partials/mixins'    as *
+
 //  ПРИ ИСПОЛЬЗОВАНИИ WOW.JS
 
 // Для добавлени кастомной анимации необходимо:
@@ -13,22 +17,20 @@
     animation-delay: 1100ms
   
 // Test Animations
-.d-anim
-  &-delay
-    &-1000
-      animation-delay: 1000ms
-    &-1100
-      animation-delay: 1100ms
-    &-1200
-      animation-delay: 1200ms
+// .d-anim
+//   &-delay
+//     &-1000
+//       animation-delay: 1000ms
+//     &-1100
+//       animation-delay: 1100ms
+//     &-1200
+//       animation-delay: 1200ms
 
 
-.slideUpIn
-  animation-name: slideUpIn
+// .slideUpIn
+//   animation-name: slideUpIn
 // -------------------------
 
-/* VI. Animations
- --------------------------------------- */
 
 @keyframes fadeIn
   from

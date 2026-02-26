@@ -1,18 +1,9 @@
-// =====================================================================
-// TOC:
+// Переменные и миксины
+@use 'partials/variables' as *
+@use 'partials/mixins'    as *
+  
 
-// II. Styles reset		default.sass
-// III. Default styles
-//    1. Basic
-//    2. Typography
-//    3. Links
-//    4. Images
-//    5. Buttons
-//    6. Forms
-// =====================================================================
-
-/* II. Styles reset
- --------------------------------------- */
+/* 2.1. Styles reset */
 
 *,
 *::before,
@@ -76,11 +67,8 @@ table
   border-collapse: collapse
   border-spacing: 0
 
-/*  III. Default styles
- --------------------------------------- */
+/* 2.2. Default styles */
 
-//  1. Basic
-// -------------------  
 
 h1, h2, h3, h4, h5, h6,
 p
@@ -95,7 +83,7 @@ p
   &_md,
   &_sm
     margin: 0 auto
-    padding: 0 $gutter
+    padding: 0 var(--gutter)
     max-width: 132rem
 
 .d
@@ -107,7 +95,7 @@ p
     display: none
 
 .row
-  margin: 0 (- $gutter)
+  margin: 0 calc((-1) * var(--gutter))
   display: flex
   flex-wrap: wrap
 
@@ -123,8 +111,7 @@ p
   overflow: hidden
   position: relative
 
-//  2. Typography
-// ------------------------- 
+/* 2.3. Typography */
 address
   font-style: normal
 
@@ -134,17 +121,18 @@ html
 
 body
   font:
-    family: $ff-primary
-    size: 18px
-  //   weight: 400
-  // line-height: 28px
-  // color: $text-primary-color
+    family: var(--ff-primary)
+    size: 1.8rem
+    weight: 400
+  line-height: 1.2
+  color: var(--text-primary-color)
 // 
-// h1, h2, h3, h4, h5, h6
-//   font-family: $ff-secondary
+h1, h2, h3, h4, h5, h6
+  font-family: var(--ff-secondary)
 
-// h1, h2
-//   font-size: 50px
+h1, h2
+  font-size: 80px
+  text-transform: uppercase
 //   line-height: 1.2
 
 // h1, h2, h3
@@ -168,60 +156,57 @@ body
 // Text settings
 .text
   &_lite
-    color: $white
+    color: var(--white-color)
   &-left
     text-align: left
   &-center
     text-align: center
   &_accent-prim
-    color: $text-accent-primary
+    color: var(--text-accent-primary)
 
-//  3. Links
-//  -------------------------
+/* 2.4. Links */
 
 a
   &, &:visited
     text-decoration: none
     outline: none
-    color: $link-color
-    transition: color $link-transition ease-in-out
+    color: var(--link-color)
+    transition: color var(--link-transition) ease-in-out
 
-  // &.text-link
-  //   text-decoration: underline
-  //   &:hover,
-  //   &:active
-  //     color: $primary-color
-  //     text-decoration: underline
+  &.text-link
+    text-decoration: underline
+    &:hover,
+    &:active
+      color: var(--primary-color)
+      text-decoration: underline
 
-  //   &_lite
-  //     color: $white
-  //     text-decoration: underline
-  //     &:hover,
-  //     &:visited
-  //       color: $white
-  //     &:hover
-  //       color: $white
-  //       text-decoration: none
+    &_lite
+      color: var(--white-color)
+      text-decoration: underline
+      &:hover,
+      &:visited
+        color: var(--white-color)
+      &:hover
+        color: var(--white-color)
+        text-decoration: none
 
-  // &.text-contact-link
-  //   text-decoration: none
-  //   outline: none
-  //   color: $link-color
-  //   transition: color $link-transition ease-in-out
-  //   &:hover,
-  //   &:active
-  //     color: $primary-color
+  &.text-contact-link
+    text-decoration: none
+    outline: none
+    color: var(--link-color)
+    transition: color var(--link-transition) ease-in-out
+    &:hover,
+    &:active
+      color: var(--primary-color)
 
-//   4. Images
-//  -------------------------
+/* 2.5. Images */
 
 img
   display: block
   max-width: 100%
   height: auto
 
-//   5. Buttons
-//  -------------------------
+/* 2.6. Buttons */
 
 button,
 input[type="submit"],
@@ -234,43 +219,42 @@ input[type="button"],
   user-select: none
 
 .btn
-  padding: $btn-padding-y $btn-padding-x
+  padding: var(--btn-padding-y) var(--btn-padding-x)
   display: inline-block
   font:
-    family: $ff-secondary
+    family: var(--ff-secondary)
     size: 16px
     weight: 500
   text-transform: uppercase
-  border-radius: $btn-radius
+  border-radius: var(--btn-radius)
   background: none
   overflow: hidden
-  transition: $prim-transition
+  transition: var(--prim-transition)
 
   &_primary
-    color: $btn-color
-    background-color: $btn-prim-bg
+    color: var(--btn-color)
+    background-color: var(--btn-prim-bg)
     &:hover
-      background-color: $btn-second-bg
+      background-color: var(--btn-second-bg)
 
-  // &_secondary
+  &_secondary
 
-    // &_success
-    // &_warning
+    &_success
+    &_warning
 
-    // &_outline
+    &_outline
 
-    // &_large
-    // &_medium
-    // &_small
-    // &_type-file
+    &_large
+    &_medium
+    &_small
+    &_type-file
 
-// button,
-// input
-// 	&[type="submit"]
-// 		display: inline-block
+button,
+input
+  &[type="submit"]
+    display: inline-block
 
-//  6. Forms 
-// -------------------------
+/* 2.7. Forms  */
 
 input:not(input[type="checkbox"]),
 select
@@ -280,11 +264,11 @@ select
   outline: none
 
 input::-ms-input-placeholder
-  // color: $input-placeholder-color
+  color: var(--input-placeholder-color)
 input::-webkit-input-placeholder
-  // color: $input-placeholder-color
+  color: var(--input-placeholder-color)
 input::-moz-placeholder
-  // color: $input-placeholder-color
+  color: var(--input-placeholder-color)
 
 input::-ms-clear
   display: none
@@ -298,9 +282,7 @@ input[type=search]::-webkit-search-results-decoration
 select::-ms-expand
   display: none
 
-//  6. Other common settings 
-// -------------------------
-
+/* 2.8. Other common settings  */
 // Backgrounds
 .has-bg
   position: relative

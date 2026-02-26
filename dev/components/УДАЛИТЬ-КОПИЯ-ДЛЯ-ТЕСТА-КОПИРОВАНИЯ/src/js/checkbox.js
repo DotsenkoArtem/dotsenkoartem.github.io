@@ -1,0 +1,3 @@
+/* 
+This component does not contain javascript.
+*/
