@@ -158,7 +158,7 @@ gulp.task("js", function () {
 // STYLES
 gulp.task("styles", function () {
   return combiner(
-    gulp.src("src/styles/sass/layout.sass"),
+    gulp.src("src/styles/sass/main.sass"),
     gulpIf(isDevelopment, sourcemaps.init()),
     sass(),
     autoprefixer({
