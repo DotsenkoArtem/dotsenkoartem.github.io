@@ -10,8 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "browser-sync": "^2.27.7",
-    "del": "^6.0.0",
+    "browser-sync": "^3.0.4",
+    "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -24,13 +24,18 @@
     "gulp-svg-sprite": "^2.0.1",
     "gulp-uglify": "^3.0.2",
     "merge-stream": "^2.0.0",
+    "sharp": "^0.34.5",
     "stream-combiner2": "^1.1.1",
+    "svgo": "^4.0.1",
     "through2": "^4.0.2",
-    "vinyl-buffer": "^1.0.1",
-    "sharp": "^0.33.0",
-    "svgo": "^3.3.2"
+    "vinyl-buffer": "^1.0.1"
   },
-  "browserslist": [">0.2%", "not dead", "not op_mini all", "last 15 version"],
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all",
+    "last 15 version"
+  ],
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.29.2",
