@@ -8,3 +8,5 @@ public
 tmp
 # 
 package-lock.json
+# Переменные окружения — не коммитить
+.env

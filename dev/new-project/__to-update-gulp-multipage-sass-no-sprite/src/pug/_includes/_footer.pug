@@ -70,7 +70,7 @@ script.
   function addScripts() {
 
     let aipYmapScript = document.createElement('script')
-    aipYmapScript.src = 'https://api-maps.yandex.ru/v3/?apikey=a13b032f-1317-4300-b260-6e7d33049787&lang=ru_RU'
+    aipYmapScript.src = 'https://api-maps.yandex.ru/v3/?apikey=#{ymapsApiKey}&lang=ru_RU'
     document.body.append(aipYmapScript)
 
     let mapCommonScript = document.createElement('script')

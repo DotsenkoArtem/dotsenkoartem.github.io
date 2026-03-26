@@ -41,7 +41,7 @@ mixin menu2LevelForWP(menu)
             ul.sub-menu
               each subMenuItem, subkey in menuItem.isMenuItemHasChildren
                 li.menu-item 
-                  a(href= `${subMenuItem.fileStem}.html`)= subMenuItem.name
+                  a(href= `${subMenuItem.slug}.html`)= subMenuItem.name
                   //- a(href= `#`)= subMenuItem.name
             
         else

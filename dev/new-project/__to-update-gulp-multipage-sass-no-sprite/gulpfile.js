@@ -1,302 +1,304 @@
-const gulp = require("gulp");
-const debug = require("gulp-debug");
-const del = require("del");
-const sharp = require("sharp");
-const { optimize } = require("svgo");
-const ttf2woff = require("gulp-ttf2woff");
-const ttf2woff2 = require("gulp-ttf2woff2");
+'use strict';
 
-const uglify = require("gulp-uglify");
-const through2 = require("through2").obj;
-const pug = require("gulp-pug");
-const sass = require("gulp-sass")(require("sass"));
-const autoprefixer = require("gulp-autoprefixer");
-const cleanCSS = require("gulp-clean-css");
-const babel = require("gulp-babel");
-const gulpIf = require("gulp-if");
-const sourcemaps = require("gulp-sourcemaps");
-const notify = require("gulp-notify");
-const combiner = require("stream-combiner2").obj;
+require('dotenv').config();
 
-// ======== TEST ========
-var buffer = require("vinyl-buffer");
-var csso = require("gulp-csso");
-var merge = require("merge-stream");
-// ======== TEST ========
-// const { src } = require('gulp');
+const gulp        = require('gulp');
+const debug       = require('gulp-debug');
+const del         = require('del');
+const sharp       = require('sharp');
+const { optimize }= require('svgo');
+const ttf2woff    = require('gulp-ttf2woff');
+const ttf2woff2   = require('gulp-ttf2woff2');
+const terser      = require('gulp-terser');
+const through2    = require('through2').obj;
+const pug         = require('gulp-pug');
+const sass        = require('gulp-sass')(require('sass'));
+const autoprefixer= require('gulp-autoprefixer');
+const cleanCSS    = require('gulp-clean-css');
+const babel       = require('gulp-babel');
+const gulpIf      = require('gulp-if');
+const sourcemaps  = require('gulp-sourcemaps');
+const notify      = require('gulp-notify');
+const combiner    = require('stream-combiner2').obj;
+const merge       = require('merge-stream');
+const browserSync = require('browser-sync').create();
 
-const browserSync = require("browser-sync").create();
+const siteData = require('./src/data/pages.js');
+
 const isDevelopment =
-  !process.env.NODE_ENV || process.env.NODE_ENV == "development";
+  !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
-// КОНВЕРТИРОВАНИЕ TTF --> WOFF, СОХРАНЕНИЕ В PUBLIC/
-gulp.task("ttf2woff", function () {
+const pugLocals = {
+  ...siteData,
+  ymapsApiKey: process.env.YANDEX_MAPS_API_KEY || '',
+};
+
+const paths = {
+  src: {
+    pugPages:     'src/pug/pages/*.*',
+    pugChildTmpl: 'src/pug/pages/child-page.pug',
+    pugWatch:     'src/pug/**/*.*',
+    styles:       'src/styles/sass/main.sass',
+    stylesWatch:  'src/styles/**/*.sass',
+    js:           'src/js/**/*.js',
+    img:          'src/assets/img/**/*.{jpg,jpeg,png}',
+    imgCopy:      'src/assets/img/**/*.{gif,ico,webp}',
+    pngForWebp:  ['src/assets/img/**/*.png', '!src/assets/img/favicons/**/*.*'],
+    svg:          'src/assets/img/**/*.svg',
+    fonts:        'src/assets/**/*.ttf',
+    libs:         'src/assets/libs/**/*.*',
+    php:          'src/php/**/*.*',
+  },
+  dest: {
+    root: 'public',
+    css:  'public/css',
+    js:   'public/js',
+    img:  'public/img',
+    libs: 'public/libs',
+    php:  'public/php',
+  },
+};
+
+// ── FONTS ──────────────────────────────────────────────────────────────────
+
+gulp.task('ttf2woff', function () {
   return gulp
-    .src("src/assets/**/*.ttf", { since: gulp.lastRun("ttf2woff") })
+    .src(paths.src.fonts, { since: gulp.lastRun('ttf2woff') })
     .pipe(ttf2woff())
-    .pipe(gulp.dest("public"));
+    .pipe(gulp.dest(paths.dest.root));
 });
 
-// КОНВЕРТИРОВАНИЕ TTF --> WOFF2, СОХРАНЕНИЕ В PUBLIC/
-gulp.task("ttf2woff2", function () {
+gulp.task('ttf2woff2', function () {
   return gulp
-    .src("src/assets/**/*.ttf", { since: gulp.lastRun("ttf2woff2") })
-    .pipe(
-      ttf2woff2({
-        clone: true,
-      })
-    )
-    .pipe(gulp.dest("public"));
+    .src(paths.src.fonts, { since: gulp.lastRun('ttf2woff2') })
+    .pipe(ttf2woff2({ clone: true }))
+    .pipe(gulp.dest(paths.dest.root));
 });
 
-// ПРОСТО КОПИРОВАНИЕ ШРИФТОВ .TTF В PUBLIC/
-gulp.task("ttf", function () {
+gulp.task('ttf', function () {
   return gulp
-    .src("src/assets/**/*.ttf", { since: gulp.lastRun("ttf") })
-    .pipe(gulp.dest("public"));
+    .src(paths.src.fonts, { since: gulp.lastRun('ttf') })
+    .pipe(gulp.dest(paths.dest.root));
 });
 
-// КОНВЕРТИРОВАНИЕ ШРИФТОВ, КОПИРОВАНИЕ В PUBLIC/
-gulp.task("fonts", gulp.parallel("ttf", "ttf2woff", "ttf2woff2"));
+gulp.task('fonts', gulp.parallel('ttf', 'ttf2woff', 'ttf2woff2'));
 
-// ПРОСТО КОПИРОВАНИЕ PHP
-gulp.task("php", function () {
+// ── STATIC COPY ────────────────────────────────────────────────────────────
+
+gulp.task('php', function () {
   return gulp
-    .src("src/php/**/*.*", { since: gulp.lastRun("php") })
-    .pipe(gulp.dest("public/php/"));
+    .src(paths.src.php, { since: gulp.lastRun('php') })
+    .pipe(gulp.dest(paths.dest.php));
 });
 
-// ПРОСТО КОПИРОВАНИЕ libs В КОРЕНЬ
-gulp.task("libs", function () {
+gulp.task('libs', function () {
   return gulp
-    .src("src/assets/libs/**/*.*", { since: gulp.lastRun("libs") })
-    .pipe(gulp.dest("public/libs/"));
+    .src(paths.src.libs, { since: gulp.lastRun('libs') })
+    .pipe(gulp.dest(paths.dest.libs));
 });
 
-// ======== END of TEST ========
+// ── IMAGES ─────────────────────────────────────────────────────────────────
 
-// КОНВЕРТИРОВАНИЕ PNG --> WEBP
-gulp.task("webp", function () {
+gulp.task('webp', function () {
   return gulp
-    .src([
-      "src/assets/img/**/*.png",
-      "!src/assets/img/favicons/**/*.*",
-    ])
-    .pipe(through2(function(file, enc, cb) {
-      if (!file.isBuffer()) {
-        return cb(null, file);
-      }
-      
+    .src(paths.src.pngForWebp)
+    .pipe(through2(function (file, enc, cb) {
+      if (!file.isBuffer()) return cb(null, file);
       const newFile = file.clone();
-      newFile.extname = ".webp";
-      
+      newFile.extname = '.webp';
       sharp(file.contents)
         .webp({ quality: 95 })
         .toBuffer()
-        .then(data => {
-          newFile.contents = data;
-          cb(null, newFile);
-        })
+        .then(data => { newFile.contents = data; cb(null, newFile); })
         .catch(cb);
     }))
-    .pipe(gulp.dest("public/img"));
+    .pipe(gulp.dest(paths.dest.img));
 });
 
-// КОПИРОВАНИЕ ИЗОБРАЖЕНИЙ (только дочерние файлы - без папок) и МИНИФИКАЦИЯ
-gulp.task("imgmin", function () {
+gulp.task('imgmin', function () {
   return gulp
-    .src(["src/assets/img/**/*.{jpg,jpeg,png}"], {
-      since: gulp.lastRun("imgmin"),
-    })
-    .pipe(through2(function(file, enc, cb) {
-      if (!file.isBuffer()) {
-        return cb(null, file);
-      }
-      
+    .src(paths.src.img, { since: gulp.lastRun('imgmin') })
+    .pipe(through2(function (file, enc, cb) {
+      if (!file.isBuffer()) return cb(null, file);
       let pipeline = sharp(file.contents);
-      
       if (file.extname.toLowerCase() === '.png') {
         pipeline = pipeline.png({ compressionLevel: 9 });
       } else {
         pipeline = pipeline.jpeg({ quality: 80, progressive: true });
       }
-      
       pipeline
         .toBuffer()
-        .then(data => {
-          file.contents = data;
-          cb(null, file);
-        })
+        .then(data => { file.contents = data; cb(null, file); })
         .catch(cb);
     }))
-    .pipe(gulp.dest("public/img"));
+    .pipe(gulp.dest(paths.dest.img));
 });
 
-// КОПИРОВАНИЕ ОСТАЛЬНЫХ ТИПОВ ИЗОБРАЖЕНИЙ БЕЗ ОБРАБОТКИ (кроме SVG - они обрабатываются отдельно)
-gulp.task("imgcopy", function () {
+gulp.task('imgcopy', function () {
   return gulp
-    .src(["src/assets/img/**/*.{gif,ico,webp}"], {
-      since: gulp.lastRun("imgcopy"),
-    })
-    .pipe(gulp.dest("public/img"));
+    .src(paths.src.imgCopy, { since: gulp.lastRun('imgcopy') })
+    .pipe(gulp.dest(paths.dest.img));
 });
 
-// ОПТИМИЗАЦИЯ SVG БЕЗ ПОТЕРИ КАЧЕСТВА
-gulp.task("svgmin", function () {
+gulp.task('svgmin', function () {
   return gulp
-    .src(["src/assets/img/**/*.svg"], {
-      since: gulp.lastRun("svgmin"),
-    })
-    .pipe(through2(async function(file, enc, cb) {
-      if (!file.isBuffer()) {
-        return cb(null, file);
-      }
-      
+    .src(paths.src.svg, { since: gulp.lastRun('svgmin') })
+    .pipe(through2(async function (file, enc, cb) {
+      if (!file.isBuffer()) return cb(null, file);
       try {
-        const result = await optimize(file.contents, {
-          path: file.path
-        });
+        const result = await optimize(file.contents, { path: file.path });
         file.contents = Buffer.from(result.data);
         cb(null, file);
       } catch (err) {
         cb(err);
       }
     }))
-    .pipe(gulp.dest("public/img"));
+    .pipe(gulp.dest(paths.dest.img));
 });
 
-// ИЗОБРАЖЕНИЯ: КОНВЕРТИРОВАНИЕ, МИНИИКАЦИЯ, КОПИРОВАНИЕ
-gulp.task("img", gulp.series("imgmin", "svgmin", "imgcopy", "webp"));
+gulp.task('img', gulp.series('imgmin', 'svgmin', 'imgcopy', 'webp'));
 
-// ОБЩАЯ ЗАДАЧА ДЛЯ СОДЕРЖИМОГО "ASSETS" (FONTS, IMG, ICONS)
-gulp.task("assets", gulp.parallel("fonts", "img"));
+gulp.task('assets', gulp.parallel('fonts', 'img'));
 
-// JS
-gulp.task("js", function () {
+// ── JAVASCRIPT ─────────────────────────────────────────────────────────────
+
+gulp.task('js', function () {
   return combiner(
-    gulp.src("src/js/**/*.js"),
-    // Переименование и дублирование файла
+    gulp.src(paths.src.js),
     through2(function (file, enc, callback) {
       let fileDev = file.clone();
-      fileDev.stem += ".dev";
+      fileDev.stem += '.dev';
 
       let fileDevMin = fileDev.clone();
-      fileDevMin.stem += ".min";
+      fileDevMin.stem += '.min';
 
       this.push(fileDev);
       this.push(fileDevMin);
-      
+
       callback(null, file);
     }),
-    gulpIf(function(file){
-      return file.stem.includes(".dev");
-    }, babel({
-      presets: ["@babel/preset-env"],
-    }),),
-    
-    gulpIf(function (file) {
-      return file.stem.includes(".min");
-    }, uglify()),
-    gulp.dest("public/js")
-  ).on(
-    "error",
-    notify.onError(function (err) {
-      return {
-        title: "Error: Java Script",
-        message: err.message,
-      };
-    })
-  );
+    gulpIf(
+      (file) => file.stem.includes('.dev'),
+      babel({ presets: ['@babel/preset-env'] })
+    ),
+    gulpIf(
+      (file) => file.stem.includes('.min'),
+      terser()
+    ),
+    gulp.dest(paths.dest.js)
+  ).on('error', notify.onError(function (err) {
+    return { title: 'Error: JavaScript', message: err.message };
+  }));
 });
 
-// STYLES
-gulp.task("styles", function () {
+// ── STYLES ─────────────────────────────────────────────────────────────────
+
+gulp.task('styles', function () {
   return combiner(
-    gulp.src("src/styles/sass/main.sass"),
+    gulp.src(paths.src.styles),
     gulpIf(isDevelopment, sourcemaps.init()),
     sass(),
-    autoprefixer({
-      cascade: false,
-    }),
-    // Переименование файла
+    autoprefixer({ cascade: false }),
     through2(function (file, enc, callback) {
-      file.stem = "style";
+      file.stem = 'style';
       let fileMin = file.clone();
-      fileMin.stem += ".min";
+      fileMin.stem += '.min';
       this.push(fileMin);
       callback(null, file);
     }),
-    gulpIf(isDevelopment, sourcemaps.write(".")),
-    gulpIf(function (file) {
-      return file.stem.includes(".min");
-    }, cleanCSS({ compatibility: "ie8" })),
-    gulp.dest("public/css")
-  ).on(
-    "error",
-    notify.onError(function (err) {
-      return {
-        title: "Error: Styles",
-        message: err.message,
-      };
-    })
-  );
+    gulpIf(isDevelopment, sourcemaps.write('.')),
+    gulpIf(
+      (file) => file.stem.includes('.min'),
+      cleanCSS({ compatibility: 'ie8' })
+    ),
+    gulp.dest(paths.dest.css)
+  ).on('error', notify.onError(function (err) {
+    return { title: 'Error: Styles', message: err.message };
+  }));
 });
 
-// PUG
-gulp.task("pug", function () {
+// ── PUG ────────────────────────────────────────────────────────────────────
+
+gulp.task('pug', function () {
   return combiner(
-    gulp.src("src/pug/pages/*.*"),
-    gulpIf(function (file) {
-      return file.extname == ".pug";
-    }, pug({ pretty: true })),
-    gulp.dest("public")
-  ).on(
-    "error",
-    notify.onError(function (err) {
-      return {
-        title: "Error: pug",
-        message: err.message,
-      };
-    })
-  );
+    gulp.src([paths.src.pugPages, `!${paths.src.pugChildTmpl}`]),
+    gulpIf(
+      (file) => file.extname === '.pug',
+      pug({ pretty: '\t', locals: pugLocals })
+    ),
+    gulp.dest(paths.dest.root)
+  ).on('error', notify.onError(function (err) {
+    return { title: 'Error: Pug', message: err.message };
+  }));
 });
 
-// НАБЛЮДЕНИЕ
-gulp.task("watch", function () {
-  gulp.watch("src/assets/fonts/", gulp.series("fonts"));
-  gulp.watch(
-    ["src/assets/img/**/*.*", "!src/assets/img/icons/**/*.svg"],
-    gulp.series("img")
-  );
-  gulp.watch("src/js/**/*.*", gulp.series("js"));
-  gulp.watch("src/styles/**/*.sass", gulp.series("styles"));
-  gulp.watch("src/pug/**/*.*", gulp.series("pug"));
-  gulp.watch("src/php/**/*.*", gulp.series("php"));
-  gulp.watch("src/assets/libs/**/*.*", gulp.series("libs"));
-});
+// Генерация дочерних страниц из одного шаблона на основе данных в pages.js
+// Для каждой дочерней страницы: компилирует fileStem.pug с page = childPage,
+// выходной файл называется slug.html
+gulp.task('pug-children', function () {
+  const streams = [];
 
-gulp.task("serve", () => {
-  browserSync.init({
-    server: "public",
+  Object.values(siteData.pages).forEach((parentPage) => {
+    if (!parentPage.isMenuItemHasChildren) return;
+
+    Object.values(parentPage.isMenuItemHasChildren).forEach((childPage) => {
+      const stream = gulp
+        .src(`src/pug/pages/${childPage.fileStem}.pug`)
+        .pipe(through2(function (file, enc, cb) {
+          file.stem = childPage.slug;
+          cb(null, file);
+        }))
+        .pipe(pug({
+          pretty: '\t',
+          locals: { ...pugLocals, page: childPage },
+        }))
+        .on('error', notify.onError(function (err) {
+          return { title: 'Error: Pug (children)', message: err.message };
+        }))
+        .pipe(gulp.dest(paths.dest.root));
+
+      streams.push(stream);
+    });
   });
-  browserSync.watch("public/**/*.*").on("change", browserSync.reload);
+
+  return streams.length ? merge(...streams) : Promise.resolve();
 });
 
-// УДАЛЕНИЕ ПАПКИ PUBLIC и TMP
-gulp.task("clean", function () {
-  return del(["public", "tmp"]);
+// ── WATCH ──────────────────────────────────────────────────────────────────
+
+gulp.task('watch', function () {
+  gulp.watch(paths.src.fonts, gulp.series('fonts'));
+  gulp.watch(
+    ['src/assets/img/**/*.*', '!src/assets/img/icons/**/*.svg'],
+    gulp.series('img')
+  );
+  gulp.watch(paths.src.js, gulp.series('js'));
+  gulp.watch(paths.src.stylesWatch, gulp.series('styles'));
+  gulp.watch(paths.src.pugWatch, gulp.series('pug', 'pug-children'));
+  gulp.watch(paths.src.php, gulp.series('php'));
+  gulp.watch(paths.src.libs, gulp.series('libs'));
 });
 
-// ПОСТРОЕНИЕ
+gulp.task('serve', function () {
+  browserSync.init({ server: paths.dest.root });
+  browserSync
+    .watch(`${paths.dest.root}/**/*.*`)
+    .on('change', browserSync.reload);
+});
+
+// ── BUILD ──────────────────────────────────────────────────────────────────
+
+gulp.task('clean', function () {
+  return del([paths.dest.root, 'tmp']);
+});
+
 gulp.task(
-  "build",
+  'build',
   gulp.series(
-    "clean",
-    gulp.series("assets", "js", "styles", "pug", "php", "libs")
+    'clean',
+    gulp.parallel('assets', 'js', 'styles', 'pug', 'pug-children', 'php', 'libs')
   )
 );
 
-// РАЗРАБОТКА
-gulp.task("dev:lite", gulp.series("build", gulp.parallel("watch")));
-gulp.task("dev", gulp.series("build", gulp.parallel("watch", "serve")));
-// gulp.task("dev", gulp.series("build", gulp.parallel("watch")));
+gulp.task('dev:lite', gulp.series('build', 'watch'));
+gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));
