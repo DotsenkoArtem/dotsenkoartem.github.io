@@ -35,8 +35,6 @@ const pugLocals = {
 
 const paths = {
   src: {
-    pugPages:     'src/pug/pages/*.*',
-    pugChildTmpl: 'src/pug/pages/child-page.pug',
     pugWatch:     'src/pug/**/*.*',
     styles:       'src/styles/sass/main.sass',
     stylesWatch:  'src/styles/**/*.sass',
@@ -219,45 +217,34 @@ gulp.task('styles', function () {
 
 // ── PUG ────────────────────────────────────────────────────────────────────
 
+// Генерация всех страниц (1-й и 2-й уровень) через fileStem из pages.js.
+// Каждая страница компилируется из своего шаблона, имя выходного файла = ключ объекта.
 gulp.task('pug', function () {
-  return combiner(
-    gulp.src([paths.src.pugPages, `!${paths.src.pugChildTmpl}`]),
-    gulpIf(
-      (file) => file.extname === '.pug',
-      pug({ pretty: '\t', locals: pugLocals })
-    ),
-    gulp.dest(paths.dest.root)
-  ).on('error', notify.onError(function (err) {
-    return { title: 'Error: Pug', message: err.message };
-  }));
-});
-
-// Генерация дочерних страниц из одного шаблона на основе данных в pages.js
-// Для каждой дочерней страницы: компилирует fileStem.pug с page = childPage,
-// выходной файл называется slug.html
-gulp.task('pug-children', function () {
   const streams = [];
 
-  Object.entries(siteData.pages).forEach((parentPage) => {
-    if (!parentPage[1].isMenuItemHasChildren) return;
+  function addStream(key, page) {
+    const stream = gulp
+      .src(`src/pug/pages/${page.fileStem}.pug`)
+      .pipe(through2(function (file, enc, cb) {
+        file.stem = key;
+        cb(null, file);
+      }))
+      .pipe(pug({
+        pretty: '\t',
+        locals: { ...pugLocals, page },
+      }))
+      .on('error', notify.onError(function (err) {
+        return { title: 'Error: Pug', message: err.message };
+      }))
+      .pipe(gulp.dest(paths.dest.root));
+    streams.push(stream);
+  }
 
-    Object.entries(parentPage[1].isMenuItemHasChildren).forEach(([childKey, childPage]) => {
-      const stream = gulp
-        .src(`src/pug/pages/${childPage.fileStem}.pug`)
-        .pipe(through2(function (file, enc, cb) {
-          file.stem = childKey;
-          cb(null, file);
-        }))
-        .pipe(pug({
-          pretty: '\t',
-          locals: { ...pugLocals, page: childPage },
-        }))
-        .on('error', notify.onError(function (err) {
-          return { title: 'Error: Pug (children)', message: err.message };
-        }))
-        .pipe(gulp.dest(paths.dest.root));
-
-      streams.push(stream);
+  Object.entries(siteData.pages).forEach(([key, page]) => {
+    addStream(key, page);
+    if (!page.isMenuItemHasChildren) return;
+    Object.entries(page.isMenuItemHasChildren).forEach(([childKey, childPage]) => {
+      addStream(childKey, childPage);
     });
   });
 
@@ -274,7 +261,7 @@ gulp.task('watch', function () {
   );
   gulp.watch(paths.src.js, gulp.series('js'));
   gulp.watch(paths.src.stylesWatch, gulp.series('styles'));
-  gulp.watch(paths.src.pugWatch, gulp.series('pug', 'pug-children'));
+  gulp.watch(paths.src.pugWatch, gulp.series('pug'));
   gulp.watch(paths.src.php, gulp.series('php'));
   gulp.watch(paths.src.libs, gulp.series('libs'));
 });
@@ -296,7 +283,7 @@ gulp.task(
   'build',
   gulp.series(
     'clean',
-    gulp.parallel('assets', 'js', 'styles', 'pug', 'pug-children', 'php', 'libs')
+    gulp.parallel('assets', 'js', 'styles', 'pug', 'php', 'libs')
   )
 );
 

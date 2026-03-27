@@ -86,7 +86,10 @@ describe('data: src/data/pages.js integrity', () => {
     }
   });
 
-  test('child pages have required fileStem field', () => {
+  test('all pages have required fileStem field', () => {
+    for (const [key, page] of Object.entries(siteData.pages)) {
+      assert.ok(page.fileStem, `pages.${key} missing fileStem`);
+    }
     for (const { parentKey, childKey, child } of allChildPages()) {
       assert.ok(
         child.fileStem,
@@ -112,7 +115,13 @@ describe('data: src/data/pages.js integrity', () => {
   });
 
   test('fileStem values reference existing pug templates', () => {
-    const stems = new Set(allChildPages().map(({ child }) => child.fileStem));
+    const stems = new Set();
+    for (const page of Object.values(siteData.pages)) {
+      if (page.fileStem) stems.add(page.fileStem);
+    }
+    for (const { child } of allChildPages()) {
+      if (child.fileStem) stems.add(child.fileStem);
+    }
     for (const stem of stems) {
       const tmplPath = path.join(ROOT, 'src/pug/pages', `${stem}.pug`);
       assert.ok(
