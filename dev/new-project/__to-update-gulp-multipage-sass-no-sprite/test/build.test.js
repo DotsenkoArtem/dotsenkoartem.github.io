@@ -86,12 +86,8 @@ describe('data: src/data/pages.js integrity', () => {
     }
   });
 
-  test('child pages have required slug and fileStem fields', () => {
+  test('child pages have required fileStem field', () => {
     for (const { parentKey, childKey, child } of allChildPages()) {
-      assert.ok(
-        child.slug,
-        `pages.${parentKey}.isMenuItemHasChildren.${childKey} missing slug`
-      );
       assert.ok(
         child.fileStem,
         `pages.${parentKey}.isMenuItemHasChildren.${childKey} missing fileStem`
@@ -107,11 +103,11 @@ describe('data: src/data/pages.js integrity', () => {
     }
   });
 
-  test('no duplicate slugs across all child pages', () => {
+  test('no duplicate child page keys across all pages', () => {
     const seen = new Set();
-    for (const { child } of allChildPages()) {
-      assert.ok(!seen.has(child.slug), `Duplicate slug: "${child.slug}"`);
-      seen.add(child.slug);
+    for (const { childKey } of allChildPages()) {
+      assert.ok(!seen.has(childKey), `Duplicate child key: "${childKey}"`);
+      seen.add(childKey);
     }
   });
 
@@ -136,9 +132,9 @@ describe('output: required files exist in public/', () => {
     });
   }
 
-  for (const { child } of allChildPages()) {
-    test(`${child.slug}.html (child page)`, () => {
-      assert.ok(exists(`${child.slug}.html`), `public/${child.slug}.html not found`);
+  for (const { childKey } of allChildPages()) {
+    test(`${childKey}.html (child page)`, () => {
+      assert.ok(exists(`${childKey}.html`), `public/${childKey}.html not found`);
     });
   }
 
@@ -169,32 +165,32 @@ describe('output: HTML content', () => {
     });
   }
 
-  for (const { child } of allChildPages()) {
-    test(`${child.slug}.html — <title> matches child page data`, () => {
-      const html = read(`${child.slug}.html`);
+  for (const { childKey, child } of allChildPages()) {
+    test(`${childKey}.html — <title> matches child page data`, () => {
+      const html = read(`${childKey}.html`);
       assert.ok(
         html.includes(`<title>${child.title}</title>`),
-        `${child.slug}.html: expected title "${child.title}"`
+        `${childKey}.html: expected title "${child.title}"`
       );
     });
 
-    test(`${child.slug}.html — preloads only .woff2 fonts`, () => {
-      const html = read(`${child.slug}.html`);
+    test(`${childKey}.html — preloads only .woff2 fonts`, () => {
+      const html = read(`${childKey}.html`);
       assert.doesNotMatch(
         html,
         /rel="preload"[^>]+href="fonts\/[^"]+\.ttf"/,
-        `${child.slug}.html: should not preload .ttf fonts`
+        `${childKey}.html: should not preload .ttf fonts`
       );
       assert.doesNotMatch(
         html,
         /type="font\/ttf"/,
-        `${child.slug}.html: should not have type="font/ttf"`
+        `${childKey}.html: should not have type="font/ttf"`
       );
     });
 
-    test(`${child.slug}.html — <meta name="author"> present`, () => {
-      const html = read(`${child.slug}.html`);
-      assert.match(html, /meta name="author"/, `${child.slug}.html: missing author meta`);
+    test(`${childKey}.html — <meta name="author"> present`, () => {
+      const html = read(`${childKey}.html`);
+      assert.match(html, /meta name="author"/, `${childKey}.html: missing author meta`);
     });
   }
 

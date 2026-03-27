@@ -238,14 +238,14 @@ gulp.task('pug', function () {
 gulp.task('pug-children', function () {
   const streams = [];
 
-  Object.values(siteData.pages).forEach((parentPage) => {
-    if (!parentPage.isMenuItemHasChildren) return;
+  Object.entries(siteData.pages).forEach((parentPage) => {
+    if (!parentPage[1].isMenuItemHasChildren) return;
 
-    Object.values(parentPage.isMenuItemHasChildren).forEach((childPage) => {
+    Object.entries(parentPage[1].isMenuItemHasChildren).forEach(([childKey, childPage]) => {
       const stream = gulp
         .src(`src/pug/pages/${childPage.fileStem}.pug`)
         .pipe(through2(function (file, enc, cb) {
-          file.stem = childPage.slug;
+          file.stem = childKey;
           cb(null, file);
         }))
         .pipe(pug({

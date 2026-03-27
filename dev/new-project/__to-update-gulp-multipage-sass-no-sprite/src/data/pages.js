@@ -14,7 +14,7 @@ const fontsPreload = [
 ];
 
 // URL страницы определяется автоматически в миксине меню: key + '.html'
-// Для дочерних страниц URL = slug + '.html'
+// Для дочерних страниц URL = ключ объекта + '.html'
 const pages = {
   index: {
     name: 'Главная',
@@ -30,48 +30,43 @@ const pages = {
     author,
     isMenuItem: true,
     isMenuItemHasChildren: {
-      page21: {
+      'child-page-21': {
         name: 'Страница 2-1',
         title: 'Страница 2-1 - Название',
         descr: '',
         fileStem: 'child-page',
-        slug: 'child-page-21',
         author,
         isMenuItem: true,
       },
-      page22: {
+      'child-page-22': {
         name: 'Страница 2-2',
         title: 'Страница 2-2 - Название',
-        descr: '',
+        descр: '',
         fileStem: 'child-page',
-        slug: 'child-page-22',
         author,
         isMenuItem: true,
       },
-      page23: {
+      'child-page-23': {
         name: 'Страница 2-3',
         title: 'Страница 2-3 - Название',
-        descr: '',
+        descр: '',
         fileStem: 'child-page',
-        slug: 'child-page-23',
         author,
         isMenuItem: true,
       },
-      page24: {
+      'child-page-24': {
         name: 'Страница 2-4',
         title: 'Страница 2-4 - Название',
-        descr: '',
+        descр: '',
         fileStem: 'child-page',
-        slug: 'child-page-24',
         author,
         isMenuItem: true,
       },
-      page25: {
+      'child-page-25': {
         name: 'Страница 2-5',
         title: 'Страница 2-5 - Название',
-        descr: '',
+        descр: '',
         fileStem: 'child-page',
-        slug: 'child-page-25',
         author,
         isMenuItem: true,
       },
